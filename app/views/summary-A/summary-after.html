@@ -1,0 +1,447 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design A – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-2">
+      <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">
+        Summary of actions
+      </h1>
+<ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Print</a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Download</a></li>
+      </ul>
+    </div>
+      <div class="govuk-grid-column-one-third">
+<p class="govuk-body govuk-!-font-weight-bold">Menu</p>
+<p class="govuk-body"><a class="govuk-link" href="#sfi">SFI actions</a></p>
+  <p class="govuk-body"><a class="govuk-link" href="#higher">Higher tier actions</a></p>
+    <p class="govuk-body"><a class="govuk-link" href="#land">Land parcels</a></p>
+      </div>
+    </div>
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+ <h2 class="govuk-heading-m" id="sfi">
+        SFI actions
+      </h2>
+
+<p class="govuk-body">These actions are more straightforward and mostly won't need specialist advice.</p>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Action name</th>
+      <th scope="col" class="govuk-table__header">Parcel number</th>
+      <th scope="col" class="govuk-table__header">Update</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">HRW1: Assess and record hedgerow condition</td>
+      <td class="govuk-table__cell" data-sort-value="0">No parcels added</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">HRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235002<br>
+SE70235003<br>
+SE70235004<br>
+SE70235005<br>
+SE70235006<br>
+SE70235007</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">HRW3: Maintain or establish hedgerow trees</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70234998<br>
+SE70234999<br>
+SE70235000</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">IGL2: Winter bird food on improved grassland</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235002<br>
+SE70235003</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">IPM1: Assess integrated pest management and produce a plan</td>
+      <td class="govuk-table__cell" data-sort-value="0">All parcels</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list"><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">IPM2: Flower-rich grass margins, blocks, or in-field strips</td>
+      <td class="govuk-table__cell" data-sort-value="0">No parcels added</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">IPM3: Companion crop on arable and horticultural land</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235002<br>
+SE70235003</td>
+       <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">IPM4: No use of insecticide on arable crops and permanent crops</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235002<br>
+SE70235003</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">LIG2: Manage grassland with very low nutrient inputs (SDAs)</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235002<br>
+SE70235003</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">MOR1:  Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235002<br>
+SE70235003</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NUM1 – Assess nutrient management and produce a review report</td>
+      <td class="govuk-table__cell" data-sort-value="0">All parcels</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list"><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NUM2: Legumes on improved grassland</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235000<br>
+SE70235001</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">NUM3: Legume fallow </td>
+      <td class="govuk-table__cell" data-sort-value="0">No parcels added</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SAM1: Assess soil, test soil organic matter and produce a plan</td>
+      <td class="govuk-table__cell" data-sort-value="0">All parcels</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list"><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SAM2: Multi-species winter crops</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235002<br>
+SE70235003<br>
+SE70235004<br>
+SE70235005</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 class="govuk-heading-m" id="higher">
+        Higher tier actions
+      </h1>
+
+<p class="govuk-body">Higher tier actions are more complex, and need specialist support and advice.</p>
+<p class="govuk-body">You might want to submit a separate application for higher tier actions. These take long to process and will delay the SFI part of your agreement.</p>
+
+     <table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Action name</th>
+      <th scope="col" class="govuk-table__header">Parcel number</th>
+      <th scope="col" class="govuk-table__header">Update</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AB1: Nectar flower mix</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70234996<br>
+SE70234997<br>
+SE70234998</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+   <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AB3: Beetle banks</td>
+      <td class="govuk-table__cell" data-sort-value="0">No parcels added</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AB7: Whole crop cereals</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70234996<br>
+SE70234997</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AB15: Two year sown legume fallow</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235001<br>
+SE70265002</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">BE4: Management of traditional orchards</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70234996</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">BE5: Creation of traditional orchards</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70234997<br>
+SE70234998<br>
+SE70234999<br>
+SE70235000<br>
+SE70235001<br>
+SE70235002</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">BE6: Veteran tree surgery</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235006</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GS4: Legume and herb-rich swards</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235006</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">ED1: Educational access</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70234996<br>
+SE70234997</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">HS5: Management of historic and archaeological features on grassland</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235007</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SW7: Arable reversion to grassland with low fertiliser input</td>
+      <td class="govuk-table__cell" data-sort-value="0">No parcels added</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">WD1: Woodland creation - maintenance payments</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235008</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">WD4: Management of lowland wood pasture and parkland</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235009</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">WD8: Creation of successional areas and scrub</td>
+      <td class="govuk-table__cell" data-sort-value="0">SE70235010</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Edit land details</a><br><a class="govuk-link" href="#">Delete action</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h1 class="govuk-heading-m" id="land">
+        Land parcels
+      </h1>
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
+      <th scope="col" class="govuk-table__header">Action name</th>
+      <th scope="col" class="govuk-table__header">Quantity</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70234996</td>
+      <td class="govuk-table__cell" data-sort-value="0">ED1: Educational access<br>
+BE4: Management of traditional orchards<br>
+AB7: Whole crop cereals<br>
+AB1: Nectar flower mix</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">8.12 hectares<br>
+4.25 hectares<br>
+34.02 hectares<br>
+14.10 hectares</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70234997</td>
+      <td class="govuk-table__cell" data-sort-value="0">ED1: Educational access<br>
+BE5: Creation of traditional orchards<br>
+AB7: Whole crop cereals<br>
+AB1: Nectar flower mix</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">5.56 hectares<br>
+2.03 hectares<br>
+2.10 hectares<br>
+5.90 hectares</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70234998</td>
+      <td class="govuk-table__cell" data-sort-value="0">BE5: Creation of traditional orchards<br>
+AB1: Nectar flower mix<br>
+HRW3: Maintain or establish hedgerow trees</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">5.90 hectares<br>
+4.10 hectares<br>
+38.4 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70234999</td>
+      <td class="govuk-table__cell" data-sort-value="0">BE5: Creation of traditional orchards<br>
+HRW3: Maintain or establish hedgerow trees</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">35.01 hectares<br>
+50.3 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235000</td>
+      <td class="govuk-table__cell" data-sort-value="0">BE5: Creation of traditional orchards<br>
+NUM2: Legumes on improved grassland<br>
+HRW3: Maintain or establish hedgerow trees</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">23.01 hectares<br>
+19.90 hectares<br>
+80.4 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235001</td>
+      <td class="govuk-table__cell" data-sort-value="0">BE5: Creation of traditional orchards<br>
+AB15: Two year sown legume fallow<br>
+NUM2: Legumes on improved grassland</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">12.12 hectares<br>
+8.90 hectares<br>
+10.22 hectares</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235002</td>
+      <td class="govuk-table__cell" data-sort-value="0">BE5: Creation of traditional orchards<br>
+AB15: Two year sown legume fallow<br>
+SAM2: Multi-species winter crops<br>
+MOR1:  Assess moorland and produce a written record<br>
+LIG2: Manage grassland with very low nutrient inputs (SDAs)<br>
+IGL2: Winter bird food on improved grassland<br>
+HRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">7.58 hectares<br>
+1.20 hectares<br>
+2.12 hectares<br>
+Whole agreement<br>
+2.12 hectares<br>
+9.16 hectares<br>
+120.34 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235003</td>
+      <td class="govuk-table__cell" data-sort-value="0">AB15: Two year sown legume fallow<br>
+SAM2: Multi-species winter crops<br>
+MOR1:  Assess moorland and produce a written record<br>
+LIG2: Manage grassland with very low nutrient inputs (SDAs)<br>
+IGL2: Winter bird food on improved grassland<br>
+HRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">6.01 hectares<br>
+2.10 hectares<br>
+Whole agreement<br>
+10.15 hectares<br>
+2.34 hectares<br>
+60.03 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235004</td>
+      <td class="govuk-table__cell" data-sort-value="0">AB7: Whole crop cereals<br>
+SAM1: Assess soil, test soil organic matter and produce a plan<br>
+SAM2: Multi-species winter crops<br>
+HRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">2.06 hectares<br>
+Whole agreement<br>
+10.09 hectares<br>
+2.03 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235005</td>
+      <td class="govuk-table__cell" data-sort-value="0">HRW3: Maintain or establish hedgerow trees<br>
+SAM2: Multi-species winter crops<br>
+HRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">30.7 meters<br>
+3.54 hectares<br>
+10.44 hectares</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235006</td>
+      <td class="govuk-table__cell" data-sort-value="0">GS4: Legume and herb-rich swards<br>
+BE6: Veteran tree surgery<br>
+HRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">12.12 hectares<br>
+16.23 hectares<br>
+14.02 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235007</td>
+      <td class="govuk-table__cell" data-sort-value="0">HS5: Management of historic and archaeological features on grassland<br>
+HRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">16.56 hectares<br>
+290.03 meters</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235008</td>
+      <td class="govuk-table__cell" data-sort-value="0">WD1: Woodland creation - maintenance payments</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">32.03 hectares</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235009</td>
+      <td class="govuk-table__cell" data-sort-value="0">WD4: Management of lowland wood pasture and parkland</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">19.01 hectares</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SE70235010</td>
+      <td class="govuk-table__cell" data-sort-value="0">WD8: Creation of successional areas and scrub</td>
+      <td class="govuk-table__cell"><ul class="govuk-summary-list__actions-list">21.23 hectares</td>
+    </tr>
+  </tbody>
+</table>
+
+<form class="form" action="request-support" method="post">
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Confirm selection"
+}) }}
+</form>
+
+<p class="govuk-body">Last confirmed 31/05/24 at 12:12 pm.</p>
+
+<p class="govuk-body"><a class="govuk-link" href="#header">Back to top</a></p>
+
+</div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}

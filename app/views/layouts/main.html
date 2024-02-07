@@ -1,0 +1,25 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+
+{% block header %}
+{{ govukHeader({
+  homepageUrl: "#",
+  serviceName: "Combined offer",
+  serviceUrl: "https://defra-co-d893eea5f432.herokuapp.com/",
+  navigation: [
+    {
+      href: "#",
+      text: "Homepage",
+      active: true
+    },
+    {
+      href: "#",
+      text: "Business overview"
+    }
+  ]
+}) }}
+{% endblock %}

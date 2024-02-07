@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Design A – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-8">
+      <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l" id="sfi">
+      Request support
+      </h1>
+<ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Print</a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Download</a></li>
+      </ul>
+      </div>
+    </div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+<p class="govuk-body">Your selection shows you have added the following actions that need support.</p>
+
+     <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Task</th>
+      <th scope="col" class="govuk-table__header">Action name</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Advice from Natural England</td>
+      <td class="govuk-table__cell">AB1: Nectar flower mix<br>
+AB3: Beetle banks<br>
+AB7: Whole crop cereals<br>
+AB15: Two year sown legume fallow</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Advice from Environmental Agency</td>
+      <td class="govuk-table__cell">BE4: Management of traditional orchards<br>
+BE5: Creation of traditional orchards<br>
+GS4: Legume and herb-rich swards<br>
+ED1: Educational access<br>
+SW7: Arable reversion to grassland with low fertiliser input<br>
+WD4: Management of lowland wood pasture and parkland<br>
+WD8: Creation of successional areas and scrub</td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Woodland management plan</td>
+      <td class="govuk-table__cell">WD1: Woodland creation - maintenance payments</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">SSSI consent</td>
+      <td class="govuk-table__cell">HS5: Management of historic and archaeological features on grassland</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+You can go back to <a class="govuk-link" href="summary-after">update your selection</a> if you no longer want to do actions that need specialist support.  </strong>
+</div>
+
+<form class="form" action="tasklist-after" method="post">
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukButton({
+  text: "Request support"
+}) }}
+</form>
+
+</div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}
