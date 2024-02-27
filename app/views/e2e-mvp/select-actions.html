@@ -1,0 +1,260 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+<h1 class="govuk-heading-l">Select actions</h1>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-quarter">
+  <div id="search">
+    <label class="govuk-label govuk-!-margin-top-2" for="search">
+      Search by action code
+    </label>
+    <input class="govuk-input text-input" style="width:160px; height:44px;" id="searchbox" type="text" value="" placeholder="">
+    <button id="button_1" class="govuk-button" height="20" data-module="govuk-button">
+      <svg class="gem-c-search__icon" width="21" height="21" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+        <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+      </svg>
+    </button>
+  </div>
+  <div id="filters">
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <span>
+          Action type
+        </span>
+      </summary>
+      <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-top-4" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            SFI
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Higher tier
+          </label>
+        </div>
+      </div>
+      <div class="govuk-inset-text">
+<p class="govuk-body">SFI actions are more straightforward.</p>
+<p class="govuk-body">Higher tier actions are more complex - you will need specialist advice and support for these.</p></div>
+    </details>
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <span>
+          Action theme
+        </span>
+      </summary>
+      <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-top-4" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Buffer strips
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Farmland wildlife on arable and
+horticultural land
+          </label>
+        </div>
+              <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Farmland wildlife on arable and
+horticultural land
+          </label>
+        </div>
+              <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+   Farmland wildlife on improved
+grassland
+          </label>
+        </div>
+              <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Hedgerows
+          </label>
+        </div>
+              <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Integrated pest management
+          </label>
+        </div>
+              <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Low input grassland
+          </label>
+        </div>
+              <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Moorland
+          </label>
+        </div>
+            <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Nutrient management
+          </label>
+        </div>
+             <div class="govuk-checkboxes__item series-selector-items govuk-!-padding-bottom-4">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Soils
+          </label>
+        </div>
+      </div>
+    </details>
+</div>
+      <div class="buttons-filter govuk-button-group">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Apply filters
+  </button>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Clear all filters
+  </button>
+</div>
+</div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <div class="topnav">
+  <summary class="govuk-details__summary"><span><a class="govuk-body govuk-link govuk-link--no-underline" href="#sort">Sort by selected actions first</a></span></summary>
+  <div class="topnav-right govuk-body govuk-!-font-weight-bold">
+    50 actions listed of 134 total
+  </div>
+</div>
+      <div class="govuk-form-group">
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AB1: Nectar flower mix – <a href="https://www.gov.uk/countryside-stewardship-grants/nectar-flower-mix-ab1" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £614 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AHL1: Pollen and nectar flower mix – <a href="https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl1-pollen-and-nectar-flower-mix" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £614 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+         <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AHL2: Winter bird food on arable and horticultural land – <a href="https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl2-winter-bird-food-on-arable-and-horticultural-land" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £614 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+              <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AHL3: Grassy field corners and blocks – <a href="https://www.gov.uk/guidance/sfi-actions-for-farmland-wildlife-on-arable-and-horticultural-land#ahl3-grassy-field-corners-or-blocks" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £614 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+              <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AHL4: 4m to 12m grass buffer strip on arable and horticultural land – <a href="https://www.gov.uk/guidance/sfi-actions-for-buffer-strips#ahl4-4m-to-12m-grass-buffer-strip-on-arable-and-horticultural-land" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £614 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+                <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">BE6: Veteran tree surgery – <a href="https://www.gov.uk/countryside-stewardship-grants/veteran-tree-surgery-be6" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £614 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+                    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">ED1: Educational access – <a href="https://www.gov.uk/countryside-stewardship-grants/educational-access-ed1" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £614 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+</div>
+      <form class="form" action="tasklist-5" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Confirm
+          </button>
+        </form>
+  </div>
+
+</div>
+</div>
+</main>
+{% endblock %}

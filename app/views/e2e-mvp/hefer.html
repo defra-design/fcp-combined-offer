@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Historic Environment Farm Environment Record</h1>
+<p class="govuk-body">You must have a HEFER if you want to do actions on land that contains, or is next to, any:<br>
+• scheduled monuments<br>
+• historic features<br>
+• archaeological features</p>
+<p class="govuk-body">Read about <a href="#" class="govuk-link">how to get a HEFER</a> in the scheme guidance.</p>
+<form class="form" action="/hefer-answer" method="post">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+  Do you have a HEFER?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="heferAnswer-1" name="hefer-answer" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="heferAnswer-1">
+                    Yes
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="heferAnswer-2" name="hefer-answer" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="heferAnswer-2">
+                    No
+                  </label>
+                </div>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+    </div>
+  </div>
+
+</div>
+</main>
+{% endblock %}

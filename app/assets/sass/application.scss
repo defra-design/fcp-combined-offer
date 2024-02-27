@@ -4,3 +4,17 @@
 // 
 
 // Add extra styles here
+
+/* Add a black background color to the top navigation */
+.topnav {
+    overflow: hidden;
+}
+
+/* Right-aligned section inside the top navigation */
+.topnav-right {
+  float: right;
+}
+
+.buttons-filter {
+  float: right;
+}
