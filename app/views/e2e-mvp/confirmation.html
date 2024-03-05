@@ -41,21 +41,32 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Enter your agreement name</h1>
- <div class="govuk-form-group"><p class="govuk-caption-m">
-      This will appear on your agreement documents. For example ‘Jasmine’s Farm Funding 2023’.</p>
-    <input class="govuk-input govuk-!-width-two-thirds govuk-body govuk-!-margin-bottom-4" id="agree" name="agreementName" type="text" autocomplete="Agreement name">
-     <label class="govuk-label" for="agreement-name">
-      You have 40 characters remaining.
-    </label>
-  </div>
-
-<form class="form" action="tasklist-4" method="post">
+<div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Application complete
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+          </div>
+        </div>
+        <h2 class="govuk-heading-m">Thank you for submitting your application</h2>
+        <p class="govuk-body">We have sent you a confirmation email.</p>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+          We’ll email you when your agreement offer is available in the Rural Payments service to check.
+        </p>
+        <p class="govuk-body">
+         Your agreement cannot start until you sign it in the Rural Payments service.
+        </p>
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+        </p>
+        <form class="form" action="dashboard-after-application" method="post">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
+            Go back to dashboard
           </button>
         </form>
-        
+      </div>
     </div>
   </div>
 

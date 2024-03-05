@@ -69,7 +69,7 @@
             title: {
               text: "Confirm your land details are up to date"
             },
-            href: "confirm-land-details",
+            href: "check-land-details",
             status: completedStatus
           },
           {
@@ -114,17 +114,21 @@
               text: "Select the land you want to do the actions on"
             },
             href: "select-map",
-            status: incompleteStatus    
-          
+            status: incompleteStatus       
     },
-                {
+       {
+            title: {
+              text: "Select additional parcels for your rotational actions"
+            },
+            href: "select-rotational-actions",
+            status: incompleteStatus        
+    },
+    {
             title: {
               text: "Apply for your agreement level actions"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+            href: "apply-agreement-level",
+            status: incompleteStatus     
     }
         ]
       }) }}

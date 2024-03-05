@@ -1,0 +1,308 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-l">Select parcels for rotational actions</h1>
+<p class="govuk-body">Available land parcels: 32<br>
+      <table class="govuk-table">
+<p class="govuk-body govuk-!-font-weight-bold">OS map sheet reference SO3</p>
+<hr class="govuk-section-break govuk-section-break--visible">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Available land parcels</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Available area</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">120.3451 ha</td>
+    </tr>
+    <tr class="govuk-table__row">
+     <td class="govuk-table__cell">Number of selected land parcels</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">Select all
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">I do not want to add<br>rotational actions
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3158</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          32.0404 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3159</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          31.4241 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3160</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          1.4935 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3161</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          10.3492 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3162</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          42.4324 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3163</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          9.9754 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3164</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          32.1239 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3165</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          38.2931 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3166</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          28.3482 ha
+        </label></td>
+    </tr>
+           <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3167</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          39.2931 ha
+        </label></td>
+    </tr>
+               <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3168</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+         53.2131 ha
+        </label></td>
+    </tr>
+                   <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3169</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          12.4392 ha
+        </label></td>
+    </tr>
+                   <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3170</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          29.3291 ha
+        </label></td>
+    </tr>
+                   <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3171</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          13.2339 ha
+        </label></td>
+    </tr>
+                   <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          <a href="#" class="govuk-link">SO3757 3172</a>
+        </label>
+      </div></td>
+      <td class="govuk-table__cell"><label class="govuk-label govuk-checkboxes__label" for="organisation">
+          11.4234 ha
+        </label></td>
+    </tr>
+  </tbody>
+</table>
+
+ <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+    <div class="govuk-pagination__prev govuk-pagination__next">
+    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">15</span> of <span class="govuk-!-font-weight-bold">20</span> parcels</p></div>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="select-rotational-actions-page-2" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
+        <form class="form" action="tasklist-7" method="post">
+          <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+Confirm selection
+          </button>
+        </form>
+</nav> 
+    </div>
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
+  <map name="clickable">
+        <area shape="rect" coords="185,225,268,352" href="https://www.studytonight.com/bootstrap/bootstrap-breadcrumb">
+          </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/1702e472e743f41927cf41e4d5d7ae13ebbb1720/app/views/e2e-mvp/img/map_background.png" alt="Map sheet references" style="width:465px;height:400px;"></a>
+
+       <p class="govuk-body">Key:</p>
+       <div class="key-parent govuk-!-margin-bottom-5">
+       <div class="key1"></div><span class="govuk-body-s">Error</span>
+       <div class="key2"></div><span class="govuk-body-s">Selected</span>
+       <div class="key3"></div><span class="govuk-body-s">Not Applied</span>
+       <div class="key4"></div><span class="govuk-body-s">Applied</span>
+     </div>
+
+    </div>
+  </div>
+
+</div>
+</main>
+{% endblock %}

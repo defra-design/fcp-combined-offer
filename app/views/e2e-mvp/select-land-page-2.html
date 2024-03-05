@@ -1,0 +1,124 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-l">Select the land you want to do your actions on</h1>
+<p class="govuk-body">To add your selected actions to a land parcel:<br>
+1. Click on the link or map icon<br>
+2. Tick the box of the relevant action<br>
+3. Enter the total area or size in the quantity both</p>
+
+      <table class="govuk-table">
+<p class="govuk-body govuk-!-font-weight-bold">OS map sheet reference SO3</p>
+<hr class="govuk-section-break govuk-section-break--visible">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Available land parcels</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Available area</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">120.3451 ha</td>
+    </tr>
+    <tr class="govuk-table__row">
+     <td class="govuk-table__cell">Number of actions added</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+        <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Number of land parcels added</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+  </tbody>
+</table>
+
+  <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3173</a>
+  <span class="list-parcels govuk-body">Total size: 10.3104 ha</span></p>
+  <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3174</a>
+  <span class="list-parcels govuk-body">Total size: 21.4341 ha</span></p>
+ <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3175</a>
+  <span class="list-parcels govuk-body">Total size: 2.5335 ha</span></p>
+ <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3176</a>
+  <span class="list-parcels govuk-body">Total size: 4.1234 ha</span></p>
+ <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3177</a>
+  <span class="list-parcels govuk-body">Total size: 8.0942 ha</span></p>
+
+ <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+   <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="select-land" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">
+        Previous<span class="govuk-visually-hidden"> page</span>
+      </span>
+    </a>
+  </div>
+    <div class="govuk-pagination__prev govuk-pagination__next">
+    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">10</span> to <span class="govuk-!-font-weight-bold">15</span> of <span class="govuk-!-font-weight-bold">15</span> parcels</p></div>
+        <form class="form" action="select-map" method="post">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+Return to OS map sheet references
+          </button>
+        </form>
+</nav> 
+    </div>
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
+  <map name="clickable">
+        <area shape="rect" coords="185,225,268,352" href="https://www.studytonight.com/bootstrap/bootstrap-breadcrumb">
+          </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/1702e472e743f41927cf41e4d5d7ae13ebbb1720/app/views/e2e-mvp/img/map_background.png" alt="Map sheet references" style="width:465px;height:400px;"></a>
+
+       <p class="govuk-body">Key:</p>
+       <div class="key-parent govuk-!-margin-bottom-5">
+       <div class="key1"></div><span class="govuk-body-s">Error</span>
+       <div class="key2"></div><span class="govuk-body-s">Selected</span>
+       <div class="key3"></div><span class="govuk-body-s">Not Applied</span>
+       <div class="key4"></div><span class="govuk-body-s">Applied</span>
+     </div>
+
+    </div>
+  </div>
+
+</div>
+</main>
+{% endblock %}

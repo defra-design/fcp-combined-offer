@@ -77,16 +77,14 @@
               text: "Confirm you’re eligible to apply"
             },
         href: "management-control",
-        status: incompleteStatus
+        status: completedStatus
     },
                {
             title: {
               text: "Enter your agreement name"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+            href: "agreement-name",
+            status: completedStatus
     }
         ]
       }) }}
@@ -100,10 +98,8 @@
             title: {
               text: "Select which actions to do"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+            href: "select-actions",
+            status: completedStatus    
     }
         ]
       }) }}
@@ -117,10 +113,22 @@
             title: {
               text: "Select the land you want to do the actions on"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+            href: "select-map",
+            status: completedStatus        
+    },
+       {
+            title: {
+              text: "Select additional parcels for your rotational actions"
+            },
+            href: "select-rotational-actions",
+            status: incompleteStatus            
+    },
+    {
+            title: {
+              text: "Apply for your agreement level actions"
+            },
+            href: "apply-agreement-level",
+            status: incompleteStatus          
     }
         ]
       }) }}
@@ -155,6 +163,6 @@
     </div>
   </div>
 
-</div>
 </main>
+</div>
 {% endblock %}

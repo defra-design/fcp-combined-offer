@@ -66,23 +66,6 @@ router.post('/sssi-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/e2e-mvp/public-body')
-
-  } else {
-    // Send user to ineligible page
-    res.redirect('/e2e-mvp/ineligible')
-  }
-
-})
-
-router.post('/public-body-answer', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var managementControlAnswer = req.session.data['public-body-answer']
-
-  // Check whether the variable matches a condition
-  if (managementControlAnswer == "yes"){
-    // Send user to next page
     res.redirect('/e2e-mvp/ite')
 
   } else {
@@ -100,6 +83,23 @@ router.post('/ite-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
+    res.redirect('/e2e-mvp/public-body')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/e2e-mvp/ineligible')
+  }
+
+})
+
+router.post('/public-body-answer', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['public-body-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
     res.redirect('/e2e-mvp/eligible')
 
   } else {
@@ -108,4 +108,6 @@ router.post('/ite-answer', function (req, res) {
   }
 
 })
+
+
 
