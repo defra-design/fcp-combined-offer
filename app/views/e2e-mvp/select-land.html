@@ -40,30 +40,31 @@
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-      <h1 class="govuk-heading-l">Select the land you want to do your actions on</h1>
-<p class="govuk-body">To add your selected actions to a land parcel:<br>
-1. Click on the link or map icon<br>
-2. Tick the box of the relevant action<br>
-3. Enter the total area or size in the quantity both/p>
+          <h1 class="govuk-heading-l">Select land for your actions</h1>
+<p class="govuk-body">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
+<p class="govuk-body">You’ll see your list of actions. You then need to:<br>
+• select the action and enter the amount that you want to add to the parcel<br>
+• confirm your selection you can move to the next land parcel</p>
 
+<hr class="section-break-large"></hr>
       <table class="govuk-table">
-<p class="govuk-body govuk-!-font-weight-bold">OS map sheet reference SO3</p>
+<p class="govuk-body">OS Map Sheet Reference S03</p>
 <hr class="govuk-section-break govuk-section-break--visible">
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Available land parcels</td>
+      <td class="govuk-table__cell">Number of available land parcels</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Available area</td>
+      <td class="govuk-table__cell">Total area (ha)</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">120.3451 ha</td>
     </tr>
     <tr class="govuk-table__row">
-     <td class="govuk-table__cell">Number of actions added</td>
+     <td class="govuk-table__cell">Number of land parcels used for actions</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
     </tr>
         <tr class="govuk-table__row">
-    <td class="govuk-table__cell">Number of land parcels added</td>
+    <td class="govuk-table__cell">Number of actions applied for</td>
       <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
     </tr>
   </tbody>
@@ -101,17 +102,6 @@
   <span class="list-parcels govuk-body">Total size: 11.4234 ha</span></p>
 
  <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
-   <!-- <div class="govuk-pagination__prev">
-    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
-      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-      </svg>
-      <span class="govuk-pagination__link-title">
-        Previous<span class="govuk-visually-hidden"> page</span>
-      </span>
-    </a>
-  </div>
-  -->
     <div class="govuk-pagination__prev govuk-pagination__next">
     <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">4</span> of <span class="govuk-!-font-weight-bold">15</span> parcels</p></div>
   <div class="govuk-pagination__next">
@@ -126,7 +116,7 @@
   </div>
         <form class="form" action="select-map" method="post">
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-Return to OS map sheet references
+Return to OS Map Sheet Reference selection
           </button>
         </form>
 </nav> 
@@ -135,9 +125,10 @@ Return to OS map sheet references
   <div class="govuk-grid-column-one-half">
     <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
   <map name="clickable">
-        <area shape="rect" coords="185,225,268,352" href="https://www.studytonight.com/bootstrap/bootstrap-breadcrumb">
-          </map>
-<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/1702e472e743f41927cf41e4d5d7ae13ebbb1720/app/views/e2e-mvp/img/map_background.png" alt="Map sheet references" style="width:465px;height:400px;"></a>
+        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+        <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
+                  </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_2.png" alt="Map of your land" style="width:465px;height:400px;"></a>
 
        <p class="govuk-body">Key:</p>
        <div class="key-parent govuk-!-margin-bottom-5">

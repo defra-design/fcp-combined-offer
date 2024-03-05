@@ -42,10 +42,7 @@
       <div class="govuk-grid-column-full-column">
         <h1 class="govuk-heading-l">Check your answers before sending your application</h1>
 
-        <ul class="govuk-summary-list__actions-list govuk-!-padding-bottom-5">
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Print</a></li>
-        <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#">Download</a></li>
-      </ul>
+   <p class="govuk-body"><a class="govuk-link" href="#">Print</a></p>
 
         <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Your details</caption>
@@ -129,23 +126,21 @@
       <td class="govuk-table__cell govuk-table__header--numeric"></td>
     </tr>
   </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Total number of actions applied for</th>
-      <td class="govuk-table__cell">10</td>
-      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="select-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
-</td>
-    </tr>
-  </tbody>
 </table>
 
         <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Parcel based actions</caption>
   <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Total number of actions applied for</th>
+      <td class="govuk-table__cell govuk-!-width-one-quarter">10</td>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></td>
+      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="select-map">Change<span class="govuk-visually-hidden"> answer</span></a></td>
+    </tr>
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Parcel based actions</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Area</td>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Payment rate</td>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Parcel Based actions</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></td>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></td>
       <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="select-map">Change<span class="govuk-visually-hidden"> answer</span></a></td>
     </tr>
   </thead>
@@ -202,9 +197,9 @@ horticultural land</td>
       <td class="govuk-table__cell govuk-table__header--numeric"></td>
     </tr>
                                <tr class="govuk-table__row">
-       <th scope="col" class="govuk-table__cell">Parcel based actions total</td>
+       <th scope="col" class="govuk-table__cell">Parcel Based actions total</td>
       <td class="govuk-table__cell"></td>
-      <th scope="col" class="govuk-table__cell">£16,829.839</td>
+      <td class="govuk-table__cell">£16,829.839</td>
       <td class="govuk-table__cell govuk-table__header--numeric"></td>
     </tr>
   </tbody>
@@ -214,9 +209,9 @@ horticultural land</td>
   <caption class="govuk-table__caption govuk-table__caption--m">Agreement level actions</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Agreement level actions</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Agreement Level actions</th>
       <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></td>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Payment rate</td>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"></td>
       <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="apply-agreement-level">Change<span class="govuk-visually-hidden"> answer</span></a></td>
     </tr>
   </thead>
@@ -234,9 +229,9 @@ horticultural land</td>
       <td class="govuk-table__cell govuk-table__header--numeric"></td>
     </tr>
         <tr class="govuk-table__row">
-       <th scope="col" class="govuk-table__cell">Agreement level actions total</td>
+       <th scope="col" class="govuk-table__cell">Agreement Level actions total</td>
       <td class="govuk-table__cell"></td>
-      <th scope="col" class="govuk-table__cell">£1,718.00</td>
+      <td class="govuk-table__cell">£1,718.00</td>
       <td class="govuk-table__cell govuk-table__header--numeric"></td>
     </tr>
   </tbody>
@@ -244,9 +239,13 @@ horticultural land</td>
         
          <form class="form" action="check-your-answers-confirmed" method="post">
 <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-  Confirm
+  Validate
 </button>
 </form>
+
+<button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
+  Continue
+</button>
 
       </div>
     </div>
