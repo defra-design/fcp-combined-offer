@@ -15,10 +15,6 @@
   float: right;
 }
 
-.buttons-filter {
-  float: right;
-}
-
 .list-parcels {
   float: right;
   padding-right: 100px;
@@ -37,37 +33,35 @@
 
   .key-parent {
     width: 23vw;
-    /* Aligns the children items in a row direction */
-    display: flex;
-    justify-content: space-between;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 6px;
 }
 
-  .key1 {
-  float: left;
-  width: 30px;
-  height: 30px;
+  #key1 {
+  width: 2em;
+  height: 2em;
   border: 4px solid #E53724;
   background-color: #FADD4B;
 }
 
-  .key2 {
-  width: 30px;
-  height: 30px;
+  #key2 {
+  width: 2em;
+  height: 2em;
   border: 12px solid #001EF5;
   background-color: #96CDF6;
 }
 
-  .key3 {
-  width: 30px;
-  height: 30px;
+  #key3 {
+  width: 2em;
+  height: 2em;
   border: 4px solid #A46E53;
   background-color: #F1DEB8;
 }
 
-  .key4 {
-  float: right;
-  width: 30px;
-  height: 30px;
+  #key4 {
+  width: 2em;
+  height: 2em;
   border: 4px solid #2C6739;
   background-color: #899855;
 }

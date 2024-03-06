@@ -27,7 +27,7 @@
 <div class="govuk-grid-row" id="header">
 <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
 <div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith</div>
 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Save and return later
 </button>
@@ -120,7 +120,8 @@ Return to OS Map Sheet Reference selection
           </button>
         </form>
 </nav> 
-    </div>
+
+</div>
 
   <div class="govuk-grid-column-one-half">
     <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
@@ -131,16 +132,17 @@ Return to OS Map Sheet Reference selection
 <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_2.png" alt="Map of your land" style="width:465px;height:400px;"></a>
 
        <p class="govuk-body">Key:</p>
-       <div class="key-parent govuk-!-margin-bottom-5">
-       <div class="key1"></div><span class="govuk-body-s">Error</span>
-       <div class="key2"></div><span class="govuk-body-s">Selected</span>
-       <div class="key3"></div><span class="govuk-body-s">Not Applied</span>
-       <div class="key4"></div><span class="govuk-body-s">Applied</span>
+       <div class="key-div govuk-!-margin-bottom-5">
+       <div class="key-parent" id="key1"></div><span class="govuk-body-s">Error</span>
+       <div class="key-parent" id="key2"></div><span class="govuk-body-s">Selected</span>
+       <div class="key-parent" id="key3"></div><span class="govuk-body-s">Not Applied</span>
+       <div class="key-parent" id="key4"></div><span class="govuk-body-s">Applied</span>
      </div>
-
+     
     </div>
+
   </div>
 
-</div>
 </main>
+</div>
 {% endblock %}
