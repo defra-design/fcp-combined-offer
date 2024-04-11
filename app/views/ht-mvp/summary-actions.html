@@ -1,0 +1,179 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row govuk-!-margin-bottom-6">
+      <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l" id="sfi">
+Summary of actions</h1>
+<p class="govuk-body">
+<ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-body govuk-link" href="#">Print</a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-body govuk-link" href="#">Download</a></li>
+      </ul></p>
+      <p class="govuk-body">
+When you’re happy with your actions, click ‘confirm selection’ at the bottom of the page.</p>
+      <p class="govuk-body">
+This will not submit your application. You’ll be able to check and submit your application after you’ve confirmed your selection.
+</p>
+      <p class="govuk-body govuk-!-font-weight-bold">Contents of the page</p>
+          <p class="govuk-body"><a class="govuk-link" href="#land">Land parcels</a></p>
+<p class="govuk-body"><a class="govuk-link" href="#sfiactions">SFI actions</a></p>
+  <p class="govuk-body"><a class="govuk-link" href="#higher">Higher tier actions</a></p>
+        </div>
+    </div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+<div class="govuk-summary-card" id="land">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Land parcels</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+        <p class="govuk-body"><a class="govuk-link" href="#">Open in a separate page</a></p>
+          <p class="govuk-body">
+These are the land parcels you’ve added actions to so far.</p>
+<table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header">Parcel number</th>
+      <th scope="col" class="govuk-table__header">Action name</th>
+      <th scope="col" class="govuk-table__header">Quantity</th>
+      <th scope="col" class="govuk-table__header">Update</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><p class="govuk-body govuk-!-font-weight-bold">SE7 0234 997</p></td>
+      <td class="govuk-table__cell" data-sort-value="0">ED1: Educational access<br>
+        BE4: Management of traditional orchards<br>
+        AB7: Whole crop cereals<br>
+        AB1: Nectar flower mix<br>
+      <td class="govuk-table__cell">12.34 hectares</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+
+<div class="govuk-summary-card" id="sfiactions">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">SFI actions</h2>
+   <ul class="govuk-summary-card__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> actions</span></a>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+  <p class="govuk-body"><a class="govuk-link" href="#">Open in a separate page</a></p>
+          <p class="govuk-body">
+These are the SFI actions you’ve chosen so far. These are more straightforward than higher tier actions and mostly will not need specialist advice.</p>
+<table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header">Parcel number</th>
+      <th scope="col" class="govuk-table__header">Action name</th>
+      <th scope="col" class="govuk-table__header">Quantity</th>
+      <th scope="col" class="govuk-table__header">Update</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><p class="govuk-body govuk-!-font-weight-bold">SE7 0234 997</p></td>
+      <td class="govuk-table__cell" data-sort-value="0">ED1: Educational access<br>
+        BE4: Management of traditional orchards<br>
+        AB7: Whole crop cereals<br>
+        AB1: Nectar flower mix<br></td>
+      <td class="govuk-table__cell">12.34 hectares</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+
+<div class="govuk-summary-card" id="higher">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Higher tier actions</h2>
+   <ul class="govuk-summary-card__actions"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> actions</span></a>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+  <p class="govuk-body"><a class="govuk-link" href="#">Open in a separate page</a></p>
+          <p class="govuk-body">
+Higher tier actions are more complex, and need specialist support and advice.</p>
+<p class="govuk-body">You might want to submit a separate application for higher tier actions. These take long to process and will delay the SFI part of your agreement.</p>
+<table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__header">Parcel number</th>
+      <th scope="col" class="govuk-table__header">Action name</th>
+      <th scope="col" class="govuk-table__header">Quantity</th>
+      <th scope="col" class="govuk-table__header">Update</th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><p class="govuk-body govuk-!-font-weight-bold">SE7 0234 997</p></td>
+      <td class="govuk-table__cell" data-sort-value="0">ED1: Educational access</td>
+      <td class="govuk-table__cell">12.34 hectares</td>
+      <td class="govuk-table__cell"><a class="govuk-link" href="#">Change</a></td>
+    </tr>
+  </tbody>
+</table>
+  </div>
+</div>
+
+  <form class="form" action="tasklist-9" method="post">
+  <button type="submit" class="govuk-button govuk-button--disabled" data-module="govuk-button">
+    Confirm selection
+  </button>
+</form>
+</div>
+</div>
+
+<p class="govuk-body"><a class="govuk-link" href="#header">Back to top</a></p>
+
+</main>
+</div>
+
+{% endblock %}
