@@ -1,0 +1,156 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you approve this application?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                    Yes, but with minor changes
+                  </label>
+                </div>
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                    Yes, but with major changes
+                  </label>
+                </div>
+                  <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                    No - reject application
+                  </label>
+                </div>
+            </fieldset>
+          </div>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Have you asked a peer to review this decision?
+      </h2>
+    </legend>
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="contact">
+          Yes
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Name of reviewer
+          </label>
+          <input class="govuk-input govuk-!-width-two-thirds" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" autocomplete="email">
+        </div>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone">
+        <label class="govuk-label govuk-radios__label" for="contact-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+      <h3 class="govuk-heading-s">Application status</h3>
+  <p class="govuk-body">These are the decisions recorded by other advisers who have checked this applications.</p>
+
+          <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Organisation</th>
+      <th scope="col" class="govuk-table__header">Adviser</th>
+            <th scope="col" class="govuk-table__header">Approved</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Environmental Agency</th>
+      <td class="govuk-table__cell">Paul Smith</td>
+            <td class="govuk-table__cell">Yes with minor changes</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Forestry Commission</th>
+      <td class="govuk-table__cell">Mary Poppins</td>
+            <td class="govuk-table__cell">No - reject application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Natural England</th>
+      <td class="govuk-table__cell">Tom Rogers</td>
+            <td class="govuk-table__cell">Yes with major changes</td>
+    </tr>
+  </tbody>
+</table>
+
+       <form class="form" action="tasklist-5" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Submit
+</button>
+</form>
+
+    </div>
+  </div>
+
+</div>
+</main>
+
+{% endblock %}

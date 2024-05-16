@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Edit a single prescription</h1>
+
+<div class="govuk-panel govuk-panel--confirmation govuk-!-text-align-left" style="background-color:#fafafa; border-color:#000000; border-width:medium;">
+            <h2 class="govuk-heading-m">Select the land parcel</h2>
+            <div class="govuk-form-group">
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="comments"selected>SE7023 5004</option>
+    <option value="comments">SE7023 5005</option>
+    <option value="comments">SE7023 5006</option>
+    <option value="comments">SE7023 5007</option>
+    <option value="comments">SE7023 5008</option>
+    <option value="comments">SE7023 5009</option>
+    <option value="comments">SE7023 5010</option>
+    <option value="comments">SE7023 5011</option>
+    <option value="comments">SE7023 5012</option>
+    <option value="comments">SE7023 5013</option>
+  </select>
+</div>
+            <h2 class="govuk-heading-m">Select an action</h2>
+            <div class="govuk-form-group">
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="comments"selected>AB1: Nectar flower mix</option>
+    <option value="comments">AB3: Beetle banks</option>
+    <option value="comments">AB7: Whole crop cereals</option>
+    <option value="comments">AB11: Cultivated areas for arable plants</option>
+    <option value="comments">AB14: Harvested low input cereal</option>
+    <option value="comments">AB15: Two year sown legume fallow</option>
+    <option value="comments">ED1: Educational access</option>
+    <option value="comments">LH1: Management of lowland heathland</option>
+    <option value="comments">OR3: Organic conversion – rotational land</option>
+  </select>
+</div>
+            <h2 class="govuk-heading-m">Select the prescription</h2>
+            <div class="govuk-form-group">
+            <div class="govuk-form-group">
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="comments"selected>P10</option>
+    <option value="comments">P12</option>
+    <option value="comments">P14</option>
+    <option value="comments">P15</option>
+    <option value="comments">P40</option>
+    <option value="comments">P42</option>
+  </select>
+</div>
+      </div>
+    </div>
+
+<br>
+
+        <span class="govuk-caption-m">AB1: Nectar flower mix</span>
+        <h2 class="govuk-heading-m">You have selected P10 for the land parcel SE7023 5004</h2>
+
+<div class="govuk-form-group">
+  <p class="govuk-body">This action have to provide this many benefits by</p>
+  <input class="govuk-input" id="event-name" name="eventName" type="text" value="By year 2">
+</div>
+<div class="govuk-form-group">
+  <p class="govuk-body">And do not exceed</p>
+  <input class="govuk-input" id="event-name" name="eventName" type="text" value="35 centimetres below field level">
+</div>
+<div class="govuk-form-group">
+  <p class="govuk-body">And has to be done between</p>
+  <input class="govuk-input" id="event-name" name="eventName" type="text" value="August and November">
+</div>
+
+       <form class="form" action="#" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Save changes
+</button>
+</form>
+
+  <form class="form" action="prescriptions-parcels-list-edits" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Continue
+</button>
+</form>
+
+    </div>
+  </div>
+
+</div>
+</main>
+
+{% endblock %}

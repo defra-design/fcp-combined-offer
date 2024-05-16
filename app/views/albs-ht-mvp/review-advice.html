@@ -44,20 +44,18 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-full-column">
 
-      <h1 class="govuk-heading-l">Application objectives</h1>
+      <h1 class="govuk-heading-l">Review your advice</h1>
 
-  <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--m" for="more-detail">
-     Applicant's objectives
-    </label>
-  </h1>
-    <div id="more-detail-hint" class="govuk-hint">
-These are the objectives submitted by the applicant.
-</div>
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint" style="background-color:#F3F2F1;">My objectives for the agreement are the following:
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada et velit in iaculis. Maecenas aliquet mi suscipit aliquet efficitur. Nulla sed nisl a lectus congue iaculis eget ut lacus. Maecenas tempor feugiat lectus, vel maximus nunc scelerisque id. Sed bibendum neque augue, sed elementum leo rhoncus ut. Fusce nec libero ipsum. Nam auctor pulvinar mauris nec vulputate. Sed lacinia blandit lacus, in varius lacus rutrum vitae.</textarea>
-</div>
+<p class="govuk-body">
+<ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-body govuk-link" href="#">Print</a></li>
+        <li class="govuk-summary-list__actions-list-item govuk-!-margin-bottom-3"><a class="govuk-body govuk-link" href="#">Download</a></li>
+      </ul></p>
+
+      <p class="govuk-body govuk-!-font-weight-bold">You can view other advisors inputs:</p>
+          <p class="govuk-body"><a class="govuk-link" href="view-advice">Natural England</a></p>
+<p class="govuk-body"><a class="govuk-link" href="view-advice">Environmental Agency</a></p>
+  <p class="govuk-body govuk-!-margin-bottom-6"><a class="govuk-link" href="view-advice">Forestry Commission</a></p>
 
   <div class="govuk-form-group">
   <h2 class="govuk-label-wrapper">
@@ -68,12 +66,28 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada et v
   <div id="more-detail-hint" class="govuk-hint">
 Give the applicant feedback on their objectives - include any changes you would like to make
   </div>
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint"></textarea>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint">My objectives for the agreement are the following:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada et velit in iaculis. Maecenas aliquet mi suscipit aliquet efficitur. Nulla sed nisl a lectus congue iaculis eget ut lacus. Maecenas tempor feugiat lectus, vel maximus nunc scelerisque id. Sed bibendum neque augue, sed elementum leo rhoncus ut. Fusce nec libero ipsum. Nam auctor pulvinar mauris nec vulputate. Sed lacinia blandit lacus, in varius lacus rutrum vitae.</textarea>
    <p class="govuk-body">You have 3000 characters remaining.</p>
   <p class="govuk-body"><a class="govuk-link" href="#">Clear text</a></p>
 </div>
 
-      <form class="form" action="tasklist-2" method="post">
+  <div class="govuk-form-group">
+  <h2 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+Feedback on actions
+    </label>
+  </h2>
+  <div id="more-detail-hint" class="govuk-hint">
+Explain why you've approved or rejected the actions you have reviewed. The applicant will see this feedback.
+  </div>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint">My feedbacks on actions are the following:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada et velit in iaculis. Maecenas aliquet mi suscipit aliquet efficitur. Nulla sed nisl a lectus congue iaculis eget ut lacus. Maecenas tempor feugiat lectus, vel maximus nunc scelerisque id. Sed bibendum neque augue, sed elementum leo rhoncus ut. Fusce nec libero ipsum. Nam auctor pulvinar mauris nec vulputate. Sed lacinia blandit lacus, in varius lacus rutrum vitae.</textarea>
+   <p class="govuk-body">You have 3000 characters remaining.</p>
+  <p class="govuk-body"><a class="govuk-link" href="#">Clear text</a></p>
+</div>
+
+      <form class="form" action="tasklist-6" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Confirm
 </button>
