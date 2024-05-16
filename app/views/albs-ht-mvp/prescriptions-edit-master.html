@@ -130,7 +130,7 @@
       </div>
 
       <p>
-        <h1 class="govuk-heading-m">You have selected P10 for SE7023 5004</h1></p>
+        <h1 class="govuk-heading-m">You have selected P10</h1></p>
 <div class="govuk-form-group">
   <p class="govuk-body">This action have to provide this many benefits by</p>
   <input class="govuk-input" id="event-name" name="eventName" type="text" value="By year 2">
@@ -144,7 +144,73 @@
   <input class="govuk-input" id="event-name" name="eventName" type="text" value="August and November">
 </div>
 
-  <p class="govuk-body"><a class="govuk-link" href="#">I want to see the master prescription</a></p>
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Quantity</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Edits made</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5004</td>
+      <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5005</td>
+      <td class="govuk-table__cell" data-sort-value="001">234.34 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5006</td>
+      <td class="govuk-table__cell" data-sort-value="001">26.43 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5007</td>
+      <td class="govuk-table__cell" data-sort-value="001">5.32 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5008</td>
+      <td class="govuk-table__cell" data-sort-value="001">0.73 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
+      <td class="govuk-table__cell" data-sort-value="001">3.45 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5010</td>
+      <td class="govuk-table__cell" data-sort-value="001">6.21 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5011</td>
+      <td class="govuk-table__cell" data-sort-value="001">12.43 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5012</td>
+      <td class="govuk-table__cell" data-sort-value="001">45.20 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5013</td>
+      <td class="govuk-table__cell" data-sort-value="001">9.12 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+  </tbody>
+</table>
 
        <form class="form" action="tasklist-3" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
@@ -152,7 +218,7 @@
 </button>
 </form>
 
-  <form class="form" action="prescription-edit-single" method="post">
+  <form class="form" action="prescriptions-parcels-list-edits" method="post">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Continue
 </button>
