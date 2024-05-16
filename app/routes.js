@@ -15,11 +15,11 @@ router.post('/land-details-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (landDetailsAnswer == "yes"){
     // Send user to next page
-    res.redirect('/e2e-mvp/tasklist-2')
+    res.redirect('/sfi-mvp/tasklist-2')
 
   } else {
     // Send user to ineligible page
-    res.redirect('/e2e-mvp/update-land-details')
+    res.redirect('/sfi-mvp/update-land-details')
   }
 
 })
@@ -32,11 +32,11 @@ router.post('/management-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/e2e-mvp/hefer')
+    res.redirect('/sfi-mvp/hefer')
 
   } else {
     // Send user to ineligible page
-    res.redirect('/e2e-mvp/ineligible')
+    res.redirect('/sfi-mvp/ineligible')
   }
 
 })
@@ -49,11 +49,11 @@ router.post('/hefer-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/e2e-mvp/sssi')
+    res.redirect('/sfi-mvp/sssi')
 
   } else {
     // Send user to ineligible page
-    res.redirect('/e2e-mvp/ineligible')
+    res.redirect('/sfi-mvp/ineligible')
   }
 
 })
@@ -66,11 +66,11 @@ router.post('/sssi-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/e2e-mvp/ite')
+    res.redirect('/sfi-mvp/ite')
 
   } else {
     // Send user to ineligible page
-    res.redirect('/e2e-mvp/ineligible')
+    res.redirect('/sfi-mvp/ineligible')
   }
 
 })
@@ -83,11 +83,11 @@ router.post('/ite-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/e2e-mvp/public-body')
+    res.redirect('/sfi-mvp/public-body')
 
   } else {
     // Send user to ineligible page
-    res.redirect('/e2e-mvp/ineligible')
+    res.redirect('/sfi-mvp/ineligible')
   }
 
 })
@@ -100,11 +100,11 @@ router.post('/public-body-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/e2e-mvp/eligible')
+    res.redirect('/sfi-mvp/eligible')
 
   } else {
     // Send user to ineligible page
-    res.redirect('/e2e-mvp/ineligible')
+    res.redirect('/sfi-mvp/ineligible')
   }
 
 })
@@ -210,6 +210,5 @@ router.post('/public-body-answer-ht', function (req, res) {
   }
 
 })
-
 
 
