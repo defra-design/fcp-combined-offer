@@ -44,38 +44,88 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                <h1 class="govuk-fieldset__heading">
-                  Have you checked if SSSI consent has been given?
-                </h1>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                  <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                    No
-                  </label>
-                </div>
-            </fieldset>
+    <div class="govuk-error-summary" data-module="govuk-error-summary" style="display: none;" tabindex="-1">
+      <div role="alert">
+          <h2 class="govuk-error-summary__title">
+              There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                      <a href="#eligibility-bps">Select if SSSI consent has been given</a>
+                  </li>
+              </ul>
           </div>
-                <form class="form" action="dashboard" method="post">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Confirm
-          </button>
-        </form>
-      </div>
-    </div>
-  </main>
-</div>
 
+      </div>
+  </div>
+
+    <form class="form" method="post" onsubmit="return validateForm(event);">
+
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eligibility-bps-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Have you checked if SSSI consent has been given?
+                  </h1>
+              </legend>
+  
+              <p id="validation-error" class="govuk-error-message" style="display: none;">
+                  <span class="govuk-visually-hidden">Error:</span>Select is SSSI consent has been given
+              </p>
+  
+              <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="consents" name="consents" type="radio" value="dashboard">
+                      <label class="govuk-label govuk-radios__label" for="consents">
+                        Yes
+                      </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="consents" name="consents" type="radio" value="dashboard">
+                      <label class="govuk-label govuk-radios__label" for="consents">
+                        No
+                      </label>
+                  </div>
+              </div>
+  
+          </fieldset>
+      </div>
+  
+      <button class="govuk-button" data-module="govuk-button" type="submit">Continue</button>
+  
+  </form>
+  
+  <script>
+      function validateForm(event) {
+          event.preventDefault(); // Prevent the default form submission behavior
+  
+          var radios = document.getElementsByName('consents');
+          var errorElement = document.getElementById('validation-error');
+          var formGroup = document.querySelector('.govuk-form-group');
+          var errorSummary = document.querySelector('.govuk-error-summary');
+  
+          for (var i = 0; i < radios.length; i++) {
+              if (radios[i].checked) {
+                  errorElement.style.display = 'none';
+                  formGroup.classList.remove('govuk-form-group--error');
+                  errorSummary.style.display = 'none'; // Hide error summary
+                 
+                  
+                  window.location.href = 'dashboard.html'; 
+                  return true; // Form submission allowed
+              }
+          }
+  
+          // No radio button selected, display error message and add error styling
+          errorElement.style.display = 'block';
+          formGroup.classList.add('govuk-form-group--error');
+          errorSummary.style.display = 'block'; // Show error summary
+          return false; // Form submission blocked
+      }
+  </script>
+  
+  </div>
     </div>
   </div>
 
