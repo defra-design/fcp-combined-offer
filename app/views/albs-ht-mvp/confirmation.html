@@ -44,61 +44,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Review application</h1>
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Decision submitted
+          </h1>
+          <div class="govuk-panel__body">
+            Your reference number<br><strong>HDJ2123F</strong>
+          </div>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+               <p class="govuk-body">We have sent you a confirmation email.</p>
 
-      {% set completedStatus = {
-        text: "Completed"
-      } %}
-
-      {% set incompleteStatus = {
-        tag: {
-          text: "Incomplete",
-          classes: "govuk-tag--blue"
-        }
-      } %}
-
-      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
-
-      {{ govukTaskList({
-        idPrefix: "first-section",
-        items: [
-          {
-            title: {
-              text: "Application objectives"
-            },
-            href: "objectives",
-            status: completedStatus
-          },
-          {
-            title: {
-              text: "Prescriptions"
-            },
-            href: "prescriptions-parcels-list-edits",
-            status: completedStatus
-          },
-          {
-            title: {
-              text: "Actions"
-            },
-            href: "review-parcels-list-edits",
-            status: completedStatus
-          },
-          {
-            title: {
-              text: "Approve"
-            },
-            href: "approval",
-            status: completedStatus
-          },
-              {
-            title: {
-              text: "Review advice"
-            },
-            href: "review-advice",
-            status: completedStatus
-          }
-        ]
-      }) }}
+    <form class="form" action="dashboard-after" method="post">
+      <button class="govuk-button" data-module="govuk-button" type="submit">Close</button>  
+      </form>
 
     </div>
   </div>
