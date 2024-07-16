@@ -1,0 +1,142 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- Header / Name and CTA -->
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+
+<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Smith Farm Ltd <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span></div>
+
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+  </button>
+
+</div>
+</div>
+</div>
+
+<!-- Start of main body container -->
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-l">Select land for your actions</h1>
+
+      <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
+      <map name="clickable">
+          <area shape="rect" coords="70,300,160,350" href="select-land">
+          <area shape="rect" coords="180,110,270,160" href="select-land">
+      </map>
+      <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_1.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+      <div class="govuk-!-padding-bottom-4"></div>
+      
+      <p class="govuk-body">Key:</p>
+      <div class="key-div govuk-!-margin-bottom-4"></div>
+      <div class="key-parent" id="key5"></div><span class="govuk-body-s">Map Sheet</span>
+      <div class="key-parent" id="key2"></div><span class="govuk-body-s">Selected</span>
+
+      <div class="key-div govuk-!-margin-bottom-6"></div>
+   
+
+    <div class="govuk-form-group">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <h2 class="govuk-fieldset__heading">
+        Select a grid reference
+      </h2>
+      </legend>
+      <div id="signIn-hint" class="govuk-hint">
+      This will let you view land parcels and add actions to them. 
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn">
+          SO3
+        </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          <span class="govuk-body govuk-!-font-weight-bold"> 15 </span> land parcels on<span class="govuk-body govuk-!-font-weight-bold"> 30.4 </span> hectares
+      <div class="govuk-!-padding-bottom-2"></div>
+        </div>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+        <label class="govuk-label govuk-radios__label" for="signIn">
+          SX2
+        </label>
+        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+          <span class="govuk-body govuk-!-font-weight-bold"> 17 </span> land parcels on<span class="govuk-body govuk-!-font-weight-bold"> 40.3 </span> hectares
+      <div class="govuk-!-padding-bottom-2"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <form class="form" action="tasklist-6" method="post">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Continue
+    </button>
+  </form>
+
+</div>
+
+<div class="govuk-grid-column-one-half">
+    <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Summary</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Amount</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Number of available land parcels</th>
+      <td class="govuk-table__cell">22</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total area</th>
+      <td class="govuk-table__cell">70.6940</td>
+    </tr>
+
+
+  </tbody>
+</table>
+  </div>
+
+
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
