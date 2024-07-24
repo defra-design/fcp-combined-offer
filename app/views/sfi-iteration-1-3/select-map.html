@@ -40,7 +40,7 @@
 <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
+  <div class="govuk-grid-column-full">
       <h1 class="govuk-heading-l">Select land for your actions</h1>
 
       <h3 class="govuk-heading-m">Select a grid reference</h3>
@@ -80,32 +80,28 @@
 </div>
       
 
-      <form class="form" action="select-land" method="post">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-           Continue
-          </button>
-        </form>
-
     </div>
     
-      <div class="govuk-grid-column-one-half govuk-!-margin-bottom-5">
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
     <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
   <map name="clickable">
         <area shape="rect" coords="70,300,160,350" href="select-land">
-        <area shape="rect" coords="180,110,270,160" href="select-land">
+        <area shape="rect" coords="200,110,270,160" href="select-land">
           </map>
-<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-1/img/map_1.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-1/img/map_1.png" alt="Map of your land" style="width:930px;height:800px;"></a>
     
 <br>
 <br>
        <p class="govuk-body">Keys:</p>
        <div class="key-div govuk-!-margin-bottom-5">
-       <div class="key-parent" id="key-mapsheet"></div><span class="govuk-body-s" style="width:120px;display:inline-block">Grid reference</span>
+       <div class="key-parent" id="key-mapsheet"></div><span class="govuk-body-s" style="width:80px;display:inline-block">Map Sheet</span>
        <div class="key-parent" id="key-mapselected"></div><span class="govuk-body-s" >Selected</span>
       
-
     </div>
-
+    <br>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+  
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Summary</caption>
   <thead class="govuk-table__head">
@@ -127,6 +123,14 @@
   </tbody>
 </table>
 
+<form class="form" action="select-land" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+           Confirm selection
+          </button>
+        </form>
+
+  </div>
+</div>
 </div>
 
 </main>
