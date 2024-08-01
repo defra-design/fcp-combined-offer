@@ -50,12 +50,23 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds"> 
-    <p>You are viewing <span class="govuk-body govuk-!-font-weight-bold"> OS Map Sheet Reference SO3</span>, which has <span class="govuk-body govuk-!-font-weight-bold"> 30.3780 </span> hectares over <span class="govuk-body govuk-!-font-weight-bold"> 15 </span> land parcels. </p>
+     <p class="govuk-body">Now viewing grid reference SO3. This is made up of:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>15 land parcels</li>
+  <li>30.3780 hectares</li>
+</ul>
 
-    <p class="govuk-body"><a href="select-map" class="govuk-link">Select another OS map sheet reference</a></p>
+<p class="govuk-body">
+  <a href="select-map" class="govuk-link govuk-link--no-visited-state">View a different grid reference</a>
+</p>
 
-    <p class="govuk-body"><a href="select-land" class="govuk-link">Hide list and show map instead</a></p>
+ <h2 class="govuk-heading-m">Select a land parcel</h2>
+
+ <p class="govuk-body">Select the area on the map you want to add actions to.</p>
+
+ <p class="govuk-body"><a href="select-land" class="govuk-link">Show land parcels on a map instead</a></p>
   </div>
+
 
 <!-- Parcel numbers -->
 
@@ -136,12 +147,6 @@
 
 <!---Text underneath----> 
 
-<div class="govuk-grid-column-two-thirds">
-  <p class="govuk-body">If a land parcel is not shown, the land use codes declared are not eligible for the actions you’ve selected.</p>
-
-  <p class="govuk-body"><a href="https://www.gov.uk/guidance/what-land-is-eligible-for-an-sfi-agreement#how-we-define-eligible-land-types-and-features-for-sfi" class="govuk-link">You must check land types and features are eligible for actions.</a></p>
-</div>
-
 
 <!---Select actions---->
 
@@ -149,20 +154,28 @@
 <div class="govuk-grid-column-two-thirds">
   <div class="govuk-!-padding-bottom-2"></div>
     <h2 class="govuk-heading-m">Actions</h2>
-    <p>You have selected <span class="govuk-body govuk-!-font-weight-bold"> 0 </span> action(s) on<span class="govuk-body govuk-!-font-weight-bold"> 0 </span> land parcel(s).</p>
+
+<div class="govuk-!-padding-bottom-2"></div>
+
+
+<p class="govuk-body">You will only see actions that are compatible with the land parcel you have selected.</p>  
+
+<p class="govuk-body">You have selected 0 actions on 0 land parcels.</p> 
+
+ </div>
 </div>
 
-<!---Select actions table---->
-
+<div class="govuk-grid-row">
 <div class="govuk-grid-column-full">
-<table class="govuk-table">
- 
-   <tr class="govuk-table__row">
-    <th scope="col" class="govuk-table__header"></th>
-    <th scope="col" class="govuk-table__header">Action</th>
-    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Available area</th>
-    <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Quantity</th>
-  </tr>
+ <table class="govuk-table">
+  
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header "></th>
+      <th scope="col" class="govuk-table__header ">Action</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Available area</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Quantity</th>
+    </tr>
+
 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -171,23 +184,21 @@
     </td>
   </tr>
   </tbody>
+
 </table>
 </div>
-
-
-<!---Select actions text and CTAs---->
-
-<div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body">You have chosen a total of 30 actions. You can only see the actions that are eligible for the selected land parcel, <a href="select-actions" class="govuk-link">return to list to select actions</a>.</p>
-
-    <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
-      Update actions on land parcel
-    </button>
 </div>
 
-<div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
+  Update land parcels
+</button>
+<br>
 <button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-   Confirm selection
+ Save and continue
 </button>
 </div>
 
