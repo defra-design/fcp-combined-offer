@@ -54,6 +54,14 @@
     margin: 4px;
 }
 
+
+@media only screen and (max-width: 600px) {
+  .image-size {
+  width: 100%;
+  }
+  }
+
+
   #key1 {
   width: 2em;
   height: 2em;
@@ -125,6 +133,33 @@
   background-color: #249CFF;
 }
 
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  
+}
+
+/* Bottom right text */
+.text-block {
+  position: absolute;
+  width: 350px;
+  bottom: 20px;
+  right: 0px;
+  background-color: White;
+  color: black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+ 
+}
+
+.pointer {cursor: pointer;}
 
 
-
+.red-border {
+  box-shadow: -5px 0px 0px 0px #D4351C;
+  }
+ 
+.red-border-padding {
+  padding: 15px;
+  }

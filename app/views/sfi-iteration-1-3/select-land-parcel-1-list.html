@@ -50,11 +50,11 @@
   </div>
 
   <div class="govuk-grid-column-two-thirds"> 
-    <p>You are viewing <span class="govuk-body govuk-!-font-weight-bold"> OS Map Sheet Reference SO3 </span> which has <span class="govuk-body govuk-!-font-weight-bold"> 30.4 </span> hectares over <span class="govuk-body govuk-!-font-weight-bold"> 15 </span> land parcels. </p>
+    <p>You are viewing <span class="govuk-body govuk-!-font-weight-bold"> OS Map Sheet Reference SO3</span>, which has <span class="govuk-body govuk-!-font-weight-bold"> 30.3780 </span> hectares over <span class="govuk-body govuk-!-font-weight-bold"> 15 </span> land parcels. </p>
 
-    <p class="govuk-body"><a href="select-map" class="govuk-link">Select another OS map sheet reference</a></p>
+    <p class="govuk-body"><a href="select-map" class="govuk-link govuk-link--no-visited-state">Select another OS map sheet reference</a></p>
 
-    <p class="govuk-body"><a href="select-land" class="govuk-link">Hide list and show map instead</a></p>
+    <p class="govuk-body"><a href="select-land-parcel-1" class="govuk-link">Hide list and show map instead</a></p>
   </div>
 
 <!-- Parcel numbers -->
@@ -106,11 +106,11 @@
     </tr>
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3159</th>
+      <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-2-list" class="govuk-link">SO3757 3159</th>
       <td class="govuk-table__cell">1.6620</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-2-list" class="govuk-link">SO3757 3160</th>
+      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3160</th>
       <td class="govuk-table__cell">3.2940</td>
     </tr>
         <tr class="govuk-table__row">
@@ -181,8 +181,9 @@
 <div class="govuk-grid-column-two-thirds">
   <div class="govuk-!-padding-bottom-2"></div>
 
-  <h2 class="govuk-heading-m">Select actions to apply on land parcels</h2>
-  <p>You have selected <span class="govuk-body govuk-!-font-weight-bold"> 0 </span> action(s) on<span class="govuk-body govuk-!-font-weight-bold"> 0 </span> land parcel(s).</p>
+  <h2 class="govuk-heading-m">Actions for parcel number SO3757 3158</h2>
+  
+  <p class="govuk-body">You have selected <span class="govuk-!-font-weight-bold">0</span> actions on <span class="govuk-!-font-weight-bold">0</span> land parcels.</p> 
 </div>
 
 <div class="govuk-grid-column-full">
@@ -530,15 +531,17 @@
 <div class="govuk-grid-column-two-thirds">
     <p class="govuk-body">You have chosen a total of 30 actions. You can only see the actions that are eligible for the selected land parcel, <a href="select-actions" class="govuk-link">return to list to select actions</a>.</p>
 
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-  Update actions on land parcel
-    </button>
+    <form class="form" action="select-land-parcel-1-applied-list" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+           Update actions on land parcels
+          </button>
+        </form>
 
-</div>
-
-<div class="govuk-grid-column-two-thirds">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Confirm my selection</button>
-</div>
+<form class="form" action="select-land-parcel-1-applied" method="post">
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+   Confirm selection
+</button>
+  </form>
 
 
 </main>
