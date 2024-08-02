@@ -44,6 +44,8 @@
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
+<!---Error message---> 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-three-quarters">
          <div class="govuk-error-summary" data-module="govuk-error-summary">
@@ -54,7 +56,7 @@
             <div class="govuk-error-summary__body">
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#">You cannot do OFC1 on the same parcel as SOH4</a>
+                  <a href="#">You cannot do OFC1 on this land parcel</a>
                 </li>
               </ul>
             </div>
@@ -63,43 +65,66 @@
       </div>
     </div>
 
+
+<!---H1---> 
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l">Select land for your actions</h1>
   </div>
 </div>
 
+<!-- Left hand side container --->
 
-<!-- Left hand -->
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
+
+
+    <!-- Intro text--->
+
+    <p>Now viewing grid reference SO3. This is made up of: </p>
     
-    <h2 class="govuk-heading-m">Select land parcels on map or list</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>15 land parcels</li>
+      <li>30.3780 hectares</li>
+    </ul>
 
-      <p>You are viewing <span class="govuk-body govuk-!-font-weight-bold"> OS Map Sheet Reference SO3 </span> which has <span class="govuk-body govuk-!-font-weight-bold"> 30.4 </span> hectares over <span class="govuk-body govuk-!-font-weight-bold"> 15 </span> land parcels. </p>
+    <p class="govuk-body"><a href="select-map" class="govuk-link">View a different grid reference</a></p>
 
-      <p class="govuk-body"><a href="select-map-so3" class="govuk-link">Select another OS map sheet reference</a></p>
 
-      <p class="govuk-body"><a href="select-land-parcel-2-list" class="govuk-link">Hide map and show list instead</a></p>
+    <!-- Select land--->
+  
+    <h2 class="govuk-heading-m">Select a land parcel</h2>
+
+      <p>Select the area on the map you want to add actions to. </p>
+      <p>To save the actions you’ve added to a land parcel, select ‘update actions on land parcel’, and then ‘confirm my selection’.</p>
+      <p>Repeat this for all the land parcels you want to add actions to.</p>
+
+
+      <p class="govuk-body"><a href="select-land-parcel-2-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
 
           <map name="clickable">
           <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
           <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
                   </map>
-<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-2/img/map_5.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+      <img usemap="#clickable" src="https://github.com/defra-design/fcp-combined-offer/blob/sfi-iteration-1-2/app/views/sfi-iteration-1-2/img/map_6.png?raw=true" alt="Map of your land" style="width:465px;height:400px;"></a>
 
-       <p class="govuk-body">Key:</p>
-      <div class="key-div govuk-!-margin-bottom-5">
-      <div class="key-parent" id="key1"></div><span class="govuk-body-s" style="width:80px;display:inline-block">Error</span>
+      <div class="key-div govuk-!-margin-bottom-5"></div>
+
+      <p class="govuk-body" style="margin-bottom: 10px;">Key:</p>
+      <div class="key-parent" id="key1"></div><span class="govuk-body-s" style="width:100px;display:inline-block">Error</span>
+
       <div class="key-parent" id="key2"></div><span class="govuk-body-s" >Selected</span>
-      <br>
-      <br>
-      <div class="key-parent" id="key3"></div><span class="govuk-body-s"style="width:80px;display:inline-block">Actions</span>
-      <div class="key-parent" id="key4"></div><span class="govuk-body-s">No actions added</span>
-     </div>
 
-<div class="govuk-inset-text">
-      <p>You have selected <span class="govuk-body govuk-!-font-weight-bold"> SO3757 3160</span>, which has <span class="govuk-body govuk-!-font-weight-bold"> 3.2940 </span> hectares.</p>
+      <br>
+      <br>
+
+      <div class="key-parent" id="key3"></div><span class="govuk-body-s"style="width:100px;display:inline-block">Actions</span>
+
+      <div class="key-parent" id="key4"></div><span class="govuk-body-s">No actions added</span>
+
+    <div class="govuk-inset-text">
+      <p>You have selected SO3757 3159, which has 1.6620 hectares.</p>
 
       <p><span class="govuk-body govuk-!-font-weight-bold">Land use:</span></p>
       <p>Permanent grassland: 1.9130 ha</p>
@@ -109,34 +134,29 @@
       
       <p><span class="govuk-body govuk-!-font-weight-bold">Layer Intersections:</span></p>
       <p>Biodiversity, SSSI, LFA-MS</p>
-      </div>
 
-      <p>If a land parcel is not shown, the land use codes declared are not eligible for the actions you’ve selected.</p>
-
-      <p class="govuk-body"><a href="https://www.gov.uk/guidance/what-land-is-eligible-for-an-sfi-agreement#how-we-define-eligible-land-types-and-features-for-sfi" class="govuk-link">You must check land types and features are eligible for actions.</a></p>
-
+    </div>
 </div>
 
-
-<!-- Right hand -->
+<!-- Right hand side container -->
 
   <div class="govuk-grid-column-one-half">
-  <h2 class="govuk-heading-m">Select actions to apply on land parcels</h2>
-  <p>You have selected <span class="govuk-body govuk-!-font-weight-bold"> 4 </span> action(s) on<span class="govuk-body govuk-!-font-weight-bold"> 1 </span> land parcel(s).</p>
+  <h2 class="govuk-heading-m">Actions for parcel number SO3757 3159</h2>
 
-<!-- Actions -->
-<table class="govuk-table"> 
-    <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-    <th scope="col" class="govuk-table__header"></th>
-    <th scope="col" class="govuk-table__header">Action</th>
-    <th scope="col" class="govuk-table__header">Available area</th>          
-    <th scope="col" class="govuk-table__header">Quantity</th>
-    </tr>
-    </thead>
+  <p>You will only see actions that are compatible with the land parcel you have selected.</p>
 
+  <p>You have selected 4 actions on 1 land parcel.</p>
 
-
+  <table class="govuk-table">
+  
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header">Action</th>
+          <th scope="col" class="govuk-table__header">Available area</th>          
+          <th scope="col" class="govuk-table__header">Quantity</th>
+        </tr>
+      </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
@@ -309,43 +329,39 @@
         </tr>
 
 
-<!---Table error cell---> 
+      <!---Table error cell---> 
 
       <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="border-bottom-color: white" colspan="4">
-          </td>
-          </tr>
-          <tr class="govuk-table__row red-border">
-          <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white"; colspan="4">
-          <p id="nationality-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>You cannot do this action on the same parcel as SOH4</p>
-          </td>
-          </tr>
-          <tr class="govuk-table__row red-border">
-          <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white";>
-          <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="action" type="checkbox" value="action">
-          <label class="govuk-label govuk-checkboxes__label" for="action">
-          </label>
-          </div>
-          </td>
-          <td class="govuk-table__cell" style="border-bottom-color: white";>OFC1 – Organic conversion - improved permanent grassland</td>
-          <td class="govuk-table__cell" style="border-bottom-color: white";>1.6975</td>
-          <td class="govuk-table__cell" style="border-bottom-color: white";><div class="govuk-form-group">
-          <div class="govuk-input__wrapper">
-          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
-          <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-          </div>
-          </div>
-          </td>
-          </tr>
-          <tr class="govuk-table__row">
-          <td class="govuk-table__cell" colspan="4">
-          </td>
-          </tr>
+          <td class="govuk-table__cell" style="border-bottom-color: white" colspan="4"></td>
+      </tr>
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white"; colspan="4">
+        <p id="nationality-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span>You cannot do OFC1 on this land parcel</p>
+        </td>
+      </tr>
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white";><div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="action" type="checkbox" value="action" checked>
+        <label class="govuk-label govuk-checkboxes__label" for="action"></label></div>
+        </td><td class="govuk-table__cell" style="border-bottom-color: white";>OFC1 – Organic conversion - improved permanent grassland</td><td class="govuk-table__cell" style="border-bottom-color: white";>1.6975</td>
+        <td class="govuk-table__cell" style="border-bottom-color: white";><div class="govuk-form-group">
+        <div class="govuk-input__wrapper">
+        <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+        <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+        </div>
+        </div>
+        </td>
+        </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">
+        </td>
+      </tr>
 
 
-           <tr class="govuk-table__row">
+                  
+
+      <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
           <label class="govuk-label govuk-checkboxes__label" for="waste">
@@ -460,18 +476,16 @@
         </tr>
       </tbody>
     </table>
-  </div>
 
 
-<p class="govuk-body">You have chosen a total of 30 actions. You can only see the actions that are eligible for the selected land parcel, <a href="select-actions" class="govuk-link">return to list to select actions</a>.</p>
+<form class="form" action="select-land-parcel-2-applied" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">Update land parcel</button>
+</form>
 
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Update actions on land parcel
-</button>
-
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Confirm my selection
-</button>
+<form class="form" action="tasklist-6" method="post">
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and continue</button>
+</form>
 
     </div>
 
@@ -480,4 +494,3 @@
 </main>
 </div>
 {% endblock %}
-              

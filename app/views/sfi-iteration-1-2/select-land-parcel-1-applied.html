@@ -50,7 +50,8 @@
   </div>
 </div>
 
-<!-- Left hand --->
+<!-- Left hand side container --->
+
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
 
@@ -76,12 +77,13 @@
       <p>Repeat this for all the land parcels you want to add actions to.</p>
 
 
-      <p class="govuk-body"><a href="select-land-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
+      <p class="govuk-body"><a href="select-land-parcel-1-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
 
           <map name="clickable">
           <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
           <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
                   </map>
+      
       <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-2/img/map_4.png" alt="Map of your land" style="width:465px;height:400px;"></a>
 
       <div class="key-div govuk-!-margin-bottom-5"></div>
@@ -99,7 +101,7 @@
       <div class="key-parent" id="key4"></div><span class="govuk-body-s">No actions added</span>
 
     <div class="govuk-inset-text">
-      <p>You have selected <span class="govuk-body govuk-!-font-weight-bold"> SO3757 3158</span>, which has <span class="govuk-body govuk-!-font-weight-bold"> 33.0404 </span> hectares.</p>
+      <p> You have selected SO3757 3158, which has 3.0404 hectares.</p>
 
       <p><span class="govuk-body govuk-!-font-weight-bold">Land use:</span></p>
       <p>Permanent grassland: 1.5760 ha</p>
@@ -109,8 +111,8 @@
       
       <p><span class="govuk-body govuk-!-font-weight-bold">Layer Intersections:</span></p>
       <p>Biodiversity, SSSI, LFA-MS</p>
-
     </div>
+
 </div>
 
 <!-- Right hand side container-->
@@ -120,7 +122,7 @@
 
   <p>You will only see actions that are compatible with the land parcel you have selected.</p>
 
-  <p>You have selected 4 actions on 1 land parcel.</p>
+  <p>You have selected 4 actions on 1 land parcels.</p>
 
   <table class="govuk-table">
   
@@ -455,7 +457,7 @@
     </table>
 
 
-<form class="form" action="select-land-parcel-1-applied" method="post">
+<form class="form" action="select-land-parcel-1-applied-list" method="post">
   <button type="submit" class="govuk-button" data-module="govuk-button">Update land parcel</button>
 </form>
 
@@ -466,8 +468,8 @@
 
     </div>
 
-  </div>
 
+</div>
 </main>
 </div>
 {% endblock %}
