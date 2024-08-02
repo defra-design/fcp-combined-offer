@@ -52,8 +52,10 @@
     display: inline-block;
     vertical-align: middle;
     margin: 4px;
+    margin-right: 8px; 
 }
 
+  /* Key=Error */ 
   #key1 {
   width: 2em;
   height: 2em;
@@ -61,70 +63,41 @@
   background-color: #FADD4B;
 }
 
+  /* Key=Selected */ 
   #key2 {
   width: 2em;
   height: 2em;
-  border: 12px solid #001EF5;
+  border: 4px solid #001EF5;
   background-color: #96CDF6;
 }
 
+  /* Key=Action */ 
   #key3 {
   width: 2em;
   height: 2em;
-  border: 4px solid #A46E53;
-  background-color: #F1DEB8;
+  border: 4px solid #586B19;
+  background-color: #9CB34F;
 }
 
   #key4 {
   width: 2em;
   height: 2em;
-  border: 4px solid #2C6739;
-  background-color: #899855;
-}
-
-#key1-1 {
-  width: 2em;
-  height: 2em;
- border: 4px solid #E53724;
-  background-color: #FFDF2C;
-}
-
-#key2-1 {
-  width: 2em;
-  height: 2em;
- border: 4px solid #001EF5;
-  background-color: #249CFF;
-}
-
-
-#key3-1 {
-  width: 2em;
-  height: 2em;
- border: 4px solid #586B19;
-  background-color: #9CB34F;
-}
-
-#key4-1 {
-  width: 2em;
-  height: 2em;
- border: 4px solid #76AD24;
+  border: 4px solid #76AD24;
   background-color: #EDFDD5;
 }
 
-#key-mapsheet {
+  #key5 {
   width: 2em;
   height: 2em;
- border: 4px solid #636B70;
+  border: 2px solid #636B70;
   background-color: #FADD4B;
 }
 
-#key-mapselected {
-  width: 2em;
-  height: 2em;
- border: 4px solid #001EF5;
-  background-color: #249CFF;
-}
 
-
-
-
+.red-border {
+  box-shadow: -5px 0px 0px 0px #D4351C;
+  }
+ 
+.red-border-padding {
+  padding: 15px;
+  }
