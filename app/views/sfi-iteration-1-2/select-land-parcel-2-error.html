@@ -124,17 +124,19 @@
   <h2 class="govuk-heading-m">Select actions to apply on land parcels</h2>
   <p>You have selected <span class="govuk-body govuk-!-font-weight-bold"> 4 </span> action(s) on<span class="govuk-body govuk-!-font-weight-bold"> 1 </span> land parcel(s).</p>
 
+<!-- Actions -->
+<table class="govuk-table"> 
+    <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header"></th>
+    <th scope="col" class="govuk-table__header">Action</th>
+    <th scope="col" class="govuk-table__header">Available area</th>          
+    <th scope="col" class="govuk-table__header">Quantity</th>
+    </tr>
+    </thead>
 
-  <table class="govuk-table">
-  
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header"></th>
-          <th scope="col" class="govuk-table__header">Action</th>
-          <th scope="col" class="govuk-table__header">Available area</th>          
-          <th scope="col" class="govuk-table__header">Quantity</th>
-        </tr>
-      </thead>
+
+
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
@@ -306,49 +308,41 @@
       </div></td>
         </tr>
 
-        <tr class="govuk-table__row">
-        <div class="govuk-form-group govuk-form-group--error">
-          <p id="nationality-error" class="govuk-error-message">
-            <span class="govuk-visually-hidden">Error:</span> You cannot do this action on the same parcel as SOH4
-              </p>
-          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input--error" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-          </label>
-          </div>
-        </th>
-      </div>
-          <td class="govuk-table__cell">OFC1 – Organic conversion - improved permanent grassland</td>
-           
-          <td class="govuk-table__cell">1.6975</td>
-           </th>
-          <td class="govuk-table__cell">  <div class="govuk-form-group">
-      <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
-      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-      </div>
-      </div></td>
-        </tr>
-      </div>
 
-           <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
+<!---Table error cell---> 
+
+      <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="border-bottom-color: white" colspan="4">
+          </td>
+          </tr>
+          <tr class="govuk-table__row red-border">
+          <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white"; colspan="4">
+          <p id="nationality-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>You cannot do this action on the same parcel as SOH4</p>
+          </td>
+          </tr>
+          <tr class="govuk-table__row red-border">
+          <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white";>
+          <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="action" type="checkbox" value="action">
+          <label class="govuk-label govuk-checkboxes__label" for="action">
           </label>
           </div>
-          </th>
-          <td class="govuk-table__cell">OFC1 – Organic conversion - improved permanent grassland</td>
-           </th>
-          <td class="govuk-table__cell">1.6975</td>
-           </th>
-          <td class="govuk-table__cell">  <div class="govuk-form-group">
-      <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
-      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-      </div>
-      </div></td>
-        </tr>
+          </td>
+          <td class="govuk-table__cell" style="border-bottom-color: white";>OFC1 – Organic conversion - improved permanent grassland</td>
+          <td class="govuk-table__cell" style="border-bottom-color: white";>1.6975</td>
+          <td class="govuk-table__cell" style="border-bottom-color: white";><div class="govuk-form-group">
+          <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+          </div>
+          </div>
+          </td>
+          </tr>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="4">
+          </td>
+          </tr>
 
 
            <tr class="govuk-table__row">
@@ -466,6 +460,8 @@
         </tr>
       </tbody>
     </table>
+  </div>
+
 
 <p class="govuk-body">You have chosen a total of 30 actions. You can only see the actions that are eligible for the selected land parcel, <a href="select-actions" class="govuk-link">return to list to select actions</a>.</p>
 

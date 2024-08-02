@@ -113,7 +113,7 @@
       <td class="govuk-table__cell">1.6620</td>
     </tr>
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-2-list" class="govuk-link">SO3757 3160</th>
+      <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-2-list" class="govuk-link">SO3757 3160</a></th>
       <td class="govuk-table__cell">3.2940</td>
     </tr>
         <tr class="govuk-table__row">
@@ -522,13 +522,19 @@
 
 <p class="govuk-body">You have chosen a total of 30 actions. You can only see the actions that are eligible for the selected land parcel, <a href="select-actions" class="govuk-link">return to list to select actions</a>.</p>
 
-<button type="submit" class="govuk-button" data-module="govuk-button">
+<form class="form" action="select-land-parcel-1-applied-list" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
   Update actions on land parcel
-</button>
+  </button>
+</form>
 
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Confirm my selection
-</button>
+<form class="form" action="tasklist-6" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Confirm my selection
+    </button>
+</form>
+
+
 
     </div>
 

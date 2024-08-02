@@ -44,14 +44,19 @@
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Select land for your actions</h1>
+  </div>
+</div>
+
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
-      <h1 class="govuk-heading-l">Select land for your actions</h1>
 
       <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
       <map name="clickable">
-          <area shape="rect" coords="70,300,160,350" href="select-map-so3">
-          <area shape="rect" coords="180,110,270,160" href="select-land">
+          <area shape="rect" coords="70,300,160,350" href="select-land">
+          <area shape="rect" coords="180,110,270,160" href="select-map-so3">
       </map>
       <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-2/img/map_2.png" alt="Map of your land" style="width:465px;height:400px;"></a>
 
@@ -59,8 +64,9 @@
       
       <p class="govuk-body">Key:</p>
       <div class="key-div govuk-!-margin-bottom-4"></div>
-      <div class="key-parent" id="key5"></div><span class="govuk-body-s">Grid reference</span>
-      <div class="key-parent" id="key2"></div><span class="govuk-body-s">Selected</span>
+        <div class="key-parent" id="key5"></div><span class="govuk-body-s" style="padding-right: 30px;">Grid reference</span>
+
+        <div class="key-parent" id="key2"></div><span class="govuk-body-s">Selected</span>
 
       <div class="key-div govuk-!-margin-bottom-6"></div>
    
@@ -76,7 +82,7 @@
       </div>
       <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint" checked>
+        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint"checked>
         <label class="govuk-label govuk-radios__label" for="signIn">
           SO3
         </label>
@@ -124,7 +130,7 @@
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Total area</th>
-      <td class="govuk-table__cell">70.6940</td>
+      <td class="govuk-table__cell">70.6940 ha</td>
     </tr>
   </tbody>
   </table>
