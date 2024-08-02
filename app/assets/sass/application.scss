@@ -51,85 +51,47 @@
     width: 23vw;
     display: inline-block;
     vertical-align: middle;
-    margin-right: 8px;
+    margin: 4px;
+    margin-right: 8px; 
 }
 
-
-
-@media only screen and (max-width: 600px) {
-  .image-size {
-  width: 100%;
-  }
-  }
-
-
-#key1-1 {
+  /* Key=Error */ 
+  #key1 {
   width: 2em;
   height: 2em;
- border: 4px solid #E53724;
-  background-color: #FFDF2C;
-
-}
-
-
-
-#key2-1 {
-  width: 2em;
-  height: 2em;
- border: 4px solid #001EF5;
-  background-color: #249CFF;
-}
-
-
-#key3-1 {
-  width: 2em;
-  height: 2em;
- border: 4px solid #586B19;
-  background-color: #9CB34F;
-}
-
-#key4-1 {
-  width: 2em;
-  height: 2em;
- border: 4px solid #76AD24;
-  background-color: #EDFDD5;
-}
-
-#key-mapsheet {
-  width: 2em;
-  height: 2em;
- border: 4px solid #636B70;
+  border: 4px solid #E53724;
   background-color: #FADD4B;
 }
 
-#key-mapselected {
+  /* Key=Selected */ 
+  #key2 {
   width: 2em;
   height: 2em;
- border: 4px solid #001EF5;
-  background-color: #249CFF;
+  border: 4px solid #001EF5;
+  background-color: #96CDF6;
 }
 
-/* Container holding the image and the text */
-.container {
-  position: relative;
-  
+  /* Key=Action */ 
+  #key3 {
+  width: 2em;
+  height: 2em;
+  border: 4px solid #586B19;
+  background-color: #9CB34F;
 }
 
-/* Bottom right text */
-.text-block {
-  position: absolute;
-  width: 350px;
-  bottom: 20px;
-  right: 20px;
-  background-color: White;
-  color: black;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-top: 20px;
- 
+  #key4 {
+  width: 2em;
+  height: 2em;
+  border: 4px solid #76AD24;
+  background-color: #EDFDD5;
 }
 
-.pointer {cursor: pointer;}
+  #key5 {
+  width: 2em;
+  height: 2em;
+  border: 2px solid #636B70;
+  background-color: #FADD4B;
+}
 
 
 .red-border {
@@ -139,11 +101,3 @@
 .red-border-padding {
   padding: 15px;
   }
-
-
-  @media screen and (min-width: 600px)  {
-        .mobile-break { display: none; }
-    }
-
-
-
