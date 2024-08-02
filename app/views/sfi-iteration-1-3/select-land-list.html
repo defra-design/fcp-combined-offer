@@ -1,0 +1,208 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- Header / Name and CTA -->
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+
+<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Smith Farm Ltd <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span></div>
+
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+  </button>
+
+</div>
+</div>
+</div>
+
+<!-- Start of main body container -->
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Select land for your actions</h1>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds"> 
+     <p class="govuk-body">Now viewing grid reference SO3. This is made up of:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>15 land parcels</li>
+  <li>30.3780 hectares</li>
+</ul>
+
+<p class="govuk-body">
+  <a href="select-map" class="govuk-link govuk-link--no-visited-state">View a different grid reference</a>
+</p>
+
+ <h2 class="govuk-heading-m">Select a land parcel</h2>
+
+ <p class="govuk-body">Select the area on the map you want to add actions to.</p>
+
+ <p class="govuk-body"><a href="select-land" class="govuk-link">Show land parcels on a map instead</a></p>
+  </div>
+
+
+<!-- Parcel numbers -->
+
+<div class="govuk-grid-column-two-thirds">
+    <table class="govuk-table">
+    
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Parcel number</th>
+        <th scope="col" class="govuk-table__header">Hectares</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-1-list" class="govuk-link">SO3757 3158</th>
+        <td class="govuk-table__cell">3.0404</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-2-list" class="govuk-link">SO3757 3159</th>
+        <td class="govuk-table__cell">1.6620</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3160</th>
+        <td class="govuk-table__cell">3.2940</td>
+      </tr>
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3161</th>
+        <td class="govuk-table__cell">5.1519</td>
+      </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3162</th>
+        <td class="govuk-table__cell">2.2310</td>
+      </tr>
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3163</th>
+        <td class="govuk-table__cell">1.0122</td>
+      </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3164</th>
+        <td class="govuk-table__cell">0.9788</td>
+      </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3165</th>
+        <td class="govuk-table__cell">2.4568</td>
+      </tr>
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3166</th>
+        <td class="govuk-table__cell">1.1548</td>
+      </tr>
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3167</th>
+        <td class="govuk-table__cell">1.2247</td>
+      </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3168</th>
+        <td class="govuk-table__cell">2.9864</td>
+      </tr>
+        <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3169</th>
+        <td class="govuk-table__cell">1.8854</td>
+      </tr>
+          <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3170</th>
+        <td class="govuk-table__cell">1.0145</td>
+      </tr>
+              <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3171</th>
+        <td class="govuk-table__cell">1.8790</td>
+      </tr>
+                  <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3172</th>
+        <td class="govuk-table__cell">0.4061</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!---Text underneath----> 
+
+
+<!---Select actions---->
+
+
+<div class="govuk-grid-column-two-thirds">
+  <div class="govuk-!-padding-bottom-2"></div>
+    <h2 class="govuk-heading-m">Actions</h2>
+
+<div class="govuk-!-padding-bottom-2"></div>
+
+
+<p class="govuk-body">You will only see actions that are compatible with the land parcel you have selected.</p>  
+
+<p class="govuk-body">You have selected 0 actions on 0 land parcels.</p> 
+
+ </div>
+</div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+ <table class="govuk-table">
+  
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header "></th>
+      <th scope="col" class="govuk-table__header ">Action</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Available area</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Quantity</th>
+    </tr>
+
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell" colspan="4">
+      <p style="text-align:left;" class="govuk-body">Select a land parcel to see your actions.</p> 
+    </td>
+  </tr>
+  </tbody>
+
+</table>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+<button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
+  Update land parcel
+</button>
+<br>
+<button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+ Save and continue
+</button>
+</div>
+
+
+</main>
+</div>
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<!-- Header / Name and CTA -->
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+
+<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Smith Farm Ltd <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span></div>
+
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+  </button>
+
+</div>
+</div>
+</div>
+
+<!-- Start of main body container -->
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Select land for your actions</h1>
+  </div>
+</div>
+
+
+<!-- Left hand --->
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+
+    <!-- Intro text--->
+
+    <p>Now viewing grid reference SO3. This is made up of: </p>
+    
+    <ul class="govuk-list govuk-list--bullet">
+      <li>15 land parcels</li>
+      <li>30.3780 hectares</li>
+    </ul>
+
+    <p class="govuk-body"><a href="select-map" class="govuk-link">View a different grid reference</a></p>
+
+
+    <!-- Select land--->
+  
+    <h2 class="govuk-heading-m">Select a land parcel</h2>
+
+      <p>Select the area on the map you want to add actions to. </p>
+      <p>To save the actions you’ve added to a land parcel, select ‘update actions on land parcel’, and then ‘confirm my selection’.</p>
+      <p>Repeat this for all the land parcels you want to add actions to.</p>
+
+
+      <p class="govuk-body"><a href="select-land-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
+
+      <map name="clickable">
+        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+        <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
+      </map>
+
+      <img usemap="#clickable" src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/sfi-iteration-1-2/img/map_3.png?raw=true" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+      <div class="key-div govuk-!-margin-bottom-5"></div>
+
+      <p class="govuk-body" style="margin-bottom: 10px;">Key:</p>
+      <div class="key-parent" id="key1"></div><span class="govuk-body-s" style="width:100px;display:inline-block">Error</span>
+
+      <div class="key-parent" id="key2"></div><span class="govuk-body-s" >Selected</span>
+
+      <br>
+      <br>
+
+      <div class="key-parent" id="key3"></div><span class="govuk-body-s"style="width:100px;display:inline-block">Actions</span>
+
+      <div class="key-parent" id="key4"></div><span class="govuk-body-s">No actions added</span>
+    
+
+</div>
+
+<!---Right hand side---> 
+
+  <div class="govuk-grid-column-one-half">
+  <h2 class="govuk-heading-m">Actions</h2>
+
+  <p>You will only see actions that are compatible with the land parcel you have selected.</p>
+
+  <p>You have selected 0 actions on 0 land parcels.</p>
+
+  <table class="govuk-table">
+      <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Available area</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Quantity</th>
+      </tr>
+ 
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell" colspan="4">
+      <p style="text-align:left;" class="govuk-body">Select a land parcel to see your actions</p> 
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
+  Update land parcel
+</button>
+
+<div>
+<button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and continue
+</button>
+</div>
+
+</div>
+
+</main>
+</div>
+{% endblock %}

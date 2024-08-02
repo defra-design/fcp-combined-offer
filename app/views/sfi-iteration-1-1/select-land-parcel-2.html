@@ -1,0 +1,573 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Header -->
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span> </div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+
+</div>
+</div>
+</div>
+
+<!-- Left side column -->
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+          <h1 class="govuk-heading-l">Select land for your actions</h1>
+
+  <p class="govuk-body">You have selected <span class="govuk-!-font-weight-bold">0</span> action on <span class="govuk-!-font-weight-bold">0</span> land parcel.</p> 
+
+
+<!-- Start of table-->
+
+ <table class="govuk-table">
+  
+<!-- Table headings-->
+
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class"></th>
+      <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Available area</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Quantity</th>
+    </tr>
+
+<!-- Start of first row-->
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+      <td class="govuk-table__cell">HRW1 – Assess and record hedgerow condition</td>
+      <td class="govuk-table__cell">-</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">m</div>
+  </div>
+</div></td>
+    </tr>
+
+<!-- End of first row-->
+
+
+<tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">SAM1 - Assess soil, test SOM and produce a soil management plan</td>
+      <td class="govuk-table__cell">2.8284</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"><div class="govuk-checkboxes__item">
+<input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+<label class="govuk-label govuk-checkboxes__label" for="waste">
+</label>
+</div>
+</td> 
+     
+      <td class="govuk-table__cell">MOR1 - Assess moorland and produce a written record</td>
+      <td class="govuk-table__cell">1.3332</td>
+     <td class="govuk-table__cell"> <div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+  </div>
+</div></td>
+    </tr>
+
+  </tbody>
+
+</table>
+
+<!-- End of table-->
+
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link">You have chosen a total of 30 actions</a>. You can only see the actions that are eligible for the selected land parcel.
+</p>
+
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Update actions on land parcels
+</button>
+
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Confirm my selection
+</button>
+
+</div>
+
+<!-- End of left side column-->
+
+<!-- Start of right side column-->
+
+
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
+ <map name="clickable">
+        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+        <area shape="rect" coords="230,195,305,245" href="select-land-parcel-2">
+                  </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-1/img/map_5.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+       <br>
+<br>
+       <p class="govuk-body">Key:</p>
+       <div class="key-div govuk-!-margin-bottom-5">
+       <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" style="width:80px;display:inline-block">Error</span>
+       <div class="key-parent" id="key2-1"></div><span class="govuk-body-s" >Selected</span>
+       <br>
+       <br>
+       <div class="key-parent" id="key3-1"></div><span class="govuk-body-s"style="width:80px;display:inline-block">Actions</span>
+       <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">No actions added</span>
+     </div>
+
+<!-- End of map-->
+
+
+    <h2 class="govuk-heading-m">Select land parcels on map of list</h2>
+    <p class="govuk-body">If a land parcel is not shown, the land use codes declared are not eligible for the actions you've selected.</p> 
+
+    <p class="govuk-body">
+  <a href="#" class="govuk-link govuk-link--no-visited-state">You must check land types and features are eligible for actions.</a>
+</p>
+
+
+<!-- Start of table-->
+
+<table class="govuk-table">
+  
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Parcel number</th>
+      <th scope="col" class="govuk-table__header">Hectares</th>
+    </tr>
+  </thead>
+
+  <!-- Start of parcel information-->
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+        <td class="govuk-table__cell" > <a href="select-land-parcel-1" class="govuk-link govuk-link--no-visited-state">SO3757 3158 </a> 
+
+      <td class="govuk-table__cell">3.0404</td>
+   <td class="govuk-table__cell" colspan="2">
+    
+</td>
+</tr>
+
+  <!-- End of parcel information-->
+
+
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="select-land-parcel-2" class="govuk-link govuk-link--no-visited-state">SO3757 3159</a></td>
+      <td class="govuk-table__cell">1.6620</td>
+    </tr>
+       <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3160</a><hr style="height:2px;border-width:0;color:white;background-color:white">
+          <details class="govuk-details" open>
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Check land use for this land parcel
+    </span>
+  </summary>
+  <div class="govuk-details__text"> <span class="govuk-!-font-weight-bold">  Land use:</span>
+  
+  </div>
+  <div class="govuk-details__text">
+    Permanent grassland: 1.9130 ha
+  </div>
+  <div class="govuk-details__text">
+    Arable crops: 1.1350 ha
+  </div>
+  <div class="govuk-details__text">
+    Temporary grassland: 0.1245 ha
+  </div>
+  <div class="govuk-details__text">
+    Non-agricultural: 0.1215 ha
+  </div>
+  <div class="govuk-details__text"> <span class="govuk-!-font-weight-bold">  Layer intersections:</span>
+  
+  </div>
+  <div class="govuk-details__text">
+    Biodiversity, SSSI, LFA-MS
+  </div>
+</details></td></td>
+      <td class="govuk-table__cell">3.2940</td>
+    </tr>   
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3161</a></td>
+      <td class="govuk-table__cell">5.1519</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3162</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3163</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3164</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3165</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3166</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
+      <td class="govuk-table__cell">2.2310</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- End of table-->
+
+  <p class="govuk-body">You are viewing <span class="govuk-!-font-weight-bold">OS Map Sheet Reference SO3</span>, which has <span class="govuk-!-font-weight-bold">30.3780</span> hectares over <span class="govuk-!-font-weight-bold">15</span> land parcels.</p> 
+     <p class="govuk-body">
+  <a href="select-map" class="govuk-link govuk-link--no-visited-state">Select another OS map sheet reference</a>
+</p>
+  </div>
+
+    </div>
+
+  </div>
+
+</main>
+</div>
+{% endblock %}
