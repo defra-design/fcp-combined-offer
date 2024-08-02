@@ -27,7 +27,7 @@
 <div class="govuk-grid-row" id="header">
 <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
 <div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span> </div>
+<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Smith Farm Ltd <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span> </div>
 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Save and return later
 </button>
@@ -65,24 +65,37 @@
   <div class="govuk-grid-column-full">
     
     <p class="govuk-body"><a href="select-land-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
-  <map name="clickable">
-        <area shape="rect" coords="235,600,405,705" href="select-land-parcel-1">
-        <area shape="rect" coords="370,500,525,605" href="select-land-parcel-2">
-                  </map>
-<img usemap="#clickable" class="image-size" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-1/img/map_3.png" alt="Map of your land">
+  
+    <svg version="1.1" xmlns="
+http://www.w3.org/2000/svg"
+xmlns:xlink="
+http://www.w3.org/1999/xlink"
+viewBox="0 0 1010 880">
+<image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-1/img/map_3.png"
+alt="Map of your land" width="1010" height="880"></image>
+<a xlink:href="select-land-parcel-1">
+<rect x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect>
+</a><a xlink:href="select-land-parcel-2">
+<rect x="400" y="491" fill="#fff" opacity="0" width="125" height="128"></rect>
+</a></svg>
 
        <br>
 <br>
 </div>
 </div>
 
-       <p class="govuk-body">Key:</p>
+
+       <p class="govuk-body">Keys:</p>
        <div class="key-div govuk-!-margin-bottom-5">
-       <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" style="padding-right:40px">Error</span>
-       <div class="key-parent" id="key2-1"></div><span class="govuk-body-s" style="padding-right:40px">Selected</span>
-       <div class="key-parent" id="key3-1"></div><span class="govuk-body-s" style="padding-right:40px">Actions</span>
+       <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" style="padding-right:30px" >Error</span>
+       <div class="key-parent" id="key2-1"></div><span class="govuk-body-s" style="padding-right:30px">Selected</span>
+
+       <br class="mobile-break">
+      <br class="mobile-break">
+
+       <div class="key-parent" id="key3-1"></div><span class="govuk-body-s" style="padding-right:30px">Actions</span>
        <div class="key-parent" id="key4-1"></div><span class="govuk-body-s" style="
-       padding-right:40px">No actions added</span>
+       padding-right:30px">No actions added</span>
      </div>
 
 
@@ -111,7 +124,7 @@
 </div>
 
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
+<div class="govuk-grid-column-two-thirds">
  <table class="govuk-table">
   
     <tr class="govuk-table__row">
@@ -139,7 +152,7 @@
 
 
 <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
-  Update land parcels
+  Update land parcel
 </button>
 <br>
 <button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">

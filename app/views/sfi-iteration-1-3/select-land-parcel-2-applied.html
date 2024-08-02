@@ -29,7 +29,7 @@
 <div class="govuk-grid-row" id="header">
 <div class="govuk-grid-column-full govuk-!-margin-bottom-5">
 <div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span> </div>
+<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Smith Farm Ltd <span class="govuk-caption-m">Single Business Identifier (SBI): 123456789</span> </div>
 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Save and return later
 </button>
@@ -67,13 +67,20 @@
     <p class="govuk-body" ><a href="select-land-parcel-2-applied-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
  
 
-  <map name="clickable" >
-        <area shape="rect" coords="235,600,405,705" href="select-land-parcel-1">
-        <area shape="rect" coords="370,500,525,605" href="select-land-parcel-2-applied">
-                  </map>
 
 <div class="container" >
-<img  usemap="#clickable"  src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/sfi-iteration-1-3/app/views/sfi-iteration-1-3/map_imgs%201/map_5.png" alt="Map of your land">
+<svg version="1.1" xmlns="
+http://www.w3.org/2000/svg"
+xmlns:xlink="
+http://www.w3.org/1999/xlink"
+viewBox="0 0 1010 880">
+<image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/sfi-iteration-1-3/app/views/sfi-iteration-1-3/map_imgs%201/map_5.png"
+alt="Map of your land" width="1010" height="880"></image>
+<a xlink:href="select-land-parcel-1">
+<rect x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect>
+</a><a xlink:href="select-land-parcel-2">
+<rect x="400" y="491" fill="#fff" opacity="0" width="125" height="128"></rect>
+</a></svg>
 
 
 <div class="text-block">
@@ -96,16 +103,16 @@
 
     <p class="govuk-body" > <span class="govuk-!-font-weight-bold">  Land use:</span>  </p>
   <p class="govuk-body" >
-    Permanent grassland: 1.5760 ha
+    Permanent grassland: 1.9130 ha
   </p>
   <p class="govuk-body" >
-    Arable crops: 1.1212 ha
+    Arable crops: 1.1350 ha
   </p>
   <p class="govuk-body" >
-    Temporary grassland: 0.1312 ha
+    Temporary grassland: 0.1245 ha
   </p>
   <p class="govuk-body" >
-    Non-agricultural: 0.2120 ha
+    Non-agricultural: 0.1215 ha
   </p>
   <p class="govuk-body" > <span class="govuk-!-font-weight-bold"> Layer Intersections:</span>
   </p>
@@ -140,20 +147,24 @@ window.onclick = function(event) {
 </div>
 </div>
 
-       <p class="govuk-body">Key:</p>
+      <p class="govuk-body">Keys:</p>
        <div class="key-div govuk-!-margin-bottom-5">
-       <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" style="padding-right:40px">Error</span>
-       <div class="key-parent" id="key2-1"></div><span class="govuk-body-s" style="padding-right:40px">Selected</span>
-       <div class="key-parent" id="key3-1"></div><span class="govuk-body-s" style="padding-right:40px">Actions</span>
+       <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" style="padding-right:30px">Error</span>
+       <div class="key-parent" id="key2-1"></div><span class="govuk-body-s" style="padding-right:30px">Selected</span>
+
+       <br class="mobile-break">
+      <br class="mobile-break">
+      
+       <div class="key-parent" id="key3-1"></div><span class="govuk-body-s" style="padding-right:30px">Actions</span>
        <div class="key-parent" id="key4-1"></div><span class="govuk-body-s" style="
-       padding-right:40px">No actions added</span>
+       padding-right:30px">No actions added</span>
      </div>
 
 
        <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
    
-<h2 id="select-actions" class="govuk-heading-m">Actions for parcel number SO3757 3158</h2>
+<h2 id="select-actions" class="govuk-heading-m">Actions for parcel number SO3757 3159</h2>
 
 <div class="govuk-!-padding-bottom-2"></div>
 
@@ -161,9 +172,7 @@ window.onclick = function(event) {
 
 <p class="govuk-body">You have selected 6 actions on 2 land parcels.</p> 
 
- </div>
-</div>
-
+ 
 
 
 <!-- Start of table-->
@@ -495,11 +504,11 @@ window.onclick = function(event) {
 
 <form class="form" action="select-land-parcel-2-applied" method="post">
           <button type="submit" class="govuk-button" data-module="govuk-button">
-           Update land parcels
+           Update land parcel
           </button>
         </form>
 
-<form class="form" action="tasklist-5" method="post">
+<form class="form" action="tasklist-6" method="post">
 <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
    Save and continue
 </button>
