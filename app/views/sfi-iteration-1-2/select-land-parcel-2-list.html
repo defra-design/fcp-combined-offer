@@ -50,143 +50,159 @@
   </div>
 </div>
 
-
-<!-- Left hand -->
+<!-- Left hand side container --->
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
+
+
+    <!-- Intro text--->
+
+    <p>Now viewing grid reference SO3. This is made up of: </p>
     
-    <h2 class="govuk-heading-m">Select land parcels on map or list</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>15 land parcels</li>
+      <li>30.3780 hectares</li>
+    </ul>
 
-      <p>You are viewing <span class="govuk-body govuk-!-font-weight-bold"> OS Map Sheet Reference SO3 </span> which has <span class="govuk-body govuk-!-font-weight-bold"> 30.4 </span> hectares over <span class="govuk-body govuk-!-font-weight-bold"> 15 </span> land parcels. </p>
+    <p class="govuk-body"><a href="select-map" class="govuk-link">View a different grid reference</a></p>
 
-      <p class="govuk-body"><a href="select-map-so3" class="govuk-link">Select another OS map sheet reference</a></p>
 
-      <p class="govuk-body"><a href="select-land-parcel-2-list" class="govuk-link">Hide map and show list instead</a></p>
-
-<table class="govuk-table">
+    <!-- Select land--->
   
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel number</th>
-      <th scope="col" class="govuk-table__header">Hectares</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
+    <h2 class="govuk-heading-m">Select a land parcel</h2>
+
+      <p>Select the area on the map you want to add actions to. </p>
+      <p>To save the actions you’ve added to a land parcel, select ‘update actions on land parcel’, and then ‘confirm my selection’.</p>
+      <p>Repeat this for all the land parcels you want to add actions to.</p>
+
+
+      <p class="govuk-body"><a href="select-land-parcel-2" class="govuk-link">Show land parcels on a map instead</a></p>
+
+
+      <table class="govuk-table">
   
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-1-list" class="govuk-link">SO3757 3158</th>
-      <td class="govuk-table__cell">3.0404</td>
-    </tr>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Available land parcels</th>
+            <th scope="col" class="govuk-table__header">Hectares</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
 
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3159</th>
-      <td class="govuk-table__cell">1.6620</td>
+        <!---Parcel 1---->
 
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"> <a href="select-land-parcel-1-list" class="govuk-link">SO3757 3158</a></th>
+            <td class="govuk-table__cell">3.0404</td>
+          </tr>
+
+          <!---Selected parcel---->
+    
+          <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header"><a href="#" class="govuk-link">SO3757 3159</a>
+              <hr style="height:2px;border-width:0;color:white;background-color:white">
+
+              <details class="govuk-details" open>
+              <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                    Check land use for this land parcel
+              </span>
+              </summary>
+              <div class="govuk-details__text"> <span class="govuk-!-font-weight-bold">  Land use:</span>
+              </div>
+              <div class="govuk-details__text">
+                  Permanent grassland: 1.5760 ha
+              </div>
+              <div class="govuk-details__text">
+                  Arable crops: 1.1212 ha
+              </div>
+              <div class="govuk-details__text">
+                  Temporary grassland: 0.1312 ha
+              </div>
+              <div class="govuk-details__text">
+                  Non-agricultural: 0.2120 ha
+              </div>
+              <div class="govuk-details__text"> <span class="govuk-!-font-weight-bold">  Layer intersections:</span>
+              </div>
+              <div class="govuk-details__text">
+                  Biodiversity, SSSI, LFA-MS
+              </div>
+              </details>
+
+              </th>
+              <td class="govuk-table__cell">1.6620</td>
+          </tr>
+
+
+        <!---Other parcels---->
+    
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3160</a></th>
+            <td class="govuk-table__cell">3.2940</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3161</th>
+            <td class="govuk-table__cell">5.1519</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3162</th>
+            <td class="govuk-table__cell">2.2310</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3163</th>
+            <td class="govuk-table__cell">1.0122</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3164</th>
+            <td class="govuk-table__cell">0.9788</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3165</th>
+            <td class="govuk-table__cell">2.4568</td>
+          </tr>
         <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3160</a>
-      <hr style="height:2px;border-width:0;color:white;background-color:white">
-
-      <details class="govuk-details" open>
-      <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-            Check land use for this land parcel
-      </span>
-      </summary>
-      <div class="govuk-details__text"> <span class="govuk-!-font-weight-bold">  Land use:</span>
-      </div>
-      <div class="govuk-details__text">
-          Permanent grassland: 1.9130 ha
-      </div>
-      <div class="govuk-details__text">
-          Arable crops: 1.1350 ha
-      </div>
-      <div class="govuk-details__text">
-          Temporary grassland: 0.1245 ha
-      </div>
-      <div class="govuk-details__text">
-          Non-agricultural: 0.1215 ha
-      </div>
-      <div class="govuk-details__text"> <span class="govuk-!-font-weight-bold">  Layer intersections:</span>
-      </div>
-      <div class="govuk-details__text">
-          Biodiversity, SSSI, LFA-MS
-      </div>
-      </details>
-
-      </th>
-      <td class="govuk-table__cell">3.2940</td>
-    </tr>
-
-
-
-
-
+          <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3166</th>
+          <td class="govuk-table__cell">1.1548</td>
+        </tr>
         <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3161</th>
-      <td class="govuk-table__cell">5.1519</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3162</th>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
+          <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3167</th>
+          <td class="govuk-table__cell">1.2247</td>
+        </tr>
         <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3163</th>
-      <td class="govuk-table__cell">1.0122</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3164</th>
-      <td class="govuk-table__cell">0.9788</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3165</th>
-      <td class="govuk-table__cell">2.4568</td>
-    </tr>
+          <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3168</th>
+          <td class="govuk-table__cell">2.9864</td>
+        </tr>
         <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3166</th>
-      <td class="govuk-table__cell">1.1548</td>
-    </tr>
+          <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3169</th>
+          <td class="govuk-table__cell">1.8854</td>
+        </tr>
         <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3167</th>
-      <td class="govuk-table__cell">1.2247</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3168</th>
-      <td class="govuk-table__cell">2.9864</td>
-    </tr>
-      <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3169</th>
-      <td class="govuk-table__cell">1.8854</td>
-    </tr>
+          <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3170</th>
+          <td class="govuk-table__cell">1.0145</td>
+        </tr>
         <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3170</th>
-      <td class="govuk-table__cell">1.0145</td>
-    </tr>
-            <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3171</th>
-      <td class="govuk-table__cell">1.8790</td>
-    </tr>
-                <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3172</th>
-      <td class="govuk-table__cell">0.4061</td>
-    </tr>
+          <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3171</th>
+          <td class="govuk-table__cell">1.8790</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"> <a href="#" class="govuk-link">SO3757 3172</th>
+          <td class="govuk-table__cell">0.4061</td>
+        </tr>
 
-  </tbody>
+    </tbody>
 </table>
-
-
-<p class="govuk-body">If a land parcel is not shown, the land use codes declared are not eligible for the actions you’ve selected.</p>
-
-<p class="govuk-body"><a href="https://www.gov.uk/guidance/what-land-is-eligible-for-an-sfi-agreement#how-we-define-eligible-land-types-and-features-for-sfi" class="govuk-link">You must check land types and features are eligible for actions.</a></p>
-
 </div>
 
-<!-- Right hand -->
+<!-- Right hand side container-->
 
   <div class="govuk-grid-column-one-half">
-  <h2 class="govuk-heading-m">Select actions to apply on land parcels</h2>
-  <p>You have selected <span class="govuk-body govuk-!-font-weight-bold"> 4 </span> action(s) on<span class="govuk-body govuk-!-font-weight-bold"> 1 </span> land parcel(s).</p>
+  <h2 class="govuk-heading-m">Actions for parcel number SO3757 3158</h2>
 
+  <p>You will only see actions that are compatible with the land parcel you have selected.</p>
+
+  <p>You have selected 0 actions on 0 land parcels.</p>
 
   <table class="govuk-table">
   
@@ -198,7 +214,9 @@
           <th scope="col" class="govuk-table__header">Quantity</th>
         </tr>
       </thead>
+
       <tbody class="govuk-table__body">
+
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -281,9 +299,9 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">CIPM3 – Companion crop on arable and horticultural land</td>
+          <td class="govuk-table__cell">WBD2 – Manage ditches</td>
            </th>
-          <td class="govuk-table__cell">1.5778</td>
+          <td class="govuk-table__cell">1.5112</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -300,9 +318,9 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">CIPM4 – No use of insecticide on arable crops and permanent crops</td>
+          <td class="govuk-table__cell">BND1 – Maintain dry stone walls</td>
            </th>
-          <td class="govuk-table__cell">3.5650</td>
+          <td class="govuk-table__cell">0.2550</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -319,28 +337,9 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">UPL1 – Moderate livestock grazing on moorland</td>
+          <td class="govuk-table__cell">BND2 – Maintain earth banks or stone-faced hedgebanks</td>
            </th>
-          <td class="govuk-table__cell">2.8464</td>
-           </th>
-          <td class="govuk-table__cell">  <div class="govuk-form-group">
-      <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
-      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-      </div>
-      </div></td>
-        </tr>
-
-           <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-          </label>
-          </div>
-          </th>
-          <td class="govuk-table__cell">UPL2 – Low livestock grazing on moorland</td>
-           </th>
-          <td class="govuk-table__cell">2.8464</td>
+          <td class="govuk-table__cell">0.3565</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -357,9 +356,28 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">UPL3 – Limited livestock grazing on moorland</td>
+          <td class="govuk-table__cell">CAHL1 – Pollen and nectar flower mix</td>
            </th>
-          <td class="govuk-table__cell">2.8464</td>
+          <td class="govuk-table__cell">2.8421</td>
+           </th>
+          <td class="govuk-table__cell">  <div class="govuk-form-group">
+      <div class="govuk-input__wrapper">
+      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+      </div>
+      </div></td>
+        </tr>
+
+           <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+          </div>
+          </th>
+          <td class="govuk-table__cell">CAHL2 – Winter bird food on arable and horticultural land</td>
+           </th>
+          <td class="govuk-table__cell">1.3345</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -376,9 +394,9 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">OFC1 – Organic conversion - improved permanent grassland</td>
+          <td class="govuk-table__cell">CAHL3 – Grassy field corners or blocks</td>
            </th>
-          <td class="govuk-table__cell">1.6975</td>
+          <td class="govuk-table__cell">1.2465</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -395,28 +413,9 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">OFC2 – Organic conversion - unimproved permanent grassland</td>
+          <td class="govuk-table__cell">AHW1 – Bumblebird mix</td>
            </th>
-          <td class="govuk-table__cell">1.6975</td>
-           </th>
-          <td class="govuk-table__cell">  <div class="govuk-form-group">
-      <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
-      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-      </div>
-      </div></td>
-        </tr>
-
-          <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-          </label>
-          </div>
-          </th>
-          <td class="govuk-table__cell">OFC3 – Organic conversion - rotational land</td>
-           </th>
-          <td class="govuk-table__cell">1.6975</td>
+          <td class="govuk-table__cell">1.2478</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -433,28 +432,9 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">OFC4 – Organic conversion - horticultural land</td>
+          <td class="govuk-table__cell">AHW2 – Supplementary winter bird food</td>
            </th>
-          <td class="govuk-table__cell">1.6975</td>
-           </th>
-          <td class="govuk-table__cell">  <div class="govuk-form-group">
-      <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
-      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-      </div>
-      </div></td>
-        </tr>
-
-          <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-          <label class="govuk-label govuk-checkboxes__label" for="waste">
-          </label>
-          </div>
-          </th>
-          <td class="govuk-table__cell">SCR1 – Create scrub and open habitat mosaics</td>
-           </th>
-          <td class="govuk-table__cell">1.6975</td>
+          <td class="govuk-table__cell">1.3345</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -471,9 +451,9 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">PRF1 – Variable rate application of nutrients</td>
+          <td class="govuk-table__cell">AHW3 – Beetle banks</td>
            </th>
-          <td class="govuk-table__cell">1.0520</td>
+          <td class="govuk-table__cell">1.3352</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -490,9 +470,66 @@
           </label>
           </div>
           </th>
-          <td class="govuk-table__cell">PRF2 – Camera or remote sensor guided herbicide spraying</td>
+          <td class="govuk-table__cell">AHW4 – Skylark plots</td>
            </th>
-          <td class="govuk-table__cell">1.0520</td>
+          <td class="govuk-table__cell">0.4512</td>
+           </th>
+          <td class="govuk-table__cell">  <div class="govuk-form-group">
+      <div class="govuk-input__wrapper">
+      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+      </div>
+      </div></td>
+        </tr>
+
+          <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+          </div>
+          </th>
+          <td class="govuk-table__cell">AHW5 – Nesting plots for lapwing</td>
+           </th>
+          <td class="govuk-table__cell">0.8715</td>
+           </th>
+          <td class="govuk-table__cell">  <div class="govuk-form-group">
+      <div class="govuk-input__wrapper">
+      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+      </div>
+      </div></td>
+        </tr>
+
+          <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+          </div>
+          </th>
+          <td class="govuk-table__cell">SCR1 –  Create scrub and open habitat mosaics</td>
+           </th>
+          <td class="govuk-table__cell">1.2690</td>
+           </th>
+          <td class="govuk-table__cell">  <div class="govuk-form-group">
+      <div class="govuk-input__wrapper">
+      <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+      </div>
+      </div></td>
+        </tr>
+
+                  <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+          </div>
+          </th>
+          <td class="govuk-table__cell">GRH11 –  Cattle grazing supplement (non-moorland)</td>
+           </th>
+          <td class="govuk-table__cell">1.2478</td>
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
@@ -504,24 +541,20 @@
       </tbody>
     </table>
 
-<p class="govuk-body">You have chosen a total of 30 actions. You can only see the actions that are eligible for the selected land parcel, <a href="select-actions" class="govuk-link">return to list to select actions</a>.</p>
 
 <form class="form" action="select-land-parcel-2-applied-list" method="post">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Update actions on land parcel
-  </button>
-<form>
+  <button type="submit" class="govuk-button" data-module="govuk-button">Update land parcel</button>
+</form>
 
 <form class="form" action="tasklist-6" method="post">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Confirm my selection
-    </button>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and continue</button>
 </form>
 
     </div>
 
-  </div>
 
+</div>
 </main>
 </div>
 {% endblock %}
