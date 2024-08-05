@@ -39,217 +39,102 @@
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
-  <div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
-          <h1 class="govuk-heading-l">Select land for your actions</h1>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Select land for your actions</h1>
+  </div>
+</div>
 
-  <p class="govuk-body">You have selected <span class="govuk-!-font-weight-bold">0</span> action on <span class="govuk-!-font-weight-bold">0</span> land parcel.</p> 
+<!---Main---> 
 
- <table class="govuk-table">
-  
-    <tr class="govuk-table__row">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-half">
+  <h2 class="govuk-heading-m">Actions</h2>
+
+  <p>You will only see actions that are compatible with the land parcel you have selected.</p>
+
+  <p>You have selected 0 actions on 0 land parcels.</p>
+
+  <table class="govuk-table">
+      <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header app-custom-class"></th>
       <th scope="col" class="govuk-table__header app-custom-class">Action</th>
       <th scope="col" class="govuk-table__header app-custom-class">Available area</th>
       <th scope="col" class="govuk-table__header app-custom-class">Quantity</th>
-    </tr>
-
+      </tr>
+ 
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
     <td class="govuk-table__cell" colspan="4">
-      <p style="text-align:center;" class="govuk-body">No land parcels selected</p> 
+      <p style="text-align:left;" class="govuk-body">Select a land parcel to see your actions</p> 
     </td>
   </tr>
-
   </tbody>
-
 </table>
 
-<p class="govuk-body">
-  <a href="#" class="govuk-link">You have chosen a total of 30 actions</a>. You can only see the actions that are eligible for the selected land parcel.
-</p>
-
 <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
-  Update actions on land parcels
+  Update land parcel
 </button>
 
+<div>
 <button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Confirm my selection
+  Save and continue
 </button>
+</div>
 
 </div>
 
+<!---Right hand container--->
+
   <div class="govuk-grid-column-one-half">
-    <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
-  <map name="clickable">
-        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
-        <area shape="rect" coords="230,195,305,245" href="select-land-parcel-2">
-                  </map>
-<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-1/img/map_3.png" alt="Map of your land" style="width:465px;height:400px;"></a>
-
-       <br>
-<br>
-       <p class="govuk-body">Key:</p>
-       <div class="key-div govuk-!-margin-bottom-5">
-       <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" style="width:80px;display:inline-block">Error</span>
-       <div class="key-parent" id="key2-1"></div><span class="govuk-body-s" >Selected</span>
-       <br>
-       <br>
-       <div class="key-parent" id="key3-1"></div><span class="govuk-body-s"style="width:80px;display:inline-block">Actions</span>
-       <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">No actions added</span>
-     </div>
 
 
-    <h2 class="govuk-heading-m">Select land parcels on map of list</h2>
-    <p class="govuk-body">If a land parcel is not shown, the land use codes declared are not eligible for the actions you've selected.</p> 
+    <!-- Intro text--->
 
-    <p class="govuk-body">
-  <a href="#" class="govuk-link govuk-link--no-visited-state">You must check land types and features are eligible for actions.</a>
-</p>
+    <p>Now viewing grid reference SO3. This is made up of: </p>
+    
+    <ul class="govuk-list govuk-list--bullet">
+      <li>15 land parcels</li>
+      <li>30.3780 hectares</li>
+    </ul>
 
-<table class="govuk-table">
+    <p class="govuk-body"><a href="select-map" class="govuk-link">View a different grid reference</a></p>
+
+
+    <!-- Select land--->
   
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Parcel number</th>
-      <th scope="col" class="govuk-table__header">Hectares</th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-        <td class="govuk-table__cell"> <a href="select-land-parcel-1" class="govuk-link govuk-link--no-visited-state">SO3757 3158</a></td>
-      <td class="govuk-table__cell">3.0404</td>
-    </tr>
-       <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3159</a></td>
-      <td class="govuk-table__cell">1.6620</td>
-    </tr>
-       <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="select-land-parcel-2" class="govuk-link govuk-link--no-visited-state">SO3757 3160</a></td>
-      <td class="govuk-table__cell">3.2940</td>
-    </tr>   
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3161</a></td>
-      <td class="govuk-table__cell">5.1519</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3162</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-        <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3163</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-        <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3164</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-        <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3165</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-        <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3166</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-        <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
-          <tr class="govuk-table__row">
-      <td class="govuk-table__cell"> <a href="#" class="govuk-link govuk-link--no-visited-state">SO3757 3167</a></td>
-      <td class="govuk-table__cell">2.2310</td>
-    </tr>
+    <h2 class="govuk-heading-m">Select a land parcel</h2>
 
- 
-  </tbody>
-</table>
-  <p class="govuk-body">You are viewing <span class="govuk-!-font-weight-bold">OS Map Sheet Reference SO3</span>, which has <span class="govuk-!-font-weight-bold">30.3780</span> hectares over <span class="govuk-!-font-weight-bold">15</span> land parcels.</p> 
-     <p class="govuk-body">
-  <a href="#" class="govuk-link govuk-link--no-visited-state">Select another OS map sheet reference</a>
-</p>
-  </div>
+      <p>Select the area on the map you want to add actions to. </p>
+      <p>To save the actions you’ve added to a land parcel, select ‘update actions on land parcel’, and then ‘confirm my selection’.</p>
+      <p>Repeat this for all the land parcels you want to add actions to.</p>
 
 
-    </div>
+      <p class="govuk-body"><a href="select-land-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
 
-  </div>
+      <map name="clickable">
+        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+        <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
+      </map>
+
+      <img usemap="#clickable" src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/sfi-iteration-1-2/img/map_3.png?raw=true" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+      <div class="key-div govuk-!-margin-bottom-5"></div>
+
+      <p class="govuk-body" style="margin-bottom: 10px;">Key:</p>
+      <div class="key-parent" id="key1"></div><span class="govuk-body-s" style="width:100px;display:inline-block">Error</span>
+
+      <div class="key-parent" id="key2"></div><span class="govuk-body-s" >Selected</span>
+
+      <br>
+      <br>
+
+      <div class="key-parent" id="key3"></div><span class="govuk-body-s"style="width:100px;display:inline-block">Actions</span>
+
+      <div class="key-parent" id="key4"></div><span class="govuk-body-s">No actions added</span>
+      </div>
+
+</div>
 
 </main>
 </div>
