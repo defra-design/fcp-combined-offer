@@ -55,7 +55,7 @@
 
       <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
       <map name="clickable">
-          <area shape="rect" coords="70,300,160,350" href="select-land">
+          <area shape="rect" coords="70,300,160,350" href="#">
           <area shape="rect" coords="180,110,270,160" href="select-map-so3">
       </map>
       <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-2/img/map_1.png" alt="Map of your land" style="width:465px;height:400px;"></a>
@@ -70,52 +70,55 @@
 
       <div class="key-div govuk-!-margin-bottom-6"></div>
    
-
     <div class="govuk-form-group">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <h2 class="govuk-fieldset__heading">
-        Select a grid reference
-      </h2>
-      </legend>
-      <div id="signIn-hint" class="govuk-hint">
-      This will let you view land parcels and add actions to them. 
-      </div>
-      <div class="govuk-radios" data-module="govuk-radios">
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
-        <label class="govuk-label govuk-radios__label" for="signIn">
-          SO3
-        </label>
-        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          15 land parcels on 30.4 hectares
-      <div class="govuk-!-padding-bottom-2"></div>
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            Select a grid reference
+          </h2>
+          </legend>
+          <div id="signIn-hint" class="govuk-hint">
+          This will let you view land parcels and add actions to them. 
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn">
+              SO3
+            </label>
+            <div class="govuk-!-padding-bottom-2"></div>
+            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+              15 land parcels on 30.4 hectares
+          <div class="govuk-!-padding-bottom-2"></div>
+            </div>
+          </div>
+
+          <div class="govuk-!-padding-bottom-2"></div>
+
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
+            <label class="govuk-label govuk-radios__label" for="signIn">
+              SX2
+            </label>
+            <div class="govuk-!-padding-bottom-2"></div>
+            <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+              17 land parcels on 40.3 hectares
+          <div class="govuk-!-padding-bottom-2"></div>
+            </div>
+          </div>
         </div>
       </div>
 
-      <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway" aria-describedby="signIn-item-hint">
-        <label class="govuk-label govuk-radios__label" for="signIn">
-          SX2
-        </label>
-        <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-          17 land parcels on 40.3 hectares
-      <div class="govuk-!-padding-bottom-2"></div>
-        </div>
-      </div>
+      <form class="form" action="select-land" method="post">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      </form>
     </div>
-  </div>
-
-  <form class="form" action="select-land" method="post">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Continue
-    </button>
-  </form>
-</div>
 
 <!-- Right hand side content -->
 
 <div class="govuk-grid-column-one-half">
-    <table class="govuk-table">
+<table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Summary</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
