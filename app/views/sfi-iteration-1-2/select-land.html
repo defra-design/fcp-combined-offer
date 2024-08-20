@@ -50,13 +50,12 @@
 </div>
 
 
-<!-- Left hand --->
+<!-- Left hand side container --->
+
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
 
-
-    <!-- Intro text--->
-
+  <!-- Intro text--->
     <p>Now viewing grid reference SO3. This is made up of: </p>
     
     <ul class="govuk-list govuk-list--bullet">
@@ -67,16 +66,17 @@
     <p class="govuk-body"><a href="select-map" class="govuk-link">View a different grid reference</a></p>
 
 
-    <!-- Select land--->
-  
+  <!-- Select land--->
+
     <h2 class="govuk-heading-m">Select a land parcel</h2>
 
       <p>Select the area on the map you want to add actions to. </p>
       <p>To save the actions you’ve added to a land parcel, select ‘update actions on land parcel’, and then ‘confirm my selection’.</p>
       <p>Repeat this for all the land parcels you want to add actions to.</p>
 
+  <!-- Map section --->
 
-      <p class="govuk-body"><a href="select-land-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
+    <p class="govuk-body"><a href="select-land-list" class="govuk-link">View land parcels as a list instead of on a map</a></p>
 
       <map name="clickable">
         <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
@@ -99,43 +99,43 @@
 
       <div class="key-parent" id="key4"></div><span class="govuk-body-s">No actions added</span>
     
+  </div>
 
-</div>
 
-<!---Right hand side---> 
+<!-- Right hand side container --->
 
   <div class="govuk-grid-column-one-half">
-  <h2 class="govuk-heading-m">Actions</h2>
+    <h2 class="govuk-heading-m">Actions</h2>
 
-  <p>You will only see actions that are compatible with the land parcel you have selected.</p>
+    <p>You will only see actions that are compatible with the land parcel you have selected.</p>
 
-  <p>You have selected 0 actions on 0 land parcels.</p>
+    <p>You have selected 0 actions on 0 land parcels.</p>
 
-  <table class="govuk-table">
-      <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header app-custom-class"></th>
-      <th scope="col" class="govuk-table__header app-custom-class">Action</th>
-      <th scope="col" class="govuk-table__header app-custom-class">Available area</th>
-      <th scope="col" class="govuk-table__header app-custom-class">Quantity</th>
+      <table class="govuk-table">
+          <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class"></th>
+          <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Available area</th>
+          <th scope="col" class="govuk-table__header app-custom-class">Quantity</th>
+          </tr>
+     
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">
+          <p style="text-align:left;" class="govuk-body">Select a land parcel to see your actions</p> 
+        </td>
       </tr>
- 
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-    <td class="govuk-table__cell" colspan="4">
-      <p style="text-align:left;" class="govuk-body">Select a land parcel to see your actions</p> 
-    </td>
-  </tr>
-  </tbody>
-</table>
+      </tbody>
+    </table>
 
-<button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
-  Update land parcel
-</button>
+    <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
+      Update land parcel
+    </button>
 
 <div>
-<button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Save and continue
-</button>
+  <button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Save and continue
+  </button>
 </div>
 
 </div>
