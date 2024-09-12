@@ -4,23 +4,6 @@
   E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
-{% block beforeContent %}
-
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
 <div class="govuk-width-container">

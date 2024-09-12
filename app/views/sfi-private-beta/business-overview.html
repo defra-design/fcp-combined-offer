@@ -4,23 +4,6 @@
   E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
-{% block beforeContent %}
-
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
 <div class="govuk-width-container">
@@ -46,10 +29,6 @@
     <a class="govuk-link" href="#">– Land</a>
   </li>
         <br>
-    <li>
-    <a class="govuk-link" href="#">– Commons</a>
-  </li>
-      <br>
     <li>
     <a class="govuk-link" href="#">– Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</a>
   </li>
@@ -103,7 +82,7 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Jasmine Smith</td>
+      <td class="govuk-table__cell" ><a class="govuk-!-font-weight-bold">Jasmine Smith</a></td>
       <td class="govuk-table__cell">Sole trader</td>
     </tr>
     <tr class="govuk-table__row">
