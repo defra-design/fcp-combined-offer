@@ -7,14 +7,6 @@
 
 {% block beforeContent %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -41,13 +33,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Apply for funding</h1>
+    <span class="govuk-caption-l">Expanded Sustainable Farming Incentive</span>
+      <h1 class="govuk-heading-xl">Apply for funding</h1>
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
 <p class="govuk-body">You have completed 0 of 4 sections</p>
 
-      <h2 class="govuk-heading-m">1. Check before you start</h2>
+      <h2 class="govuk-heading-m">1. Check before you start.</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -81,7 +74,7 @@
     },
                {
             title: {
-              text: "Enter your agreement name"
+              text: "Agreement name"
             },
         status: {
         text: "Cannot start yet",
@@ -115,7 +108,7 @@
         items: [
           {
             title: {
-              text: "Select the land you want to do the actions on"
+              text: "Select your actions"
             },
         status: {
         text: "Cannot start yet",
