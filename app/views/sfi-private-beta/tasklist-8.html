@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -40,7 +40,7 @@
 
 <p class="govuk-body">You have completed 3 of 4 sections</p>
 
-      <h2 class="govuk-heading-m">1. Check before you start</h2>
+      <h2 class="govuk-heading-m">1. Check before you start.</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -48,8 +48,8 @@
 
       {% set incompleteStatus = {
         tag: {
-          text: "Incomplete",
-          classes: "govuk-tag--blue"
+          text: "Not started",
+          classes: "govuk-tag--grey"
         }
       } %}
 
