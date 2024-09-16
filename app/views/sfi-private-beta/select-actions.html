@@ -1,8 +1,9 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+
 
 <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
@@ -44,11 +45,13 @@
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-one-third">
+
   <div id="search">
     <label class="govuk-label govuk-!-margin-top-2" for="search">
       Search by action code
     </label>
-    <input class="govuk-input text-input govuk-!-margin-bottom-5" style="width:160px; height:44px;" id="searchbox" type="text" value="" placeholder="">
+    <input class="govuk-input text-input govuk-!-margin-bottom-3" style="width:160px; height:44px;" id="searchbox" type="text" value="" placeholder="">
+
     <button id="button_1" class="govuk-button" height="20" data-module="govuk-button">
       <svg class="gem-c-search__icon" width="21" height="21" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
@@ -56,6 +59,37 @@
       </svg>
     </button>
   </div>
+
+  <div class="govuk-inset-text">
+  SFI actions are more straightforward.<br><br>
+  Higher tier actions are more complex - you will need specialist advice and support for these.
+  </div>
+
+  <div id="filters">
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <span>
+          Action type
+        </span>
+      </summary>
+      <div class="govuk-!-padding-top-4" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            SFI
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Higher tier
+          </label>
+        </div>
+    </div>
+  </details>
+</div>
+
+
   <div id="filters">
     <details class="govuk-details" data-module="govuk-details" open>
       <summary class="govuk-details__summary">
@@ -64,90 +98,107 @@
         </span>
       </summary>
       <div class="govuk-!-padding-top-4" data-module="govuk-checkboxes">
+
         <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
-            Agroforestry
+            Actions for Agroforestry
           </label>
         </div>
+
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Actions for Arable
+          </label>
+        </div>
+
         <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-            Boundary features
+            Actions for Boundaries
           </label>
         </div>
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-            Buffer strips
+            Actions for Grassland
           </label>
         </div>
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-  Farmland wildlife and habitats on grassland
+            Actions for Heritage
           </label>
         </div>
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-           Farmland wildlife on arable and horticultural land
+           Actions for Improving soil health
+          </label>
+        </div>
+
+              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          Actions for Integrated pest management
           </label>
         </div>
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Heritage
+           Actions for Lakes/Ponds/Ditches
           </label>
         </div>
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-           Integrated pest management
-          </label>
-        </div>
-              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-            Moorland
+            Actions for Moorland
           </label>
         </div>
             <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-            Nutrient management
+            Actions for Nutrient management
           </label>
         </div>
              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-            Organic farming
+            Actions for Organic 
           </label>
         </div>
             <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-           Precision farming
+           Actions for Precision farming
           </label>
         </div>
             <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-           Soil health
+           Actions for Species recovery and management
+          </label>
+        </div>
+          <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Actions for Successional areas and scrub
           </label>
         </div>
             <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-           Species recovery and management
+            Actions for Waterbodies
           </label>
         </div>
-            <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
           <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-            Waterbodies
+            Revenue - Grassland
           </label>
         </div>
+
       </div>
     </details>
           <div class="govuk-button-group govuk-!-margin-bottom-5">
