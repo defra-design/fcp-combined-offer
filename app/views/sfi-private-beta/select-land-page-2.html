@@ -15,25 +15,41 @@
   },
   html: 'This is a prototype used for testing purposes only.'
 }) }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+
 {% endblock %}
 
 {% block content %}
 
 
-<div class="govuk-grid-row" id="header">
-<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-<div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith</div>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Save and return later
-</button>
-</div>
-</div>
-</div>
+<div class="moj-identity-bar">
+
+  <div class="moj-identity-bar__container">
+
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+
+
+    <div class="moj-identity-bar__actions">
+
+      <div class="moj-identity-bar__menu">
+
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary " data-module="govuk-button">
+              Save and return later
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <br>
+
+<h3 class="govuk-heading-s">Jasmine Smith</h3>
 
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
@@ -44,8 +60,8 @@
 <p class="govuk-body">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
 <p class="govuk-body">You’ll see your list of actions. You then need to:<br>
 • select the action and enter the amount that you want to add to the parcel<br>
-• confirm your selection for that parcel</p>
-<p class="govuk-body">You can then move on to the next land parcel and repeat these steps. When you finish, click 'Go back to select a different area'. This takes you back to the OS map sheet page. You then need to click ‘back to task list’ to continue your application.</p>
+• confirm your selection for that parcel before moving on to the next land parcel and repeat these steps.</p>
+
 
 <hr class="section-break-large"></hr>
       <table class="govuk-table">
@@ -54,19 +70,19 @@
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Number of available land parcels</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+      <td class="govuk-table__cell ">20</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Total area (ha)</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">120.3451 ha</td>
+      <td class="govuk-table__cell ">120.3451 </td>
     </tr>
     <tr class="govuk-table__row">
      <td class="govuk-table__cell">Number of land parcels used for actions</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+      <td class="govuk-table__cell ">0</td>
     </tr>
         <tr class="govuk-table__row">
     <td class="govuk-table__cell">Number of actions applied for</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+      <td class="govuk-table__cell ">0</td>
     </tr>
   </tbody>
 </table>
@@ -94,10 +110,10 @@
     </a>
   </div>
     <div class="govuk-pagination__prev govuk-pagination__next">
-    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">10</span> to <span class="govuk-!-font-weight-bold">15</span> of <span class="govuk-!-font-weight-bold">15</span> parcels</p></div>
+    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">15</span> to <span class="govuk-!-font-weight-bold">20</span> of <span class="govuk-!-font-weight-bold">20</span> parcels</p></div>
          <form class="form" action="select-map" method="post">
-          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-Go back to select a different area
+          <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+Return to Task List
           </button>
         </form>
 </nav> 

@@ -15,25 +15,37 @@
   },
   html: 'This is a prototype used for testing purposes only.'
 }) }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+ 
 {% endblock %}
 
 {% block content %}
 
 
-<div class="govuk-grid-row" id="header">
-<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-<div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith</div>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Save and return later
-</button>
-</div>
-</div>
-</div>
+<div class="moj-identity-bar">
+
+  <div class="moj-identity-bar__container">
+
+    <a href="#" class="govuk-back-link">Back</a>
+
+    <div class="moj-identity-bar__actions">
+
+      <div class="moj-identity-bar__menu">
+
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary " data-module="govuk-button">
+              Save and return later
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
 
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
@@ -47,13 +59,14 @@
 <p class="govuk-body">Read the guidance on <a href="#" class="govuk-link">SSSI consent</a>.</p>
 <p class="govuk-body">If you are not applying for actions on SSSI land, or the actions can be done without SSSI consent, answer ‘yes’ to continue your application.</p>
 
+<br>
 <form class="form" action="/sssi-answer" method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
+                <p class="govuk-body">
 Will you get SSSI consent if you need to?</h1>
-              </legend>
+              </p>
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="sssiAnswer-1" name="sssi-answer" type="radio" value="yes">
