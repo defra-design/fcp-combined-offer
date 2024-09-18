@@ -1,13 +1,17 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
+<a href="#" class="govuk-back-link">Back</a>
+
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
+
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -82,11 +86,11 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell" ><a class="govuk-!-font-weight-bold">Jasmine Smith</a></td>
+      <td class="govuk-table__cell" ><a class="govuk-!-font-weight-bold" class="govuk-link govuk-link--no-visited-state">Jasmine Smith</a></td>
       <td class="govuk-table__cell">Sole trader</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Bartholomew Brown</td>
+      <td class="govuk-table__cell"><a class="govuk-!-font-weight-bold" class="govuk-link govuk-link--no-visited-state">Bartholomew Brown</td>
       <td class="govuk-table__cell">Agent</td>
     </tr>
   </tbody>
@@ -148,27 +152,14 @@
 </div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-one-third">
-<p class="govuk-body govuk-!-font-weight-bold">Commons</p>
-</div>
-<div class="govuk-grid-column-two-thirds">
-<p class="govuk-body">Check and update any grazing rights you hold for common land.</p>
-<p class="govuk-body"><a href="#" class="govuk-link">Update commons</a></p>
-</div>
-</div>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-one-third">
-<p class="govuk-body govuk-!-font-weight-bold">Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</p>
-</div>
-<div class="govuk-grid-column-two-thirds">
-<p class="govuk-body"><a href="#" class="govuk-link">Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</a></p>
-</div>
-</div>
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+  <p class="govuk-body govuk-!-font-weight-bold">Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</p>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+  <p class="govuk-body"><a href="#" class="govuk-link">Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</a></p>
+  </div>
+  </div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -203,6 +194,7 @@
   </li>
 </ul>
 </div>
+</div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -217,6 +209,7 @@
   </li>
 </ul>
 </div>
+</div>
 
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -226,23 +219,23 @@
 </div>
 <div class="govuk-grid-column-two-thirds">
   <p class="govuk-body">Find out which Countryside Stewardship options best suit you farm, apply to join the scheme and submit your claims.</p>
-<ul class="govuk-list">
+  <ul class="govuk-list">
+      <li>
+      <a class="govuk-link" href="#">Countryside Stewardship options finder tool</a>
+    </li>
+    <br>
     <li>
-    <a class="govuk-link" href="#">Countryside Stewardship options finder tool</a>
-  </li>
-  <br>
-  <li>
-    <a class="govuk-link" href="#">Countryside Stewardship Mid Tier Applications</a>
-  </li>
-    <br>
-  <li>
-    <a class="govuk-link" href="#">Countryside Stewardship applications</a>
-  </li>
-    <br>
-  <li>
-    <a class="govuk-link" href="#">Countryside Stewardship claims</a>
-  </li>
-</ul>
+      <a class="govuk-link" href="#">Countryside Stewardship Mid Tier Applications</a>
+    </li>
+      <br>
+    <li>
+      <a class="govuk-link" href="#">Countryside Stewardship applications</a>
+    </li>
+      <br>
+    <li>
+      <a class="govuk-link" href="#">Countryside Stewardship claims</a>
+    </li>
+  </ul>
 </div>
 </div>
 
