@@ -1,20 +1,12 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
 {% block beforeContent %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -30,8 +22,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-full-column">
 
-<h1 class="govuk-heading-l">Funding applications and agreements</h1>
-<span class="govuk-caption-l govuk-!-padding-bottom-5">JASMINE SMITH</span>
+<h1 class="govuk-heading-l">Funding applications and agreements
+<span class="govuk-caption-l">JASMINE SMITH</span></h1>
 
     <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -47,21 +39,39 @@
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">1234567</td>
-      <td class="govuk-table__cell">CO</td>
+      <td class="govuk-table__cell">Expanded Offer</td>
       <td class="govuk-table__cell">Yes</td>
       <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">Application submitted</td>
-      <td class="govuk-table__cell"><button type="submit" class="govuk-button" data-module="govuk-button">
-            Application documents</button></td>
+      <td class="govuk-table__cell">
+        
+        <!---Submit-----
+          <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button" style="width: 75%">Continue application
+          </button>
+        ------>
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="width: 100%;">Application documents</button>
+      
+      <!---Withdraw-----
+          <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button" style="width: 75%">Withdraw application</button>
+        </div>
+      --->
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">0123456</td>
+      <td class="govuk-table__cell">Expanded Offer</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell" style="width: 20%;"></td>
+      <td class="govuk-table__cell">Application withdrawn</td>
+      <td class="govuk-table__cell"></td>
     </tr>
  </tbody>
 </table>
 
-  <form class="form" action="tasklist-1" method="post">
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Apply for a new agreement
-</button>
-</form>
+<p class="govuk-body govuk-!-font-weight-bold">If interested in starting a common land application, please email RPA at <a href="#" class="govuk-link govuk-link--no-visited-state">ruralpayments@defra.gov.uk</a>, with ‘SFI Commons/Shared Grazing Agreements’ in your subject line.</p>
+
 
 </div>
 </div>

@@ -4,36 +4,23 @@
   SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-
-{% block beforeContent %}
-
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
-{% endblock %}
-
 {% block content %}
 
-
-<div class="govuk-grid-row" id="header">
-<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-<div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith</div>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Save and return later
-</button>
-</div>
-</div>
-</div>
+  <div class="moj-identity-bar__container">
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+    <div class="moj-identity-bar__actions">
+      <div class="moj-identity-bar__menu">
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary" data-module="govuk-button">
+            Save and return later</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<h3 class="govuk-heading-s">Jasmine Smith</h3>
 
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
@@ -53,10 +40,8 @@
 <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
 </div>
-    <button type="submit" class="topnav-right govuk-button govuk-button--primary" data-module="govuk-button">
-  Print
-</button>
-
+    <button type="submit" class="govuk-button govuk-button--primary topnav-right" style="margin-right: 15px" data-module="govuk-button">
+  Print</button>
 </div>
 </div>
 
@@ -204,7 +189,7 @@ horticultural land</td>
     <tr class="govuk-table__row">
        <th scope="col" class="govuk-table__cell">Parcel Based actions total</td>
       <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell">£16,829.839</td>
+      <td class="govuk-table__cell govuk-table__header--numeric">£16,829.839</td>
     </tr>
                               <tr class="govuk-table__row">
        <th scope="col" class="govuk-table__cell">Agreement Level actions</td>
@@ -230,19 +215,19 @@ horticultural land</td>
   </tbody>
 </table>
       
-<form class="form" action="check-your-answers-confirmed" method="post">
-<button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-  Validate
-</button>
-</form>
+    <form class="form" action="check-your-answers-confirmed" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button" style="width: 16%;">
+      Validate
+    </button>
+    </form>
 
     <form class="form" action="tasklist-9" method="post">
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Continue
-</button>
-</form>
+    <button type="submit" class="govuk-button" data-module="govuk-button" style="width: 16%">
+      Continue
+    </button>
 
-      </div>
+
+    </div>
     </div>
 
   </main>
