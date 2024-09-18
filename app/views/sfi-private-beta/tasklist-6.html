@@ -1,72 +1,41 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
-
-
-{% block beforeContent %}
-
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
-
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
 
-
 <div class="moj-identity-bar">
-
   <div class="moj-identity-bar__container">
-
     <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
-
-
     <div class="moj-identity-bar__actions">
-
       <div class="moj-identity-bar__menu">
-
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper">
-
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--secondary " data-module="govuk-button">
-              Save and return later
-            </a>
-
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary " data-module="govuk-button">
+            Save and return later</a>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
-  <br>
-
+<br>
 <h3 class="govuk-heading-s">Jasmine Smith</h3>
-
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<span class="govuk-caption-l">Expanded Sustainable Farming Incentive</span>
-<h1 class="govuk-heading-l">Apply for funding</h1>
-
-<br>
+      <span class="govuk-caption-l">Expanded Sustainable Farming Incentive</span>
+      <h1 class="govuk-heading-xl">Apply for funding</h1>
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
 <p class="govuk-body">You have completed 2 of 4 sections</p>
 
-      <h2 class="govuk-heading-m">1. Check before you start</h2>
+      <h2 class="govuk-heading-m">1. Check before you start.</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -100,7 +69,7 @@
     },
                {
             title: {
-              text: "Enter your agreement name"
+              text: "Agreement name"
             },
             href: "agreement-name",
             status: completedStatus

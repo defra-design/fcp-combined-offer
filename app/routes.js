@@ -15,11 +15,11 @@ router.post('/land-details-answer', function (req, res) {
   // Check whether the variable matches a condition
   if (landDetailsAnswer == "yes"){
     // Send user to next page
-    res.redirect('/sfi-iteration-1-2/tasklist-2')
+    res.redirect('/sfi-private-beta/tasklist-2')
 
   } else {
     // Send user to ineligible page
-    res.redirect('/sfi-iteration-1-2/update-land-details')
+    res.redirect('/sfi-private-beta/update-land-details')
   }
 
 })

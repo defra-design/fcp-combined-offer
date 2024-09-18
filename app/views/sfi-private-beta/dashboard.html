@@ -1,20 +1,12 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
 {% block beforeContent %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -30,8 +22,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-full-column">
 
-<h1 class="govuk-heading-l">Funding applications and agreements</h1>
-<span class="govuk-caption-l govuk-!-padding-bottom-5">JASMINE SMITH</span>
+<h1 class="govuk-heading-l">Funding applications and agreements
+<span class="govuk-caption-l">JASMINE SMITH</span></h1>
+
+
 
     <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -55,11 +49,16 @@
  </tbody>
 </table>
 
+<p class="govuk-body govuk-!-font-weight-bold">If interested in starting a common land application, please email RPA at <a href="#" class="govuk-link govuk-link--no-visited-state">ruralpayments@defra.gov.uk</a>, with ‘SFI Commons/Shared Grazing Agreements’ in your subject line.</p>
+
+
+<div class="topnav-right">
   <form class="form" action="tasklist-1" method="post">
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Apply for a new agreement
-</button>
-</form>
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Apply for a new agreement
+  </button>
+  </form>
+</div>
 
 </div>
 </div>
