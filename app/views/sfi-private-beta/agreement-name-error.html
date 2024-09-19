@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="moj-identity-bar">
+
+  <div class="moj-identity-bar__container">
+
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back</a>
+
+
+    <div class="moj-identity-bar__actions">
+
+      <div class="moj-identity-bar__menu">
+
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary " data-module="govuk-button">
+              Save and return later
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title"> <font color="#d4351c">
+      Please answer all questions.</font>
+    </h2>
+    <div class="govuk-error-summary__body">
+      <ul class="govuk-list govuk-error-summary__list">
+        <li>
+          <a href="#">Please enter your agreement name.</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+      <h1 class="govuk-heading-l">Enter your agreement name</h1>
+
+      <div class="govuk-form-group govuk-form-group--error">
+  <label class="govuk-label" for="full-name-input">
+     This will appear on your agreement documents. For example ‘Jasmine’s Farm Funding 2024’.
+  </label>
+  <p id="full-name-input-error" class="govuk-error-message">
+    <span class="govuk-visually-hidden">Error:</span> Please enter your agreement name.
+  </p>
+  <input class="govuk-input govuk-input--error" id="full-name-input" name="name" type="text" aria-describedby="full-name-input-error" autocomplete="name">
+  <label class="govuk-label" for="agreement-name">
+      You have 256 characters remaining.
+    </label>
+</div>
+
+
+
+<form class="form" action="tasklist-4" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+        
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}
