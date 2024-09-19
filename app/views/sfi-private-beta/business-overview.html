@@ -4,14 +4,18 @@
   SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-<a href="#" class="govuk-back-link">Back</a>
+  {{ govukBackLink({
+    text: "Back to your businesses",
+    href: "businesses-messages"
+  }) }}
+{% endblock %}
+
+{% block content %}
 
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
-
-
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -86,12 +90,12 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell" ><a class="govuk-!-font-weight-bold" class="govuk-link govuk-link--no-visited-state">Jasmine Smith</a></td>
-      <td class="govuk-table__cell">Sole trader</td>
+      <td class="govuk-table__cell" ><a href="#" class="govuk-!-font-weight-bold" class="govuk-link">Jasmine Smith</a></td>
+      <td class="govuk-table__cell" style="font-weight: 700;">Sole trader</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a class="govuk-!-font-weight-bold" class="govuk-link govuk-link--no-visited-state">Bartholomew Brown</td>
-      <td class="govuk-table__cell">Agent</td>
+      <td class="govuk-table__cell"><a href="#" class="govuk-!-font-weight-bold" class="govuk-link">Bartholomew Brown</td>
+      <td class="govuk-table__cell" style="font-weight: 700;">Agent</td>
     </tr>
   </tbody>
 </table>
@@ -157,7 +161,7 @@
   <p class="govuk-body govuk-!-font-weight-bold">Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</p>
   </div>
   <div class="govuk-grid-column-two-thirds">
-  <p class="govuk-body"><a href="#" class="govuk-link">Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</a></p>
+  <p class="govuk-body"><a href="dashboard" class="govuk-link">Apply for the Expanded Sustainable Farming Incentive (SFI) Offer</a></p>
   </div>
   </div>
 
@@ -168,7 +172,7 @@
 <p class="govuk-body govuk-!-font-weight-bold">Sustainable Farming Incentive 2023</p>
 </div>
 <div class="govuk-grid-column-two-thirds">
-<p class="govuk-body"><a href="dashboard" class="govuk-link">Sustainable Farming Incentive 2023</a></p>
+<p class="govuk-body"><a href="#" class="govuk-link">Sustainable Farming Incentive 2023</a></p>
 </div>
 </div>
 

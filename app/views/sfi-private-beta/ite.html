@@ -1,50 +1,33 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block beforeContent %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
-  
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="moj-identity-bar">
-
   <div class="moj-identity-bar__container">
-
-    <a href="#" class="govuk-back-link">Back</a>
-
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back </a>
     <div class="moj-identity-bar__actions">
-
       <div class="moj-identity-bar__menu">
-
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper">
-
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary " data-module="govuk-button">
-              Save and return later
-            </a>
-
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary" data-module="govuk-button">
+            Save and return later</a>
           </div>
         </div>
-
       </div>
-
     </div>
-
   </div>
+
 
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
@@ -53,12 +36,15 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Land that’s conditionally exempt from inheritance tax</h1>
-<p class="govuk-body">You need to check you can do your selected SFI actions on land that is either:<br>
-• conditionally exempt from inheritance tax<br>
-• the object of a maintenance fund</p>
-<p class="govuk-body">Read the <a href="#">inheritance tax exemption guidance</a>.</p>
+      <p class="govuk-body">You need to check you can do your selected SFI actions on land that is either:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>conditionally exempt from inheritance tax</li>
+          <li>the object of a maintenance fund</li>
+        </ul>
 
-<br>
+      <p class="govuk-body">Read the <a href="#">inheritance tax exemption guidance</a>.</p>
+      <div class="govuk-!-padding-bottom-2"></div>
+
 <form class="form" action="/ite-answer" method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">

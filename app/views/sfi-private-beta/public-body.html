@@ -1,47 +1,33 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E SFI MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block beforeContent %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a prototype used for testing purposes only.'
-}) }}
-
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
 {% endblock %}
 
 {% block content %}
 
-<div class="moj-identity-bar">
-
   <div class="moj-identity-bar__container">
-
-    <a href="#" class="govuk-back-link">Back</a>
-
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back </a>
     <div class="moj-identity-bar__actions">
-
       <div class="moj-identity-bar__menu">
-
         <div class="moj-button-menu">
           <div class="moj-button-menu__wrapper">
-
-            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary " data-module="govuk-button">
-              Save and return later
-            </a>
-
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary" data-module="govuk-button">
+            Save and return later</a>
           </div>
         </div>
       </div>
     </div>
   </div>
+
 
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
@@ -52,16 +38,17 @@
       <h1 class="govuk-heading-l">Public bodies</h1>
 
 <p class="govuk-body">If you’re not a public body, or you’re not a tenant on land owned by a public body, answer 'yes' to continue your application.</p>
+
 <p class="govuk-body">If you're a public body, you can apply for an SFI agreement. But you will not be paid for activities that:</p>
-<p class="govuk-body">
-• you're required to carry out as part of your statutory duties<br>
-• No longer used<br>
-• public corporations<br></p>
+
+<ul class="govuk-list govuk-list--bullet">
+    <li>you're required to carry out as part of your statutory duties</li>
+    <li>No longer used</li>
+    <li>public corporations</li>
+  </ul>
 
 <p class="govuk-body">Read the guidance about the <a href="#">eligibility of public bodies</a>.</p>
 
-
-<br>
 <form class="form" action="/public-body-answer" method="post">
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
