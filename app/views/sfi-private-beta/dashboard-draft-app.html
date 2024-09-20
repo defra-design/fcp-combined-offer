@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-full-column">
+
+<h1 class="govuk-heading-l">Funding applications and agreements
+<span class="govuk-caption-l">JASMINE SMITH</span></h1>
+
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">App. number</th>
+      <th scope="col" class="govuk-table__header">Type</th>
+      <th scope="col" class="govuk-table__header">Active</th>
+      <th scope="col" class="govuk-table__header">Submit date</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">1234567</td>
+      <td class="govuk-table__cell">Expanded Offer</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">Draft</td>
+      <td class="govuk-table__cell">
+        
+      <div class="govuk-button-group">
+          <button type="submit" class="govuk-button" data-module="govuk-button" style="width: 100%">Continue application
+          </button>
+
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="width: 100%;">Application documents</button>
+      
+          <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button" style="width: 100%">Withdraw application</button>
+        </div>
+
+
+      </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">0123456</td>
+      <td class="govuk-table__cell">Expanded Offer</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell" style="width: 20%;"></td>
+      <td class="govuk-table__cell">Application withdrawn</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+ </tbody>
+</table>
+
+<p class="govuk-body govuk-!-font-weight-bold">If interested in starting a common land application, please email RPA at <a href="#" class="govuk-link govuk-link--no-visited-state">ruralpayments@defra.gov.uk</a>, with ‘SFI Commons/Shared Grazing Agreements’ in your subject line.</p>
+
+
+</div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}
