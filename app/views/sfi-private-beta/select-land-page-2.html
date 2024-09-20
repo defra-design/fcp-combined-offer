@@ -30,6 +30,7 @@
 <br>
 <h3 class="govuk-heading-s">Jasmine Smith</h3>
 
+
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
@@ -66,19 +67,12 @@
   </tbody>
 </table>
 
-  <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3173</a>
-  <span class="list-parcels govuk-body">Total size: 10.3104 ha</span></p>
-  <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3174</a>
-  <span class="list-parcels govuk-body">Total size: 21.4341 ha</span></p>
- <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3175</a>
-  <span class="list-parcels govuk-body">Total size: 2.5335 ha</span></p>
- <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3176</a>
-  <span class="list-parcels govuk-body">Total size: 4.1234 ha</span></p>
- <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3177</a>
-  <span class="list-parcels govuk-body">Total size: 8.0942 ha</span></p>
+  <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3168</a>
+  <span class="list-parcels govuk-body">Total size: 53.2131 ha</span></p>
 
- <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
-   <div class="govuk-pagination__prev">
+
+ <nav class="govuk-pagination" aria-label="Pagination">
+  <div class="govuk-pagination__prev">
     <a class="govuk-link govuk-pagination__link" href="select-land" rel="prev">
       <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
         <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
@@ -88,17 +82,33 @@
       </span>
     </a>
   </div>
-    <div class="govuk-pagination__prev govuk-pagination__next">
-    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">15</span> to <span class="govuk-!-font-weight-bold">20</span> of <span class="govuk-!-font-weight-bold">20</span> parcels</p></div>
-         <form class="form" action="select-map" method="post">
-          <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-Return to Task List
-          </button>
-        </form>
-</nav> 
-    </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item">
+     <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">11</span> to <span class="govuk-!-font-weight-bold">11</span> of <span class="govuk-!-font-weight-bold">11</span> parcels</p>
+    </li>
+  </ul>
 
-  <div class="govuk-grid-column-one-half">
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link govuk-link--no-underline" style="font-weight: 400" rel="next">
+    <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+    </svg>
+    </a>
+  </div>
+
+<form class="form" action="select-map" method="post">
+  <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+    Return to OS Map Sheet Reference selection
+  </button>
+</form>
+
+</nav>
+</div>
+
+<div class="govuk-grid-column-one-half">
     <p class="govuk-body"><a href="#" class="govuk-link">Hide/show map</a></p>
   <map name="clickable">
         <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
