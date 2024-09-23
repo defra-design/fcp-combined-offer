@@ -46,14 +46,117 @@
 
       <h2 class="govuk-heading-m">1. Check before you start.</h2>
 
+      <ul class="govuk-task-list">
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+            <a class="govuk-link govuk-task-list__link" href="check-land-details" aria-describedby="company-details-1-status">
+              Confirm your land details are up to date
+            </a>
+          </div>
+          <div class="govuk-task-list__status Complete-tag box-complete" text-align="right" >
+            COMPLETED
+          </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+             <a class="govuk-link govuk-task-list__link" href="management-control" aria-describedby="company-details-1-status">
+               Confirm you’re eligible to apply
+            </a>
+             
+          </div>
+          <div class="govuk-task-list__status Not-started-tag box-grey" text-align="right" >
+            NOT STARTED
+          </div>
+        </li>
+
+                <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+              Agreement name
+          </div>
+          <div class="govuk-task-list__status Cannot-start-tag box-grey" id="company-details-2-status" style="color: 383F43;">
+              CANNOT START YET
+          </div>
+        </li>
+    </ul>
+
+      <h2 class="govuk-heading-m">2. Select your actions</h2>
+
+      <ul class="govuk-task-list">
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+             Select which actions to do
+          </div>
+          <div class="govuk-task-list__status Cannot-start-tag box-grey" id="company-details-2-status">
+              CANNOT START YET
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="govuk-heading-m">3. Select land for your actions</h2>
+
+      <ul class="govuk-task-list">
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+             Select your actions
+          </div>
+          <div class="govuk-task-list__status Cannot-start-tag box-grey" id="company-details-2-status">
+              CANNOT START YET
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+             Select additional parcels for your rotational actions
+          </div>
+          <div class="govuk-task-list__status Cannot-start-tag box-grey" id="company-details-2-status">
+              CANNOT START YET
+          </div>
+        </li>
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+             Apply for your agreement level actions
+          </div>
+          <div class="govuk-task-list__status Cannot-start-tag box-grey" id="company-details-2-status">
+              CANNOT START YET
+          </div>
+        </li>
+      </ul>
+
+    <h2 class="govuk-heading-m">4. Review and submit your application</h2>
+
+      <ul class="govuk-task-list">
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+             Check your answers
+          </div>
+          <div class="govuk-task-list__status Cannot-start-tag box-grey" id="company-details-2-status">
+              CANNOT START YET
+          </div>
+        </li>
+
+        <li class="govuk-task-list__item govuk-task-list__item--with-link">
+          <div class="govuk-task-list__name-and-hint">
+             Submit your application
+          </div>
+          <div class="govuk-task-list__status Cannot-start-tag box-grey" id="company-details-2-status">
+              CANNOT START YET
+          </div>
+        </li>
+
+      </ul>
+
+      <!--- 
       {% set completedStatus = {
         text: "Completed"
       } %}
 
       {% set incompleteStatus = {
         tag: {
-          text: "Incomplete",
-          classes: "govuk-tag--blue"
+          text: "NOT STARTED",
+          classes: "Not-started-tag"
         }
       } %}
 
@@ -67,14 +170,16 @@
               text: "Confirm your land details are up to date"
             },
             href: "check-land-details",
-            status: completedStatus
+            status: incompleteStatus
           },
           {
             title: {
               text: "Confirm you’re eligible to apply"
             },
-        href: "management-control",
-        status: incompleteStatus
+       status: {
+        text: "Cannot start yet",
+        classes: "Cannot-start-tag"
+      }          
     },
                {
             title: {
@@ -82,7 +187,7 @@
             },
         status: {
         text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
+        classes: "Cannot-start-tag"
       }          
     }
         ]
@@ -99,7 +204,7 @@
             },
         status: {
         text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
+        classes: "Cannot-start-tag"
       }          
     }
         ]
@@ -116,7 +221,7 @@
             },
         status: {
         text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
+        classes: "Cannot-start-tag"
       }          
     }
         ]
@@ -134,7 +239,7 @@
             },
         status: {
         text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
+        classes: "Cannot-start-tag"
       }          
     },
                  {
@@ -143,7 +248,7 @@
             },
         status: {
         text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
+        classes: "Cannot-start-tag"
       }
           }
         ]
@@ -151,6 +256,8 @@
 
     </div>
   </div>
+
+      --> 
 
 </div>
 </main>

@@ -200,16 +200,34 @@
   background-colour: #EEEFEF; 
   font-size: 16px;
   font-weight: 700;
-  color: 383F43;
+  color: #383F43;
 }
 
 .Cannot-start-tag {
   background-colour: #EEEFEF; 
   font-size: 16px;
   font-weight: 700;
-  color: 383F43;
+  color: #383F43;
 }
 
 .errorLabel {
-  color: D4351C;
+  color: #D4351C;
+}
+
+.box-grey { 
+    background-color: #EEEFEF;
+    float: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.box-complete { 
+    background-color: #1D70B8;
+    float: right;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
 }
