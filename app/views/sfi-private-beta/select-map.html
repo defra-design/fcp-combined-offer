@@ -10,10 +10,6 @@
     text: "Back to Business overview",
     href: "business-overview"
   }) }}
-{% endblock %}
-
-{% block content %}
-
   <div class="moj-identity-bar__container">
     <a href="javascript:window.history.back()" class="govuk-back-link">Back </a>
     <div class="moj-identity-bar__actions">
@@ -29,6 +25,11 @@
   </div>
 <br>
 <h3 class="govuk-heading-s">Jasmine Smith</h3>
+{% endblock %}
+
+{% block content %}
+
+  
 
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
@@ -99,7 +100,7 @@
     </div>
     
       <div class="govuk-grid-column-one-half govuk-!-margin-bottom-5">
-    <p class="govuk-body"><a href="#" class="govuk-link">Hide map</a></p>
+    <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link" >Hide map</a></p>
   <map name="clickable">
         <area shape="rect" coords="70,300,160,350" href="select-land">
         <area shape="rect" coords="180,110,270,160" href="select-land">
