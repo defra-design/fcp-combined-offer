@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+   <div class="moj-identity-bar__container">
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back </a>
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Application documents</h1>
+
+<p class="govuk-body">The following are list of documents you can download, save or print for your application. The list of documents can vary depending on your current application status.</p>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="border-bottom-color: white;">
+    </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="border-bottom-color: white;">
+        <a href="#" class="govuk-link">Application Summary </a>
+    </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="border-bottom-color: white;">
+        <a href="#" class="govuk-link">Environmental Information Map (EIM)</a>
+    </td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="border-bottom-color: white;">
+        <a href="#" class="govuk-link">Option and Farm Environment Record (FER) </a>
+    </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" >
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+</main>
+</div>
+
+
+
+ 
+{% endblock %}
