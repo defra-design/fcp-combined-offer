@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+  <div class="moj-identity-bar__container">
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back </a>
+    <div class="moj-identity-bar__actions">
+      <div class="moj-identity-bar__menu">
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary" data-module="govuk-button">
+            Save and return later</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<h3 class="govuk-heading-s">Jasmine Smith</h3>
+{% endblock %}
+
+{% block content %}
+
+ 
+
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Your application contains errors</h1>
+
+      <p class="govuk-body">Check your answers to find the sections with errors. Then resolve these errors and submit your application again.</p>
+
+      <br>
+
+      <form class="form" action="check-your-answers-error" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Check your answers
+</button>
+</form>
+
+    </div>
+  </div>
+
+</main>
+</div>
+{% endblock %}
