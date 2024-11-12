@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+
+      <h1 class="govuk-heading-l">Business overview
+<span class="govuk-caption-xl">SMITH FARM LTD</span></h1>
+
+<h1 class="govuk-heading-m">Business details</h1>
+
+<p class="govuk-body">SMITH FARM LTD
+<br>Jasmine Smith
+<br>High Street
+<br>Rhydlewis
+<br>Ellesmere
+<br>PO30 1NY</p>
+
+<p class="govuk-body">Email: jasminesmith.farm@gmail.com
+<br>Landline: 0123456789
+<br>Mobile: 0712345689</p>
+
+    </div>
+  </div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+<p class="govuk-body govuk-!-font-weight-bold">Permission to act for this business</p>
+</div>
+<div class="govuk-grid-column-two-thirds">
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Full name</th>
+      <th scope="col" class="govuk-table__header">Relationship</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Jasmine Smith</td>
+      <td class="govuk-table__cell">Sole trader</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Bartholomew Brown</td>
+      <td class="govuk-table__cell">Agent</td>
+    </tr>
+  </tbody>
+</table></div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+<p class="govuk-body govuk-!-font-weight-bold">Applications</p>
+</div>
+<div class="govuk-grid-column-two-thirds">
+<p class="govuk-body"><a href="dashboard" class="govuk-link">View applications and agreements</a></p>
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+</main>
+</div>
+{% endblock %}

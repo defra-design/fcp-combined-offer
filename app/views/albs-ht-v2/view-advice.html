@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-full-column">
+
+<span class="govuk-caption-l">Peter Johnson</span>
+      <h1 class="govuk-heading-l">Natural England</h1>
+
+<p class="govuk-body">
+<ul class="govuk-summary-list__actions-list">
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-body govuk-link" href="#">Print</a></li>
+        <li class="govuk-summary-list__actions-list-item"><a class="govuk-body govuk-link" href="#">Download</a></li>
+      </ul></p>
+
+      <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+    Feedback on objectives
+    </label>
+  </h1>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint" style="background-color:#F3F2F1;">My objectives for the agreement are the following:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada et velit in iaculis. Maecenas aliquet mi suscipit aliquet efficitur. Nulla sed nisl a lectus congue iaculis eget ut lacus. Maecenas tempor feugiat lectus, vel maximus nunc scelerisque id. Sed bibendum neque augue, sed elementum leo rhoncus ut. Fusce nec libero ipsum. Nam auctor pulvinar mauris nec vulputate. Sed lacinia blandit lacus, in varius lacus rutrum vitae.</textarea>
+</div>
+
+     <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+    Feedback on actions
+    </label>
+  </h1>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint" style="background-color:#F3F2F1;">My feedbacks on actions are the following:
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas malesuada et velit in iaculis. Maecenas aliquet mi suscipit aliquet efficitur. Nulla sed nisl a lectus congue iaculis eget ut lacus. Maecenas tempor feugiat lectus, vel maximus nunc scelerisque id. Sed bibendum neque augue, sed elementum leo rhoncus ut. Fusce nec libero ipsum. Nam auctor pulvinar mauris nec vulputate. Sed lacinia blandit lacus, in varius lacus rutrum vitae.</textarea>
+</div>
+
+      <form class="form" action="review-advice" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Go back to your advice
+</button>
+</form>
+
+    </div>
+  </div>
+
+</div>
+</main>
+
+{% endblock %}
