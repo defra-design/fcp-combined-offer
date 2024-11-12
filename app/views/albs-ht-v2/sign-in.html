@@ -1,9 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  ALBs HT V2 – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block beforeContent %}
 
@@ -31,7 +30,7 @@
 
       <h1 class="govuk-heading-l">Sign in</h1>
 
-<p class="govuk-body">
+<p class="govuk-body govuk-!-margin-bottom-6">
 Sign in to review applications for the expanded SFI offer.</p>
 
 <fieldset class="govuk-fieldset">
@@ -49,9 +48,11 @@ Sign in to review applications for the expanded SFI offer.</p>
   </div>
 </fieldset>
 
-<p class="govuk-body">
+<p class="govuk-body govuk-!-margin-bottom-6">
 <a href="#" class="govuk-link">Forgotten password</a>
 </p>
+
+<div class="govuk-!-padding-bottom-2"></div>
 
       <form class="form" action="welcome" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
