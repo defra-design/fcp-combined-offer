@@ -43,6 +43,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+       <button type="submit" class="govuk-button govuk-button--secondary"data-module="govuk-button">
+  Application documents
+</button>
 
       <h1 class="govuk-heading-l">Review application</h1>
 
@@ -64,11 +67,12 @@
         items: [
           {
             title: {
-              text: "Application objectives"
+              text: "Actions and capital items"
             },
-            href: "objectives",
+            href: "review-parcels-list",
             status: incompleteStatus
-          },
+
+       },
           {
             title: {
               text: "Prescriptions"
@@ -76,18 +80,19 @@
             href: "prescriptions-parcels-list",
             status: incompleteStatus
           },
-          {
-            title: {
-              text: "Actions"
-            },
-            href: "review-parcels-list",
-            status: incompleteStatus
-       },
+         
             {
              title: {
-              text: "Review advice"
+              text: "Specifications"
             },
-            href: "review-advice",
+            href: "#",
+            status: incompleteStatus
+          },
+          {
+             title: {
+              text: "Capital item actual costs"
+            },
+            href: "#",
             status: incompleteStatus
           },
               {

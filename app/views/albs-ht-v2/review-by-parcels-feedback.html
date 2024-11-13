@@ -44,7 +44,7 @@
    <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-<span id="feedback_close" class="govuk-caption-l">CAB10: Unharvested cereal headland</span>
+<span  id="feedback_open" class="govuk-caption-l">CAB10: Unharvested cereal headland</span>
       <h1 class="govuk-heading-l">Approve action or capital item on land parcels</h1>
 
       <p class="govuk-body">Select the land parcel to approve the action or capital item on it. To reject the action or capital item, leave the box unselected.</p>
@@ -55,7 +55,7 @@
       <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-      <table class="govuk-table" data-module="moj-sortable-table">
+      <table  class="govuk-table" data-module="moj-sortable-table" >
 
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -79,24 +79,40 @@
   </thead>
 
   <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-           <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+    <tr class="govuk-table__row" >
+          <td class="govuk-table__cell app-custom-class" style="border-bottom-color: white";><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
-      <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
-      <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--grey">
+
+
+      <td class="govuk-table__cell" style="border-bottom-color: white";>SE7023 5009</td>
+      <td class="govuk-table__cell" style="border-bottom-color: white";>2.54 hectares</td>
+      <td class="govuk-table__cell" style="border-bottom-color: white";><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-        <td class="govuk-table__cell" ><details  class=" govuk-details">
-  <summary class="govuk-details__summary" >
-    <span class="govuk-details__summary-text"><a class="govuk-link" href="review-by-parcels-feedback#feedback_open" >Leave a comment</a>
+        <td class="govuk-table__cell" style="border-bottom-color: white";><details open class="govuk-details" >
+  <summary class="govuk-details__summary"><a class="govuk-link" href="review-by-parcels#feedback_close" >Leave a comment</a>
     </span>
   </summary>
 </td>
     </tr>
+
+<td class="govuk-table__cell"   colspan="5" rowspan="2" >
+<div class="govuk-inset-text"  style="margin-top: 0px; width:600px"><div id="more-detail-hint" class="govuk-hint">
+(Optional) Explain why you’ve approved or rejected this land parcel for this action/capital item.
+</div>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" style="width: 600px" rows="5" aria-describedby="more-detail-hint"></textarea>
+</div>
+</div>
+
+</td>
+<tr class="govuk-table__row " >
+<td class="govuk-table__cell " colspan="5">
+</td>
+</tr>
 
 
 
@@ -111,7 +127,7 @@
       <td class="govuk-table__cell" data-sort-value="002"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details" >
+              <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       Leave a comment
