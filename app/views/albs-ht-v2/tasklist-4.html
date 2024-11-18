@@ -44,6 +44,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <form class="form" action="application-documents" method="post">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom:30px" style="position: absolute; right: 0">
+      Application documents</button></form>
+      
       <h1 class="govuk-heading-l">Review application</h1>
 
       {% set completedStatus = {
@@ -62,37 +66,41 @@
       {{ govukTaskList({
         idPrefix: "first-section",
         items: [
+
           {
             title: {
-              text: "Application objectives"
+              text: "Actions and capital items"
             },
-            href: "objectives",
+            hint: {
+              text: "These are the actions and capital items the applicant has selected."
+            },
+            href: "#",
             status: completedStatus
           },
           {
             title: {
               text: "Prescriptions"
             },
-            href: "prescriptions-parcels-list-edits",
+            href: "prescriptions-parcels-list",
             status: completedStatus
           },
           {
             title: {
-              text: "Actions"
+              text: "Specifications"
             },
-            href: "review-parcels-list-edits",
+            href: "#",
             status: completedStatus
-          },
-           {
+        },
+               {
              title: {
-              text: "Review advice"
+              text: "Capital item actual costs"
             },
             href: "review-advice",
             status: incompleteStatus
           },
               {
             title: {
-              text: "Approval"
+              text: "Approve"
             },
             href: "approval",
             status: incompleteStatus
