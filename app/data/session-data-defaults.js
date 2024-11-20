@@ -34,4 +34,15 @@ module.exports = {
   "action-name-20": "CCT10: Manage and restore maritime cliffs and slopes ",
 
 
+  // Capital items
+
+  "capital-name-1": "AF1: Plant an agroforestry woodland tree",
+  "capital-name-2": "FG1: Fencing", 
+  "capital-name-3": "FG2: Sheep netting", 
+  "capital-name-4": "RP3: Watercourse crossings", 
+  "capital-name-5": "TE4: Supply and plant tree",
+  "capital-name-6": "WB1: Small wildlife box",
+
+
+
 }
