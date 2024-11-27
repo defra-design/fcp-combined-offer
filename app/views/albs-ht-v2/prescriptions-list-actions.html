@@ -38,30 +38,15 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-full-column">
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-full-column">
       <h1 class="govuk-heading-l">Prescriptions</h1>
+      <p class="govuk-body">
+        <a href="prescriptions-list-parcels" class="govuk-link">View by land parcels</a>
+      </p>
 
-      <div class="govuk-tabs" data-module="govuk-tabs">
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#list-view">
-              List view
-            </a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#map-view">
-              Map view
-            </a>
-          </li>
-        </ul>
 
-  <div class="govuk-tabs__panel" style="border-right: none; border-left: none; border-bottom: none; padding-top: 30px; padding-left: 0; padding-right: 0; padding-bottom: 0;" id="list-view">
-
+  
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -265,207 +250,6 @@
     </div>
   </div>
           
-   <!----Maps view-----> 
-
-      <div class="govuk-grid-column-two-thirds">
-
-      <div class="container">
-          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1010 880">
-            <image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/sfi-iteration-1-3/app/views/sfi-iteration-1-3/map_imgs%201/map_4.png"
-            alt="Map of your land" width="1010" height="880"></image>
-            <a xlink:href="select-land-parcel-1">
-            <rect x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect>
-            </a><a xlink:href="select-land-parcel-2">
-            <rect x="400" y="491" fill="#fff" opacity="0" width="125" height="128"></rect>
-            </a>
-          </svg>
-
-      <div class="govuk-!-padding-bottom-6"></div>
- 
-        <p class="govuk-body govuk-!-margin-bottom-2" >Keys:</p>
-       
-       <div class="key-div govuk-!-margin-bottom-5">
-        <div class="key-parent" id="key2-1"></div><span class="govuk-body-s" style="padding-right:30px" >Selected</span>
-
-        <br class="mobile-break">
-        <br class="mobile-break">
-       
-      <div class="key-parent" id="key4-1"></div>
-        <span class="govuk-body-s" style="padding-right:30px">Land parcels with actions</span>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="govuk-grid-full-column">
-    <table class="govuk-table" data-module="moj-sortable-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-
-            <th scope="col" class="govuk-table__header" aria-sort="ascending";>Parcel number</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Review completed</th>
-            <th scope="col" class="govuk-table__header">Review prescriptions</th>
-          </tr>
-        </thead>
-
-        <tbody class="govuk-table__body">
-
-         <!----Parcel number SE7023 5004-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p10" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-2'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-         <!----Parcel number SE7023 5005-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['action-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['action-name-2'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <!----Parcel number SE7023 5006-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5006</td>
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-
-          <!----Parcel number SE7023 5007-----> 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5007</td>
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <!----Parcel number SE7023 5008-----> 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5008</td>
-            <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <!----Parcel number SE7023 5009-----> 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5009</td>
-            <td class="govuk-table__cell">{{ data['action-name-5'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-         <!----Parcel number SE7023 5010-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['action-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['action-name-5'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-
-        <!----Parcel number SE7023 5011-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5011</td>
-            <td class="govuk-table__cell">{{ data['action-name-6'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-
-        <!----Parcel number SE7023 5012-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5012</td>
-            <td class="govuk-table__cell">{{ data['action-name-5'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5012</td>
-            <td class="govuk-table__cell">{{ data['action-name-6'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Agreement level</td>
-            <td class="govuk-table__cell">{{ data['action-name-14'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-        </tbody>
-      </table>
-    </div>
-
 
 <!----Pagination-----> 
 
@@ -513,14 +297,12 @@
 </div>
 
 
-<form class="form" action="tasklist-3" method="post">
+<form class="form" action="prescriptions-list-edits" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Save and continue
 </button>
 </form>
 
-</div>
-</div>
 
 </div>
 </main>

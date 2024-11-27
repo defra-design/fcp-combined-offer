@@ -47,10 +47,21 @@
 
       <h1 class="govuk-heading-l">Review actions and capital items</h1>
 
-  <p class="govuk-body">Select an action or capital item to approve it for all land parcels. To approve an action or capital item on specific land parcels, or to leave feedback, select 'Review'.</p>
+  <p class="govuk-body govuk-!-margin-bottom-6">
+    Select an action or capital item to approve it for all land parcels. 
+    To approve an action or capital item on specific land parcels, or to leave feedback, select 'Review'.
+  </p>
 
+  <div class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-visually-hidden">Warning</span>
+      Any actions or capital items rejected will require feedback as to why they have been rejected.
+    </strong>
+  </div>
 </div>
 </div>
+
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -59,16 +70,18 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-<th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+<th scope="col" class="govuk-table__header app-custom-class" style="width: 50px">
+  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation">
         </label>
       </div></th>
 </th>
-      <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 260px">Action/capital items name</th>
+      <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 260px">
+        Name</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="#">Type</th>
+      <th scope="col" class="govuk-table__header" aria-sort="#" style="width: 140px">Type</th>
 
       <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
 
@@ -90,7 +103,7 @@
         <td class="govuk-table__cell">Action</td>
         <td class="govuk-table__cell"><strong class="govuk-tag">Partially approved</strong></td>
       <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href=#">Review</a></td>
     </tr>
 
 
@@ -108,7 +121,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
       <tr class="govuk-table__row">
@@ -135,7 +148,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -152,7 +165,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
 
@@ -170,7 +183,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
 
@@ -201,7 +214,7 @@
         Needs approval
       </strong></div></td>
       <td class="govuk-table__cell">Yes</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
 
@@ -219,7 +232,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -236,7 +249,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -253,7 +266,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
     <tr class="govuk-table__row">
@@ -270,7 +283,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
         <tr class="govuk-table__row">
@@ -287,7 +300,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
   <!---Needs approval---> 
@@ -304,7 +317,7 @@
         Needs approval
       </strong></div></td>
       <td class="govuk-table__cell">Yes</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
   <!---Part approval---> 
@@ -316,13 +329,15 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAGF2: Maintain low density in-field agroforestry on more sensitive land</td>
        <td class="govuk-table__cell">Action</td>
-      <td class="govuk-table__cell"><div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-      <strong class="govuk-tag govuk-tag--blue">
-        Partially approved
-      </strong>
-    </div></td>
+      <td class="govuk-table__cell">
+        <div class="govuk-task-list__status" style="padding-left: 0px;">
+          <strong class="govuk-tag govuk-tag--blue">
+            Partially approved
+          </strong>
+        </div>
+      </td>
       <td class="govuk-table__cell">Yes</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
   <!---Part approval---> 
@@ -334,11 +349,15 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAGF3: Maintain medium density in-field agroforestry</td>
        <td class="govuk-table__cell">Action</td>
-      <td class="govuk-table__cell"><div class="govuk-task-list__status" ><strong class="govuk-tag govuk-tag--blue">Partially approved
-      </strong>
-    </div></td>
+       <td class="govuk-table__cell">
+        <div class="govuk-task-list__status" style="padding-left: 0px;">
+          <strong class="govuk-tag govuk-tag--blue">
+            Partially approved
+          </strong>
+        </div>
+      </td>
       <td class="govuk-table__cell">Yes</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
 
@@ -356,7 +375,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">Yes</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
         <tr class="govuk-table__row">
@@ -373,7 +392,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
         <tr class="govuk-table__row">
@@ -390,7 +409,7 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
 
@@ -408,42 +427,52 @@
       </strong>
     </div></td>
           <td class="govuk-table__cell">No</td>
-      <td class="govuk-table__cell"><a href="review-by-parcels">Review</a></td>
+      <td class="govuk-table__cell"><a href="#">Review</a></td>
     </tr>
 
   </tbody>
 </table>
 
-<nav class="moj-pagination" aria-label="Pagination navigation">
+<!----Pagination-----> 
+<div class= "pagination-container">
 
-  <ul class="moj-pagination__list">
-   
-
-    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">1</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="" aria-label="Page 3 of 30">2</a></li>
-
-    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="" aria-label="Page 5 of 30">4</a></li>
-
-    <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
-    </li>
-  </ul>
-  <p class="moj-pagination__results">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
-</nav>
-
-<br><br>
-
-<div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-        <label class="govuk-label govuk-checkboxes__label" for="waste">
-          Tick to mark this section as complete
-        </label>
-      </div>
-
-      <br>
+  <nav class="govuk-pagination" aria-label="Pagination">
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          ...
+        </a>
+      </li>
+        <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          4
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <span class="govuk-pagination__link-title">
+          Next<span class="govuk-visually-hidden"> page</span>
+        </span>
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
+  
+  </div>
 
        <form class="form" action="tasklist-7" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">

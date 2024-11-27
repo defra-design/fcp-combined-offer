@@ -49,7 +49,8 @@
 
       <p class="govuk-body">Select the land parcel to approve the action or capital item on it. To reject the action or capital item, leave the box unselected.</p>
 
-      <p class="govuk-body">If you do not want to approve or reject this capital item on a land parcel, <a class="govuk-link" href="review-by-parcels-capital-applicable"> select land parcels that are 'not applicable'.</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-6">If you do not want to approve or reject this capital item on a land parcel, 
+        <a class="govuk-link" href="review-capital-af1-applicable"> select land parcels that are 'not applicable'.</a></p>
 
     </div>
   </div>
@@ -485,25 +486,47 @@
 
   </tbody>
 </table>
-<nav class="moj-pagination" aria-label="Pagination navigation">
 
-  <ul class="moj-pagination__list">
-   
+<!----Pagination-----> 
+<div class= "pagination-container">
 
-    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 30" aria-current="page">1</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="" aria-label="Page 3 of 30">2</a></li>
-
-    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="" aria-label="Page 5 of 30">4</a></li>
-
-    <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
-    </li>
-  </ul>
-  <p class="moj-pagination__results">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
-</nav>
+  <nav class="govuk-pagination" aria-label="Pagination">
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          ...
+        </a>
+      </li>
+        <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          4
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <span class="govuk-pagination__link-title">
+          Next<span class="govuk-visually-hidden"> page</span>
+        </span>
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
+  
+  </div>
 
 <br><br>
 
@@ -527,14 +550,11 @@ Explain why you've approved or rejected land for this action/capital item.
 
 </div>
 
-       <form class="form" action="review-by-parcels-saved" method="post">
+<form class="form" action="review-capital-af1-applicable-saved" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-  Save changes
+  Save and continue
 </button>
 </form>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Continue
-</button>
 
     </div>
   </div>

@@ -287,11 +287,22 @@
     <p class="govuk-body govuk-body govuk-!-margin-bottom-6">
     <a href="#" class="govuk-link govuk-link--no-visited-state">Clear text</a></p>
 
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add feedback
-    </button>
+    <form class="form" action="approval-final-comment" method="post">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Add feedback
+      </button>
+    </form>
 
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+       You're the final adviser to review this application. 
+       By selecting 'submit' the applicant will receive their application outcome.
+      </strong>
+    </div>
 
-        <form class="form" action="tasklist-6" method="post">
+        <form class="form" action="confirmation" method="post">
           <button class="govuk-button" data-module="govuk-button" type="submit">Submit</button>  
           </form>
 

@@ -167,6 +167,7 @@
             <th scope="col" class="govuk-table__header" aria-sort="ascending";>Date</th>
             <th scope="col" class="govuk-table__header">Message</th>
             <th scope="col" class="govuk-table__header" aria-sort="none">Adviser</th>
+            <td class="govuk-table__cell"></td>
           </tr>
         </thead>
 
@@ -176,6 +177,7 @@
             <td class="govuk-table__cell">20/10/24 <br>14:45pm</td>
             <td class="govuk-table__cell">Actions selected are not suitable for the type of plants present on the applicants land.</td>
             <td class="govuk-table__cell">Mary Poppins<br>Forestry Commission</td>
+            <td class="govuk-table__cell"></td>
           </tr>
 
 
@@ -183,7 +185,21 @@
             <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
             <td class="govuk-table__cell">Actions selected are suitable for this land parcel. </td>
             <td class="govuk-table__cell">Tom Rogers<br>Historic England</td>
+            <td class="govuk-table__cell"></td>
           </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">24/10/24 <br>11:30am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested 
+              cereal crop need to be amended in order for the application to be approved by Natural England.</td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+            <td class="govuk-table__cell">
+              <a href="#" class="govuk-link">Edit</a><br>
+              <a href="approval-final" class="govuk-link">Delete</a><br>
+            </td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+
         </tbody>
 
       </table>
@@ -290,8 +306,15 @@
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">Add feedback
     </button>
 
+    <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+       You're the final adviser to review this application. By selecting 'submit' the applicant will receive their application outcome.
+      </strong>
+    </div>
 
-        <form class="form" action="tasklist-6" method="post">
+        <form class="form" action="confirmation" method="post">
           <button class="govuk-button" data-module="govuk-button" type="submit">Submit</button>  
           </form>
 
