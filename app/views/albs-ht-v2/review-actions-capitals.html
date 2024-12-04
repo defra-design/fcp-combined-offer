@@ -56,6 +56,9 @@
   </div>
 </div>
 
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <table class="govuk-table" data-module="moj-sortable-table">
@@ -444,5 +447,14 @@
 
 </div>
 </main>
+
+<!-- Add the script at the end of the body -->
+    <script>
+        document.getElementById('organisation').addEventListener('change', function() {
+            if (this.checked) {
+                window.location.href = "review-actions-capitals-selection-approve"
+            }
+        });
+    </script>
 
 {% endblock %}

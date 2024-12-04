@@ -44,6 +44,7 @@
    <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+        
 <span id="feedback_close" class="govuk-caption-l">CAB10: Unharvested cereal headland</span>
       <h1 class="govuk-heading-l">Approve action or capital item on land parcels</h1>
 
@@ -58,9 +59,28 @@
       </strong>
     </div>
 
+<div class="moj-primary-navigation" style="background-color: grey; width: fit-content;">
+  <div class="moj-primary-navigation__container">
+    <div class="moj-primary-navigation__nav">
+      <nav class="moj-primary-navigation" aria-label="Primary navigation">
+        <ul class="moj-primary-navigation__list">
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="review-action-cab10-approve-saved" style="margin-left: 20px; margin-right:20px">Approve</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="review-action-cab10-reject-error" style="margin-right: 20px;">Reject</a>
+          </li>
+   
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<br>
+
   <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"> Select all parcels
         </label>
 
@@ -68,31 +88,28 @@
       </div>
 
 </div>
+
     </div>
-
   </div>
-<br>
 
+  <br>
 
-
-
-  <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-<table class="govuk-table" data-module="moj-sortable-table">
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-<th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-        </label>
-      </div></th>
+    <table class="govuk-table " data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" id="select-all"class="govuk-table__header app-custom-class">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                
+              </div>
+            </div>
+          </th>
       
       <th scope="col" class="govuk-table__header" aria-sort="#">Parcel number</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="#">Parcel size</th>
+      <th scope="col" class="govuk-table__header" aria-sort="#">Quantity</th>
 
       <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
 
@@ -105,16 +122,15 @@
     <tr class="govuk-table__row">
            <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
       <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--green">
+          Approved
         </strong></td>
-        <td class="govuk-table__cell" data-sort-value="001">No</td>
-     
+        <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
 
 
@@ -122,20 +138,20 @@
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="002">SE7023 5010</td>
       <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="002"><strong class="govuk-tag govuk-tag--grey">
-         Needs approval
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--green">
+          Approved
         </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="003">SE7023 5011</td>
@@ -143,12 +159,12 @@
       <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5012</td>
@@ -156,12 +172,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
         </strong></td>
-            <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
            <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5013</td>
@@ -169,12 +185,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5014</td>
@@ -182,12 +198,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-            <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc"checked >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5015</td>
@@ -195,12 +211,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-            <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5016</td>
@@ -208,12 +224,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5017</td>
@@ -221,12 +237,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5018</td>
@@ -234,12 +250,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5019</td>
@@ -247,12 +263,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5020</td>
@@ -260,12 +276,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5021</td>
@@ -273,12 +289,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc"checked >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5022</td>
@@ -286,12 +302,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5023</td>
@@ -299,12 +315,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5024</td>
@@ -312,12 +328,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc"checked >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5025</td>
@@ -325,12 +341,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5026</td>
@@ -338,12 +354,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5027</td>
@@ -351,12 +367,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5028</td>
@@ -364,12 +380,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5029</td>
@@ -377,11 +393,12 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
 
   </tbody>
 </table>
+
 <!----Pagination-----> 
 <div class= "pagination-container">
 
@@ -422,32 +439,39 @@
   <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
   
   </div>
+
+<br><br>
+
 </div></div>
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+        <div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+     Feedback on action CAB10: Unharvested cereal headland
+    </label>
+  </h1>
+    <div id="more-detail-hint" class="govuk-hint">
+Explain why you've approved or rejected land for this action/capital item. 
+</div>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint"></textarea>
+  <p class="govuk-body">You have 1500 characters remaining</p>
+   <p class="govuk-body"><a class="govuk-link" href="#">Clear text</a></p>
 
+</div>
 
-<form class="form" action="review-action-cab10-saved" method="post">
+<form class="form" action="#" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Save and continue
 </button>
 </form>
-
 
     </div>
   </div>
 
 </div>
 </main>
-<!-- Add the script at the end of the body -->
-    <script>
-        document.getElementById('organisation').addEventListener('change', function() {
-            if (this.checked) {
-                window.location.href = "review-action-cab10-approve-selection"
-            }
-        });
-    </script>
 
 {% endblock %}

@@ -76,20 +76,18 @@
 
 
 
-  <div class="govuk-grid-row">
+ <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-<table class="govuk-table" data-module="moj-sortable-table">
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-<th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-        </label>
-      </div></th>
-      
+    <table class="govuk-table " data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" id="select-all"class="govuk-table__header app-custom-class">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                
+              </div>
+            </div>
+          </th>
       <th scope="col" class="govuk-table__header" aria-sort="#">Parcel number</th>
 
       <th scope="col" class="govuk-table__header" aria-sort="#">Parcel size</th>
@@ -110,8 +108,8 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
       <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--green">
+          Approved
         </strong></td>
         <td class="govuk-table__cell" data-sort-value="001">No</td>
      
@@ -127,8 +125,8 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="002">SE7023 5010</td>
       <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="002"><strong class="govuk-tag govuk-tag--grey">
-         Needs approval
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--green">
+          Approved
         </strong></td>
               <td class="govuk-table__cell" data-sort-value="001">No</td>
     </tr>
@@ -445,7 +443,7 @@
     <script>
         document.getElementById('organisation').addEventListener('change', function() {
             if (this.checked) {
-                window.location.href = "review-action-cab10-approve-selection"
+                window.location.href = "review-action-cab10-reject-selection"
             }
         });
     </script>

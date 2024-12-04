@@ -87,7 +87,31 @@
 
     <h4 class="govuk-heading-m" style="margin-bottom: 30px">Select the parcels you want to apply this to</h4>
 
-    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+   
+
+
+    
+
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Prescription not applied
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Prescription applied
+      </a>
+    </li>
+  
+  </ul>
+  <div class="govuk-tabs__panel" id="past-day">
+
+     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item" style="padding-bottom: 30px;">
         <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation">
@@ -95,8 +119,7 @@
         </label>
       </div>
     </div>
-
-
+    
     <table class="govuk-table" data-module="moj-sortable-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
 
   <thead class="govuk-table__head">
@@ -113,7 +136,7 @@
 
       <th scope="col" class="govuk-table__header" aria-sort="none">Quantity</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="none">Prescription applied</th>
+      
 
     </tr>
   </thead>
@@ -127,7 +150,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="001">SE7023 5004</td>
       <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="001">No</td>
+      
     </tr>
      <tr class="govuk-table__row">
            <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -137,7 +160,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="002">SE7023 5005</td>
       <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="002">No</td>
+      
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -147,7 +170,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="003">SE7023 5006</td>
       <td class="govuk-table__cell" data-sort-value="003">26.43 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003">No</td>
+      
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -157,7 +180,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5007</td>
       <td class="govuk-table__cell" data-sort-value="004">5.32 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004">No</td>
+     
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -167,7 +190,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="005">SE7023 5008</td>
       <td class="govuk-table__cell" data-sort-value="005">0.73 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="005">No</td>
+     
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -177,7 +200,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="006">SE7023 5009</td>
       <td class="govuk-table__cell" data-sort-value="006">3.45 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="006">No</td>
+      
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -187,7 +210,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="007">SE7023 5010</td>
       <td class="govuk-table__cell" data-sort-value="007">6.21 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="007">No</td>
+     
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -197,7 +220,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="008">SE7023 5011</td>
       <td class="govuk-table__cell" data-sort-value="008">12.43 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="008">No</td>
+     
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -207,7 +230,7 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="009">SE7023 5012</td>
       <td class="govuk-table__cell" data-sort-value="009">45.20 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="009">No</td>
+     
     </tr>
         <tr class="govuk-table__row">
                <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -217,10 +240,13 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">SE7023 5013</td>
       <td class="govuk-table__cell" data-sort-value="010">9.12 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="010">No</td>
+     
     </tr>
   </tbody>
 </table>
+  
+  </div>
+</div>
 
 <!----Pagination-----> 
 
@@ -265,7 +291,10 @@
 </div>
 
 
-  <div class="govuk-grid-row">
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+ 
+
     <form class="form" action="prescriptions-p10-saved" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
     Save changes
@@ -281,6 +310,8 @@
 </div>
 
 </div>
+</div>
+
 
 <div class="govuk-grid-column-one-third">
 <div class="govuk-panel govuk-panel--confirmation govuk-!-text-align-left" style="background-color:#fafafa; border-color:#000000; border-width:medium;">

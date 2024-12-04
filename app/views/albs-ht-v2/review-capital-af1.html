@@ -47,36 +47,54 @@
 <span id="feedback_close" class="govuk-caption-l">AF1: Plant an agroforestry woodland tree</span>
       <h1 class="govuk-heading-l">Approve action or capital item on land parcels</h1>
 
-      <p class="govuk-body">Select the land parcel to approve the action or capital item on it. To reject the action or capital item, leave the box unselected.</p>
+      <p class="govuk-body">Select a land parcel to approve or reject this action or capital item on, or to leave feedback.</p>
 
-      <p class="govuk-body govuk-!-margin-bottom-6">If you do not want to approve or reject this capital item on a land parcel, 
-        <a class="govuk-link" href="review-capital-af1-applicable"> select land parcels that are 'not applicable'.</a></p>
+      <p class="govuk-body govuk-!-margin-bottom-6">If you do not want to approve or reject this capital item on a land parcel,   select land parcels and mark as ‘not applicable’.</p>
+
+      <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Any land parcel that is rejected for this action or capital item will require feedback as to why it has been rejected.
+      </strong>
+    </div>
+
+  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"> Select all parcels
+        </label>
+
+
+      </div>
+
+</div>
 
     </div>
   </div>
 
-      <div class="govuk-grid-row">
+  <br>
+
+   <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-
-      <table class="govuk-table" data-module="moj-sortable-table">
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-  <th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-        </label>
-      </div></th>
+    <table class="govuk-table " data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" id="select-all"class="govuk-table__header app-custom-class">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                
+              </div>
+            </div>
+          </th>
       
       <th scope="col" class="govuk-table__header" aria-sort="#">Parcel number</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="#">Parcel size</th>
+      <th scope="col" class="govuk-table__header" aria-sort="#">Quantity</th>
 
       <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
 
-      <th scope="col" class="govuk-table__header">Comment</th>
+      <th scope="col" class="govuk-table__header">Feedback</th>
 
     </tr>
   </thead>
@@ -93,12 +111,7 @@
       <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-        <td class="govuk-table__cell" ><details  class=" govuk-details">
-  <summary class="govuk-details__summary" >
-    <span class="govuk-details__summary-text"><a class="govuk-link" href="#" >Leave a comment</a>
-    </span>
-  </summary>
-</td>
+        <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
 
 
@@ -114,13 +127,7 @@
       <td class="govuk-table__cell" data-sort-value="002"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details" >
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+              <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -133,13 +140,7 @@
       <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -152,13 +153,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
            <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -171,13 +166,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -190,13 +179,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -209,13 +192,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+              <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -228,13 +205,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -247,13 +218,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -266,13 +231,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -285,13 +244,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -304,13 +257,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -323,13 +270,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -342,13 +283,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -361,13 +296,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+              <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -380,13 +309,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -399,13 +322,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -418,13 +335,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -437,13 +348,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -456,13 +361,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+             <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -475,13 +374,7 @@
       <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
           Needs approval
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+            <td class="govuk-table__cell" data-sort-value="003">No</td>
     </tr>
 
   </tbody>
@@ -535,20 +428,7 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-form-group">
-  <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--m" for="more-detail">
-     Feedback on capital item AF1: Plant an agroforestry woodland tree
-    </label>
-  </h1>
-    <div id="more-detail-hint" class="govuk-hint">
-Explain why you've approved or rejected land for this action/capital item. 
-</div>
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint"></textarea>
-  <p class="govuk-body">You have 1500 characters remaining</p>
-   <p class="govuk-body"><a class="govuk-link" href="#">Clear text</a></p>
-
-</div>
+ 
 
 <form class="form" action="review-capital-af1-applicable-saved" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
@@ -562,4 +442,15 @@ Explain why you've approved or rejected land for this action/capital item.
 </div>
 </main>
 
-{% endblock %}
+
+
+<!-- Add the script at the end of the body -->
+    <script>
+        document.getElementById('organisation').addEventListener('change', function() {
+            if (this.checked) {
+                window.location.href = "review-capital-af1-applicable"
+            }
+        });
+    </script>
+
+    {% endblock %}

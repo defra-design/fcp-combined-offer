@@ -44,26 +44,38 @@
    <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      Your changes have been saved
-    </h3>
-  </div>
-</div>
+        
 
 <span id="feedback_close" class="govuk-caption-l">CAB10: Unharvested cereal headland</span>
       <h1 class="govuk-heading-l">Approve action or capital item on land parcels</h1>
 
       <p class="govuk-body">Select the land parcel to approve the action or capital item on it. To reject the action or capital item, leave the box unselected.</p>
 
+      <div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Any land parcel that is rejected for this action or capital item will require feedback as to why it has been rejected.
+      </strong>
     </div>
-  </div>
+
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"> Select all parcels
+        </label>
+
+
+  
+
+</div>
+</div>
+    </div>
+
+    </div>
+
+    <br>
+
 
       <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -82,20 +94,20 @@
       
       <th scope="col" class="govuk-table__header" aria-sort="#">Parcel number</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="#">Parcel size</th>
+      <th scope="col" class="govuk-table__header" aria-sort="#">Quantity</th>
 
       <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
 
-      <th scope="col" class="govuk-table__header">Comment</th>
+      <th scope="col" class="govuk-table__header">Feedback</th>
 
     </tr>
   </thead>
 
   <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
+    <tr class="govuk-table__row" >
            <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
@@ -103,12 +115,7 @@
       <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--green">
           Approved
         </strong></td>
-        <td class="govuk-table__cell" ><details  class=" govuk-details">
-  <summary class="govuk-details__summary" >
-    <span class="govuk-details__summary-text"><a class="govuk-link" href="review-by-parcels-feedback#feedback_open" >Leave a comment</a>
-    </span>
-  </summary>
-</td>
+       <td class="govuk-table__cell" data-sort-value="001">No</td>
     </tr>
 
 
@@ -116,7 +123,7 @@
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" checked>
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc" >
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="002">SE7023 5010</td>
@@ -124,13 +131,7 @@
       <td class="govuk-table__cell" data-sort-value="002"><strong class="govuk-tag govuk-tag--green">
          Approved
         </strong></td>
-              <td class="govuk-table__cell" ><details class="govuk-details" >
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Leave a comment
-    </span>
-  </summary>
-</td>
+              <td class="govuk-table__cell" data-sort-value="001">No</td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -146,7 +147,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -165,7 +166,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -184,7 +185,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -203,7 +204,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -222,7 +223,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+     View feedback
     </span>
   </summary>
 </td>
@@ -241,7 +242,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+     View feedback
     </span>
   </summary>
 </td>
@@ -260,7 +261,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -279,7 +280,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+     View feedback
     </span>
   </summary>
 </td>
@@ -298,7 +299,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -317,7 +318,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+     View feedback
     </span>
   </summary>
 </td>
@@ -336,7 +337,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -355,7 +356,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+     View feedback
     </span>
   </summary>
 </td>
@@ -374,7 +375,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -393,7 +394,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -412,7 +413,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -431,7 +432,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -450,7 +451,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -469,7 +470,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+      View feedback
     </span>
   </summary>
 </td>
@@ -488,7 +489,7 @@
               <td class="govuk-table__cell" ><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-      Leave a comment
+     View feedback
     </span>
   </summary>
 </td>
@@ -557,7 +558,7 @@ Explain why you've approved or rejected land for this action/capital item.
 
 </div>
 
-<form class="form" action="review-actions-capitals-edits" method="post">
+<form class="form" action="review-actions-capitals-partially" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Save and continue
 </button>
