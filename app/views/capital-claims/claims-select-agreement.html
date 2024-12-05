@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-!-padding-bottom-6">
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">Countryside Stewardship claims</h1>
+  <span class="govuk-caption-l ">Holmeland Farm</span>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-full-column">
+  
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header">Claim Reference</th>
+          <th scope="col" class="govuk-table__header">Agreement</th>
+          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header">Active</th>
+          <th scope="col" class="govuk-table__header">Submit Date</th>
+          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1738201</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">Domestic CS Revenue Claim 2024</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">05/04/2024<br>12:07:01pm</td>
+            <td class="govuk-table__cell">Final Checking</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1738201</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">Domestic CS Revenue Claim 2024</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">05/04/2024<br>12:07:01pm</td>
+            <td class="govuk-table__cell">Final Checking</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1738201</td>
+            <td class="govuk-table__cell"></td>
+            <td class="govuk-table__cell">Domestic CS Revenue Claim 2024</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">05/04/2024<br>12:07:01pm</td>
+            <td class="govuk-table__cell">Final Checking</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1738201</td>
+            <td class="govuk-table__cell">Countryside Stewardship (HT)</td>
+            <td class="govuk-table__cell">Domestic CS Revenue Claim 2024</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">05/04/2024<br>12:07:01pm</td>
+            <td class="govuk-table__cell">Final Checking</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1738201</td>
+            <td class="govuk-table__cell">Countryside Stewardship (HT)</td>
+            <td class="govuk-table__cell">Domestic CS Revenue Claim 2024</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">05/04/2024<br>12:07:01pm</td>
+            <td class="govuk-table__cell">Final Checking</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1738201</td>
+            <td class="govuk-table__cell">Countryside Stewardship (HT)</td>
+            <td class="govuk-table__cell">Domestic CS Revenue Claim 2024</td>
+            <td class="govuk-table__cell">Yes</td>
+            <td class="govuk-table__cell">05/04/2024<br>12:07:01pm</td>
+            <td class="govuk-table__cell">Final Checking</td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+          </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    </div>
+
+    <div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">If you feel that you have not received payment or 
+        that payment has been delayed, please contact the RPA.</p>
+
+      <form class="form" action="#" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+           Create a new Capital claim 2023
+        </button>
+      </form>
+
+      <form class="form" action="#" method="post">
+        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+           Create a new Capital claim 2024
+        </button>
+      </form>
+
+    </div>
+
+  </div>
+
+
+{% endblock %}
