@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Claim number: 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-panel govuk-panel--confirmation" style="margin-bottom: 30px;">
+          <h1 class="govuk-panel__title">
+            Application submitted
+          </h1>
+          <div class="govuk-panel__body">
+            Your claim number <br>
+            <strong>1943258</strong>
+          </div>
+        </div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+          <p>Thank you for submitting your Countryside Stewardship Claim.</p>
+
+          <p>This message is to confirm that your claim has been submitted successfully 
+            to Rural Payments Agency. This is not a confirmation that your claim 
+            has been processed by Rural Payments Agency.</p>
+
+          <p style="margin-bottom: 30px;">You may want to keep a copy of this acknowledgement for your records.</p>
+
+        </p>
+
+        <p>Submission date and time:</p>
+        <p class="govuk-hint">21 November 2024 11:36</p>
+
+        <p>SBI</p>
+        <p>114106326</p>
+
+        <p>Claim Number</p>
+        <p>1943258</p>
+
+        <p class="govuk-body">
+          <p>Please do NOT submit a paper copy of your claim as well.</p>
+
+          <p>Please remember, if you need to provide any supporting documentation 
+            and evidence with your claim, refer to the relevant guidance. </p>
+        </p>
+
+  
+        <form class="form" action="#" method="post">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+             Print confirmation
+          </button>
+          </form>
+
+    <form class="form" action="#" method="post">
+      <button class="govuk-button" data-module="govuk-button" type="submit">Close</button>  
+      </form>
+
+
+
+
+
+
+    </div>
+  </div>
+
+</div>
+</main>
+
+{% endblock %}
