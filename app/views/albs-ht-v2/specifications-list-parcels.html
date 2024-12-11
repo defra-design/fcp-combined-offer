@@ -83,10 +83,10 @@
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
 
-            <th scope="col" class="govuk-table__header" aria-sort="ascending";>Parcel number</th>
-            <th scope="col" class="govuk-table__header">Name</th>
-            <th scope="col" class="govuk-table__header">Review completed</th>
-            <th scope="col" class="govuk-table__header">Review specifications</th>
+            <th scope="col" style="width: 200px" class="govuk-table__header" aria-sort="ascending";>Parcel number</th>
+            <th scope="col" style="width: 260px" class="govuk-table__header">Name</th>
+            <th scope="col" style="width: 220px" class="govuk-table__header">Review completed</th>
+            <th scope="col" style="width: 220px" class="govuk-table__header">Review specifications</th>
           </tr>
         </thead>
 
@@ -94,93 +94,151 @@
 
          <!----Parcel number SE7023 5004-----> 
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['capital-name-2'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">SE7023 5004</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['capital-name-1'] }}</div>
+            <div>{{ data['capital-name-2'] }}</div>
+            
+            <div>{{ data['capital-name-3'] }}</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div><br>
+            <div>No</div>
+            
+              <div>No</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+           
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+            
+          </div>
+        </td>
+      </tr>
+   
+   <style>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['capital-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
+   .govuk-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['capital-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
+.aligned-content {
+  display: flex;
+  flex-direction: column;
+}
+</style>
+
+     
 
          <!----Parcel number SE7023 5005-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['capital-name-2'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['capital-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['capital-name-5'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
+ <tr class="govuk-table__row">
+        <td class="govuk-table__cell">SE7023 5005</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['capital-name-2'] }}</div>
+            <div>{{ data['capital-name-3'] }}</div>
+            
+            <div>{{ data['capital-name-5'] }}</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div>
+            <div>No</div>
+            
+              <div>No</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+           
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+            
+          </div>
+        </td>
+      </tr>
 
          <!----Parcel number SE7023 5010-----> 
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['capital-name-2']}}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['capital-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['capital-name-6'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
+        <tr class="govuk-table__row">
+        <td class="govuk-table__cell">SE7023 5010</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['capital-name-1'] }}</div>
+            <div>{{ data['capital-name-2'] }}</div>
+            
+            <div>{{ data['capital-name-6'] }}</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div><br>
+            <div>No</div>
+            
+              <div>No</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+           
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+            
+          </div>
+        </td>
+      </tr>
 
 
 
         <!----Parcel number SE7023 5013-----> 
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5013</td>
-            <td class="govuk-table__cell">{{ data['capital-name-2'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5013</td>
-            <td class="govuk-table__cell">{{ data['capital-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
-          </tr>
+         <tr class="govuk-table__row">
+        <td class="govuk-table__cell">SE7023 5013</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['capital-name-2'] }}</div>
+            <div>{{ data['capital-name-4'] }}</div>
+          
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div>
+            <div>No</div>
+            
+     
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
+    
+            
+          </div>
+        </td>
+      </tr>
 
         </tbody>
       </table>
+
+         <div class= "pagination-container">
+
+<p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>4</b> of <b>4</b> results</p>
+
+</div>
     </div>
 
     </div>

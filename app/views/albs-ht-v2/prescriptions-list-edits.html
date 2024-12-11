@@ -42,7 +42,7 @@
   <div class="govuk-grid-full-column">
       <h1 class="govuk-heading-l">Prescriptions</h1>
       <p class="govuk-body">
-        <a href="prescriptions-list-parcels" class="govuk-link">View by land parcels</a>
+        <a href="prescriptions-list-parcels-edits" class="govuk-link">View by land parcels</a>
       </p>
 
 
@@ -61,24 +61,24 @@
         <tbody class="govuk-table__body">
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">{{ data['action-name-1'] }}</td>
+            <td class="govuk-table__cell" style="width: 260px">{{ data['action-name-1'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">Yes</td>
             <td class="govuk-table__cell"><a href="prescriptions-p10" class="govuk-link">Review</a></td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">{{ data['action-name-2'] }}</td>
+            <td class="govuk-table__cell" style="width: 200px">{{ data['action-name-2'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">No</td>
             <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
+            <td class="govuk-table__cell" style="width: 220px">{{ data['action-name-3'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell" style="width: 220px"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
 
@@ -270,16 +270,7 @@
         2
       </a>
     </li>
-    <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
-        ...
-      </a>
-    </li>
-      <li class="govuk-pagination__item">
-      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
-        4
-      </a>
-    </li>
+ 
   </ul>
   <div class="govuk-pagination__next">
     <a class="govuk-link govuk-pagination__link" href="#" rel="next">
