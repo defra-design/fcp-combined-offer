@@ -15,7 +15,7 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
-    text: "Back",
+    text: "Back to Business overview",
     href: "javascript:window.history.back()"
   }) }}
 
@@ -23,7 +23,7 @@
   <div class="govuk-grid-row" id="header" style="padding-top:16px;">
         <div class="govuk-grid-column-two-thirds">
           <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
-          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Claim number: 123456789</p>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Claim number: 1943258</p>
         </div>
         <div class="govuk-grid-column-one-third">
           <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
@@ -37,28 +37,35 @@
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Countryside Stewardship Claims</h1>
 
-      <h1 class="govuk-heading-l">Countryside Stewardship Claims</h1>
+    <p>Please review all sections of your claim before submitting it for processing.</p>
 
-      <p>Please review all sections of your claim before submitting it for processing.</p>
+    <p>If you believe the numbers (length, area etc.) are incorrect, 
+      contact Rural Payments Agency BEFORE submitting your claim. </p>
 
-      <p>Please review all sections of your claim before submitting it for processing.</p>
+    <p>Before you submit your claim form, please indicate that you have shared the following important documents by email or post where applicable. </p>
 
-      <p>Please review all sections of your claim before submitting it for processing.</p>
+    <p>Failure to do so could result in a delay or withholding of payment of your claim and the potential application of penalties. </p>
 
-      <p>Please review all sections of your claim before submitting it for processing.</p>
-
-      <form class="form" action="#" method="post">
-          <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-              Complete your claim
-          </button>
-      </form>
-
-      <form class="form" action="#" method="post">
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Back to claims
+    <form class="form" action="standard-cost-items" method="post">
+        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+            Complete your claim
         </button>
     </form>
+
+    <form class="form" action="claims-table" method="post">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Back to claims
+      </button>
+  </form>
+  
+  </div>
+</div>
+
+
 
 
 

@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Claim number: 1943258</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-6">
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Details of Capital Item Claim for Items Paid on the Basis of Actual Cost</h1>
+  
+
+    <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-0">
+      If you believe the numbers (length, area etc.) are incorrect, 
+      contact Rural Payments Agency BEFORE submitting your claim.
+    </p>
+
+</div>
+
+
+
+<div class="govuk-grid-column-full">
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header">Item code</th>
+        <th scope="col" class="govuk-table__header" style="width: 260px;">Item title</th>
+        <th scope="col" class="govuk-table__header">Total Approved</th>
+        <th scope="col" class="govuk-table__header">Total Remaining</th>
+        <th scope="col" class="govuk-table__header">Applied for</th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">FG11</td>
+          <td class="govuk-table__cell">FG11 - Deer exclosure plot/unit</td>
+          <td class="govuk-table__cell">6 units</td>
+          <td class="govuk-table__cell">6 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">2</td>
+          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
+          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">0 metres</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">3</td>
+          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
+          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">0 metres</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">4</td>
+          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
+          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">0 metres</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+        </tr>
+
+      
+      </tbody>
+    </table>
+
+
+
+      <form class="form" action="actual-cost-items-saved" method="post">
+        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+           Save and continue
+        </button>
+      </form>
+
+      <form class="form" action="standard-cost-items-saved" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+           Back
+        </button>
+      </form>
+
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}

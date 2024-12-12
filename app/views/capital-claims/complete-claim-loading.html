@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <div class="hods-loading-spinner">
+    <div
+      class="hods-loading-spinner__spinner"
+      aria-live="polite"
+      role="status"
+    ></div>
+    <div class="hods-loading-spinner__content">
+      <h1 class="govuk-heading-m">
+        Loading your application
+      </h1>
+
+      <p>The creation of a new CS Capital Only Claim application has been requested. This may take several minutes. 
+        It’s safe to close this window and come back later.</p>
+    </div>
+  </div>
+
+      <form class="form" action="#" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back to claims
+        </button>
+    </form>
+
+
+
+
+
+{% endblock %}

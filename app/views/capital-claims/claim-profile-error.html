@@ -40,6 +40,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">You didn’t list the items and provide reasons for the claims that meet the criteria.</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <h1 class="govuk-heading-l">Claim Profile</h1>
 
       <p class="govuk-body">Are there any claims that you:</p>
@@ -88,7 +103,7 @@
           </p>
         </div>
 
-        <form class="form" action="claim-profile-error" method="post">
+        <form class="form" action="other-public-funding" method="post">
           <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
              Save and continue
           </button>

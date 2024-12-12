@@ -4,18 +4,22 @@
   Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
   {{ govukBackLink({
-    text: "Back to your businesses",
-    href: "businesses-messages"
+    text: "Back",
+    href: "javascript:window.history.back()"
   }) }}
-{% endblock %}
 
-{% block content %}
-
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
+  <div class="govuk-!-padding-bottom-6"></div>
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -53,6 +57,10 @@
     <li>
     <a class="govuk-link" href="#cs">– Countryside Stewardship</a>
   </li>
+  <br>
+  <li>
+    <a class="govuk-link" href="#cc">– Capital claims</a>
+  </li>
 </ul>
 </div>
 
@@ -87,24 +95,24 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell" ><a href="#" class="govuk-!-font-weight-bold" class="govuk-link">Jasmine Smith</a></td>
-      <td class="govuk-table__cell" style="font-weight: 700;">Sole trader</td>
+      <td class="govuk-table__cell" ><a href="#" class="govuk-link">Jasmine Smith</a></td>
+      <td class="govuk-table__cell"">Sole trader</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><a href="#" class="govuk-!-font-weight-bold" class="govuk-link">Bartholomew Brown</td>
-      <td class="govuk-table__cell" style="font-weight: 700;">Agent</td>
+      <td class="govuk-table__cell"><a href="#" class="govuk-link">Bartholomew Brown</td>
+      <td class="govuk-table__cell">Agent</td>
     </tr>
   </tbody>
 </table>
-<ul class="govuk-list">
+<ul class="govuk-list govuk-!-margin-bottom-0">
     <li>
     <a class="govuk-link" href="#">Add people</a>
   </li>
-  <br>
+  <div class="govuk-!-padding-bottom-3"></div>
   <li>
     <a class="govuk-link" href="#">Add people from a firm of agents</a>
   </li>
-    <br>
+  <div class="govuk-!-padding-bottom-3"></div>
   <li>
     <a class="govuk-link" href="#">Remove people</a>
   </li>
@@ -225,6 +233,17 @@
   </ul>
 </div>
 </div>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+  <p class="govuk-body govuk-!-font-weight-bold" id="cc">Capital claims</p>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+  <p class="govuk-body"><a href="claims-table" class="govuk-link">Higher Tier capital claims</a></p>
+  </div>
+  </div>
 
 </main>
 </div>
