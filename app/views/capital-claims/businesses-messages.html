@@ -1,13 +1,29 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
 
-      <h1 class="govuk-heading-l">Your businesses and messages
-      <span class="govuk-caption-l">JASMINE SMITH</span></h1>
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <div class="govuk-!-padding-bottom-6"></div>
+
+  <h1 class="govuk-heading-l">Your businesses and messages
+    <span class="govuk-caption-l">JASMINE SMITH</span></h1>
+
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -69,25 +85,25 @@
   <p class="govuk-body govuk-!-font-weight-bold" style="float:right">Page 1 of 1</p>
     </div>
 
-        <div class="govuk-grid-column-one-third">
-          <hr class="section-break-large-blue"></hr>
-<ul class="govuk-list">
-   <li>
-  <p class="govuk-body">Account options</p>
-</p>
-  <li>
-    <a class="govuk-link" href="#">View and amend personal details</a>
-  </li>
-  <br>
-  <li>
-    <a class="govuk-link" href="#">Register a business</a>
-  </li>
-    <br>
-  <li>
-    <a class="govuk-link" href="#">Create or view a query</a>
-  </li>
-</ul>
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<div class="govuk-grid-column-one-third">
+    <hr class="section-break-large-blue"></hr>
+      <p class="govuk-body">Account options</p>
+
+    <ul class="govuk-list">
+      <li>
+        <a class="govuk-link govuk-!-margin-bottom-6" href="#">View and amend personal details</a>
+      </li>
+      <div class="govuk-!-padding-bottom-3"></div>
+      <li>
+        <a class="govuk-link" href="#">Register a business</a>
+      </li>
+      <div class="govuk-!-padding-bottom-3"></div>
+      <li>
+        <a class="govuk-link" href="#">Create or view a query</a>
+      </li>
+    </ul>
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 </div>
 
   </div>

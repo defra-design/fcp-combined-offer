@@ -1,0 +1,216 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l" id="sfi">
+Check your answers before sending your application</h1>
+      </div>
+    </div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+<h2 class="govuk-heading-m" id="details">
+        Your details
+      </h2>
+   <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Business
+    </dt>
+    <dd class="govuk-summary-list__value">
+JASMINE SMITH FARM<br>
+Rainbow Farm<br>
+High Street<br>
+Rhydlewis<br>
+Ellesmere<br>
+PO30 1NY
+</dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Single Business Identifier (SBI)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      123456789
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Land details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Up to date
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="check-land-details">Change<span class="govuk-visually-hidden"> land details</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Agreement name
+    </dt>
+    <dd class="govuk-summary-list__value">
+Jasmine’s Farm SFI 2023
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="agreement-name">Change<span class="govuk-visually-hidden"> agreement name</span></a>
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m" id="eligibility">
+        Eligibility
+      </h2>
+   <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+Management control of the land
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="management-control">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+Land with scheduled monuments or historic or archaeological features
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+Sites of special scientific interest (SSSIs)
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="sssi">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+Land owned by a public body 
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="public-body">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+Inheritance tax exemptions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="ite">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m" id="eligibility">
+        Summary of actions
+      </h2>
+   <dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Actions selected
+    </dt>
+    <dd class="govuk-summary-list__value">
+      30 actions, 15 SFI and 15 higher tier
+    </dd>
+       <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="select-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Land parcels
+    </dt>
+    <dd class="govuk-summary-list__value">
+      15 parcels over 402.34 hectares
+    </dd>
+       <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="select-land">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Request advice
+    </dt>
+    <dd class="govuk-summary-list__value">
+You have received support
+    </dd>
+  </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Request advice
+    </dt>
+    <dd class="govuk-summary-list__value">
+You have completed your agreement objectives
+    </dd>
+  </div>
+</dl>
+
+  <form class="form" action="submit-claim" method="post">
+  <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+    Save and continue
+  </button>
+</form>
+</div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}
