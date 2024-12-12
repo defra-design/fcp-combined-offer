@@ -37,9 +37,24 @@
 {% endblock %}
 
 {% block content %}
-  
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      You have 3 rejected actions/capital items awaiting feedback. Go to ‘Review’ to leave feedback.
+    </p>
+  </div>
+</div>
+
+
     <h1 class="govuk-heading-l">Review actions and capital items</h1>
     <p class="govuk-body govuk-!-margin-bottom-6">
       Select an action or capital item to approve it for all land parcels. 
@@ -97,25 +112,33 @@
           <th scope="col" class="govuk-table__header" aria-sort="#">Type</th>
           <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
           <th scope="col" class="govuk-table__header">Review land parcels</th>
+          <th scope="col" class="govuk-table__header" style="width: 5px;"></th>
         </tr>
       </thead>
 
+
       <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell app-custom-class">
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" name="parcel" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label"></label>
-            </div></div>
-          </td>
-          <td class="govuk-table__cell" data-sort-value="001">AF1: Plant an agroforestry woodland tree</td>
-          <td class="govuk-table__cell">Capital item</td>
-          <td class="govuk-table__cell" data-sort-value="001">Not applicable</td>
-          <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
-        </tr>
+      <tr class="govuk-table__row">
+  <td class="govuk-table__cell app-custom-class">
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" name="parcel" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label"></label>
+      </div>
+    </div>
+  </td>
+  <td class="govuk-table__cell" data-sort-value="001">AF1: Plant an agroforestry woodland tree</td>
+  <td class="govuk-table__cell">Capital item</td>
+  <td class="govuk-table__cell">
+    <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
+      <strong class="govuk-tag govuk-tag--grey">Needs approval</strong>
+    </div>
+  </td>
+  <td class="govuk-table__cell">
+    <a href="#">Review</a>
+  </td>
+  <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
+</tr>
     <tr class="govuk-table__row">
           <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
@@ -126,13 +149,14 @@
       <td class="govuk-table__cell">Action</td>
       <td class="govuk-table__cell">
       <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-      <strong class="govuk-tag govuk-tag--blue">
-        Partially approved
+      <strong class="govuk-tag govuk-tag--grey">
+        Needs approval
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
   <tr class="govuk-table__row">
          <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -148,8 +172,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -165,8 +190,10 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
       <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -182,8 +209,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -199,8 +227,10 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -216,8 +246,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
   
       <tr class="govuk-table__row">
@@ -234,8 +265,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -251,8 +283,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -267,9 +300,10 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+     <td class="govuk-table__cell">
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
 
      <tr class="govuk-table__row">
@@ -286,8 +320,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="review-actions-capitals-reject-3">Review</a>
+  </td>
+      <td class="govuk-table__cell" style="color:   #d4351c;">!</td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -303,8 +338,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+     <td class="govuk-table__cell tight-column" style="color: #d4351c;">!</td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -319,9 +355,11 @@
         Rejected
       </strong>
     </div></td>
+ 
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;">!</td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -337,8 +375,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -354,8 +393,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -371,8 +411,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -388,8 +429,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -405,8 +447,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -422,8 +465,9 @@
       </strong>
     </div></td>
      <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -439,8 +483,9 @@
       </strong>
     </div></td>
       <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+    <a href="#">Review</a>
+  </td>
+      <td class="govuk-table__cell tight-column" style="color: #d4351c;"></td>
     </tr>
 
   </tbody>
@@ -487,7 +532,7 @@
   
   </div>
 
-  <form class="form" action="tasklist-2" method="post">
+  <form class="form" action="#" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Save and continue
     </button>
