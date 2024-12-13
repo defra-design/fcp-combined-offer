@@ -1,9 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block beforeContent %}
 
@@ -24,22 +23,17 @@
 {% block content %}
 
 
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">Funding applications and agreements</h1>
+<span class="govuk-caption-l govuk-!-margin-bottom-6">JASMINE SMITH</span>
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-full-column">
 
-<h1 class="govuk-heading-l">Funding applications and agreements</h1>
-<span class="govuk-caption-l govuk-!-padding-bottom-5">JASMINE SMITH</span>
-
-    <table class="govuk-table">
+<table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">App. number</th>
-      <th scope="col" class="govuk-table__header">Type</th>
-      <th scope="col" class="govuk-table__header">Active</th>
-      <th scope="col" class="govuk-table__header">Submit date</th>
+      <th scope="col" class="govuk-table__header" style="width: 130px;">Agreement name</th>
+      <th scope="col" class="govuk-table__header" style="width: 70px;">Type</th>
+      <th scope="col" class="govuk-table__header" style="width: 70px;">Active</th>
+      <th scope="col" class="govuk-table__header" style="width: 110px;">Submit date</th>
       <th scope="col" class="govuk-table__header">Status</th>
 
     </tr>
@@ -48,9 +42,9 @@
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header"></th>
       <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
       <td class="govuk-table__cell">No items</td>
-      <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell"></td>
     </tr>
  </tbody>
 </table>
@@ -61,10 +55,6 @@
 </button>
 </form>
 
-</div>
-</div>
 
-</main>
-</div>
 
 {% endblock %}
