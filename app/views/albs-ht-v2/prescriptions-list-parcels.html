@@ -83,81 +83,117 @@
 
    <!----Maps view-----> 
 
-  <div class="govuk-grid-full-column">
-    <table class="govuk-table" data-module="moj-sortable-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
+<div class="govuk-grid-full-column">
+  <table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" style="width: 200px" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
+        <th scope="col" style="width: 260px" class="govuk-table__header">Action name</th>
+        <th scope="col" style="width: 220px" class="govuk-table__header">Review completed</th>
+        <th scope="col" style="width: 220px" class="govuk-table__header">Review prescriptions</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">SE7023 5004</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['action-name-1'] }}</div>
+            <div>{{ data['action-name-2'] }}</div>
+            <div>{{ data['action-name-3'] }}</div>
+            <div>{{ data['action-name-4'] }}</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div><br>
+            <div>No</div><br>
+             <div>No</div><br>
+              <div>No</div>
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div>
+            
+          </div>
+        </td>
+      </tr>
+   
+   <style>
 
-            <th scope="col" class="govuk-table__header" aria-sort="ascending";>Parcel number</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Type</th>
-            <th scope="col" class="govuk-table__header" aria-sort="none">Review completed</th>
-            <th scope="col" class="govuk-table__header">Review prescriptions</th>
-          </tr>
-        </thead>
+   .govuk-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
 
-        <tbody class="govuk-table__body">
+.aligned-content {
+  display: flex;
+  flex-direction: column;
+}
+</style>
 
-         <!----Parcel number SE7023 5004-----> 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p10" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-2'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5004</td>
-            <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
+  
          <!----Parcel number SE7023 5005-----> 
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['action-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
+        <td class="govuk-table__cell">SE7023 5005</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['action-name-1'] }}</div>
+            <div>{{ data['action-name-2'] }}</div>
+            
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div><br>
+            <div>No</div>
+           
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div>
+            
+          </div>
+        </td>
+      </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['action-name-2'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
 
           <!----Parcel number SE7023 5006-----> 
 
+       
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5006</td>
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
+        <td class="govuk-table__cell">SE7023 5006</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['action-name-3'] }}</div>
+            <div>{{ data['action-name-4'] }}</div>
+            
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div><br>
+            <div>No</div>
+           
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="#" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div>
+            
+          </div>
+        </td>
+      </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5005</td>
-            <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
 
 
           <!----Parcel number SE7023 5007-----> 
@@ -187,25 +223,36 @@
          <!----Parcel number SE7023 5010-----> 
 
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['action-name-1'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
+        <td class="govuk-table__cell">SE7023 5010</td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>{{ data['action-name-1'] }}</div>
+            <div>{{ data['action-name-3'] }}</div>
+            <div>{{ data['action-name-4'] }}</div>
+            <div>{{ data['action-name-5'] }}</div>
+            
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div>No</div><br>
+            <div>No</div><br>
+            <div>No</div><br>
+            <div>No</div>
+           
+          </div>
+        </td>
+        <td class="govuk-table__cell">
+          <div class="aligned-content">
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div><br>
+            <div><a href="#" class="govuk-link">Review</a></div>
+            
+          </div>
+        </td>
+      </tr>
 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">SE7023 5010</td>
-            <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
-            <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
-          </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">SE7023 5010</td>
@@ -292,12 +339,12 @@
     </a>
   </div>
 </nav>
-<p class="pagination-text">Showing <b>1</b> to <b>20</b> of <b>26</b> results</p>
+<p class="pagination-text">Showing <b>1</b> to <b>10</b> of <b>38</b> results</p>
 
 </div>
 
 
-<form class="form" action="prescriptions-list-edits" method="post">
+<form class="form" action="tasklist-2" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Save and continue
 </button>

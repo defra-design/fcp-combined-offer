@@ -56,19 +56,42 @@
   </div>
 </div>
 
-  <div class="govuk-grid-row">
+ <div class="moj-primary-navigation" style="background-color: grey; width: fit-content;">
+            <div class="moj-primary-navigation__container">
+                <div class="moj-primary-navigation__nav">
+                    <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
+                        <ul class="moj-primary-navigation__list" >
+                       <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link"  aria-current="page" href="#" style="padding-left: 20px; padding-right:20px">Approve</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="review-actions-capitals-reject" style="padding-left: 20px; padding-right:20px">Reject</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="#2" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
+          </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+<div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-<table class="govuk-table" data-module="moj-sortable-table">
-
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-
-<th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-        </label>
-      </div></th>
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header app-custom-class">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input"  id="select-all" name="parcel" type="checkbox" value="hmrc">
+                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  </label>
+              </div>
+            </div>
+          </th>
           <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 260px">
             Name</th>
           <th scope="col" class="govuk-table__header" aria-sort="#">Type</th>
@@ -82,7 +105,7 @@
           <td class="govuk-table__cell app-custom-class">
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
+              <input class="govuk-checkboxes__input" name="parcel" type="checkbox">
               <label class="govuk-label govuk-checkboxes__label"></label>
             </div></div>
           </td>
@@ -96,13 +119,13 @@
             </div>
           </td>
           <td class="govuk-table__cell">
-            <a href="review-capital-af1">Review</a>
+            <a href="#">Review</a>
           </td>
         </tr>
     <tr class="govuk-table__row">
           <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="002">CAB10: Unharvested cereal headland</td>
@@ -113,12 +136,14 @@
         Needs approval
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+    <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
   <tr class="govuk-table__row">
          <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="003">CAB11: Cultivated areas for arable plants</td>
@@ -128,12 +153,14 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="003">CAB12: Supplementary winter bird food</td>
@@ -143,12 +170,14 @@
         Needs approval
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
       <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">CAB14: Low input harvested cereal crop</td>
@@ -158,12 +187,14 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+       <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="005">CAB16: Bumblebird mix</td>
@@ -173,12 +204,14 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+       <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="006">CAB17: Winter bird food on arable and horticultural land</td>
@@ -188,43 +221,49 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+       <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
   
       <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="008">CAB18: Flower-rich grass margins, blocks, or in-field strips (on arable land or permanent crops)</td>
        <td class="govuk-table__cell">Action</td>
       <td class="govuk-table__cell"><div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-     <strong class="govuk-tag govuk-tag--green">
+      <strong class="govuk-tag govuk-tag--green">
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+       <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="009">CAB19:Pollen and nectar flower mix</td>
        <td class="govuk-table__cell">Action</td>
       <td class="govuk-table__cell"><div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-     <strong class="govuk-tag govuk-tag--green">
+      <strong class="govuk-tag govuk-tag--green">
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAB2: Basic overwintered stubble</td>
@@ -234,13 +273,15 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
 
      <tr class="govuk-table__row">
            <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAB5: Nesting plots for lapwing and stone curlew</td>
@@ -250,12 +291,14 @@
         Needs approval
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAB6: Enhanced overwintered stubble</td>
@@ -265,12 +308,14 @@
         Needs approval
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+       <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAB7: Whole crop cereals</td>
@@ -280,12 +325,14 @@
         Needs approval
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+       <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAGF1: Maintain high density in-field agroforestry</td>
@@ -295,12 +342,14 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+     <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAGF2: Maintain low density in-field agroforestry on more sensitive land</td>
@@ -310,12 +359,14 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAGF3: Maintain medium density in-field agroforestry</td>
@@ -325,12 +376,14 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CAGF4: Maintain very low density in-field agroforestry on more sensitive land</td>
@@ -340,27 +393,31 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CBE4: Manage traditional orchards</td>
        <td class="govuk-table__cell">Action</td>
       <td class="govuk-table__cell"><div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-     <strong class="govuk-tag govuk-tag--green">
+      <strong class="govuk-tag govuk-tag--green">
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">CBE5: Create traditional orchards</td>
@@ -370,12 +427,14 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="010">FG1: Fencing</td>
@@ -385,7 +444,9 @@
         Approved
       </strong>
     </div></td>
-      <td class="govuk-table__cell"><a href="review-action-cab10">Review</a></td>
+      <td class="govuk-table__cell">
+            <a href="#">Review</a>
+          </td>
     </tr>
 
   </tbody>
@@ -433,7 +494,7 @@
   </div>
 
   <form class="form" action="review-actions-capitals-edits" method="post">
-    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+    <button type="submit" class="#" data-module="govuk-button">
       Save and continue
     </button>
   </form>
@@ -445,12 +506,63 @@
 </main>
 
 <!-- Add the script at the end of the body -->
+<script>
+        document.getElementById('select-all').addEventListener('change', function() {
+            var checkboxes = document.querySelectorAll('input[name="parcel"]');
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+            toggleRemoveButton();
+        });
+
+        var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
+        for (var checkbox of parcelCheckboxes) {
+            checkbox.addEventListener('change', toggleRemoveButton);
+        }
+
+        function toggleRemoveButton() {
+            var removeButton = document.getElementById('action-menu');
+            var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
+            if (anyChecked) {
+                removeButton.classList.remove('hidden');
+            } else {
+                removeButton.classList.add('hidden');
+            }
+        }
+    </script>
+
+
+     <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+
     <script>
-        document.getElementById('organisation').addEventListener('change', function() {
-            if (this.checked) {
-                window.location.href = "review-actions-capitals-selection-reject"
+    document.getElementById('select-all').addEventListener('change', function() {
+        var checkboxes = document.querySelectorAll('input[name="parcel"]');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+        toggleButtons();
+    });
+
+    var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
+    for (var checkbox of parcelCheckboxes) {
+        checkbox.addEventListener('change', toggleButtons);
+    }
+
+    function toggleButtons() {
+        var buttons = document.querySelectorAll('action-menu');
+        var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
+        buttons.forEach(button => {
+            if (anyChecked) {
+                button.classList.remove('hidden');
+            } else {
+                button.classList.add('hidden');
             }
         });
-    </script>
+    }
+</script>
 
 {% endblock %}

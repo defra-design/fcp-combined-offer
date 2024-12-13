@@ -1,0 +1,295 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  ALBs HT V2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    
+         
+                  <h1 class="govuk-heading-l">
+                    Feedback on application
+                  </h1>
+              
+               
+       </div>
+     </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    
+
+ <div class="govuk-tabs" data-module="govuk-tabs">
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#app-feedback">
+              Application feedback
+            </a>
+          </li>
+        
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#parcel-feedback">
+              View by land parcels
+            </a>
+          </li>
+        </ul>
+
+  <div class="govuk-tabs__panel" style="border-right: none; border-left: none; border-bottom: none; padding-top: 30px; padding-left: 0; padding-right: 0; padding-bottom: 0;" id="app-feedback">
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+            <th scope="col" style="width: 150px" class="govuk-table__header"  aria-sort="ascending";>Date</th>
+            <th scope="col" style="width: 500px" class="govuk-table__header">Message</th>
+            <th scope="col" style="width: 200px" class="govuk-table__header" aria-sort="none">Adviser</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">20/10/24 <br>14:45pm</td>
+            <td class="govuk-table__cell">Actions selected are not suitable for the type of plants present on the applicants land.</td>
+            <td class="govuk-table__cell">Mary Poppins<br>Forestry Commission</td>
+          </tr>
+
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Actions selected are suitable for this land parcel. </td>
+            <td class="govuk-table__cell">Tom Rogers<br>Historic England</td>
+          </tr>
+
+          
+        </tbody>
+
+      </table>
+
+        <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="1500" style="margin-bottom: 10px;">
+      <label class="govuk-label" for="label-as-page-heading">
+        Explain why you've approved or rejected this application. Feedback will be visible to the customer.
+      </label>
+      <textarea class="govuk-textarea govuk-js-character-count" id="label-as-page-heading" name="labelAsPageHeading" rows="5" aria-describedby="label-as-page-heading-info"></textarea>
+      <div id="label-as-page-heading-info" class="govuk-hint govuk-character-count__message">
+        You can enter up to 1500 characters
+      </div>
+    </div>
+
+    <p class="govuk-body govuk-body govuk-!-margin-bottom-6">
+    <a href="#" class="govuk-link govuk-link--no-visited-state">Clear text</a></p>
+
+ <form class="form" action="approval-feedback-saved" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">Add feedback
+    </button>
+        </form>
+
+   
+
+
+        <form class="form" action="#" method="post">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">Return to approvals</button>  
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  <!----View by action-----> 
+
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" style="border-right: none; border-left: none; border-bottom: none; padding-top: 30px; padding-left: 0; padding-right: 0; padding-bottom: 0;" id="parcel-feedback">
+
+
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+          <th scope="col" style="width: 150px" class="govuk-table__header" aria-sort="ascending";>Parcel number</th>
+          <th scope="col" style="width: 150px" class="govuk-table__header" aria-sort="none";>Action name</th>
+          <th scope="col" style="width: 100px" class="govuk-table__header" aria-sort="none">Date</th>
+          <th scope="col" style="width: 280px" class="govuk-table__header">Message</th>
+          <th scope="col" style="width: 200px" class="govuk-table__header" aria-sort="none">Adviser</th>
+          <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+
+
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SE7023 5010</td>
+            <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+            <td class="govuk-table__cell">23/10/24 <br>10:25am</td>
+            <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+
+
+        </tbody>
+      </table>
+
+      <div class= "pagination-container">
+
+  <nav class="govuk-pagination" aria-label="Pagination">
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          ...
+        </a>
+      </li>
+        <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          8
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <span class="govuk-pagination__link-title">
+          Next<span class="govuk-visually-hidden"> page</span>
+        </span>
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>20</b> of <b>90</b> results</p>
+  
+  </div>
+
+          <form class="form" action="#" method="post">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" type="submit">Return to approvals</button>  
+          </form>
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+</div>
+</main>
+
+
+{% endblock %}

@@ -1,0 +1,612 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  ALBs HT V2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+   <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+         <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Leave feedback to explain why you've rejected land parcels for this action or capital item.
+    </p>
+  </div>
+</div>
+
+
+<span id="feedback_close" class="govuk-caption-l">CAB12: Supplementary winter bird food</span>
+      <h1 class="govuk-heading-l">Approve action or capital item on land parcels</h1>
+
+      <p class="govuk-body">Select a land parcel to approve or reject this action or capital item on, or to leave feedback.</p>
+
+       <p class="govuk-body">If you do not want to approve or reject this action or capital item on a land parcel,  select land parcels and mark as ‘not applicable’.</p>
+
+
+<div class="govuk-warning-text">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        Any land parcel that is rejected for this action or capital item will require feedback as to why it has been rejected.
+      </strong>
+    </div>
+
+  <div class="moj-primary-navigation" style="background-color: grey; width: fit-content;">
+            <div class="moj-primary-navigation__container">
+                <div class="moj-primary-navigation__nav">
+                    <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
+                        <ul class="moj-primary-navigation__list" >
+                       <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link"  aria-current="page" href="#" style="padding-left: 20px; padding-right:20px">Approve</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="review-action-cab12-feedback" style="padding-left: 20px; padding-right:20px">Reject</a>
+          </li>
+          <li class="moj-primary-navigation__item">
+            <a class="moj-primary-navigation__link" aria-current="page" href="#2" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
+          </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <br>
+
+  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" checked id="select-all" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"> Select all parcels
+        </label>
+
+
+      </div>
+
+</div>
+    </div>
+
+  </div>
+<br>
+
+
+
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+<table class="govuk-table" data-module="moj-sortable-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+<th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+        </label>
+      </div></th>
+      
+      <th scope="col" class="govuk-table__header" aria-sort="#">Parcel number</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="#">Parcel size</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
+
+      <th scope="col" class="govuk-table__header">Feedback</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+           <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
+      <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+        <td class="govuk-table__cell" data-sort-value="001">No</td>
+     
+    </tr>
+
+
+
+       <tr class="govuk-table__row">
+             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="002">SE7023 5010</td>
+      <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+              <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+       <tr class="govuk-table__row">
+             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="003">SE7023 5011</td>
+      <td class="govuk-table__cell" data-sort-value="003">26.43 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+       <tr class="govuk-table__row">
+             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5012</td>
+      <td class="govuk-table__cell" data-sort-value="004">5.32 hectares</td>
+     <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+            <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+           <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5013</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5014</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+            <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5015</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+     <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+            <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5016</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5017</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5018</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+     <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5019</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+              <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5020</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5021</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+              <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5022</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+              <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5023</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5024</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5025</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5026</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5027</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5028</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+              <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+     <tr class="govuk-table__row">
+                 <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+      </div></td>
+      <td class="govuk-table__cell" data-sort-value="004">SE7023 5029</td>
+      <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
+      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--red">
+          Rejected
+        </strong></td>
+             <td class="govuk-table__cell" data-sort-value="001">No</td>
+    </tr>
+
+  </tbody>
+</table>
+<!----Pagination-----> 
+<div class= "pagination-container">
+
+  <nav class="govuk-pagination" aria-label="Pagination">
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          ...
+        </a>
+      </li>
+        <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          4
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <span class="govuk-pagination__link-title">
+          Next<span class="govuk-visually-hidden"> page</span>
+        </span>
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
+  
+  </div>
+</div></div>
+
+<div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-form-group hidden" id="feedback">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m " for="more-detail">
+     Feedback on action CAB12: Supplementary winter bird food
+    </label>
+  </h1>
+    <div id="more-detail-hint " class="govuk-hint ">
+Explain why you've approved or rejected land parcels for this action or capital item.
+</div>
+  <textarea class="govuk-textarea " id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint"></textarea>
+  <p class="govuk-body ">You have 1500 characters remaining</p>
+   <p class="govuk-body "><a class="govuk-link" href="#">Clear text</a></p>
+
+</div>
+
+
+<form class="form" action="#" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Save and continue
+</button>
+</form>
+
+
+    </div>
+  </div>
+
+</div>
+</main>
+<!-- Add the script at the end of the body -->
+    <style>
+
+  .govuk-tabs {
+    margin-bottom: 0; /* Remove default margin */
+    margin-top:0; /* Remove default margin */
+
+  }
+ 
+  .expanded-content td {
+    
+    border-bottom: 1px solid #b1b4b6  ; /* Add border to the bottom of the expanded row */
+  }
+  
+  .govuk-details {
+    margin-bottom: 0; /* Remove default margin */
+    margin-top:0; /* Remove default margin */
+
+  }
+  
+
+  
+</style>
+
+<script>
+  document.querySelectorAll('.govuk-details__summary').forEach(function(summary) {
+    summary.addEventListener('click', function(event) {
+      event.preventDefault();
+      
+      // Find the parent row
+      const row = event.target.closest('tr');
+      
+      // Check if the expanded content already exists
+      if (row.nextElementSibling && row.nextElementSibling.classList.contains('expanded-content')) {
+        // Remove the expanded content if it already exists
+        row.nextElementSibling.remove();
+        row.classList.remove('hide-border'); // Remove the class to show the border again
+        summary.parentNode.removeAttribute('open'); // Close the details element
+        summary.parentNode.querySelector('.govuk-details__text').style.display = ''; // Show the original details text
+        
+        // Remove the border-bottom style from each td
+        row.querySelectorAll('td').forEach(function(td) {
+          td.style.borderBottom = '';
+        });
+      } else {
+        // Get the content from the details text
+        const detailsText = row.querySelector('.govuk-details__text').innerHTML;
+        // Create a new row for the expanded content
+        const expandedRow = document.createElement('tr');
+        expandedRow.classList.add('expanded-content');
+        
+        // Create a cell that spans all columns
+        const expandedCell = document.createElement('td');
+        expandedCell.colSpan = row.children.length;
+        expandedCell.innerHTML = `<div class="govuk-details__text">${detailsText}</div>`;
+        
+        // Append the cell to the new row
+        expandedRow.appendChild(expandedCell);
+        
+        // Insert the new row after the current row
+        row.parentNode.insertBefore(expandedRow, row.nextSibling);
+        row.classList.add('hide-border'); // Add the class to hide the border
+        summary.parentNode.setAttribute('open', ''); // Open the details element
+        summary.parentNode.querySelector('.govuk-details__text').style.display = 'none'; // Hide the original details text
+        
+        // Add the border-bottom style to each td
+        row.querySelectorAll('td').forEach(function(td) {
+          td.style.borderBottom = 'none';
+        });
+      }
+    });
+  });
+</script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkboxes = document.querySelectorAll('input[name="parcel"]');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = true;
+        }
+        toggleButtons();
+    });
+
+    document.getElementById('select-all').addEventListener('change', function() {
+        var checkboxes = document.querySelectorAll('input[name="parcel"]');
+        for (var checkbox of checkboxes) {
+            checkbox.checked = this.checked;
+        }
+        toggleButtons();
+    });
+
+    var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
+    for (var checkbox of parcelCheckboxes) {
+        checkbox.addEventListener('change', toggleButtons);
+    }
+
+    function toggleButtons() {
+        var removeButton = document.getElementById('action-menu');
+        var buttons = document.querySelectorAll('#approve, #reject, #feedback');
+        var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
+        if (anyChecked) {
+            removeButton.classList.remove('hidden');
+            buttons.forEach(button => button.classList.remove('hidden'));
+        } else {
+            removeButton.classList.add('hidden');
+            buttons.forEach(button => button.classList.add('hidden'));
+        }
+    }
+</script>
+
+<style>
+    .hidden {
+        display: none;
+    }
+</style>
+
+
+{% endblock %}

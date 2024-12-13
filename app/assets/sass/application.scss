@@ -271,3 +271,17 @@ body {
   align-self: center;
 
 }
+
+.govuk-tabs__list-item {
+  border: none; /* Removes the grey border */
+}
+
+.govuk-tabs__list {
+  width: 100%; /* Makes the tab list use the full width */
+}
+
+.govuk-tabs__tab {
+  width: 100%; /* Makes each tab use the full width */
+  text-align: center; /* Centers the text within each tab */
+}
+
