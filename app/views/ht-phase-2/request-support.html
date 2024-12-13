@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" id="header">
+<div class="govuk-grid-column-full">
+<div class="moj-organisation-nav" aria-label="Organisation switcher">
+<div class="moj-organisation-nav__title">Jasmine Smith</div>
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Save and return later
+</button>
+</div>
+</div>
+</div>
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">
+      Request support
+      </h1>
+      </div>
+    </div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+<p class="govuk-body">You’ll need specialist support and advice for the higher tier actions you’ve selected.</p>
+
+<p class="govuk-body govuk-!-font-weight-bold">Natural England will give advice on:</p>
+<p class="govuk-body"><ul class="govuk-list govuk-list--bullet">
+<li>AB1: Nectar flower mix</li>
+<li>AB3: Beetle banks</li>
+<li>AB7: Whole crop cereals</li>
+<li>AB15: Two year sown legume fallow</li>
+</ul>
+</p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<p class="govuk-body govuk-!-font-weight-bold">Environment Agency will give advice on:</p>
+<p class="govuk-body"><ul class="govuk-list govuk-list--bullet">
+<li>BE4: Management of traditional orchards</li>
+<li>BE5: Creation of traditional orchards</li>
+<li>GS4: Legume and herb-rich swards</li>
+<li>ED1: Educational access</li>
+<li>SW7: Arable reversion to grassland with low fertiliser input</li>
+<li>WD4: Management of lowland wood pasture and parkland</li>
+<li>WD8: Creation of successional areas and scrub</li>
+</ul></p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<p class="govuk-body govuk-!-font-weight-bold">Forestry Commission will check your woodland management plan for:</p>
+<p class="govuk-body"><ul class="govuk-list govuk-list--bullet">
+<li>WD1: Woodland creation - maintenance payments</li>
+</ul></p>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+<div class="govuk-form-group">
+  <h1 class="govuk-label-wrapper">
+    <label class="govuk-label govuk-label--m" for="more-detail">
+Enter your agreement objectives
+    </label>
+  </h1>
+  <div id="more-detail-hint" class="govuk-hint">
+These are the objectives you are setting for the entire length of your agreement.</div>
+  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="12" aria-describedby="more-detail-hint"></textarea>
+<p class="govuk-body">You have 3000 characters remaining.</p>
+</div>
+
+</div>
+</div>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+  You will not be able to change your selection after you request support.
+</strong>
+</div>
+
+<div class="govuk-form-group">
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        I want to request support for my selected actions
+        </label>
+      </div>
+    </div>
+</div>
+
+  <form class="form" action="tasklist-10" method="post">
+ <button type="submit" class="govuk-button" data-module="govuk-button">
+  Request support
+</button>
+</form>
+
+</div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}
