@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-l govuk-!-margin-bottom-2">Funding applications and agreements</h1>
+<span class="govuk-caption-l govuk-!-margin-bottom-6">JASMINE SMITH</span>
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" style="width: 130px;">Agreement name</th>
+      <th scope="col" class="govuk-table__header" style="width: 70px;">Type</th>
+      <th scope="col" class="govuk-table__header" style="width: 70px;">Active</th>
+      <th scope="col" class="govuk-table__header" style="width: 110px;">Submit date</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header"></th>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">No items</td>
+    </tr>
+ </tbody>
+</table>
+
+  <form class="form" action="tasklist-1" method="post">
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Apply for a new agreement
+</button>
+</form>
+
+
+
+{% endblock %}

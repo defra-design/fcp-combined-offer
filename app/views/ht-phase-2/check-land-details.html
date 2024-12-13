@@ -1,9 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block beforeContent %}
 
@@ -19,68 +18,76 @@
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 {% endblock %}
 
 {% block content %}
 
-
-<div class="govuk-grid-row" id="header">
-<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-<div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith</div>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Save and return later
-</button>
-</div>
-</div>
-</div>
-
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
-
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-l">Check your land details</h1>
-<p class="govuk-body">Your maps must be up to date so we can check your land is eligible for the actions you want to do.</p>
-<p class="govuk-body">You should check your maps show the correct:<br>
-• land parcels<br>
-• land covers<br>
-• permanent boundaries, like hedges and fences<br>
-</p>
-<p class="govuk-body"><a href="#" class="govuk-link">Check your digital maps</a></p>
-
-<form class="form" action="/land-details-answer-ht" method="post">
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h1 class="govuk-fieldset__heading">
-                 Do your digital maps show the correct land details?
-                </h1>
-              </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="landDetailsAnswer-1" name="land-details-answer" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label" for="landDetailsAnswer-1">
-                    Yes
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="landDetailsAnswer-2" name="land-details-answer" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="landDetailsAnswer-2">
-                    No
-                  </label>
-                </div>
-            </fieldset>
-          </div>
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-        </form>
-
+  <div class="govuk-grid-column-two-thirds">
+  
+  <h1 class="govuk-heading-l">Check your land details</h1>
+    
+    <p class="govuk-body">Your maps must be up to date so we can check your land is eligible for the actions you want to do. </p>
+  
+    <p class="govuk-body govuk-!-margin-bottom-0">You should check your maps show the correct:
+      <ul class="govuk-list govuk-list--bullet">
+          <li>land parcels</li>
+          <li>land covers</li>
+          <li>permanent boundaries, like hedges and fences</li>
+      </ul>
+    </p>
+  
+    <p class="govuk-body"><a href="#" class="govuk-link">Check your digital maps</a></p>
+    <div class="govuk-!-padding-bottom-2"></div>
+  
+  <form class="form" action="/land-details-answer-ht-p2" method="post">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h2 class="govuk-fieldset__heading">
+                   Do your digital maps show the correct land details?
+                  </h2>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="landDetailsAnswer-1" name="land-details-answer" type="radio" value="yes">
+                    <label class="govuk-label govuk-radios__label" for="landDetailsAnswer-1">
+                      Yes
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="landDetailsAnswer-2" name="land-details-answer" type="radio" value="no">
+                    <label class="govuk-label govuk-radios__label" for="landDetailsAnswer-2">
+                      No
+                    </label>
+                  </div>
+              </fieldset>
+            </div>
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </form>
+  
+      </div>
     </div>
+  
   </div>
-
-</div>
-</main>
+  </main>
+  </label>
+  </div>
 
 {% endblock %}
