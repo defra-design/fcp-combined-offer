@@ -41,18 +41,33 @@
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">You are eligible to apply</h1>
-
-      <form class="form" action="tasklist-3" method="post">
-        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-          Save and continue
-        </button>
-      </form>
-
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h1 class="govuk-panel__title">
+        Application complete
+      </h1>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>HDJ2123F</strong>
+      </div>
     </div>
+    
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-6">What happens next</h2>
+    <p class="govuk-body govuk-!-margin-bottom-6">We have sent you a confirmation email.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      We’ll email you again when your SFI agreement offer is available in the Rural Payments service for you to check. 
+      Your agreement will only begin once you accept and sign this document.
+    </p>
+
+    <form class="form" action="dashboard-after-application" method="post">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Close
+      </button>
+    </form>
+            
+  </div>
 </div>
 
+<div class="govuk-!-padding-bottom-9"></div>
 
 {% endblock %}

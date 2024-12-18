@@ -37,23 +37,33 @@
 
 {% block content %}
 
-
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">You are not eligible to apply</h1>
+    <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="40">
+      <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+        <label class="govuk-label govuk-label--l" for="with-hint">
+          Enter your agreement name
+        </label>
+      </h1>
+      <div id="with-hint-hint" class="govuk-hint govuk-!-margin-bottom-2">
+        This will appear on your agreement documents and is for your reference only. For example ‘Jasmine’s Farm Funding 2024’.
+      </div>
+      <input class="govuk-input govuk-!-width-three-quarters govuk-js-character-count" id="with-hint" name="withHint" rows="1" aria-describedby="with-hint-info with-hint-hint">
 
-      <p class="govuk-body govuk-!-margin-bottom-6">Select 'back' to change your answer, or withdraw your application.</p>
-
-      <form class="form" action="dashboard" method="post">
-        <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
-          Withdraw application
-        </button>
-      </form>
-      
+      <div id="with-hint-info" class="govuk-hint govuk-character-count__message govuk-!-margin-top-2">
+      You have 40 characters remaining
+      </div>
     </div>
-  </div>
 
+  <form class="form" action="tasklist-4" method="post">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
+        
+  </div>
+</div>
 
 
 {% endblock %}

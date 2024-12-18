@@ -277,40 +277,6 @@ router.post('/sssi-answer-ht-p2', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/ht-phase-2/ite')
-
-  } else {
-    // Send user to ineligible page
-    res.redirect('/ht-phase-2/ineligible')
-  }
-
-})
-
-router.post('/ite-answer-ht-p2', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var managementControlAnswer = req.session.data['ite-answer']
-
-  // Check whether the variable matches a condition
-  if (managementControlAnswer == "yes"){
-    // Send user to next page
-    res.redirect('/ht-phase-2/public-body')
-
-  } else {
-    // Send user to ineligible page
-    res.redirect('/ht-phase-2/ineligible')
-  }
-
-})
-
-router.post('/public-body-answer-ht-p2', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var managementControlAnswer = req.session.data['public-body-answer']
-
-  // Check whether the variable matches a condition
-  if (managementControlAnswer == "yes"){
-    // Send user to next page
     res.redirect('/ht-phase-2/eligible')
 
   } else {

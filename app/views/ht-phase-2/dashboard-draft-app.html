@@ -43,12 +43,17 @@
       <td class="govuk-table__cell">SFI</td>
       <td class="govuk-table__cell">Yes</td>
       <td class="govuk-table__cell"></td>
-      <td class="govuk-table__cell">Submitted</td>
+      <td class="govuk-table__cell">In progress</td>
       <td class="govuk-table__cell table-cell">
+        <form class="form" action="javascript:window.history.go(-2)" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue application</button></form>
         <form class="form" action="application-documents" method="post">
-            <button type="submit" class="govuk-button" data-module="govuk-button">
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Application documents</button></form>
-
+        <form class="form" action="#" method="post">
+            <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button" style="margin-bottom: 0px;">
+            Withdraw application</button></form>
         </td>
     </tr>
     <tr class="govuk-table__row">
