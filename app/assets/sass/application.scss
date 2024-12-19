@@ -19,9 +19,24 @@
   width: 0.2em;
 }
 
-.list-parcels {
+/* .list-parcels {
+
+}*/ 
+
+.parcel-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0;
+}
+.parcel-number {
+  flex: 1;
+  
+}
+.parcel-size {
   float: right;
   padding-right: 100px;
+  flex: 0 0 200px; /* Fixed width for alignment */
+  text-align: left; /* Align text to the right */
 }
 
 .section-break-large {
@@ -272,16 +287,20 @@ body {
 
 }
 
-.govuk-tabs__list-item {
-  border: none; /* Removes the grey border */
+.table-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.table-cell button {
+  margin-bottom: 10px; /* Optional: Adds space between buttons */
 }
 
-.govuk-tabs__list {
-  width: 100%; /* Makes the tab list use the full width */
+.sticky-button {
+  position: -webkit-sticky; /* For Safari */
+  position: sticky;
+  top: 0; /* Adjust this value as needed */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
-.govuk-tabs__tab {
-  width: 100%; /* Makes each tab use the full width */
-  text-align: center; /* Centers the text within each tab */
-}
 

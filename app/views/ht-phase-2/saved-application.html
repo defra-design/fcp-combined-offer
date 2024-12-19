@@ -40,19 +40,35 @@
 
 {% block content %}
 
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">You are eligible to apply</h1>
+      <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            We've saved your application
+          </h1>
+      </div>
 
-      <form class="form" action="tasklist-3" method="post">
-        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-          Save and continue
-        </button>
-      </form>
+      <div class="govuk-!-padding-bottom-3"></div>
 
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+         Your application will be available for 2 months for you to continue. If you have not submitted your application by then, we will delete it.
+        </p>
+
+        <p class="govuk-body">
+        If we need to close applications, we will give you 6 weeks' notice. We will publicise this information on GOV.UK and email you. </p>
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <form class="form" action="dashboard-draft-app" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Close
+          </button>
+        </form>
+        
     </div>
-</div>
-
+  </div>
 
 {% endblock %}

@@ -1,9 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  HT Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block beforeContent %}
 
@@ -19,46 +18,52 @@
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 {% endblock %}
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-grid-row" id="header">
-<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-<div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith</div>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Save and return later
-</button>
-</div>
-</div>
-</div>
+    <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="40">
+      <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+        <label class="govuk-label govuk-label--l" for="with-hint">
+          Enter your agreement name
+        </label>
+      </h1>
+      <div id="with-hint-hint" class="govuk-hint govuk-!-margin-bottom-2">
+        This will appear on your agreement documents and is for your reference only. For example ‘Jasmine’s Farm Funding 2024’.
+      </div>
+      <input class="govuk-input govuk-!-width-three-quarters govuk-js-character-count" id="with-hint" name="withHint" rows="1" aria-describedby="with-hint-info with-hint-hint">
 
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-l">Enter your agreement name</h1>
- <div class="govuk-form-group"><p class="govuk-caption-m">
-      This will appear on your agreement documents. For example ‘Jasmine’s Farm Funding 2023’.</p>
-    <input class="govuk-input govuk-!-width-two-thirds govuk-body govuk-!-margin-bottom-4" id="agree" name="agreementName" type="text" autocomplete="Agreement name">
-     <label class="govuk-label" for="agreement-name">
-      You have 40 characters remaining.
-    </label>
-  </div>
-
-<form class="form" action="tasklist-4" method="post">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-        </form>
-        
+      <div id="with-hint-info" class="govuk-hint govuk-character-count__message govuk-!-margin-top-2">
+      You have 40 characters remaining
+      </div>
     </div>
-  </div>
 
-</main>
+  <form class="form" action="tasklist-4" method="post">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
+        
+  </div>
 </div>
+
+
 {% endblock %}
