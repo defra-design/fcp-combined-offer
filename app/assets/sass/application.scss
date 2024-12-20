@@ -5,6 +5,27 @@
 
 // Add extra styles here
 
+  .govuk-tabs {
+    margin-bottom: 0; /* Remove default margin */
+    margin-top:0; /* Remove default margin */
+
+  }
+ 
+  .expanded-content td {
+    
+    border-bottom: 1px solid #b1b4b6  ; /* Add border to the bottom of the expanded row */
+  }
+  
+  .govuk-details {
+    margin-bottom: 0; /* Remove default margin */
+    margin-top:0; /* Remove default margin */
+
+  }
+  
+  .hidden {
+            display: none;
+        }
+
 /* Add a black background color to the top navigation */
 .topnav {
     overflow: hidden;
