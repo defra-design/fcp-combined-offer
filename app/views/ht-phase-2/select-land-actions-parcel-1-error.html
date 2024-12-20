@@ -40,6 +40,25 @@
 
 {% block content %}
 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#error">There are errors on land parcels SO3757 3158, SO3757 3159. You must resolve
+                them before moving on.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </div>
+  </div>
 <!---LEFT HAND SIDE COLUMN --->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
@@ -156,14 +175,14 @@
     <area shape="rect" coords="100,280,190,320" href="select-land-actions-parcel-1">
     <area shape="rect" coords="150,220,240,280" href="select-land-actions-parcel-2">
   </map>
-<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/ht-phase-2/img/map_3.png" alt="Map of your land" style="width:465px;height:400px; margin-bottom: 10px;"></a>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_3.png" alt="Map of your land" style="width:465px;height:400px; margin-bottom: 10px;"></a>
 
   <p class="govuk-body">Key:</p>
   <div class="key-div govuk-!-margin-bottom-5">
-    <div class="key-parent" id="key1-1"></div><span class="govuk-body-s">Error</span>
-    <div class="key-parent" id="key2-1"></div><span class="govuk-body-s">Selected</span>
-    <div class="key-parent" id="key3-1"></div><span class="govuk-body-s">Applied</span>
-    <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">Not Applied</span>
+      <div class="key-parent" id="key1-1"></div><span class="govuk-body-s">Error</span>
+      <div class="key-parent" id="key2-1"></div><span class="govuk-body-s">Selected</span>
+      <div class="key-parent" id="key3-1"></div><span class="govuk-body-s">Not Applied</span>
+      <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">Applied</span>
   </div>
 
   <h2 class="govuk-heading-m">Your available actions for selected land parcel</h2>
@@ -177,13 +196,13 @@
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#sfi-endorsed">SFI endorsed</a>
         </li>
-        <li class="govuk-tabs__list-item">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
           <a class="govuk-tabs__tab" href="#ht">Higher Tier</a>
         </li>
       </ul>
 
 <!---SFI TAB ---> 
-    <div class="govuk-tabs__panel" id="sfi" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
+    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="sfi" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -500,7 +519,7 @@
       </div>
       
 <!---SFI ENDORSED TAB ---> 
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="sfi-endorsed" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
+      <div class="govuk-tabs__panel govuk-tabs__panel--hidden"" id="sfi-endorsed" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -543,7 +562,7 @@
       </div>
 
 <!---Higher Tier tab -->
-    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ht" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
+    <div class="govuk-tabs__panel" id="ht" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
       
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -557,10 +576,11 @@
     
           <tbody class="govuk-table__body">
             
+        <!---CHECKED---> 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
                   <label class="govuk-label govuk-checkboxes__label"></label>
                 </div>
               </td>
@@ -569,7 +589,7 @@
               <td class="govuk-table__cell">
                 <div class="govuk-form-group">
                   <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
+                    <input class="govuk-input govuk-input--width-5" id="ht-answer-1" type="text" spellcheck="false" >
                     <div class="govuk-input__suffix" aria-hidden="true">ha</div>
                   </div>
                 </div>
@@ -633,10 +653,11 @@
               </td>
             </tr>
 
+        <!---CHECKED---> 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
                   <label class="govuk-label govuk-checkboxes__label"></label>
                 </div>
               </td>
@@ -652,10 +673,11 @@
               </td>
             </tr>
 
+        <!---CHECKED---> 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
                   <label class="govuk-label govuk-checkboxes__label"></label>
                 </div>
               </td>
@@ -671,10 +693,11 @@
               </td>
             </tr>
 
+        <!---CHECKED---> 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
                   <label class="govuk-label govuk-checkboxes__label"></label>
                 </div>
               </td>
@@ -865,13 +888,15 @@
   
 
 
-  <form class="form" action="select-land-actions-parcel-1-applied#ht" method="post">
+  <form class="form" action="select-land-actions-parcel-1-applied" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Add selected actions to this parcel
     </button>
   </form>
 
   </div>
+
+  
 
 
 
