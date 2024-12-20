@@ -42,32 +42,66 @@
    <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
-  <div class="govuk-grid-full-column">
-    <h1 class="govuk-heading-l">Approve or reject actions or items on every selected land parcel</h1>
+   <div class="govuk-grid-full-column">
+    <h1 class="govuk-heading-l">Review actions and capital items</h1>
   </div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body">
-      1. Select the box next to the action or item.<br>
-2. Select approve or reject to record your decision.
-    </p>
 
-    <h2 class="govuk-heading-m">Approve or reject at a parcel by parcel level</h2>
+<details class="govuk-details govuk-!-padding-bottom-4">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+If you need to approve or reject actions or items on every selected land parcel    </span>
+  </summary>
+  <div class="govuk-details__text">
+<p class="govuk-body">1. Select the box next to the action or item.<br>
+2. Select approve or reject to record your decision.</p></div>
+</details>
 
-      <p class="govuk-body">
-     Select 'review' to approve or reject actions or items on specific land parcels.
-    </p>
+<details class="govuk-details govuk-!-padding-bottom-4">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+If you need to approve or reject at a parcel by parcel level    </span>
+  </summary>
+  <div class="govuk-details__text">
+<p class="govuk-body">Select 'review' to approve or reject actions or items on specific land parcels.</p>
 
-   <p class="govuk-body">
-You must leave feedback if you:
-make changes to an applicant's selection
-reject any of the applicant's selections</p>
+<p class="govuk-body">You must leave feedback if you:<br>
+• make changes to an applicant's selection<br>
+• reject any of the applicant's selections</p>  </div>
+</details>
 
+<details class="govuk-details govuk-!-padding-bottom-4">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+If you have land to reject    </span>
+  </summary>
+  <div class="govuk-details__text">
+<p class="govuk-body">You must leave feedback if you reject any land in this application.</p>
+
+<p class="govuk-body">Select ‘Review’ to leave feedback that explains this decision.</p>
+  </div>
+</details>
+
+<details class="govuk-details govuk-!-padding-bottom-4">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+If you have actions you cannot review    </span>
+  </summary>
+  <div class="govuk-details__text">
+<p class="govuk-body">Some actions or items might fall under the remit of another arms length body to review.</p>
+
+<p class="govuk-body">Select ‘Not applicable’ if this is the case.</p>
+  </div>
+</details>
   </div>
 </div>
 
- <div class="moj-primary-navigation" style="background-color: grey; width: fit-content;">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+                <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
             <div class="moj-primary-navigation__container">
                 <div class="moj-primary-navigation__nav">
                     <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
@@ -86,11 +120,9 @@ reject any of the applicant's selections</p>
                 </div>
             </div>
         </div>
-        <br>
-
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
+   <div class="govuk-!-padding-bottom-6">
+        </div>
+        
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -98,7 +130,7 @@ reject any of the applicant's selections</p>
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input"  id="select-all" name="parcel" type="checkbox" value="hmrc">
-                  <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                  <label class="govuk-label govuk-checkboxes__label" for="select-all">
                   </label>
               </div>
             </div>
