@@ -41,24 +41,21 @@
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
-   <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-<span id="feedback_close" class="govuk-caption-l">CAB10: Unharvested cereal headland</span>
-      <h1 class="govuk-heading-l">Approve action or capital item on land parcels</h1>
-
-      <p class="govuk-body">Select a land parcel to approve or reject this action or capital item on, or to leave feedback.</p>
-
-
-<div class="govuk-warning-text">
-      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-      <strong class="govuk-warning-text__text">
-        <span class="govuk-visually-hidden">Warning</span>
-        Any land parcel that is rejected for this action or capital item will require feedback as to why it has been rejected.
-      </strong>
+  <div class="govuk-grid-full-column">
+      <h1 class="govuk-heading-l">Review CAB10: Unharvested cereal headland</h1>
     </div>
 
-  <div class="moj-primary-navigation" style="background-color: grey; width: fit-content;">
+ <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body">Select land parcels to approve or reject them, or to mark them as not applicable for this action or item.</p>
+       <p class="govuk-body">If you reject a land parcel, you must explain why in the feedback section.</p>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+              <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
             <div class="moj-primary-navigation__container">
                 <div class="moj-primary-navigation__nav">
                     <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
@@ -67,10 +64,10 @@
             <a class="moj-primary-navigation__link"  aria-current="page" href="review-action-cab10-approve-saved" style="padding-left: 20px; padding-right:20px">Approve</a>
           </li>
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#2" style="padding-left: 20px; padding-right:20px">Reject</a>
+            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Reject</a>
           </li>
           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#2" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
+            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
           </li>
                         </ul>
                     </nav>
@@ -79,26 +76,16 @@
         </div>
         <br>
 
-  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-bottom-9" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="select-all" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation"> Select all parcels
+        <label class="govuk-label govuk-checkboxes__label" for="select-all"> Select all parcels
         </label>
-
 
       </div>
 
 </div>
-    </div>
 
-  </div>
-<br>
-
-
-
-
-  <div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
 <table class="govuk-table" data-module="moj-sortable-table">
 
   <thead class="govuk-table__head">
@@ -106,8 +93,8 @@
 
 <th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+        <input class="govuk-checkboxes__input" id="select-all-2" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label" for="select-all-2">
         </label>
       </div></th>
       
@@ -448,23 +435,31 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-form-group hidden" id="feedback">
+                <div class="govuk-form-group hidden" id="feedback">
+    <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
   <h1 class="govuk-label-wrapper">
-    <label class="govuk-label govuk-label--m " for="more-detail">
+ <label class="govuk-label govuk-label--s " for="more-detail">
      Feedback on action CAB10: Unharvested cereal headland
     </label>
   </h1>
-    <div id="more-detail-hint " class="govuk-hint ">
+  <div id="with-hint-hint" class="govuk-hint">
 Explain why you've approved or rejected land parcels for this action or capital item.
+  </div>
+  <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="withHint" rows="4" aria-describedby="with-hint-info with-hint-hint"></textarea>
+  <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+    You can enter up to 200 characters
+  </div>
+  </div>
+<p>
+  <form class="form" action="#" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Add feedback
+</button>
+</form>
 </div>
-  <textarea class="govuk-textarea " id="more-detail" name="moreDetail" rows="10" aria-describedby="more-detail-hint"></textarea>
-  <p class="govuk-body ">You have 1500 characters remaining</p>
-   <p class="govuk-body "><a class="govuk-link" href="#">Clear text</a></p>
-
-</div>
 
 
-<form class="form" action="review-actions-capitals-reject-3" method="post">
+<form class="form" action="review-actions-capitals-reject-2" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Save and continue
 </button>
@@ -476,30 +471,8 @@ Explain why you've approved or rejected land parcels for this action or capital 
 
 </div>
 </main>
-<!-- Add the script at the end of the body -->
-    <style>
 
-  .govuk-tabs {
-    margin-bottom: 0; /* Remove default margin */
-    margin-top:0; /* Remove default margin */
-
-  }
- 
-  .expanded-content td {
-    
-    border-bottom: 1px solid #b1b4b6  ; /* Add border to the bottom of the expanded row */
-  }
-  
-  .govuk-details {
-    margin-bottom: 0; /* Remove default margin */
-    margin-top:0; /* Remove default margin */
-
-  }
-  
-
-  
-</style>
-
+<!-- Feedback component -->
 <script>
   document.querySelectorAll('.govuk-details__summary').forEach(function(summary) {
     summary.addEventListener('click', function(event) {
@@ -550,63 +523,58 @@ Explain why you've approved or rejected land parcels for this action or capital 
   });
 </script>
 
+<!-- Select all and checkboxes triggers actions menu bar component -->
 <script>
-        document.getElementById('select-all').addEventListener('change', function() {
-            var checkboxes = document.querySelectorAll('input[name="parcel"]');
-            for (var checkbox of checkboxes) {
-                checkbox.checked = this.checked;
-            }
-            toggleRemoveButton();
+    document.addEventListener('DOMContentLoaded', function() {
+        var checkboxes = document.querySelectorAll('input[name="parcel"]');
+        var selectAllCheckboxes = ['select-all', 'select-all-2'];
+
+        // Function to handle select all functionality
+        function handleSelectAll(selectAllId) {
+            var selectAllCheckbox = document.getElementById(selectAllId);
+            selectAllCheckbox.addEventListener('change', function() {
+                for (var checkbox of checkboxes) {
+                    checkbox.checked = this.checked;
+                }
+                toggleRemoveButton();
+                toggleButtons();
+            });
+        }
+
+        // Initialize select all functionality for both checkboxes
+        selectAllCheckboxes.forEach(function(selectAllId) {
+            handleSelectAll(selectAllId);
         });
 
-        var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
-        for (var checkbox of parcelCheckboxes) {
-            checkbox.addEventListener('change', toggleRemoveButton);
+        for (var checkbox of checkboxes) {
+            checkbox.addEventListener('change', function() {
+                toggleRemoveButton();
+                toggleButtons();
+            });
         }
 
         function toggleRemoveButton() {
             var removeButton = document.getElementById('action-menu');
-            var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
+            var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
             if (anyChecked) {
                 removeButton.classList.remove('hidden');
             } else {
                 removeButton.classList.add('hidden');
             }
         }
-    </script>
 
-
-     <style>
-        .hidden {
-            display: none;
+        function toggleButtons() {
+            var buttons = document.querySelectorAll('#approve, #reject, #feedback');
+            var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
+            buttons.forEach(button => {
+                if (anyChecked) {
+                    button.classList.remove('hidden');
+                } else {
+                    button.classList.add('hidden');
+                }
+            });
         }
-    </style>
-
-    <script>
-    document.getElementById('select-all').addEventListener('change', function() {
-        var checkboxes = document.querySelectorAll('input[name="parcel"]');
-        for (var checkbox of checkboxes) {
-            checkbox.checked = this.checked;
-        }
-        toggleButtons();
     });
-
-    var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
-    for (var checkbox of parcelCheckboxes) {
-        checkbox.addEventListener('change', toggleButtons);
-    }
-
-    function toggleButtons() {
-        var buttons = document.querySelectorAll('#approve, #reject, #feedback');
-        var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
-        buttons.forEach(button => {
-            if (anyChecked) {
-                button.classList.remove('hidden');
-            } else {
-                button.classList.add('hidden');
-            }
-        });
-    }
 </script>
 
 
