@@ -1,9 +1,8 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  E2E HT MVP – {{ serviceName }} – GOV.UK Prototype Kit
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block beforeContent %}
 
@@ -19,40 +18,35 @@
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 {% endblock %}
 
 {% block content %}
 
+<h1 class="govuk-heading-l">Apply for funding</h1>
 
-<div class="govuk-grid-row" id="header">
-<div class="govuk-grid-column-full govuk-!-margin-bottom-5">
-<div class="moj-organisation-nav" aria-label="Organisation switcher">
-<div class="moj-organisation-nav__title govuk-!-margin-bottom-5">Jasmine Smith</div>
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Save and return later
-</button>
-</div>
-</div>
-</div>
-
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Important
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-We've reviewed your selected actions. <a href="#">Check the advice summary in your application documents</a> for details on how to continue your application.</p></div>
-</div>
-
-      <h1 class="govuk-heading-l">Apply for funding</h1>
+<form class="form" action="#" method="post">
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Application documents
+  </button>
+</form>
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
@@ -92,7 +86,7 @@ We've reviewed your selected actions. <a href="#">Check the advice summary in yo
     },
                {
             title: {
-              text: "Enter your agreement name"
+              text: "Enter an agreement name"
             },
             href: "agreement-name",
             status: completedStatus
@@ -100,14 +94,14 @@ We've reviewed your selected actions. <a href="#">Check the advice summary in yo
         ]
       }) }}
 
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Select your actions</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Select your actions and items</h2>
 
       {{ govukTaskList({
         idPrefix: "second-section",
         items: [
           {
             title: {
-              text: "Select which actions to do"
+              text: "Select which actions and items you want to apply for"
             },
             href: "select-actions",
             status: completedStatus    
@@ -115,77 +109,86 @@ We've reviewed your selected actions. <a href="#">Check the advice summary in yo
         ]
       }) }}
 
-         <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Select land for your actions</h2>
+    <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Select land for your actions and items</h2>
+
+    {{ govukTaskList({
+      idPrefix: "third-section",
+      items: [
+        {
+          title: {
+            text: "Select the land you want to do the actions on"
+          },
+          href: "select-map-actions",
+          status: completedStatus
+        },
+        {
+          title: {
+            text: "Select the land you want to do the capital items on"
+          },
+      href: "select-map-capitals",
+      status: completedStatus
+  },
+             {
+          title: {
+            text: "Select additional parcels for your rotational actions"
+          },
+          href: "select-rotational-actions",
+          status: completedStatus
+  },
+               {
+          title: {
+            text: "Apply for your agreement level actions"
+          },
+          href: "agreement-level-actions",
+          status: completedStatus
+  },
+             {
+          title: {
+            text: "Apply for your capitals agreement level items"
+          },
+          href: "agreement-level-capitals",
+          status: completedStatus
+  }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
 
       {{ govukTaskList({
-        idPrefix: "second-section",
+        idPrefix: "fourth-section",
         items: [
           {
             title: {
-              text: "Select the land you want to do the actions on"
-            },
-            href: "select-map",
-            status: completedStatus           
-    },
-       {
-            title: {
-              text: "Select additional parcels for your rotational actions"
-            },
-            href: "select-rotational-actions",
-            status: completedStatus    
-    },
-    {
-            title: {
-              text: "Apply for your agreement level actions"
-            },
-            href: "apply-agreement-level",
-            status: completedStatus    
-    }
-        ]
-      }) }}
-
-
-         <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
-
-{{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-                 {
-            title: {
-              text: "Summary of actions"
-            },
-            href: "summary-actions",
-            status: completedStatus    
-    },
-    {
-            title: {
-              text: "Request support"
-            },
-          href: "request-support",
-            status: completedStatus    
-    },
-    {
-            title: {
               text: "Check your answers"
             },
-         href: "check-your-answers",
-            status: incompleteStatus    
-    },
-                 {
+            href: "check-your-answers",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Request approval"
+            },
+            href: "request-approval",
+            status: incompleteStatus
+
+          },
+               {
             title: {
               text: "Submit your application"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }
+            status: {
+              text: "Cannot start yet",
+              classes: "govuk-task-list__status--cannot-start-yet"
+            }
           }
-        ]
-      }) }}
+          ]
+        }) }}
+
+
+        
 
     </div>
   </div>
 
-</main>
-</div>
+
 {% endblock %}
