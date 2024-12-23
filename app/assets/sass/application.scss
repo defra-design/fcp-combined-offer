@@ -325,4 +325,15 @@ body {
   z-index: 1000; /* Ensure it stays above other content */
 }
 
+.agreement-row {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #B1B4B6;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+
+}
+.agreement-row .govuk-checkboxes__item {
+    margin-right: 30px; /* Adjust spacing as needed */
+}
 
