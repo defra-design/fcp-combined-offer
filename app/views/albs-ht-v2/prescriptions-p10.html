@@ -74,18 +74,17 @@
     <p class="govuk-body">Here is where you should tailor the action to say how it should be managed.</p>
 
     <div class="govuk-form-group">
-      <p class="govuk-body">This action have to provide this many benefits by</p>
-      <input class="govuk-input" id="event-name" name="eventName" type="text" value="xx">
+        <p class="govuk-body">This action has to provide this many benefits by</p>
+        <input class="govuk-input" id="benefits-by" name="benefitsBy" type="text" value="">
     </div>
     <div class="govuk-form-group">
-      <p class="govuk-body">And do not exceed</p>
-      <input class="govuk-input" id="event-name" name="eventName" type="text" value="xx">
+        <p class="govuk-body">And do not exceed</p>
+        <input class="govuk-input" id="do-not-exceed" name="doNotExceed" type="text" value="">
     </div>
     <div class="govuk-form-group">
-      <p class="govuk-body">And has to be done between</p>
-      <input class="govuk-input" id="event-name" name="eventName" type="text" value="xx">
+        <p class="govuk-body">And has to be done by</p>
+        <input class="govuk-input" id="done-between" name="doneBetween" type="text" value="">
     </div>
-
 
     <h4 class="govuk-heading-m" style="margin-bottom: 30px">Select the parcels you want to apply this to</h4>
 
@@ -131,7 +130,7 @@
                             </div>
                         </div>
                     </th>
-                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel numbers</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
                     <th scope="col" class="govuk-table__header" aria-sort="none">Quantity</th>
                 </tr>
             </thead>
@@ -259,26 +258,24 @@
             </tbody>
         </table>
 
-
-
 <nav class="moj-pagination" aria-label="Pagination navigation">
-
   <ul class="moj-pagination__list">
 
     <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
 
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1" aria-label="Page 2 of 4">2</a></li>
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
 
     <li class="moj-pagination__item moj-pagination__item--dots">…</li>
 
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=5" aria-label="Page 4 of 4">4</a></li>
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
 
     <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
+      <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> page</span></a>
     </li>
   </ul>
-  <p class="moj-pagination__results">Showing <b>11</b> to <b>10</b> of <b>45</b> results</p>
+  <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>45</b> results</p>
 </nav>
+
   </div>
   
 <div class="govuk-tabs__panel" id="prescription-applied" style="border: none; margin-left: -20px; margin-right: -20px">
@@ -292,13 +289,11 @@
     <tr class="govuk-table__row">
 
       <th scope="col" class="govuk-table__header">
-      </div></th>
+      </th>
 
       <th scope="col" class="govuk-table__header"></th>
 
       <th scope="col" class="govuk-table__header"></th>
-
-      
 
     </tr>
   </thead>
@@ -314,7 +309,25 @@
 <p class="pagination-text" style="vertical-align: middle;">Showing <b>0</b> to <b>0</b> of <b>0</b> results</p>
 </div>
 
-  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="prescriptions-p10-inprogress" method="post">
+      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+    Save changes
+  </button>
+  </form>
+
+    <form class="form" action="prescriptions-list-edits" method="post">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Continue
+  </button>
+  </form>
+
+</div>
 </div>
 
 </div>
@@ -477,34 +490,12 @@
       </tbody>
     </table>
 </div>
-
-    </div>
-
-     <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
- 
-
-    <form class="form" action="prescriptions-p10-inprogress" method="post">
-      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-    Save changes
-  </button>
-  </form>
-
-    <form class="form" action="prescriptions-list-actions" method="post">
-    <form class="form" action="prescriptions-list-edits" method="post">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Continue
-  </button>
-  </form>
-</div>
-</div>
-
-  </div>
 </div>
 
 </main>
+</div>
 
-<!-- Feedback component -->
+   <!-- Feedback component -->
 <script>
   document.querySelectorAll('.govuk-details__summary').forEach(function(summary) {
     summary.addEventListener('click', function(event) {
@@ -557,56 +548,61 @@
 
 <!-- Select all and checkboxes triggers actions menu bar component -->
 <script>
-    document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('select-all').addEventListener('change', toggleCheckboxes);
+    document.getElementById('select-all-2').addEventListener('change', toggleCheckboxes);
+
+    var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
+    for (var checkbox of parcelCheckboxes) {
+        checkbox.addEventListener('change', toggleRemoveButton);
+    }
+
+    function toggleCheckboxes() {
         var checkboxes = document.querySelectorAll('input[name="parcel"]');
-        var selectAllCheckboxes = ['select-all', 'select-all-2'];
-
-        // Function to handle select all functionality
-        function handleSelectAll(selectAllId) {
-            var selectAllCheckbox = document.getElementById(selectAllId);
-            selectAllCheckbox.addEventListener('change', function() {
-                for (var checkbox of checkboxes) {
-                    checkbox.checked = this.checked;
-                }
-                toggleRemoveButton();
-                toggleButtons();
-            });
-        }
-
-        // Initialize select all functionality for both checkboxes
-        selectAllCheckboxes.forEach(function(selectAllId) {
-            handleSelectAll(selectAllId);
-        });
-
         for (var checkbox of checkboxes) {
-            checkbox.addEventListener('change', function() {
-                toggleRemoveButton();
-                toggleButtons();
-            });
+            checkbox.checked = this.checked;
         }
+        toggleRemoveButton();
+    }
 
-        function toggleRemoveButton() {
-            var removeButton = document.getElementById('action-menu');
-            var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-            if (anyChecked) {
-                removeButton.classList.remove('hidden');
-            } else {
-                removeButton.classList.add('hidden');
-            }
+    function toggleRemoveButton() {
+        var removeButton = document.getElementById('remove-prescription');
+        var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
+        if (anyChecked) {
+            removeButton.classList.remove('hidden');
+        } else {
+            removeButton.classList.add('hidden');
         }
-
-        function toggleButtons() {
-            var buttons = document.querySelectorAll('#approve, #reject, #feedback');
-            var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-            buttons.forEach(button => {
-                if (anyChecked) {
-                    button.classList.remove('hidden');
-                } else {
-                    button.classList.add('hidden');
-                }
-            });
-        }
-    });
+    }
 </script>
 
+<!-- Remember what has been typed in -->
+    <script>
+       /*
+        // Function to load saved content from localStorage
+        function loadContent(id) {
+            var input = document.getElementById(id);
+            input.value = localStorage.getItem(id) || '';
+        }
+
+        // Function to save content to localStorage
+        function saveContent(id) {
+            var input = document.getElementById(id);
+            localStorage.setItem(id, input.value);
+        }
+
+        // List of input IDs
+        var inputIds = ['benefits-by', 'do-not-exceed', 'done-between'];
+
+        // Load saved content for each input
+        inputIds.forEach(loadContent);
+
+        // Add event listeners to save content on input
+        inputIds.forEach(function(id) {
+            document.getElementById(id).addEventListener('input', function() {
+                saveContent(id);
+            });
+        });
+            */
+    </script>
+    
 {% endblock %}

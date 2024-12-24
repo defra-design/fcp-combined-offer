@@ -41,6 +41,8 @@
 
 {% block content %}
 
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -95,19 +97,19 @@
             title: {
               text: "Edit prescriptions"
             },
-            href: "prescriptions-list-view",
+            href: "prescriptions-list-actions",
             status: incompleteStatus
           },
           {
             title: {
               text: "Edit specifications"
             },
-            href: "specifications-list-view",
+            href: "specifications-list-capitals",
             status: incompleteStatus
        },
             {
              title: {
-              text: "Capital item actual costs"
+              text: "Confirm capital item costs"
             },
             href: "capital-item-actual",
             status: incompleteStatus
@@ -125,5 +127,7 @@
     </div>
   </div>
 
+</main>
+</div>
 
 {% endblock %}
