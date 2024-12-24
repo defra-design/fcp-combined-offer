@@ -41,20 +41,21 @@
 <div class="govuk-width-container">
 <main class="govuk-main-wrapper">
 
+  <div class="govuk-grid-full-column">
+    <h1 class="govuk-heading-l">Review actions and capital items</h1>
+  </div>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h1 class="govuk-heading-l">Review actions and capital items</h1>
 
 <details class="govuk-details govuk-!-padding-bottom-4">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
-If you need to approve or reject actions or items on every selected land parcel</span>
+If you need to approve or reject actions or items on every selected land parcel    </span>
   </summary>
   <div class="govuk-details__text">
 <p class="govuk-body">1. Select the box next to the action or item.<br>
-2. Select approve or reject to record your decision.</p>
-<p>You must leave feedback if you reject any land in this application. Select 'Review' to leave feedback that explains this decision.</p></div>
+2. Select approve or reject to record your decision.</p></div>
 </details>
 
 <details class="govuk-details govuk-!-padding-bottom-4">
@@ -63,11 +64,23 @@ If you need to approve or reject actions or items on every selected land parcel<
 If you need to approve or reject at a parcel by parcel level    </span>
   </summary>
   <div class="govuk-details__text">
-<p class="govuk-body">Select 'Review' to approve or reject actions or items on specific land parcels.</p>
+<p class="govuk-body">Select 'review' to approve or reject actions or items on specific land parcels.</p>
 
 <p class="govuk-body">You must leave feedback if you:<br>
 • make changes to an applicant's selection<br>
 • reject any of the applicant's selections</p>  </div>
+</details>
+
+<details class="govuk-details govuk-!-padding-bottom-4">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+If you have land to reject    </span>
+  </summary>
+  <div class="govuk-details__text">
+<p class="govuk-body">You must leave feedback if you reject any land in this application.</p>
+
+<p class="govuk-body">Select ‘Review’ to leave feedback that explains this decision.</p>
+  </div>
 </details>
 
 <details class="govuk-details govuk-!-padding-bottom-4">
@@ -481,23 +494,46 @@ If you have actions you cannot review    </span>
   </tbody>
 </table>
 
-<nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
-  <ul class="moj-pagination__list">
+<!----Pagination-----> 
+<div class= "pagination-container">
 
-    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
-
-    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
-
-    <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
-    </li>
-  </ul>
-  <p class="moj-pagination__results">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
-</nav>
+  <nav class="govuk-pagination" aria-label="Pagination">
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          ...
+        </a>
+      </li>
+        <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          4
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+        <span class="govuk-pagination__link-title">
+          Next<span class="govuk-visually-hidden"> page</span>
+        </span>
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+      </a>
+    </div>
+  </nav>
+  <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
+  
+  </div>
 
   <form class="form" action="tasklist-1-inprogress" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">

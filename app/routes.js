@@ -2,35 +2,13 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
+
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-<<<<<<< Updated upstream
-=======
+
 // SFI PRIVATE BETA
 
-module.exports = function (router) {
-    router.post('/approval-feedback-saved', function (req, res) {
-        // Store the textarea data in the session
-        req.session.data.labelAsPageHeading = req.body.labelAsPageHeading;
-        
-        // Log the session data to verify it's being set correctly
-        console.log('Session data after POST:', req.session.data);
-        
-        // Redirect to the page that displays the table
-        res.redirect('/approval-feedback-saved');
-    });
-
-    router.get('/approval-feedback-saved', function (req, res) {
-        // Log the session data to verify it's available when rendering the page
-        console.log('Session data on GET:', req.session.data);
-        
-        // Render the table view with the data from the session
-        res.render('albs-ht-v2/approval-feedback-saved', { labelAsPageHeading: req.session.data.labelAsPageHeading });
-    });
-};
-
->>>>>>> Stashed changes
 // Add your routes here
 router.post('/land-details-answer', function (req, res) {
 
@@ -134,6 +112,8 @@ router.post('/public-body-answer', function (req, res) {
 
 })
 
+// HT MVP
+
 router.post('/land-details-answer-ht', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
@@ -236,4 +216,72 @@ router.post('/public-body-answer-ht', function (req, res) {
 
 })
 
+// HT CUSTOMERS PHASE 2
 
+router.post('/land-details-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var landDetailsAnswer = req.session.data['land-details-answer']
+
+  // Check whether the variable matches a condition
+  if (landDetailsAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/tasklist-2')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/update-land-details')
+  }
+
+})
+
+router.post('/management-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['management-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/hefer')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/ineligible')
+  }
+
+})
+
+router.post('/hefer-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['hefer-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/sssi')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/ineligible')
+  }
+
+})
+
+router.post('/sssi-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['sssi-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/eligible')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/ineligible')
+  }
+
+})

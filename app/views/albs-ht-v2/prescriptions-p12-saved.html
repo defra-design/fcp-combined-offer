@@ -68,7 +68,7 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Status</th>
-        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell">Complete</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Editable</th>
@@ -86,16 +86,16 @@
 
     <p class="govuk-body">Here is where you should tailor the action to say how it should be managed.</p>
 
-
     <div class="govuk-form-group">
       <p class="govuk-body">This action must use wide margins and big blocks between</p>
-        <input class="govuk-input" id="benefits-by" name="benefitsBy" type="text" value="">
-    </div>
+      <input class="govuk-input" id="event-name" name="eventName" type="text" value="xx">
 
+    </div>
     <div class="govuk-form-group">
       <p class="govuk-body">to let insects move to safety when fields are being sprayed.</p>
     
     </div>
+ 
 
 
     <h4 class="govuk-heading-m" style="margin-bottom: 30px">Select the parcels you want to apply this to</h4>
@@ -127,7 +127,7 @@
                     <nav class="moj-primary-navigation" aria-label="Primary navigation">
                         <ul class="moj-primary-navigation__list">
                             <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link hidden" id="remove-prescription" aria-current="page" href="prescriptions-p12-saved" style="margin-left: 20px; margin-right:20px">Remove prescription</a>
+                                <a class="moj-primary-navigation__link hidden" id="remove-prescription" aria-current="page" href="prescriptions-p12-removed" style="margin-left: 20px; margin-right:20px">Remove prescription</a>
                             </li>
                         </ul>
                     </nav>
@@ -139,8 +139,8 @@
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item" style="padding-bottom: 30px;">
-                <input class="govuk-checkboxes__input" id="select-all" type="checkbox">
-                <label class="govuk-label govuk-checkboxes__label" for="select-all">
+                <input class="govuk-checkboxes__input" id="select-all-2" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for="select-all-2">
                     Select all parcels
                 </label>
             </div>
@@ -153,12 +153,12 @@
 
       <th scope="col" class="govuk-table__header"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="select-all-2" name="parcel-2" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="select-all-2">
         </label>
       </div></th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel numbers</th>
 
       <th scope="col" class="govuk-table__header" aria-sort="none">Quantity</th>
 
@@ -171,12 +171,79 @@
 
 
   <tbody class="govuk-table__body">
+    <tr class="govuk-table__row" >
+      <td class="govuk-table__cell app-custom-class">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="select-all-2" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
+          </div>
+        </div>
+      </td>
+      <td class="govuk-table__cell" data-sort-value="001" >SE7023 5004</td>
+      <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
+      <td class="govuk-table__cell">
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">View</span>
+          </summary>
+          <div class="govuk-details__text">
+            This action must use wide margins and big blocks between 1m to 2m to let insects move to safety when fields are being sprayed.
+        </details>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell app-custom-class">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
+          </div>
+        </div>
+      </td>
+      <td class="govuk-table__cell" data-sort-value="002">SE7023 5005</td>
+      <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
+      <td class="govuk-table__cell">
+        <details class="govuk-details">
+
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">View</span>
+          </summary>
+          <div class="govuk-details__text">
+            This action must use wide margins and big blocks between 1m to 2m to let insects move to safety when fields are being sprayed.
+          </div>
+        </details>
+      </td>
+    </tr>
+    <!-- Repeat for other rows -->
        <tr class="govuk-table__row" >
       <td class="govuk-table__cell app-custom-class">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
+          </div>
+        </div>
+      </td>
+      <td class="govuk-table__cell" data-sort-value="003" >SE7023 5006</td>
+      <td class="govuk-table__cell" data-sort-value="003">26.43 hectares</td>
+      <td class="govuk-table__cell">
+        <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">View</span>
+          </summary>
+          <div class="govuk-details__text">
+            This action must use wide margins and big blocks between 1m to 2m to let insects move to safety when fields are being sprayed.
+        </details>
+      </td>
+    </tr>
+       <tr class="govuk-table__row" >
+      <td class="govuk-table__cell app-custom-class">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
           </div>
         </div>
       </td>
@@ -196,8 +263,8 @@
       <td class="govuk-table__cell app-custom-class">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-             <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
           </div>
         </div>
       </td>
@@ -217,8 +284,8 @@
       <td class="govuk-table__cell app-custom-class">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-                     <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
           </div>
         </div>
       </td>
@@ -238,8 +305,8 @@
       <td class="govuk-table__cell app-custom-class">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-                   <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
           </div>
         </div>
       </td>
@@ -259,8 +326,8 @@
       <td class="govuk-table__cell app-custom-class">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
           </div>
         </div>
       </td>
@@ -280,8 +347,8 @@
       <td class="govuk-table__cell app-custom-class">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
           </div>
         </div>
       </td>
@@ -301,8 +368,8 @@
       <td class="govuk-table__cell app-custom-class">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
+            <input class="govuk-checkboxes__input" id="organisation1" name="parcel-2" type="checkbox" value="hmrc">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation1"></label>
           </div>
         </div>
       </td>
@@ -323,115 +390,102 @@
 </table>
 
 
-<nav class="moj-pagination" aria-label="Pagination navigation">
-  <ul class="moj-pagination__list">
+<div class= "pagination-container">
 
-    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
-
-    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
-
-    <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> page</span></a>
+<nav class="govuk-pagination" aria-label="Pagination">
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        ...
+      </a>
+    </li>
+      <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        4
+      </a>
     </li>
   </ul>
-  <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>45</b> results</p>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
 </nav>
+<p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>10</b> of <b>45</b> results</p>
+
+</div>
   </div>
   
 
 
 <div class="govuk-tabs__panel" id="prescription-not-applied" style="border: none; margin-left: -20px; margin-right: -20px">
-        
-         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item" style="padding-bottom: 30px;">
-                <input class="govuk-checkboxes__input" id="select-all-3" type="checkbox">
-                <label class="govuk-label govuk-checkboxes__label" for="select-all-3">
-                    Select all parcels
-                </label>
-            </div>
-        </div>
+      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      
+    </div>
     
-     <table class="govuk-table" data-module="moj-sortable-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+    <table class="govuk-table" data-module="moj-sortable-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
 
-  <thead class="govuk-table__head" >
+  <thead class="govuk-table__head">
     <tr class="govuk-table__row">
 
-      <th scope="col" class="govuk-table__header"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="select-all-4" name="parcel" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="select-all-4">
-        </label>
+      <th scope="col" class="govuk-table__header">
       </div></th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
+      <th scope="col" class="govuk-table__header"></th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="none">Quantity</th>
+      <th scope="col" class="govuk-table__header"></th>
+
+      
 
     </tr>
   </thead>
 
   <tbody class="govuk-table__body">
-   <tr class="govuk-table__row" >
-      <td class="govuk-table__cell app-custom-class">
-        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
-          </div>
-        </div>
-      </td>
-      <td class="govuk-table__cell" data-sort-value="001" >SE7023 5004</td>
-      <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell app-custom-class">
-        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
-          </div>
-        </div>
-      </td>
-      <td class="govuk-table__cell" data-sort-value="002">SE7023 5005</td>
-      <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
-    </tr>
-    <!-- Repeat for other rows -->
-       <tr class="govuk-table__row" >
-      <td class="govuk-table__cell app-custom-class">
-        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-          <div class="govuk-checkboxes__item">
-             <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
-            <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
-          </div>
-        </div>
-      </td>
-      <td class="govuk-table__cell" data-sort-value="003" >SE7023 5006</td>
-      <td class="govuk-table__cell" data-sort-value="003">26.43 hectares</td>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="text-align: center;" colspan="3" >No land parcels</td>
     </tr>
   </tbody>
 </table>
 
 <div class= "pagination-container">
-<p class="pagination-text" style="vertical-align: middle;">Showing <b>0</b> to <b>0</b> of <b>0</b> results</p>
-</div>
 
+<p class="pagination-text" style="vertical-align: middle;">Showing <b>0</b> to <b>0</b> of <b>0</b> results</p>
+
+</div>
   </div>
 </div>
+
+<!----Pagination-----> 
+
+
+
 
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
  
-    <form class="form" action="prescriptions-p12-saved" method="post">
+
+    <form class="form" action="#" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
     Save changes
   </button>
   </form>
 
+    <form class="form" action="#" method="post">
     <form class="form" action="prescriptions-list-edits" method="post">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Continue
@@ -456,21 +510,22 @@
         </tr>
       </thead>
 
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+   <tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="p10" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
           <label class="govuk-label govuk-radios__label" for="changedName">
             P10
           </label>
         </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
-    </tr>
-      
-      <script>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
+  </tr>
+
+  <script>
   document.getElementById('p10').addEventListener('click', function() {
     if (this.checked) {
       window.location.href = 'prescriptions-p10-complete'; // Replace 'new_screen_url' with the actual URL of the new page
@@ -491,6 +546,7 @@
     </td>
     <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
   </tr>
+</tbody>
 
 <script>
   document.getElementById('p15').addEventListener('click', function() {
@@ -504,7 +560,7 @@
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p40" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+          <input class="govuk-radios__input" id="p40" name="changedName" type="radio" value="month" checked  data-aria-controls="conditional-contact">
           <label class="govuk-label govuk-radios__label" for="changedName">
             P40
           </label>
@@ -512,7 +568,6 @@
       </td>
       <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
     </tr>
-
 <script>
   document.getElementById('p40').addEventListener('click', function() {
     if (this.checked) {
@@ -539,24 +594,16 @@
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p12" name="changedName" type="radio" checked value="month" data-aria-controls="conditional-contact">
+          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month" checked data-aria-controls="conditional-contact">
           <label class="govuk-label govuk-radios__label" for="changedName">
             P12
           </label>
         </div>
       </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">In progress</td>
+      <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
     </tr>
     
-    <script>
-  document.getElementById('p12').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p12-inprogress'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
-
-      <tr class="govuk-table__row">
+          <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
@@ -568,7 +615,6 @@
       </td>
       <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
     </tr>
-
 <script>
   document.getElementById('p14').addEventListener('click', function() {
     if (this.checked) {
@@ -577,11 +623,12 @@
   });
 </script>
 
+
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p42" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+          <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
           <label class="govuk-label govuk-radios__label" for="changedName">
             P42
           </label>
@@ -590,23 +637,56 @@
       <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
     </tr>
 
-<script>
-  document.getElementById('p42').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p42'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
-
       </tbody>
     </table>
 </div>
-</div>
 
+    </div>
+  </div>
+</div>
 </main>
-</div>
 
-   <!-- Feedback component -->
+    <script>
+        document.getElementById('select-all').addEventListener('change', function() {
+            var checkboxes = document.querySelectorAll('input[name="parcel"]');
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script>
+
+     <script>
+        document.getElementById('select-all-2').addEventListener('change', function() {
+            var checkboxes = document.querySelectorAll('input[name="parcel-2"]');
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+        });
+    </script>
+
+    <style>
+
+  .govuk-tabs {
+    margin-bottom: 0; /* Remove default margin */
+    margin-top:0; /* Remove default margin */
+
+  }
+ 
+  .expanded-content td {
+    
+    border-bottom: 1px solid #b1b4b6  ; /* Add border to the bottom of the expanded row */
+  }
+  
+  .govuk-details {
+    margin-bottom: 0; /* Remove default margin */
+    margin-top:0; /* Remove default margin */
+
+  }
+  
+
+  
+</style>
+
 <script>
   document.querySelectorAll('.govuk-details__summary').forEach(function(summary) {
     summary.addEventListener('click', function(event) {
@@ -657,66 +737,37 @@
   });
 </script>
 
-<!-- Select all and checkboxes triggers actions menu bar component -->
+
+
 <script>
-    document.getElementById('select-all').addEventListener('change', toggleCheckboxes);
-    document.getElementById('select-all-2').addEventListener('change', toggleCheckboxes);
-    document.getElementById('select-all-3').addEventListener('change', toggleCheckboxes);
-    document.getElementById('select-all-4').addEventListener('change', toggleCheckboxes);
-
-    var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
-    for (var checkbox of parcelCheckboxes) {
-        checkbox.addEventListener('change', toggleRemoveButton);
-    }
-
-    function toggleCheckboxes() {
-        var checkboxes = document.querySelectorAll('input[name="parcel"]');
-        for (var checkbox of checkboxes) {
-            checkbox.checked = this.checked;
-        }
-        toggleRemoveButton();
-    }
-
-    function toggleRemoveButton() {
-        var removeButton = document.getElementById('remove-prescription');
-        var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
-        if (anyChecked) {
-            removeButton.classList.remove('hidden');
-        } else {
-            removeButton.classList.add('hidden');
-        }
-    }
-</script>
-
-<!-- Remember what has been typed in -->
-    <script>
-       /*
-        // Function to load saved content from localStorage
-        function loadContent(id) {
-            var input = document.getElementById(id);
-            input.value = localStorage.getItem(id) || '';
-        }
-
-        // Function to save content to localStorage
-        function saveContent(id) {
-            var input = document.getElementById(id);
-            localStorage.setItem(id, input.value);
-        }
-
-        // List of input IDs
-        var inputIds = ['benefits-by', 'do-not-exceed', 'done-between'];
-
-        // Load saved content for each input
-        inputIds.forEach(loadContent);
-
-        // Add event listeners to save content on input
-        inputIds.forEach(function(id) {
-            document.getElementById(id).addEventListener('input', function() {
-                saveContent(id);
-            });
+        document.getElementById('select-all-2').addEventListener('change', function() {
+            var checkboxes = document.querySelectorAll('input[name="parcel"]');
+            for (var checkbox of checkboxes) {
+                checkbox.checked = this.checked;
+            }
+            toggleRemoveButton();
         });
-            */
+
+        var parcelCheckboxes = document.querySelectorAll('input[name="parcel-2"]');
+        for (var checkbox of parcelCheckboxes) {
+            checkbox.addEventListener('change', toggleRemoveButton);
+        }
+
+        function toggleRemoveButton() {
+            var removeButton = document.getElementById('remove-prescription');
+            var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
+            if (anyChecked) {
+                removeButton.classList.remove('hidden');
+            } else {
+                removeButton.classList.add('hidden');
+            }
+        }
     </script>
 
-{% endblock %}
+     <style>
+        .hidden {
+            display: none;
+        }
+    </style>
 
+{% endblock %}

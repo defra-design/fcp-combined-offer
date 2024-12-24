@@ -38,8 +38,6 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -49,42 +47,43 @@
         <a href="prescriptions-list-edits-complete" class="govuk-link">View by actions</a>
       </p>
 
-     <div class="govuk-form-group">
-    <fieldset class="govuk-fieldset">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h2 class="govuk-fieldset__heading">
-                Select a grid reference
+              Select a grid reference
             </h2>
-        </legend>
-        <div class="govuk-hint">
+          </legend>
+          <div class="govuk-hint">
             This will let you view land parcels and review prescriptions for them.
-        </div>
+          </div>
 
-        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" type="radio" name="grid-reference" value="SO3" checked>
-                <label class="govuk-label govuk-radios__label">
-                    SO3
+              <input class="govuk-radios__input" type="radio" checked="checked">
+              <label class="govuk-label govuk-radios__label">
+                SO3
                 </label>
             </div>
+            <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-                <input class="govuk-radios__input" type="radio" name="grid-reference" value="SX2">
-                <label class="govuk-label govuk-radios__label">
-                    SX2
-                </label>
+              <input class="govuk-radios__input" type="radio">
+              <label class="govuk-label govuk-radios__label">
+                SX2
+              </label>
             </div>
+          </div>
         </div>
-    </fieldset>
-</div>
+      </fieldset>
+    </div>
+    </div>
+    </div>
 
-    </div>
-    </div>
       
+
    <!----Maps view-----> 
 
-  <div class="govuk-grid-row">
 <div class="govuk-grid-full-column">
-
   <table class="govuk-table" data-module="moj-sortable-table">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
@@ -115,10 +114,10 @@
         </td>
         <td class="govuk-table__cell">
           <div class="aligned-content">
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
             
           </div>
         </td>
@@ -159,8 +158,8 @@
         </td>
         <td class="govuk-table__cell">
           <div class="aligned-content">
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
             
           </div>
         </td>
@@ -188,8 +187,8 @@
         </td>
         <td class="govuk-table__cell">
           <div class="aligned-content">
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
             
           </div>
         </td>
@@ -202,7 +201,7 @@
             <td class="govuk-table__cell">SE7023 5007</td>
             <td class="govuk-table__cell">{{ data['action-name-3'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
           <!----Parcel number SE7023 5008-----> 
@@ -210,7 +209,7 @@
             <td class="govuk-table__cell">SE7023 5008</td>
             <td class="govuk-table__cell">{{ data['action-name-4'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
           <!----Parcel number SE7023 5009-----> 
@@ -218,7 +217,7 @@
             <td class="govuk-table__cell">SE7023 5009</td>
             <td class="govuk-table__cell">{{ data['action-name-5'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
          <!----Parcel number SE7023 5010-----> 
@@ -245,10 +244,10 @@
         </td>
         <td class="govuk-table__cell">
           <div class="aligned-content">
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div><br>
-            <div><a href="prescriptions-p42" class="govuk-link">Review</a></div>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div><br>
+            <div><a href="prescriptions-p10" class="govuk-link">Review</a></div>
             
           </div>
         </td>
@@ -259,7 +258,7 @@
             <td class="govuk-table__cell">SE7023 5010</td>
             <td class="govuk-table__cell">{{ data['action-name-5'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
 
@@ -269,7 +268,7 @@
             <td class="govuk-table__cell">SE7023 5011</td>
             <td class="govuk-table__cell">{{ data['action-name-6'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
 
@@ -279,45 +278,70 @@
             <td class="govuk-table__cell">SE7023 5012</td>
             <td class="govuk-table__cell">{{ data['action-name-5'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">SE7023 5012</td>
             <td class="govuk-table__cell">{{ data['action-name-6'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">Agreement level</td>
             <td class="govuk-table__cell">{{ data['action-name-14'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="prescriptions-p42" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
           </tr>
 
         </tbody>
-      </table>  
+      </table>
+    </div>
+  
 
 
-<nav class="moj-pagination govuk-!-padding-bottom-6" aria-label="Pagination navigation">
+<!----Pagination-----> 
 
-  <ul class="moj-pagination__list">
+<div class= "pagination-container">
 
-    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
-
-    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 8 of 4">4</a></li>
-
-    <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> page</span></a>
+<nav class="govuk-pagination" aria-label="Pagination">
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        ...
+      </a>
+    </li>
+      <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        4
+      </a>
     </li>
   </ul>
-  <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>38</b> results</p>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
 </nav>
+<p class="pagination-text">Showing <b>1</b> to <b>10</b> of <b>38</b> results</p>
+
+</div>
 
 
 <form class="form" action="tasklist-3" method="post">
@@ -326,10 +350,8 @@
 </button>
 </form>
 
-</div>
-</div>
 
-</main>
 </div>
+</main>
 
 {% endblock %}

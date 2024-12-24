@@ -38,9 +38,6 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
-
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
@@ -71,21 +68,21 @@
             <td class="govuk-table__cell">{{ data['capital-name-1'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s12-saved" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">{{ data['capital-name-2'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">Yes</td>
-            <td class="govuk-table__cell"><a href="specifications-s12-saved" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">{{ data['capital-name-3'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s12-saved" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
           </tr>
 
 
@@ -93,7 +90,7 @@
             <td class="govuk-table__cell">{{ data['capital-name-4'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s12-saved" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
           </tr>
 
 
@@ -101,23 +98,70 @@
             <td class="govuk-table__cell">{{ data['capital-name-5'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s12-saved" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">{{ data['capital-name-6'] }}</td>
             <td class="govuk-table__cell">{{ data['type-1'] }}</td>
             <td class="govuk-table__cell">No</td>
-            <td class="govuk-table__cell"><a href="specifications-s12-saved" class="govuk-link">Review</a></td>
+            <td class="govuk-table__cell"><a href="specifications-s10" class="govuk-link">Review</a></td>
           </tr>
         </tbody>
       </table>
       
       <div class= "pagination-container">
+
 <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>6</b> of <b>6</b> results</p>
+
+</div>
+    </div>
+</div>
+<!----Pagination   
+
+<div class= "pagination-container">
+
+<nav class="govuk-pagination" aria-label="Pagination">
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        ...
+      </a>
+    </li>
+      <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+        4
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
+</nav>
+<p class="pagination-text">Showing <b>1</b> to <b>20</b> of <b>26</b> results</p>
+
 </div>
 
-<form class="form" action="tasklist-4" method="post">
+-------> 
+
+<form class="form" action="specifications-list-edits-complete" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Save and continue
 </button>
@@ -126,7 +170,7 @@
 </div>
 </div>
 
-</main>
 </div>
+</main>
 
 {% endblock %}

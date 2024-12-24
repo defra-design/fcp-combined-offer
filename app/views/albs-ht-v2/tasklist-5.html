@@ -41,8 +41,7 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-<main class="govuk-main-wrapper">
+
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -76,7 +75,7 @@
             hint: {
               text: "These are the actions and capital items the applicant has selected."
             },
-            href: "review-actions-capitals-notapplicable",
+            href: "review-actions-capitals",
             status: completedStatus
           },
           {
@@ -95,9 +94,9 @@
         },
                {
              title: {
-              text: "Confirm capital item costs"
+              text: "Capital item actual costs"
             },
-            href: "capital-item-actual-complete",
+            href: "capital-item-actual-saved",
             status: completedStatus
           },
               {
@@ -113,7 +112,6 @@
     </div>
   </div>
 
-</main>
-</div>
+
 
 {% endblock %}

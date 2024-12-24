@@ -63,15 +63,13 @@
                   <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
                   <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                    No, needs amendments
+                    No - needs amendments
                   </label>
-                   <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-Select if the applicant should update their actions or items with your changes and resubmit.</div>
                 </div>
                   <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
                   <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                    No, reject application
+                    No - reject application
                   </label>
                 </div>
           </fieldset>
@@ -110,7 +108,9 @@ Select if the applicant should update their actions or items with your changes a
           </fieldset>
       </div>
 
-      <h2 class="govuk-heading-m">Decisions from other advisers</h2>
+      <h3 class="govuk-heading-s">Application status</h3>
+  <p class="govuk-body">These are the decisions recorded by other advisers who have checked this applications.</p>
+
           <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -123,7 +123,7 @@ Select if the applicant should update their actions or items with your changes a
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Forestry Commission</th>
       <td class="govuk-table__cell">Mary Poppins</td>
-            <td class="govuk-table__cell">No, reject application</td>
+            <td class="govuk-table__cell">No - reject application</td>
     </tr>
     <tr class="govuk-table__row">
       <th scope="row" class="govuk-table__header">Historic England</th>
@@ -138,15 +138,26 @@ Select if the applicant should update their actions or items with your changes a
 
 
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+    <h4 class="govuk-heading-m">Feedback on application</h4>
+
+ 
+
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-          <h3 class="govuk-heading-m">General application feedback</h3>
+    <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="1500" style="margin-bottom: 10px;">
      
-      <p class="govuk-body">Your feedback should explain how you reached your decision.</p>
-            <p class="govuk-body">You can view feedback from the advisers who have also checked this application.</p>
+      <p class="govuk-body"> Explain why you've approved or rejected this application. Feedback will be visible to the customer.</p>
       
+      
+    </div>
+
     <p class="govuk-body govuk-body govuk-!-margin-bottom-6">
-    <a href="approval-feedback" class="govuk-link govuk-link--no-visited-state">Add feedback</a></p>
+    <a href="approval-feedback-saved" class="govuk-link govuk-link--no-visited-state">Add feedback</a></p>
+
+   
+
 
         <form class="form" action="confirmation" method="post">
           <button class="govuk-button" data-module="govuk-button" type="submit">Submit</button>  
@@ -155,8 +166,9 @@ Select if the applicant should update their actions or items with your changes a
         </div>
       </div>
 
-</main>
 </div>
+</main>
+
 
 {% endblock %}
 
