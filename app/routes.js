@@ -9,28 +9,6 @@ const router = govukPrototypeKit.requests.setupRouter()
 =======
 // SFI PRIVATE BETA
 
-module.exports = function (router) {
-    router.post('/approval-feedback-saved', function (req, res) {
-        // Store the textarea data in the session
-        req.session.data.labelAsPageHeading = req.body.labelAsPageHeading;
-        
-        // Log the session data to verify it's being set correctly
-        console.log('Session data after POST:', req.session.data);
-        
-        // Redirect to the page that displays the table
-        res.redirect('/approval-feedback-saved');
-    });
-
-    router.get('/approval-feedback-saved', function (req, res) {
-        // Log the session data to verify it's available when rendering the page
-        console.log('Session data on GET:', req.session.data);
-        
-        // Render the table view with the data from the session
-        res.render('albs-ht-v2/approval-feedback-saved', { labelAsPageHeading: req.session.data.labelAsPageHeading });
-    });
-};
-
->>>>>>> Stashed changes
 // Add your routes here
 router.post('/land-details-answer', function (req, res) {
 
