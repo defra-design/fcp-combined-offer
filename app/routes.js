@@ -5,11 +5,9 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
-<<<<<<< Updated upstream
-=======
+
 // SFI PRIVATE BETA
 
->>>>>>> Stashed changes
 // Add your routes here
 router.post('/land-details-answer', function (req, res) {
 
