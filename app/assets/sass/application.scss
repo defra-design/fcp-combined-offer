@@ -25,18 +25,23 @@
 
 .parcel-row {
   display: flex;
-  justify-content: space-between;
+  justify-content: left;
   margin-bottom: 0;
 }
 .parcel-number {
-  flex: 1;
+  flex: 0 0 125px;
+  padding-right: 30px;
   
 }
 .parcel-size {
-  float: right;
-  padding-right: 100px;
+  float: left;
+  padding-right: 30px;
   flex: 0 0 200px; /* Fixed width for alignment */
   text-align: left; /* Align text to the right */
+}
+
+.applied-label {
+flex: 0 0 auto;
 }
 
 .section-break-large {
@@ -227,7 +232,7 @@
 }
 
 .errorLabel {
-  color: #D4351C;
+  color: govuk-colour(red);
 }
 
 .box-grey { 
@@ -301,18 +306,22 @@ body {
   position: -webkit-sticky; /* For Safari */
   position: sticky;
   top: 0; /* Adjust this value as needed */
-  z-index: 1000; /* Ensure it stays above other content */
+  z-index: 200; /* Ensure it stays above other content */
 }
 
 .agreement-row {
     display: flex;
-    align-items: center;
     border-bottom: 1px solid #B1B4B6;
     padding-bottom: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 
 }
 .agreement-row .govuk-checkboxes__item {
     margin-right: 30px; /* Adjust spacing as needed */
 }
 
+
+
+.no-border-bottom {
+  border-bottom: none;
+}
