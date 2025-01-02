@@ -50,7 +50,7 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li>
-              <a href="#parcel-error">There are errors on land parcels SO3757 3158, SO3757 3159. You must resolve
+              <a href="#parcel-error">There are errors on land parcels SO3757 3158, SO3757 3159. <br>You must resolve
                 them before moving on.</a>
             </li>
           </ul>
@@ -105,8 +105,9 @@
 
   <p class="govuk-body govuk-error-message red-border red-border-padding" style="margin-bottom: 0;" id="parcel-error"> You have errors on this land parcel</p>
   <p class="govuk-body parcel-row red-border red-border-padding" style="padding-bottom: 0;"><a href="select-land-actions-parcel-1-error#ht#error" class="govuk-link parcel-number">SO3757 3158</a>
-  <span class="govuk-body parcel-size">Parcel size: 32.0404 ha</span></p>
-  <p class="govuk-body red-border red-border-padding"><span class="govuk-caption-m">
+    <span class="govuk-body parcel-size">Parcel size: 32.0404 ha</span><span class="govuk-body applied-label">Applied</span></p>
+  
+    <p class="govuk-body red-border red-border-padding"><span class="govuk-caption-m">
     Land use: 
     <br>Permanent grassland: 1.5760 ha
     <br>Arable crops: 1.1212 ha
@@ -117,7 +118,7 @@
 
   <p class="govuk-body govuk-error-message red-border red-border-padding" style="margin-bottom: 0;"> You have errors on this land parcel</p>
   <p class="govuk-body parcel-row red-border red-border-padding"><a href="select-land-actions-parcel-2" class="govuk-link parcel-number">SO3757 3159</a>
-  <span class="govuk-body parcel-size">Parcel size: 31.4241 ha</span></p>
+  <span class="govuk-body parcel-size">Parcel size: 31.4241 ha</span><span class="govuk-body applied-label">Applied</span></p>
 
   <p class="govuk-body parcel-row" style="padding-top: 20px;"><a href="#" class="govuk-link parcel-number">SO3757 3160</a>
   <span class="govuk-body parcel-size">Parcel size: 1.4935 ha</span></p>
@@ -684,6 +685,8 @@
             </td>
           </tr>
 
+          <!--- Table error cell above-->
+
         <!---CHECKED---> 
             <tr class="govuk-table__row">
               <td class="govuk-table__cell">
@@ -919,7 +922,7 @@
   
 
 
-  <form class="form" action="select-land-actions-parcel-2-applied#ht" method="post">
+  <form class="form" action="select-land-actions-parcel-1-applied#ht" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Add selected actions to this parcel
     </button>

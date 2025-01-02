@@ -40,6 +40,9 @@
 
 {% block content %}
 
+<!--------BIS SELECT ACTIONS ACTIVE --------->
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -51,7 +54,7 @@
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
           We have reviewed your application so far. <br><br>
-          Check the <a class="govuk-notification-banner__link" href="#">adviser feedback</a>.<br><br>
+          Check the <a class="govuk-notification-banner__link" href="adviser-feedback">adviser feedback</a>.<br><br>
           This has information about how to apply for your new agreement.
           <p class="govuk-notification-banner__heading">
         </p>
@@ -127,7 +130,7 @@
             title: {
               text: "Select which actions and items you want to apply for"
             },
-            href: "select-actions",
+            href: "bis-select-actions",
             status: incompleteStatus   
     }
         ]
@@ -142,35 +145,35 @@
           title: {
             text: "Select the land you want to do the actions on"
           },
-          href: "select-map-actions",
+          href: "bis-select-map-actions",
           status: incompleteStatus
         },
         {
           title: {
             text: "Select the land you want to do the capital items on"
           },
-      href: "#",
+      href: "bis-select-map-capitals",
       status: incompleteStatus
   },
              {
           title: {
             text: "Select additional parcels for your rotational actions"
           },
-          href: "#",
+          href: "bis-select-rotational-map",
           status: incompleteStatus
   },
                {
           title: {
             text: "Apply for your agreement level actions"
           },
-          href: "#",
+          href: "bis-agreement-level-actions",
           status: incompleteStatus
   },
              {
           title: {
             text: "Apply for your capitals agreement level items"
           },
-          href: "#",
+          href: "bis-agreement-level-capitals",
           status: incompleteStatus
   }
         ]

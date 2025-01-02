@@ -1,0 +1,159 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Request a review of your endorsed SFI and Higher Tier actions, and capital items
+    </h1>
+    <p class="govuk-body govuk-!-margin-bottom-6">Advisers from Defra's arms length bodies need to review your selected endorsed SFI and Higher Tier actions.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">This means you must wait for the outcome of this review before you can submit a your application for a new agreement.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">To send your application for a review, select 'Request review'.</p>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" style="width: 305px;">Action</th>
+        <th scope="col" class="govuk-table__header">Type</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">GRH6: Manage priority habitat species-rich grassland (endorsed)</td>
+        <td class="govuk-table__cell">SFI endorsed parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">CSP1: Supplement: Difficult sites</th>
+        <td class="govuk-table__cell">Higher Tier parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">CUP3: General moorland management</th>
+        <td class="govuk-table__cell">Higher Tier parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">CGS18: Manage species-rich floodplain meadows</th>
+        <td class="govuk-table__cell">Higher Tier parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">CGS19: Manage wet grassland for wintering waders and wildfowl</th>
+        <td class="govuk-table__cell">Higher Tier parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">CGS20: Manage wet grassland for breeding waders</th>
+        <td class="govuk-table__cell">Higher Tier parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">RP3: Watercourse crossings</th>
+        <td class="govuk-table__cell">Capital item parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">BC4: Tree Guard Post and wire</th>
+        <td class="govuk-table__cell">Capital item parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">BC3: Crop protection fencing mesh and wire for permanent crops</th>
+          <td class="govuk-table__cell">Capital item parcel based</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">N/A</th>
+        <td class="govuk-table__cell">Higher Tier agreement level</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">N/A</th>
+        <td class="govuk-table__cell">Higher Tier agreement level</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">FY2: Woodland infrastructure</th>
+          <td class="govuk-table__cell">Capital item agreement level</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">WN7: Restoration of large water bodies</th>
+          <td class="govuk-table__cell">Capital item agreement level</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-6">
+    Request a review
+  </h2>
+
+  <div class="govuk-checkboxes" data-module="govuk-checkboxes" style="margin-bottom: 30px;">
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" type="checkbox" id="review" name="review">
+      <label class="govuk-label govuk-checkboxes__label">
+        Request a review of my endorsed SFI and Higher Tier actions
+      </label>
+      <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+        You will not be able edit your application until the review is complete.
+      </div>
+    </div>
+  </div>
+
+
+<form class="form" action="bis-application-review" method="post">
+ <button type="submit" class="govuk-button" id="review-button" data-module="govuk-button" disabled>
+  Request review
+</button>
+</form>
+
+<script src="https://cdn.jsdelivr.net/npm/govuk-frontend/govuk/all.min.js"></script>
+    <script>
+        // Initialize the GOV.UK frontend components
+        window.GOVUKFrontend.initAll();
+
+        // JavaScript to enable/disable the button based on checkbox state
+        document.getElementById('review').addEventListener('change', function() {
+            const submitButton = document.getElementById('review-button');
+            submitButton.disabled = !this.checked;
+        });
+    </script>
+
+<p class="govuk-body">
+  <a href="#" class="govuk-link">Cancel</a>
+</p>
+
+</div>
+</div>
+
+
+
+{% endblock %}

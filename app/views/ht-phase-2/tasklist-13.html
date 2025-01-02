@@ -1,0 +1,221 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<!--------BIS SELECT LAND YOU WANT TO DO ACTIONS ON ACTIVE --------->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          We have reviewed your application so far. <br><br>
+          Check the <a class="govuk-notification-banner__link" href="adviser-feedback">adviser feedback</a>.<br><br>
+          This has information about how to apply for your new agreement.
+          <p class="govuk-notification-banner__heading">
+        </p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+
+<h1 class="govuk-heading-l">Apply for funding</h1>
+
+<form class="form" action="#" method="post">
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Application documents
+  </button>
+</form>
+
+<p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
+
+<p class="govuk-body">You have completed 2 of 4 sections</p>
+
+      <h2 class="govuk-heading-m">1. Check before you start</h2>
+
+      {% set completedStatus = {
+        text: "Completed"
+      } %}
+
+      {% set incompleteStatus = {
+        tag: {
+          text: "Incomplete",
+          classes: "govuk-tag--blue"
+        }
+      } %}
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+      {{ govukTaskList({
+        idPrefix: "first-section",
+        items: [
+          {
+            title: {
+              text: "Confirm your land details are up to date"
+            },
+            href: "check-land-details",
+            status: completedStatus
+          },
+          {
+            title: {
+              text: "Confirm you’re eligible to apply"
+            },
+        href: "management-control",
+        status: completedStatus
+    },
+               {
+            title: {
+              text: "Enter an agreement name"
+            },
+            href: "agreement-name",
+            status: completedStatus
+    }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Select your actions and items</h2>
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+          {
+            title: {
+              text: "Select which actions and items you want to apply for"
+            },
+            href: "bis-select-actions",
+            status: completedStatus   
+    }
+        ]
+      }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Select land for your actions and items</h2>
+
+    {{ govukTaskList({
+      idPrefix: "third-section",
+      items: [
+        {
+          title: {
+            text: "Select the land you want to do the actions on"
+          },
+          href: "bis-select-map-actions",
+          status: incompleteStatus
+        },
+        {
+          title: {
+            text: "Select the land you want to do the capital items on"
+          },
+      href: "bis-select-map-capitals",
+      status: incompleteStatus
+  },
+             {
+          title: {
+            text: "Select additional parcels for your rotational actions"
+          },
+          href: "bis-select-rotational-map",
+          status: incompleteStatus
+  },
+               {
+          title: {
+            text: "Apply for your agreement level actions"
+          },
+          href: "bis-agreement-level-actions",
+          status: incompleteStatus
+  },
+             {
+          title: {
+            text: "Apply for your capitals agreement level items"
+          },
+          href: "bis-agreement-level-capitals",
+          status: incompleteStatus
+  }
+        ]
+      }) }}
+
+
+         <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+                 {
+            title: {
+              text: "Check your answers"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
+    },
+                 {
+            title: {
+              text: "Request approval"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }
+    },
+                       {
+            title: {
+              text: "Submit your application"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }
+          }
+        ]
+      }) }}
+
+    </div>
+  </div>
+
+
+{% endblock %}

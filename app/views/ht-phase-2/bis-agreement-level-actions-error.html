@@ -1,0 +1,157 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#adviser-error">Your adviser have rejected some of your actions.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </div>
+  </div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm your agreement level actions</h1>
+      <p class="govuk-body">These are actions that apply to an entire holding, rather than specific land parcels.</p>
+      <p class="govuk-body">Select the action to confirm you want to add it to your agreement. Where asked to, also add a quantity.</p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">SFI agreement level actions</h2>
+      
+      <div class="agreement-row">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+              <label class="govuk-label govuk-checkboxes__label">
+                CIPM1: Assess integrated pest management and produce a plan
+                </label>
+            </div>
+        </div>
+
+      <div class="agreement-row">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+              <label class="govuk-label govuk-checkboxes__label">
+                CNUM1: Assess nutrient management and produce a review report
+                </label>
+            </div>
+      </div>
+
+      <div class="agreement-row">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label">
+                  AHW2: Supplementary winter bird food
+                  </label>
+              </div>
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+                <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
+            </div>
+          </div>
+
+      
+
+  <!--- HIGHER TIER -->
+
+  <h2 class="govuk-heading-m govuk-!-margin-bottom-6 govuk-!-margin-top-6">Higher Tier agreement level actions</h2>
+      
+      <div class="agreement-row" style="flex-direction: column;" >
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+              <label class="govuk-label govuk-checkboxes__label">
+                N/A
+                </label>
+            </div>
+            <p class="govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-0"><a href="bis-agreement-level-prescriptions" class="govuk-link">
+              I want to see my prescriptions for this action</a></p>
+        </div>
+
+      <div class="agreement-row govuk-error-message red-border red-border-padding no-border-bottom" style="flex-direction: column; padding-bottom: 0;">
+        <p class="govuk-body govuk-error-message" style="margin-bottom: 10px; margin-top: 0px;" id="parcel-error">
+          This action haven’t been approved by your adviser</p>
+        <div class="govuk-checkboxes__item govuk-!-margin-bottom-0">
+          <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+            <label class="govuk-label govuk-checkboxes__label">
+              N/A
+              </label>
+          </div>
+      </div>
+
+      <div class="agreement-row govuk-!-margin-bottom-6">
+      <details class="govuk-details govuk-!-margin-bottom-0">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Your advisor has left feedback on this action
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          You can’t do this action here because of your land type.
+        </div>
+      </details>
+      </div>
+
+    
+  <form class="form" action="bis-agreement-level-actions-applied" method="post">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+          Update your application
+      </button>
+  </form>
+
+        
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-9"></div>
+
+{% endblock %}
