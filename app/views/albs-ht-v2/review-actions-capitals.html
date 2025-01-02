@@ -88,69 +88,73 @@ If you have actions you cannot review    </span>
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-            <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
-            <div class="moj-primary-navigation__container">
-                <div class="moj-primary-navigation__nav">
-                    <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
-                        <ul class="moj-primary-navigation__list" >
-                       <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link"  aria-current="page" href="review-actions-capitals-approve" style="padding-left: 20px; padding-right:20px">Approve</a>
-          </li>
-          <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Reject</a>
-          </li>
-          <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
-          </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+        <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
+    <div class="moj-primary-navigation__container">
+        <div class="moj-primary-navigation__nav">
+            <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
+                <ul class="moj-primary-navigation__list">
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="approve-action" style="padding-left: 20px; padding-right:20px">Approve</a>
+                    </li>
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="reject-action" style="padding-left: 20px; padding-right:20px">Reject</a>
+                    </li>
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="not-applicable-action" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </div>
+</div>
            <div class="govuk-!-padding-bottom-6">
         </div>
 
-    <table class="govuk-table" data-module="moj-sortable-table">
-      <thead class="govuk-table__head">
+<table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header app-custom-class">
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input"  id="select-all" name="parcel" type="checkbox" value="hmrc">
-                  <label class="govuk-label govuk-checkboxes__label" for="select-all">
-                  </label>
-              </div>
-            </div>
-          </th>
-          <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 260px">
-            Name</th>
-          <th scope="col" class="govuk-table__header" aria-sort="#">Type</th>
-          <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
-          <th scope="col" class="govuk-table__header">Review land parcels</th>
+            <th scope="col" class="govuk-table__header app-custom-class">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="select-all" name="parcel" type="checkbox" value="hmrc">
+                        <label class="govuk-label govuk-checkboxes__label" for="select-all"></label>
+                    </div>
+                </div>
+            </th>
+            <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 260px">Name</th>
+            <th scope="col" class="govuk-table__header" aria-sort="#">Type</th>
+            <th scope="col" class="govuk-table__header" aria-sort="#">Status</th>
+            <th scope="col" class="govuk-table__header">Review land parcels</th>
+            <th scope="col" class="govuk-table__header" style="width: 25px;"></th>
         </tr>
-      </thead>
-
-      <tbody class="govuk-table__body">
+    </thead>
+    
+    <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell app-custom-class">
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" name="parcel" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label"></label>
-            </div></div>
-          </td>
-          <td class="govuk-table__cell" data-sort-value="001">AF1: Plant an agroforestry woodland tree</td>
-          <td class="govuk-table__cell">Capital item</td>
-          <td class="govuk-table__cell">
-            <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-              <strong class="govuk-tag govuk-tag--grey">
-                Needs approval
-              </strong>
-            </div>
-          </td>
-          <td class="govuk-table__cell">
-            <a href="#">Review</a>
-          </td>
+            <td class="govuk-table__cell app-custom-class">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" name="parcel" type="checkbox">
+                        <label class="govuk-label govuk-checkboxes__label"></label>
+                    </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell" data-sort-value="001">AF1: Plant an agroforestry woodland tree</td>
+            <td class="govuk-table__cell">Capital item</td>
+            <td class="govuk-table__cell">
+                <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
+                    <strong class="govuk-tag govuk-tag--grey">Needs approval</strong>
+                </div>
+            </td>
+            <td class="govuk-table__cell">
+                <a href="#">Review</a>
+            </td>
+            <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
         </tr>
     <tr class="govuk-table__row">
           <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -169,6 +173,12 @@ If you have actions you cannot review    </span>
      <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
   <tr class="govuk-table__row">
          <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -186,6 +196,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -203,6 +219,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
       <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -220,6 +242,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -237,6 +265,12 @@ If you have actions you cannot review    </span>
      <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -254,6 +288,12 @@ If you have actions you cannot review    </span>
      <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
   
       <tr class="govuk-table__row">
@@ -272,6 +312,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -289,6 +335,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
       <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -306,6 +358,12 @@ If you have actions you cannot review    </span>
      <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
 
      <tr class="govuk-table__row">
@@ -324,6 +382,12 @@ If you have actions you cannot review    </span>
      <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -341,6 +405,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -358,6 +428,12 @@ If you have actions you cannot review    </span>
      <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -375,6 +451,12 @@ If you have actions you cannot review    </span>
      <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -392,6 +474,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -409,6 +497,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -426,6 +520,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -443,6 +543,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -460,6 +566,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -477,6 +589,12 @@ If you have actions you cannot review    </span>
       <td class="govuk-table__cell">
             <a href="#">Review</a>
           </td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
 
   </tbody>
@@ -512,53 +630,64 @@ If you have actions you cannot review    </span>
 </div>
 </main>
 
-<!-- Select all and checkboxes triggers actions menu bar component -->
 <script>
-        document.getElementById('select-all').addEventListener('change', function() {
-            var checkboxes = document.querySelectorAll('input[name="parcel"]');
-            for (var checkbox of checkboxes) {
-                checkbox.checked = this.checked;
-            }
-            toggleRemoveButton();
-        });
-
-        var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
-        for (var checkbox of parcelCheckboxes) {
-            checkbox.addEventListener('change', toggleRemoveButton);
-        }
-
-        function toggleRemoveButton() {
-            var removeButton = document.getElementById('action-menu');
-            var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
-            if (anyChecked) {
-                removeButton.classList.remove('hidden');
-            } else {
-                removeButton.classList.add('hidden');
-            }
-        }
-    </script>
-    <script>
     document.getElementById('select-all').addEventListener('change', function() {
         var checkboxes = document.querySelectorAll('input[name="parcel"]');
         for (var checkbox of checkboxes) {
             checkbox.checked = this.checked;
         }
-        toggleButtons();
+        toggleRemoveButton();
     });
 
     var parcelCheckboxes = document.querySelectorAll('input[name="parcel"]');
     for (var checkbox of parcelCheckboxes) {
-        checkbox.addEventListener('change', toggleButtons);
+        checkbox.addEventListener('change', toggleRemoveButton);
     }
 
-    function toggleButtons() {
-        var buttons = document.querySelectorAll('action-menu');
+    function toggleRemoveButton() {
+        var removeButton = document.getElementById('action-menu');
         var anyChecked = Array.from(parcelCheckboxes).some(checkbox => checkbox.checked);
-        buttons.forEach(button => {
-            if (anyChecked) {
-                button.classList.remove('hidden');
+        if (anyChecked) {
+            removeButton.classList.remove('hidden');
+        } else {
+            removeButton.classList.add('hidden');
+        }
+    }
+
+    document.getElementById('approve-action').addEventListener('click', function(event) {
+        event.preventDefault();
+        updateStatus('Approved');
+    });
+
+    document.getElementById('reject-action').addEventListener('click', function(event) {
+        event.preventDefault();
+        updateStatus('Rejected');
+    });
+
+    document.getElementById('not-applicable-action').addEventListener('click', function(event) {
+        event.preventDefault();
+        updateStatus('Not applicable');
+    });
+
+    function updateStatus(status) {
+        var selectedCheckboxes = document.querySelectorAll('input[name="parcel"]:checked');
+        selectedCheckboxes.forEach(function(checkbox) {
+            var row = checkbox.closest('tr');
+            var statusCell = row.querySelector('.govuk-task-list__status');
+            var iconCell = row.querySelector('.tight-column');
+            if (statusCell) {
+                if (status === 'Rejected') {
+                    statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--red">Rejected</strong>';
+                    iconCell.style.visibility = 'visible';
+                } else if (status === 'Not applicable') {
+                    statusCell.innerHTML = 'Not applicable';
+                    iconCell.style.visibility = 'hidden';
+                } else if (status === 'Approved') {
+                    statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--green">Approved</strong>';
+                    iconCell.style.visibility = 'hidden';
+                }
             } else {
-                button.classList.add('hidden');
+                console.error('Status cell not found for row:', row);
             }
         });
     }

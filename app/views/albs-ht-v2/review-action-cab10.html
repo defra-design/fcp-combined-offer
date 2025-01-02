@@ -55,25 +55,25 @@
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-              <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
-            <div class="moj-primary-navigation__container">
-                <div class="moj-primary-navigation__nav">
-                    <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
-                        <ul class="moj-primary-navigation__list" >
-                       <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link"  aria-current="page" href="review-action-cab10-approve-saved" style="padding-left: 20px; padding-right:20px">Approve</a>
-          </li>
-          <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Reject</a>
-          </li>
-          <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
-          </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+          <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
+    <div class="moj-primary-navigation__container">
+        <div class="moj-primary-navigation__nav">
+            <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
+                <ul class="moj-primary-navigation__list">
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="approve-action" style="padding-left: 20px; padding-right:20px">Approve</a>
+                    </li>
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="reject-action" style="padding-left: 20px; padding-right:20px">Reject</a>
+                    </li>
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="not-applicable-action" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </div>
+</div>
         <br>
 
           <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-bottom-9" data-module="govuk-checkboxes">
@@ -106,6 +106,8 @@
 
       <th scope="col" class="govuk-table__header">Feedback</th>
 
+            <th scope="col" class="govuk-table__header" style="width: 25px;"></th>
+
     </tr>
   </thead>
 
@@ -118,15 +120,17 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
       <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
         <td class="govuk-table__cell" data-sort-value="001">No</td>
-     
+        <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
-
-
-
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
@@ -135,10 +139,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="002">SE7023 5010</td>
       <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="002"><strong class="govuk-tag govuk-tag--grey">
+      <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
-        </strong></td>
+        </strong></div></td>
               <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -148,10 +158,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="003">SE7023 5011</td>
       <td class="govuk-table__cell" data-sort-value="003">26.43 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--grey">
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
-        </strong></td>
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -161,10 +177,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5012</td>
       <td class="govuk-table__cell" data-sort-value="004">5.32 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
          Needs approval
-        </strong></td>
+        </strong></div></td>
             <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
            <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -174,10 +196,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5013</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -187,10 +215,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5014</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
             <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -200,10 +234,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5015</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
             <td class="govuk-table__cell" data-sort-value="001">No</td>
+            <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -213,10 +253,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5016</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -226,10 +272,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5017</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -239,10 +291,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5018</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -252,10 +310,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5019</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
               <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -265,10 +329,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5020</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -278,10 +348,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5021</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
               <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -291,10 +367,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5022</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+      <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
               <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -304,10 +386,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5023</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -317,10 +405,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5024</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+      <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -330,10 +424,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5025</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -343,10 +443,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5026</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -356,10 +462,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5027</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -369,10 +481,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5028</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+       <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
               <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -382,10 +500,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5029</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="004"><strong class="govuk-tag govuk-tag--grey">
-          Needs approval
-        </strong></td>
+    <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">
+         Needs approval
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001">No</td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
 
   </tbody>
@@ -441,7 +565,7 @@ Explain why you've approved or rejected land parcels for this action or capital 
 </div>
 
 
-<form class="form" action="review-actions-capitals-reject-2" method="post">
+<form class="form" action="review-actions-capitals-partially" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
   Save and continue
 </button>
@@ -505,7 +629,6 @@ Explain why you've approved or rejected land parcels for this action or capital 
   });
 </script>
 
-<!-- Select all and checkboxes triggers actions menu bar component -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var checkboxes = document.querySelectorAll('input[name="parcel"]');
@@ -553,6 +676,44 @@ Explain why you've approved or rejected land parcels for this action or capital 
                     button.classList.remove('hidden');
                 } else {
                     button.classList.add('hidden');
+                }
+            });
+        }
+
+        document.getElementById('approve-action').addEventListener('click', function(event) {
+            event.preventDefault();
+            updateStatus('Approved');
+        });
+
+        document.getElementById('reject-action').addEventListener('click', function(event) {
+            event.preventDefault();
+            updateStatus('Rejected');
+        });
+
+        document.getElementById('not-applicable-action').addEventListener('click', function(event) {
+            event.preventDefault();
+            updateStatus('Not applicable');
+        });
+
+        function updateStatus(status) {
+            var selectedCheckboxes = document.querySelectorAll('input[name="parcel"]:checked');
+            selectedCheckboxes.forEach(function(checkbox) {
+                var row = checkbox.closest('tr');
+                var statusCell = row.querySelector('.govuk-task-list__status');
+                var iconCell = row.querySelector('.tight-column');
+                if (statusCell) {
+                    if (status === 'Rejected') {
+                        statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--red">Rejected</strong>';
+                        iconCell.style.visibility = 'visible';
+                    } else if (status === 'Not applicable') {
+                        statusCell.innerHTML = 'Not applicable';
+                        iconCell.style.visibility = 'hidden';
+                    } else if (status === 'Approved') {
+                        statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--green">Approved</strong>';
+                        iconCell.style.visibility = 'hidden';
+                    }
+                } else {
+                    console.error('Status cell not found for row:', row);
                 }
             });
         }
