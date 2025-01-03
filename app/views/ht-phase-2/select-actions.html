@@ -45,99 +45,98 @@
 <!---LEFT HAND SIDE COLUMN-->
 <!---FILTERS-->
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-one-third">
-  <div id="search">
-    <label class="govuk-label govuk-!-margin-top-2" for="search">
-      Search by action code
-    </label>
-    <input class="govuk-input text-input govuk-!-margin-bottom-3" style="width:160px; height:44px; margin-right: -4px" id="searchbox" type="text" value="" placeholder="">
-
-    <button id="button_1" class="govuk-button blue-button" style="height: 42px" data-module="govuk-button">
-      <svg style="display: block; margin-left:0px" class="gem-c-search__icon" width="21" height="21" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-        <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
-        <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
-      </svg>
+  <div class="govuk-grid-column-one-third">
+    <div id="search">
+      <label class="govuk-label govuk-!-margin-top-2" for="search">
+        Search by action code
+      </label>
+      <input class="govuk-input text-input govuk-!-margin-bottom-3" style="width:160px; height:44px; margin-right: -4px" id="searchbox" type="text" value="" placeholder="">
+  
+      <button id="button_1" class="govuk-button blue-button" style="height: 42px" data-module="govuk-button">
+        <svg style="display: block; margin-left:0px" class="gem-c-search__icon" width="21" height="21" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+          <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+        </svg>
+      </button>
+    </div>
+  
+  <div id="filters">
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <label class="govuk-label govuk-label--s">
+        <span>
+          Themes
+        </span>
+      </label>
+      </summary>
+      <div class="govuk-!-padding-top-5 govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Buffer strips
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Farmland wildlife on arable and horticultural land
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Farmland wildlife on improved grassland
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Hedgerows
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Integrated pest management
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Low input grassland
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Moorland
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Nutrient management
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Soil
+          </label>
+        </div>
+    </div>
+  </details>
+  </div>
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Apply filters
+    </button>
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Clear all filters
     </button>
   </div>
-
-  
-<div id="filters">
-  <details class="govuk-details" data-module="govuk-details" open>
-    <summary class="govuk-details__summary">
-      <label class="govuk-label govuk-label--s">
-      <span>
-        Themes
-      </span>
-    </label>
-    </summary>
-    <div class="govuk-!-padding-top-5" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
-          Buffer strips
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Farmland wildlife on arable and horticultural land
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Farmland wildlife on improved grassland
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Hedgerows
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Integrated pest management
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Low input grassland
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Moorland
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Nutrient management
-        </label>
-      </div>
-      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-        <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-          Soil
-        </label>
-      </div>
   </div>
-</details>
-</div>
-
-<div class="govuk-button-group govuk-!-margin-bottom-5">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Apply filters
-  </button>
-  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-    Clear all filters
-  </button>
-</div>
-</div>
 
 
 <!---RIGHT HAND SIDE COLUMN-->
@@ -181,7 +180,7 @@
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-            <p class="govuk-body">CSAM1: Assess soil, produce a soil management plan and test soil organic matter – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+            <p class="govuk-body">CSAM1: Assess soil, produce a soil management plan and test soil organic matter – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
             </label>
           </div>
           <div class="govuk-!-padding-bottom-4">
@@ -193,7 +192,7 @@
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-            <p class="govuk-body">CSAM3: Herbal leys – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+            <p class="govuk-body">CSAM3: Herbal leys – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
             </label>
           </div>
           <div class="govuk-!-padding-bottom-4">
@@ -205,7 +204,7 @@
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">SOH1: No-till farming – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">SOH1: No-till farming – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -217,7 +216,7 @@
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">BFS6: 6m to 12m habitat strip next to watercourses – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">BFS6: 6m to 12m habitat strip next to watercourses – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -229,7 +228,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">BFS6: 6m to 12m habitat strip next to watercourses – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">BFS6: 6m to 12m habitat strip next to watercourses – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -241,7 +240,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">WBD1: Manage ponds – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">WBD1: Manage ponds – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -253,7 +252,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">OFC2: Organic conversion – unimproved permanent grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">OFC2: Organic conversion – unimproved permanent grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -265,7 +264,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">OFC3: Organic conversion – rotational land – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">OFC3: Organic conversion – rotational land – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -277,7 +276,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">OFC5: Organic conversion – top fruit – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">OFC5: Organic conversion – top fruit – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -289,7 +288,7 @@
         <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="checkbox-1">
           <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">OFM1: Organic land management – improved permanent grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">OFM1: Organic land management – improved permanent grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -301,7 +300,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">OFM2: Organic land management – unimproved permanent grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">OFM2: Organic land management – unimproved permanent grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -313,7 +312,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">OFM3: Organic land management – enclosed rough grazing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">OFM3: Organic land management – enclosed rough grazing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -325,7 +324,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">OFM4: Organic land management – rotational land – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">OFM4: Organic land management – rotational land – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -337,7 +336,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AHW4: Skylark plots – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">AHW4: Skylark plots – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -349,7 +348,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AHW5: Nesting plots for lapwing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">AHW5: Nesting plots for lapwing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -361,7 +360,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AHW6: Basic overwinter stubble – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">AHW6: Basic overwinter stubble – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -391,7 +390,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">GRH6: Manage priority habitat species-rich grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">GRH6: Manage priority habitat species-rich grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -424,7 +423,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP1: Supplement: Difficult sites – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CSP1: Supplement: Difficult sites – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -436,7 +435,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP5: Supplement: Shepherding (non-moorland) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CSP5: Supplement: Shepherding (non-moorland) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -448,7 +447,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP7: Supplement: Introduction of cattle grazing on the Isles of Scilly – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CSP7: Supplement: Introduction of cattle grazing on the Isles of Scilly – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -460,7 +459,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP11: Supplement: Manage scrapes and gutters – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CSP11: Supplement: Manage scrapes and gutters – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -472,7 +471,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS18: Manage species-rich floodplain meadows – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CGS18: Manage species-rich floodplain meadows – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -484,7 +483,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS19: Manage wet grassland for wintering waders and wildfowl – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CGS19: Manage wet grassland for wintering waders and wildfowl – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -496,7 +495,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS20: Manage wet grassland for breeding waders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CGS20: Manage wet grassland for breeding waders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -508,7 +507,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS21: Manage grassland for target habitats, species or features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CGS21: Manage grassland for target habitats, species or features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -520,7 +519,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS22: Manage priority habitat species-rich grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CGS22: Manage priority habitat species-rich grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -532,7 +531,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CUP3: General moorland management – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CUP3: General moorland management – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -544,7 +543,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC1: Open access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CPAC1: Open access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -556,7 +555,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC2: Access for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CPAC2: Access for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -568,7 +567,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC3: Bridleway or cycle path access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CPAC3: Bridleway or cycle path access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -580,7 +579,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC4: Footpath access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CPAC4: Footpath access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -592,7 +591,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC5: Upgrading Countryside and Rights of Way for cyclists and horse riders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CPAC5: Upgrading Countryside and Rights of Way for cyclists and horse riders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -604,7 +603,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC6: Upgrading Countryside and Rights of Way for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CPAC6: Upgrading Countryside and Rights of Way for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -616,7 +615,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input">
               <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CCT2: Make space for new coastal habitat – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+              <p class="govuk-body">CCT2: Make space for new coastal habitat – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
               </label>
             </div>
             <div class="govuk-!-padding-bottom-4">
@@ -646,7 +645,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">RP3: Watercourse crossings – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">RP3: Watercourse crossings – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -658,7 +657,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FG3: Permanent electric fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">FG3: Permanent electric fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -670,7 +669,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FG2: Sheep netting – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">FG2: Sheep netting – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -682,7 +681,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FG1: Fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">FG1: Fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -694,7 +693,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE6: Tree guard (tube and mesh) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">TE6: Tree guard (tube and mesh) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -706,7 +705,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE7: Tree guard (wood post and rail) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">TE7: Tree guard (wood post and rail) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -718,7 +717,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE8: Tree guard (wood post and wire) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">TE8: Tree guard (wood post and wire) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -730,7 +729,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AF3: Supplement: Species diversity bonus – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">AF3: Supplement: Species diversity bonus – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -742,7 +741,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AF1: Plant an agroforestry woodland tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">AF1: Plant an agroforestry woodland tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -754,7 +753,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">WN7: Restoration of large water bodies – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">WN7: Restoration of large water bodies – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -766,7 +765,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -778,7 +777,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AF2: Plant an agroforestry fruit tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">AF2: Plant an agroforestry fruit tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -790,7 +789,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">SB4: Chemical bracken control – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">SB4: Chemical bracken control – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -802,7 +801,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -814,7 +813,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">BC4: Tree Guard Post and wire – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">BC4: Tree Guard Post and wire – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -826,7 +825,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FY2: Woodland infrastructure – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">FY2: Woodland infrastructure – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -838,7 +837,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">BC3: Crop protection fencing mesh and wire for permanent crops – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">BC3: Crop protection fencing mesh and wire for permanent crops – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
@@ -850,7 +849,7 @@
         <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
             <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE11: Tree surgery – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">view</a></p>
+          <p class="govuk-body">TE11: Tree surgery – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
           </label>
         </div>
         <div class="govuk-!-padding-bottom-4">
