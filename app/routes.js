@@ -276,7 +276,7 @@ router.post('/sssi-answer-ht-p2', function (req, res) {
   // Check whether the variable matches a condition
   if (managementControlAnswer == "yes"){
     // Send user to next page
-    res.redirect('/ht-phase-2/ite')
+    res.redirect('/ht-phase-2/eligible')
 
   } else {
     // Send user to ineligible page
