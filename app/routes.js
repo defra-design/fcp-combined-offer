@@ -214,3 +214,73 @@ router.post('/public-body-answer-ht', function (req, res) {
 })
 
 
+// HIGHER TIER CUSTOMER PHASE 2
+
+// Add your routes here
+router.post('/land-details-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var landDetailsAnswer = req.session.data['land-details-answer']
+
+  // Check whether the variable matches a condition
+  if (landDetailsAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/tasklist-2')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/update-land-details')
+  }
+
+})
+
+router.post('/management-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['management-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/hefer')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/ineligible')
+  }
+
+})
+
+router.post('/hefer-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['hefer-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/sssi')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/ineligible')
+  }
+
+})
+
+router.post('/sssi-answer-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['sssi-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2/ite')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2/ineligible')
+  }
+
+})
