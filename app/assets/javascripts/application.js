@@ -21,3 +21,8 @@ window.GOVUKPrototypeKit.documentReady(() => {
   });
 });
 })
+
+function updateStatus(statusId) {
+    const status = document.getElementById(statusId).value;
+    document.getElementById('statusDisplay').innerText = `Status of ${statusId} is now ${status}`;
+}
