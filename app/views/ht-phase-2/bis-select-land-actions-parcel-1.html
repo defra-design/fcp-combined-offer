@@ -45,9 +45,9 @@
   <div class="govuk-grid-column-one-half">
     <h1 class="govuk-heading-l">Select land for your actions</h1>
 
-    <p class="govuk-body">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
     <p class="govuk-body govuk-!-margin-bottom-0">You’ll see your list of actions. You then need to:
-      <ul class="govuk-list govuk-list--bullet">
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
           <li>select the action and enter the amount that you want to add to the parcel</li>
           <li>confirm your selection for that parcel</li>
       </ul>
@@ -178,167 +178,6 @@
     You have 4 actions with prescriptions and feedbacks on this land parcel
   </div>
 
-    <div class="govuk-tabs" data-module="govuk-tabs">
-      <ul class="govuk-tabs__list">
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#sfi">SFI</a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#sfi-endorsed">SFI endorsed</a>
-        </li>
-        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-          <a class="govuk-tabs__tab" href="#ht">Higher Tier</a>
-        </li>
-      </ul>
-
-<!---SFI TAB ---> 
-    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="sfi" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header"></th>
-              <th scope="col" class="govuk-table__header" style="width: 145px">Action</th>
-              <th scope="col" class="govuk-table__header" style="width: 60px">Available area</th>          
-              <th scope="col" class="govuk-table__header">Quantity</th>
-            </tr>
-          </thead>
-
-          <tbody class="govuk-table__body">
-            
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
-                  <label class="govuk-label govuk-checkboxes__label"></label>
-                </div>
-              </td>
-              <td class="govuk-table__cell">CSAM1: Assess soil, produce a soil management plan and test soil organic matter</td>
-              <td class="govuk-table__cell">10.3453</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-form-group">
-                  <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="10.3453">
-                    <div class="govuk-input__suffix" aria-hidden="true">m</div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
-                  <label class="govuk-label govuk-checkboxes__label"></label>
-                </div>
-              </td>
-              <td class="govuk-table__cell">BFS6: 6m to 12m habitat strip next to watercourses</td>
-              <td class="govuk-table__cell">10.3453</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-form-group">
-                  <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="10.3453">
-                    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
-                  <label class="govuk-label govuk-checkboxes__label"></label>
-                </div>
-              </td>
-              <td class="govuk-table__cell">OFM1: Organic land management – improved permanent grassland</td>
-              <td class="govuk-table__cell">32.0404</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-form-group">
-                  <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="32.0404">
-                    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
-                </div>
-              </td>
-              <td class="govuk-table__cell">GRH1: Manage rough grazing for birds</td>
-              <td class="govuk-table__cell">15.2224</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-form-group">
-                  <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-        
-        <nav class="moj-pagination govuk-!-margin-bottom-0" aria-label="Pagination navigation">
-          <ul class="moj-pagination__list" style="display: flex; align-items: center;">
-            <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>4</b> of <b>4</b> actions</p>
-          </ul>
-        </nav>
-
-        </div>
-
-
-      
-<!---SFI ENDORSED TAB ---> 
-      <div class="govuk-tabs__panel govuk-tabs__panel--hidden"" id="sfi-endorsed" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
-
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header"></th>
-              <th scope="col" class="govuk-table__header" style="width: 145px">Action</th>
-              <th scope="col" class="govuk-table__header" style="width: 60px">Available area</th>          
-              <th scope="col" class="govuk-table__header">Quantity</th>
-            </tr>
-          </thead>
-    
-          <tbody class="govuk-table__body">
-            
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
-                </div>
-              </td>
-              <td class="govuk-table__cell">GRH6: Manage priority habitat species-rich grassland</td>
-              <td class="govuk-table__cell">10.3453</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-form-group">
-                  <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                    <div class="govuk-input__suffix" aria-hidden="true">m</div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-
-        <nav class="moj-pagination govuk-!-margin-bottom-0" aria-label="Pagination navigation">
-          <ul class="moj-pagination__list" style="display: flex; align-items: center;">
-            <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>1</b> of <b>1</b> actions</p>
-          </ul>
-        </nav>
-      </div>
-
-<!---Higher Tier tab -->
-    <div class="govuk-tabs__panel" id="ht" style="border-bottom: none; border-left: none; border-right: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 30px;">
-      
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -374,9 +213,9 @@
             <!--Row with prescription link and details-->
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" colspan="4">
-                <p class="govuk-body govuk-!-margin-bottom-6"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">I want to see my prescriptions for this action</a></p>
+                <p class="govuk-body govuk-!-margin-bottom-4"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">I want to see my prescriptions for this action</a></p>
                 
-                <details class="govuk-details">
+                <details class="govuk-details govuk-!-margin-bottom-2">
                   <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
                       Your adviser has left feedback on this action
@@ -412,11 +251,23 @@
             </tr>
 
           <!--Row with prescription link -->
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="4">
-                <p class="govuk-body"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">I want to see my prescriptions for this action</a></p>
-              </td>
-            </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" colspan="4">
+              <p class="govuk-body govuk-!-margin-bottom-4"><a href="#" class="govuk-link">I want to see my prescriptions for this action</a></p>
+              
+              <details class="govuk-details govuk-!-margin-bottom-2">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Your adviser has left feedback on this action
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  No objections to this action selected for the type of land present.
+                </div>
+              </details>
+
+            </td>
+          </tr>
 
         <!---CHECKED---> 
             <tr class="govuk-table__row">
@@ -441,9 +292,9 @@
 <!--Row with prescription link and details-->
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" colspan="4">
-                <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">I want to see my prescriptions for this action</a></p>
+                <p class="govuk-body govuk-!-margin-bottom-4"><a href="#" class="govuk-link">I want to see my prescriptions for this action</a></p>
                 
-                <details class="govuk-details">
+                <details class="govuk-details govuk-!-margin-bottom-2">
                   <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
                       Your adviser has left feedback on this action
@@ -509,13 +360,12 @@
           </tbody>
         </table>
 
-        <nav class="moj-pagination govuk-!-margin-bottom-0" aria-label="Pagination navigation">
+        <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
           <ul class="moj-pagination__list" style="display: flex; align-items: center;">
             <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>5</b> of <b>5</b> actions</p>
           </ul>
         </nav>
 
-      </div>
 
   
 

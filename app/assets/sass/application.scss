@@ -324,10 +324,9 @@ body {
 }
 
 .sticky-button {
-  position: -webkit-sticky; /* For Safari */
   position: sticky;
-  top: 0; /* Adjust this value as needed */
-  z-index: 200; /* Ensure it stays above other content */
+  top: 0; /* Adjust this value to your preference */
+  z-index: 1000; /* Ensure it stays on top of other elements */
 }
 
 .agreement-row {

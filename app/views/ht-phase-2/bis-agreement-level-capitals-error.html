@@ -80,18 +80,19 @@
               I want to see my specifications for this capital item</a></p>
         </div>
 
-      <div class="agreement-row govuk-error-message red-border red-border-padding no-border-bottom" style="flex-direction: column; padding-bottom: 0;">
-        <p class="govuk-body govuk-error-message" style="margin-bottom: 10px; margin-top: 0px;" id="parcel-error">
-          This capital item haven’t been approved by your adviser</p>
-        <div class="govuk-checkboxes__item govuk-!-margin-bottom-0">
-          <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
-            <label class="govuk-label govuk-checkboxes__label">
-              WN7: Restoration of large water bodies
-              </label>
-          </div>
-      </div>
+    <!--ERROR-->
+    <div class="agreement-row govuk-error-message red-border red-border-padding no-border-bottom" style="flex-direction: column; padding-bottom: 0; padding-top: 0px;">
+      <p class="govuk-body govuk-error-message" style="margin-bottom: 15px; margin-top: 0px;" id="adviser-error">
+        This capital item haven’t been approved by your adviser</p>
+      <div class="govuk-checkboxes__item govuk-!-margin-bottom-0">
+        <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+          <label class="govuk-label govuk-checkboxes__label">
+            WN7: Restoration of large water bodies
+            </label>
+        </div>
+    </div>
 
-      <div class="agreement-row govuk-!-margin-bottom-6">
+    <div class="agreement-row govuk-!-margin-bottom-6">
       <details class="govuk-details govuk-!-margin-bottom-0">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -105,11 +106,12 @@
       </div>
 
     
-  <form class="form" action="bis-agreement-level-capitals-applied" method="post">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-          Update your application
-      </button>
-  </form>
+    <form class="form" action="tasklist-18" method="post">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+        </button>
+    </form>
+  
 
         
 </div>

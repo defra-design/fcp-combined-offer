@@ -43,6 +43,23 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#row-error">You have an error. Click on change to resolve this.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check your answers before sending your application​</h1>
     <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">Print</a></p>
     </p>
@@ -111,7 +128,7 @@
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key" style="width: 390px;">
-          Management control of the land
+          Management control of land
         </dt>
         <dd class="govuk-summary-list__value">
           Yes
@@ -123,7 +140,7 @@
       
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Land with scheduled monuments or historic or archaeological features
+          Land with historic or archaeological features
         </dt>
         <dd class="govuk-summary-list__value">
           Yes
@@ -180,75 +197,8 @@
     </h2>
 
     <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" style="width: 390px;">
-          Parcel based SFI actions
-        </dt>
-        <dd class="govuk-summary-list__value">
-        </dd>
-        <dd class="govuk-summary-list__value">
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="select-map-actions-applied">Change<span class="govuk-visually-hidden"> answer</span></a>
-        </dd>
-      </div>
-      
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
-          CSAM1: Assess soil, produce a soil management plan and test soil organic matter
-        </dd>
-        <dd class="govuk-summary-list__value" >
-          10.3453 ha
-        </dd>
-        <dd class="govuk-summary-list__value">
-          £62.07
-        </dd>
-        <dd class="govuk-summary-list__value">
-        </dd>
-      </div>
 
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
-          BFS6: 6m to 12m habitat strip next to watercourses
-        </dd>
-        <dd class="govuk-summary-list__value" >
-          10.3453 ha
-        </dd>
-        <dd class="govuk-summary-list__value">
-          £7,676.21
-        </dd>
-        <dd class="govuk-summary-list__value">
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
-          OFM1: Organic land management – improved permanent grassland
-        </dd>
-        <dd class="govuk-summary-list__value" >
-          32.0404 ha
-        </dd>
-        <dd class="govuk-summary-list__value">
-          £640.80
-        </dd>
-        <dd class="govuk-summary-list__value">
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" style="width: 390px;">
-          Parcel based SFI actions total
-        </dt>
-        <dd class="govuk-summary-list__value">
-        </dd>
-        <dd class="govuk-summary-list__value">
-          £8,379.08
-        </dd>
-        <dd class="govuk-summary-list__actions">
-        </dd>
-      </div>
-
-      <!---Endorsed SFI actions-->
+      <!---Endorsed SFI actions
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key" style="width: 390px;">
           Parcel based endorsed SFI actions
@@ -274,7 +224,7 @@
         </dd>
         <dd class="govuk-summary-list__value">
         </dd>
-      </div>
+      </div> -->
 
       <!-- HT actions-->
       <div class="govuk-summary-list__row">
@@ -290,8 +240,17 @@
         </dd>
       </div>
 
+
+    <!-- Error line -->
+
+      <dd class="govuk-summary-list__value red-border red-border-padding" style="padding-bottom: 0;">
+        <span id="row-error" class="govuk-error-message" style="width: 940px;">
+          <span class="govuk-visually-hidden">Error:</span>There is an error with this action, you can’t do CSP1. Click on change to resolve this.
+        </span>
+      </dd>
+
       <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
+        <dd class="govuk-summary-list__value red-border red-border-padding">
           CSP1: Supplement: Difficult sites
         </dd>
         <dd class="govuk-summary-list__value" >
@@ -417,7 +376,7 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key" style="width: 390px;">
-          Parcel based endorsed, higher tier actions and capital items total
+          Parcel based endorsed, Higher Tier actions and capital items total
         </dt>
         <dd class="govuk-summary-list__value" >
         </dd>
@@ -447,61 +406,10 @@
 </h2>
 
 <dl class="govuk-summary-list">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key" style="width: 390px;">
-     SFI agreement level actions
-    </dt>
-    <dd class="govuk-summary-list__value">
-    </dd>
-    <dd class="govuk-summary-list__value">
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="agreement-level-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
-    </dd>
-  </div>
   
   <div class="govuk-summary-list__row">
-    <dd class="govuk-summary-list__value">
-      CIPM1: Assess integrated pest management and produce a plan
-    </dd>
-    <dd class="govuk-summary-list__value" >
-    </dd>
-    <dd class="govuk-summary-list__value">
-      £1,129.00
-    </dd>
-    <dd class="govuk-summary-list__value">
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dd class="govuk-summary-list__value">
-      CNUM1: Assess nutrient management and produce a review report
-    </dd>
-    <dd class="govuk-summary-list__value" >
-    </dd>
-    <dd class="govuk-summary-list__value">
-      £652.00
-    </dd>
-    <dd class="govuk-summary-list__value">
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width: 390px;">
-      SFI agreement level actions total
-    </dt>
-    <dd class="govuk-summary-list__value" >
-    </dd>
-    <dd class="govuk-summary-list__value">
-      £1,778.00
-    </dd>
-    <dd class="govuk-summary-list__value">
-    </dd>
-  </div>
-
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key" style="width: 390px;">
-      Higher tier agreement level actions
+      Higher Tier agreement level actions
     </dt>
     <dd class="govuk-summary-list__value">
     </dd>
@@ -579,7 +487,7 @@
 
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key" style="width: 390px;">
-      Agreement level higher tier actions and capital items total
+      Agreement level Higher Tier actions and capital items total
     </dt>
     <dd class="govuk-summary-list__value" >
     </dd>
@@ -604,13 +512,13 @@
   </div>
   </dl>
 
-  <form class="form" action="check-your-answers-saved" method="post">
+  <form class="form" action="check-your-answers-application-error" method="post">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
         Confirm
       </button>
   </form>
 
-<form class="form" action="tasklist-12" method="post">
+<form class="form" action="tasklist-11" method="post">
   <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button" disabled>
     Save and continue
   </button>

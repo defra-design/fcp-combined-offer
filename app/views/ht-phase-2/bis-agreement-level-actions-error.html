@@ -67,41 +67,6 @@
       <p class="govuk-body">These are actions that apply to an entire holding, rather than specific land parcels.</p>
       <p class="govuk-body">Select the action to confirm you want to add it to your agreement. Where asked to, also add a quantity.</p>
 
-      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">SFI agreement level actions</h2>
-      
-      <div class="agreement-row">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
-              <label class="govuk-label govuk-checkboxes__label">
-                CIPM1: Assess integrated pest management and produce a plan
-                </label>
-            </div>
-        </div>
-
-      <div class="agreement-row">
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
-              <label class="govuk-label govuk-checkboxes__label">
-                CNUM1: Assess nutrient management and produce a review report
-                </label>
-            </div>
-      </div>
-
-      <div class="agreement-row">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox">
-                <label class="govuk-label govuk-checkboxes__label">
-                  AHW2: Supplementary winter bird food
-                  </label>
-              </div>
-              <div class="govuk-input__wrapper">
-                <input class="govuk-input govuk-input--width-4" id="weight" name="weight" type="text" spellcheck="false">
-                <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
-            </div>
-          </div>
-
-      
-
   <!--- HIGHER TIER -->
 
   <h2 class="govuk-heading-m govuk-!-margin-bottom-6 govuk-!-margin-top-6">Higher Tier agreement level actions</h2>
@@ -117,8 +82,8 @@
               I want to see my prescriptions for this action</a></p>
         </div>
 
-      <div class="agreement-row govuk-error-message red-border red-border-padding no-border-bottom" style="flex-direction: column; padding-bottom: 0;">
-        <p class="govuk-body govuk-error-message" style="margin-bottom: 10px; margin-top: 0px;" id="parcel-error">
+      <div class="agreement-row govuk-error-message red-border red-border-padding no-border-bottom" style="flex-direction: column; padding-bottom: 0; padding-top: 0px;">
+        <p class="govuk-body govuk-error-message" style="margin-bottom: 15px; margin-top: 0px;" id="adviser-error">
           This action haven’t been approved by your adviser</p>
         <div class="govuk-checkboxes__item govuk-!-margin-bottom-0">
           <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
@@ -142,9 +107,9 @@
       </div>
 
     
-  <form class="form" action="bis-agreement-level-actions-applied" method="post">
+  <form class="form" action="tasklist-17" method="post">
       <button type="submit" class="govuk-button" data-module="govuk-button">
-          Update your application
+          Save and continue
       </button>
   </form>
 
