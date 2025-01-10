@@ -47,9 +47,9 @@
     <span class="govuk-caption-l">CAB10: Unharvested cereal headland</span>
           <h1 class="govuk-heading-l">Review prescriptions</h1>
 
-    <h2 class="govuk-heading-m">You are reviewing prescription P12</h2>
+    <h2 class="govuk-heading-m">You are reviewing prescription P42</h2>
 
-     <p class="govuk-body">This action must use wide margins and big blocks between [xx] to let insects move to safety when fields are being sprayed.</p>
+     <p class="govuk-body">Only use [xx] as herbicide active ingredients.</p>
 
     <table class="govuk-table">
     <thead class="govuk-table__head">
@@ -59,7 +59,7 @@
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Editable</th>
-        <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell">No</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Mandatory</th>
@@ -68,21 +68,6 @@
       </tbody>
     </table>
 
-
-    <h3 class="govuk-heading-m">Edit prescription</h3>
-
-    <p class="govuk-body">Here is where you should tailor the action to say how it should be managed.</p>
-
-    <div class="govuk-form-group">
-      <p class="govuk-body">This action must use wide margins and big blocks between</p>
-        <input class="govuk-input" id="benefits-by" name="benefitsBy" type="text" value="">
-    </div>
-
-    <div class="govuk-form-group">
-      <p class="govuk-body">to let insects move to safety when fields are being sprayed.</p>
-    
-    </div>
- 
 
     <h4 class="govuk-heading-m" style="margin-bottom: 30px">Select the parcels you want to apply this to</h4>
 
@@ -295,8 +280,6 @@
 
       <th scope="col" class="govuk-table__header"></th>
 
-      
-
     </tr>
   </thead>
 
@@ -314,12 +297,10 @@
   </div>
 </div>
 
-
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
  
-
-    <form class="form" action="prescriptions-p12-inprogress" method="post">
+    <form class="form" action="prescriptions-p42" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
     Save changes
   </button>
@@ -360,13 +341,13 @@
           </label>
         </div>
       </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
+      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
     </tr>
       
       <script>
   document.getElementById('p10').addEventListener('click', function() {
     if (this.checked) {
-      window.location.href = 'prescriptions-p10-complete'; // Replace 'new_screen_url' with the actual URL of the new page
+      window.location.href = 'prescriptions-p10'; // Replace 'new_screen_url' with the actual URL of the new page
     }
   });
 </script>
@@ -388,7 +369,7 @@
 <script>
   document.getElementById('p15').addEventListener('click', function() {
     if (this.checked) {
-      window.location.href = 'prescriptions-p15'; // Replace 'new_screen_url' with the actual URL of the new page
+      window.location.href = 'prescriptions-p15-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
     }
   });
 </script>
@@ -403,13 +384,13 @@
           </label>
         </div>
       </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
+      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
     </tr>
 
 <script>
   document.getElementById('p40').addEventListener('click', function() {
     if (this.checked) {
-      window.location.href = 'prescriptions-p40-complete'; // Replace 'new_screen_url' with the actual URL of the new page
+      window.location.href = 'prescriptions-p40-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
     }
   });
 </script>
@@ -432,7 +413,7 @@
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p12" name="changedName" type="radio" checked value="month" data-aria-controls="conditional-contact">
+          <input class="govuk-radios__input" id="p12" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
           <label class="govuk-label govuk-radios__label" for="changedName">
             P12
           </label>
@@ -444,7 +425,7 @@
     <script>
   document.getElementById('p12').addEventListener('click', function() {
     if (this.checked) {
-      window.location.href = 'prescriptions-p12'; // Replace 'new_screen_url' with the actual URL of the new page
+      window.location.href = 'prescriptions-p12-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
     }
   });
 </script>
@@ -465,7 +446,7 @@
 <script>
   document.getElementById('p14').addEventListener('click', function() {
     if (this.checked) {
-      window.location.href = 'prescriptions-p14'; // Replace 'new_screen_url' with the actual URL of the new page
+      window.location.href = 'prescriptions-p14-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
     }
   });
 </script>
@@ -474,7 +455,7 @@
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p42" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+          <input class="govuk-radios__input" id="p42" name="changedName" type="radio" checked value="month" data-aria-controls="conditional-contact">
           <label class="govuk-label govuk-radios__label" for="changedName">
             P42
           </label>
@@ -486,13 +467,14 @@
 <script>
   document.getElementById('p42').addEventListener('click', function() {
     if (this.checked) {
-      window.location.href = 'prescriptions-p42'; // Replace 'new_screen_url' with the actual URL of the new page
+      window.location.href = 'prescriptions-p42-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
     }
   });
 </script>
 
       </tbody>
     </table>
+
 </div>
 </div>
 
