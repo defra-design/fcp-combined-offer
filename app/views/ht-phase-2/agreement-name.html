@@ -43,27 +43,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="40">
-      <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
-        <label class="govuk-label govuk-label--l" for="with-hint">
-          Enter your agreement name
-        </label>
-      </h1>
-      <div id="with-hint-hint" class="govuk-hint govuk-!-margin-bottom-2">
-        This will appear on your agreement documents and is for your reference only. For example ‘Jasmine’s Farm Funding 2024’.
-      </div>
-      <input class="govuk-input govuk-!-width-three-quarters govuk-js-character-count" id="with-hint" name="withHint" rows="1" aria-describedby="with-hint-info with-hint-hint">
+    <form class="form" action="/agreement-name-ht-p2" method="post">
+      <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="40">
+        <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+          <label class="govuk-label govuk-label--l" for="with-hint">
+            Enter your agreement name
+          </label>
+        </h1>
+        <div id="with-hint-hint" class="govuk-hint govuk-!-margin-bottom-2">
+          This will appear on your agreement documents and is for your reference only. For example ‘Jasmine’s Farm Funding 2024’.
+        </div>
+          <input class="govuk-input govuk-!-width-three-quarters govuk-js-character-count" id="with-hint" name="agreement-name" rows="1" aria-describedby="with-hint-info with-hint-hint">
 
-      <div id="with-hint-info" class="govuk-hint govuk-character-count__message govuk-!-margin-top-2">
-      You have 40 characters remaining
+        <div id="with-hint-info" class="govuk-hint govuk-character-count__message govuk-!-margin-top-2">
+        You have 40 characters remaining
+        </div>
       </div>
-    </div>
 
-  <form class="form" action="agreement-name-error" method="post">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Save and continue
-    </button>
-  </form>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
         
   </div>
 </div>

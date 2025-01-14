@@ -323,12 +323,6 @@ body {
   margin-bottom: 10px; /* Optional: Adds space between buttons */
 }
 
-.sticky-button {
-  position: sticky;
-  top: 0; /* Adjust this value to your preference */
-  z-index: 1000; /* Ensure it stays on top of other elements */
-}
-
 .agreement-row {
     display: flex;
     border-bottom: 1px solid #B1B4B6;
@@ -341,7 +335,6 @@ body {
 }
 
 
-
 .no-border-bottom {
   border-bottom: none;
 }
@@ -349,4 +342,10 @@ body {
 .border-bottom-container {
   border-bottom: 1px solid #b1b4b6;
   padding: 10px 0;
+}
+
+.sticky-button {
+  position: sticky;
+  top: 0; /* Adjust this value to your preference */
+  z-index: 1000; /* Ensure it stays on top of other elements */
 }

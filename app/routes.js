@@ -214,7 +214,7 @@ router.post('/public-body-answer-ht', function (req, res) {
 })
 
 
-// HIGHER TIER CUSTOMER PHASE 2
+// HIGHER TIER CUSTOMER PHASE 2 // 
 
 // Add your routes here
 router.post('/land-details-answer-ht-p2', function (req, res) {
@@ -227,9 +227,12 @@ router.post('/land-details-answer-ht-p2', function (req, res) {
     // Send user to next page
     res.redirect('/ht-phase-2/tasklist-2')
 
+  } else if (landDetailsAnswer == "no"){
+    res.redirect('/ht-phase-2/update-land-details')
+
   } else {
     // Send user to ineligible page
-    res.redirect('/ht-phase-2/update-land-details')
+    res.redirect('/ht-phase-2/check-land-details-error')
   }
 
 })
@@ -244,9 +247,12 @@ router.post('/management-answer-ht-p2', function (req, res) {
     // Send user to next page
     res.redirect('/ht-phase-2/hefer')
 
+  } else if (managementControlAnswer == "no"){
+    res.redirect('/ht-phase-2/ineligible')
+
   } else {
     // Send user to ineligible page
-    res.redirect('/ht-phase-2/ineligible')
+    res.redirect('/ht-phase-2/management-control-error')
   }
 
 })
@@ -254,16 +260,19 @@ router.post('/management-answer-ht-p2', function (req, res) {
 router.post('/hefer-answer-ht-p2', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var managementControlAnswer = req.session.data['hefer-answer']
+  var heferAnswer = req.session.data['hefer-answer']
 
   // Check whether the variable matches a condition
-  if (managementControlAnswer == "yes"){
+  if (heferAnswer == "yes"){
     // Send user to next page
     res.redirect('/ht-phase-2/sssi')
 
+  } else if (heferAnswer == "no"){
+    res.redirect('/ht-phase-2/ineligible')
+
   } else {
     // Send user to ineligible page
-    res.redirect('/ht-phase-2/ineligible')
+    res.redirect('/ht-phase-2/hefer-error')
   }
 
 })
@@ -271,16 +280,36 @@ router.post('/hefer-answer-ht-p2', function (req, res) {
 router.post('/sssi-answer-ht-p2', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
-  var managementControlAnswer = req.session.data['sssi-answer']
+  var sssiAnswer = req.session.data['sssi-answer']
 
   // Check whether the variable matches a condition
-  if (managementControlAnswer == "yes"){
+  if (sssiAnswer == "yes"){
     // Send user to next page
     res.redirect('/ht-phase-2/eligible')
 
+  } else if (sssiAnswer == "no"){
+    res.redirect('/ht-phase-2/ineligible')
+
   } else {
     // Send user to ineligible page
-    res.redirect('/ht-phase-2/ineligible')
+    res.redirect('/ht-phase-2/sssi-error')
+  }
+
+})
+
+router.post('/agreement-name-ht-p2', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var agreementName = req.session.data['agreement-name']
+
+  // Check whether the variable matches a condition
+  if (!agreementName){
+    // Send user to error if input field is empty
+    res.redirect('/ht-phase-2/agreement-name-error')
+
+  } else {
+    // Send user to next page
+    res.redirect('/ht-phase-2/tasklist-4')
   }
 
 })
