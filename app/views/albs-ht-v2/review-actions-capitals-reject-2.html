@@ -145,8 +145,7 @@ If you have actions or items you cannot review   </span>
   </td>
   <td class="govuk-table__cell" data-sort-value="001">AF1: Plant an agroforestry woodland tree</td>
   <td class="govuk-table__cell">Capital item</td>
-  <td class="govuk-table__cell" data-sort-value="001">   <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-             Not applicable
+  <td class="govuk-table__cell" data-sort-value="001">   <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--grey">Not applicable</strong>
             </div></td>
   <td class="govuk-table__cell">
     <a href="#1">Review</a>
@@ -157,6 +156,31 @@ If you have actions or items you cannot review   </span>
                     C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
                 </svg>
             </td></tr>
+             <tr class="govuk-table__row">
+            <td class="govuk-table__cell app-custom-class">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                       
+                    </div>
+                </div>
+            </td>
+            <td class="govuk-table__cell" data-sort-value="001">BFS4: Protect in-field trees on arable land</td>
+            <td class="govuk-table__cell">SFI action</td>
+            <td class="govuk-table__cell">
+                <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
+                    Not required
+                </div>
+            </td>
+            <td class="govuk-table__cell">
+                
+            </td>
+            <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
+        </tr>
     <tr class="govuk-table__row">
           <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
@@ -167,7 +191,7 @@ If you have actions or items you cannot review   </span>
       <td class="govuk-table__cell">Action</td>
       <td class="govuk-table__cell">
       <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-         <strong class="govuk-tag govuk-tag--blue">
+         <strong class="govuk-tag govuk-tag--yellow">
         Partially approved
       </strong>
     </div></td>
@@ -559,28 +583,7 @@ If you have actions or items you cannot review   </span>
                     C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
                 </svg>
             </td>    </tr>
-     <tr class="govuk-table__row">
-             <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
-      </div></td>
-      <td class="govuk-table__cell" data-sort-value="010">FG1: Fencing</td>
-       <td class="govuk-table__cell">Capital item</td>
-      <td class="govuk-table__cell"><div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;">
-      <strong class="govuk-tag govuk-tag--green">
-        Approved
-      </strong>
-    </div></td>
-      <td class="govuk-table__cell">
-    <a href="#">Review</a>
-  </td>
-      <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
-                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
-                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
-                </svg>
-            </td>    </tr>
+    
 
   </tbody>
 </table>
@@ -665,7 +668,7 @@ If you have actions or items you cannot review   </span>
                     statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--red">Rejected</strong>';
                     iconCell.style.visibility = 'visible';
                 } else if (status === 'Not applicable') {
-                    statusCell.innerHTML = 'Not applicable';
+                    statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--grey">Not applicable</strong>';
                     iconCell.style.visibility = 'hidden';
                 } else if (status === 'Approved') {
                     statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--green">Approved</strong>';
