@@ -194,7 +194,7 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell no-border-bottom">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
                   <label class="govuk-label govuk-checkboxes__label"></label>
                 </div>
               </td>
@@ -213,7 +213,6 @@
             <!--Row with prescription link and details-->
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" colspan="4">
-                <p class="govuk-body govuk-!-margin-bottom-4"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">I want to see my prescriptions for this action</a></p>
                 
                 <details class="govuk-details govuk-!-margin-bottom-2">
                   <summary class="govuk-details__summary">
@@ -222,7 +221,7 @@
                     </span>
                   </summary>
                   <div class="govuk-details__text">
-                    No objections to this action selected for the type of land present.
+                    You can’t do this action here because of your land type.
                   </div>
                 </details>
 
@@ -234,7 +233,7 @@
             <tr class="govuk-table__row">
               <td class="govuk-table__cell no-border-bottom">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
                   <label class="govuk-label govuk-checkboxes__label"></label>
                 </div>
               </td>
@@ -253,8 +252,7 @@
           <!--Row with prescription link -->
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" colspan="4">
-              <p class="govuk-body govuk-!-margin-bottom-4"><a href="#" class="govuk-link">I want to see my prescriptions for this action</a></p>
-              
+
               <details class="govuk-details govuk-!-margin-bottom-2">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
@@ -262,7 +260,7 @@
                   </span>
                 </summary>
                 <div class="govuk-details__text">
-                  No objections to this action selected for the type of land present.
+                  You can’t do this action here because of your land type.
                 </div>
               </details>
 
@@ -289,24 +287,33 @@
               </td>
             </tr>
 
-<!--Row with prescription link and details-->
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="4">
-                <p class="govuk-body govuk-!-margin-bottom-4"><a href="#" class="govuk-link">I want to see my prescriptions for this action</a></p>
-                
-                <details class="govuk-details govuk-!-margin-bottom-2">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Your adviser has left feedback on this action
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    No objections to this action selected for the type of land present.
-                  </div>
-                </details>
 
-              </td>
-            </tr>
+<!--Row with warning, prescription link and details-->
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell" colspan="4">
+
+    <div class="govuk-warning-text" style="margin-bottom: 20px;">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        The area applied is greater than the available area
+      </strong>
+    </div>
+    <p class="govuk-body govuk-!-margin-bottom-4"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">I want to see my prescriptions for this action</a></p>
+    
+    <details class="govuk-details govuk-!-margin-bottom-2">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Your adviser has left feedback on this action
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        The area applied is greater than the available area
+      </div>
+    </details>
+
+  </td>
+</tr>
 
 
         <!---CHECKED---> 
@@ -370,7 +377,7 @@
   
 
 
-  <form class="form" action="bis-select-land-actions-parcel-1-error" method="post">
+  <form class="form" action="bis-select-land-actions-parcel-1-applied" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Add selected actions to this parcel
     </button>
