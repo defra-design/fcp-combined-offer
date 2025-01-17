@@ -112,7 +112,42 @@ General application feedback</a>
             </tr>
             <tr class="govuk-table__row">
                 <td class="govuk-table__cell">24/10/24 <br>11:30am</td>
-                <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England.</td>
+           <td class="govuk-table__cell">
+        The land parcels designated for action CAB14: Low input harvested cereal crop need amendments to meet Natural England’s approval criteria. This step is crucial for aligning the application with environmental and agricultural standards. 
+        <span class="more-text">First, review Natural England’s specific requirements for whole crop cereals, which may include crop rotation plans, soil health management, and biodiversity measures. Addressing these elements in the application demonstrates a commitment to sustainable farming practices. Assess the current state of the land parcels by conducting soil tests to determine nutrient levels and soil structure, and evaluate existing vegetation or wildlife habitats. Based on these assessments, make necessary amendments to improve soil fertility, enhance water retention, and support local biodiversity. Incorporate detailed management plans for the whole crop cereals, outlining intended crop varieties, planting schedules, and harvesting methods. Emphasise practices that minimise soil disturbance and promote soil health, such as no-till farming or cover cropping, to enhance the application’s appeal. Engage with local agricultural advisers or consultants for valuable insights and recommendations. Their expertise can help identify potential issues and suggest effective solutions to ensure compliance with Natural England’s standards. In summary, amending the land parcels selected for action CAB7: Whole crop cereals is essential for securing approval from Natural England. By addressing specific requirements, conducting thorough assessments, and implementing sustainable management practices, the application can demonstrate a strong commitment to environmental stewardship and sustainable agriculture.</span>
+        <a href="javascript:void(0);" onclick="toggleText(this)">Show more</a>
+    </td>
+
+    <script>
+        function toggleText(link) {
+            var moreText = link.previousElementSibling;
+
+            if (moreText.style.display === 'none' || moreText.style.display === '') {
+                moreText.style.display = 'inline';
+                link.textContent = 'Show less';
+            } else {
+                moreText.style.display = 'none';
+                link.textContent = 'Show more';
+            }
+        }
+
+        // Ensure the initial state is correct
+        document.addEventListener('DOMContentLoaded', function() {
+            var moreText = document.querySelector('.more-text');
+            var linkText = document.querySelector('a');
+
+            if (moreText.style.display === 'none' || moreText.style.display === '') {
+                linkText.textContent = 'Show more';
+            } else {
+                linkText.textContent = 'Show less';
+            }
+        });
+    </script>
+    <style>
+        .more-text {
+            display: none;
+        }
+    </style>
                 <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
                 <td class="govuk-table__cell">
                     <p class="govuk-body govuk-body govuk-!-margin-bottom-6">
