@@ -40,7 +40,7 @@
 
 {% block content %}
 
-<!--------BIS APPLY FOR YOUR CAPITALS AGREEMENT LEVEL ITEMS ACTIVE--------->
+<!--------BIS Apply for your agreement level capital items ACTIVE--------->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -144,37 +144,39 @@
           title: {
             text: "Select the land you want to do the actions on"
           },
-          href: "bis-select-map-actions",
+          href: "bis-select-map-actions-applied",
           status: completedStatus
         },
         {
-          title: {
-            text: "Select the land you want to do the capital items on"
-          },
-      href: "bis-select-map-capitals",
-      status: completedStatus
-  },
-             {
-          title: {
-            text: "Select additional parcels for your rotational actions"
-          },
-          href: "bis-select-rotational-map",
-          status: completedStatus
-  },
-               {
           title: {
             text: "Apply for your agreement level actions"
           },
           href: "bis-agreement-level-actions",
           status: completedStatus
   },
+        {
+          title: {
+            text: "Select the land you want to do the capital items on"
+          },
+      href: "bis-select-map-capitals-applied",
+      status: completedStatus
+  },
+
+
              {
           title: {
-            text: "Apply for your capitals agreement level items"
+            text: "Apply for your agreement level capital items"
           },
-          href: "bis-agreement-level-capitals-error",
-          status: incompleteStatus
-  }
+          href: "bis-agreement-level-capitals",
+          status: completedStatus
+  },
+  {
+    title: {
+      text: "Select additional parcels for your rotational actions"
+    },
+    href: "bis-select-rotational-map",
+    status: incompleteStatus
+}
         ]
       }) }}
 

@@ -323,17 +323,22 @@ body {
   margin-bottom: 10px; /* Optional: Adds space between buttons */
 }
 
+.agreement-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #B1B4B6;
+  margin-bottom: 20px;
+}
+
 .agreement-row {
     display: flex;
-    border-bottom: 1px solid #B1B4B6;
     padding-bottom: 20px;
-    margin-bottom: 20px;
 
 }
 .agreement-row .govuk-checkboxes__item {
+    display: flex;
     margin-right: 30px; /* Adjust spacing as needed */
 }
-
 
 .no-border-bottom {
   border-bottom: none;
@@ -342,10 +347,4 @@ body {
 .border-bottom-container {
   border-bottom: 1px solid #b1b4b6;
   padding: 10px 0;
-}
-
-.sticky-button {
-  position: sticky;
-  top: 0; /* Adjust this value to your preference */
-  z-index: 1000; /* Ensure it stays on top of other elements */
 }
