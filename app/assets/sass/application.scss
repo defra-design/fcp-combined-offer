@@ -323,14 +323,22 @@ body {
   margin-bottom: 10px; /* Optional: Adds space between buttons */
 }
 
+
+.agreement-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #B1B4B6;
+  margin-bottom: 20px;
+}
+
 .agreement-row {
     display: flex;
-    border-bottom: 1px solid #B1B4B6;
     padding-bottom: 20px;
     margin-bottom: 20px;
 
 }
 .agreement-row .govuk-checkboxes__item {
+    display: flex;
     margin-right: 30px; /* Adjust spacing as needed */
 }
 
