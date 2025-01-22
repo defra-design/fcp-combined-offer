@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Applications and agreements</h1>
+  <span class="govuk-caption-l govuk-!-margin-bottom-6">JASMINE SMITH</span>
+
+  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">
+        We have reviewed your application so far.<br><br>
+        Check the adviser feedback in your application documents.<br><br>
+        This has information about how to apply for your new agreement.
+        <p class="govuk-notification-banner__heading">
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" style="width: 130px;">Agreement name</th>
+      <th scope="col" class="govuk-table__header" style="width: 70px;">Type</th>
+      <th scope="col" class="govuk-table__header" style="width: 70px;">Active</th>
+      <th scope="col" class="govuk-table__header" style="width: 110px;">Submit date</th>
+      <th scope="col" class="govuk-table__header">Status</th>
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Jasmine Smith's HT application 2025 1234</td>
+      <td class="govuk-table__cell">HT</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">In progress</td>
+      <td class="govuk-table__cell table-cell">
+        <form class="form" action="tasklist-20" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue application</button></form>
+        <form class="form" action="application-documents" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Application documents</button></form>
+        <form class="form" action="#" method="post">
+            <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button" style="margin-bottom: 0px;">
+            Withdraw application</button></form>
+        </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Jasmine’s SFI application</td>
+      <td class="govuk-table__cell">SFI</td>
+      <td class="govuk-table__cell">No</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell">Withdrawn</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+ </tbody>
+</table>
+
+<form class="form" action="tasklist-1" method="post">
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Apply for a new agreement</button></form>
+
+</div>
+</div>
+
+
+{% endblock %}

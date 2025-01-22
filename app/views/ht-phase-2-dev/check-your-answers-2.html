@@ -1,0 +1,452 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check your answers before sending your application​</h1>
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">Print</a></p>
+    </p>
+  </div>
+
+
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l" id="details">
+            Your details
+    </h2>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Business
+        </dt>
+        <dd class="govuk-summary-list__value">
+          JASMINE SMITH FARM<br>
+          Rainbow Farm<br>
+          High Street<br>
+          Rhydlewis<br>
+          Ellesmere<br>
+          PO30 1NY
+          </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Single Business Identifier (SBI)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123456789
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Land details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Up to date
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="check-land-details">Change<span class="govuk-visually-hidden"> land details</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Agreement name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jasmine’s Farm SFI 2023
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="agreement-name">Change<span class="govuk-visually-hidden"> agreement name</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-l" id="eligibility">
+        Eligibility
+    </h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Management control of land
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="management-control">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Land with historic or archaeological features
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sites of special scientific interest (SSSIs)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sssi">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      </dl>
+        
+
+    <h2 class="govuk-heading-l" id="funding">
+            Total funding
+    </h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Indicative annual payment (excluding management payment)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          £67,971.27
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Total number of actions applied for
+        </dt>
+        <dd class="govuk-summary-list__value">
+          18
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="select-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      </dl>
+
+    
+    <h2 class="govuk-heading-l" id="parcel-based">
+            Actions
+    </h2>
+
+    <dl class="govuk-summary-list">
+
+      <!-- HT actions-->
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Parcel based Higher Tier actions
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="select-map-actions-applied">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          CSP1: Supplement: Difficult sites
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          20.0000 ha
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £1,860.00
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          CUP3: General moorland management
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          32.0404 ha
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £1,762.22
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          CGS18: Manage species-rich floodplain meadows
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          15.0000 ha
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £11,044.96
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          CGS19: Manage wet grassland for wintering waders and wildfowl
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          12.2309 ha
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £6,690.30
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          CGS20: Manage wet grassland for breeding waders
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          17.2309 ha
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £11,648.08
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Agreement level Higher Tier actions 
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="agreement-level-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          RP3: Watercourse crossings
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          3 crossings
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £1,519.32
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          BC4: Tree Guard Post and wire
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          3 tree guards
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £396.48
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          BC3: Crop protection fencing mesh and wire for permanent crops
+        </dd>
+        <dd class="govuk-summary-list__value" >
+          100 m
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £634.00
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Actions total
+        </dt>
+        <dd class="govuk-summary-list__value" >
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £66,193.27
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+      </dl>
+      
+<h2 class="govuk-heading-l" id="agreement">
+  Capital items
+</h2>
+
+<dl class="govuk-summary-list">
+  
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width: 390px;">
+      Parcel based capital items
+    </dt>
+    <dd class="govuk-summary-list__value">
+    </dd>
+    <dd class="govuk-summary-list__value">
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="select-map-capitals-applied">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dd class="govuk-summary-list__value">
+     N/A
+    </dd>
+    <dd class="govuk-summary-list__value" >
+    </dd>
+    <dd class="govuk-summary-list__value">
+      N/A
+    </dd>
+    <dd class="govuk-summary-list__value">
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dd class="govuk-summary-list__value">
+     N/A
+    </dd>
+    <dd class="govuk-summary-list__value" >
+    </dd>
+    <dd class="govuk-summary-list__value">
+      N/A
+    </dd>
+    <dd class="govuk-summary-list__value">
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width: 390px;">
+      Agreement level capital items
+    </dt>
+    <dd class="govuk-summary-list__value">
+    </dd>
+    <dd class="govuk-summary-list__value">
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="agreement-level-capitals">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dd class="govuk-summary-list__value">
+      FY2: Woodland infrastructure
+    </dd>
+    <dd class="govuk-summary-list__value" >
+    </dd>
+    <dd class="govuk-summary-list__value">
+      60% of actual costs
+    </dd>
+    <dd class="govuk-summary-list__value">
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dd class="govuk-summary-list__value">
+      WN7: Restoration of large water bodies
+    </dd>
+    <dd class="govuk-summary-list__value" >
+    </dd>
+    <dd class="govuk-summary-list__value">
+      Up to 100% of actual costs
+    </dd>
+    <dd class="govuk-summary-list__value">
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width: 390px;">
+      Capital items total
+    </dt>
+    <dd class="govuk-summary-list__value" >
+    </dd>
+    <dd class="govuk-summary-list__value">
+      £1,778.00
+    </dd>
+    <dd class="govuk-summary-list__value">
+    </dd>
+  </div>
+  </dl>
+
+  <form class="form" action="check-your-answers-saved" method="post">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Confirm
+      </button>
+  </form>
+
+<form class="form" action="tasklist-12" method="post">
+  <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button" disabled>
+    Save and continue
+  </button>
+</form>
+
+  </div>
+  </div>
+
+
+
+{% endblock %}

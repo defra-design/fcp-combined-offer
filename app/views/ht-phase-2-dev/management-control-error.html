@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary govuk-!-margin-bottom-6" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#management-error">Select if you will have management control of the land in your
+                application for the duration of the actions you want to select</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+
+    <h1 class="govuk-heading-l">Management control of land</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">You must have management control of the land in your agreement. 
+      This must last for the duration of your selected actions.</p>
+    
+    <p class="govuk-body govuk-!-margin-bottom-6">If you occupy land under a tenancy that's due to expire before the duration of the actions you want to select, you can still apply. 
+      But only if you expect the tenancy to continue to cover the duration of these actions.</p>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">Read the guidance on <a href="https://www.gov.uk/government/publications/countryside-stewardship-higher-tier-get-ready-to-apply/countryside-stewardship-higher-tier-preview-guidance#check-if-you-have-management-control-of-land" target="_blank" class="govuk-link" >management control of land</a>.</p>
+
+      <form class="form" action="/management-answer-ht-p2" method="post">
+        <div class="govuk-form-group govuk-form-group--error">
+          <fieldset class="govuk-fieldset" aria-describedby="management-error">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Will you have management control of the land in your application for the duration of the actions you want to select?
+              </h2>
+            </legend>
+  
+            <p id="management-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span>Select if you will have management control of the land in your application for the duration of the actions you want to select
+            </p>
+  
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="managementAnswer-1" name="management-answer" type="radio" value="yes">
+                     <label class="govuk-label govuk-radios__label" for="heferAnswer-1">
+                  Yes
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="managementAnswer-2" name="management-answer" type="radio" value="no">
+                   <label class="govuk-label govuk-radios__label" for="heferAnswer-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+      </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
