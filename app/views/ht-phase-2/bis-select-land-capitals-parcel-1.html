@@ -77,7 +77,7 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
       </tr>
       <tr>
-        <td class="govuk-table__cell"><strong>Number of specifications and feedbacks</strong></td>
+        <td class="govuk-table__cell"><strong>Number of specifications and feedback</strong></td>
         <td class="govuk-table__cell govuk-table__cell--numeric"><strong>5</strong></td>
       </tr>
     </tbody>
@@ -177,7 +177,7 @@
   <h2 class="govuk-heading-m">Your available capital items for selected land parcel</h2>
 
   <div class="govuk-inset-text govuk-!-margin-bottom-6">
-    You have 2 capital items with prescriptions and feedbacks on this land parcel
+    You have 2 capital items with specifications and feedback on this land parcel
   </div>
 
   <table class="govuk-table">
@@ -191,45 +191,67 @@
           </thead>
 
           <tbody class="govuk-table__body">
-
-
-          <!---CHECKED---> 
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell no-border-bottom">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                <label class="govuk-label govuk-checkboxes__label"></label>
+    
+        <!---No longer checked---> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell no-border-bottom">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label"></label>
+            </div>
+          </td>
+          <td class="govuk-table__cell no-border-bottom">BN12: Stone wall restoration</td>
+          <td class="govuk-table__cell no-border-bottom">-</td>
+          <td class="govuk-table__cell no-border-bottom">
+            <div class="govuk-form-group">
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="ht-answer-1" type="text" spellcheck="false">
+                <div class="govuk-input__suffix" aria-hidden="true">m</div>
               </div>
-            </td>
-            <td class="govuk-table__cell no-border-bottom">RP3: Watercourse crossings</td>
-            <td class="govuk-table__cell no-border-bottom">-</td>
-            <td class="govuk-table__cell no-border-bottom">
-              <div class="govuk-form-group">
-                <div class="govuk-input__wrapper">
-                  <input class="govuk-input govuk-input--width-5" id="ht-answer-1" type="text" spellcheck="false">
-                  <div class="govuk-input__suffix" aria-hidden="true">crossing</div>
-                </div>
+            </div>
+          </td>
+        </tr>
+
+        <!--Row with prescription link and details-->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="4">
+
+            <details class="govuk-details govuk-!-margin-bottom-2">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Adviser feedback
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                You can’t do this capital item here because of your land type.
               </div>
-            </td>
-          </tr>
+            </details>
 
-            <!--Row with prescription link and details-->
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="4">
-                
-                  <details class="govuk-details govuk-!-margin-bottom-2">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Adviser feedback
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    You can’t do this capital item here because of your land type.
-                  </div>
-                </details>
+          </td>
+        </tr>
+  
 
-              </td>
-            </tr>
+
+    <!---CHECKED---> 
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+          <label class="govuk-label govuk-checkboxes__label"></label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">WN12: Create or restore ponds up to 2 hectares</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell">
+        <div class="govuk-form-group">
+          <div class="govuk-input__wrapper">
+            <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="2">
+            <div class="govuk-input__suffix" aria-hidden="true">ponds</div>
+          </div>
+        </div>
+      </td>
+    </tr>
+  
 
   <!---CHECKED---> 
   <tr class="govuk-table__row">
@@ -258,7 +280,7 @@
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
           <span class="govuk-visually-hidden">Warning</span>
-          The area applied is greater than the available area
+          Action on parcel may be subject to Inheritance Tax Exemption
         </strong>
       </div>
 
@@ -272,13 +294,12 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          The area applied is greater than the available area
+          Action on parcel may be subject to Inheritance Tax Exemption
         </div>
       </details>
 
     </td>
   </tr>
-
           </tbody>
         </table>
 
