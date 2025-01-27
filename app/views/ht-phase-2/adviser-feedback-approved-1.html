@@ -104,13 +104,14 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 260px">
               Action or capital item</th>
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Quantity</th>
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Parcel number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Quantity</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
             <th scope="col" class="govuk-table__header">Change</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
+
           <!--ROW WITH ONE LAND PARCEL-->
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" data-sort-value="2">
@@ -118,23 +119,6 @@
             </td>
             <td class="govuk-table__cell">SO3757 3158</td>
             <td class="govuk-table__cell">20.0000 ha</td>
-            <td class="govuk-table__cell">
-              <strong class="govuk-tag govuk-tag--green">
-              Approved
-              </strong>
-            </td>
-            <td class="govuk-table__cell">
-              <a href="bis-select-land-actions-parcel-1-error">Change</a>
-            </td>
-          </tr>
-
-          <!--ROW WITH ONE LAND PARCEL-->
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell" data-sort-value="3">
-              CUP3: General moorland management
-            </td>
-            <td class="govuk-table__cell">SO3757 3158</td>
-            <td class="govuk-table__cell">32.0404 ha</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--green">
               Approved
@@ -204,14 +188,84 @@
             <td class="govuk-table__cell">5.0000 ha</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--green">
+                Approved
+              </strong>
+            </td>
+            <td class="govuk-table__cell">
+              <a href="bis-select-land-actions-parcel-1">Change</a>
+            </td>
+          </tr>
+
+          <!--ROW WITH ONE LAND PARCEL-->
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              CGS22: Manage priority habitat species-rich grassland
+            </td>
+            <td class="govuk-table__cell">SO3757 3158</td>
+            <td class="govuk-table__cell">32.0404 ha</td>
+            <td class="govuk-table__cell">
+              <strong class="govuk-tag govuk-tag--green">
               Approved
               </strong>
             </td>
             <td class="govuk-table__cell">
-              <a href="bis-select-land-actions-parcel-1-error">Change</a>
+              <a href="bis-select-land-actions-parcel-1">Change</a>
             </td>
           </tr>
-                  <!--ROW WITH ONE LAND PARCEL-->
+
+        <!--ROW WITH ONE LAND PARCEL-->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            CGS22: Manage priority habitat species-rich grassland
+          </td>
+          <td class="govuk-table__cell">SO3757 3158</td>
+          <td class="govuk-table__cell">32.0404 ha</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+            Approved
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="bis-select-land-actions-parcel-1">Change</a>
+          </td>
+        </tr>
+
+        <!--ROW WITH ONE LAND PARCEL-->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            CHS4: Control scrub on historic and archaeological features
+          </td>
+          <td class="govuk-table__cell">SO3757 3160</td>
+          <td class="govuk-table__cell">32.0404 ha</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+            Approved
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="bis-select-land-actions-parcel-1">Change</a>
+          </td>
+        </tr>
+
+        <!--ROW WITH ONE LAND PARCEL-->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            CHS4: Control scrub on historic and archaeological features
+          </td>
+          <td class="govuk-table__cell">SO3757 3160</td>
+          <td class="govuk-table__cell">32.0404 ha</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+            Approved
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="bis-select-land-actions-parcel-1">Change</a>
+          </td>
+        </tr>
+
+  <!--AGREEMENT LEVEL ACTIONS-->
+        <!--ROW WITH ONE LAND PARCEL-->
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-sort-value="13">
             CAGF3: Manage medium density in-field agroforestry
@@ -241,7 +295,7 @@
               </strong>
           </td>
           <td class="govuk-table__cell">
-            <a href="bis-select-land-actions-parcel-1">Change</a>
+            <a href="bis-agreement-level-actions">Change</a>
           </td>
         </tr>
 
@@ -258,7 +312,7 @@
               </strong>
           </td>
           <td class="govuk-table__cell">
-            <a href="bis-select-land-actions-parcel-1">Change</a>
+            <a href="bis-agreement-level-actions">Change</a>
           </td>
         </tr>
         </tbody>
@@ -266,7 +320,6 @@
 
 
       <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
-
         <ul class="moj-pagination__list">
           <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 8" aria-current="page">1</li>
           <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 8">2</a></li>
@@ -282,8 +335,8 @@
         </ul>
         <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>45</b> results</p>
       </nav>
-
     </div>
+
 
 <!--- Capital tab -->
     <div class="govuk-tabs__panel" id="capital" style="border-bottom: none; border-left: none; border-right: none;">
@@ -292,13 +345,97 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 260px">
               Action or capital item</th>
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Parcel number</th>
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Quantity</th>
-            <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Parcel number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Quantity</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none">Status</th>
             <th scope="col" class="govuk-table__header">Change</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
+
+      <!--ROW WITH TWO PARCELS-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" style="border-bottom: none;"  data-sort-value="1">
+          BN12: Stone wall restoration
+        </td>
+        <td class="govuk-table__cell" style="border-bottom: none;">SO3757 3158</td>
+        <td class="govuk-table__cell" style="border-bottom: none;">350 m</td>
+        <td class="govuk-table__cell" style="border-bottom: none;">
+          <strong class="govuk-tag govuk-tag--green">
+          Approved
+          </strong>
+        </td>
+        <td class="govuk-table__cell" style="border-bottom: none;">
+          <a href="bis-select-land-capitals-parcel-1">Change</a>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" style="color: white;" data-sort-value="2">
+          BN12: Stone wall restoration
+        </td>
+        <td class="govuk-table__cell">SO3757 3159</td>
+        <td class="govuk-table__cell">500 m</td>
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--green">
+          Approved
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="bis-select-land-capitals-parcel-1">Change</a>
+        </td>
+      </tr>
+
+      <!--ROW WITH ONE LAND PARCEL-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="2">
+          BN13: Top wiring - stone wall
+        </td>
+        <td class="govuk-table__cell">SO3757 3159</td>
+        <td class="govuk-table__cell">500 m</td>
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--green">
+          Approved
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="bis-select-land-capitals-parcel-1">Change</a>
+        </td>
+      </tr>
+
+      <!--ROW WITH ONE LAND PARCEL-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="2">
+          BN14: Stone wall supplement - stone from quarry
+        </td>
+        <td class="govuk-table__cell">SO3757 3159</td>
+        <td class="govuk-table__cell">500 m</td>
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--green">
+          Approved
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="bis-select-land-capitals-parcel-1">Change</a>
+        </td>
+      </tr>
+
+        <!--ROW WITH ONE LAND PARCEL-->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            GR1: Create or restore grassland habitat
+          </td>
+          <td class="govuk-table__cell">SO3757 3161</td>
+          <td class="govuk-table__cell">12.2309 ha</td>
+          <td class="govuk-table__cell">
+            <strong class="govuk-tag govuk-tag--green">
+            Approved
+            </strong>
+          </td>
+          <td class="govuk-table__cell">
+            <a href="bis-select-land-capitals-parcel-1">Change</a>
+          </td>
+        </tr>
 
           <!--ROW WITH TWO PARCELS-->
           <tr class="govuk-table__row">
@@ -313,7 +450,7 @@
               </strong>
             </td>
             <td class="govuk-table__cell" style="border-bottom: none;">
-              <a href="bis-select-land-actions-parcel-1">Change</a>
+              <a href="bis-select-land-capitals-parcel-1">Change</a>
             </td>
           </tr>
 
@@ -323,13 +460,13 @@
             </td>
             <td class="govuk-table__cell">SO3757 3159</td>
             <td class="govuk-table__cell">1 crossing</td>
-            <td class="govuk-table__cell">
+            <td class="govuk-table__cell"">
               <strong class="govuk-tag govuk-tag--green">
               Approved
               </strong>
             </td>
             <td class="govuk-table__cell">
-              <a href="bis-select-land-actions-parcel-1-error">Change</a>
+              <a href="bis-select-land-capitals-parcel-1">Change</a>
             </td>
           </tr>
 
@@ -338,7 +475,7 @@
             <td class="govuk-table__cell" style="border-bottom: none;"  data-sort-value="10">
               BC4: Tree Guard Post and wire
             </td>
-            <td class="govuk-table__cell" style="border-bottom: none;">SO3757 3158</td>
+            <td class="govuk-table__cell" style="border-bottom: none;">SO3757 3162</td>
             <td class="govuk-table__cell" style="border-bottom: none;">1 tree guard</td>
             <td class="govuk-table__cell" style="border-bottom: none;">
               <strong class="govuk-tag govuk-tag--green">
@@ -346,7 +483,7 @@
               </strong>
             </td>
             <td class="govuk-table__cell" style="border-bottom: none;">
-              <a href="bis-select-land-actions-parcel-1">Change</a>
+              <a href="bis-select-land-capitals-parcel-1">Change</a>
             </td>
           </tr>
           
@@ -354,7 +491,7 @@
             <td class="govuk-table__cell" style="color: white;" data-sort-value="11">
               BC4: Tree Guard Post and wire
             </td>
-            <td class="govuk-table__cell">SO3757 3159</td>
+            <td class="govuk-table__cell">SO3757 3163</td>
             <td class="govuk-table__cell">2 tree guards</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--green">
@@ -362,7 +499,7 @@
               </strong>
             </td>
             <td class="govuk-table__cell">
-              <a href="bis-select-land-actions-parcel-1">Change</a>
+              <a href="bis-select-land-capitals-parcel-1">Change</a>
             </td>
           </tr>
 
@@ -373,17 +510,35 @@
             BC3: Crop protection fencing mesh and wire for permanent crops
           </td>
           <td class="govuk-table__cell">SO3757 3158</td>
-          <td class="govuk-table__cell">100 m</td>
+          <td class="govuk-table__cell">500 m</td>
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--green">
             Approved
             </strong>
           </td>
           <td class="govuk-table__cell">
-            <a href="bis-select-land-actions-parcel-1">Change</a>
+            <a href="bis-select-land-capitals-parcel-1">Change</a>
           </td>
         </tr>
 
+      <!--ROW WITH ONE LAND PARCEL-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          WN12: Create or restore ponds up to 2 hectares
+        </td>
+        <td class="govuk-table__cell">SO3757 3160</td>
+        <td class="govuk-table__cell">2 ponds</td>
+        <td class="govuk-table__cell">
+          <strong class="govuk-tag govuk-tag--green">
+          Approved
+          </strong>
+        </td>
+        <td class="govuk-table__cell">
+          <a href="bis-select-land-capitals-parcel-1">Change</a>
+        </td>
+      </tr>
+
+  <!--AGREEMENT LEVEL CAPITALS -->
         <!--ROW WITH ONE LAND PARCEL-->
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-sort-value="15">
@@ -397,7 +552,7 @@
               </strong>
           </td>
           <td class="govuk-table__cell">
-            <a href="bis-select-land-actions-parcel-1">Change</a>
+            <a href="bis-agreement-level-capitals">Change</a>
           </td>
         </tr>
 
@@ -406,7 +561,7 @@
               <td class="govuk-table__cell" data-sort-value="16">
                 WN7: Restoration of large water bodies
               </td>
-              <td class="govuk-table__cell">N/A</td>
+              <td class="govuk-table__cell">Agreement level</td>
               <td class="govuk-table__cell">Not applicable</td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--green">
@@ -414,9 +569,10 @@
                   </strong>
               </td>
               <td class="govuk-table__cell">
-                <a href="bis-select-land-actions-parcel-1">Change</a>
+                <a href="bis-agreement-level-capitals">Change</a>
               </td>
             </tr>
+
       </tbody>
       </table>
       <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">

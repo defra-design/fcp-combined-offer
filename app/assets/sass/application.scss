@@ -361,3 +361,16 @@ body {
   width: 66.66%; /* Ensure the feedback content spans two-thirds of the column */
   margin-left: 0; /* Align the text with the left edge of the column */
 }
+
+.floating-banner {
+  position: sticky; /* Makes the banner float */
+  top: 10px; /* Adjust this value to position it at the top */
+  transform: translateX(0%); /* Center the banner */
+  background-color: #ffffff; /* Background color of the banner */
+  padding: 10px 10px; /* Padding inside the banner */
+  z-index: 1000; /* Ensure it stays on top of other elements */
+}
+
+.hidden {
+  display: none;
+}
