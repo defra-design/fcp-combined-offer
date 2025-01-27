@@ -1060,7 +1060,8 @@
         </div>
         <!-- End of action -->
 
-      <div class="hidden">
+    <!--HIDDEN CAPITAL ITEMS-->
+      <div class="hidden" id="capital-hidden">
         <!-- Beginning of action -->
         <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
@@ -1252,7 +1253,6 @@
 <script>
   document.getElementById('HTloadMoreBtn').addEventListener('click', function() {
     document.getElementById('replace84').textContent = '34 more actions to load' // Replace the text
-
     const hiddenRows = document.querySelectorAll('.hidden');
     hiddenRows.forEach(row => row.classList.remove('hidden'));
 
