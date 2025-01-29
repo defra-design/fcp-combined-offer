@@ -77,7 +77,7 @@
         <td class="govuk-table__cell govuk-table__cell--numeric">25</td>
       </tr>
       <tr>
-        <td class="govuk-table__cell"><strong>Number of prescriptions and feedbacks</strong></td>
+        <td class="govuk-table__cell"><strong>Number of prescriptions and feedback</strong></td>
         <td class="govuk-table__cell govuk-table__cell--numeric"><strong>15</strong></td>
       </tr>
     </tbody>
@@ -175,7 +175,7 @@
   <h2 class="govuk-heading-m">Your available actions for selected land parcel</h2>
 
   <div class="govuk-inset-text govuk-!-margin-bottom-6">
-    You have 4 actions with prescriptions and feedbacks on this land parcel
+    You have 4 actions with prescriptions and feedback on this land parcel
   </div>
 
         <table class="govuk-table">
@@ -286,24 +286,33 @@
               </td>
             </tr>
 
-<!--Row with prescription link and details-->
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" colspan="4">
-                <p class="govuk-body govuk-!-margin-bottom-4"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">See prescriptions for this action</a></p>
-                
-                <details class="govuk-details govuk-!-margin-bottom-2">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Adviser feedback
-                    </span>
-                  </summary>
-                  <div class="govuk-details__text">
-                    No objections to this action selected for the type of land present.
-                  </div>
-                </details>
+          <!--Row with warning, prescription link and details-->
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell" colspan="4">
 
-              </td>
-            </tr>
+            <div class="govuk-warning-text" style="margin-bottom: 20px;">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                  <span class="govuk-visually-hidden">Warning</span>
+                  Action on parcel may be subject to Inheritance Tax Exemption
+                </strong>
+              </div>
+              
+              <p class="govuk-body govuk-!-margin-bottom-4"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">See prescriptions for this action</a></p>
+              
+              <details class="govuk-details govuk-!-margin-bottom-2">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Adviser feedback
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  Action on parcel may be subject to Inheritance Tax Exemption
+                </div>
+              </details>
+
+            </td>
+          </tr>
 
 
         <!---CHECKED---> 

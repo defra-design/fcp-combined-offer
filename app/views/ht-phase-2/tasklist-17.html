@@ -40,7 +40,7 @@
 
 {% block content %}
 
-<!--------BIS Apply for your agreement level capital items ACTIVE--------->
+<!--------BIS CHECK YOUR ANSWERS ACTIVE--------->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -53,7 +53,7 @@
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
           We have reviewed your application so far. <br><br>
-          Check the <a class="govuk-notification-banner__link" href="adviser-feedback">adviser feedback</a>.<br><br>
+          Check the <a class="govuk-notification-banner__link" href="adviser-feedback-approved-final">adviser feedback</a>.<br><br>
           This has information about how to apply for your new agreement.
           <p class="govuk-notification-banner__heading">
         </p>
@@ -76,7 +76,7 @@
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
-<p class="govuk-body">You have completed 2 of 4 sections</p>
+<p class="govuk-body">You have completed 3 of 4 sections</p>
 
       <h2 class="govuk-heading-m">1. Check before you start</h2>
 
@@ -162,7 +162,6 @@
       status: completedStatus
   },
 
-
              {
           title: {
             text: "Apply for your agreement level capital items"
@@ -175,46 +174,44 @@
       text: "Select additional parcels for your rotational actions"
     },
     href: "bis-select-rotational-map",
-    status: incompleteStatus
+    status: completedStatus
 }
         ]
       }) }}
 
 
-         <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
 
       {{ govukTaskList({
-        idPrefix: "second-section",
+        idPrefix: "fourth-section",
         items: [
-                 {
+          {
             title: {
               text: "Check your answers"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
-    },
-                 {
+            href: "bis-check-your-answers",
+            status: incompleteStatus
+          },
+          {
             title: {
               text: "Request approval"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }
-    },
-                       {
+            status: {
+              text: "Cannot start yet",
+              classes: "govuk-task-list__status--cannot-start-yet"
+            }
+          },
+               {
             title: {
               text: "Submit your application"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }
+            status: {
+              text: "Cannot start yet",
+              classes: "govuk-task-list__status--cannot-start-yet"
+            }
           }
-        ]
-      }) }}
+          ]
+        }) }}
 
     </div>
   </div>
