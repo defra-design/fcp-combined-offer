@@ -1,0 +1,416 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+  <div class="moj-identity-bar__container">
+    <a href="javascript:window.history.back()" class="govuk-back-link">Back </a>
+    <div class="moj-identity-bar__actions">
+      <div class="moj-identity-bar__menu">
+        <div class="moj-button-menu">
+          <div class="moj-button-menu__wrapper">
+            <a href="#" role="button" draggable="false" class="govuk-button moj-button-menu__item govuk-button--primary" data-module="govuk-button">
+            Save and return later</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<br>
+<h3 class="govuk-heading-s">Jasmine Smith</h3>
+{% endblock %}
+
+{% block content %}
+
+  
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+         <h1 class="govuk-heading-l">Select land for your actions</h1>
+<p class="govuk-body">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
+
+<p class="govuk-body">You’ll see your list of actions. You then need to:</p>
+<ul class="govuk-list govuk-list--bullet">
+  <li>select the action and enter the amount that you want to add to the parcel</li>
+  <li>confirm your selection for that parcel before moving on to the next land parcel and repeat these steps.</li>
+</ul>
+
+
+<hr class="section-break-large"></hr>
+      <table class="govuk-table">
+<p class="govuk-body">OS Map Sheet Reference S03&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d4351c">!</font></p>
+<hr class="govuk-section-break govuk-section-break--visible">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Number of available land parcels</td>
+      <td class="govuk-table__cell ">20</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total area (ha)</td>
+      <td class="govuk-table__cell">120.3451</td>
+    </tr>
+    <tr class="govuk-table__row">
+     <td class="govuk-table__cell">Number of land parcels used for actions</td>
+      <td class="govuk-table__cell ">1</td>
+    </tr>
+        <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Number of actions applied for</td>
+      <td class="govuk-table__cell">3</td>
+    </tr>
+    <tr class="govuk-table__row">
+    <td class="govuk-table__cell"> <font color="#d4351c">Number of land parcels with warnings</font></td>
+      <td class="govuk-table__cell "><font color="#d4351c">1</font></td>
+    </tr>
+  </tbody>
+</table>
+
+
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+   
+
+   <tr class="govuk-table__row" style="white-space: nowrap;">
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="select-land-parcel-1" class="govuk-link">SO3757 3158</a>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body">Total area: 32.0404 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p> <span><i class="govuk-body">Applied</i></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<font color="#d4351c">!</font></p>
+    </td>
+    </tr>
+
+<td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
+<p class="govuk-body"><span class="govuk-caption-m">Land use: PERMANENT GRASSLAND: 1.5760 ha, ARABLE CROPS: 1.1212 ha, TEMPORARY GRASSLAND: 0.1312 ha, NON-AGRICULTURAL: 0.2120 ha
+Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
+</td>
+
+    <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="select-land-parcel-2" class="govuk-link">SO3757 3159</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body">Total area: 31.4241 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+
+    <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3160</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body">Total area: 1.4935 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+
+ <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3161</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 10.3492 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+    <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3162</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 42.4324 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+     <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3163</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 9.9754 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+       <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3164</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 32.1239 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+       <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3165</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 38.2931 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+   <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3166</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 28.3482 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+      <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3167</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 39.2931 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+          <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3168</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 53.2131 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+            <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3169</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 12.4392 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+            <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3170</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 29.3291 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+         <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3171</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 13.2339 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+         <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3172</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body ">Total area: 11.4234 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+    </tr>
+      
+  </tbody>
+</table>
+
+
+ <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+    <div class="govuk-pagination__prev govuk-pagination__next">
+    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">15</span> of <span class="govuk-!-font-weight-bold">20</span> parcels</p></div>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
+        <form class="form" action="select-map" method="post">
+          <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+Return to OS Map Sheet Reference selection
+          </button>
+        </form>
+</nav> 
+    </div>
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link">Hide map</a></p>
+   <map name="clickable">
+        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+        <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
+                  </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/live-private-beta-2/app/views/sfi-private-beta/img/map_7.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+       <p class="govuk-body">Key:</p>
+       <div class="key-div govuk-!-margin-bottom-5">
+       <div class="key-parent" id="key1"></div><span class="govuk-body-s">Error</span>
+       <div class="key-parent" id="key2"></div><span class="govuk-body-s">Selected</span>
+       <div class="key-parent" id="key3"></div><span class="govuk-body-s">Not Applied</span>
+       <div class="key-parent" id="key4"></div><span class="govuk-body-s">Applied</span>
+     </div>
+
+     <table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Your available actions for selected land parcel</caption>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Select action</td>
+      <td class="govuk-table__cell">Action</td>
+      <td class="govuk-table__cell">Available area</td>
+      <td class="govuk-table__cell">Quantity</td>
+      <td class="govuk-table__cell">Unit</td>
+    </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" checked="checked" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          </label>
+        </div></td>
+      <td class="govuk-table__cell">CHRW1 - Assess and record hedgerow condition</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell"><div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-6" id="quantity" name="quantity"  type="text" inputmode="numeric">
+        </div></td>
+      <td class="govuk-table__cell">metres</td>
+    </tr>
+      
+  <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" checked="checked" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          </label>
+        </div></td>
+      <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
+      <td class="govuk-table__cell">-</td>
+      <td class="govuk-table__cell"><div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-6" id="quantity" name="quantity" type="text" inputmode="numeric">
+        </div></td>
+      <td class="govuk-table__cell">metres</td>
+    </tr>
+
+
+
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"style="border-bottom-color: white";><div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" checked="checked" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          </label>
+        </div></td>
+
+
+      <td class="govuk-table__cell" style="border-bottom-color: white";>CHRW3 - Maintain or establish hedgerow trees</td>
+      <td class="govuk-table__cell" style="border-bottom-color: white";>-</td>
+      <td class="govuk-table__cell" style="border-bottom-color: white";><div class="govuk-date-input__item style="border-bottom-color: white;>
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-6" id="quantity" name="quantity" type="text" inputmode="numeric">
+        </div></td>
+      <td class="govuk-table__cell" style="border-bottom-color: white";>metres&nbsp;&nbsp;<font color="#d4351c">!</font></td>
+    </tr>
+
+<td class="govuk-table__cell " style="border-bottom-color: white;" colspan="4">
+<p id="nationality-error" style="margin-bottom: -15px;"><font color="#d4351c">The action is ineligible due to existing Agreements and/or Applications. (CO Actions)</font></p>
+
+</td>
+<tr class="govuk-table__row " >
+<td class="govuk-table__cell " colspan="5">
+</td>
+</tr>
+
+
+
+
+
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          </label>
+        </div></td>
+      <td class="govuk-table__cell">CNUM2 - Legumes on improved grassland</td>
+      <td class="govuk-table__cell">3.9971</td>
+      <td class="govuk-table__cell"><div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-6" id="quantity" name="quantity" type="text" inputmode="numeric">
+        </div></td>
+      <td class="govuk-table__cell">ha</td>
+    </tr>
+
+  </tbody>
+</table>
+
+<p class="govuk-body">Warnings related to the area applied for are encountered, solve these warning before committing data.</p>
+
+ <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
+    <div class="govuk-pagination__prev govuk-pagination__next">
+    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">4</span> of <span class="govuk-!-font-weight-bold">4</span> actions</p></div>
+  <div class="govuk-pagination__next">
+    
+  </div>
+  
+  <form class="form" action="select-land-parcel-1-applied" method="post">
+          <button style="margin-left: 106px" type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+Update actions applied for on land parcel
+         </button>
+        </form>
+</nav>
+    </div>
+    
+  </div>
+
+</main>
+</div>
+{% endblock %}
