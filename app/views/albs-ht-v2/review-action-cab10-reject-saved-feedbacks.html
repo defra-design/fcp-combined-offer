@@ -27,7 +27,7 @@
           <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
         </div>
         <div class="govuk-grid-column-one-third">
-           <form class="form" action="saved" method="post">
+          <form class="form" action="saved" method="post">
             <button type="submit" class="govuk-button govuk-button--secondary" 
             style="float:right; margin-bottom: 8px;"data-module="govuk-button">
               Save and return later
@@ -53,32 +53,30 @@
       <p class="govuk-body">Select land parcels to approve or reject them, or to mark them as not applicable for this action or item.</p>
        <p class="govuk-body">If you reject a land parcel, you must explain why in the feedback section.</p>
     </div>
-
   </div>
 
-
-    <div class="govuk-grid-row">
+  <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-        <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
-            <div class="moj-primary-navigation__container">
-                <div class="moj-primary-navigation__nav">
-                    <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
-                        <ul class="moj-primary-navigation__list" >
-                       <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link"  aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Approve</a>
-          </li>
-          <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Reject</a>
-          </li>
-           <li class="moj-primary-navigation__item">
-            <a class="moj-primary-navigation__link" aria-current="page" href="#1" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
-          </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+          <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
+    <div class="moj-primary-navigation__container">
+        <div class="moj-primary-navigation__nav">
+            <nav class="moj-primary-navigation " id="action-menu" aria-label="Primary navigation">
+                <ul class="moj-primary-navigation__list">
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="approve-action" style="padding-left: 20px; padding-right:20px">Approve</a>
+                    </li>
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="reject-action" style="padding-left: 20px; padding-right:20px">Reject</a>
+                    </li>
+                    <li class="moj-primary-navigation__item">
+                        <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="not-applicable-action" style="padding-left: 20px; padding-right:20px">Mark as 'not applicable'</a>
+                    </li>
+                </ul>
+            </nav>
         </div>
+    </div>
+</div>
         <br>
 
           <div class="govuk-checkboxes govuk-checkboxes--small govuk-!-padding-bottom-9" data-module="govuk-checkboxes">
@@ -86,7 +84,6 @@
         <input class="govuk-checkboxes__input" id="select-all" name="organisation" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="select-all"> Select all parcels
         </label>
-
 
       </div>
 
@@ -99,12 +96,12 @@
 
 <th scope="col" class="govuk-table__header app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="select-all-2"  name="parcel" type="checkbox" value="hmrc">
+        <input class="govuk-checkboxes__input" id="select-all-2" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="select-all-2">
         </label>
       </div></th>
       
-       <th scope="col" style="width: 220px" class="govuk-table__header" aria-sort="#">Parcel number</th>
+     <th scope="col" style="width: 220px" class="govuk-table__header" aria-sort="#">Parcel number</th>
 
       <th scope="col" style="width: 220px" class="govuk-table__header" aria-sort="#">Quantity</th>
 
@@ -121,20 +118,22 @@
     <tr class="govuk-table__row">
            <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc" >
+        <input class="govuk-checkboxes__input" id="organisation" name="parcel" type="checkbox" value="hmrc">
         <label class="govuk-label govuk-checkboxes__label" for="organisation"></label>
       </div></td>
       <td class="govuk-table__cell" data-sort-value="001">SE7023 5009</td>
       <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--green">
-          Approved
-        </strong></td>
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--green">
+         Approved
+        </strong></div></td>
         <td class="govuk-table__cell" data-sort-value="001">No</td>
-     
+        <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
-
-
-
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
@@ -143,10 +142,16 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="002">SE7023 5010</td>
       <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="001"><strong class="govuk-tag govuk-tag--green">
-          Approved
-        </strong></td>
+      <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--green">
+         Approved
+        </strong></div></td>
               <td class="govuk-table__cell" data-sort-value="001">No</td>
+              <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+                <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                    <path d="M13.7,18.5h-2.4v-2.4h2.4V18.5z M12.5,13.7c-0.7,0-1.2-0.5-1.2-1.2V7.7c0-0.7,0.5-1.2,1.2-1.2s1.2,0.5,1.2,1.2v4.8
+                    C13.7,13.2,13.2,13.7,12.5,13.7z M12.5,0.5c-6.6,0-12,5.4-12,12s5.4,12,12,12s12-5.4,12-12S19.1,0.5,12.5,0.5z" />
+                </svg>
+            </td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -156,9 +161,9 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="003">SE7023 5011</td>
       <td class="govuk-table__cell" data-sort-value="003">26.43 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
+        </strong></div></td>
              <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
@@ -169,6 +174,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
        <tr class="govuk-table__row">
              <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -178,10 +185,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5012</td>
       <td class="govuk-table__cell" data-sort-value="004">5.32 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-            <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                      <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -191,6 +198,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
            <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -200,10 +209,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5013</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -213,6 +222,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -222,10 +233,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5014</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-            <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -235,6 +246,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -244,10 +257,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5015</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-            <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -257,6 +270,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -266,10 +281,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5016</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -279,6 +294,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -288,10 +305,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5017</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -301,6 +318,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -310,10 +329,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5018</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -323,6 +342,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -332,10 +353,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5019</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -345,6 +366,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -354,10 +377,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5020</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -367,6 +390,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -376,10 +401,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5021</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -389,6 +414,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -398,10 +425,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5022</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+       <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -411,6 +438,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -420,10 +449,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5023</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -433,6 +462,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -442,10 +473,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5024</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+       <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -455,6 +486,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -464,10 +497,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5025</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -477,6 +510,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -486,10 +521,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5026</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -499,6 +534,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -508,10 +545,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5027</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                       <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -521,6 +558,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -530,10 +569,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5028</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+        <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-              <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                         <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -543,6 +582,8 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
      <tr class="govuk-table__row">
                  <td class="govuk-table__cell app-custom-class"><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -552,10 +593,10 @@
       </div></td>
       <td class="govuk-table__cell" data-sort-value="004">SE7023 5029</td>
       <td class="govuk-table__cell" data-sort-value="004">0.24 hectares</td>
-      <td class="govuk-table__cell" data-sort-value="003"><strong class="govuk-tag govuk-tag--red">
+     <td class="govuk-table__cell" data-sort-value="002"> <div class="govuk-task-list__status" id="company-details-2-status" style="padding-left: 0px;"><strong class="govuk-tag govuk-tag--red">
          Rejected
-        </strong></td>
-             <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
+        </strong></div></td>
+                        <td class="govuk-table__cell" data-sort-value="001"><details class="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-details__summary-text">
       View feedback
@@ -565,12 +606,14 @@
     This action is not suitable on this land parcel.
   </div>
 </details></td>
+             <td class="govuk-table__cell tight-column" style="color: #d4351c; visibility: hidden;">
+            </td>
     </tr>
 
   </tbody>
 </table>
 
-<nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+<nav class="moj-pagination" aria-label="Pagination navigation">
   <ul class="moj-pagination__list">
 
     <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
@@ -589,12 +632,14 @@
 </nav>
 
 </div>
+
+</div>
 </div>
 
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-                <div class="govuk-form-group hidden" id="feedback">
+                <div class="govuk-form-group " id="feedback">
     <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
   <h1 class="govuk-label-wrapper">
  <label class="govuk-label govuk-label--s " for="more-detail">
@@ -610,12 +655,13 @@ Explain why you've approved or rejected land parcels for this action or capital 
   </div>
   </div>
 <p>
-  <form class="form" action="#" method="post">
+  <form class="form" action="review-action-cab10-reject-saved-feedbacks" method="post">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Add feedback
 </button>
 </form>
 </div>
+
 
 <form class="form" action="review-actions-capitals-partially" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
@@ -681,7 +727,6 @@ Explain why you've approved or rejected land parcels for this action or capital 
   });
 </script>
 
-<!-- Select all and checkboxes triggers actions menu bar component -->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         var checkboxes = document.querySelectorAll('input[name="parcel"]');
@@ -714,25 +759,72 @@ Explain why you've approved or rejected land parcels for this action or capital 
         function toggleRemoveButton() {
             var removeButton = document.getElementById('action-menu');
             var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-            if (anyChecked) {
-                removeButton.classList.remove('hidden');
-            } else {
-                removeButton.classList.add('hidden');
-            }
+         
         }
 
         function toggleButtons() {
             var buttons = document.querySelectorAll('#approve, #reject, #feedback');
             var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
             buttons.forEach(button => {
-                if (anyChecked) {
-                    button.classList.remove('hidden');
+               
+            });
+        }
+
+        document.getElementById('approve-action').addEventListener('click', function(event) {
+            event.preventDefault();
+            updateStatus('Approved');
+            clearSelectedCheckboxes();
+        });
+
+        document.getElementById('reject-action').addEventListener('click', function(event) {
+            event.preventDefault();
+            updateStatus('Rejected');
+            clearSelectedCheckboxes();
+        });
+
+        document.getElementById('not-applicable-action').addEventListener('click', function(event) {
+            event.preventDefault();
+            updateStatus('Not applicable');
+            clearSelectedCheckboxes();
+        });
+
+        function updateStatus(status) {
+            var selectedCheckboxes = document.querySelectorAll('input[name="parcel"]:checked');
+            selectedCheckboxes.forEach(function(checkbox) {
+                var row = checkbox.closest('tr');
+                var statusCell = row.querySelector('.govuk-task-list__status');
+                var iconCell = row.querySelector('.tight-column');
+                if (statusCell) {
+                    if (status === 'Rejected') {
+                        statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--red">Rejected</strong>';
+                        iconCell.style.visibility = 'visible';
+                    } else if (status === 'Not applicable') {
+                        statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--grey">Not applicable</strong>';
+                        iconCell.style.visibility = 'hidden';
+                    } else if (status === 'Approved') {
+                        statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--green">Approved</strong>';
+                        iconCell.style.visibility = 'hidden';
+                    }
                 } else {
-                    button.classList.add('hidden');
+                    console.error('Status cell not found for row:', row);
                 }
             });
         }
+
+        function clearSelectedCheckboxes() {
+            var selectedCheckboxes = document.querySelectorAll('input[name="parcel"]:checked');
+            selectedCheckboxes.forEach(function(checkbox) {
+                checkbox.checked = false;
+            });
+            selectAllCheckboxes.forEach(function(selectAllId) {
+                var selectAllCheckbox = document.getElementById(selectAllId);
+                selectAllCheckbox.checked = false;
+            });
+            toggleRemoveButton();
+            toggleButtons();
+        }
     });
 </script>
+
 
 {% endblock %}
