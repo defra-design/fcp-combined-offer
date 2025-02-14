@@ -15,23 +15,25 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
-    text: "Back to Business overview",
+    text: "Back",
     href: "javascript:window.history.back()"
   }) }}
 
- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <div class="govuk-grid-row" id="header" style="padding-top:16px;">
         <div class="govuk-grid-column-two-thirds">
           <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
-          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Claim number: 1943258</p>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
         </div>
         <div class="govuk-grid-column-one-third">
           <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
-  Save and return later
-</button>
-   </div>
-    </div>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            Save and return later
+          </button>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 {% endblock %}
 
@@ -39,26 +41,27 @@
 
 <div class="govuk-grid-row">
 
-<div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-6">
+<div class="govuk-grid-column-two-thirds">
 
-  <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-6" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-    <div class="govuk-notification-banner__header">
-      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-        Success
-      </h2>
-    </div>
-    <div class="govuk-notification-banner__content">
-      <h3 class="govuk-notification-banner__heading">
-        Your changes have been saved
-      </h3>
-    </div>
-  </div>
-
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Details of Capital Item Claim for Standard Cost Items </h1>
+      <!---success banner--->
+      <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-6" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Your changes for item code LV2 have been saved
+          </h3>
+        </div>
+      </div>
   
-    <p class="govuk-body govuk-!-margin-top-6">
-      If you believe the numbers (length, area etc.) are incorrect, 
-      contact Rural Payments Agency BEFORE submitting your claim.
+
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Actual cost items</h1>
+
+    <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      If any of the numbers are incorrect, contact the <a href="https://www.gov.uk/government/organisations/rural-payments-agency" target="_blank" class="govuk-link">Rural Payments Agency (RPA)</a> before you go any further.
     </p>
 
 </div>
@@ -69,69 +72,111 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
 
-        <th scope="col" class="govuk-table__header">Item code</th>
-        <th scope="col" class="govuk-table__header" style="width: 260px;">Item title</th>
-        <th scope="col" class="govuk-table__header">Total Approved</th>
-        <th scope="col" class="govuk-table__header">Total Remaining</th>
-        <th scope="col" class="govuk-table__header">Applied for</th>
-        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header" style="width: 320px;">Item</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount approved</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount remaining</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount claimed for</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Create a claim</th>
+
       </tr>
     </thead>
 
     <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG11</td>
-          <td class="govuk-table__cell">FG11 - Deer exclosure plot/unit</td>
-          <td class="govuk-table__cell">6 units</td>
-          <td class="govuk-table__cell">6 units</td>
-          <td class="govuk-table__cell">3 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">LV2: Livestock handling facilities</td>
+          <td class="govuk-table__cell">£7,926</td>
+          <td class="govuk-table__cell">£6,426</td>
+          <td class="govuk-table__cell">£1,000</td>
+          <td class="govuk-table__cell"><a href="actual-cost-lv2-saved" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">2</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">FM1: Management of geodiversity features</td>
+          <td class="govuk-table__cell">£2,000</td>
+          <td class="govuk-table__cell">£2,000</td>
+          <td class="govuk-table__cell">£0</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">3</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">FM2: Major preparatory works for priority habitats (creation and restoration) and priority species</td>
+          <td class="govuk-table__cell">£5,508</td>
+          <td class="govuk-table__cell">£3,458</td>
+          <td class="govuk-table__cell">£0</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">4</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">HE1: Historic and archaeological feature protection</td>
+          <td class="govuk-table__cell">£1,567</td>
+          <td class="govuk-table__cell">£1,567</td>
+          <td class="govuk-table__cell">£0</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP8: Constructed wetlands for the treatment of pollution</td>
+          <td class="govuk-table__cell">£3,564</td>
+          <td class="govuk-table__cell">£2,782</td>
+          <td class="govuk-table__cell">£0</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SB2: Scrub control difficult sites</td>
+          <td class="govuk-table__cell">£6,214</td>
+          <td class="govuk-table__cell">£6,214</td>
+          <td class="govuk-table__cell">£0</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">WN7: Restoration of large water bodies</td>
+          <td class="govuk-table__cell">£8,560</td>
+          <td class="govuk-table__cell">£8,560</td>
+          <td class="govuk-table__cell">£0</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
       
       </tbody>
     </table>
 
+    <!----Pagination-----> 
+    <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+      <p class="moj-pagination__results" style="float: right;">Showing <b>1</b> to <b>7</b> of <b>7</b> results</p>
+    </nav>
 
-      <form class="form" action="claim-profile" method="post">
-        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-           Save and continue
-        </button>
-      </form>
+    <!----Have you completed this section-->
 
-      <form class="form" action="standard-cost-items-saved" method="post">
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-           Back
-        </button>
-      </form>
+    <form class="form" action="/capitals-actual-cost-complete" method="post">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m">
+            Have you completed this section?
+          </label>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="actualCostComplete" name="actualCostComplete" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="actualCostComplete">
+                  Yes, I’ve completed this section
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="actualCostComplete-2" name="actualCostComplete" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="actualCostComplete-2">
+                  No, I’ll come back to it later
+                </label>
+              </div>
+            </div>
+        </div>
+
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
+
+
 
 
 </div>

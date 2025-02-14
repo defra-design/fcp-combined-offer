@@ -1,0 +1,118 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+          </button>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+ 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#declarations-error">Select if you agree to the terms of the declaration </a>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <h1 class="govuk-heading-l">Declarations</h1>
+
+      <p class="govuk-body" style="margin-bottom: 0;">I declare that:</p>
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>I have complied with and will continue to comply with the provisions of my Countryside Stewardship agreement; </li>
+        <li>The details I have provided in this form are correct and I accept full responsibility for them; </li>
+          <li>I understand that under the terms of my Countryside Stewardship agreement payment may be withheld and/or recovered if I have breached my Countryside Stewardship agreement;</li>
+      </ul>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        If you knowingly or recklessly make a false statement to obtain aid for yourself or anyone else, 
+        you risk prosecution [which could result in imprisonment, a fine or both], 
+        the loss of all aid paid to you under the scheme(s) in respect of which you have made a commitment, 
+        and exclusion from certain schemes for up to two years. 
+      </p>
+
+      <form class="form" action="/capitals-declarations" method="post">
+        <div class="govuk-form-group govuk-form-group--error"">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h2 class="govuk-fieldset__heading">
+                Declaration
+              </h2>
+            </legend>
+
+            <div id="declarations-hint" class="govuk-hint">
+              Do you agree to the terms of the declaration above? (You must select ‘Yes’ before you apply).
+            </div>
+
+            <p id="declarations-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> Select if you agree to the terms of the declaration 
+            </p>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="declarations-yes" name="declarations" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="declarations-yes">Yes</label>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="declarations-no" name="declarations" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="declarations-no">No</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+          <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+             Save and continue
+          </button>
+        </form>
+
+  
+
+    </div>
+  </div>
+
+
+
+{% endblock %}

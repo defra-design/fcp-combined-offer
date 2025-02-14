@@ -15,23 +15,25 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
-    text: "Back to Business overview",
+    text: "Back",
     href: "javascript:window.history.back()"
   }) }}
 
- <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <div class="govuk-grid-row" id="header" style="padding-top:16px;">
         <div class="govuk-grid-column-two-thirds">
           <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
-          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Claim number: 1943258</p>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
         </div>
         <div class="govuk-grid-column-one-third">
           <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
-  Save and return later
-</button>
-   </div>
-    </div>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+            Save and return later
+          </button>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 {% endblock %}
 
@@ -39,16 +41,14 @@
 
 <div class="govuk-grid-row">
 
-<div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-6">
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Details of Capital Item Claim for Standard Cost Items </h1>
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Standard cost items</h1>
 
-    <p class="govuk-body govuk-!-margin-top-6">
-      If you believe the numbers (length, area etc.) are incorrect, 
-      contact Rural Payments Agency BEFORE submitting your claim.
+    <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      If any of the numbers are incorrect, contact the <a href="https://www.gov.uk/government/organisations/rural-payments-agency" target="_blank" class="govuk-link">Rural Payments Agency (RPA)</a> before you go any further.
     </p>
 
 </div>
-
 
 
 <div class="govuk-grid-column-full">
@@ -56,162 +56,226 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
 
-        <th scope="col" class="govuk-table__header">Item code</th>
-        <th scope="col" class="govuk-table__header" style="width: 260px;">Item title</th>
-        <th scope="col" class="govuk-table__header">Total Approved</th>
-        <th scope="col" class="govuk-table__header">Total Remaining</th>
-        <th scope="col" class="govuk-table__header">Applied for</th>
-        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header" style="width: 320px;">Item</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Item amount</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount remaining</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount claimed for</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Create a claim</th>
+
       </tr>
     </thead>
 
     <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">BN12</td>
           <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
           <td class="govuk-table__cell">225 metres</td>
           <td class="govuk-table__cell">225 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell"><a href="standard-cost-bn12" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">2</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
+          <td class="govuk-table__cell">BN13: Stone wall - top wiring</td>
           <td class="govuk-table__cell">225 metres</td>
           <td class="govuk-table__cell">225 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">3</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">FG2: Sheep netting</td>
+          <td class="govuk-table__cell">9,683 metres</td>
+          <td class="govuk-table__cell">6,588 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">4</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">FG5: Fencing supplement - difficult sites</td>
+          <td class="govuk-table__cell">229 metres</td>
+          <td class="govuk-table__cell">229 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">5</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">FG9: Deer fencing</td>
+          <td class="govuk-table__cell">3,000 metres</td>
+          <td class="govuk-table__cell">3,000 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">6</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">FG11: Deer exclosure plot/unit</td>
+          <td class="govuk-table__cell">6 units</td>
+          <td class="govuk-table__cell">6 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">7</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">FG12: Wooden field gate</td>
+          <td class="govuk-table__cell">8 units</td>
+          <td class="govuk-table__cell">7 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">BFG5</td>
-          <td class="govuk-table__cell">BFG5 - Fencing supplement - difficult sites</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">FG15: Water gates</td>
+          <td class="govuk-table__cell">3 units</td>
+          <td class="govuk-table__cell">2 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">9</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">FG16: Deer pedestrian gate</td>
+          <td class="govuk-table__cell">5 units</td>
+          <td class="govuk-table__cell">5 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">10</td>
-          <td class="govuk-table__cell">BN12 - Stone Wall Restoration</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Open</a></td>
+          <td class="govuk-table__cell">FG17: Deer vehicle gate</td>
+          <td class="govuk-table__cell">3 units</td>
+          <td class="govuk-table__cell">3 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
         </tr>
 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">FY1: Deer high seat / unit</td>
+          <td class="govuk-table__cell">9 units</td>
+          <td class="govuk-table__cell">9 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP1: Resurfacing of gateways</td>
+          <td class="govuk-table__cell">4 units</td>
+          <td class="govuk-table__cell">4 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP12: Check dams</td>
+          <td class="govuk-table__cell">3 units</td>
+          <td class="govuk-table__cell">3 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP16: Rainwater goods</td>
+          <td class="govuk-table__cell">140 metres</td>
+          <td class="govuk-table__cell">120 metres</td>
+          <td class="govuk-table__cell">0 metres</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP27: Sprayer or applicator load and washdown area</td>
+          <td class="govuk-table__cell">200 square metre</td>
+          <td class="govuk-table__cell">200 square metre</td>
+          <td class="govuk-table__cell">0 square metre</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP3: Watercourse crossings</td>
+          <td class="govuk-table__cell">2 units</td>
+          <td class="govuk-table__cell">2 units</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP32: Small leaky woody dams</td>
+          <td class="govuk-table__cell">1 unit</td>
+          <td class="govuk-table__cell">1 unit</td>
+          <td class="govuk-table__cell">0 units</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SB6: Rhododendron control</td>
+          <td class="govuk-table__cell">2.4 HA</td>
+          <td class="govuk-table__cell">2.4 HA</td>
+          <td class="govuk-table__cell">0 HA</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">TE1: Planting standard hedgerow tree</td>
+          <td class="govuk-table__cell">2 trees</td>
+          <td class="govuk-table__cell">2 trees</td>
+          <td class="govuk-table__cell">0 trees</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">TE4: Supply and plant a tree</td>
+          <td class="govuk-table__cell">10 trees</td>
+          <td class="govuk-table__cell">10 trees</td>
+          <td class="govuk-table__cell">0 trees</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+        </tr>
       </tbody>
     </table>
 
     <!----Pagination-----> 
-    <div class= "pagination-container">
-
-      <nav class="govuk-pagination" aria-label="Pagination">
-        <ul class="govuk-pagination__list">
-          <li class="govuk-pagination__item govuk-pagination__item--current">
-            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
-              1
-            </a>
-          </li>
-          <li class="govuk-pagination__item">
-            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
-              2
-            </a>
-          </li>
-          <li class="govuk-pagination__item">
-            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
-              ...
-            </a>
-          </li>
-            <li class="govuk-pagination__item">
-            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
-              4
-            </a>
-          </li>
-        </ul>
-        <div class="govuk-pagination__next">
-          <a class="govuk-link govuk-pagination__link" href="#" rel="next">
-            <span class="govuk-pagination__link-title">
-              Next<span class="govuk-visually-hidden"> page</span>
-            </span>
+    <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+      <ul class="moj-pagination__list">
+        <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
+        <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
+        <li class="moj-pagination__item">
+          <a class="govuk-link govuk-link--no-visited-state" href="" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span>
             <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-            </svg>
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
           </a>
+        </li>
+      </ul>
+      <p class="moj-pagination__results">Showing <b>1</b> to <b>20</b> of <b>83</b> results</p>
+    </nav>
+
+    <!----Have you completed this section-->
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m">
+        Have you completed this section?
+      </label>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+              Yes, I’ve completed this section
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+              No, I’ll come back to it later
+            </label>
+          </div>
         </div>
-      </nav>
-      <p class="pagination-text" style="vertical-align: middle;">Showing <b>1</b> to <b>20</b> of <b>65</b> results</p>
-      
-      </div>
+    </div>
 
-      <form class="form" action="standard-cost-items-saved" method="post">
-        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-           Save and continue
-        </button>
-      </form>
+    <form class="form" action="standard-cost-items-saved" method="post">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
 
-      <form class="form" action="complete-claim-start" method="post">
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-           Back to start
-        </button>
-      </form>
+
 
 
 </div>

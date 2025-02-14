@@ -1,8 +1,9 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
+
 {% block beforeContent %}
 
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
@@ -14,99 +15,93 @@ Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
-    text: "Back to Business overview",
+    text: "Back",
     href: "javascript:window.history.back()"
   }) }}
 {% endblock %}
 
-
 {% block content %}
 
-<div class="govuk-!-padding-bottom-6">
-<h1 class="govuk-heading-l govuk-!-margin-bottom-2">Countryside Stewardship claims</h1>
-  <span class="govuk-caption-l ">Holmeland Farm</span>
-</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Select the agreement you want to claim for</h1>
 
-<h2 class="govuk-heading-m govuk-!-margin-bottom-6">Select an Agreement to generate a claim form</h2>
-  
-  <table class="govuk-table">
-    <thead class="govuk-table__head">
+    <p class="govuk-body govuk-!-margin-bottom-6">Select an agreement, and then 'Create a new claim’.  You can only create claims for live agreements.</p>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header" style="width: 40px;"></th>
+        <th scope="col" class="govuk-table__header" style="width: 220px;">Agreement type and name</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Agreement number</th>
+        <th scope="col" class="govuk-table__header" style="width: 120px;">Status</th>
+        <th scope="col" class="govuk-table__header" style="width: 110px;">Start date</th>
+        <th scope="col" class="govuk-table__header" style="width: 110px;">End date</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Agreement document</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
       <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios" >
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio">
+              <label class="govuk-label govuk-radios__label">
+              </label>
+            </div>
+        </td>
+        <td class="govuk-table__cell">Countryside Stewardship Higher Tier - Holker Woodland</td>
+        <td class="govuk-table__cell">1237477</td>
+        <td class="govuk-table__cell">Agreement live</td>
+        <td class="govuk-table__cell">01/10/2025</td>
+        <td class="govuk-table__cell">30/10/2035</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">View agreement document</a></td>
+      </tr>
 
-          <th scope="col" class="govuk-table__header"></th>
-          <th scope="col" class="govuk-table__header">Agreement Type</th>
-          <th scope="col" class="govuk-table__header">Agreement Number</th>
-          <th scope="col" class="govuk-table__header">Status</th>
-          <th scope="col" class="govuk-table__header">Start Date</th>
-          <th scope="col" class="govuk-table__header">End Date</th>
-          <th scope="col" class="govuk-table__header">Agreement document</th>
-        </tr>
-      </thead>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell"">
 
-      <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"">
+          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio">
+              <label class="govuk-label govuk-radios__label">
+              </label>
+            </div>
+        </td>
 
-              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio">
-                  <label class="govuk-label govuk-radios__label">
-                  </label>
-                </div>
-            </td>
+        <td class="govuk-table__cell">Countryside Stewardship (HT) - H Woodland HT 2026</td>
+        <td class="govuk-table__cell">1228004</td>
+        <td class="govuk-table__cell">Agreement live</td>
+        <td class="govuk-table__cell">01/01/2026</td>
+        <td class="govuk-table__cell">31/12/2036</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">View agreement document</a></td>
+      </tr>
 
-            <td class="govuk-table__cell">Tree Health Improvement (THI) - Howbarrow</td>
-            <td class="govuk-table__cell">1237477</td>
-            <td class="govuk-table__cell">Agreement Live</td>
-            <td class="govuk-table__cell">01/10/2021</td>
-            <td class="govuk-table__cell">30/09/2023</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Open agreement</a></td>
-          </tr>
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell"">
-
-              <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" type="radio">
-                  <label class="govuk-label govuk-radios__label">
-                  </label>
-                </div>
-            </td>
-
-            <td class="govuk-table__cell">Countryside Stewardship (HT) - Holker Woodland HT 2021</td>
-            <td class="govuk-table__cell">1228004</td>
-            <td class="govuk-table__cell">Agreement Live</td>
-            <td class="govuk-table__cell">01/10/2022</td>
-            <td class="govuk-table__cell">31/12/2026</td>
-            <td class="govuk-table__cell"><a href="#" class="govuk-link">Open agreement</a></td>
-          </tr>
-          
-        </tbody>
-      </table>
+      </tbody>
+    </table>
+  </div>
 
 
+  <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-row">
+    <form class="form" action="start-claim" method="post">
+      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Create a new claim
+      </button>
+    </form>
 
-    <div class="govuk-grid-column-two-thirds">
-      <p class="govuk-body govuk-!-margin-bottom-6">You may not be able to generate a claim if an Agreement is under amendment. 
-        Please contact Rural Payments Agency for assistance.</p>
-
-      <form class="form" action="complete-claim-start" method="post">
-        <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-           Create a new Capital claim
-        </button>
-      </form>
-
-      <p class="govuk-body">
-       <a href="claims-table" class="govuk-link">Cancel</a>
-      </p>
-
-
-    </div>
+    <p class="govuk-body">
+      <a href="claims-table" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+    </p>
 
   </div>
+
+</div>
 
 
 {% endblock %}
