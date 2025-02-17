@@ -1,0 +1,143 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+          </button>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Claim for a Countryside Stewardship Higher Tier capital item</h1>
+  </div>
+</div>
+
+  <h2 class="govuk-heading-m">1. Add your claim</h2>
+
+    {% set completedStatus = {
+      text: "Completed"
+    } %}
+
+    {% set incompleteStatus = {
+      tag: {
+        text: "Incomplete",
+        classes: "govuk-tag--blue"
+      }
+    } %}
+
+    {# To switch between the completed and incomplete statuses, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+    {{ govukTaskList({
+      idPrefix: "first-section",
+      items: [
+        {
+          title: {
+            text: "Standard cost items"
+          },
+          href: "standard-cost-items",
+          status: completedStatus
+        },
+        {
+          title: {
+            text: "Actual cost items"
+          },
+          href: "actual-cost-items",
+          status: completedStatus
+        }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Confirm additional details for your claim </h2>
+
+    {{ govukTaskList({
+      idPrefix: "second-section",
+      items: [
+        {
+          title: {
+            text: "Late claims and public funding"
+          },
+          href: "late-claims",
+          status: completedStatus
+        },
+        {
+          title: {
+            text: "Proof of cost"
+          },
+          href: "proof-cost",
+          status: incompleteStatus
+        }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Review and submit your claim</h2>
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+                 {
+            title: {
+              text: "Check your answers"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
+    },
+                     {
+            title: {
+              text: "Declarations"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
+    },
+                 {
+            title: {
+              text: "Submit your claim"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }
+          }
+        ]
+      }) }}
+
+      <div class="govuk-!-padding-bottom-9"></div>
+      
+
+{% endblock %}

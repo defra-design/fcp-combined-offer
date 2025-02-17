@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+          </button>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+ 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Claim for a Countryside Stewardship Higher Tier capital item</h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-2">Before you start, you need to send RPA:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>receipted invoices or receipts for this claim</li>
+          <li>proof of your VAT status if you’re exempt from VAT</li>
+          <li>evidence to support your claim, for example, photos of completed work, consents or detailed specifications</li>
+        </ul>
+
+        <p class="govuk-body govuk-!-margin-bottom-2">For this form you'll need:</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>receipted invoices or receipts</li>
+          <li>details of any public funding you've received for the item you want to claim for</li>
+        </ul>
+
+      <a href="tasklist-1" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
+        Start now
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+        </svg>
+      </a>
+  
+
+    </div>
+  </div>
+
+  <div class="govuk-!-padding-bottom-9"></div>
+
+{% endblock %}

@@ -374,3 +374,10 @@ body {
 .hidden {
   display: none;
 }
+
+.center-checkbox {
+  display: flex;
+  justify-content: center; /* Horizontal centering within the div */
+  align-items: center; /* Vertical centering within the div */
+}
+
