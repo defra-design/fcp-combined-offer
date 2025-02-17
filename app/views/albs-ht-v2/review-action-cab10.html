@@ -61,7 +61,7 @@
           <div class="moj-primary-navigation" style="width: fit-content; position: sticky; top: 0; z-index: 1000;">
     <div class="moj-primary-navigation__container">
         <div class="moj-primary-navigation__nav">
-            <nav class="moj-primary-navigation " id="action-menu" aria-label="Primary navigation">
+            <nav class="moj-primary-navigation hidden" id="action-menu" aria-label="Primary navigation">
                 <ul class="moj-primary-navigation__list">
                     <li class="moj-primary-navigation__item">
                         <a class="moj-primary-navigation__link" aria-current="page" href="javascript:void(0);" id="approve-action" style="padding-left: 20px; padding-right:20px">Approve</a>
@@ -544,7 +544,7 @@
 <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-                <div class="govuk-form-group " id="feedback">
+                <div class="govuk-form-group hidden" id="feedback">
     <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
   <h1 class="govuk-label-wrapper">
  <label class="govuk-label govuk-label--s " for="more-detail">
@@ -560,7 +560,7 @@ Explain why you've approved or rejected land parcels for this action or capital 
   </div>
   </div>
 <p>
-  <form class="form" action="review-action-cab10-feedback-error" method="post">
+  <form class="form" action="review-action-cab10-reject-saved-feedbacks" method="post">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
   Add feedback
 </button>
@@ -664,33 +664,38 @@ Explain why you've approved or rejected land parcels for this action or capital 
         function toggleRemoveButton() {
             var removeButton = document.getElementById('action-menu');
             var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
-         
+            if (anyChecked) {
+                removeButton.classList.remove('hidden');
+            } else {
+                removeButton.classList.add('hidden');
+            }
         }
 
         function toggleButtons() {
             var buttons = document.querySelectorAll('#approve, #reject, #feedback');
             var anyChecked = Array.from(checkboxes).some(checkbox => checkbox.checked);
             buttons.forEach(button => {
-               
+                if (anyChecked) {
+                    button.classList.remove('hidden');
+                } else {
+                    button.classList.add('hidden');
+                }
             });
         }
 
         document.getElementById('approve-action').addEventListener('click', function(event) {
             event.preventDefault();
             updateStatus('Approved');
-            clearSelectedCheckboxes();
         });
 
         document.getElementById('reject-action').addEventListener('click', function(event) {
             event.preventDefault();
             updateStatus('Rejected');
-            clearSelectedCheckboxes();
         });
 
         document.getElementById('not-applicable-action').addEventListener('click', function(event) {
             event.preventDefault();
             updateStatus('Not applicable');
-            clearSelectedCheckboxes();
         });
 
         function updateStatus(status) {
@@ -714,19 +719,6 @@ Explain why you've approved or rejected land parcels for this action or capital 
                     console.error('Status cell not found for row:', row);
                 }
             });
-        }
-
-        function clearSelectedCheckboxes() {
-            var selectedCheckboxes = document.querySelectorAll('input[name="parcel"]:checked');
-            selectedCheckboxes.forEach(function(checkbox) {
-                checkbox.checked = false;
-            });
-            selectAllCheckboxes.forEach(function(selectAllId) {
-                var selectAllCheckbox = document.getElementById(selectAllId);
-                selectAllCheckbox.checked = false;
-            });
-            toggleRemoveButton();
-            toggleButtons();
         }
     });
 </script>
