@@ -28,9 +28,11 @@
           </p>
         </div>
         <div class="govuk-grid-column-one-third">
-          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
-            Save and return later
-          </button>
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
         </div>
   </div>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -45,7 +47,7 @@
   </div>
 </div>
 
-  <h2 class="govuk-heading-m">1. Add your claim</h2>
+  <h2 class="govuk-heading-m">1. Details of your claim</h2>
 
     {% set completedStatus = {
       text: "Completed"
@@ -76,6 +78,13 @@
           },
           href: "actual-cost-items",
           status: incompleteStatus
+        },
+        {
+          title: {
+            text: "Proof of cost"
+          },
+          href: "proof-cost",
+          status: incompleteStatus
         }
         ]
       }) }}
@@ -85,9 +94,9 @@
       {{ govukTaskList({
         idPrefix: "second-section",
         items: [
-                 {
+    {
             title: {
-              text: "Late claims and public funding"
+              text: "Declare any public funding"
             },
         status: {
         text: "Cannot start yet",
@@ -96,7 +105,7 @@
     },
                  {
             title: {
-              text: "Proof of cost"
+              text: "Declare any late claims"
             },
         status: {
         text: "Cannot start yet",
@@ -109,7 +118,7 @@
          <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Review and submit your claim</h2>
 
       {{ govukTaskList({
-        idPrefix: "second-section",
+        idPrefix: "third-section",
         items: [
                  {
             title: {
@@ -122,7 +131,7 @@
     },
                      {
             title: {
-              text: "Declarations"
+              text: "Read declaration"
             },
         status: {
         text: "Cannot start yet",
@@ -141,6 +150,10 @@
         ]
       }) }}
 
-      <div class="govuk-!-padding-bottom-9"></div>
+    </div>
+  </div>
+
+</div>
+</main>
 
 {% endblock %}

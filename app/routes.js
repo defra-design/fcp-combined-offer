@@ -460,48 +460,52 @@ router.post('/capitals-actual-cost-complete', function (req, res) {
 
 })
 
-// CAPITAL CLAIMS - Late claims ERROR
-router.post('/capitals-late-claims', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var lateClaims = req.session.data['comments']
-
-  // Check whether the variable matches a condition
-  if (lateClaims == "yes"){
-    // Send user to next page
-    res.redirect('/capital-claims/public-funding')
-
-  } else if (lateClaims== "no"){
-    res.redirect('/capital-claims/public-funding')
-
-  } else {
-    // Send user to ineligible page
-    res.redirect('/capital-claims/late-claims-error')
-  }
-
-})
-
 // CAPITAL CLAIMS - Public funding ERROR
 router.post('/capitals-funding', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
   var publicFunding = req.session.data['funding']
+  var publicConditional = req.session.data ['public-conditional-comments-yes']
 
   // Check whether the variable matches a condition
-  if (publicFunding == "yes"){
-    // Send user to next page
-    res.redirect('/capital-claims/tasklist-4')
+  if (!publicFunding) {
+  // User has not selected anything
+    res.redirect('/capital-claims/public-funding-error');
+  }
+  if (publicFunding === "yes" && !publicConditional) {
+    res.redirect('/capital-claims/public-funding-text-error');
+  
+  } else {
+    // Send user to tasklist
+    res.redirect('/capital-claims/tasklist-5')
+  }
 
-  } else if (publicFunding== "no"){
-    res.redirect('/capital-claims/tasklist-4')
+  })
+
+
+// CAPITAL CLAIMS - Late claims ERROR
+router.post('/capitals-late-claims', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var lateClaims = req.session.data['comments']
+  var claimsConditional = req.session.data['conditional-comments-yes']
+
+  // Check whether the variable matches a condition
+  if (!lateClaims) {
+    // User has not selected anything
+      res.redirect('/capital-claims/late-claims-error');
+    }
+
+  if (lateClaims === "yes" && !claimsConditional) {
+    // Send user to next page
+    res.redirect('/capital-claims/late-claims-text-error');
 
   } else {
     // Send user to ineligible page
-    res.redirect('/capital-claims/public-funding-error')
+    res.redirect('/capital-claims/tasklist-6')
   }
 
-})
-
+  })
 
 
 // CAPITAL CLAIMS - Declarations ERROR
@@ -513,7 +517,7 @@ router.post('/capitals-declarations', function (req, res) {
   // Check whether the variable matches a condition
   if (declarations == "yes"){
     // Send user to next page
-    res.redirect('/capital-claims/tasklist-7')
+    res.redirect('/capital-claims/tasklist-8')
 
   } else if (declarations == "no"){
     res.redirect('/capital-claims/declarations-no')

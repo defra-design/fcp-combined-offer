@@ -28,9 +28,11 @@
           </p>
         </div>
         <div class="govuk-grid-column-one-third">
-          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
-            Save and return later
-          </button>
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
         </div>
   </div>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -42,23 +44,6 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-
-    <!---success banner--->
-    <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-6" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Success
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          Your application is saved and can be submitted
-        </h3>
-        <p class="govuk-body">Select 'Save and continue' to proceed.</p>
-      </div>
-    </div>
-
-
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check your answers before submitting your claim​</h1>
     <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">Print</a></p>
     </p>
@@ -105,13 +90,13 @@
       </div>
     </dl>
 
-    <h2 class="govuk-heading-m" id="capital-items">
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-4" id="capital-items">
       Details of your capital item claim
     </h2>
 
-    <dl class="govuk-summary-list">
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" style="width: 410px;">
+        <dt class="govuk-summary-list__key govuk-heading-m" style="width: 410px;">
           Standard cost items
         </dt>
         <dd class="govuk-summary-list__value">
@@ -119,13 +104,13 @@
         <dd class="govuk-summary-list__value">
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="standard-cost-items">Change<span class="govuk-visually-hidden"> answer</span></a>
+          <a class="govuk-link" href="standard-cost-items-saved">Change<span class="govuk-visually-hidden"> answer</span></a>
         </dd>
       </div>
       
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
-          BN12 - Stone Wall Restoration
+          BN12 - Stone wall restoration
         </dt>
         <dd class="govuk-summary-list__value">
           65 m
@@ -137,7 +122,7 @@
 
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
-          BN13 - Stone Wall - Top Wiring
+          BN13 - Stone wall - top wiring
         </dt>
         <dd class="govuk-summary-list__value">
           1500 m
@@ -149,7 +134,7 @@
 
       <div class="govuk-summary-list__row">
         <dd class="govuk-summary-list__value">
-          FG12 - Wooden Field Gate
+          FG12 - Wooden field gate
         </dt>
         <dd class="govuk-summary-list__value">
           3 units
@@ -164,15 +149,16 @@
           Standard cost items total
         </dt>
         <dd class="govuk-summary-list__value">
-          
         </dd>
         <dd class="govuk-summary-list__value">
           £5,100.00
         </dd>
       </div>
+    </dl>
 
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" style="width: 410px;">
+        <dt class="govuk-summary-list__key govuk-heading-m" style="width: 410px;">
           Actual cost items
         </dt>
         <dd class="govuk-summary-list__value">
@@ -180,7 +166,7 @@
         <dd class="govuk-summary-list__value">
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="actual-cost-items">Change<span class="govuk-visually-hidden"> answer</span></a>
+          <a class="govuk-link" href="actual-cost-items-saved">Change<span class="govuk-visually-hidden"> answer</span></a>
         </dd>
       </div>
 
@@ -201,7 +187,6 @@
           FM1: Management of geodiversity features
         </dt>
         <dd class="govuk-summary-list__value">
-          
         </dd>
         <dd class="govuk-summary-list__value">
           £1,573.00
@@ -219,67 +204,82 @@
           £2,573.00
         </dd>
       </div>
+    </dl>
+
+      <!--- PROOF OF COST -->
+    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-heading-m" style="width: 410px;">
+          Proof of cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="proof-cost">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">Have you sent receipts or receipted invoices to support this claim to the RPA?
+        </dd>
+        <dd class="govuk-summary-list__value"> 
+          <p class="govuk-body">Yes</p>
+          <p class="govuk-body">10 items</p>
+        </dd>
+        
+        </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">Have you sent any extra evidence to support your claim?
+        </dd>
+        <dd class="govuk-summary-list__value">No
+        </dd>
+        </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">Are you VAT registered?
+        </dd>
+
+        <dd class="govuk-summary-list__value">Yes
+        </dd>
+      </div>
+
       </dl>
 
-      <h2 class="govuk-heading-m" id="additional">
-        Additional details for your claim
+      <h2 class="govuk-heading-l govuk-!-margin-bottom-4" id="additional">
+      Additional details for your claim
       </h2>
-  
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width: 390px;">
-            Are you making any late claims?
-          </dt>
-          <dd class="govuk-summary-list__value" style="width: 390px;"> 
-              <p class="govuk-body">Yes</p>
-              <p class="govuk-body">FG15 - Water Gates could not be implemented in the first year due to the weather conditions. </p>
-          </dd>
-  
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="late-claims">Change<span class="govuk-visually-hidden"> answer</span></a>
-          </dd>
-        </div>
-  
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width: 390px;">
-            Have you received other public funding or grants?
-          </dt>
-          <dd class="govuk-summary-list__value" style="width: 390px;">No
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="public-funding">Change<span class="govuk-visually-hidden"> answer</span></a>
-          </dd>
-        </div>
-  
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key" style="width: 390px;">
-            Proof of cost
-          </dt>
-          <dd class="govuk-summary-list__value">
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="proof-cost">Change<span class="govuk-visually-hidden"> answer</span></a>
-          </dd>
-        </div>
-  
-  
-        <div class="govuk-summary-list__row">
-          <dd class="govuk-summary-list__value">Have you sent the RPA receipted invoices or receipts?
-          </dd>
-          <dd class="govuk-summary-list__value" style="width: 390px;"> 
-            <p class="govuk-body">Yes</p>
-            <p class="govuk-body">10 items</p>
-          </dd>
-        </div>
-  
-        <div class="govuk-summary-list__row">
-          <dd class="govuk-summary-list__value">Are you VAT registered?
-          </dd>
-          <dd class="govuk-summary-list__value">Yes
-          </dd>
-        </div>
-      </dl>
-  
+
+    <dl class="govuk-summary-list">
+    <!-- public funding -->
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key" style="width: 390px;"> 
+          Have you received other public funding or grants?
+        </dt>
+        <dd class="govuk-summary-list__value" style="width: 390px;"> No 
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="public-funding">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <!-- LATE CLAIMS -->
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key" style="width: 390px;"> 
+          Are you making any late claims?
+        </dt>
+        <dd class="govuk-summary-list__value" style="width: 390px;"> 
+          <p class="govuk-body">Yes</p>
+          <p class="govuk-body">FG15 - Water Gates could not be implemented in the first year due to the weather conditions. </p>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="late-claims">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+    </dl>
 
 
 
@@ -289,7 +289,7 @@
   </button>
 </form>
 
-<form class="form" action="tasklist-6" method="post">
+<form class="form" action="tasklist-7" method="post">
 <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
 Save and continue
 </button>

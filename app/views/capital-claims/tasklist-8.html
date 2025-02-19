@@ -49,67 +49,67 @@
 
 <h2 class="govuk-heading-m">1. Details of your claim</h2>
 
-{% set completedStatus = {
-  text: "Completed"
-} %}
+    {% set completedStatus = {
+      text: "Completed"
+    } %}
 
-{% set incompleteStatus = {
-  tag: {
-    text: "Incomplete",
-    classes: "govuk-tag--blue"
-  }
-} %}
+    {% set incompleteStatus = {
+      tag: {
+        text: "Incomplete",
+        classes: "govuk-tag--blue"
+      }
+    } %}
 
-{# To switch between the completed and incomplete statuses, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+    {# To switch between the completed and incomplete statuses, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
 
-{{ govukTaskList({
-  idPrefix: "first-section",
-  items: [
-    {
-      title: {
-        text: "Standard cost items"
-      },
-      href: "standard-cost-items-saved",
-      status: completedStatus
-    },
-    {
-      title: {
-        text: "Actual cost items"
-      },
-      href: "actual-cost-items-saved",
-      status: completedStatus
-    },
-    {
-      title: {
-        text: "Proof of cost"
-      },
-      href: "proof-cost",
-      status: completedStatus
-    }
-    ]
-  }) }}
-
-  <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Confirm additional details for your claim </h2>
-
-{{ govukTaskList({
-  idPrefix: "second-section",
-  items: [
-    {
-      title: {
-        text: "Declare any public funding"
-      },
-      href: "public-funding",
-      status: completedStatus
-    },
-    {
-      title: {
-        text: "Declare any late claims"
-      },
-      href: "late-claims",
-      status: completedStatus
-    }
-    ]
-  }) }}
+    {{ govukTaskList({
+      idPrefix: "first-section",
+      items: [
+        {
+          title: {
+            text: "Standard cost items"
+          },
+          href: "standard-cost-items-saved",
+          status: completedStatus
+        },
+        {
+          title: {
+            text: "Actual cost items"
+          },
+          href: "actual-cost-items-saved",
+          status: completedStatus
+        },
+        {
+          title: {
+            text: "Proof of cost"
+          },
+          href: "proof-cost",
+          status: completedStatus
+        }
+        ]
+      }) }}
+    
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Confirm additional details for your claim </h2>
+    
+    {{ govukTaskList({
+      idPrefix: "second-section",
+      items: [
+        {
+          title: {
+            text: "Declare any public funding"
+          },
+          href: "public-funding",
+          status: completedStatus
+        },
+        {
+          title: {
+            text: "Declare any late claims"
+          },
+          href: "late-claims",
+          status: completedStatus
+        }
+        ]
+      }) }}
 
       <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Review and submit your claim</h2>
 
@@ -121,28 +121,24 @@
               text: "Check your answers"
             },
             href: "check-your-answers",
-            status: incompleteStatus
+            status: completedStatus
           },
           {
             title: {
               text: "Read declaration"
             },
-            status: {
-            text: "Cannot start yet",
-            classes: "govuk-task-list__status--cannot-start-yet"
-            }          
+            href: "declarations",
+            status: completedStatus
           },
           {
             title: {
               text: "Submit your claim"
             },
-            status: {
-            text: "Cannot start yet",
-            classes: "govuk-task-list__status--cannot-start-yet"
-            }          
+            href: "submit-claim",
+            status: incompleteStatus
           }
-          ]
-        }) }}
+        ]
+      }) }}
 
       <div class="govuk-!-padding-bottom-9"></div>
       

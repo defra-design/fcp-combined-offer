@@ -28,9 +28,11 @@
           </p>
         </div>
         <div class="govuk-grid-column-one-third">
-          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
-            Save and return later
-          </button>
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
         </div>
   </div>
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -45,7 +47,7 @@
   </div>
 </div>
 
-  <h2 class="govuk-heading-m">1. Add your claim</h2>
+<h2 class="govuk-heading-m">1. Details of your claim</h2>
 
     {% set completedStatus = {
       text: "Completed"
@@ -67,29 +69,14 @@
           title: {
             text: "Standard cost items"
           },
-          href: "standard-cost-items",
+          href: "standard-cost-items-saved",
           status: completedStatus
         },
         {
           title: {
             text: "Actual cost items"
           },
-          href: "actual-cost-items",
-          status: completedStatus
-        }
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Confirm additional details for your claim </h2>
-
-    {{ govukTaskList({
-      idPrefix: "second-section",
-      items: [
-        {
-          title: {
-            text: "Late claims and public funding"
-          },
-          href: "late-claims",
+          href: "actual-cost-items-saved",
           status: completedStatus
         },
         {
@@ -102,38 +89,62 @@
         ]
       }) }}
 
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Confirm additional details for your claim </h2>
+
+    {{ govukTaskList({
+      idPrefix: "second-section",
+      items: [
+        {
+          title: {
+            text: "Declare any public funding"
+          },
+          href: "public-funding",
+          status: completedStatus
+        },
+        {
+          title: {
+            text: "Declare any late claims"
+          },
+          href: "late-claims",
+          status: incompleteStatus
+        }
+        ]
+      }) }}
+
       <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Review and submit your claim</h2>
 
       {{ govukTaskList({
         idPrefix: "third-section",
         items: [
-          {
+                 {
             title: {
               text: "Check your answers"
             },
-            href: "check-your-answers",
-            status: incompleteStatus
-          },
-          {
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
+    },
+                     {
             title: {
-              text: "Declarations"
+              text: "Read declaration"
             },
-            status: {
-            text: "Cannot start yet",
-            classes: "govuk-task-list__status--cannot-start-yet"
-            }          
-          },
-          {
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
+    },
+                 {
             title: {
               text: "Submit your claim"
             },
-            status: {
-            text: "Cannot start yet",
-            classes: "govuk-task-list__status--cannot-start-yet"
-            }          
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }
           }
-          ]
-        }) }}
+        ]
+      }) }}
 
       <div class="govuk-!-padding-bottom-9"></div>
       

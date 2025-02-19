@@ -15,8 +15,8 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
+    text: "Back to Business overview",
+    href: "business-overview"
   }) }}
 {% endblock %}
 
@@ -44,19 +44,11 @@
     <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">1738201</td>
-          <td class="govuk-table__cell"></td>
-          <td class="govuk-table__cell">15/02/2025<br>2:07:01 PM</td>
-          <td class="govuk-table__cell">Created</td>
-          <td class="govuk-table__cell"><a href="claims-table-summary" class="govuk-link">Summary</a></td>
-        </tr>
-
-        <tr class="govuk-table__row">
           <td class="govuk-table__cell">1674393</td>
           <td class="govuk-table__cell"></td>
           <td class="govuk-table__cell">09/02/2025<br>5:35:06 PM</td>
           <td class="govuk-table__cell">Claim held</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+          <td class="govuk-table__cell"><a href="claims-table-summary" class="govuk-link">Summary</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -121,7 +113,7 @@
 
 
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-body">If you feel that you have not received payment or 
+    <p class="govuk-body govuk-!-margin-bottom-6">If you feel that you have not received payment or 
         that payment has been delayed, please contact the RPA.</p>
 
 
