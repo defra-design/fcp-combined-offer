@@ -77,7 +77,7 @@
 
 <hr class="section-break-large"></hr>
 <table class="govuk-table">
-  <p class="govuk-body">OS Map Sheet Reference S03</p>
+  <p class="govuk-body">OS map sheet reference S03</p>
   <hr class="govuk-section-break govuk-section-break--visible">
     <tbody class="govuk-table__body">
       <tr class="govuk-table__row">
@@ -95,10 +95,6 @@
           <tr class="govuk-table__row">
       <td class="govuk-table__cell">Number of actions applied for</td>
         <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
-      </tr>
-      <tr class="govuk-table__row">
-        <td class="govuk-table__cell"><strong>Number of prescriptions and feedbacks</strong></td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><strong>15</strong></td>
       </tr>
       <tr class="govuk-table__row">
         <td class="govuk-table__cell errorLabel" style="font-weight: 700;">Total number of land parcels with errors</td>
@@ -180,18 +176,18 @@
     <ul class="moj-pagination__list" style="display: flex; align-items: center;">
       <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>15</b> of <b>20</b> parcels</p>
       <li class="moj-pagination__item">
-        <a href="#" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <a rel="next" style="font-weight: 700; color: #1d70b8;">Next<span class="govuk-visually-hidden">page</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
           <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
         </svg></a>
       </li>
     </ul>
   </nav>
 
-    <form class="form" action="bis-select-map-actions-error" method="post">
-      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Go back to select a different area
-      </button>
-    </form>
+  <form class="form" action="bis-select-map-actions-error" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Go back to select a different area
+    </button>
+  </form>
 
 </div>
 
@@ -215,6 +211,16 @@
 
   <h2 class="govuk-heading-m">Your available actions for selected land parcel</h2>
 
+  <!-- Inset text -->
+  <div class="govuk-inset-text">
+    <p class="govuk-body govuk-!-margin-bottom-1">Your adviser has:
+      <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-0">
+          <li>rejected 2 actions</li>
+          <li>added prescriptions to 2 actions</li>
+      </ul>
+    </p>
+  </div>
+
 <!---Higher Tier -->
   <table class="govuk-table">
     <thead class="govuk-table__head">
@@ -232,7 +238,7 @@
       <tr class="govuk-table__row red-border">
         <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
         <p id="adviser-error" class="govuk-error-message" style="margin-bottom: 5px;">
-        <span class="govuk-visually-hidden">Error:</span>Your advisor has rejected this action - see adviser feedback for more information</p>
+        <span class="govuk-visually-hidden">Error:</span>Your adviser has rejected this action - see adviser feedback for more information</p>
         </td>
       </tr>
     
@@ -277,7 +283,7 @@
       <tr class="govuk-table__row red-border">
         <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
         <p id="adviser-error" class="govuk-error-message" style="margin-bottom: 5px;">
-        <span class="govuk-visually-hidden">Error:</span>Your advisor has rejected this action - see adviser feedback for more information</p>
+        <span class="govuk-visually-hidden">Error:</span>Your adviser has rejected this action - see adviser feedback for more information</p>
         </td>
       </tr>
     
@@ -331,7 +337,7 @@
         <td class="govuk-table__cell no-border-bottom">
           <div class="govuk-form-group">
             <div class="govuk-input__wrapper">
-              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="17.2309">
+              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="12.2309">
               <div class="govuk-input__suffix" aria-hidden="true">ha</div>
             </div>
           </div>
@@ -346,9 +352,10 @@
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
               <span class="govuk-visually-hidden">Warning</span>
-              The area applied is greater than the available area
+              Action on parcel may be subject to Inheritance Tax Exemption
             </strong>
           </div>
+
           <p class="govuk-body govuk-!-margin-bottom-4"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">See prescriptions for this action</a></p>
           
           <details class="govuk-details govuk-!-margin-bottom-2">
@@ -358,7 +365,7 @@
               </span>
             </summary>
             <div class="govuk-details__text">
-              The area applied is greater than the available area
+                  Action on parcel may be subject to Inheritance Tax Exemption
             </div>
           </details>
 
@@ -413,7 +420,7 @@
         <td class="govuk-table__cell" style="border-bottom-color: #b1b4b6";>
           <div class="govuk-form-group">
             <div class="govuk-input__wrapper">
-              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
+              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="20.2224">
               <div class="govuk-input__suffix" aria-hidden="true">ha</div>
             </div>
           </div>
@@ -437,6 +444,8 @@
       Add selected actions to this parcel
     </button>
   </form>
+
+
 
   </div>
 

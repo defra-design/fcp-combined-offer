@@ -53,7 +53,7 @@
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
           We have reviewed your application so far. <br><br>
-          Check the <a class="govuk-notification-banner__link" href="adviser-feedback">adviser feedback</a>.<br><br>
+          Check the <a class="govuk-notification-banner__link" href="adviser-feedback-approved-final">adviser feedback</a>.<br><br>
           This has information about how to apply for your new agreement.
           <p class="govuk-notification-banner__heading">
         </p>
@@ -76,7 +76,7 @@
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
-<p class="govuk-body">You have completed 2 of 4 sections</p>
+<p class="govuk-body">You have completed 3 of 4 sections</p>
 
       <h2 class="govuk-heading-m">1. Check before you start</h2>
 
@@ -151,31 +151,31 @@
           title: {
             text: "Apply for your agreement level actions"
           },
-          href: "bis-agreement-level-actions-error",
+          href: "bis-agreement-level-actions",
           status: completedStatus
   },
-        {
-          title: {
-            text: "Select the land you want to do the capital items on"
-          },
-      href: "bis-select-map-capitals-error",
-      status: incompleteStatus
-  },
+  {
+    title: {
+      text: "Select the land you want to do the capital items on"
+    },
+    href: "bis-select-map-capitals",
+    status: completedStatus
+},
 
-             {
-          title: {
-            text: "Apply for your agreement level capital items"
-          },
-          href: "bis-agreement-level-capitals-error",
-          status: incompleteStatus
-  },
-          {
-            title: {
-              text: "Select additional parcels for your rotational actions"
-            },
-            href: "bis-select-rotational-map",
-            status: incompleteStatus
-        }
+      {
+    title: {
+      text: "Apply for your agreement level capital items"
+    },
+    href: "bis-agreement-level-capitals",
+    status: completedStatus
+},
+{
+title: {
+text: "Select additional parcels for your rotational actions"
+},
+href: "bis-select-rotational-map",
+status: completedStatus
+}
         ]
       }) }}
 
@@ -185,15 +185,13 @@
       {{ govukTaskList({
         idPrefix: "second-section",
         items: [
-                 {
-            title: {
-              text: "Check your answers"
-            },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
-    },
+        {
+          title: {
+            text: "Check your answers"
+          },
+          href: "bis-check-your-answers",
+          status: incompleteStatus
+        },
                  {
             title: {
               text: "Request approval"

@@ -77,7 +77,7 @@
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
-<p class="govuk-body">You have completed 1 of 4 sections</p>
+<p class="govuk-body">You have completed 2 of 4 sections</p>
 
       <h2 class="govuk-heading-m">1. Check before you start</h2>
 
@@ -131,7 +131,7 @@
               text: "Select which actions and items you want to apply for"
             },
             href: "bis-select-actions",
-            status: incompleteStatus   
+            status: completedStatus   
     }
         ]
       }) }}
@@ -159,22 +159,22 @@
           title: {
             text: "Select the land you want to do the capital items on"
           },
-      href: "bis-select-map-capitals-error",
-      status: incompleteStatus
+      href: "bis-select-map-capitals",
+      status: completedStatus
   },
              {
           title: {
             text: "Apply for your agreement level capital items"
           },
-          href: "bis-agreement-level-capitals-error",
-          status: incompleteStatus
+          href: "bis-agreement-level-capitals",
+          status: completedStatus
   },
   {
     title: {
       text: "Select additional parcels for your rotational actions"
     },
     href: "bis-select-rotational-map",
-    status: incompleteStatus
+    status: completedStatus
 }
         ]
       }) }}
