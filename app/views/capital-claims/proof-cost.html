@@ -117,6 +117,36 @@
       </div>
     </div>
 
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m" style="margin-bottom: 10px;">
+        VAT declaration for those capital items which are paid on the basis of actual costs
+      </label>
+      <div id="evidence-hint" class="govuk-hint">
+        If you are not VAT registered and wish to claim the VAT element as agreed, have you enclosed a letter from HMRC or your accountant confirming your VAT status?
+      </div>
+      
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-yes" name="vat" type="radio" value="yes" aria-describedby="vat-yes">
+          <label class="govuk-label govuk-radios__label" for="vat">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
+            Not applicable
+          </label>
+        </div>
+      </div>
+    </div>
+
     <form class="form" action="proof-cost-error" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
           Save and continue
