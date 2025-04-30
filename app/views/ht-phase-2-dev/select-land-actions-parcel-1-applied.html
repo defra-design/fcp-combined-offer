@@ -142,12 +142,6 @@
     </ul>
   </nav>
 
-  <form class="form" action="select-map-actions-applied" method="post">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Go back to select a different area
-    </button>
-  </form>
-
 </div>
 
 <!---RIGHT HAND SIDE COLUMN --->
@@ -180,6 +174,26 @@
         </thead>
   
         <tbody class="govuk-table__body">
+
+          <!---CHECKED---> 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+                <label class="govuk-label govuk-checkboxes__label"></label>
+              </div>
+            </td>
+            <td class="govuk-table__cell">CHRW4: Manage hedgerows (5 Years)</td>
+            <td class="govuk-table__cell">20.2520</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-form-group">
+                <div class="govuk-input__wrapper">
+                  <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="20.2520">
+                  <div class="govuk-input__suffix" aria-hidden="true">m</div>
+                </div>
+              </div>
+            </td>
+          </tr>
           
       <!---CHECKED---> 
           <tr class="govuk-table__row">
@@ -298,11 +312,11 @@
             </td>
           </tr>
 
-      <!---CHECKED---> 
+
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+                <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
                 <label class="govuk-label govuk-checkboxes__label"></label>
               </div>
             </td>
@@ -311,7 +325,7 @@
             <td class="govuk-table__cell">
               <div class="govuk-form-group">
                 <div class="govuk-input__wrapper">
-                  <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="12.2309">
+                  <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
                   <div class="govuk-input__suffix" aria-hidden="true">ha</div>
                 </div>
               </div>
@@ -451,25 +465,6 @@
             </td>
           </tr>
 
-
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                <label class="govuk-label govuk-checkboxes__label"></label>
-              </div>
-            </td>
-            <td class="govuk-table__cell">CPAC5: Upgrading Countryside and Rights of Way for cyclists and horse riders</td>
-            <td class="govuk-table__cell">-</td>
-            <td class="govuk-table__cell">
-              <div class="govuk-form-group">
-                <div class="govuk-input__wrapper">
-                  <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                  <div class="govuk-input__suffix" aria-hidden="true">m</div>
-                </div>
-              </div>
-            </td>
-          </tr>
         </tbody>
       </table>
 
@@ -487,7 +482,13 @@
 
   <form class="form" action="select-land-actions-parcel-1-applied" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-      Add selected actions to this parcel
+      Save
+    </button>
+  </form>
+
+  <form class="form" action="select-map-actions-applied" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+       Continue
     </button>
   </form>
 

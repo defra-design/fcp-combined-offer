@@ -43,16 +43,18 @@
 <!---LEFT HAND SIDE COLUMN --->
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
+
     <h1 class="govuk-heading-l">Select land for your actions</h1>
 
-    <p class="govuk-body govuk-!-margin-bottom-6">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
-    <p class="govuk-body govuk-!-margin-bottom-0">You’ll see your list of actions. You then need to:
+    <p class="govuk-body govuk-!-margin-bottom-6">Select a land parcel in the table or the map to see your actions.</p>
+    <p class="govuk-body govuk-!-margin-bottom-0">You then need to:
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li>select the action and enter the amount that you want to add to the parcel</li>
-          <li>confirm your selection for that parcel</li>
+          <li>select the action</li>
+          <li>enter the amount you want to add to the parcel</li>
       </ul>
     </p>
-    <p class="govuk-body">You can then move on to the next land parcel and repeat these steps.</p>
+    <p class="govuk-body">Select 'Save' when you have added your actions to the parcel. Repeat for each parcel. When you have finished, select 'Continue'.</p>
+
 
 
 <hr class="section-break-large"></hr>
@@ -143,14 +145,6 @@
     </ul>
   </nav>
 
-  <form class="form" action="select-map-actions-applied" method="post">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Go back to select a different area
-    </button>
-  </form>
-
-
-
 </div>
 
 <!---RIGHT HAND SIDE COLUMN --->
@@ -184,6 +178,26 @@
       </thead>
 
       <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+              <label class="govuk-label govuk-checkboxes__label"></label>
+            </div>
+          </td>
+          <td class="govuk-table__cell">CHRW4: Manage hedgerows (5 Years)</td>
+          <td class="govuk-table__cell">20.2520</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-form-group">
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
+                <div class="govuk-input__suffix" aria-hidden="true">m</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+
         
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">
@@ -452,24 +466,6 @@
         </tr>
 
 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label"></label>
-            </div>
-          </td>
-          <td class="govuk-table__cell">CPAC5: Upgrading Countryside and Rights of Way for cyclists and horse riders</td>
-          <td class="govuk-table__cell">-</td>
-          <td class="govuk-table__cell">
-            <div class="govuk-form-group">
-              <div class="govuk-input__wrapper">
-                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                <div class="govuk-input__suffix" aria-hidden="true">m</div>
-              </div>
-            </div>
-          </td>
-        </tr>
       </tbody>
     </table>
 
@@ -486,9 +482,16 @@
 
   <form class="form" action="select-land-actions-parcel-1-applied" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-      Add selected actions to this parcel
+      Save
     </button>
   </form>
+
+  <form class="form" action="select-map-actions-applied" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Continue
+    </button>
+  </form>
+
 
   </div>
 

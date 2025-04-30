@@ -62,6 +62,76 @@
     </div>
   
   <div id="filters">
+
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <label class="govuk-label govuk-label--s">
+        <span>
+          Filter by
+        </span>
+      </label>
+      </summary>
+      <div class="govuk-!-padding-top-5 govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Selected actions and items
+          </label>
+        </div>
+      </div>
+  </details>
+
+  <details class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <label class="govuk-label govuk-label--s">
+      <span>
+        Type
+      </span>
+    </label>
+    </summary>
+    <div class="govuk-!-padding-top-5 govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+      
+      <!---<div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+          SFI
+        </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+          More straightforward - no advice needed
+        </div>
+      </div>
+      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            SFI endorsed
+          </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+            Extra eligibility check needed
+        </div>
+      </div>
+      ---> 
+      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+          Higher Tier
+        </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+          More complex actions that need pre-application advice
+        </div>
+      </div>
+
+      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+          Capital items
+        </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+          Extra eligibility check needed
+        </div>
+      </div>
+    </div>
+</details>
+
     <details class="govuk-details" data-module="govuk-details" open>
       <summary class="govuk-details__summary">
         <label class="govuk-label govuk-label--s">
@@ -141,252 +211,270 @@
 
 
 <!---RIGHT HAND SIDE COLUMN-->
-<!---CONFIRM SELECTION CTA-->
 <div class="govuk-grid-column-two-thirds">
 
-  <div class="floating-banner">
-  <form class="form" action="tasklist-5" method="post">
-    <button class="govuk-button" type="submit" data-module="govuk-button" style="margin-top: 0px; margin-bottom: 0;">
-      Confirm your selection
-    </button>
-  </form>
+<div class="topnav" style="margin-bottom: 30px; margin-top: 20px;">
+  <div class="topnav-right govuk-body">
+    <span class="govuk-!-font-weight-bold">0</span> items selected
   </div>
+</div>
 
-  <div class="topnav" style="margin-bottom: 30px; margin-top: 20px;">
-    <summary class="govuk-details__summary"><span><a class="govuk-body govuk-link govuk-link--no-underline" href="#sortbyorder">Sort by selected actions first</a></span></summary>
-    <div class="topnav-right govuk-body">
-      <span class="govuk-!-font-weight-bold">50</span> actions listed of <span class="govuk-!-font-weight-bold">134</span> total
+<div class="govuk-form-group">
+  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+      <!-- Beginning of action 1-->
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+          <p class="govuk-body">CHRW4: Manage hedgerows (5 Years) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+          </label>
+        </div>
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £13 per metres</p>
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+          <hr class="govuk-section-break govuk-section-break--visible">
+        </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 2 -->
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+          <p class="govuk-body">CSP1: Supplement: Difficult sites – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+          </label>
+        </div>
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £93 per hectare</p>
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+          <hr class="govuk-section-break govuk-section-break--visible">
+        </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 3 -->
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+          <p class="govuk-body">CSP5: Supplement: Shepherding (non-moorland) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+          </label>
+        </div>
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £10 per hectare</p>
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+          <hr class="govuk-section-break govuk-section-break--visible">
+        </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 4 -->
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+            <p class="govuk-body">CSP7: Supplement: Introduction of cattle grazing on the Isles of Scilly – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+          </label>
+        </div>
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £279 per hectare</p>
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+          <hr class="govuk-section-break govuk-section-break--visible">
+        </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 5 -->
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+            <p class="govuk-body">CSP11: Supplement: Manage scrapes and gutters – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+          </label>
+        </div>
+        <div class="govuk-!-padding-bottom-4">
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £1.17 per square metre</p>
+          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+          <hr class="govuk-section-break govuk-section-break--visible">
+        </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 6 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CGS18: Manage species-rich floodplain meadows – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £1076 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 7 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CGS19: Manage wet grassland for wintering waders and wildfowl – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £553 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 8-->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CGS20: Manage wet grassland for breeding waders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £676 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 9 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CGS21: Manage grassland for target habitats, species or features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £528 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 10 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CGS22: Manage priority habitat species-rich grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £646 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 11-->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CUP3: General moorland management – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £55 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 12-->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CPAC1: Open access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £92 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+      <!-- Beginning of action 13-->
+      <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" type="checkbox">
+      <label class="govuk-label govuk-checkboxes__label">
+      <p class="govuk-body">CPAC2: Access for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+      </label>
     </div>
-  </div>
+    <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £221 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
 
-<div class="govuk-tabs" data-module="govuk-tabs">
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#ht">Higher Tier</a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="#capital">Capital items</a>
-      </li>
-    </ul>
+    <!-- Beginning of action 14-->
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" type="checkbox">
+      <label class="govuk-label govuk-checkboxes__label">
+      <p class="govuk-body">CPAC3: Bridleway or cycle path access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+      </label>
+    </div>
+    <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £158 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
 
+    <!-- Beginning of action 15-->
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" type="checkbox">
+      <label class="govuk-label govuk-checkboxes__label">
+      <p class="govuk-body">CPAC4: Footpath access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+      </label>
+    </div>
+    <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £77 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
 
+    <!-- Beginning of action 16-->
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" type="checkbox">
+      <label class="govuk-label govuk-checkboxes__label">
+      <p class="govuk-body">CPAC5: Upgrading Countryside and Rights of Way for cyclists and horse riders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+      </label>
+    </div>
+    <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £158 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
 
-<!---Higher Tier tab -->
-    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="ht" style="border-bottom: none; border-left: none; border-right: none;">
-      <div class="govuk-form-group">
-        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-          <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP1: Supplement: Difficult sites – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £93 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP5: Supplement: Shepherding (non-moorland) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £10 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP7: Supplement: Introduction of cattle grazing on the Isles of Scilly – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £279 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CSP11: Supplement: Manage scrapes and gutters – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £1.17 per square metre</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS18: Manage species-rich floodplain meadows – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £1076 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS19: Manage wet grassland for wintering waders and wildfowl – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £553 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS20: Manage wet grassland for breeding waders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £676 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS21: Manage grassland for target habitats, species or features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £528 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CGS22: Manage priority habitat species-rich grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £646 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CUP3: General moorland management – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £55 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC1: Open access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £92 per hectare</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC2: Access for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £221 per metre</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC3: Bridleway or cycle path access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £158 per metre</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC4: Footpath access – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £77 per metre</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC5: Upgrading Countryside and Rights of Way for cyclists and horse riders – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £158 per metre</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CPAC6: Upgrading Countryside and Rights of Way for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £221 per metre</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
-            <!-- Beginning of action -->
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label">
-              <p class="govuk-body">CCT2: Make space for new coastal habitat – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-              </label>
-            </div>
-            <div class="govuk-!-padding-bottom-4">
-              <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £773 per metre</p>
-              <hr class="govuk-section-break govuk-section-break--visible">
-            </div>
-            <!-- End of action -->
+      <!-- Beginning of action 17-->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CPAC6: Upgrading Countryside and Rights of Way for people with reduced mobility – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £221 per metre</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
 
+      <!-- Beginning of action 18-->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label">
+        <p class="govuk-body">CCT2: Make space for new coastal habitat – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £773 per metre</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
 
-
-
-<!--- HT HIDDEN actions --> 
-  <div class="hidden" id="ht-hidden">
-
-    <!-- Beginning of action -->
+    <!-- Beginning of action 19-->
       <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
@@ -395,10 +483,12 @@
       </div>
       <div class="govuk-!-padding-bottom-4">
         <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £849 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
         <hr class="govuk-section-break govuk-section-break--visible">
       </div>
       <!-- End of action -->
-      <!-- Beginning of action -->
+
+      <!-- Beginning of action 20-->
       <div class="govuk-checkboxes__item">
           <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
           <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
@@ -407,633 +497,43 @@
       </div>
       <div class="govuk-!-padding-bottom-4">
         <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £385 per hectare</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Higher Tier</p>
         <hr class="govuk-section-break govuk-section-break--visible">
       </div>
       <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CAGF3: Maintain medium density in-field agroforestry – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £595 per hectare</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CAFG4: Maintain very low density in-field agroforestry on more sensitive land – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £97 per hectare</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CHRW4: Manage hedgerows (5 Years) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £13 per metres</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CWT3: Manage ditches of high environmental value – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £38 per metres</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CLH1: Manage lowland heathland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £412 per hectare</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CLH2: Restore lowland heathland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £311 per hectare</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CLH3: Create lowland heathland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £711 per hectare</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-          <!-- Beginning of action -->
-          <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-            <p class="govuk-body">CWT10: Manage lowland raised bog – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-            </label>
-          </div>
-          <div class="govuk-!-padding-bottom-4">
-            <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £215 per hectare</p>
-            <hr class="govuk-section-break govuk-section-break--visible">
-          </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">CUP14: Shepherding livestock on moorland (remove stock for a minimum of 8 months) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £48 per hectare</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">CUP13: Shepherding livestock on moorland (remove stock for a minumum of 6 months) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £45 per hectare</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-    <!-- End of action -->
-    <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">CUP12: Shepherding livestock on moorland (remove stock for a minimum of 4 months) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £43 per hectare</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-<!-- End of action -->
-    <!-- Beginning of action -->
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-      <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-    <p class="govuk-body">CUP11: Shepherding livestock on moorland (no required stock removal period) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-    </label>
-  </div>
-  <div class="govuk-!-padding-bottom-4">
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £33 per hectare</p>
-    <hr class="govuk-section-break govuk-section-break--visible">
-  </div>
-<!-- End of action -->
-    <!-- Beginning of action -->
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-      <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-    <p class="govuk-body">CUP11: Supplement: Keep cattle and ponies on moorland (100% GLU) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-    </label>
-  </div>
-  <div class="govuk-!-padding-bottom-4">
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £23 per hectare</p>
-    <hr class="govuk-section-break govuk-section-break--visible">
-  </div>
-<!-- End of action -->
-    <!-- Beginning of action -->
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-      <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-    <p class="govuk-body">CUP18: Supplement: Manage features for wildfire management (fire and fuel break) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-    </label>
-  </div>
-  <div class="govuk-!-padding-bottom-4">
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £137 per hectare</p>
-    <hr class="govuk-section-break govuk-section-break--visible">
-  </div>
-<!-- End of action -->
-    <!-- Beginning of action -->
-    <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-      <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-    <p class="govuk-body">CES6: Supplement: Maintain features for wildfire management (fire belts) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-    </label>
-  </div>
-  <div class="govuk-!-padding-bottom-4">
-    <p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £861 per hectare</p>
-    <hr class="govuk-section-break govuk-section-break--visible">
-  </div>
-<!-- End of action -->
-</div><!---END OF HT HIDDEN ACTIONS-->
-  </div>
-      <button type="submit" class="govuk-button govuk-button--secondary" id="HTloadMoreBtn" data-module="govuk-button" style="margin-top: 10px;">
-            Load more actions
-      </button>
+
+      <nav class="moj-pagination govuk-!-margin-bottom-6" role="navigation" aria-label="Pagination navigation" style="padding-top: 10px;">
+        <ul class="moj-pagination__list" style="display: flex; align-items: center;">
+          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
       
-          <p class="govuk-body govuk-!-margin-bottom-6" id="replace84">84 more actions to load</p>
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="select-actions-page-2" aria-label="Page 2 of 4">2</a></li>
       
-          <p class="govuk-body">
-            <a href="#" class="govuk-link govuk-link--no-visited-state">Back to top</a>
-          </p>
+          <li class="moj-pagination__item moj-pagination__item--dots">…</li>
       
-      </div>
-    </div>
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
+      
+          <li class="moj-pagination__item">
+            <a href="select-actions-page-2" rel="next" style="font-weight: 700; color: #1d70b8;">Next<span class="govuk-visually-hidden">page</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg></a>
+          </li>
+          <p class="moj-pagination__results" style="margin-left: auto;">Showing <b>1</b> to <b>20</b> of <b>134</b> results</p>
+        </ul>
+      </nav>
 
-<!---Capital items tab -->
-<div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="capital" style="border-bottom: none; border-left: none; border-right: none;">
-  <div class="govuk-form-group">
-    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-      <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">RP3: Watercourse crossings – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £506.44 per crossing</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FG3: Permanent electric fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £5.66 per metre</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FG2: Sheep netting – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £7.47 per metre</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FG1: Fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £6.34 per metre</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE6: Tree guard (tube and mesh) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £3.95 per guard</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE7: Tree guard (wood post and rail) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £109.64 per guard</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE8: Tree guard (wood post and wire) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £132.16 per guard</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AF3: Supplement: Species diversity bonus – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £1.16 per tree</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AF1: Plant an agroforestry woodland tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £5.40 per tree</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">WN7: Restoration of large water bodies – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> Up to 100% of actual costs</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> Up to 100% of actual costs</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">AF2: Plant an agroforestry fruit tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £17.83 per tree</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">SB4: Chemical bracken control – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £270.90 per hectare</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> Up to 100% of actual costs</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">BC4: Tree Guard Post and wire – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £132.16 per tree guard</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FY2: Woodland infrastructure – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> 60% of actual costs</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">BC3: Crop protection fencing mesh and wire for permanent crops – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £6.34 per metre</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">TE11: Tree surgery – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £73.36 to £146.72 per tree</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-        <!-- End of action -->
+</div> <!---checkboxes-->
 
-    <!--HIDDEN CAPITAL ITEMS-->
-      <div class="hidden" id="capital-hidden">
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-              <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-            <p class="govuk-body">BN11: Planting new hedges <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-            </label>
-          </div>
-          <div class="govuk-!-padding-bottom-4">
-            <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £22.97 per metre</p>
-            <hr class="govuk-section-break govuk-section-break--visible">
-          </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">BN12: Stone wall restoration <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £31.91 per metre</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">BN13: Top wiring - stone wall <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £5.54 per metre</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-    <!-- End of action -->
-    <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">BN14: Stone wall supplement - stone from quarry <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £164.50 per metre</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-    <!-- End of action -->
-    <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">BN15: Stone wall supplement - difficult sites <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £15.91 per metre</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-    <!-- End of action -->
-    <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">FG12: Wooden field gate <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £489.90 per gate</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-    <!-- End of action -->
-    <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">FG13: Stone gate post <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £651.42 per post</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-     <!-- End of action -->
-    <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">FG14: Badger gate <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £61.81 per gate</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-  <!-- End of action -->
-       <!-- Beginning of action -->
-       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">FG15: Water gates <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £61.81 per gate</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-  <!-- End of action -->
-          <!-- Beginning of action -->
-          <div class="govuk-checkboxes__item">
-            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-            <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-          <p class="govuk-body">FG16: Deer pedestrian gate <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-          </label>
-        </div>
-        <div class="govuk-!-padding-bottom-4">
-          <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £475.44 per gate</p>
-          <hr class="govuk-section-break govuk-section-break--visible">
-        </div>
-      <!-- End of action -->
-      <!-- Beginning of action -->
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-      <p class="govuk-body">RP1: Resurfacing of gateways <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-      </label>
-    </div>
-    <div class="govuk-!-padding-bottom-4">
-      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £136.95 per gateway</p>
-      <hr class="govuk-section-break govuk-section-break--visible">
-    </div>
-  <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">RP10: Silt filtration dams or seepage barriers <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £198.14 per unit</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-    <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">RP11: Swales <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £7.52 per square metre</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-    <!-- End of action -->
-        <!-- Beginning of action -->
-        <div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
-        <p class="govuk-body">RP12: Check dams <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
-        </label>
-      </div>
-      <div class="govuk-!-padding-bottom-4">
-        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £85.29 for each dam</p>
-        <hr class="govuk-section-break govuk-section-break--visible">
-      </div>
-    <!-- End of action -->
+<form class="form" action="tasklist-5" method="post">
+  <button class="govuk-button" type="submit" data-module="govuk-button">
+    Save and continue
+  </button>
+</form>
 
-  </div><!---END OF HIDDEN CAPITAL ITEMS-->
-
-    </div>
-    <button type="submit" class="govuk-button govuk-button--secondary" id="capLoadMoreBtn" data-module="govuk-button" style="margin-top: 10px;">
-      Load more actions
-    </button>
-
-    <p class="govuk-body govuk-!-margin-bottom-6" id="replace14">14 more actions to load</p>
-
-    <p class="govuk-body">
-      <a href="#" class="govuk-link govuk-link--no-visited-state">Back to top</a>
-    </p>
-  </div>
-</div><!-- End of tab -->
-</div><!-- End of tab group -->
-</div>
-
-</div>
-
-<script>
-  document.getElementById('HTloadMoreBtn').addEventListener('click', function() {
-    document.getElementById('replace84').textContent = '34 more actions to load' // Replace the text
-    const hiddenRows = document.querySelectorAll('.hidden');
-    hiddenRows.forEach(row => row.classList.remove('hidden'));
-
-  });
+</div> <!---form group-->
 
 
-  document.getElementById('capLoadMoreBtn').addEventListener('click', function() {
-    document.getElementById('replace14').textContent = '0 more actions to load' // Replace the text
 
-    const hiddenRows = document.querySelectorAll('.hidden');
-    hiddenRows.forEach(row => row.classList.remove('hidden'));
-    this.style.display = 'none';
 
-  });
-</script>
 
   
 {% endblock %}

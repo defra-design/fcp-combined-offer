@@ -45,14 +45,14 @@
   <div class="govuk-grid-column-one-half">
     <h1 class="govuk-heading-l">Select land for your actions</h1>
 
-    <p class="govuk-body govuk-!-margin-bottom-6">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
-    <p class="govuk-body govuk-!-margin-bottom-0">You’ll see your list of actions. You then need to:
+    <p class="govuk-body govuk-!-margin-bottom-6">Select a land parcel in the table or the map to see your actions.</p>
+    <p class="govuk-body govuk-!-margin-bottom-0">You then need to:
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li>select the action and enter the amount that you want to add to the parcel</li>
-          <li>confirm your selection for that parcel</li>
+          <li>select the action</li>
+          <li>enter the amount you want to add to the parcel</li>
       </ul>
     </p>
-    <p class="govuk-body">You can then move on to the next land parcel and repeat these steps.</p>
+    <p class="govuk-body">Select 'Save' when you have added your actions to the parcel. Repeat for each parcel. When you have finished, select 'Continue'.</p>
 
 
 <hr class="section-break-large"></hr>
@@ -159,6 +159,35 @@
     <div class="key-parent" id="key3-1"></div><span class="govuk-body-s">Applied</span>
     <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">Not Applied</span>
   </div>
+
+  <h2 class="govuk-heading-m">Your available actions for selected land parcel</h2>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header" style="width: 145px">Action</th>
+        <th scope="col" class="govuk-table__header" style="width: 60px">Available area</th>          
+        <th scope="col" class="govuk-table__header">Quantity</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell" colspan="4">
+        <p style="text-align:left;" class="govuk-body">Select a land parcel to see your actions</p> 
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+
+<form class="form" action="select-map-actions" method="post">
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Continue
+  </button>
+</form>
   
 
 </div>
