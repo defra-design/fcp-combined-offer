@@ -40,32 +40,47 @@
 
 {% block content %}
 
+<!---left aligned
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
-
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
-      <h1 class="govuk-panel__title">
-        Review requested
-      </h1>
-    </div>
-    
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-6">What happens next</h2>
-    <p class="govuk-body govuk-!-margin-bottom-6">
-      An adviser will check your selected actions.
-    </p>
-    <p class="govuk-body govuk-!-margin-bottom-6">
-      They will contact you when they have finished their review with information about how to continue your application.
-    </p>
-
-    <form class="form" action="adviser-dashboard-draft-app" method="post">
-      <button type="submit" class="govuk-button" data-module="govuk-button">
-        Close
-      </button>
-    </form>
-            
-  </div>
+  <div class="loading" style="margin-left:112px; margin-right: auto" aria-live="polite" role="status"</div>
 </div>
 
+<div class="govuk-!-padding-bottom-7"></div>
+
+
+<h1 class="govuk-heading-m" style="margin-left: 30px;">We are validating your application</h1>
+  <p style="margin-left: 30px;"">The page will reload automatically. You can close the browser and come back later. </p>
+
+
+
+</div>
+-->
+
+<div class="govuk-grid-row">
+  <div class="loading" id=loadingSpinner style="margin-left:auto; margin-right: auto" aria-live="polite" role="status"></div>
+</div>
+<div class="govuk-!-padding-bottom-7"></div>
+
+<div class="govuk-grid-row">
+<h1 class="govuk-heading-m" style="text-align: center">We are validating your application</h1>
+<p style="text-align: center;">The page will reload automatically. You can close the browser and come back later. </p>
 <div class="govuk-!-padding-bottom-9"></div>
+<div class="govuk-!-padding-bottom-9"></div>
+</div>
+
+
+<script>
+  // Function to hide the loading spinner and redirect to another page
+  function hideLoadingSpinnerAndRedirect() {
+    const spinner = document.getElementById('loadingSpinner');
+    spinner.style.display = 'none';
+    // Redirect to another page
+    window.location.href = "bis-check-your-answers-saved"; // Replace with your desired URL
+  }
+
+  // Set the timer to hide the spinner and redirect after 5 seconds (5000 milliseconds)
+  setTimeout(hideLoadingSpinnerAndRedirect, 5000);
+</script>
 
 {% endblock %}
+

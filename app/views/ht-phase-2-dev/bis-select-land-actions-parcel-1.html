@@ -143,11 +143,6 @@
     </ul>
   </nav>
 
-  <form class="form" action="bis-select-map-actions-applied" method="post">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-        Go back to select a different area
-    </button>
-  </form>
 
 </div>
 
@@ -191,6 +186,33 @@
           </thead>
     
           <tbody class="govuk-table__body">
+
+                    <!---CHECKED---> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell no-border-bottom">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+              <label class="govuk-label govuk-checkboxes__label"></label>
+            </div>
+          </td>
+          <td class="govuk-table__cell no-border-bottom">CHRW4: Manage hedgerows (5 Years)</td>
+          <td class="govuk-table__cell no-border-bottom">20.2520</td>
+          <td class="govuk-table__cell no-border-bottom">
+            <div class="govuk-form-group">
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="20.2520">
+                <div class="govuk-input__suffix" aria-hidden="true">m</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!--Row with prescription link -->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="4">
+            <p class="govuk-body"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">See prescriptions for this action</a></p>
+          </td>
+        </tr>
+      
             
         <!---No longer checked---> 
             <tr class="govuk-table__row">
@@ -346,25 +368,6 @@
 
 
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
-                </div>
-              </td>
-              <td class="govuk-table__cell">CAB16: Bumblebird mix</td>
-              <td class="govuk-table__cell">20.2224</td>
-              <td class="govuk-table__cell">
-                <div class="govuk-form-group">
-                  <div class="govuk-input__wrapper">
-                    <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                    <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-                  </div>
-                </div>
-              </td>
-            </tr>
-
           </tbody>
         </table>
 
@@ -380,10 +383,15 @@
 
   <form class="form" action="bis-select-land-actions-parcel-1" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-      Add selected actions to this parcel
+      Save
     </button>
   </form>
 
+  <form class="form" action="bis-select-map-actions-applied" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+       Continue
+    </button>
+  </form>
 
 
 
