@@ -381,3 +381,11 @@ body {
   align-items: center; /* Vertical centering within the div */
 }
 
+
+
+
+.govuk-input {
+  height: auto; /* Allow the height to adjust automatically */
+  overflow: hidden; /* Hide overflow content */
+}
+  
