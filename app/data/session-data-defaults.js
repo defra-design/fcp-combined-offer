@@ -31,7 +31,7 @@ module.exports = {
   "action-name-17": "CBE4: Manage traditional orchards",
   "action-name-18": "CBE5: Create traditional orchards",
   "action-name-19": "CBE7: Supplement: Restorative pruning of fruit trees",
-  "action-name-20": "CCT10: Manage and restore maritime cliffs and slopes ",
+  "action-name-20": "CHRW4: Manage hedgerows ",
 
 
   // Capital items
