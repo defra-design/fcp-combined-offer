@@ -1,0 +1,493 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+
+            <li>
+              <a href="#parcel-error">Resolve errors on land parcels</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </div>
+  </div>
+
+<!---LEFT HAND SIDE COLUMN --->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h1 class="govuk-heading-l">Select land for your actions</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">To add your selected actions to a land parcel, click on the land parcel link or the map area.</p>
+    <p class="govuk-body govuk-!-margin-bottom-0">You’ll see your list of actions. You then need to:
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>select the action and enter the amount that you want to add to the parcel</li>
+          <li>confirm your selection for that parcel</li>
+      </ul>
+    </p>
+    <p class="govuk-body">You can then move on to the next land parcel and repeat these steps.</p>
+
+
+<hr class="section-break-large"></hr>
+<table class="govuk-table">
+  <p class="govuk-body">OS map sheet reference S03</p>
+  <hr class="govuk-section-break govuk-section-break--visible">
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" style="width: 222px;">Number of available land parcels</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Total area in hectares</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">120.3451 ha</td>
+      </tr>
+      <tr class="govuk-table__row">
+       <td class="govuk-table__cell">Number of land parcels used for actions</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+      </tr>
+          <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Number of actions applied for</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell errorLabel" style="font-weight: 700;">Total number of land parcels with errors</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric errorLabel" style="font-weight: 700;">2</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <p class="govuk-body govuk-error-message red-border red-border-padding" style="margin-bottom: 0; padding-top: 10px; padding-bottom: 10px;" id="parcel-error">
+    Resolve errors on this land parcel
+  </p>
+
+  <p class="govuk-body parcel-row red-border red-border-padding" style="margin-bottom: 0; padding-top: 10px; padding-bottom: 0; ">
+    <a href="bis-select-land-actions-parcel-1-error" class="govuk-link parcel-number">SO3757 3158</a>
+    <span class="govuk-body parcel-size">Parcel size: 32.0404 ha</span><span class="govuk-body applied-label">Applied</span></p>
+
+    <p class="govuk-body red-border red-border-padding" style="padding-top: 0; padding-bottom: 10px;"><span class="govuk-caption-m">
+      Land use: 
+      <br>Permanent grassland: 1.5760 ha
+      <br>Arable crops: 1.1212 ha
+      <br>Temporary grassland: 0.1312 ha
+      <br>Non-agricultural: 0.2120 ha
+      <br>Layer intersections: Biodiversity, SSSI, LFA-MS
+    </span></p>
+  
+  
+  <p class="govuk-body govuk-error-message red-border red-border-padding" style="margin-bottom: 0; padding-top: 10px; padding-bottom: 10px;" id="parcel-error">
+    Resolve errors on this land parcel
+  </p>
+
+  <p class="govuk-body parcel-row red-border red-border-padding" style="padding-top: 10px; padding-bottom: 0; margin-bottom: 20px; ">
+    <a href="bis-select-land-actions-parcel-1-error" class="govuk-link parcel-number">SO3757 3159</a>
+    <span class="govuk-body parcel-size">Parcel size: 31.4241 ha</span><span class="govuk-body applied-label">Applied</span></p>
+
+
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3160</a>
+  <span class="govuk-body parcel-size">Parcel size: 1.4935 ha</span></p>
+
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3161</a>
+    <span class="govuk-body parcel-size">Parcel size: 10.3492 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3162</a>
+    <span class="govuk-body parcel-size">Parcel size: 42.4324 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3163</a>
+    <span class="govuk-body parcel-size">Parcel size: 9.9754 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3164</a>
+    <span class="govuk-body parcel-size">Parcel size: 32.1239 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3165</a>
+    <span class="govuk-body parcel-size">Parcel size: 38.2931 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3166</a>
+    <span class="govuk-body parcel-size">Parcel size: 28.3482 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3167</a>
+    <span class="govuk-body parcel-size">Parcel size: 39.2931 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3168</a>
+    <span class="govuk-body parcel-size">Parcel size: 53.2131 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3169</a>
+    <span class="govuk-body parcel-size">Parcel size: 12.4392 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3170</a>
+    <span class="govuk-body parcel-size">Parcel size: 29.3291 ha</span></p>
+
+  <p class="govuk-body parcel-row"><a href="#" class="govuk-link parcel-number">SO3757 3171</a>
+    <span class="govuk-body parcel-size">Parcel size: 13.2339 ha</span></p>
+
+  <p class="govuk-body parcel-row govuk-!-margin-bottom-2"><a href="#" class="govuk-link parcel-number">SO3757 3172</a>
+    <span class="govuk-body parcel-size">Parcel size: 11.4234 ha</span></p>
+    
+  <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+    <ul class="moj-pagination__list" style="display: flex; align-items: center;">
+      <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>15</b> of <b>20</b> parcels</p>
+      <li class="moj-pagination__item">
+        <a rel="next" style="font-weight: 700; color: #1d70b8;">Next<span class="govuk-visually-hidden">page</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg></a>
+      </li>
+    </ul>
+  </nav>
+
+
+
+</div>
+
+<!---RIGHT HAND SIDE COLUMN --->
+<div class="govuk-grid-column-one-half">
+  <p class="govuk-body"><a href="#" class="govuk-link">Hide map</a></p>
+  <map name="clickable">
+    <area shape="rect" coords="100,280,190,320" href="bis-select-land-actions-parcel-1">
+    <area shape="rect" coords="150,220,240,280" href="bis-select-land-actions-parcel-1">
+  </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/ht-phase-2/img/map_6_error.png" alt="Map of your land" style="width:465px;height:400px; margin-bottom: 10px;"></a>
+
+  <p class="govuk-body">Key:</p>
+  <div class="key-div govuk-!-margin-bottom-5">
+      <div class="key-parent" id="key1-1"></div><span class="govuk-body-s">Error</span>
+      <div class="key-parent" id="key2-1"></div><span class="govuk-body-s">Selected</span>
+      <div class="key-parent" id="key3-1"></div><span class="govuk-body-s">Applied</span>
+      <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">Not Applied</span>
+  </div>
+  
+
+  <h2 class="govuk-heading-m">Your available actions for selected land parcel</h2>
+
+  <!-- Inset text -->
+  <div class="govuk-inset-text">
+    <p class="govuk-body govuk-!-margin-bottom-1">Your adviser has:
+      <ul class="govuk-list govuk-list--bullet govuk-!-padding-bottom-0">
+          <li>rejected 2 actions</li>
+          <li>added prescriptions to 2 actions</li>
+      </ul>
+    </p>
+  </div>
+
+<!---Higher Tier -->
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header" style="width: 145px">Action</th>
+        <th scope="col" class="govuk-table__header" style="width: 60px">Available area</th>          
+        <th scope="col" class="govuk-table__header">Quantity</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+        <!---CHECKED---> 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell no-border-bottom">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+              <label class="govuk-label govuk-checkboxes__label"></label>
+            </div>
+          </td>
+          <td class="govuk-table__cell no-border-bottom">CHRW4: Manage hedgerows (5 Years)</td>
+          <td class="govuk-table__cell no-border-bottom">20.2520</td>
+          <td class="govuk-table__cell no-border-bottom">
+            <div class="govuk-form-group">
+              <div class="govuk-input__wrapper">
+                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="20.2520">
+                <div class="govuk-input__suffix" aria-hidden="true">m</div>
+              </div>
+            </div>
+          </td>
+        </tr>
+        <!--Row with prescription link -->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="4">
+            <p class="govuk-body"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">See prescriptions for this action</a></p>
+          </td>
+        </tr>
+      
+
+
+
+
+      <!---Table error cell---> 
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
+        <p id="adviser-error" class="govuk-error-message" style="margin-bottom: 5px;">
+        <span class="govuk-visually-hidden">Error:</span>Your adviser has rejected this action - see adviser feedback for more information</p>
+        </td>
+      </tr>
+    
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white";>
+          <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" type="checkbox" checked>
+          <label class="govuk-label govuk-checkboxes__label"></label></div>
+        </td>
+        <td class="govuk-table__cell" style="border-bottom-color: white";>CSP1: Supplement: Difficult sites</td>
+        <td class="govuk-table__cell" style="border-bottom-color: white";>32.0404</td>
+        <td class="govuk-table__cell" style="border-bottom-color: white";>
+          <div class="govuk-form-group">
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="20.0000">
+              <div class="govuk-input__suffix" aria-hidden="true">m</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!--Row with prescription link and details-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell red-border" colspan="4">
+          <details class="govuk-details govuk-!-margin-bottom-2" style="padding-left: 15px;">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Adviser feedback
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              You can’t do this action here because of your land type.
+            </div>
+          </details>
+        </td>
+      </tr>
+    
+      <!---Table error cell above ---> 
+
+      <!---Table error cell---> 
+
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
+        <p id="adviser-error" class="govuk-error-message" style="margin-bottom: 5px;">
+        <span class="govuk-visually-hidden">Error:</span>Your adviser has rejected this action - see adviser feedback for more information</p>
+        </td>
+      </tr>
+    
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white;">
+          <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" type="checkbox" checked>
+          <label class="govuk-label govuk-checkboxes__label"></label></div>
+        </td>
+        <td class="govuk-table__cell" style="border-bottom-color: white";>CGS18: Manage species-rich floodplain meadows</td>
+        <td class="govuk-table__cell" style="border-bottom-color: white";>19.5112</td>
+        <td class="govuk-table__cell" style="border-bottom-color: white";>
+          <div class="govuk-form-group">
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="15.0000">
+              <div class="govuk-input__suffix" aria-hidden="true">m</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+      <!--Row with prescription link and details-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell red-border" colspan="4">
+          <details class="govuk-details govuk-!-margin-bottom-2" style="padding-left: 15px;">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Adviser feedback
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              You can’t do this action here because of your land type.
+            </div>
+          </details>
+
+        </td>
+      </tr>
+    
+      <!---Table error cell above ---> 
+
+  <!---CHECKED---> 
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell no-border-bottom">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+            <label class="govuk-label govuk-checkboxes__label"></label>
+          </div>
+        </td>
+        <td class="govuk-table__cell no-border-bottom">CGS19: Manage wet grassland for wintering waders and wildfowl</td>
+        <td class="govuk-table__cell no-border-bottom">12.2309</td>
+        <td class="govuk-table__cell no-border-bottom">
+          <div class="govuk-form-group">
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="12.2309">
+              <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+
+<!--Row with warning, prescription link and details-->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">
+
+        <div class="govuk-warning-text" style="margin-bottom: 20px;">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              Action on parcel may be subject to Inheritance Tax Exemption
+            </strong>
+          </div>
+
+          <p class="govuk-body govuk-!-margin-bottom-4"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">See prescriptions for this action</a></p>
+          
+          <details class="govuk-details govuk-!-margin-bottom-2">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Adviser feedback
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+                  Action on parcel may be subject to Inheritance Tax Exemption
+            </div>
+          </details>
+
+        </td>
+      </tr>
+
+
+  <!---CHECKED---> 
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell no-border-bottom">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" checked>
+            <label class="govuk-label govuk-checkboxes__label"></label>
+          </div>
+        </td>
+        <td class="govuk-table__cell no-border-bottom">CGS20: Manage wet grassland for breeding waders</td>
+        <td class="govuk-table__cell no-border-bottom">12.2309</td>
+        <td class="govuk-table__cell no-border-bottom">
+          <div class="govuk-form-group">
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="17.2309">
+              <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      
+      <!--Row with prescription link -->
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell" colspan="4">
+          <p class="govuk-body"><a href="bis-select-land-actions-parcel-1-p10" class="govuk-link">See prescriptions for this action</a></p>
+        </td>
+      </tr>
+
+      
+      <!---Table error cell
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
+        <p id="adviser-error" class="govuk-error-message" style="margin-bottom: 5px;">
+          <span class="govuk-visually-hidden">Error:</span>You cannot do CAB16 on this land parcel</p>
+        </td>
+      </tr>
+    
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6";>
+          <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" type="checkbox" checked>
+          <label class="govuk-label govuk-checkboxes__label"></label></div>
+        </td>
+        <td class="govuk-table__cell" style="border-bottom-color: #b1b4b6";>CAB16: Bumblebird mix</td>
+        <td class="govuk-table__cell" style="border-bottom-color: #b1b4b6";>20.2224</td>
+        <td class="govuk-table__cell" style="border-bottom-color: #b1b4b6";>
+          <div class="govuk-form-group">
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false" value="20.2224">
+              <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+            </div>
+          </div>
+        </td>
+      </tr>
+      ---> 
+
+
+
+    </tbody>
+  </table>
+
+  <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+    <ul class="moj-pagination__list" style="display: flex; align-items: center;">
+      <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>5</b> of <b>5</b> actions</p>
+    </ul>
+  </nav>
+
+  
+
+
+  <form class="form" action="bis-select-land-actions-parcel-1-adv" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+     Save
+    </button>
+  </form>
+
+  <form class="form" action="adviser-feedback" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Continue
+    </button>
+  </form>
+
+
+  </div>
+
+  
+
+
+
+    
+
+
+{% endblock %}
