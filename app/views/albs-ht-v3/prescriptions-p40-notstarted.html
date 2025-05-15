@@ -336,161 +336,188 @@
 <div class="govuk-grid-column-one-third">
 <div class="govuk-panel govuk-panel--confirmation govuk-!-text-align-left" style="background-color:#fafafa; border-color:#000000; border-width:medium;">
 
-    <h1 class="govuk-heading-m">Select a prescription to view or edit</h1>
+  <h1 class="govuk-heading-m">Select a prescription to view or edit</h1>
     
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Mandatory prescription</th>
-          <th scope="col" class="govuk-table__header">Review status</th>
-        </tr>
-      </thead>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Mandatory editable prescriptions</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
 
-  <tbody class="govuk-table__body">
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p10" name="changedName" type="radio" value="month"  data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P10
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
+  </tr>
+    
+    <script>
+document.getElementById('p10').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p10'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
+</script>
+
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p40" name="changedName" type="radio"  checked value="month" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P40
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
+  </tr>
+
+<script>
+document.getElementById('p40').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p40-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
+</script>
+
+    </tbody>
+  </table>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Optional prescriptions</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
+
+<tbody class="govuk-table__body">
+ 
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p12" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P12
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not applied</td>
+  </tr>
+  
+  <script>
+document.getElementById('p12').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p12-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
+</script>
+
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p10" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P10
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
-      
-      <script>
-  document.getElementById('p10').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p10'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p14" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P14
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not applied</td>
+  </tr>
+
+<script>
+document.getElementById('p14').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p14-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
 </script>
 
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">
       <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p15" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P15
-          </label>
-        </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p42" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P42
+        </label>
       </div>
     </td>
-    <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not applied</td>
   </tr>
 
 <script>
-  document.getElementById('p15').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p15-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
+document.getElementById('p42').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p42-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
 </script>
 
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p40" name="changedName" type="radio" checked value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P40
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
+    </tbody>
+  </table>
 
-<script>
-  document.getElementById('p40').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p40-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
-
-      </tbody>
-    </table>
-
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        View the mandatory non-editable prescriptions
+      </span>
+    </summary>
+  </br>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Optional prescription</th>
-          <th scope="col" class="govuk-table__header">Review status</th>
+          <th scope="col" class="govuk-table__header">Mandatory non-editable prescriptions</th>
+          <th scope="col" class="govuk-table__header">Status</th>
         </tr>
       </thead>
 
   <tbody class="govuk-table__body">
-   
-
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p12" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P12
-          </label>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="p15" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+              P15
+            </label>
+          </div>
         </div>
       </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
+      <td class="govuk-table__cell" style="vertical-align: middle;">Applied</td>
     </tr>
-    
-    <script>
-  document.getElementById('p12').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p12-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
+  
+  <script>
+    document.getElementById('p15').addEventListener('click', function() {
+      if (this.checked) {
+        window.location.href = 'prescriptions-p15-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+      }
+    });
+  </script>
+  
 
-      <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p14" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P14
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
+    </tbody>
+  </table>
+</details>
 
-<script>
-  document.getElementById('p14').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p14-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
 
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p42" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P42
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
 
-<script>
-  document.getElementById('p42').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p42-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
 
-      </tbody>
-    </table>
-
+</div>
+  
 </div>
 </div>
 
