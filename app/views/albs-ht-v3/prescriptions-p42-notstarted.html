@@ -58,7 +58,7 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Status</th>
-        <td class="govuk-table__cell">Not started</td>
+        <td class="govuk-table__cell">Not applied</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Editable</th>
@@ -323,217 +323,196 @@
 <div class="govuk-grid-column-one-third">
 <div class="govuk-panel govuk-panel--confirmation govuk-!-text-align-left" style="background-color:#fafafa; border-color:#000000; border-width:medium;">
 
-    <h1 class="govuk-heading-m">Select a prescription to view or edit</h1>
+  <h1 class="govuk-heading-m">Select a prescription to view or edit</h1>
     
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Mandatory prescription</th>
-          <th scope="col" class="govuk-table__header">Review status</th>
-        </tr>
-      </thead>
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Mandatory editable prescriptions</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
 
-  <tbody class="govuk-table__body">
+<tbody class="govuk-table__body">
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p10" name="changedName" type="radio" value="month"  data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P10
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
+  </tr>
+    
+    <script>
+document.getElementById('p10').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p10'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
+</script>
+
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p40" name="changedName" type="radio"   value="month" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P40
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
+  </tr>
+
+<script>
+document.getElementById('p40').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p40-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
+</script>
+
+    </tbody>
+  </table>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Optional prescriptions</th>
+        <th scope="col" class="govuk-table__header">Status</th>
+      </tr>
+    </thead>
+
+<tbody class="govuk-table__body">
+ 
+
+  <tr class="govuk-table__row">
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p12" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P12
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not applied</td>
+  </tr>
+  
+  <script>
+document.getElementById('p12').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p12-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
+</script>
+
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p10" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P10
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
-      
-      <script>
-  document.getElementById('p10').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p10'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
+    <td class="govuk-table__cell">
+      <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p14" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P14
+        </label>
+      </div>
+    </td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not applied</td>
+  </tr>
+
+<script>
+document.getElementById('p14').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p14-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
 </script>
 
   <tr class="govuk-table__row">
     <td class="govuk-table__cell">
       <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p15" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P15
-          </label>
-        </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="p42" name="changedName" type="radio" value="month" checked data-aria-controls="conditional-contact">
+        <label class="govuk-label govuk-radios__label" for="changedName">
+          P42
+        </label>
       </div>
     </td>
-    <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Not applied</td>
   </tr>
 
 <script>
-  document.getElementById('p15').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p15-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
+document.getElementById('p42').addEventListener('click', function() {
+  if (this.checked) {
+    window.location.href = 'prescriptions-p42-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+  }
+});
 </script>
 
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p40" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P40
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
+    </tbody>
+  </table>
 
-<script>
-  document.getElementById('p40').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p40-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
-
-      </tbody>
-    </table>
-
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        View the mandatory non-editable prescriptions
+      </span>
+    </summary>
+  </br>
+  <p>These have been automatically applied. You cannot edit or remove them.</p>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Optional prescription</th>
-          <th scope="col" class="govuk-table__header">Review status</th>
+          <th scope="col" class="govuk-table__header">Mandatory non-editable prescriptions</th>
+          <th scope="col" class="govuk-table__header">Status</th>
         </tr>
       </thead>
 
   <tbody class="govuk-table__body">
-   
-
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">
         <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p12" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P12
-          </label>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="p15" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
+            <label class="govuk-label govuk-radios__label" for="changedName">
+              P15
+            </label>
+          </div>
         </div>
       </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
+      <td class="govuk-table__cell" style="vertical-align: middle;">Applied</td>
     </tr>
-    
-    <script>
-  document.getElementById('p12').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p12-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
+  
+  <script>
+    document.getElementById('p15').addEventListener('click', function() {
+      if (this.checked) {
+        window.location.href = 'prescriptions-p15-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+      }
+    });
+  </script>
+  
 
-      <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p14" name="changedName" type="radio" value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P14
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
+    </tbody>
+  </table>
+</details>
 
-<script>
-  document.getElementById('p14').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p14-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
 
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="p42" name="changedName" type="radio" checked value="month" data-aria-controls="conditional-contact">
-          <label class="govuk-label govuk-radios__label" for="changedName">
-            P42
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell" style="vertical-align: middle;">Not started</td>
-    </tr>
 
-<script>
-  document.getElementById('p42').addEventListener('click', function() {
-    if (this.checked) {
-      window.location.href = 'prescriptions-p42-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
-    }
-  });
-</script>
 
-      </tbody>
-    </table>
-
+</div>
+  
 </div>
 </div>
 
 </main>
 </div>
 
-   <!-- Feedback component -->
-<script>
-  document.querySelectorAll('.govuk-details__summary').forEach(function(summary) {
-    summary.addEventListener('click', function(event) {
-      event.preventDefault();
-      
-      // Find the parent row
-      const row = event.target.closest('tr');
-      
-      // Check if the expanded content already exists
-      if (row.nextElementSibling && row.nextElementSibling.classList.contains('expanded-content')) {
-        // Remove the expanded content if it already exists
-        row.nextElementSibling.remove();
-        row.classList.remove('hide-border'); // Remove the class to show the border again
-        summary.parentNode.removeAttribute('open'); // Close the details element
-        summary.parentNode.querySelector('.govuk-details__text').style.display = ''; // Show the original details text
-        
-        // Remove the border-bottom style from each td
-        row.querySelectorAll('td').forEach(function(td) {
-          td.style.borderBottom = '';
-        });
-      } else {
-        // Get the content from the details text
-        const detailsText = row.querySelector('.govuk-details__text').innerHTML;
-        // Create a new row for the expanded content
-        const expandedRow = document.createElement('tr');
-        expandedRow.classList.add('expanded-content');
-        
-        // Create a cell that spans all columns
-        const expandedCell = document.createElement('td');
-        expandedCell.colSpan = row.children.length;
-        expandedCell.innerHTML = `<div class="govuk-details__text">${detailsText}</div>`;
-        
-        // Append the cell to the new row
-        expandedRow.appendChild(expandedCell);
-        
-        // Insert the new row after the current row
-        row.parentNode.insertBefore(expandedRow, row.nextSibling);
-        row.classList.add('hide-border'); // Add the class to hide the border
-        summary.parentNode.setAttribute('open', ''); // Open the details element
-        summary.parentNode.querySelector('.govuk-details__text').style.display = 'none'; // Hide the original details text
-        
-        // Add the border-bottom style to each td
-        row.querySelectorAll('td').forEach(function(td) {
-          td.style.borderBottom = 'none';
-        });
-      }
-    });
-  });
-</script>
+  
 
 <!-- Select all and checkboxes triggers actions menu bar component -->
 <script>

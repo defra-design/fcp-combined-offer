@@ -357,13 +357,13 @@
         </label>
       </div>
     </td>
-    <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Applied</td>
   </tr>
     
     <script>
 document.getElementById('p10').addEventListener('click', function() {
   if (this.checked) {
-    window.location.href = 'prescriptions-p10'; // Replace 'new_screen_url' with the actual URL of the new page
+    window.location.href = 'prescriptions-p10-saved'; // Replace 'new_screen_url' with the actual URL of the new page
   }
 });
 </script>
@@ -385,7 +385,7 @@ document.getElementById('p10').addEventListener('click', function() {
 <script>
 document.getElementById('p40').addEventListener('click', function() {
   if (this.checked) {
-    window.location.href = 'prescriptions-p40-notstarted'; // Replace 'new_screen_url' with the actual URL of the new page
+    window.location.href = 'prescriptions-p40'; // Replace 'new_screen_url' with the actual URL of the new page
   }
 });
 </script>
@@ -477,6 +477,7 @@ document.getElementById('p42').addEventListener('click', function() {
       </span>
     </summary>
   </br>
+  <p>These have been automatically applied. You cannot edit or remove them.</p>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -524,6 +525,46 @@ document.getElementById('p42').addEventListener('click', function() {
 </main>
 </div>
 
+   
+
+<!-- Feedback component -->
+<script>
+  document.querySelectorAll('.govuk-details.custom-toggle .govuk-details__summary').forEach(function(summary) {
+summary.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const row = event.target.closest('tr');
+
+  if (row.nextElementSibling && row.nextElementSibling.classList.contains('expanded-content')) {
+    row.nextElementSibling.remove();
+    row.classList.remove('hide-border');
+    summary.parentNode.removeAttribute('open');
+    summary.parentNode.querySelector('.govuk-details__text').style.display = '';
+    row.querySelectorAll('td').forEach(function(td) {
+      td.style.borderBottom = '';
+    });
+  } else {
+    const detailsText = row.querySelector('.govuk-details__text').innerHTML;
+    const expandedRow = document.createElement('tr');
+    expandedRow.classList.add('expanded-content');
+
+    const expandedCell = document.createElement('td');
+    expandedCell.colSpan = row.children.length;
+    expandedCell.innerHTML = `<div class="govuk-details__text">${detailsText}</div>`;
+
+    expandedRow.appendChild(expandedCell);
+    row.parentNode.insertBefore(expandedRow, row.nextSibling);
+    row.classList.add('hide-border');
+    summary.parentNode.setAttribute('open', '');
+    summary.parentNode.querySelector('.govuk-details__text').style.display = 'none';
+    row.querySelectorAll('td').forEach(function(td) {
+      td.style.borderBottom = 'none';
+    });
+  }
+});
+});
+
+</script>
 
 <!-- Select all and checkboxes triggers actions menu bar component -->
 <script>

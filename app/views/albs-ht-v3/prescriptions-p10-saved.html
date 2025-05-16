@@ -71,7 +71,7 @@
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Status</th>
-        <td class="govuk-table__cell">Complete</td>
+        <td class="govuk-table__cell">Applied</td>
       </tr>
       <tr class="govuk-table__row">
         <th scope="row" class="govuk-table__header">Editable</th>
@@ -124,20 +124,11 @@
   
 <div class="govuk-tabs__panel" style="border: none; margin-left: -20px; margin-right: -20px" id="prescription-applied">
   
-        <div class="moj-primary-navigation" style="background-color: grey; width: fit-content;">
-            <div class="moj-primary-navigation__container">
-                <div class="moj-primary-navigation__nav">
-                    <nav class="moj-primary-navigation" aria-label="Primary navigation">
-                        <ul class="moj-primary-navigation__list">
-                            <li class="moj-primary-navigation__item">
-                                <a class="moj-primary-navigation__link hidden" id="remove-prescription" aria-current="page" href="prescriptions-p10-remove" style="margin-left: 20px; margin-right:20px">Remove prescription</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
-        </div>
-        <br>
+  <form class="form" action="prescriptions-p10-remove" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Remove prescription
+</button>
+</form>
         
 
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -184,7 +175,7 @@
       <td class="govuk-table__cell" data-sort-value="001" >SE7023 5004</td>
       <td class="govuk-table__cell" data-sort-value="001">2.54 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -206,7 +197,7 @@
       <td class="govuk-table__cell" data-sort-value="002">SE7023 5005</td>
       <td class="govuk-table__cell" data-sort-value="002">234.34 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
 
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
@@ -230,7 +221,7 @@
       <td class="govuk-table__cell" data-sort-value="003" >SE7023 5006</td>
       <td class="govuk-table__cell" data-sort-value="003">26.43 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -251,7 +242,7 @@
       <td class="govuk-table__cell" data-sort-value="004" >SE7023 5007</td>
       <td class="govuk-table__cell" data-sort-value="004">5.32 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -272,7 +263,7 @@
       <td class="govuk-table__cell" data-sort-value="005" >SE7023 5008</td>
       <td class="govuk-table__cell" data-sort-value="005">0.73 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -293,7 +284,7 @@
       <td class="govuk-table__cell" data-sort-value="006" >SE7023 5009</td>
       <td class="govuk-table__cell" data-sort-value="006">3.45 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -314,7 +305,7 @@
       <td class="govuk-table__cell" data-sort-value="006" >SE7023 5010</td>
       <td class="govuk-table__cell" data-sort-value="006">6.21 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -335,7 +326,7 @@
       <td class="govuk-table__cell" data-sort-value="006" >SE7023 5011</td>
       <td class="govuk-table__cell" data-sort-value="006">12.43 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -356,7 +347,7 @@
       <td class="govuk-table__cell" data-sort-value="006" >SE7023 5012</td>
       <td class="govuk-table__cell" data-sort-value="006">45.20 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -377,7 +368,7 @@
       <td class="govuk-table__cell" data-sort-value="006" >SE7023 5013</td>
       <td class="govuk-table__cell" data-sort-value="006">9.12 hectares</td>
       <td class="govuk-table__cell">
-        <details class="govuk-details">
+        <details class="govuk-details custom-toggle">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">View</span>
           </summary>
@@ -492,7 +483,7 @@
         </label>
       </div>
     </td>
-    <td class="govuk-table__cell" style="vertical-align: middle;">Complete</td>
+    <td class="govuk-table__cell" style="vertical-align: middle;">Applied</td>
   </tr>
     
     <script>
@@ -612,6 +603,7 @@ document.getElementById('p42').addEventListener('click', function() {
       </span>
     </summary>
   </br>
+  <p>These have been automatically applied. You cannot edit or remove them.</p>
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -660,6 +652,45 @@ document.getElementById('p42').addEventListener('click', function() {
 </div>
 
    
+
+<!-- Feedback component -->
+<script>
+  document.querySelectorAll('.govuk-details.custom-toggle .govuk-details__summary').forEach(function(summary) {
+summary.addEventListener('click', function(event) {
+  event.preventDefault();
+
+  const row = event.target.closest('tr');
+
+  if (row.nextElementSibling && row.nextElementSibling.classList.contains('expanded-content')) {
+    row.nextElementSibling.remove();
+    row.classList.remove('hide-border');
+    summary.parentNode.removeAttribute('open');
+    summary.parentNode.querySelector('.govuk-details__text').style.display = '';
+    row.querySelectorAll('td').forEach(function(td) {
+      td.style.borderBottom = '';
+    });
+  } else {
+    const detailsText = row.querySelector('.govuk-details__text').innerHTML;
+    const expandedRow = document.createElement('tr');
+    expandedRow.classList.add('expanded-content');
+
+    const expandedCell = document.createElement('td');
+    expandedCell.colSpan = row.children.length;
+    expandedCell.innerHTML = `<div class="govuk-details__text">${detailsText}</div>`;
+
+    expandedRow.appendChild(expandedCell);
+    row.parentNode.insertBefore(expandedRow, row.nextSibling);
+    row.classList.add('hide-border');
+    summary.parentNode.setAttribute('open', '');
+    summary.parentNode.querySelector('.govuk-details__text').style.display = 'none';
+    row.querySelectorAll('td').forEach(function(td) {
+      td.style.borderBottom = 'none';
+    });
+  }
+});
+});
+
+</script>
 
 <!-- Select all and checkboxes triggers actions menu bar component -->
 <script>
@@ -719,5 +750,6 @@ document.getElementById('p42').addEventListener('click', function() {
         });
             */
     </script>
-
 {% endblock %}
+
+
