@@ -15,12 +15,30 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
+    text: "Back to Business overview",
+    href: "business-overview"
   }) }}
 {% endblock %}
 
 {% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
+  <div class="govuk-grid-row" id="header">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+        <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+          Single Business Identifier (SBI): 123456789
+        </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <form class="form" action="saved-application" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -42,9 +60,9 @@
         </div>
 
 
-    <h1 class="govuk-heading-l">Select the agreement you want to claim for</h1>
-
-    <p class="govuk-body govuk-!-margin-bottom-6">Select an agreement, and then 'Create a new claim’.  You can only create claims for live agreements.</p>
+    <h1 class="govuk-heading-l">Capital Claim 2025</h1>
+    <h2 class="govuk-heading-m">Select the agreement you want to claim for</h2>
+    <p class="govuk-body govuk-!-margin-bottom-6">After you select an agreement, select 'Create a new claim'. You can only create claims for live agreements.</p>
   </div>
 
   <div class="govuk-grid-column-full">

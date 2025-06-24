@@ -14,6 +14,31 @@
   },
   html: 'This is a prototype used for testing purposes only.'
 }) }}
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
+  <div class="govuk-grid-row" id="header">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+        <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+          Single Business Identifier (SBI): 123456789
+        </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <form class="form" action="saved-application" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 <main class="govuk-main-wrapper">
   <div class="govuk-grid-row">
@@ -57,12 +82,31 @@
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Agreement number
+          Claim reference
         </dt>
         <dd class="govuk-summary-list__value">
-          1237477
+          1738201
         </dd>
       </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Agreement name and number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Holker Woodland Test, 1237477
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Submit date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          09/02/2025 5:35:06 PM
+        </dd>
+      </div>
+
     </dl>
 
     <h2 class="govuk-heading-l govuk-!-margin-bottom-4" id="capital-items">
