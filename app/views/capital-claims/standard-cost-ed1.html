@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">ED1: Educational access</h1>
+
+    <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      If any of the numbers are incorrect, contact the <a href="https://www.gov.uk/government/organisations/rural-payments-agency" target="_blank" class="govuk-link">Rural Payments Agency (RPA)</a> before you go any further.
+    </p>
+
+</div>
+
+
+<div class="govuk-grid-column-full">
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header" style="width: 120px;">Parcel number</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Payment rate</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Amount</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Amount remaining</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Grant remaining</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Deadline to submit a claim</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Amount to claim for</th>
+        <th scope="col" class="govuk-table__header" style="width: 60px;">Select if final claim</th>
+
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Agreement level</td>
+          <td class="govuk-table__cell">£363.00 per visit</td>
+          <td class="govuk-table__cell">3 visits</td>
+          <td class="govuk-table__cell">3 visits</td>
+          <td class="govuk-table__cell">£1,089.00</td>
+          <td class="govuk-table__cell">31/12/2025</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-3" id="weight" name="weight" type="text" spellcheck="false">
+              <div class="govuk-input__suffix" aria-hidden="true">visits</div>
+            </div>
+          </td>
+          <td class="govuk-table__cell">
+            <div class="govuk-checkboxes govuk-checkboxes--small center-checkbox" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label"></label>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        
+
+        <!---Total -->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell" colspan="2" style="text-align: right;"><strong>Total claimed amount</strong></td>
+          <td class="govuk-table__cell">
+            £0.00
+          </td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+
+      </tbody>
+    </table>
+
+
+
+
+
+    <form class="form" action="standard-cost-items-saved" method="post">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
