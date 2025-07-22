@@ -12,7 +12,7 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only.'
+  html: 'This is a prototype used for testing purposes only. <a href="/ht-capitals-errors/start" class=\"govuk-link\">Back to start page</a>'
 }) }}
   {{ govukBackLink({
     text: "Back",
@@ -40,7 +40,7 @@
 
 {% block content %}
 
-<!--------SELECT LAND YOU WANT TO DO ACTIONS ON ACTIVE --------->
+<!--------CAPITALS ACTIVE--------->
 
 <h1 class="govuk-heading-l">Apply for funding</h1>
 
@@ -52,7 +52,7 @@
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
-<p class="govuk-body">You have completed 3 of 4 sections</p>
+<p class="govuk-body">You have completed 2 of 4 sections</p>
 
       <h2 class="govuk-heading-m">1. Check before you start</h2>
 
@@ -120,7 +120,7 @@
           title: {
             text: "Select the land you want to do the actions on"
           },
-          href: "select-map-actions",
+          href: "select-map-actions-applied",
           status: completedStatus
         },
         {
@@ -129,7 +129,28 @@
           },
           href: "agreement-level-actions",
           status: completedStatus
-  }
+  },
+        {
+          title: {
+            text: "Select the land you want to do the capital items on"
+          },
+      href: "select-map-capitals",
+      status: incompleteStatus
+  },
+             {
+          title: {
+            text: "Apply for your agreement level capital items"
+          },
+          href: "agreement-level-capitals",
+          status: incompleteStatus
+  },
+            {
+              title: {
+                text: "Select additional parcels for your rotational actions"
+              },
+              href: "select-rotational-map",
+              status: incompleteStatus
+          }
         ]
       }) }}
 
@@ -140,15 +161,17 @@
         idPrefix: "second-section",
         items: [
                  {
-          title: {
-            text: "Check your answers"
-          },
-          href: "check-your-answers",
-          status: incompleteStatus
-        },
+            title: {
+              text: "Check your answers"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
+    },
                  {
             title: {
-              text: "Request approval"
+              text: "Request a review of your actions or items"
             },
         status: {
         text: "Cannot start yet",
