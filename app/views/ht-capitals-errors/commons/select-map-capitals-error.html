@@ -41,6 +41,25 @@
 {% block content %}
 
 <div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#parcel-error">Resolve errors on OS map sheet reference SO3</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
 <div class="govuk-grid-column-one-half">
   <h1 class="govuk-heading-l">Select land for your capital items</h1>
   <p class="govuk-body govuk-!-margin-bottom-6">Your available land is grouped by Ordnance Survey (OS) map sheet references.</p>
@@ -49,10 +68,11 @@
   <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Total area in hectares: 200.6611</h2>
   <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Number of land parcels used for capital items: 1</h2>
   <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Number of capital items applied for: 1</h2>
-
+  <h2 class="govuk-heading-m errorLabel govuk-!-margin-bottom-6">Total number of land parcels with errors: 1</h2>
+      
 <hr class="section-break-large"></hr>
   <table class="govuk-table">
-  <p class="govuk-body govuk-!-font-weight-bold"><a href="select-land-capitals" class="govuk-link">OS map sheet reference SO3</a></p>
+  <p class="govuk-body govuk-!-font-weight-bold"><a href="select-land-capitals-error" class="govuk-link" id="parcel-error">OS map sheet reference SO3</a></p>
   <hr class="govuk-section-break govuk-section-break--visible">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
@@ -71,11 +91,17 @@
         <td class="govuk-table__cell">Number of capital items applied for</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
         </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell errorLabel" style="font-weight: 700;">Total number of land parcels with errors</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric errorLabel" style="font-weight: 700;">1</td>
+        </tr>
       </tbody>
     </table>
+
 <hr class="section-break-large"></hr>
-      <table class="govuk-table">
-<p class="govuk-body govuk-!-font-weight-bold"><a href="select-land-capitals" class="govuk-link">OS map sheet reference SX2</a></p>
+
+<table class="govuk-table">
+<p class="govuk-body govuk-!-font-weight-bold"><a href="select-land-capitals-error" class="govuk-link">OS map sheet reference SX2</a></p>
 <hr class="govuk-section-break govuk-section-break--visible">
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
@@ -88,18 +114,18 @@
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Number of land parcels used for capital items</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
     </tr>
         <tr class="govuk-table__row">
      <td class="govuk-table__cell">Number of capital items applied for</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
     </tr>
   </tbody>
 </table>
 
 <form class="form" action="tasklist-2" method="post">
     <button type="submit" class="govuk-button" data-module="govuk-button">
-      Save and continue
+      Back to task list
     </button>
 </form>
 
@@ -111,8 +137,8 @@
 <div class="govuk-grid-column-one-half govuk-!-margin-bottom-5">
     <p class="govuk-body"><a href="#" class="govuk-link">Hide map</a></p>
   <map name="clickable">
-        <area shape="rect" coords="70,300,160,350" href="select-land-capitals">
-        <area shape="rect" coords="180,110,270,160" href="select-land-capitals">
+        <area shape="rect" coords="70,300,160,350" href="select-land-capitals-error">
+        <area shape="rect" coords="180,110,270,160" href="select-land-capitals-error">
           </map>
 <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/ht-phase-2/img/map_1.png" alt="Map of your land" style="width:465px;height:400px;"></a>
     </div>
