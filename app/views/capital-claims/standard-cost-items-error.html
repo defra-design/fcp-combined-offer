@@ -72,15 +72,15 @@
 
 
 <div class="govuk-grid-column-full">
-  <table class="govuk-table">
+ <table class="govuk-table" data-module="moj-sortable-table">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
 
-        <th scope="col" class="govuk-table__header" style="width: 320px;">Item</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Item amount</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount remaining</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount claimed for</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Create a claim</th>
+        <th scope="col" class="govuk-table__header" style="width: 320px;" aria-sort="ascending">Item</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Item amount</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount remaining</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount claimed for</th>
+        <th scope="col" class="govuk-table__header" style="width: 150px;" aria-sort="none">Make a claim</th>
 
       </tr>
     </thead>
@@ -88,83 +88,93 @@
     <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">BN12 - Stone wall restoration</td>
+          <td class="govuk-table__cell" data-sort-value="1">BN12 - Stone wall restoration</td>
           <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">160 metres</td>
           <td class="govuk-table__cell">65 metres</td>
-          <td class="govuk-table__cell"><a href="standard-cost-bn12" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="standard-cost-bn12" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">BN13: Stone wall - top wiring</td>
-          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell" data-sort-value="2">BN13: Stone wall - top wiring</td>
           <td class="govuk-table__cell">225 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell">225 metres</td>
+          <td class="govuk-table__cell">Claim complete</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG2: Sheep netting</td>
+          <td class="govuk-table__cell" data-sort-value="3">FG2: Sheep netting</td>
           <td class="govuk-table__cell">9,683 metres</td>
           <td class="govuk-table__cell">6,588 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG5: Fencing supplement - difficult sites</td>
-          <td class="govuk-table__cell">229 metres</td>
+          <td class="govuk-table__cell" data-sort-value="4">FG5: Fencing supplement - difficult sites</td>
           <td class="govuk-table__cell">229 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell">229 metres</td>
+          <td class="govuk-table__cell">Claim complete</td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG9: Deer fencing</td>
+          <td class="govuk-table__cell" data-sort-value="5">FG9: Deer fencing</td>
           <td class="govuk-table__cell">3,000 metres</td>
           <td class="govuk-table__cell">3,000 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG11: Deer exclosure plot/unit</td>
+          <td class="govuk-table__cell" data-sort-value="6">FG11: Deer exclosure plot/unit</td>
           <td class="govuk-table__cell">6 units</td>
           <td class="govuk-table__cell">6 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG12: Wooden field gate</td>
+          <td class="govuk-table__cell" data-sort-value="7">FG12: Wooden field gate</td>
           <td class="govuk-table__cell">8 units</td>
           <td class="govuk-table__cell">7 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG15: Water gates</td>
+          <td class="govuk-table__cell" data-sort-value="8">FG15: Water gates</td>
           <td class="govuk-table__cell">3 units</td>
           <td class="govuk-table__cell">2 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">FG16: Deer pedestrian gate</td>
+          <td class="govuk-table__cell" data-sort-value="9">FG16: Deer pedestrian gate</td>
           <td class="govuk-table__cell">5 units</td>
           <td class="govuk-table__cell">5 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-sort-value="10">ED1: Educational access</td>
+          <td class="govuk-table__cell">3 visits</td>
+          <td class="govuk-table__cell">0 visits</td>
+          <td class="govuk-table__cell">3 visits</td>
+          <td class="govuk-table__cell">Claim complete</td>
+        </tr>
+
+
+<!--- 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">FG17: Deer vehicle gate</td>
           <td class="govuk-table__cell">3 units</td>
           <td class="govuk-table__cell">3 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -172,7 +182,7 @@
           <td class="govuk-table__cell">9 units</td>
           <td class="govuk-table__cell">9 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -180,7 +190,7 @@
           <td class="govuk-table__cell">4 units</td>
           <td class="govuk-table__cell">4 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -188,15 +198,15 @@
           <td class="govuk-table__cell">3 units</td>
           <td class="govuk-table__cell">3 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">RP16: Rainwater goods</td>
           <td class="govuk-table__cell">140 metres</td>
-          <td class="govuk-table__cell">120 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell">120 metres</td>
+          <td class="govuk-table__cell">Claim complete</td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -204,7 +214,7 @@
           <td class="govuk-table__cell">200 square metre</td>
           <td class="govuk-table__cell">200 square metre</td>
           <td class="govuk-table__cell">0 square metre</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -212,7 +222,7 @@
           <td class="govuk-table__cell">2 units</td>
           <td class="govuk-table__cell">2 units</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -220,7 +230,7 @@
           <td class="govuk-table__cell">1 unit</td>
           <td class="govuk-table__cell">1 unit</td>
           <td class="govuk-table__cell">0 units</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -228,7 +238,7 @@
           <td class="govuk-table__cell">2.4 HA</td>
           <td class="govuk-table__cell">2.4 HA</td>
           <td class="govuk-table__cell">0 HA</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -236,16 +246,11 @@
           <td class="govuk-table__cell">2 trees</td>
           <td class="govuk-table__cell">2 trees</td>
           <td class="govuk-table__cell">0 trees</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">TE4: Supply and plant a tree</td>
-          <td class="govuk-table__cell">10 trees</td>
-          <td class="govuk-table__cell">10 trees</td>
-          <td class="govuk-table__cell">0 trees</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
-        </tr>
+        -->
+
       </tbody>
     </table>
 
