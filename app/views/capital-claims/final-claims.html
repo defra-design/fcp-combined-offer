@@ -1,0 +1,195 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Final claims</h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        You have selected 'final claim' for the following items but still have some leftover grant. If this is correct, select save and continue.
+      </p>
+  
+      <p class="govuk-body govuk-!-margin-bottom-6">
+        To change this, go back and update the details of your claim.
+      </p>
+
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+            Please make sure this is correct as you cannot make a further claim on these items. 
+        </strong>
+      </div>
+
+
+      <!--- TABLE Standard Cost-->
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Standard cost items</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 270px;">Capital item</th>
+            <th scope="col" class="govuk-table__header">Parcel number</th>
+            <th scope="col" class="govuk-table__header">Amount remaining</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">BN12: Stone wall restoration</td>
+            <td class="govuk-table__cell">SD3578 7755</td>
+            <td class="govuk-table__cell">20 metres</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">BN12: Stone wall restoration</td>
+            <td class="govuk-table__cell">SD3578 7759</td>
+            <td class="govuk-table__cell">20 metres</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">BN12: Stone wall restoration</td>
+            <td class="govuk-table__cell">SD3578 7760</td>
+            <td class="govuk-table__cell">20 metres</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">BN13: Stone wall - top wiring</td>
+            <td class="govuk-table__cell">SD3578 7755</td>
+            <td class="govuk-table__cell">20 metres</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FG2: Sheep netting</td>
+            <td class="govuk-table__cell">SD3578 7759</td>
+            <td class="govuk-table__cell">500 metres</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FG5: Fencing supplement - difficult sites</td>
+            <td class="govuk-table__cell">SD3578 7758</td>
+            <td class="govuk-table__cell">350 metres</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FG9: Deer fencing</td>
+            <td class="govuk-table__cell">SD3579 7052</td>
+            <td class="govuk-table__cell">150 metres</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FG16: Deer pedestrian gate</td>
+            <td class="govuk-table__cell">SD3579 7052</td>
+            <td class="govuk-table__cell">3 units</td>
+          </tr>                
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FG17: Deer high seat / unit</td>
+            <td class="govuk-table__cell">SD3579 7052</td>
+            <td class="govuk-table__cell">4 units</td>
+          </tr> 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FY1: Deer high seat / unit</td>
+            <td class="govuk-table__cell">SD3579 7052</td>
+            <td class="govuk-table__cell">2 units</td>
+          </tr> 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">RP3: Watercourse crossings</td>
+            <td class="govuk-table__cell">SD3578 7800</td>
+            <td class="govuk-table__cell">2 units</td>
+          </tr> 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">RP12: Check dams</td>
+            <td class="govuk-table__cell">SD3578 7800</td>
+            <td class="govuk-table__cell">2 units</td>
+          </tr> 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">RP16: Rainwater goods</td>
+            <td class="govuk-table__cell">SD3578 7800</td>
+            <td class="govuk-table__cell">100 metres</td>
+          </tr> 
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">SB6: Rhododendron control</td>
+            <td class="govuk-table__cell">SD3578 7880</td>
+            <td class="govuk-table__cell">2 hectares</td>
+          </tr> 
+        </tbody>
+      </table>
+
+      <!--- TABLE -->
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Actual cost items</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 270px;">Capital item</th>
+            <th scope="col" class="govuk-table__header">Parcel number</th>
+            <th scope="col" class="govuk-table__header">Amount remaining</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">LV2: Livestock handling facilities</td>
+            <td class="govuk-table__cell">SD3578 7800</td>
+            <td class="govuk-table__cell">£100.45</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FM1: Management of geodiversity features</td>
+            <td class="govuk-table__cell">SD3578 7900</td>
+            <td class="govuk-table__cell">£200.98</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">FM2: Major preparatory works for priority habitats (creation and restoration) and priority species</td>
+            <td class="govuk-table__cell">SD3578 7900</td>
+            <td class="govuk-table__cell">£350.70</td>
+          </tr>
+
+        </tbody>
+      </table>
+
+    <form class="form" action="tasklist-7" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+        Save and continue
+    </button>
+  </form>
+
+
+
+    </div>
+  </div>
+
+  <div class="govuk-!-padding-bottom-9"></div>
+
+{% endblock %}

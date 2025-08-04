@@ -477,14 +477,14 @@ router.post('/capitals-funding', function (req, res) {
   
   } else {
     // Send user to tasklist
-    res.redirect('/capital-claims/tasklist-5')
+    res.redirect('/capital-claims/tasklist-6')
   }
 
   })
 
 
 // CAPITAL CLAIMS - Late claims ERROR
-router.post('/capitals-late-claims', function (req, res) {
+router.post('/capitals-final-claims', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
   var lateClaims = req.session.data['comments']
@@ -493,12 +493,12 @@ router.post('/capitals-late-claims', function (req, res) {
   // Check whether the variable matches a condition
   if (!lateClaims) {
     // User has not selected anything
-      res.redirect('/capital-claims/late-claims-error');
+      res.redirect('/capital-claims/final-claims-error');
     }
 
   if (lateClaims === "yes" && !claimsConditional) {
     // Send user to next page
-    res.redirect('/capital-claims/late-claims-text-error');
+    res.redirect('/capital-claims/final-claims-text-error');
 
   } else {
     // Send user to ineligible page
@@ -517,7 +517,7 @@ router.post('/capitals-declarations', function (req, res) {
   // Check whether the variable matches a condition
   if (declarations == "yes"){
     // Send user to next page
-    res.redirect('/capital-claims/tasklist-8')
+    res.redirect('/capital-claims/tasklist-9')
 
   } else if (declarations == "no"){
     res.redirect('/capital-claims/declarations-no')

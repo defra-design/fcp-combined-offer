@@ -85,29 +85,40 @@
           },
           href: "proof-cost",
           status: completedStatus
+        },
+        {
+          title: {
+            text: "VAT declaration"
+          },
+          href: "vat-declaration",
+          status: incompleteStatus
         }
         ]
       }) }}
 
       <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Confirm additional details for your claim </h2>
 
-    {{ govukTaskList({
-      idPrefix: "second-section",
-      items: [
-        {
-          title: {
-            text: "Declare any public funding"
-          },
-          href: "public-funding",
-          status: incompleteStatus
-        },
-        {
-          title: {
-            text: "Declare any late claims"
-          },
-          href: "late-claims",
-          status: incompleteStatus
-        }
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+    {
+            title: {
+              text: "Declare any public funding"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
+    },
+                 {
+            title: {
+              text: "Declare any final claims"
+            },
+        status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }
+          }
         ]
       }) }}
 

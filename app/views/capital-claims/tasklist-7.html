@@ -85,6 +85,13 @@
       },
       href: "proof-cost",
       status: completedStatus
+    },
+    {
+      title: {
+        text: "VAT declaration"
+      },
+      href: "vat-declaration",
+      status: completedStatus
     }
     ]
   }) }}
@@ -103,9 +110,9 @@
     },
     {
       title: {
-        text: "Declare any late claims"
+        text: "Declare any final claims"
       },
-      href: "late-claims",
+      href: "final-claims",
       status: completedStatus
     }
     ]
@@ -121,26 +128,28 @@
               text: "Check your answers"
             },
             href: "check-your-answers",
-            status: completedStatus
+            status: incompleteStatus
           },
           {
             title: {
               text: "Read declaration"
             },
-            href: "declarations",
-            status: incompleteStatus
+            status: {
+            text: "Cannot start yet",
+            classes: "govuk-task-list__status--cannot-start-yet"
+            }          
           },
           {
             title: {
               text: "Submit your claim"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }
+            status: {
+            text: "Cannot start yet",
+            classes: "govuk-task-list__status--cannot-start-yet"
+            }          
           }
-        ]
-      }) }}
+          ]
+        }) }}
 
       <div class="govuk-!-padding-bottom-9"></div>
       

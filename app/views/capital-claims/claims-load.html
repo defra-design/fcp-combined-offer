@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "javascript:window.history.back()"
+  }) }}
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
+  <div class="govuk-grid-row" id="header">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+        <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+          Single Business Identifier (SBI): 123456789
+        </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <form class="form" action="saved-application" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+{% endblock %}
+
+{% block content %}
+
+<!---left aligned
+<div class="govuk-grid-row">
+  <div class="loading" style="margin-left:112px; margin-right: auto" aria-live="polite" role="status"</div>
+</div>
+
+<div class="govuk-!-padding-bottom-7"></div>
+
+
+<h1 class="govuk-heading-m" style="margin-left: 30px;">We are validating your application</h1>
+  <p style="margin-left: 30px;"">The page will reload automatically. You can close the browser and come back later. </p>
+
+
+
+</div>
+-->
+
+<div class="govuk-grid-row">
+  <div class="loading" id=loadingSpinner style="margin-left:auto; margin-right: auto" aria-live="polite" role="status"></div>
+</div>
+<div class="govuk-!-padding-bottom-7"></div>
+
+<div class="govuk-grid-row">
+<h1 class="govuk-heading-m" style="text-align: center">Loading your claim</h1>
+<p style="text-align: center;">The creation of a new CS Capital Claim 2025 application has been requested. This may take several minutes. It’s safe to close this window and come back later.</p>
+<div class="govuk-!-padding-bottom-9"></div>
+<div class="govuk-!-padding-bottom-9"></div>
+</div>
+
+
+<script>
+  // Function to hide the loading spinner and redirect to another page
+  function hideLoadingSpinnerAndRedirect() {
+    const spinner = document.getElementById('loadingSpinner');
+    spinner.style.display = 'none';
+    // Redirect to another page
+    window.location.href = "start-claim"; // Replace with your desired URL
+  }
+
+  // Set the timer to hide the spinner and redirect after 5 seconds (5000 milliseconds)
+  setTimeout(hideLoadingSpinnerAndRedirect, 5000);
+</script>
+
+{% endblock %}
+

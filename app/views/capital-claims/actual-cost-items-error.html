@@ -72,15 +72,15 @@
 
 
 <div class="govuk-grid-column-full">
-  <table class="govuk-table">
+  <table class="govuk-table" data-module="moj-sortable-table">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
 
-        <th scope="col" class="govuk-table__header" style="width: 320px;">Item</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount approved</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount remaining</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Amount claimed for</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Create a claim</th>
+        <th scope="col" class="govuk-table__header" style="width: 320px;" aria-sort="ascending">Item</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount approved</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount remaining</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount claimed for</th>
+        <th scope="col" class="govuk-table__header" style="width: 150px;" aria-sort="none">Make a claim</th>
 
       </tr>
     </thead>
@@ -90,9 +90,9 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">LV2: Livestock handling facilities</td>
           <td class="govuk-table__cell">£7,926.00</td>
-          <td class="govuk-table__cell">£6,426.00</td>
+          <td class="govuk-table__cell">£6,926.00</td>
           <td class="govuk-table__cell">£1,000.00</td>
-          <td class="govuk-table__cell"><a href="actual-cost-lv2-saved" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="actual-cost-lv2" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -100,7 +100,7 @@
           <td class="govuk-table__cell">£2,000.00</td>
           <td class="govuk-table__cell">£2,000.00</td>
           <td class="govuk-table__cell">£0.00</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -108,7 +108,7 @@
           <td class="govuk-table__cell">£5,508.00</td>
           <td class="govuk-table__cell">£3,458.00</td>
           <td class="govuk-table__cell">£0.00</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -116,7 +116,7 @@
           <td class="govuk-table__cell">£1,567.00</td>
           <td class="govuk-table__cell">£1,567.00</td>
           <td class="govuk-table__cell">£0.00</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -124,15 +124,15 @@
           <td class="govuk-table__cell">£3,564.00</td>
           <td class="govuk-table__cell">£2,782.00</td>
           <td class="govuk-table__cell">£0.00</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">SB2: Scrub control difficult sites</td>
-          <td class="govuk-table__cell">£6,214.00</td>
+          <td class="govuk-table__cell">£6,21.00</td>
           <td class="govuk-table__cell">£6,214.00</td>
           <td class="govuk-table__cell">£0.00</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -140,10 +140,8 @@
           <td class="govuk-table__cell">£8,560.00</td>
           <td class="govuk-table__cell">£8,560.00</td>
           <td class="govuk-table__cell">£0.00</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Create a claim</a></td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
-
-      
       </tbody>
     </table>
 
@@ -157,16 +155,16 @@
     <form class="form" action="/capitals-actual-cost-complete" method="post">
     <div class="govuk-form-group govuk-form-group--error">
       <label class="govuk-label govuk-label--m">
-        Have you completed this section?
+        Have you finished creating your actual cost item claims?
       </label>
       <p id="radio-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Select if you've completed this section
+        <span class="govuk-visually-hidden">Error:</span> Select if you’ve finished creating your actual cost item claims
       </p>
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="actualCostComplete" name="actualCostComplete" type="radio" value="yes">
           <label class="govuk-label govuk-radios__label" for="actualCostComplete">
-            Yes, I’ve completed this section
+            Yes, I've added my claims
           </label>
         </div>
         <div class="govuk-radios__item">

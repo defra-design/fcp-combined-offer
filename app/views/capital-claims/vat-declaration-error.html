@@ -52,74 +52,79 @@
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
             <li style="margin-bottom: 20px;">
-              <a href="#invoice-error">Select if you have sent receipts or invoices to the RPA</a>
+              <a href="#vat-error">Select if you are VAT registered</a>
             </li>
             <li style="margin-bottom: 20px;">
-              <a href="#evidence-error">Select if you have sent any extra evidence to support your claim</a>
+              <a href="#vat-declare-error">Select if you have declared VAT for those actual cost capital items</a>
             </li>
-
           </ul>
         </div>
       </div>
     </div>
 
-    <h1 class="govuk-heading-l">Proof of cost</h1>
-
-    <div class="govuk-form-group govuk-form-group--error">
-        <label class="govuk-label govuk-label--m">
-          Have you sent receipts or receipted invoices to support this claim to the RPA?
-        </label>
-        <p id="invoice-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Select if you have sent receipts or invoices to the RPA
-        </p>
-        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="comments-yes" name="comments" type="radio" value="yes" data-aria-controls="conditional-comments-yes">
-            <label class="govuk-label govuk-radios__label" for="comments-yes">Yes</label>
-          </div>
-          <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-comments-yes">
-            <div class="govuk-form-group">
-              <label class="govuk-label" for="label-as-page-heading" style="margin-bottom: 10px;">
-                If yes, how many items did you send?
-              </label>
-              <input class="govuk-input govuk-!-width-full-width" id="label-as-page-heading" name="labelAsPageHeading" spellcheck="false">
-            </div>
-          </div>
-          <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="comments-no" name="comments" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="comments-no">No</label>
-          </div>
-        </div>
-    </div>
-
+    <h1 class="govuk-heading-l">VAT declaration</h1>
+      
     <div class="govuk-form-group govuk-form-group--error">
       <label class="govuk-label govuk-label--m" style="margin-bottom: 10px;">
-        Have you sent any extra evidence to support your claim?
+        Are you VAT registered?
       </label>
-      <div id="evidence-hint" class="govuk-hint">
-        For example, photos of completed work, consents, detailed specifications.
-      </div>
-      <p id="evidence-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Select if you have sent any extra evidence to support your claim
+      <!--- <div id="evidence-hint" class="govuk-hint">
+        If no, you must send the RPA proof of your VAT status.
+      </div> ---> 
+      <p id="vat-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Select if you are VAT registered
       </p>
+
       <div class="govuk-radios" data-module="govuk-radios">
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="evidence-yes" name="evidence" type="radio" value="yes" aria-describedby="evidence-yes">
-          <label class="govuk-label govuk-radios__label" for="evidence">
+          <input class="govuk-radios__input" id="vat-yes" name="vat" type="radio" value="yes" aria-describedby="vat-yes">
+          <label class="govuk-label govuk-radios__label" for="vat">
             Yes
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="evidence-no" name="evidence" type="radio" value="no" aria-describedby="evidence-no">
-          <label class="govuk-label govuk-radios__label" for="evidence-2">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
             No
           </label>
         </div>
       </div>
     </div>
     
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label govuk-label--m" style="margin-bottom: 10px;">
+        VAT declaration for those capital items which are paid on the basis of actual costs
+      </label>
+      <div id="evidence-hint" class="govuk-hint">
+        If you are not VAT registered and wish to claim the VAT element as agreed, have you enclosed a letter from HMRC or your accountant confirming your VAT status?
+      </div>
+      <p id="vat-declare-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Select if you have declared VAT for those actual cost capital items
+      </p>
+      
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-yes" name="vat" type="radio" value="yes" aria-describedby="vat-yes">
+          <label class="govuk-label govuk-radios__label" for="vat">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
+            Not applicable
+          </label>
+        </div>
+      </div>
+    </div>
 
-    <form class="form" action="tasklist-4" method="post">
+    <form class="form" action="tasklist-5" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
           Save and continue
       </button>
