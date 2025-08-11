@@ -134,55 +134,89 @@
     <span class="govuk-body parcel-size">Parcel size: 11.4234 ha</span></p>
     
   <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
-    <ul class="moj-pagination__list" style="display: flex; align-items: center;">
-      <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>15</b> of <b>20</b> parcels</p>
-      <li class="moj-pagination__item">
-        <a rel="next" style="font-weight: 700; color: #1d70b8;">Next<span class="govuk-visually-hidden">page</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-        </svg></a>
+    <ul class="moj-pagination__list" style="display: flex; align-items: center; gap: 10px; list-style: none; padding: 0; margin: 0;">
+      
+      <li class="moj-pagination__item" style="margin: 0;">
+        <span class="moj-pagination__results" style="display: inline-block;">
+          Showing <b>1</b> to <b>15</b> of <b>20</b> parcels
+        </span>
       </li>
+
+      <li class="moj-pagination__item" style="margin: 0;">
+        <a rel="next" style="font-weight: 700; color: #1d70b8; display: flex; align-items: center; gap: 4px;">
+          Next
+          <span class="govuk-visually-hidden">page</span>
+          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
+        </a>
+      </li>
+
     </ul>
   </nav>
 
-
-
 </div>
+
+
 
 <!---RIGHT HAND SIDE COLUMN --->
 <div class="govuk-grid-column-one-half">
   <p class="govuk-body"><a href="#" class="govuk-link">Hide map</a></p>
-  <map name="clickable">
-    <area shape="rect" coords="100,280,190,320" href="select-land-capitals-parcel-1">
-    <area shape="rect" coords="150,220,240,280" href="select-land-capitals-parcel-2">
-  </map>
-<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/ht-phase-2/img/map_3.png" alt="Map of your land" style="width:465px;height:400px; margin-bottom: 10px;"></a>
 
-  <p class="govuk-body">Key:</p>
-  <div class="key-div govuk-!-margin-bottom-5">
-    <div class="key-parent" id="key1-1"></div><span class="govuk-body-s">Error</span>
+<div class="container">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 0 1010 880">
+        <image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/ht-phase-2/img/map_3.png" 
+            alt="Map of your land" width="1010" height="880">
+        </image>
+      <a xlink:href="select-land-capitals-parcel-1">
+        <rect x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect>
+      </a>
+      <a xlink:href="select-land-capitals-parcel-2">
+        <rect x="400" y="491" fill="#fff" opacity="0" width="125" height="128"></rect>
+      </a>
+    </svg>
+  </div>
+
+  <p class="govuk-body govuk-!-margin-top-4">Key:</p>
+  <div class="key-div govuk-!-margin-bottom-6">
+
+    <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" >Error</span>
     <div class="key-parent" id="key2-1"></div><span class="govuk-body-s">Selected</span>
+
+      <br class="mobile-break">
+      <br class="mobile-break">
+
     <div class="key-parent" id="key3-1"></div><span class="govuk-body-s">Applied</span>
     <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">Not Applied</span>
   </div>
 
-  <table class="govuk-table">
-    <caption class="govuk-table__caption govuk-table__caption--m">Your available capital items for selected land parcel</caption>
-    <thead class="govuk-table__head">
-      <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header"></th>
-        <th scope="col" class="govuk-table__header" style="width: 240px">Capital item</th>
-        <!--- <th scope="col" class="govuk-table__header" style="width: 60px">Available area</th>  --->         
-        <th scope="col" class="govuk-table__header">Quantity</th>
-      </tr>
-    </thead>
 
-          <tbody class="govuk-table__body">
-            
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+  <h2 class="govuk-heading-m">Your available capital items for selected land parcel</h2>
+
+
+<table class="govuk-table">
+  <colgroup>
+    <col style="width: 40px;">
+    <col style="width: 240x;">
+    <col>
+  </colgroup>
+  <!-- thead  -->
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header">Capital item</th>         
+          <th scope="col" class="govuk-table__header">Quantity</th>
+        </tr>
+  
+  <!-- tbody -->
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">RP3: Watercourse crossings</td>
@@ -197,11 +231,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">FG3: Permanent electric fencing</td>
@@ -216,11 +250,12 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">FG2: Sheep netting</td>
@@ -235,11 +270,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">FG1: Fencing</td>
@@ -253,12 +288,12 @@
                 </div>
               </td>
             </tr>
-          
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">TE6: Tree guard (tube and mesh)</td>
@@ -273,11 +308,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">TE7: Tree guard (wood post and rail)</td>
@@ -292,11 +327,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">TE8: Tree guard (wood post and wire)</td>
@@ -311,11 +346,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">AF3: Supplement: Species diversity bonus</td>
@@ -330,11 +365,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">AF1: Plant an agroforestry woodland tree</td>
@@ -349,11 +384,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">AF2: Plant an agroforestry fruit tree</td>
@@ -367,12 +402,12 @@
                 </div>
               </td>
             </tr>
-
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+  
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">SB4: Chemical bracken control</td>
@@ -387,11 +422,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">BC4: Tree Guard Post and wire</td>
@@ -406,11 +441,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">BC3: Crop protection fencing mesh and wire for permanent crops</td>
@@ -425,11 +460,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">BN1: Stone-faced bank repair</td>
@@ -444,11 +479,11 @@
               </td>
             </tr>
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
-                  <label class="govuk-label govuk-checkboxes__label"></label>
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell" style="padding-right: 5;">
+              <div class="govuk-checkboxes__item" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
               <td class="govuk-table__cell">BN10: Hedgerow supplement - top binding and staking</td>
@@ -463,18 +498,33 @@
               </td>
             </tr>
           </tbody>
-        </table>
+           
 
-        <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
-          <ul class="moj-pagination__list" style="display: flex; align-items: center;">
-            <p class="moj-pagination__results" style="margin-right: 10px;">Showing <b>1</b> to <b>15</b> of <b>17</b> capital items</p>
-            <li class="moj-pagination__item">
-              <a rel="next" style="font-weight: 700; color: #1d70b8;">Next<span class="govuk-visually-hidden">page</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-              </svg></a>
-            </li>
-          </ul>
-        </nav>
+    </tbody>
+  </table>
+
+
+    <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+    <ul class="moj-pagination__list" style="display: flex; align-items: center; gap: 10px; list-style: none; padding: 0; margin: 0;">
+      
+      <li class="moj-pagination__item" style="margin: 0;">
+        <span class="moj-pagination__results" style="display: inline-block;">
+          Showing <b>1</b> to <b>15</b> of <b>17</b> actions
+        </span>
+      </li>
+
+      <li class="moj-pagination__item" style="margin: 0;">
+        <a rel="next" style="font-weight: 700; color: #1d70b8; display: flex; align-items: center; gap: 4px;">
+          Next
+          <span class="govuk-visually-hidden">page</span>
+          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
+        </a>
+      </li>
+
+    </ul>
+  </nav>
 
   <form class="form" action="select-land-capitals-parcel-1-applied" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">

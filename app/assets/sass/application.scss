@@ -44,6 +44,7 @@
 
 }*/ 
 
+
 .parcel-row {
   display: flex;
   justify-content: left;
@@ -57,13 +58,17 @@
 .parcel-size {
   float: left;
   padding-right: 30px;
-  flex: 0 0 200px; /* Fixed width for alignment */
+  flex: 0 0 200px; /* Fixed width for alignment */ 
   text-align: left; /* Align text to the right */
-}
+} 
 
 .applied-label {
 flex: 0 0 auto;
-}
+} 
+
+
+
+
 
 .section-break-large {
   break-color: black;
@@ -323,7 +328,7 @@ body {
   margin-bottom: 10px; /* Optional: Adds space between buttons */
 }
 
-
+/*  
 .agreement-container {
   display: flex;
   flex-direction: column;
@@ -338,8 +343,48 @@ body {
 }
 .agreement-row .govuk-checkboxes__item {
     display: flex;
-    margin-right: 30px; /* Adjust spacing as needed */
+    margin-right: 30px; /* Adjust spacing as needed 
+} */
+
+
+/* Base styles (tablet and desktop by default) */
+.agreement-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid #B1B4B6;
+  margin-bottom: 20px;
 }
+
+.agreement-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0;
+  padding-bottom: 20px;
+}
+
+.agreement-row .govuk-checkboxes__item {
+  display: flex;
+  flex: 0 0 auto;
+  margin-right: 30px;
+}
+
+/* Mobile-specific tweaks */
+@media (max-width: 600px) {
+  .agreement-row {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .agreement-row .govuk-checkboxes__item {
+    flex: 1 1 100%;
+    margin-right: 0;
+  }
+}
+
+
+
+
 
 
 .no-border-bottom {

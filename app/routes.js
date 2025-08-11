@@ -416,6 +416,15 @@ router.post('/agreement-name-ht-dev', function (req, res) {
 
 })
 
+router.get('/confirmation', function (req, res) {
+  res.render('confirmation');
+});
+
+router.get('/dashboard-withdraw-application', function (req, res) {
+  res.render('dashboard-withdraw-application');
+});
+
+
 
 // CAPITAL CLAIMS - STANDARD COST ITEMS COMPLETE ERROR
 router.post('/capitals-standard-cost-complete', function (req, res) {
