@@ -49,15 +49,17 @@
   display: flex;
   justify-content: left;
   margin-bottom: 0;
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 .parcel-number {
   flex: 0 0 125px;
-  padding-right: 30px;
+  padding-right: 20px;
   
 }
 .parcel-size {
   float: left;
-  padding-right: 30px;
+  padding-right: 20px;
   flex: 0 0 200px; /* Fixed width for alignment */ 
   text-align: left; /* Align text to the right */
 } 
@@ -67,6 +69,60 @@ flex: 0 0 auto;
 } 
 
 
+
+/* Base: mobile first (< 40em) */
+.custom-flex {
+  display: flex;               /* Redundant with govuk-!-display-flex, but safe */
+  flex-direction: column;      /* Link above, group below */
+  align-items: flex-start;
+  gap: 0px;                   /* Compact vertical spacing on small screens */
+}
+
+.custom-inner {
+  display: flex;               /* Redundant with govuk-!-display-flex, but safe */
+  gap: 12px;                   /* Space between "Parcel size" and "Applied" */
+  flex-wrap: nowrap;           /* Keep them together on one line */
+}
+
+/* Tablet and up (>= 40em ~ 640px) — GOV.UK tablet breakpoint */
+@media (min-width: 40em) {
+  .custom-flex {
+    flex-direction: row;       /* Everything on one line */
+    align-items: center;
+    gap: 20px;                 /* Roomier gap on wider screens */
+  }
+  .custom-inner {
+    gap: 20px;
+  }
+}
+
+/* Desktop and up (>= 48em ~ 768px) — optional refinement */
+@media (min-width: 48em) {
+  /* Add any desktop-specific refinements here, if needed */
+}
+
+/* When "Applied" is hidden:
+   Keep everything on one line even on mobile. */
+.custom-flex.single-item {
+  flex-direction: row;         /* Override the mobile column layout */
+  align-items: center;
+  gap: 12px;                   /* Slightly tighter gap on small screens */
+  flex-wrap: nowrap;
+}
+
+@media (min-width: 40em) {
+  .custom-flex.single-item {
+    gap: 20px;                 /* Match wider-screen spacing */
+  }
+}
+
+
+
+@media (max-width: 400px) {
+  .parcel-size {
+    margin-right: 0.5rem; /* Reduce spacing */
+  }
+}
 
 
 
@@ -231,7 +287,6 @@ flex: 0 0 auto;
 
 
 .table-width-quantity{
-  
   width:125px;
 }
 
@@ -328,24 +383,6 @@ body {
   margin-bottom: 10px; /* Optional: Adds space between buttons */
 }
 
-/*  
-.agreement-container {
-  display: flex;
-  flex-direction: column;
-  border-bottom: 1px solid #B1B4B6;
-  margin-bottom: 20px;
-}
-
-.agreement-row {
-    display: flex;
-    padding-bottom: 20px;
-
-}
-.agreement-row .govuk-checkboxes__item {
-    display: flex;
-    margin-right: 30px; /* Adjust spacing as needed 
-} */
-
 
 /* Base styles (tablet and desktop by default) */
 .agreement-container {
@@ -382,8 +419,16 @@ body {
   }
 }
 
+.responsive-error {
+  width: max-content;
+}
 
-
+@media (max-width: 600px) {
+  .responsive-error {
+    width: 100%;
+    display: block;
+  }
+}
 
 
 
