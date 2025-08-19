@@ -313,9 +313,6 @@ router.post('/agreement-name-ht-p2', function (req, res) {
   }
 
 
-
-
-
 })// HIGHER TIER CUSTOMER PHASE 2 - DEV VIEW// 
 
 // Add your routes here
@@ -447,6 +444,136 @@ router.post('/capitals-standard-cost-complete', function (req, res) {
 
 })
 
+// HIGHER TIER CUSTOMER PHASE 2 - MOB VIEW// 
+
+// Add your routes here
+router.post('/land-details-answer-ht-mob', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var landDetailsAnswer = req.session.data['land-details-answer']
+
+  // Check whether the variable matches a condition
+  if (landDetailsAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2-mob/first/tasklist-2')
+
+  } else if (landDetailsAnswer == "no"){
+    res.redirect('/ht-phase-2-mob/first/update-land-details')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2-mob/first/check-land-details-error')
+  }
+
+})
+
+router.post('/management-answer-ht-mob', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var managementControlAnswer = req.session.data['management-answer']
+
+  // Check whether the variable matches a condition
+  if (managementControlAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2-mob/first/hefer')
+
+  } else if (managementControlAnswer == "no"){
+    res.redirect('/ht-phase-2-mob/first/ineligible')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2-mob/first/management-control-error')
+  }
+
+})
+
+router.post('/hefer-answer-ht-mob', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var heferAnswer = req.session.data['hefer-answer']
+
+  // Check whether the variable matches a condition
+  if (heferAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2-mob/first/sssi')
+
+  } else if (heferAnswer == "no"){
+    res.redirect('/ht-phase-2-mob/first/ineligible')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2-mob/first/hefer-error')
+  }
+
+})
+
+router.post('/sssi-answer-ht-mob', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var sssiAnswer = req.session.data['sssi-answer']
+
+  // Check whether the variable matches a condition
+  if (sssiAnswer == "yes"){
+    // Send user to next page
+    res.redirect('/ht-phase-2-mob/first/eligible')
+
+  } else if (sssiAnswer == "no"){
+    res.redirect('/ht-phase-2-mob/first/ineligible')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/ht-phase-2-mob/first/sssi-error')
+  }
+
+})
+
+router.post('/agreement-name-ht-mob', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var agreementName = req.session.data['agreement-name']
+
+  // Check whether the variable matches a condition
+  if (!agreementName){
+    // Send user to error if input field is empty
+    res.redirect('/ht-phase-2-mob/first/agreement-name-error')
+
+  } else {
+    // Send user to next page
+    res.redirect('/ht-phase-2-mob/first/tasklist-4')
+  }
+
+})
+
+router.get('/confirmation', function (req, res) {
+  res.render('confirmation');
+});
+
+router.get('/dashboard-withdraw-application', function (req, res) {
+  res.render('dashboard-withdraw-application');
+});
+
+
+
+// CAPITAL CLAIMS - STANDARD COST ITEMS COMPLETE ERROR
+router.post('/capitals-standard-cost-complete', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var standardSectionComplete = req.session.data['haveYouCompletedThisSection']
+
+  // Check whether the variable matches a condition
+  if (standardSectionComplete == "yes"){
+    // Send user to next page
+    res.redirect('/capital-claims/tasklist-2')
+
+  } else if (standardSectionComplete == "no"){
+    res.redirect('/capital-claims/tasklist-1')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/capital-claims/standard-cost-items-error')
+  }
+
+})
 
 // CAPITAL CLAIMS - ACTUAL COST ITEMS COMPLETE ERROR
 router.post('/capitals-actual-cost-complete', function (req, res) {

@@ -1,0 +1,619 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+  
+<h1 class="govuk-heading-l">Select actions and items</h1>
+
+
+<!---LEFT HAND SIDE COLUMN-->
+<!---FILTERS-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+
+    <form class="govuk-form-group" action="#" method="get">
+      <label class="govuk-label govuk-!-margin-top-2" for="searchbox">
+        Search by action code
+      </label>
+      <div class="govuk-input__wrapper" style="display: flex; gap: 1px;">
+        <input class="govuk-input govuk-!-margin-bottom-3"
+               id="searchbox"
+               name="search"
+               type="text"
+               style="flex: 1 1 auto; height: 44px;"
+               value=""
+               aria-label="Search by action code">
+        <button class="govuk-button blue-button govuk-!-margin-bottom-3"
+                data-module="govuk-button"
+                type="submit"
+                style="height: 42px;">
+          <svg class="gem-c-search__icon" width="21" height="21" viewBox="0 0 28 32"
+               fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+            <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+          </svg>
+        </button>
+      </div>
+    </form>
+  
+  <div id="filters">
+
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <label class="govuk-label govuk-label--s">
+        <span>
+          Filter by
+        </span>
+      </label>
+      </summary>
+      <div class="govuk-!-padding-top-5 govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Selected actions and items
+          </label>
+        </div>
+      </div>
+  </details>
+
+  <details class="govuk-details" data-module="govuk-details" open>
+    <summary class="govuk-details__summary">
+      <label class="govuk-label govuk-label--s">
+      <span>
+        Type
+      </span>
+    </label>
+    </summary>
+    <div class="govuk-!-padding-top-5 govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+      
+      <!---<div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+          SFI
+        </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+          More straightforward - no advice needed
+        </div>
+      </div>
+      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            SFI endorsed
+          </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+            Extra eligibility check needed
+        </div>
+      </div>
+      ---> 
+      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+          Higher Tier
+        </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+          More complex actions that need pre-application advice
+        </div>
+      </div>
+
+      <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+        <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+          Capital items
+        </label>
+        <div id="type--hint" class="govuk-hint govuk-checkboxes__hint">
+          Extra eligibility check needed
+        </div>
+      </div>
+    </div>
+</details>
+
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <label class="govuk-label govuk-label--s">
+        <span>
+          Themes
+        </span>
+      </label>
+      </summary>
+      <div class="govuk-!-padding-top-5 govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Buffer strips
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Farmland wildlife on arable and horticultural land
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Farmland wildlife on improved grassland
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Hedgerows
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Integrated pest management
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Low input grassland
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Moorland
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Nutrient management
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Soil
+          </label>
+        </div>
+    </div>
+  </details>
+  </div>
+  
+  <div class="govuk-button-group">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Apply filters
+    </button>
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Clear all filters
+    </button>
+  </div>
+  </div>
+
+
+<!---RIGHT HAND SIDE COLUMN-->
+<div class="govuk-grid-column-two-thirds">
+
+<div class="topnav" style="margin-bottom: 30px; margin-top: 20px;">
+  <div class="topnav-right govuk-body">
+    <span class="govuk-!-font-weight-bold">0</span> items selected
+  </div>
+</div>
+
+<div class="govuk-form-group">
+  <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+    <!-- Beginning of capital item 1 -->
+      <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+        <p class="govuk-body">RP3: Watercourse crossings – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+        </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £506.44 per crossing</p>
+        <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+        <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 2 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+        <p class="govuk-body">FG3: Permanent electric fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+        </label>
+    </div>
+    <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £5.66 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 3 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">FG2: Sheep netting – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £7.47 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 4 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">FG1: Fencing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £6.34 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 5 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">TE6: Tree guard (tube and mesh) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £3.95 per guard</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    
+    <!-- Beginning of capital item 6 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">TE7: Tree guard (wood post and rail) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £109.64 per guard</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 7 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">TE8: Tree guard (wood post and wire) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £132.16 per guard</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 8 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">AF3: Supplement: Species diversity bonus – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this action</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £1.16 per tree</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 9 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">AF1: Plant an agroforestry woodland tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £5.40 per tree</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 10 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">WN7: Restoration of large water bodies – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> Up to 100% of actual costs</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 11 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> Up to 100% of actual costs</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 12 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">AF2: Plant an agroforestry fruit tree – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £17.83 per tree</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of capital item -->
+
+    <!-- Beginning of capital item 13 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">SB4: Chemical bracken control – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £270.90 per hectare</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+    <!-- Beginning of capital item 14 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">FM1: Management of geodiversity features – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> Up to 100% of actual costs</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+    <!-- Beginning of capital item 15 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">BC4: Tree Guard Post and wire – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £132.16 per tree guard</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+    <!-- Beginning of capital item 16 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">FY2: Woodland infrastructure – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> 60% of actual costs</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+    <!-- Beginning of capital item 17 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">BC3: Crop protection fencing mesh and wire for permanent crops – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £6.34 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+
+    <!-- Beginning of capital item 18 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">TE11: Tree surgery – <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+      </div>
+      <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £73.36 to £146.72 per tree</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+      </div>
+      <!-- End of action -->
+  
+    <!-- Beginning of capital item 19 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">BN11: Planting new hedges <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+    </div>
+    <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £22.97 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of capital item 20 -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox">
+        <label class="govuk-label govuk-checkboxes__label" for="checkbox-1">
+      <p class="govuk-body">BN12: Stone wall restoration <a href="https://www.gov.uk/find-funding-for-land-or-farms/csam1-assess-soil-produce-a-soil-management-plan-and-test-soil-organic-matter" target="_blank" class="govuk-link">read the guidance for this capital item</a></p>
+      </label>
+    </div>
+    <div class="govuk-!-padding-bottom-4">
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Payment rate:</span> £31.91 per metre</p>
+      <p class="govuk-body"><span class="govuk-!-font-weight-bold">Type:</span> Capital items</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+      
+
+<nav class="moj-pagination govuk-!-margin-bottom-6" role="navigation" aria-label="Pagination navigation" style="padding-top: 10px;">
+  <ul class="moj-pagination__list" style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; margin: 0; padding: 0; list-style: none; font-size: 19px; line-height: 1.5;">
+    <div style="display: flex; flex-wrap: nowrap; align-items: center; gap: 8px;">
+      <li class="moj-pagination__item" style="display: flex; align-items: center; height: 44px;">
+        <a rel="prev" href="select-actions" class="govuk-link" style="font-weight: 700; display: flex; align-items: center;">
+          <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13" style="margin-right: 4px;">
+            <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+          </svg>
+          Previous<span class="govuk-visually-hidden"> page</span>
+        </a>
+      </li>
+
+      <li class="moj-pagination__item" style="display: flex; align-items: center; justify-content: center; height: 44px; width: 44px;">
+        <a class="moj-pagination__link" href="select-actions" aria-label="Page 1 of 4" style="display: block; width: 100%; height: 100%; text-align: center; line-height: 44px;">1</a>
+      </li>
+
+      <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 2 of 4" aria-current="page"
+          style="display: flex; align-items: center; justify-content: center; height: 44px; width: 44px; text-align: center;">
+        2
+      </li>
+
+      <li class="moj-pagination__item moj-pagination__item--dots"
+          style="display: flex; align-items: center; justify-content: center; height: 44px; width: 44px;">
+        …
+      </li>
+
+      <li class="moj-pagination__item" style="display: flex; align-items: center; justify-content: center; height: 44px; width: 44px;">
+        <a class="moj-pagination__link" href="#" aria-label="Page 4 of 4" style="display: block; width: 100%; height: 100%; text-align: center; line-height: 44px;">4</a>
+      </li>
+
+      <li class="moj-pagination__item" style="display: flex; align-items: center; height: 44px;">
+        <a rel="next" href="#" class="govuk-link" style="font-weight: 700; display: flex; align-items: center;">
+          Next<span class="govuk-visually-hidden"> page</span>
+          <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13" style="margin-left: 4px;">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
+        </a>
+      </li>
+    </div>
+
+    <li class="moj-pagination__item moj-pagination__results" id="pagination-summary"
+        style="margin-left: auto; white-space: nowrap; font-size: 19px;">
+      Showing <b>21</b> to <b>40</b> of <b>134</b> results
+    </li>
+  </ul>
+</nav>
+
+<style>
+  @media (max-width: 600px) {
+    #pagination-summary {
+      text-align: left !important;
+      margin-top: 8px;
+      width: 100%;
+    }
+
+    .moj-pagination__list {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .moj-pagination__list > div {
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    .moj-pagination__item {
+      margin-bottom: 8px;
+    }
+  }
+
+  @media (max-width: 380px) {
+    .moj-pagination__item a.govuk-link {
+      font-size: 16px;
+      padding-right: 4px;
+      flex-wrap: wrap;
+    }
+
+    .govuk-pagination__icon {
+      width: 12px;
+      height: 12px;
+    }
+  }
+</style>
+
+
+
+
+</div><!--checkboxes---->
+<form class="form" action="tasklist-5" method="post">
+  <button class="govuk-button" type="submit" data-module="govuk-button">
+    Save and continue
+  </button>
+</form>
+
+</div> <!--form group---->
+
+</div> <!--right hand side column -->
+
+
+  
+{% endblock %}

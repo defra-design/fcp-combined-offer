@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary govuk-!-margin-bottom-6" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#sssi-error">Select if you will get SSSI consent if you need to</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+
+    <h1 class="govuk-heading-l">SSSI consent</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">If you apply for actions or items on land that’s a site of special scientific interest (SSSI), you must get SSSI consent from Natural England.</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">You need to get this consent before you do your selected actions or items on SSSI land. Some actions or items can be done without SSSI consent. This is set out in each action or item in the <a href="#" class="govuk-link">'find funding for land or farms’ tool</a>.</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">Read the guidance on <a href="#" class="govuk-link">SSSI consent</a>.</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">If you are not applying for actions or items on SSSI land, or the actions or items can be done without SSSI consent, answer ‘yes’ to continue your application.  </p>
+
+    
+    <form class="form" action="/sssi-answer-ht-mob" method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="sssi-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h2 class="govuk-fieldset__heading">
+              Will you get SSSI consent if you need to?
+            </h2>
+          </legend>
+
+          <p id="sssi-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span>Select if you will get SSSI consent if you need to
+          </p>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sssiAnswer-1" name="sssi-answer" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="sssiAnswer-1">
+                Yes
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="sssiAnswer-2" name="sssi-answer" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="sssiAnswer-2">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

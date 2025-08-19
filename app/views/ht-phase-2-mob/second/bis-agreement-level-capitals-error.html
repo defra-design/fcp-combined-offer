@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#adviser-error">Adviser has rejected capital item</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+  </div>
+  </div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm your agreement level capital items</h1>
+      <p class="govuk-body">These are capital items that apply to an entire holding, rather than specific land parcels.</p>
+      <p class="govuk-body">Select the capital item to confirm you want to add it to your agreement. Where asked to, also add a quantity.</p>
+
+      <h2 class="govuk-heading-m govuk-!-margin-bottom-6">Agreement level capital items</h2>
+      
+      <div class="agreement-container">
+        <div class="agreement-row">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+              <label class="govuk-label govuk-checkboxes__label" style="width: 322px;">
+                AB16: Autumn sown bumblebird mix
+                </label>
+            </div>
+            <div class="govuk-input__wrapper">
+              <input class="govuk-input govuk-input--width-4" id="weight" name="weight" type="text" spellcheck="false" value="15">
+              <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
+            </div>
+        </div>
+        <p class="govuk-body"><a href="bis-agreement-level-specifications" class="govuk-link">
+          See specifications for this capital item</a></p>
+      </div>
+
+      <div class="agreement-container">
+        <div class="agreement-row">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+              <label class="govuk-label govuk-checkboxes__label">
+                FY2: Woodland infrastructure
+                </label>
+            </div>
+        </div>
+        <p class="govuk-body"><a href="bis-agreement-level-specifications" class="govuk-link">
+          See specifications for this capital item</a></p>
+      </div>
+
+<!--ERROR-->
+<div class="agreement-container govuk-error-message red-border red-border-padding" style= "padding-bottom: 0; padding-top: 0px;">
+  <p class="govuk-body govuk-error-message" style="margin-bottom: 15px; margin-top: 0px;" id="adviser-error">
+  Your adviser has rejected this capital item - see feedback for more information</p>
+  <div class="agreement-row">
+    <div class="govuk-checkboxes__item" style="padding-bottom: 0;">
+      <input class="govuk-checkboxes__input" id="parcel" name="action" type="checkbox" checked>
+        <label class="govuk-label govuk-checkboxes__label" style="padding-bottom: 0px;">
+          WN7: Restoration of large water bodies
+          </label>
+      </div>
+  </div>
+  <details class="govuk-details govuk-!-margin-bottom-4">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Adviser feedback
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      You can’t do this capital item here because of your land type.
+    </div>
+  </details>
+</div>
+
+<div class="govuk-!-padding-bottom-2"></div>
+<form class="form" action="tasklist-17" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+</form>
+  
+
+        
+</div>
+</div>
+
+<div class="govuk-!-padding-bottom-9"></div>
+
+{% endblock %}

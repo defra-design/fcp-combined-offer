@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Application documents</h1>
+    <p class="govuk-body govuk-!-margin-bottom-0">The following are list of documents you can download, save or print for your application. 
+      The list of documents can vary depending on your current application status.</p>
+  </div>
+
+  <div class="govuk-grid-column-full govuk-!-margin-0">
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="#">Application form summary (pdf)</a>
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+      A summary of your application so far. It will show your completed application after you submit it.
+    </p>
+
+    <p class="govuk-body govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="#">Application map (pdf)</a>
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+      The land parcels you had added actions to so far. It will show your completed selection after you submit your application.
+    </p>
+
+    <!---
+    <p class="govuk-body govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="#">Land parcels not available for this application (pdf)</a>
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+      Parcels that cannot be used for this application.
+    </p>
+    ----> 
+
+    <p class="govuk-body govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="#">Environmental information map (EIM) (pdf)</a>
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+      A map of the priority features on your land to help plan your application.
+    </p>
+
+    <p class="govuk-body govuk-!-margin-bottom-2">
+      <a class="govuk-link" href="#">Option and farm environment record (FER) (pdf)</a>
+    </p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+      Explain what this is and why it’s useful.
+    </p>
+
+    </div>
+  </div>
+
+  <div class="govuk-!-padding-bottom-9"></div>
+
+{% endblock %}

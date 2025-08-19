@@ -1,0 +1,345 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<!---LEFT HAND SIDE COLUMN --->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <h1 class="govuk-heading-l">Select land for your actions</h1>
+
+    <p class="govuk-body govuk-!-margin-bottom-6">Select a land parcel in the table or the map to see your actions.</p>
+    <p class="govuk-body govuk-!-margin-bottom-0">You then need to:
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+          <li>select the action</li>
+          <li>enter the quantity you want to add to the parcel</li>
+      </ul>
+    </p>
+    <p class="govuk-body">Select 'Save' when you have added your actions to the parcel. Repeat for each parcel. When you have finished, select 'Continue'.</p>
+
+
+<hr class="section-break-large"></hr>
+      <table class="govuk-table">
+<p class="govuk-body">OS map sheet reference S03</p>
+<hr class="govuk-section-break govuk-section-break--visible">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="width: 222px;">Number of available land parcels</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total area in hectares</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">120.3451 ha</td>
+    </tr>
+    <tr class="govuk-table__row">
+     <td class="govuk-table__cell">Number of land parcels used for actions</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+        <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Number of actions applied for</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+  </tbody>
+</table>
+
+<!--- PARCEL NUMBERS LIST -->
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="select-land-actions-parcel-1" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3158
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 32.0404 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="select-land-actions-parcel-2" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3159
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 31.4241 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3160
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 1.4935 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3161
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 10.3492 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3162
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 42.4324 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3163
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 9.9754 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3164
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 32.1239 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3165
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 38.2931 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3166
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 28.3482 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3167
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 39.2931 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3168
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 53.2131 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3169
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 12.4392 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3170
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 29.3291 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3171
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 13.2339 ha</span>
+      </div>
+    </div>
+
+    <!-- Without Applied (keeps one line even on mobile via .single-item) -->
+    <div class="govuk-!-display-flex custom-flex single-item">
+      <a href="#" class="govuk-link govuk-body">
+        <span class="govuk-visually-hidden">View parcel </span>SO3757&nbsp;3172
+      </a>
+
+      <div class="govuk-!-display-flex custom-inner">
+        <span class="govuk-body">Parcel size: 11.4234 ha</span>
+      </div>
+    </div>
+<!--- PARCEL NUMBERS LIST -->
+    
+
+
+<nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+  <ul class="moj-pagination__list" style="display: flex; align-items: center; gap: 10px; list-style: none; padding: 0; margin: 0;">
+    
+    <li class="moj-pagination__item" style="margin: 0;">
+      <span class="moj-pagination__results" style="display: inline-block;">
+        Showing <b>1</b> to <b>15</b> of <b>20</b> parcels
+      </span>
+    </li>
+
+    <li class="moj-pagination__item" style="margin: 0;">
+      <a rel="next" style="font-weight: 700; color: #1d70b8; display: flex; align-items: center; gap: 4px;">
+        Next
+        <span class="govuk-visually-hidden">page</span>
+        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg>
+      </a>
+    </li>
+
+  </ul>
+</nav>
+
+
+</div>
+
+<!---RIGHT HAND SIDE COLUMN --->
+<div class="govuk-grid-column-one-half">
+  <p class="govuk-body"><a href="#" class="govuk-link">Hide map</a></p>
+
+  <div class="container">
+    <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         viewBox="0 0 1010 880">
+        <image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/ht-phase-2/img/map_2.png" 
+            alt="Map of your land" width="1010" height="880">
+        </image>
+      <a xlink:href="select-land-actions-parcel-1">
+        <rect x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect>
+      </a>
+      <a xlink:href="select-land-actions-parcel-2">
+        <rect x="400" y="491" fill="#fff" opacity="0" width="125" height="128"></rect>
+      </a>
+    </svg>
+  </div>
+
+  <p class="govuk-body govuk-!-margin-top-4">Key:</p>
+  <div class="key-div govuk-!-margin-bottom-6">
+
+    <div class="key-parent" id="key1-1"></div><span class="govuk-body-s" >Error</span>
+    <div class="key-parent" id="key2-1"></div><span class="govuk-body-s">Selected</span>
+
+      <br class="mobile-break">
+      <br class="mobile-break">
+
+    <div class="key-parent" id="key3-1"></div><span class="govuk-body-s">Applied</span>
+    <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">Not Applied</span>
+  </div>
+
+
+
+  <h2 class="govuk-heading-m">Your available actions for selected land parcel</h2>
+
+  <table class="govuk-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header"></th>
+        <th scope="col" class="govuk-table__header" style="width: 145px">Action</th>
+        <th scope="col" class="govuk-table__header" style="width: 60px">Available area</th>          
+        <th scope="col" class="govuk-table__header">Quantity</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+      <td class="govuk-table__cell" colspan="4">
+        <p style="text-align:left;" class="govuk-body">Select a land parcel to see your actions.</p> 
+      </td>
+    </tr>
+    </tbody>
+
+  </table>
+
+
+<form class="form" action="select-map-actions" method="post">
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Continue
+  </button>
+</form>
+  
+
+</div>
+
+
+
+{% endblock %}

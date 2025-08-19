@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary govuk-!-margin-bottom-6" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#name-error">Enter an agreement name</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div> 
+
+    <h1 class="govuk-label-wrapper govuk-!-margin-bottom-6">
+      <label class="govuk-label govuk-label--l" for="with-hint">
+        Enter your agreement name
+      </label>
+    </h1>
+
+    <div class="govuk-form-group govuk-form-group--error govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
+
+      <div class="govuk-hint govuk-!-margin-bottom-2">
+        This will appear on your agreement documents. If you're applying for CSHT, include the site name or woodland property name from your invitation letter.
+      </div>
+      <p class="govuk-error-message" id="name-error">
+        <span class="govuk-visually-hidden">Error:</span> Enter an agreement name
+      </p>
+      <input class="govuk-input govuk-input--error govuk-!-width-full govuk-js-character-count" id="with-hint" name="agreement-name" rows="1" aria-describedby="with-hint-info with-hint-hint">
+      <div id="with-hint-info" class="govuk-hint govuk-character-count__message govuk-!-margin-top-2">
+      You have 100 characters remaining
+      </div>
+    </div>
+
+    <form class="form" action="tasklist-4" method="post">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+    </form>
+        
+  </div>
+</div>
+
+
+
+
+{% endblock %}

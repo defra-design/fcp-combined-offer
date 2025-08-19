@@ -1,0 +1,128 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Applications and agreements</h1>
+  <span class="govuk-caption-l govuk-!-margin-bottom-6">JASMINE SMITH</span>
+
+  <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <p class="govuk-notification-banner__heading">
+        We have reviewed your application.<br><br>
+        Check the adviser feedback in your application to see what you need to do next.<br><br>
+        You may need to remove or amend actions or items based on the adviser feedback.
+        <p class="govuk-notification-banner__heading">
+      </p>
+    </div>
+  </div>
+</div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-table__container" style="overflow-x: auto;">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 180px;">Agreement name</th>
+            <th scope="col" class="govuk-table__header" style="width: 130px;">Agreement number</th>
+            <th scope="col" class="govuk-table__header" style="width: 80px;">Type</th>
+            <th scope="col" class="govuk-table__header" style="width: 110px;">Submit date</th>
+            <th scope="col" class="govuk-table__header">Status</th>
+            <th scope="col" class="govuk-table__header"></th>
+            </tr>
+        </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Jasmine Smith's HT application 2025 1234</td>
+        <td class="govuk-table__cell">HDJ2123F</td>
+        <td class="govuk-table__cell">CSHT</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell">In progress</td>
+        <td class="govuk-table__cell table-cell">
+          <form class="form" action="tasklist-12" method="post">
+            <button type="submit" class="govuk-button" data-module="govuk-button">
+              Continue application</button></form>
+          <form class="form" action="application-documents" method="post">
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Application documents</button></form>
+          <form class="form" action="#" method="post">
+              <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button" style="margin-bottom: 0px;">
+              Withdraw application</button></form>
+          </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Jasmine’s SFI application</td>
+        <td class="govuk-table__cell">ABC8945D</td>
+        <td class="govuk-table__cell">SFI</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell">Withdrawn</td>
+        <td class="govuk-table__cell"></td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">Smith’s SFI 2024 Application</td>
+        <td class="govuk-table__cell">HEQ4567D</td>
+        <td class="govuk-table__cell">SFI</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell">Submitted</td>
+        <td class="govuk-table__cell" style="display: flex; justify-content: flex-end;">
+          <form class="form" action="application-documents" method="post">
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-bottom: 40px;">
+              Application documents</button>
+          </form>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">HT 2024 agreement 123</td>
+        <td class="govuk-table__cell">HTD1295F</td>
+        <td class="govuk-table__cell">CSHT</td>
+        <td class="govuk-table__cell"></td>
+        <td class="govuk-table__cell">Agreement live</td>
+        <td class="govuk-table__cell" style="display: flex; justify-content: flex-end;">
+          <form class="form" action="#" method="post">
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Open agreement</button>
+          </form>
+        </td>
+      </tr>
+
+
+  </tbody>
+  </table>
+  </div>
+
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,353 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+
+<h1 class="govuk-heading-xl govuk-!-margin-bottom-6" id="page-top">
+  Adviser feedback
+</h1>
+
+<!--Body Text-->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">An adviser has checked the 20 actions or items in your application:
+
+      <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
+        <li>10 have been approved, so you can apply for these without making any changes</li>
+        <li>10 have been rejected - you must amend or remove these depending on the feedback before you submit your application</li>
+
+      </ul>
+    </p>
+
+    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-6">Contents of the page</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="#list-of-actions" class="govuk-link">List of actions approved or rejected</a></p>
+
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="#feedback-given" class="govuk-link">Feedback given by advisers</a></p>
+
+    </div>    
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-l" id="list-of-actions">
+      Your selected actions or capital items
+    </h2>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#ht">CSHT</a>
+        </li>
+
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#capital">Capital items</a>
+        </li>
+      </ul>
+  
+
+
+<!--- CSHT tab -->
+    <div class="govuk-tabs__panel" id="ht" style="border-bottom: none; border-left: none; border-right: none;">
+      <div class="govuk-table__container" style="overflow-x: auto;">
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 165px;">Parcel number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 250px">
+              Action or capital item</th>
+            <th scope="col" class="govuk-table__header" style="width: 150px">Quantity</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 150px">Status</th>
+            <th scope="col" class="govuk-table__header">Amend or remove</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <p style="text-align:center;" class="govuk-body">No items</p> 
+          </td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+
+      <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+        <ul class="moj-pagination__list">
+          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 1" aria-current="page">1</li>
+
+        </ul>
+        <p class="moj-pagination__results">Showing <b>0</b> to <b>0</b> of <b>0</b> results</p>
+      </nav>
+    </div>
+
+
+<!--- Capital tab -->
+    <div class="govuk-tabs__panel" id="capital" style="border-bottom: none; border-left: none; border-right: none;">
+            <div class="govuk-table__container" style="overflow-x: auto;">
+      <table class="govuk-table" data-module="moj-sortable-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" aria-sort="ascending" style="width: 165px;">Parcel number</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 250px">
+              Action or capital item</th>
+            <th scope="col" class="govuk-table__header" style="width: 150px">Quantity</th>
+            <th scope="col" class="govuk-table__header" aria-sort="none" style="width: 150px">Status</th>
+            <th scope="col" class="govuk-table__header">Amend or remove</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+
+                  <tr class="govuk-table__row">
+          <td class="govuk-table__cell" colspan="5">
+            <p style="text-align:center;" class="govuk-body">No items</p> 
+          </td>
+        </tr>
+
+      </tbody>
+      </table>
+      </div>
+
+      <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+        <ul class="moj-pagination__list">
+          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 1" aria-current="page">1</li>
+
+        </ul>
+        <p class="moj-pagination__results">Showing <b>0</b> to <b>0</b> of <b>0</b> results</p>
+      </nav>
+    </div>
+    </div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-l" id="feedback-given">
+        Feedback given by your advisers
+      </h2>
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+ <div class="govuk-tabs" data-module="govuk-tabs">
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+        <a class="govuk-tabs__tab" href="#app-feedback">
+          General application feedback
+        </a>
+      </li>
+    
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="#parcel-feedback">
+          See feedback left on land parcels
+        </a>
+      </li>
+    </ul>
+
+  <div class="govuk-tabs__panel" style="border-right: none; border-left: none; border-bottom: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 0;" id="app-feedback">
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" style="width: 150px" class="govuk-table__header"  aria-sort="ascending";>Date and time</th>
+            <th scope="col" style="width: 500px" class="govuk-table__header">Message</th>
+            <th scope="col" style="width: 200px" class="govuk-table__header" aria-sort="none">Adviser</th>
+          </tr>
+        </thead>
+
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">20/10/24 <br>14:45</td>
+            <td class="govuk-table__cell">Actions selected are not suitable for the type of plants present on the applicants land.</td>
+            <td class="govuk-table__cell">Mary Poppins<br>Forestry Commission</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23/10/24 <br>10:25</td>
+            <td class="govuk-table__cell">Actions selected are suitable for this land parcel. </td>
+            <td class="govuk-table__cell">Tom Rogers<br>Historic England</td>
+          </tr>
+
+           <tr class="govuk-table__row">
+            <td class="govuk-table__cell">24/10/24 <br>11:30</td>
+            <td class="govuk-table__cell">Land parcels selected for action RP3: Watercourse crossings need to be amended in order for the application to be approved by Natural England. </td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">25/11/24 <br>11:30</td>
+            <td class="govuk-table__cell">This application has been amended and can now be submitted</td>
+            <td class="govuk-table__cell">Paul Lane<br>Natural England</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+
+        <ul class="moj-pagination__list">    
+          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 8" aria-current="page">1</li>
+        </ul>
+        <p class="moj-pagination__results">Showing <b>1</b> to <b>3</b> of <b>3</b> results</p>
+      </nav>
+  </div>
+
+  <div class="govuk-tabs__panel" style="border-right: none; border-left: none; border-bottom: none; padding-top: 20px; padding-left: 0; padding-right: 0; padding-bottom: 0;" id="parcel-feedback">
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <th scope="col" style="width: 150px" class="govuk-table__header" aria-sort="ascending";>Parcel number</th>
+        <th scope="col" style="width: 150px" class="govuk-table__header" aria-sort="none";>Action name</th>
+        <th scope="col" class="govuk-table__header">Message</th>
+        
+        <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5010</td>
+          <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+          <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England.</td>
+      
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5010</td>
+          <td class="govuk-table__cell">CSP1: Supplement: Difficult sites</td>
+          <td class="govuk-table__cell">The land parcels designated for action CSP1: Supplement: Difficult sites must be revised to secure approval from Natural England.</td>
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5011</td>
+          <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+          <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England.</td>
+         
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5011</td>
+          <td class="govuk-table__cell">CSP1: Supplement: Difficult sites</td>
+          <td class="govuk-table__cell">The land parcels designated for action CSP1: Supplement: Difficult sites must be revised to secure approval from Natural England.</td>
+          
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5012</td>
+          <td class="govuk-table__cell">CGS18: Manage species-rich floodplain meadows</td>
+          <td class="govuk-table__cell">To secure Natural England's approval, CGS18: Manage species-rich floodplain meadows needs amendments. Rejection reasons: inadequate nutrient management or non-compliance with guidelines.</td>
+         
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5012</td>
+          <td class="govuk-table__cell">CGS19: Manage wet grassland for wintering waders and wildfowl</td>
+          <td class="govuk-table__cell">Natural England requires amendments to CGS19: Manage wet grassland for wintering waders and wildfowl for approval. Rejection reasons: inadequate nutrient management or non-compliance with guidelines.</td>
+         
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5013</td>
+          <td class="govuk-table__cell">CGS18: Manage species-rich floodplain meadows</td>
+          <td class="govuk-table__cell">To secure Natural England's approval, CGS18: Manage species-rich floodplain meadows needs amendments. Rejection reasons: inadequate nutrient management or non-compliance with guidelines.</td>
+          
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5013</td>
+          <td class="govuk-table__cell">CGS19: Manage wet grassland for wintering waders and wildfowl</td>
+          <td class="govuk-table__cell">Natural England requires amendments to CGS19: Manage wet grassland for wintering waders and wildfowl for approval. Rejection reasons: inadequate nutrient management or non-compliance with guidelines.</td>
+          
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5014</td>
+          <td class="govuk-table__cell">CAB14: Low input harvested cereal crop</td>
+          <td class="govuk-table__cell">Land parcels selected for action CAB14: Low input harvested cereal crop need to be amended in order for the application to be approved by Natural England.</td>
+          
+        </tr>
+           <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SE7023 5015</td>
+          <td class="govuk-table__cell">CSP1: Supplement: Difficult sites</td>
+          <td class="govuk-table__cell">The land parcels designated for action CSP1: Supplement: Difficult sites must be revised to secure approval from Natural England.</td>
+        </tr>
+        </tbody>
+      </table>
+
+      <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+
+        <ul class="moj-pagination__list">
+      
+          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 8" aria-current="page">1</li>
+      
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 8">2</a></li>
+      
+          <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+      
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 8 of 8">8</a></li>
+      
+          <li class="moj-pagination__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span>
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+            </a>
+          </li>
+
+        </ul>
+        <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>90</b> results</p>
+      </nav>
+  </div>
+
+
+<form class="form" action="tasklist-20" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+      Continue application
+    </button>
+</form>
+
+<a href="#page-top" class="govuk-link govuk-link--no-visited-state">Back to top</a>
+        
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+{% endblock %}
