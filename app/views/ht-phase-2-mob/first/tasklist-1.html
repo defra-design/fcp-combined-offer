@@ -167,4 +167,26 @@
 </div>
 </main>
 
+<style>
+@media (max-width: 640px) {
+  .govuk-task-list__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .govuk-task-list__title {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .govuk-task-list__status {
+    width: 100%;
+    text-align: left;
+    margin-top: 10px;
+  }
+}
+</style>
+
+
 {% endblock %}
