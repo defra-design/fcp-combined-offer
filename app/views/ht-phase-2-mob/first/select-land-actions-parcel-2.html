@@ -323,7 +323,14 @@
 
 
   <h2 class="govuk-heading-m">Your available actions for selected land parcel</h2>
-
+  
+  <style>
+    @media screen and (max-width: 640px) {
+      .govuk-input__wrapper {
+        min-width: 110px; /* or whatever fixed width you prefer */
+      }
+    }
+  </style>
 
   <!---Higher Tier tab -->
 <table class="govuk-table">
@@ -351,8 +358,8 @@
                   <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
-          <td class="govuk-table__cell">CSP7: Supplement: Introduction of cattle grazing on the Isles of Scilly</td>
-          <td class="govuk-table__cell">19.0045</td>
+          <td class="govuk-table__cell">CAGF1: Maintain high density in-field agroforestry</td>
+          <td class="govuk-table__cell">0.1312</td>
           <td class="govuk-table__cell">
             <div class="govuk-form-group">
               <div class="govuk-input__wrapper">
@@ -366,31 +373,12 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" style="padding-right: 5;">
               <div class="govuk-checkboxes__item" style="margin: 0;">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
-                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
-                </div>
-              </td>
-          <td class="govuk-table__cell">CSP11: Supplement: Manage scrapes and gutters</td>
-          <td class="govuk-table__cell">10.3224</td>
-          <td class="govuk-table__cell">
-            <div class="govuk-form-group">
-              <div class="govuk-input__wrapper">
-                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                <div class="govuk-input__suffix" aria-hidden="true">m2</div>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="padding-right: 5;">
-              <div class="govuk-checkboxes__item" style="margin: 0;">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
+                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;" >
                   <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
           <td class="govuk-table__cell">CGS18: Manage species-rich floodplain meadows</td>
-          <td class="govuk-table__cell">19.5112</td>
+          <td class="govuk-table__cell">25.2520</td>
           <td class="govuk-table__cell">
             <div class="govuk-form-group">
               <div class="govuk-input__wrapper">
@@ -400,27 +388,7 @@
             </div>
           </td>
         </tr>
-
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="padding-right: 5;">
-              <div class="govuk-checkboxes__item" style="margin: 0;">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
-                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
-                </div>
-              </td>
-          <td class="govuk-table__cell">CGS20: Manage wet grassland for breeding waders</td>
-          <td class="govuk-table__cell">12.2309</td>
-          <td class="govuk-table__cell">
-            <div class="govuk-form-group">
-              <div class="govuk-input__wrapper">
-                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-              </div>
-            </div>
-          </td>
-        </tr>
-
+      
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" style="padding-right: 5;">
               <div class="govuk-checkboxes__item" style="margin: 0;">
@@ -429,7 +397,7 @@
                 </div>
               </td>
           <td class="govuk-table__cell">CGS21: Manage grassland for target habitats, species or features</td>
-          <td class="govuk-table__cell">32.0404</td>
+          <td class="govuk-table__cell">11.5760</td>
           <td class="govuk-table__cell">
             <div class="govuk-form-group">
               <div class="govuk-input__wrapper">
@@ -440,24 +408,6 @@
           </td>
         </tr>
 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="padding-right: 5;">
-              <div class="govuk-checkboxes__item" style="margin: 0;">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
-                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
-                </div>
-              </td>
-          <td class="govuk-table__cell">CGS22: Manage priority habitat species-rich grassland</td>
-          <td class="govuk-table__cell">32.0404</td>
-          <td class="govuk-table__cell">
-            <div class="govuk-form-group">
-              <div class="govuk-input__wrapper">
-                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-              </div>
-            </div>
-          </td>
-        </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" style="padding-right: 5;">
@@ -466,27 +416,8 @@
                   <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
                 </div>
               </td>
-          <td class="govuk-table__cell">CUP3: General moorland management</td>
+          <td class="govuk-table__cell">CHRW4: Manage hedgerows (5 Years)</td>
           <td class="govuk-table__cell">32.0404</td>
-          <td class="govuk-table__cell">
-            <div class="govuk-form-group">
-              <div class="govuk-input__wrapper">
-                <input class="govuk-input govuk-input--width-5" id="weight" type="text" spellcheck="false">
-                <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell" style="padding-right: 5;">
-              <div class="govuk-checkboxes__item" style="margin: 0;">
-                  <input class="govuk-checkboxes__input" id="checkbox-1" type="checkbox" style="margin: 0;">
-                  <label class="govuk-label govuk-checkboxes__label" for="checkbox-1" style="padding: 0;"></label>
-                </div>
-              </td>
-          <td class="govuk-table__cell">CPAC2: Access for people with reduced mobility</td>
-          <td class="govuk-table__cell">-</td>
           <td class="govuk-table__cell">
             <div class="govuk-form-group">
               <div class="govuk-input__wrapper">
@@ -497,16 +428,18 @@
           </td>
         </tr>
 
-   </tbody>
-  </table>
 
+
+   </tbody>
+
+  </table>
 
     
         <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
         <ul class="moj-pagination__list" style="display: flex; align-items: center; gap: 10px; list-style: none; padding: 0; margin: 0;">
           <li class="moj-pagination__item" style="margin: 0;">
             <span class="moj-pagination__results" style="display: inline-block;">
-              Showing <b>1</b> to <b>8</b> of <b>8</b> actions
+              Showing <b>1</b> to <b>4</b> of <b>4</b> actions
             </span>
           </li>
         </ul>
