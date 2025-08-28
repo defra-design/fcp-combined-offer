@@ -1,0 +1,151 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
+  <div class="govuk-grid-row" id="header">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+        <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+          Single Business Identifier (SBI): 123456789
+        </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <form class="form" action="saved-application" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+        <!--- ERROR SUMMARY -->
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+          <div role="alert">
+            <h2 class="govuk-error-summary__title">
+              There is a problem
+            </h2>
+            <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                <li>
+                  <a href="#row-error">Select a live agreement. For agreements that are being amended, or are no longer live, contact Rural Payments Agency (RPA) for help.</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+    <h1 class="govuk-heading-l">Capital Claim 2025</h1>
+    <h2 class="govuk-heading-m">Select the agreement you want to claim for</h2>
+    <p class="govuk-body govuk-!-margin-bottom-6">After you select an agreement, select 'Create a new claim'. You can only create claims for live agreements.</p>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header" style="width: 40px;"></th>
+        <th scope="col" class="govuk-table__header" style="width: 220px;">Agreement type and name</th>
+        <th scope="col" class="govuk-table__header" style="width: 100px;">Agreement number</th>
+        <th scope="col" class="govuk-table__header" style="width: 120px;">Status</th>
+        <th scope="col" class="govuk-table__header" style="width: 110px;">Start date</th>
+        <th scope="col" class="govuk-table__header" style="width: 110px;">End date</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Agreement document</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios" >
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio">
+              <label class="govuk-label govuk-radios__label">
+              </label>
+            </div>
+        </td>
+        <td class="govuk-table__cell">Countryside Stewardship (HT) - H Woodland HT 2026</td>
+        <td class="govuk-table__cell">1228004</td>
+        <td class="govuk-table__cell">Agreement live</td>
+        <td class="govuk-table__cell">01/01/2026</td>
+        <td class="govuk-table__cell">31/12/2036</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">View agreement document</a></td>
+      </tr>
+
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="7">
+        <p id="row-error" class="govuk-error-message" style="margin-bottom: 5px;">
+        <span class="govuk-visually-hidden">Error:</span>You can only select live agreements. For agreements that are being amended, or are no longer live, contact 
+        <a href="https://www.gov.uk/government/organisations/rural-payments-agency" target="_blank" class="govuk-link govuk-link--no-visited-state">Rural Payments Agency (RPA)</a> for help.</p>
+        </td>
+      </tr>
+
+      <tr class="govuk-table__row red-border">
+        <td class="govuk-table__cell red-border-padding">
+
+          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio">
+              <label class="govuk-label govuk-radios__label">
+              </label>
+            </div>
+        </td>
+        <td class="govuk-table__cell">Countryside Stewardship Higher Tier - Holker Woodland</td>
+        <td class="govuk-table__cell">1237477</td>
+        <td class="govuk-table__cell">Agreement under amendment</td>
+        <td class="govuk-table__cell">01/10/2025</td>
+        <td class="govuk-table__cell">30/10/2035</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">View agreement document</a></td>
+      </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="start-claim" method="post">
+      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Create a new claim
+      </button>
+    </form>
+
+    <p class="govuk-body">
+      <a href="claims-table" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+    </p>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

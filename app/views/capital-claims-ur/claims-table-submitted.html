@@ -1,0 +1,199 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
+  <div class="govuk-grid-row" id="header">
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+        <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+          Single Business Identifier (SBI): 123456789
+        </p>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <form class="form" action="saved-application" method="post">
+        <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+            Save and return later
+        </button>
+      </form>
+    </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-6 govuk-!-padding-top-4">
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Countryside Stewardship Higher Tier claims for agreements that start from 2025</h1>
+    <!--- <span class="govuk-caption-l ">Holmeland Farm</span> ----> 
+
+        <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-0">If you feel that you have not received payment or that payment has been delayed, please contact the Rural Payments Agency (RPA).</p>
+  
+      </div>
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width: 140px;">Claim reference</th>
+          <th scope="col" class="govuk-table__header" style="width: 260px;">Agreement name and number</th>
+          <th scope="col" class="govuk-table__header" style="width: 110px;">Submit date</th>
+          <th scope="col" class="govuk-table__header" >Status</th>
+          <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1738201</td>
+          <td class="govuk-table__cell">Holker Woodland Test, 1237477</td>
+          <td class="govuk-table__cell">15/02/2025<br>2:07:01 PM</td>
+          <td class="govuk-table__cell">Submitted</td>
+          <td class="govuk-table__cell"><a href="claims-table-summary" class="govuk-link">Summary</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1674393</td>
+          <td class="govuk-table__cell">Holker Forest, 1237488</td>
+          <td class="govuk-table__cell">09/02/2025<br>5:35:06 PM</td>
+          <td class="govuk-table__cell">Claim held</td>
+          <td class="govuk-table__cell"><a href="claims-table-summary" class="govuk-link">Summary</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1756813</td>
+          <td class="govuk-table__cell">Holker Woodland HT scheme, 1237500</td>
+          <td class="govuk-table__cell">05/02/2025<br>6:15:00 PM</td>
+          <td class="govuk-table__cell">Submitted</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+        </tr>
+        
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1551056</td>
+          <td class="govuk-table__cell">Holker Timber HT scheme, 1237511</td>
+          <td class="govuk-table__cell">24/01/2025<br>10:54:17 AM</td>
+          <td class="govuk-table__cell">Claim validation</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">0230548</td>
+          <td class="govuk-table__cell">Holker Treezone, 1237555</td>
+          <td class="govuk-table__cell">20/01/2025<br>9:11:22 AM</td>
+          <td class="govuk-table__cell">Preparing for payment</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">0140572</td>
+          <td class="govuk-table__cell">Holker Treezone, 1237555</td>
+          <td class="govuk-table__cell">17/01/2025<br>9:11:22 AM</td>
+          <td class="govuk-table__cell">Final checking</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">9973545</td>
+          <td class="govuk-table__cell">Holker Woodland HT 2022, 1237544</td>
+          <td class="govuk-table__cell">10/01/2025<br>5:41:46 PM</td>
+          <td class="govuk-table__cell">Withdrawn</td>
+          <td class="govuk-table__cell"><!----NO LINK--></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1584392</td>
+          <td class="govuk-table__cell">Holker Timber HT 2023, 1237566</td>
+          <td class="govuk-table__cell">08/01/2025<br>6:47:42 PM</td>
+          <td class="govuk-table__cell">Rejected</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">9873245</td>
+          <td class="govuk-table__cell">Holker Timber HT 2024, 1237499</td>
+          <td class="govuk-table__cell">07/01/2025<br>5:15:46 PM</td>
+          <td class="govuk-table__cell">Withdrawn</td>
+          <td class="govuk-table__cell"><!----NO LINK--></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">1674393</td>
+          <td class="govuk-table__cell">Holker Woodland HT scheme 2024, 1237522</td>
+          <td class="govuk-table__cell">02/01/2025<br>6:47:42 PM</td>
+          <td class="govuk-table__cell">Closed</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Summary</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+        <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+
+        <ul class="moj-pagination__list">
+      
+          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
+      
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
+      
+          <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+      
+          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
+      
+          <li class="moj-pagination__item">
+            <a class="govuk-link govuk-link--no-visited-state" href="" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span>
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg>
+            </a>
+          </li>
+
+        </ul>
+        <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>40</b> results</p>
+      </nav>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <h2 class="govuk-heading-m" for="claim-year" style="margin-bottom: 5px;">
+        Create a new claim
+      </h2>
+      <div id="claim-hint" class="govuk-hint">
+        Select the relevant year and type of claim from the dropdown list.
+      </div>
+      <select class="govuk-select" id="claim-year" name="year" aria-describedby="claim-hint">
+        <option value="2025" selected>Capital Claim 2025</option>
+        <option value="2024">Capital Claim 2024</option>
+      </select>
+    </div>
+
+  <form class="form" action="claims-select-agreement" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+        Create a new claim
+    </button>
+  </form>
+
+  </div>
+
+</div>
+
+
+{% endblock %}

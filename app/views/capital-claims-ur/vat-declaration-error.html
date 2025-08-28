@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li style="margin-bottom: 20px;">
+              <a href="#vat-error">Select if you are VAT registered</a>
+            </li>
+            <li style="margin-bottom: 20px;">
+              <a href="#vat-declare-error">Select if you have declared VAT for those actual cost capital items</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h1 class="govuk-heading-l">VAT declaration</h1>
+      
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label govuk-label--m" style="margin-bottom: 10px;">
+        Are you VAT registered?
+      </label>
+      <!--- <div id="evidence-hint" class="govuk-hint">
+        If no, you must send the RPA proof of your VAT status.
+      </div> ---> 
+      <p id="vat-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Select if you are VAT registered
+      </p>
+
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-yes" name="vat" type="radio" value="yes" aria-describedby="vat-yes">
+          <label class="govuk-label govuk-radios__label" for="vat">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
+            No
+          </label>
+        </div>
+      </div>
+    </div>
+    
+    <div class="govuk-form-group govuk-form-group--error">
+      <label class="govuk-label govuk-label--m" style="margin-bottom: 10px;">
+        Do you want to claim VAT for the capital items which are paid on the basis of actual costs?
+      </label>
+      <div id="evidence-hint" class="govuk-hint">
+          If you are not VAT registered and wish to claim VAT, you must send the RPA a letter from HMRC or your accountant which confirms your VAT status.
+      </div>
+      <p id="vat-declare-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Select if you have declared VAT for those actual cost capital items
+      </p>
+      
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-yes" name="vat" type="radio" value="yes" aria-describedby="vat-yes">
+          <label class="govuk-label govuk-radios__label" for="vat">
+            Yes
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
+            No
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="vat-no" name="vat" type="radio" value="no" aria-describedby="vat-no">
+          <label class="govuk-label govuk-radios__label" for="vat-2">
+            Not applicable
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <form class="form" action="tasklist-5" method="post">
+      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Save and continue
+      </button>
+    </form>
+
+
+    </div>
+  </div>
+
+  <div class="govuk-!-padding-bottom-9"></div>
+
+{% endblock %}

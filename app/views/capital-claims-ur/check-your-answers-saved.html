@@ -1,0 +1,373 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Your claim is saved and can be submitted
+    </h3>
+    <p class="govuk-body">Select 'Save and continue' to proceed.</p>
+  </div>
+</div>
+
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check your answers before submitting your claim​</h1>
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">Print</a></p>
+    </p>
+  </div>
+
+
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l" id="details">
+            Your details
+    </h2>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Business
+        </dt>
+        <dd class="govuk-summary-list__value">
+          JASMINE SMITH FARM<br>
+          Rainbow Farm<br>
+          High Street<br>
+          Rhydlewis<br>
+          Ellesmere<br>
+          PO30 1NY
+          </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Single Business Identifier (SBI)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123456789
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Agreement number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1237477
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-4" id="capital-items">
+      Your capital item claims
+    </h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-heading-s" style="width: 410px;">
+          Standard cost items
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="standard-cost-items-saved">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          BN12 - Stone wall restoration
+        </dt>
+        <dd class="govuk-summary-list__value">
+          65 m
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £1,625.00
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          BN13 - Stone wall - top wiring
+        </dt>
+        <dd class="govuk-summary-list__value">
+          1500 m
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £2,725.00
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          FG12 - Wooden field gate
+        </dt>
+        <dd class="govuk-summary-list__value">
+          3 units
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £750.00
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Standard cost items total
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £5,100.00
+        </dd>
+      </div>
+    </dl>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-heading-s" style="width: 410px;">
+          Actual cost items
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="actual-cost-items-saved">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          LV2: Livestock handling facilities
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £1,000.00
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          FM1: Management of geodiversity features
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £1,573.00
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Actual cost items total
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £2,573.00
+        </dd>
+      </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Claims total
+        </dt>
+        <dd class="govuk-summary-list__value">
+          
+        </dd>
+        <dd class="govuk-summary-list__value">
+          £29,953.81
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-l govuk-!-margin-bottom-4 govuk-!-margin-top-6" id="declarations">
+      Declarations
+    </h2>
+
+
+    <!--- PROOF OF COST -->
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-heading-s" style="width: 390px;">
+          Proof of cost
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="proof-cost">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">Have you sent receipts or receipted invoices to support this claim to the RPA?
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value"> 
+          <p class="govuk-body">Yes</p>
+          <p class="govuk-body">10 items</p>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">Have you sent any extra evidence to support your claim?
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">No
+        </dd>
+      </div>
+    </dl>
+
+    <!--- VAT -->
+    <dl class="govuk-summary-list govuk-!-margin-top-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-heading-s" style="width: 390px;">
+          VAT declaration
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="proof-cost">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">Are you VAT registered?
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">Yes
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">VAT declaration for actual cost items
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">Not applicable
+        </dd>
+      </div>
+      </dl>
+
+
+  <h2 class="govuk-heading-l govuk-!-margin-bottom-4 govuk-!-margin-top-6" id="additional">
+      Additional details for your claim
+    </h2>
+
+<!--- PUBLIC FUNDING -->
+    <dl class="govuk-summary-list govuk-!-margin-bottom-2">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-heading-s" style="width: 390px;">
+          Have you received other public funding or grants?
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value"> No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="public-funding">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <!-- LATE CLAIMS -->
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__key" style="width: 390px;"> 
+          Final claims
+        </dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+       <dd class="govuk-summary-list__value" style="width: 390px; white-space: nowrap;"> 
+          <p class="govuk-body">Yes</p>
+          <p class="govuk-body">14 standard cost items</p>
+          <p class="govuk-body">3 actual cost items</p>
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="final-claims">View<span class="govuk-visually-hidden"> final claims</span></a>
+        </dd>
+      </div>
+
+    </dl>
+
+
+
+<div class="govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+  <form class="form" action="check-your-answers-load" method="post">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Confirm
+    </button>
+  </form>
+
+  <form class="form" action="tasklist-8" method="post">
+  <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+    Save and continue
+  </button>
+  </form>
+</div>
+
+</div>
+</div>
+
+
+
+{% endblock %}
