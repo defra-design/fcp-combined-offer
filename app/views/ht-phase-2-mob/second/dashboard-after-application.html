@@ -8,16 +8,19 @@
 
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
+
 {{ govukPhaseBanner({
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only.'
+  html: 'This is a prototype used for testing purposes only. <a href="/ht-phase-2-mob/start" class=\"govuk-link\">Back to start page</a>'
 }) }}
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
+
 {% endblock %}
 
 {% block content %}
