@@ -56,6 +56,7 @@
 </div>
 -->
 
+<!--- 
 <div class="govuk-grid-row">
   <div class="loading" id=loadingSpinner style="margin-left:auto; margin-right: auto" aria-live="polite" role="status"></div>
 </div>
@@ -67,12 +68,30 @@
 <div class="govuk-!-padding-bottom-9"></div>
 <div class="govuk-!-padding-bottom-9"></div>
 </div>
+-->
 
+<div class="govuk-grid-row">
+  
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="loadingBanner">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Validation in progress.
+    </p>
+    <p class="govuk-body">We are processing your application, the page will reload automatically. <br>
+      It is safe to close the browser and come back later.</p>
+  </div>
+</div>
+</div>
 
 <script>
   // Function to hide the loading spinner and redirect to another page
   function hideLoadingSpinnerAndRedirect() {
-    const spinner = document.getElementById('loadingSpinner');
+    const spinner = document.getElementById('loadingBanner');
     spinner.style.display = 'none';
     // Redirect to another page
     window.location.href = "bis-check-your-answers-saved"; // Replace with your desired URL
