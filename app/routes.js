@@ -423,27 +423,6 @@ router.get('/dashboard-withdraw-application', function (req, res) {
 
 
 
-// CAPITAL CLAIMS - STANDARD COST ITEMS COMPLETE ERROR
-router.post('/capitals-standard-cost-complete', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var standardSectionComplete = req.session.data['haveYouCompletedThisSection']
-
-  // Check whether the variable matches a condition
-  if (standardSectionComplete == "yes"){
-    // Send user to next page
-    res.redirect('/capital-claims/tasklist-2')
-
-  } else if (standardSectionComplete == "no"){
-    res.redirect('/capital-claims/tasklist-1')
-
-  } else {
-    // Send user to ineligible page
-    res.redirect('/capital-claims/standard-cost-items-error')
-  }
-
-})
-
 // HIGHER TIER CUSTOMER PHASE 2 - MOB VIEW// 
 
 // Add your routes here
@@ -554,6 +533,8 @@ router.get('/dashboard-withdraw-application', function (req, res) {
 
 
 
+
+
 // CAPITAL CLAIMS - STANDARD COST ITEMS COMPLETE ERROR
 router.post('/capitals-standard-cost-complete', function (req, res) {
 
@@ -596,52 +577,6 @@ router.post('/capitals-actual-cost-complete', function (req, res) {
 
 })
 
-// CAPITAL CLAIMS - Public funding ERROR
-router.post('/capitals-funding', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var publicFunding = req.session.data['funding']
-  var publicConditional = req.session.data ['public-conditional-comments-yes']
-
-  // Check whether the variable matches a condition
-  if (!publicFunding) {
-  // User has not selected anything
-    res.redirect('/capital-claims/public-funding-error');
-  }
-  if (publicFunding === "yes" && !publicConditional) {
-    res.redirect('/capital-claims/public-funding-text-error');
-  
-  } else {
-    // Send user to tasklist
-    res.redirect('/capital-claims/tasklist-6')
-  }
-
-  })
-
-
-// CAPITAL CLAIMS - Late claims ERROR
-router.post('/capitals-final-claims', function (req, res) {
-
-  // Make a variable and give it the value from 'how-many-balls'
-  var lateClaims = req.session.data['comments']
-  var claimsConditional = req.session.data['conditional-comments-yes']
-
-  // Check whether the variable matches a condition
-  if (!lateClaims) {
-    // User has not selected anything
-      res.redirect('/capital-claims/final-claims-error');
-    }
-
-  if (lateClaims === "yes" && !claimsConditional) {
-    // Send user to next page
-    res.redirect('/capital-claims/final-claims-text-error');
-
-  } else {
-    // Send user to ineligible page
-    res.redirect('/capital-claims/tasklist-6')
-  }
-
-  })
 
 
 // CAPITAL CLAIMS - Declarations ERROR
@@ -661,6 +596,95 @@ router.post('/capitals-declarations', function (req, res) {
   } else {
     // Send user to ineligible page
     res.redirect('/capital-claims/declarations-error')
+  }
+
+})
+
+// CAPITAL CLAIMS UR //
+
+
+
+// CAPITAL CLAIMS UR - STANDARD COST ITEMS COMPLETE ERROR
+router.post('/capitals-ur-standard-cost-complete', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var standardSectionComplete = req.session.data['haveYouCompletedThisSection']
+
+  // Check whether the variable matches a condition
+  if (standardSectionComplete == "yes"){
+    // Send user to next page
+    res.redirect('/capital-claims-ur/tasklist-2')
+
+  } else if (standardSectionComplete == "no"){
+    res.redirect('/capital-claims-ur/tasklist-1')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/capital-claims-ur/standard-cost-items-error')
+  }
+
+})
+
+// CAPITAL CLAIMS - ACTUAL COST ITEMS COMPLETE ERROR
+router.post('/capitals-ur-actual-cost-complete', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var actualSectionComplete = req.session.data['actualCostComplete']
+
+  // Check whether the variable matches a condition
+  if (actualSectionComplete == "yes"){
+    // Send user to next page
+    res.redirect('/capital-claims-ur/tasklist-3')
+
+  } else if (actualSectionComplete == "no"){
+    res.redirect('/capital-claims-ur/tasklist-2')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/capital-claims-ur/actual-cost-items-error')
+  }
+
+})
+
+// CAPITAL CLAIMS - Public funding ERROR
+router.post('/capitals-funding', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var publicFunding = req.session.data['funding']
+  var publicConditional = req.session.data ['public-conditional-comments-yes']
+
+  // Check whether the variable matches a condition
+  if (!publicFunding) {
+  // User has not selected anything
+    res.redirect('/capital-claims-ur/public-funding-error');
+  }
+  if (publicFunding === "yes" && !publicConditional) {
+    res.redirect('/capital-claims-ur/public-funding-text-error');
+  
+  } else {
+    // Send user to tasklist
+    res.redirect('/capital-claims-ur/tasklist-6')
+  }
+
+  })
+
+// CAPITAL CLAIMS - Declarations ERROR
+router.post('/capitals-ur-declarations', function (req, res) {
+
+  // Make a variable and give it the value from 'how-many-balls'
+  var declarations = req.session.data['declarations']
+
+  // Check whether the variable matches a condition
+  if (declarations == "yes"){
+    // Send user to next page
+    res.redirect('/capital-claims-ur/tasklist-9')
+
+  } else if (declarations == "no"){
+    res.redirect('/capital-claims-ur/declarations-no')
+
+  } else {
+    // Send user to ineligible page
+    res.redirect('/capital-claims-ur/declarations-error')
   }
 
 })

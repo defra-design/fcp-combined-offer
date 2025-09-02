@@ -65,28 +65,11 @@
     <tbody class="govuk-table__body">
 
       <tr class="govuk-table__row">
-        <td class="govuk-table__cell">
-          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios" >
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" type="radio">
-              <label class="govuk-label govuk-radios__label">
-              </label>
-            </div>
-        </td>
-        <td class="govuk-table__cell">Countryside Stewardship Higher Tier - Holker Woodland</td>
-        <td class="govuk-table__cell">1237477</td>
-        <td class="govuk-table__cell">Agreement live</td>
-        <td class="govuk-table__cell">01/10/2025</td>
-        <td class="govuk-table__cell">30/10/2035</td>
-        <td class="govuk-table__cell"><a href="#" class="govuk-link">View agreement document</a></td>
-      </tr>
-
-      <tr class="govuk-table__row">
         <td class="govuk-table__cell"">
 
           <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" type="radio">
+              <input class="govuk-radios__input" type="radio" name="agreementSelection" value="agreement1">
               <label class="govuk-label govuk-radios__label">
               </label>
             </div>
@@ -100,14 +83,32 @@
         <td class="govuk-table__cell"><a href="#" class="govuk-link">View agreement document</a></td>
       </tr>
 
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">
+          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" type="radio" name="agreementSelection" value="agreement2">
+              <label class="govuk-label govuk-radios__label">
+              </label>
+            </div>
+        </td>
+        <td class="govuk-table__cell">Countryside Stewardship Higher Tier - Holker Woodland</td>
+        <td class="govuk-table__cell">1237477</td>
+        <td class="govuk-table__cell">Agreement under amendment</td>
+        <td class="govuk-table__cell">01/10/2025</td>
+        <td class="govuk-table__cell">30/10/2035</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">View agreement document</a></td>
+      </tr>
+
+
       </tbody>
     </table>
   </div>
 
 
   <div class="govuk-grid-column-two-thirds">
-
-    <form class="form" action="claims-load" method="post">
+    <form class="form" action="claims-select-agreement-error" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
           Create a new claim
       </button>

@@ -41,20 +41,38 @@
 
 {% block content %}
 
+
 <div class="govuk-grid-row">
 
-<div class="govuk-grid-column-two-thirds">
-  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Standard cost items</h1>
+  <div class="govuk-grid-column-two-thirds">
 
+      <div class="govuk-notification-banner govuk-notification-banner--success govuk-!-margin-bottom-6" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Your changes for item code BN12 have been saved
+          </h3>
+        </div>
+      </div>
+
+  </div>
+  
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Standard cost items</h1>
+    
     <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
       If any of the numbers are incorrect, <a href="https://www.gov.uk/government/organisations/rural-payments-agency" target="_blank" class="govuk-link">contact the RPA</a> before you go any further.
     </p>
-
-</div>
-
-
-<div class="govuk-grid-column-full">
-  <table class="govuk-table" data-module="moj-sortable-table">
+    
+    </div>
+    
+    
+    <div class="govuk-grid-column-full">
+        <table class="govuk-table" data-module="moj-sortable-table">
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
 
@@ -72,8 +90,8 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-sort-value="1">BN12: Stone wall restoration</td>
           <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">225 metres</td>
-          <td class="govuk-table__cell">0 metres</td>
+          <td class="govuk-table__cell">185 metres</td>
+          <td class="govuk-table__cell">40 metres</td>
           <td class="govuk-table__cell"><a href="standard-cost-bn12" class="govuk-link">Claim for this item</a></td>
         </tr>
 
@@ -150,14 +168,15 @@
         </tr>
 
 
-     <!---
+<!--- 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell" data-sort-value="10">FG17: Deer vehicle gate</td>
+          <td class="govuk-table__cell">FG17: Deer vehicle gate</td>
           <td class="govuk-table__cell">3 units</td>
           <td class="govuk-table__cell">3 units</td>
           <td class="govuk-table__cell">0 units</td>
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
+
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">FY1: Deer high seat / unit</td>
           <td class="govuk-table__cell">9 units</td>
@@ -185,9 +204,9 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">RP16: Rainwater goods</td>
           <td class="govuk-table__cell">140 metres</td>
-          <td class="govuk-table__cell">120 metres</td>
           <td class="govuk-table__cell">0 metres</td>
-          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
+          <td class="govuk-table__cell">120 metres</td>
+          <td class="govuk-table__cell">Claim complete</td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -229,72 +248,71 @@
           <td class="govuk-table__cell">0 trees</td>
           <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
         </tr>
-         -->
+
+        -->
 
       </tbody>
     </table>
 
-    <!----Pagination-----> 
-    <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
-      <ul class="moj-pagination__list">
-        <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
-        <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
-        <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-        <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
-        <li class="moj-pagination__item">
-          <a class="govuk-link govuk-link--no-visited-state" href="" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span>
-            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-          </svg>
-          </a>
-        </li>
-      </ul>
-      <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>83</b> results</p>
-    </nav>
+    
+        <!----Pagination-----> 
+        <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+          <ul class="moj-pagination__list">
+            <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
+            <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
+            <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+            <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 9 of 9">9</a></li>
+            <li class="moj-pagination__item">
+              <a class="govuk-link govuk-link--no-visited-state" href="" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+              </a>
+            </li>
+          </ul>
+          <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>83</b> results</p>
+        </nav>
 
-    </div>
-    </div>
-
-
+        </div>
+        </div>
 
 
   <!----Have you completed this section-->    
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">  
 
-    <div class="govuk-form-group">
-      <label class="govuk-label govuk-label--m">
-        Have you finished creating your standard cost item claims?
-      </label>
-        <div class="govuk-radios" data-module="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-label--m">
+          Have you finished creating your standard cost item claims?  
+        </label>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveYouCompletedThisSection1" name="haveYouCompletedThisSection1" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection1">
               Yes, I've added my claims
-            </label>
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection1" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+                No, I’ll come back to it later
+              </label>
+            </div>
           </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
-              No, I’ll come back to it later
-            </label>
-          </div>
-        </div>
-    </div>
+      </div>
 
-  <form class="form" action="standard-cost-items" method="post">
-    <button type="submit" class="govuk-button" data-module="govuk-button">
-      Save and continue
-    </button>
-  </form>
+  <form class="form" action="standard-cost-items-bn12-saved" method="post">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+</form>
 
-
-
+  </div>
 
 </div>
-</div>
 
-
+  
+    
 
 
 

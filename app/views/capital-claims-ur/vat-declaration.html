@@ -95,6 +95,41 @@
         </fieldset>
       </div>
 
+  
+    <div id="vat-warning" class="govuk-warning-text" style="display: none;">
+      <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+      <strong class="govuk-warning-text__text">
+        <span class="govuk-visually-hidden">Warning</span>
+        If you are VAT registered and you wish to claim for VAT, you must have approval from your adviser to claim the VAT element
+      </strong>
+    </div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const vatRegisteredRadios = document.getElementsByName('vat-registered');
+    const vatActualRadios = document.getElementsByName('vat-actual');
+    const warningBox = document.getElementById('vat-warning');
+
+    function checkSelections() {
+      const vatRegisteredYes = document.getElementById('vat-yes').checked;
+      const vatActualYes = document.getElementById('vat-actual-yes').checked;
+
+      if (vatRegisteredYes && vatActualYes) {
+        warningBox.style.display = 'block';
+      } else {
+        warningBox.style.display = 'none';
+      }
+    }
+
+    vatRegisteredRadios.forEach(radio => {
+      radio.addEventListener('change', checkSelections);
+    });
+
+    vatActualRadios.forEach(radio => {
+      radio.addEventListener('change', checkSelections);
+    });
+  });
+</script>
 
     <form class="form" action="tasklist-5" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
@@ -109,3 +144,5 @@
   <div class="govuk-!-padding-bottom-9"></div>
 
 {% endblock %}
+
+
