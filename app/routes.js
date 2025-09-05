@@ -600,8 +600,7 @@ router.post('/capitals-declarations', function (req, res) {
 
 })
 
-// CAPITAL CLAIMS UR //
-
+// CAPITAL CLAIMS User Research //
 
 
 // CAPITAL CLAIMS UR - STANDARD COST ITEMS COMPLETE ERROR
@@ -645,6 +644,34 @@ router.post('/capitals-ur-actual-cost-complete', function (req, res) {
   }
 
 })
+
+// CAPITAL CLAIMS LV2 ADD INVOICE
+router.post('/actual-cost-add-invoice', function (req, res) {
+  // Get values from the form
+  const rawAmount = req.body['amount-claimed'] || '0';
+  const rawVat = req.body['vat-claimed'] || '0';
+
+  // Clean and parse the values
+  const amountClaimed = parseFloat(rawAmount.toString().replace(/[^0-9.]/g, '')) || 0;
+  const vatClaimed = parseFloat(rawVat.toString().replace(/[^0-9.]/g, '')) || 0;
+
+  const total = amountClaimed + vatClaimed;
+
+  // Optional: log values for debugging
+  console.log(`Amount: ${amountClaimed}, VAT: ${vatClaimed}, Total: ${total}`);
+
+  // Redirect to error page if total exceeds £1200
+  if (total > 1200) {
+    return res.redirect('/capital-claims-ur/actual-cost-add-invoice-error');
+  }
+
+  // Otherwise, continue to the next step
+  return res.redirect('/capital-claims-ur/actual-cost-lv2-saved'); // Replace with your actual next page
+});
+
+
+
+
 
 // CAPITAL CLAIMS - Public funding ERROR
 router.post('/capitals-funding', function (req, res) {
