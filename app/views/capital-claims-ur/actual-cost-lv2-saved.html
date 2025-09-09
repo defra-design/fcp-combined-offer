@@ -94,7 +94,7 @@
           <td class="govuk-table__cell">£0.00</td>
           <td class="govuk-table__cell">£1,200.00</td>
           <td class="govuk-table__cell">31/12/2028</td>
-          <td class="govuk-table__cell">£1,080.00</td>
+          <td class="govuk-table__cell" id="total-claimed-value-parcel">£0.00</td>
           <td class="govuk-table__cell">
             <div class="govuk-checkboxes govuk-checkboxes--small center-checkbox" data-module="govuk-checkboxes">
               <div class="govuk-checkboxes__item" style="padding-bottom: 20px;">
@@ -103,7 +103,7 @@
               </div>
             </div>
           </td>
-          <td class="govuk-table__cell"><a href="actual-cost-lv2-invoices-saved" class="govuk-link">Add or view invoices</a></td>
+          <td class="govuk-table__cell"><a href="actual-cost-lv2-invoices" class="govuk-link">Add or view invoices</a></td>
         </tr>
 
 
@@ -113,9 +113,7 @@
         <td class="govuk-table__cell"></td>
         <td class="govuk-table__cell"></td>
         <td class="govuk-table__cell" colspan="2" style="text-align: right;"><strong>Total claimed amount</strong></td>
-        <td class="govuk-table__cell">
-          £1,080.00
-        </td>
+        <td class="govuk-table__cell" id="total-claimed-value-total">£0.00</td>
         <td class="govuk-table__cell"></td>
         <td class="govuk-table__cell"></td>
       </tr>
@@ -135,6 +133,17 @@
 
 </div>
 </div>
+
+
+
+<script>
+  const total = sessionStorage.getItem('totalClaimed');
+
+  if (total !== null) {
+    document.getElementById('total-claimed-value-parcel').textContent = `£${parseFloat(total).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    document.getElementById('total-claimed-value-total').textContent = `£${parseFloat(total).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+</script>
 
 
 

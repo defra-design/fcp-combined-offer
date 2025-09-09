@@ -48,6 +48,8 @@
   </div>
 
   <div class="govuk-grid-column-full">
+
+  <form class="form" id="agreementForm" method="post">
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -108,11 +110,29 @@
 
 
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="claims-select-agreement-error" method="post">
+
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
           Create a new claim
       </button>
     </form>
+
+
+ <script>
+  document.getElementById('agreementForm').addEventListener('submit', function (e) {
+    e.preventDefault(); // prevent default form submission
+
+    const selected = document.querySelector('input[name="agreementSelection"]:checked');
+
+    if (selected.value === 'agreement2') {
+      window.location.href = 'claims-select-agreement-error';
+    } else {
+      window.location.href = 'start-claim'; // replace with your normal page
+    }
+  });
+</script>
+
+
+
 
     <p class="govuk-body">
       <a href="claims-table" class="govuk-link govuk-link--no-visited-state">Cancel</a>

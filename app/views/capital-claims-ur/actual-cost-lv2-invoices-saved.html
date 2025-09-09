@@ -86,14 +86,14 @@
 
     <tbody class="govuk-table__body">
 
-      <tr class="govuk-table__row">
+    <tr class="govuk-table__row" id="session-total-row" style="display: none;">
         <td class="govuk-table__cell">RCPT2023001</td>
         <td class="govuk-table__cell">£1,080.00</td>
         <td class="govuk-table__cell">£216.00</td>
         <td class="govuk-table__cell">100%</td>
-        <td class="govuk-table__cell">£1,080.00</td>
-        <td class="govuk-table__cell">£0.00</td>
-      </tr>
+      <td class="govuk-table__cell" id="session-claimed-amount"></td>
+      <td class="govuk-table__cell" id="session-claimed-vat"></td>
+    </tr>
 
       <tr class="govuk-table__row">
 
@@ -101,17 +101,19 @@
         <td class="govuk-table__cell"></td>
         <td class="govuk-table__cell"></td>
         <td class="govuk-table__cell" colspan="2" style="text-align: right;"><strong>Total claimed amount</strong></td>
-        <td class="govuk-table__cell">
-          £1,080.00
-        </td>
+        <td class="govuk-table__cell" id="total-claimed-value">£0.00</td>
       </tr>
+
+
+
+
 
       </tbody>
     </table>
 
 
 
-    <form class="form" action="actual-cost-add-invoice-cancel" method="post">
+    <form class="form" action="actual-cost-add-invoice" method="post">
       <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
           Add invoice
       </button>
@@ -126,6 +128,31 @@
 
 </div>
 </div>
+
+<script>
+  const amount = sessionStorage.getItem('amountClaimed');
+  const vat = sessionStorage.getItem('vatClaimed');
+
+  if (amount !== null || vat !== null) {
+    const amountValue = parseFloat(amount) || 0;
+    const vatValue = parseFloat(vat) || 0;
+    const total = amountValue + vatValue;
+
+    // Save total to sessionStorage for use on other pages
+    sessionStorage.setItem('totalClaimed', total.toFixed(2));
+
+    // Populate the session row
+    document.getElementById('session-claimed-amount').textContent = `£${amountValue.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    document.getElementById('session-claimed-vat').textContent = `£${vatValue.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    document.getElementById('session-total-row').style.display = '';
+
+    // Populate the final total row
+    const totalCell = document.getElementById('total-claimed-value');
+    if (totalCell) {
+      totalCell.textContent = `£${total.toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+    }
+  }
+</script>
 
 
 

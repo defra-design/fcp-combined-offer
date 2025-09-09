@@ -89,7 +89,7 @@
           <td class="govuk-table__cell">LV2: Livestock handling facilities</td>
           <td class="govuk-table__cell">£1,200.00</td>
           <td class="govuk-table__cell">£1,200.00</td>
-          <td class="govuk-table__cell">£1,080.00</td>
+          <td class="govuk-table__cell" id="total-claimed-value-total">£0.00</td>
           <td class="govuk-table__cell"><a href="actual-cost-lv2" class="govuk-link">Claim for this item</a></td>
         </tr>
 
@@ -176,12 +176,17 @@
     </button>
   </form>
 
+<script>
+  const total = sessionStorage.getItem('totalClaimed');
 
+  if (total !== null) {
+    document.getElementById('total-claimed-value-total').textContent = `£${parseFloat(total).toLocaleString('en-GB', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  }
+</script>
 
 
 </div>
 </div>
-
 
 
 

@@ -114,7 +114,7 @@
   </h2>
   <div class="govuk-input__wrapper">
     <div class="govuk-input__prefix" aria-hidden="true">£</div>
-    <input class="govuk-input govuk-input--width-10" type="number" spellcheck="false" id="amount-claimed" name="amount-claimed">
+    <input class="govuk-input govuk-input--width-10" type="number" spellcheck="false" id="amount-claimed" name="amount-claimed"> 
   </div>
 </div>
 
@@ -132,11 +132,38 @@
 </div>
 
 
-    <form class="form" action="actual-cost-add-invoice-error" method="post">
-      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-        Save and continue
-      </button>
-    </form>
+
+  <form class="form" id="invoiceForm">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
+
+
+
+<script>
+  document.getElementById('invoiceForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const amountClaimed = parseFloat(document.getElementById('amount-claimed').value) || 0;
+    const vatClaimed = parseFloat(document.getElementById('vat-claimed').value) || 0;
+    const total = amountClaimed + vatClaimed;
+
+    // Save to sessionStorage
+    sessionStorage.setItem('amountClaimed', amountClaimed);
+    sessionStorage.setItem('vatClaimed', vatClaimed);
+
+    if (total > 1200) {
+      window.location.href = 'actual-cost-add-invoice-error';
+    } else {
+      window.location.href = 'actual-cost-lv2-invoices-saved';
+    }
+  });
+</script>
+
+
+
+
 
     <p class="govuk-body">
       <a href="actual-cost-lv2-invoices" class="govuk-link">Cancel</a>
