@@ -40,7 +40,7 @@
 
 {% block content %}
 
-<!--------BIS CHECK YOUR ANSWERS ACTIVE--------->
+<!--------BIS ROTATIONAL ACTIONS ACTIVE--------->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -53,7 +53,7 @@
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
           We have reviewed your application.<br><br>
-          Check the <a class="govuk-notification-banner__link" href="adviser-feedback-approved-final">adviser feedback to see what you need to do next</a>.<br><br>
+          Check the <a class="govuk-notification-banner__link" href="adviser-feedback-approved-2">adviser feedback to see what you need to do next</a>.<br><br>
           You may need to remove or amend actions or items based on the adviser feedback.
           <p class="govuk-notification-banner__heading">
         </p>
@@ -154,25 +154,27 @@
           href: "bis-agreement-level-actions",
           status: completedStatus
   },
-        {
-          title: {
-            text: "Select the land you want to do the capital items on"
-          },
-      href: "bis-select-map-capitals-applied",
-      status: completedStatus
-  },
-
-             {
-          title: {
-            text: "Apply for your agreement level capital items"
-          },
-          href: "bis-agreement-level-capitals",
-          status: completedStatus
-  }
+  {
+    title: {
+      text: "Select the land you want to do the capital items on"
+    },
+    href: "bis-select-map-capitals",
+    status: completedStatus
+}
         ]
       }) }}
-
 <!---
+
+      {
+    title: {
+      text: "Apply for your agreement level capital items"
+    },
+    href: "bis-agreement-level-capitals",
+    status: completedStatus
+  }
+
+
+
   {
     title: {
       text: "Select additional parcels for your rotational actions"
@@ -183,8 +185,7 @@
         ]
       }) }}
  -->
-
-      <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
+<h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
 
       {{ govukTaskList({
         idPrefix: "fourth-section",
@@ -193,7 +194,7 @@
             title: {
               text: "Check your answers"
             },
-            href: "bis-check-your-answers-2",
+            href: "check-your-answers",
             status: incompleteStatus
           },
           {

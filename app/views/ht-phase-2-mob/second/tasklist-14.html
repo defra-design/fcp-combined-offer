@@ -40,7 +40,7 @@
 
 {% block content %}
 
-<!--------BIS SELECT CAPITAL ITEMS ACTIVE --------->
+<!--------BIS SELECT LAND YOU WANT TO DO ACTIONS ON ACTIVE --------->
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -53,7 +53,7 @@
       <div class="govuk-notification-banner__content">
         <p class="govuk-notification-banner__heading">
           We have reviewed your application.<br><br>
-          Check the <a class="govuk-notification-banner__link" href="adviser-feedback">adviser feedback to see what you need to do next</a>.<br><br>
+          Check the <a class="govuk-notification-banner__link" href="adviser-feedback-approved-1">adviser feedback to see what you need to do next</a>.<br><br>
           You may need to remove or amend actions or items based on the adviser feedback.
           <p class="govuk-notification-banner__heading">
         </p>
@@ -76,7 +76,7 @@
 
 <p class="govuk-body govuk-!-font-weight-bold">Application incomplete</p>
 
-<p class="govuk-body">You have completed 2 of 4 sections</p>
+<p class="govuk-body">You have completed 3 of 4 sections</p>
 
       <h2 class="govuk-heading-m">1. Check before you start</h2>
 
@@ -135,44 +135,46 @@
         ]
       }) }}
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Select land for your actions and items</h2>
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Select land for your actions and items</h2>
 
-    {{ govukTaskList({
-      idPrefix: "third-section",
-      items: [
-        {
-          title: {
-            text: "Select the land you want to do the actions on"
+      {{ govukTaskList({
+        idPrefix: "third-section",
+        items: [
+          {
+            title: {
+              text: "Select the land you want to do the actions on"
+            },
+            href: "bis-select-map-actions",
+            status: completedStatus
           },
-          href: "bis-select-map-actions-applied",
-          status: completedStatus
-        },
-        {
-          title: {
-            text: "Apply for your agreement level actions"
-          },
-          href: "bis-agreement-level-actions-error",
-          status: incompleteStatus
-  },
-        {
-          title: {
-            text: "Select the land you want to do the capital items on"
-          },
-          href: "bis-select-map-capitals",
-          status: completedStatus
-      },
-
-            {
-          title: {
-            text: "Apply for your agreement level capital items"
-          },
-          href: "bis-agreement-level-capitals",
-          status: completedStatus
+          {
+            title: {
+              text: "Apply for your agreement level actions"
+            },
+            href: "bis-agreement-level-actions",
+            status: completedStatus
+    },
+          {
+            title: {
+              text: "Select the land you want to do the capital items on"
+            },
+        href: "bis-select-map-capitals",
+        status: incompleteStatus
+    }
+        ]
+      }) }}
+<!---
+               {
+            title: {
+              text: "Apply for your agreement level capital items"
+            },
+            href: "bis-agreement-level-capitals",
+            status: completedStatus
   }
         ]
       }) }}
 
-<!---
+
   {
     title: {
       text: "Select additional parcels for your rotational actions"
@@ -184,29 +186,30 @@
       }) }}
  -->
 
-         <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
 
-      {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-                 {
-            title: {
+        {{ govukTaskList({
+          idPrefix: "second-section",
+          items: [
+                             {
+              title: {
               text: "Check your answers"
-            },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
-    },
-                 {
-            title: {
-              text: "Request a review of your actions or items"
-            },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }
-    },
+              },
+          status: {
+          text: "Cannot start yet",
+          classes: "govuk-task-list__status--cannot-start-yet"
+        }
+      },
+                          
+                   {
+              title: {
+                text: "Request a review of your actions or items"
+              },
+          status: {
+          text: "Cannot start yet",
+          classes: "govuk-task-list__status--cannot-start-yet"
+        }
+      },
                        {
             title: {
               text: "Submit your application"
