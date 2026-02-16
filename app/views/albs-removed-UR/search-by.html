@@ -1,0 +1,65 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  ALBs V1 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">What do you want to search by?</h1>
+      <p class="govuk-body govuk-!-margin-bottom-6">Select an option from the dropdown list.</p>
+
+<div class="govuk-form-group">
+  <select class="govuk-select" id="sort" name="sort">
+    <option value="published"selected>SBI</option>
+    <option value="updated">Business name</option>
+    <option value="views">Applicant name</option>
+    <option value="comments">Postcode</option>
+  </select>
+</div>
+
+  <div class="govuk-radios__conditional" id="conditional-contact">
+      <div class="govuk-form-group">
+      <p class="govuk-hint">
+        This is a 9 digit code which starts with a 1 or a 2. For example, 123456789</p>
+      <input class="govuk-input" id="sbi-1" name="sbi1" type="text" autocomplete="sbi-1">
+      </div>
+  </div>
+
+  <div class="govuk-!-padding-bottom-2"></div>
+
+      <form class="form" action="business-overview" method="post">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+  Search
+</button>
+</form>
+
+    </div>
+  </div>
+
+</main>
+</div>
+
+{% endblock %}

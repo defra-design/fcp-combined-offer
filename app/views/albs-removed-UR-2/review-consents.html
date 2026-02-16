@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  ALBs V2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+ <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+  Save and return later
+</button>
+   </div>
+    </div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary" style="display: none;" tabindex="-1">
+      <div role="alert">
+          <h2 class="govuk-error-summary__title">
+              There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+              <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                      <a href="#eligibility-bps">Select if SSSI consent has been given</a>
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+    <form class="form" method="post" onsubmit="return validateForm(event);">
+      <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="eligibility-bps-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading">
+                    Have you checked if SSSI consent has been given?
+                  </h1>
+              </legend>
+  
+              <p id="validation-error" class="govuk-error-message" style="display: none;">
+                  <span class="govuk-visually-hidden">Error:</span>Select is SSSI consent has been given
+              </p>
+  
+              <div class="govuk-radios govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="consents" name="consents" type="radio" value="dashboard">
+                      <label class="govuk-label govuk-radios__label" for="consents">
+                        Yes
+                      </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="consents" name="consents" type="radio" value="dashboard">
+                      <label class="govuk-label govuk-radios__label" for="consents">
+                        No
+                      </label>
+                  </div>
+              </div>
+  
+          </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button" type="submit">Continue</button>
+  </form>
+  
+  <script>
+      function validateForm(event) {
+          event.preventDefault(); // Prevent the default form submission behavior
+  
+          var radios = document.getElementsByName('consents');
+          var errorElement = document.getElementById('validation-error');
+          var formGroup = document.querySelector('.govuk-form-group');
+          var errorSummary = document.querySelector('.govuk-error-summary');
+  
+          for (var i = 0; i < radios.length; i++) {
+              if (radios[i].checked) {
+                  errorElement.style.display = 'none';
+                  formGroup.classList.remove('govuk-form-group--error');
+                  errorSummary.style.display = 'none'; // Hide error summary
+                 
+                  
+                  window.location.href = 'dashboard.html'; 
+                  return true; // Form submission allowed
+              }
+          }
+  
+          // No radio button selected, display error message and add error styling
+          errorElement.style.display = 'block';
+          formGroup.classList.add('govuk-form-group--error');
+          errorSummary.style.display = 'block'; // Show error summary
+          return false; // Form submission blocked
+      }
+  </script>
+  
+  </div>
+    </div>
+
+</main>
+</div>
+
+{% endblock %}
