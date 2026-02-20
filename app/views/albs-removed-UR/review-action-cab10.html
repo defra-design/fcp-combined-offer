@@ -45,12 +45,10 @@
 <main class="govuk-main-wrapper">
 
 
-  <!-- ERROR SUMMARY -->
 <div class="govuk-grid-row">
-
 <div class="govuk-grid-column-two-thirds">
   
-
+<!-- ERROR SUMMARY -->
 <div class="govuk-error-summary" 
      aria-labelledby="error-summary-title" 
      role="alert" 
@@ -65,25 +63,30 @@
   <div class="govuk-error-summary__body">
     <ul class="govuk-list govuk-error-summary__list">
       <li id="removed-error-msg">
-        You cannot approve or reject removed actions.
-      </li>
+      You cannot approve or reject a land parcel if the customer has removed the action or item from it. You need to provide feedback on it.        </li>
     </ul>
   </div>
+</div>
  <!-- ERROR SUMMARY END -->
 
-
-</div>
 
   <div class="govuk-grid-full-column">
       <h1 class="govuk-heading-l">Review CAB10: Unharvested cereal headland</h1>
     </div>
 
-
-      <p class="govuk-body">Select land parcels to approve, reject or add feedback to them.</p>
-      <p class="govuk-body">If you reject a land parcel, you must explain why in the feedback section.</p>
+    <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      To approve or reject a land parcel for this action or item:
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+• Select the checkbox next to the land parcel. <br>
+• Select the 'Approve' or 'Reject' button to record your decision.</div>
+</details>
+<br>
 <p class="govuk-body" id="reject-explainer-outside">
-      You cannot approve or reject land parcels that applicants have removed actions or items from. You must provide feedback on the removal of any actions or items from a land parcel.
-
+You cannot approve or reject a land parcel if the customer has removed the action or item from it. You need to provide feedback on it.
 </p>
 </div>
   </div>
@@ -99,16 +102,29 @@
 
   <p class="govuk-error-message" id="removed-inline-error">
     <span class="govuk-visually-hidden">Error:</span>
-    You cannot approve or reject removed actions.
-  </p>
+You cannot approve or reject a land parcel if the customer has removed the action or item from it. You need to provide feedback on it.  </p>
 
-  <p class="govuk-body" id="reject-explainer-inside">
-    You cannot approve or reject land parcels that applicants have removed actions or items from. You must provide feedback on the removal of any actions or items from a land parcel.
-  </p>
-</div>
-</div>
 </div>
 <!-- ERROR MESSAGE END -->
+    <p class="govuk-body">You need to provide feedback if you reject a land parcel for an action or item.</p>
+        <details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      To provide feedback:
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+• Select the checkbox next to the land parcel. <br>
+• Type your feedback into the text box. <br>
+• Select ‘Add feedback’ to record your comments.</div>
+</details>
+<br>
+   <p class="govuk-body">You may not be able to review some land parcels if they are the responsibility of a different adviser. You can leave these without a review.</p>
+</div>
+</div>
+
+<br>
+
 
 
 <div class="govuk-grid-row">
@@ -679,10 +695,10 @@ Explain why you've approved or rejected land parcels for this action or capital 
 </main>
 </div>
 
+
 <!-- Feedback component -->
 <script>
-  document.querySelectorAll('.govuk-details__summary').forEach(function(summary) {
-    summary.addEventListener('click', function(event) {
+  document.querySelectorAll('tr .govuk-details__summary').forEach(function(summary) {    summary.addEventListener('click', function(event) {
       event.preventDefault();
       
       // Find the parent row
@@ -790,11 +806,11 @@ Explain why you've approved or rejected land parcels for this action or capital 
 
 function updateStatus(status) {
 
-    // ---- Reset previous errors ----
+    // ---- RESET PREVIOUS ERRORS ----
     document.querySelector('.govuk-error-summary').hidden = true;
     document.getElementById('removed-inline-error-wrapper').hidden = true;
 
-    // IMPORTANT: Show the explanatory text unless an error occurs
+    // Show normal explainer unless an error occurs
     document.getElementById('reject-explainer-outside').hidden = false;
 
     var selectedCheckboxes = document.querySelectorAll('input[name="parcel"]:checked');
@@ -809,36 +825,37 @@ function updateStatus(status) {
             return;
         }
 
-        // ---- NEW RULE: Block action if status is "Removed" ----
+        // ---- BLOCK ACTION IF STATUS IS "Removed" ----
         var currentStatus = statusCell.textContent.trim();
 
         if (currentStatus === 'Removed') {
 
-            // Show GOV.UK error summary
+            // Show error summary
             const errorSummary = document.querySelector('.govuk-error-summary');
             errorSummary.hidden = false;
             errorSummary.focus();
 
-            // Show inline error wrapper (with the red bar)
+            // Show inline error
             document.getElementById('removed-inline-error-wrapper').hidden = false;
 
-            // Hide outside text so it doesn't duplicate
+            // Hide the outside explainer so message isn't duplicated
             document.getElementById('reject-explainer-outside').hidden = true;
 
-            return; // Stop here → prevents approval/rejection
+            return; // Stop here to prevent approving/rejecting
         }
 
-        // ---- Otherwise continue as normal ----
+        // ---- NORMAL APPROVE/REJECT BEHAVIOUR ----
         if (status === 'Rejected') {
-            statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--red">Rejected</strong>';
+            statusCell.innerHTML =
+                '<strong class="govuk-tag govuk-tag--red">Rejected</strong>';
             iconCell.style.visibility = 'visible';
         } else if (status === 'Approved') {
-            statusCell.innerHTML = '<strong class="govuk-tag govuk-tag--green">Approved</strong>';
+            statusCell.innerHTML =
+                '<strong class="govuk-tag govuk-tag--green">Approved</strong>';
             iconCell.style.visibility = 'hidden';
         }
     });
 }
-``
 
 
 
@@ -856,6 +873,5 @@ function updateStatus(status) {
         }
     });
 </script>
-
 
 {% endblock %}
