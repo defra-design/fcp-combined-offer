@@ -1,0 +1,160 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hidden error summary. JS will show this if validation fails -->
+<div id="error-summary"
+     class="govuk-error-summary"
+     aria-labelledby="error-summary-title"
+     role="alert"
+     tabindex="-1"
+     data-module="govuk-error-summary"
+     style="display:none;">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li><a href="#agree">Enter your agreement name</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">Enter your agreement name</h1>
+
+    <form class="form" action="tasklist-4" method="post" id="agreementForm" novalidate>
+
+      <div id="agreement-form-group" class="govuk-form-group">
+        <label class="govuk-label" for="agree">
+          The agreement name will appear on your agreement document. 
+        </label>
+
+        <p id="error-message" class="govuk-error-message" style="display:none;">
+          <span class="govuk-visually-hidden">Error:</span> Enter your agreement name
+        </p>
+        <br>
+        <input
+          class="govuk-input govuk-!-width-full"
+          id="agree"
+          name="agreementName"
+          type="text"
+          spellcheck="false"
+          autocomplete="off"
+          aria-describedby="agreement-help">
+      <div class="govuk-hint" id="agreement-help">
+        You have 100 characters remaining
+      </div>
+      <br>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+<script>
+(function () {
+  var form = document.getElementById('agreementForm');
+  var input = document.getElementById('agree');
+  var formGroup = document.getElementById('agreement-form-group');
+  var errorSummary = document.getElementById('error-summary');
+  var errorMessage = document.getElementById('error-message');
+
+  function showErrors() {
+    // Show inline error
+    errorMessage.style.display = 'block';
+    // Red border on input
+    input.classList.add('govuk-input--error');
+    // Red bar on form group
+    formGroup.classList.add('govuk-form-group--error');
+    // Show and focus summary
+    errorSummary.style.display = 'block';
+    errorSummary.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    errorSummary.focus();
+  }
+
+  function clearErrors() {
+    errorMessage.style.display = 'none';
+    input.classList.remove('govuk-input--error');
+    formGroup.classList.remove('govuk-form-group--error');
+    errorSummary.style.display = 'none';
+  }
+
+  // On submit, validate
+  form.addEventListener('submit', function (e) {
+    clearErrors();
+    if (!input.value || !input.value.trim()) {
+      e.preventDefault();
+      showErrors();
+    }
+  });
+
+  // Clear errors as soon as the user types something non-whitespace
+  input.addEventListener('input', function () {
+    if (input.value && input.value.trim().length > 0) {
+      clearErrors();
+    }
+  });
+})();
+</script>
+
+
+{% endblock %}

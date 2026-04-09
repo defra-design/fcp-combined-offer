@@ -1,0 +1,339 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+       <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-body">Your application is validated, please continue to submit.</p>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+
+    <h1 class="govuk-heading-l">Check your answers</h1>
+    <a class="govuk-link" href="">Print<span class="govuk-visually-hidden"></span></a>
+
+<br><br><br>
+
+<h2 class="govuk-heading-m">Your details</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Business</th>
+      <td class="govuk-table__cell govuk-!-width-one-half">JASMINE SMITH FARM<br>
+  Rainbow Farm<br>
+  High Street<br>
+  Rhydlewis<br>
+  Ellesmere<br>
+  PO30 1NY</td>
+        <td class="govuk-table__cell govuk-table__header--numeric"></td>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Single business identifier (SBI)</th>
+      <td class="govuk-table__cell">123456789</td>
+         <td class="govuk-table__cell govuk-table__header--numeric"></td>
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Land details</th>
+      <td class="govuk-table__cell">Up to date</td>
+         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="check-land-details">Change<span class="govuk-visually-hidden"> answer</span></a>
+         </tr> 
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Agreement name</th>
+      <td class="govuk-table__cell">SFI Agreement for Rainbow Farm</td>
+         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="agreement-name.html">Change<span class="govuk-visually-hidden"> answer</span></a>
+         </tr> 
+    </thead>   
+ </table>
+<br>
+
+<h2 class="govuk-heading-m">Eligibility</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Will you have management control of the land in your SFI application?</th>
+    <td class="govuk-table__cell govuk-!-width-one-quarter">Yes</td>
+      <td class="govuk-table__cell govuk-table__header--numeric">
+    <a class="govuk-link" href="management-control">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Will you request an SFI HEFER?</th>
+          <td class="govuk-table__cell">Yes</td>
+             <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+    </tr>
+
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Will you get consent to complete SFI actions on SSSI land?</th>
+    <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="sssi">Change<span class="govuk-visually-hidden"> answer</span></a>
+  </td>
+  </tr>
+  </thead>   
+ </table>
+<br>
+
+<h2 class="govuk-heading-m">Total funding for actions and supplements</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Number of actions, supplements and items applied for</th>
+      <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="select-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Application value for actions and supplements</th>
+      <td class="govuk-table__cell">£41,747.58</td>
+        <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
+</td>
+    </tr>
+
+    </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Indicative annual payment for actions and supplements</th>
+          <td class="govuk-table__cell">£13,915.86</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+  </tr>
+  </thead>   
+ </table>
+<br>
+
+<h2 class="govuk-heading-m">Actions</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Parcel based SFI actions</th>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="select-map">Change<span class="govuk-visually-hidden"> answer</span></a></td></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AGF1: Maintain very low density (20-50 t/ha) in-field agroforestry on less sensitive land</td>
+      <td class="govuk-table__cell">20,000ha</td>
+      <td class="govuk-table__cell">£4,960.00</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
+      <td class="govuk-table__cell">300 metres</td>
+      <td class="govuk-table__cell">£3,900.00</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+            <tr class="govuk-table__row">
+      <td class="govuk-table__cell">BFS6: 6m to 12m habitat strip next to watercourses</td>
+      <td class="govuk-table__cell">12.2309 ha</td>
+      <td class="govuk-table__cell">£344.62</td>  
+      <td class="govuk-table__cell"></td>
+    </tr>
+               <tr class="govuk-table__row">
+      <td class="govuk-table__cell">CAHL2: Winter bird food on arable and horticultural land</td>
+      <td class="govuk-table__cell">12.2309 ha</td>
+      <td class="govuk-table__cell">£10,432.96</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+
+                  <tr class="govuk-table__row">
+      <td class="govuk-table__cell">UPL1: Moderate livestock grazing on moorland</td>
+      <td class="govuk-table__cell">17.2309 ha</td>
+      <td class="govuk-table__cell">£4,332.75</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+
+    </tr>
+        <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__cell">Agreement level SFI actions</td>
+      <td class="govuk-table__cell"></td>     
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="apply-agreement-level">Change<span class="govuk-visually-hidden"> answer</span></a></td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AHW2: Supplementary winter bird food</td>
+      <td class="govuk-table__cell">15 tonnes</td>
+      <td class="govuk-table__cell">£10,980.00</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+
+        <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__cell">Indicative total for actions</td>
+      <td class="govuk-table__cell">£41,747.58</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+
+<h2 class="govuk-heading-m">Actions</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Parcel based SFI actions</th>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="select-map">Change<span class="govuk-visually-hidden"> answer</span></a></td></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AGF1: Maintain very low density (20-50 t/ha) in-field agroforestry on less sensitive land</td>
+      <td class="govuk-table__cell">20,000ha</td>
+      <td class="govuk-table__cell">£4,960.00</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
+      <td class="govuk-table__cell">300 metres</td>
+      <td class="govuk-table__cell">£3,900.00</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+            <tr class="govuk-table__row">
+      <td class="govuk-table__cell">BFS6: 6m to 12m habitat strip next to watercourses</td>
+      <td class="govuk-table__cell">12.2309 ha</td>
+      <td class="govuk-table__cell">£344.62</td>  
+      <td class="govuk-table__cell"></td>
+    </tr>
+               <tr class="govuk-table__row">
+      <td class="govuk-table__cell">CAHL2: Winter bird food on arable and horticultural land</td>
+      <td class="govuk-table__cell">12.2309 ha</td>
+      <td class="govuk-table__cell">£10,432.96</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+
+                  <tr class="govuk-table__row">
+      <td class="govuk-table__cell">UPL1: Moderate livestock grazing on moorland</td>
+      <td class="govuk-table__cell">17.2309 ha</td>
+      <td class="govuk-table__cell">£4,332.75</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+
+    </tr>
+        <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__cell">Agreement level SFI actions</td>
+      <td class="govuk-table__cell"></td>     
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="apply-agreement-level">Change<span class="govuk-visually-hidden"> answer</span></a></td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AHW2: Supplementary winter bird food</td>
+      <td class="govuk-table__cell">15 tonnes</td>
+      <td class="govuk-table__cell">£10,980.00</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+
+        <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__cell">Indicative total for actions</td>
+      <td class="govuk-table__cell">£41,747.58</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+  </tbody>
+</table>
+
+  <form class="form" action="check-your-answers-confirmed" method="post" style="text-align: left;">
+    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Confirm
+    </button>
+  </form>
+
+    <form class="form" action="tasklist-8" method="post" style="text-align: left;">
+    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
+
+
+      </div>
+    </div>
+
+{% endblock %}
+
+
+
+

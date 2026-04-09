@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+ <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm your agreement level actions</h1>
+      <p class="govuk-body">These are actions that apply to an entire holding, rather than specific land parcels.</p>
+      <p class="govuk-body">Select the action to confirm you want to add it to your agreement. Where asked to, also add a quantity.</p>
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Agreement level actions</caption>
+  <tbody class="govuk-table__body">
+  </thead>
+    <tr class="govuk-table__row">
+        </div></td>
+         <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label">
+          AHW2: Supplementary winter bird food</label>
+        </div></td>
+      <td class="govuk-table__cell"><div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+<div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
+  </div>
+</div>
+    </tr>
+        </div></td>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label">
+          AHW2: Supplementary winter bird food</label>
+        </div></td>
+      <td class="govuk-table__cell"><div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <div class="govuk-input__wrapper">
+            <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+            <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
+          </div>
+    </tr>
+  </tbody>
+</table>
+
+<form class="form" action="tasklist-7" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}

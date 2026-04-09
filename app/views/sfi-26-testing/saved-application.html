@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI Live Private Beta – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            We've saved your application
+          </h1>
+</div>
+
+<div class="govuk-!-padding-bottom-3"></div>
+
+
+<div class="govuk-!-padding-bottom-3"></div>
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <p class="govuk-body">
+        Your application will be available for you to continue later. If you do not submit your application, or if the scheme closes, we reserve the right to delete it.</p>
+        <div class="govuk-!-padding-bottom-2"></div>
+
+
+        <form class="form" action="dashboard-after-application" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Close
+          </button>
+        </form>
+        
+      </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back to your businesses",
+    href: "businesses-messages"
+  }) }}
+  
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Agreement offered
+<span class="govuk-caption-xl">JASMINE SMITH</span></h1>
+
+
+
+  <table class="govuk-table">
+  <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">1. Download your agreement</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <form action="application-documents" method="post" style="margin-bottom: 0;">
+          <button type="submit"
+            class="govuk-button govuk-button--primary"
+            data-module="govuk-button"
+            style="margin-bottom: 0;">
+            Application documents
+          </button>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+    <table class="govuk-table">
+  <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">2. Reject agreement offer</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <form action="reject-offer" method="post" style="margin-bottom: 0;">
+          <button type="submit"
+            class="govuk-button govuk-button--primary"
+            data-module="govuk-button"
+            style="margin-bottom: 0;">
+            Reject
+          </button>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+    <table class="govuk-table">
+  <table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">3. Accept agreement offer</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">
+        <form action="accept-offer" method="post" style="margin-bottom: 0;">
+          <button type="submit"
+            class="govuk-button govuk-button--primary"
+            data-module="govuk-button"
+            style="margin-bottom: 0;">
+            Accept
+          </button>
+        </form>
+      </td>
+    </tr>
+  </tbody>
+  </table>
+
+</div>
+
+
+
+
+{% endblock %}

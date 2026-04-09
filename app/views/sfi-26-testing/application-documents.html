@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Application documents</h1>
+
+<p class="govuk-body">Here is a list of documents you can download, save or print for your application. The list of documents can vary depending on your current application status.</p>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header"></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row row">
+      <td class="govuk-table__cell" style="border-bottom-color: white;">
+    </td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" style="border-bottom-color: white;">
+        <a href="#" class="govuk-link">Application Summary (PDF)</a>
+        <br> <br>
+        <p class="govuk-hint">A summary of your application so far. It will show your completed application after you submit it.</p>
+
+    </td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+</div>
+
+
+
+ 
+{% endblock %}

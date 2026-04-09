@@ -1,0 +1,527 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+  
+  <h1 class="govuk-heading-l">Select actions</h1>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+
+  <div id="search">
+    <label class="govuk-label govuk-!-margin-top-2" for="search">
+      Search by action code
+    </label>
+    <input class="govuk-input text-input govuk-!-margin-bottom-3" style="width:160px; height:44px; margin-right: -4px" id="searchbox" type="text" value="" placeholder="">
+
+    <button id="button_1" class="govuk-button blue-button" style="height: 42px" data-module="govuk-button">
+      <svg style="display: block; margin-left:0px" class="gem-c-search__icon" width="21" height="21" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+        <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+      </svg>
+    </button>
+  </div>
+
+ <div class="filters-block">
+      <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <label class="govuk-label govuk-label--s">
+        <span>
+          Filter by
+        </span>
+      </label>
+      </summary>
+      <div class="govuk-!-padding-top-4" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Selected actions and items
+          </label>
+        </div>
+    </div>
+  </details>
+</div>
+<br>
+  
+ <div class="filters-block">
+      <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <label class="govuk-label govuk-label--s">
+        <span>
+          Type
+        </span>
+      </label>
+      </summary>
+      <div class="govuk-!-padding-top-4" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            SFI
+          </label>
+        </div>
+    </div>
+  </details>
+</div>
+<br>
+
+ <div class="filters-block">
+    <details class="govuk-details" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <label class="govuk-label govuk-label--s">
+        <span>
+          Themes
+        </span>
+      </label>
+      </summary>
+      <div class="govuk-!-padding-top-4" data-module="govuk-checkboxes">
+
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Actions for Agroforestry
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+            Actions for Arable
+          </label>
+        </div>
+
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Actions for Boundaries
+          </label>
+        </div>
+              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Actions for Grassland
+          </label>
+        </div>
+              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Actions for Heritage
+          </label>
+        </div>
+              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Actions for Improving soil health
+          </label>
+        </div>
+
+              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          Actions for Integrated pest management
+          </label>
+        </div>
+              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Actions for Lakes/Ponds/Ditches
+          </label>
+        </div>
+              <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Actions for Moorland
+          </label>
+        </div>
+            <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Actions for Nutrient management
+          </label>
+        </div>
+             <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Actions for Organic 
+          </label>
+        </div>
+            <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Actions for Precision farming
+          </label>
+        </div>
+            <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Actions for Species recovery and management
+          </label>
+        </div>
+          <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+           Actions for Successional areas and scrub
+          </label>
+        </div>
+            <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Actions for Waterbodies
+          </label>
+        </div>
+        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+            Revenue - Grassland
+          </label>
+        </div>
+        <br>
+
+      </div>
+    </details>
+    <br>
+    <div class="govuk-button-group govuk-!-margin-bottom-5">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Apply filters
+  </button>
+  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Clear all filters
+  </button>
+  <br>
+</div>
+</div>
+</div>
+
+    <div class="govuk-grid-column-two-thirds">
+      <div class="topnav">
+  <div class="topnav-right govuk-body">
+    <span class="govuk-!-font-weight-bold">0</span> items selected 
+  </div>
+</div>
+      <div class="govuk-form-group" id="result-count">
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+
+      <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AGF1 - Maintain very low density in-field agroforestry on less sensitive land – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £248 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+     <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AGF2 - Maintain low density in-field agroforestry on less sensitive land - <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £385 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AHW2 - Supplementary winter bird food – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £732 per hectare</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">AHW4 - Skylark plots – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £11 per plot per year (min 2 plots per hectare)</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">BFS6 - Habitat strip next to watercourses – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £742 per hectare per year</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">BND1 - Maintain dry stone walls – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £27 per 100 metres for both sides</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">BND2 - Maintain earth banks or stone-faced hedgebanks – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £11 per 100 metres for both sides</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">CHRW2 - Manage hedgerows – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £13 per 100 metres for one side of an eligible hedgerow per year</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">CIGL1 - Take improved grassland field corners or blocks out of management – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £333 per hectare per year</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">CIGL2 - Winter bird food on improved grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £515 per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">CIGL3 - 4m to 12m grass buffer strip on improved grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £235 per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">CLIG3 - Manage grassland with very low nutrient inputs - outside SDAs or within SDAs – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £151 for per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">CNUM2 - Legumes on improved grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £102 per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+        <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">CSAM3 - Herbal leys – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £224 per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+        <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">GRH1 - Manage rough grazing for birds – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £121 per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">GRH7 - Supplement: Haymaking – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £157 per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">GRH8 - Supplement: Haymaking (late cut) – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £187 per hectare per year</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">GRH10 - Supplement: Lenient grazing – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £28 per hectare per year</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">HEF1 - Maintain weatherproof traditional farm or forestry buildings – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £5 per square metre per year</p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+    <!-- Beginning of action -->
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        <p class="govuk-body">HEF6 - Manage historic and archaeological features on grassland – <a href="https://www.gov.uk/find-funding-for-land-or-farms/agf1-maintain-very-low-density-in-field-agroforestry-on-less-sensitive-land" target="_blank" class="govuk-link">view</a></p>
+        </label>
+      </div>
+     <div class="govuk-!-padding-bottom-4"><p class="govuk-body"><span class="govuk-!-font-weight-bold">Annual payment:</span> £55 per hectare per year </p>
+      <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
+    <!-- End of action -->
+
+<nav class="moj-pagination" aria-label="Pagination navigation">
+
+  <ul class="moj-pagination__list">
+
+    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
+
+    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+
+    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
+
+    <li class="moj-pagination__item  moj-pagination__item--next">
+      <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> page</span></a>
+    </li>
+  </ul>
+  <p class="moj-pagination__results">Showing <b>1</b> to <b>20</b> of <b>126</b> results</p>
+</nav>
+
+</div>
+</div>
+      <form class="form" action="tasklist-5" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+</div>
+
+</div>
+
+{% endblock %}

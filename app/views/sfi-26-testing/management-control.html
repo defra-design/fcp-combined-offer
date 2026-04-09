@@ -1,0 +1,163 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Select if you will have management control of the land in your application for the duration of the actions you want to select",
+        href: "#managementAnswer-1"
+      }
+    ]
+  }) }}
+{% endif %} 
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Management control of land</h1>
+<p class="govuk-body">You must have management control of the land in your agreement for the duration of the commitments in the agreement.</p>
+<p class="govuk-body">If you occupy land under a tenancy that's due to expire before your agreement commitments end, you can still apply. But you must have your landlord's written consent and written commitment to complete actions and maintain items. You must provide this if the RPA asks for it.</p>
+<p class="govuk-body">Read the guidance on <a href="" class="govuk-link"> management control of land </a>.
+</p>
+
+
+<form class="form" action="/management-answer-sfi26" method="post">
+
+  <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-heading-s">
+          You must have management control of the land for the duration of the commitments in your agreement. Or you must have your landlord's written consent and written commitment to fulfil the agreement. Will you have this?
+        </h1>
+      </legend>
+
+      {% if error %}
+        <p class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>
+          Select if you will have management control of the land in your application for the duration of the actions you want to select
+        </p>
+      {% endif %}
+
+      <div class="govuk-radios" data-module="govuk-radios">
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input"
+                 id="managementAnswer-1"
+                 name="management-answer"
+                 type="radio"
+                 value="yes">
+          <label class="govuk-label govuk-radios__label"
+                 for="managementAnswer-1">
+            Yes
+          </label>
+        </div>
+
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input"
+                 id="managementAnswer-2"
+                 name="management-answer"
+                 type="radio"
+                 value="no">
+          <label class="govuk-label govuk-radios__label"
+                 for="managementAnswer-2">
+            No
+          </label>
+        </div>
+
+      </div>
+    </fieldset>
+  </div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
+  </form>
+
+    </div>
+  </div>
+<script>
+  
+document.addEventListener("DOMContentLoaded", function () {
+
+  const yesRadio = document.getElementById("managementAnswer-1");
+  const noRadio = document.getElementById("managementAnswer-2");
+
+  function hideErrors() {
+    // Remove red form-group border
+    const formGroup = document.querySelector(".govuk-form-group");
+    if (formGroup) formGroup.classList.remove("govuk-form-group--error");
+
+    // Hide inline error message
+    const errorMessage = document.querySelector(".govuk-error-message");
+    if (errorMessage) errorMessage.style.display = "none";
+
+    // Hide top error summary
+    const errorSummary = document.querySelector(".govuk-error-summary");
+    if (errorSummary) errorSummary.setAttribute("hidden", "");
+
+    // Remove aria-invalid attributes
+    const radios = document.querySelectorAll('input[name="management-answer"]');
+    radios.forEach(r => r.removeAttribute('aria-invalid'));
+  }
+
+  function onChange() {
+    hideErrors(); // ✅ Hide errors no matter which choice is made
+  }
+
+  if (yesRadio) yesRadio.addEventListener("change", onChange);
+  if (noRadio) noRadio.addEventListener("change", onChange);
+});
+</script>
+
+{% endblock %}

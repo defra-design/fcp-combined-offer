@@ -1,0 +1,129 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <br>
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+      <h1 class="govuk-heading-l">Select land for your actions</h1>
+<p class="govuk-body">Your available land is grouped by Ordnance Survey (OS) map sheet references.</p>
+<p class="govuk-body">To view your land parcels and add actions to them, select the map sheet reference in the table or the map.</p>
+<h2 class="govuk-heading-m">Number of available land parcels: 37</h2>
+<h2 class="govuk-heading-m">Total area in hectares: 200.6611</h2>
+<h2 class="govuk-heading-m">Number of land parcels used for actions: 0</h2>
+<h2 class="govuk-heading-m">Number of actions applied for: 0</h2>
+
+<hr class="section-break-large"></hr>
+      <table class="govuk-table">
+<p class="govuk-body govuk-!-font-weight-bold"><a href="select-land" class="govuk-link">OS Map Sheet Reference SO3</a></p>
+<hr class="govuk-section-break govuk-section-break--visible">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Number of available land parcels</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total area in hectares</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">120.3451</td>
+    </tr>
+    <tr class="govuk-table__row">
+     <td class="govuk-table__cell">Number of land parcels used for actions</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+        <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Number of actions applied for</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+  </tbody>
+</table>
+<hr class="section-break-large"></hr>
+      <table class="govuk-table">
+<p class="govuk-body govuk-!-font-weight-bold"><a href="select-land" class="govuk-link">OS Map Sheet Reference SX2</a></p>
+<hr class="govuk-section-break govuk-section-break--visible">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Number of available land parcels</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">17</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total area in hectares</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">80.3160</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Number of land parcels used for actions</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+        <tr class="govuk-table__row">
+     <td class="govuk-table__cell">Number of actions applied for</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+    </tr>
+  </tbody>
+</table>
+
+      <form class="form" action="tasklist-6" method="post">
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+
+    </div>
+    
+      <div class="govuk-grid-column-one-half govuk-!-margin-bottom-5">
+    <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link" >Hide map</a></p>
+  <map name="clickable">
+        <area shape="rect" coords="70,300,160,350" href="select-land">
+        <area shape="rect" coords="180,110,270,160" href="select-land">
+          </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_1.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+    </div>
+
+</div>
+
+{% endblock %}

@@ -5,6 +5,28 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+// SFI 26 TESTING
+
+router.post("/land-details-answer-26", function (req, res) {
+  // Read the current submitted value
+  const answer = req.body["land-details-answer-26"];
+
+  // If nothing selected → show error
+  if (!answer) {
+    return res.render("/sfi-26-testing/check-land-details", { error: true });
+  }
+
+  // Store it only once it's valid
+  req.session.data["land-details-answer-26"] = answer;
+
+  if (answer === "yes") {
+    return res.redirect("/sfi-26-testing/tasklist-2");
+  }
+
+  // answer must be "no"
+  return res.redirect("/sfi-26-testing/update-land-details");
+});
+
 
 // SFI PRIVATE BETA
 
@@ -43,6 +65,50 @@ router.post('/management-answer', function (req, res) {
 
 })
 
+router.post("/management-answer-sfi26", function (req, res) {
+  // Read the current submitted value
+  const answer = req.body["management-answer"];
+
+  // If nothing selected → show error
+  if (!answer) {
+    return res.render("sfi-26-testing/management-control", {
+      error: true,
+    });
+  }
+
+  // Store the answer once it's valid
+  req.session.data["management-answer"] = answer;
+
+  if (answer === "yes") {
+    return res.redirect("/sfi-26-testing/hefer");
+  }
+
+  return res.redirect("/sfi-26-testing/ineligible");
+});
+
+
+router.post("/hefer-answer-26", function (req, res) {
+  // Read the current submitted value
+  const answer = req.body["hefer-answer"];
+
+  // If nothing selected → show error
+  if (!answer) {
+    return res.render("sfi-26-testing/hefer", {
+      error: true,
+    });
+  }
+
+  // Store the answer once it's valid
+  req.session.data["hefer-answer"] = answer;
+
+  if (answer === "yes") {
+    return res.redirect("/sfi-26-testing/sssi");
+  }
+
+  return res.redirect("/sfi-26-testing/ineligible");
+});
+
+
 router.post('/hefer-answer', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
@@ -59,6 +125,28 @@ router.post('/hefer-answer', function (req, res) {
   }
 
 })
+
+router.post("/sssi-answer-26", function (req, res) {
+  // Read the current submitted value
+  const answer = req.body["sssi-answer"];
+
+  // If nothing selected → show error
+  if (!answer) {
+    return res.render("sfi-26-testing/sssi", {
+      error: true,
+    });
+  }
+
+  // Store the answer once it's valid
+  req.session.data["hefer-answer"] = answer;
+
+  if (answer === "yes") {
+    return res.redirect("/sfi-26-testing/eligible");
+  }
+
+  return res.redirect("/sfi-26-testing/ineligible");
+});
+
 
 router.post('/sssi-answer', function (req, res) {
 

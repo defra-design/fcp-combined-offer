@@ -1,0 +1,206 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Select if your digital maps show the correct land details",
+        href: "#landDetailsAnswer26-1"
+      }
+    ]
+  }) }}
+{% endif %} 
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+<h1 class="govuk-heading-l">Check your land details</h1>
+  
+  <p class="govuk-body">Check the land details on your digital maps are up to date. If they are not up to date, this may stop you from applying for your chosen actions or capital items.</p>
+
+  <p class="govuk-body">For any land you want to add actions to, check the land use information we hold is correct, and that your maps show the correct:
+    <ul class="govuk-list govuk-list--bullet">
+        <li>land parcels</li>
+        <li>land cover for land use you've declared</li>
+        <li>permanent boundaries</li>
+    </ul>
+  </p>
+
+  <p class="govuk-body"><a href="" class="govuk-link">Check your digital maps</a></p>
+  <div class="govuk-!-padding-bottom-2"></div>
+
+<form class="form" action="/land-details-answer-26" method="post">
+  <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h2 class="govuk-heading-m">
+        Do your digital maps show the correct land details?
+      </h2>
+    </legend>
+
+    {% if error %}
+      <p class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span>
+        Select if your digital maps show the correct land details
+      </p>
+    {% endif %}
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="landDetailsAnswer26-1"
+               name="land-details-answer-26"
+               type="radio"
+               value="yes">
+        <label class="govuk-label govuk-radios__label"
+               for="landDetailsAnswer26-1">
+          Yes
+        </label>
+      </div>
+
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input"
+               id="landDetailsAnswer26-2"
+               name="land-details-answer-26"
+               type="radio"
+               value="no">
+        <label class="govuk-label govuk-radios__label"
+               for="landDetailsAnswer26-2">
+          No
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+{% if showWarning %}
+  <div id="yes-warning" class="govuk-warning-text">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive">Warning</span>
+      Make sure your land details are fully up to date before continuing.
+    </strong>
+  </div>
+{% else %}
+  <div id="yes-warning" class="govuk-warning-text" style="display:none;">
+    <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+    <strong class="govuk-warning-text__text">
+      <span class="govuk-warning-text__assistive"></span>
+      Your land use must be compatible with land cover and match the area (in hectares) on a land parcel to continue
+    </strong>
+  </div>
+{% endif %}
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Save and continue
+          </button>
+        </form>
+
+    </div>
+  </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const yesRadio = document.getElementById("landDetailsAnswer26-1");
+  const noRadio = document.getElementById("landDetailsAnswer26-2");
+  const warning = document.getElementById("yes-warning");
+
+  function hideErrors() {
+    // 1) Remove red border on the form group
+    const formGroup = document.querySelector(".govuk-form-group");
+    if (formGroup) formGroup.classList.remove("govuk-form-group--error");
+
+    // 2) Hide the inline error text
+    const errorMessage = document.querySelector(".govuk-error-message");
+    if (errorMessage) errorMessage.style.display = "none";
+
+    // 3) Hide the error summary box at the top
+    const errorSummary = document.querySelector(".govuk-error-summary");
+    if (errorSummary) {
+      // Either:
+      // errorSummary.style.display = "none";
+      // or (preferred, accessible):
+      errorSummary.setAttribute("hidden", "");
+    }
+
+    // 4) (Optional) Remove any aria-invalid the radios might have
+    const radios = document.querySelectorAll('input[name="land-details-answer-26"]');
+    radios.forEach(r => r.removeAttribute('aria-invalid'));
+  }
+
+    function updateWarning() {
+      if (yesRadio && yesRadio.checked) {
+        warning.style.display = "block";
+        hideErrors(); // also clear any visible errors when Yes is chosen
+      } else if (noRadio && noRadio.checked) {
+        warning.style.display = "none";
+        hideErrors(); // ✅ NEW: clear errors when No is chosen
+      }
+    }
+
+  // Wire up changes
+  if (yesRadio) yesRadio.addEventListener("change", updateWarning);
+  if (noRadio) noRadio.addEventListener("change", updateWarning);
+
+  // On page load: if "Yes" is already selected (e.g., returning to page), show the warning and hide errors
+  updateWarning();
+});
+</script>
+
+{% endblock %}
+
+
