@@ -83,7 +83,10 @@
   <p class="govuk-body"><a href="" class="govuk-link">Check your digital maps</a></p>
   <div class="govuk-!-padding-bottom-2"></div>
 
-<form class="form" action="/land-details-answer-26" method="post">
+<form class="form" action="/sfi-26-testing/land-details-answer-26" method="post">
+  <input type="hidden" name="from" value="{{ query.from }}">
+
+
   <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">

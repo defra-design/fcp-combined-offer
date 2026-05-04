@@ -7,25 +7,59 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // SFI 26 TESTING
 
-router.post("/land-details-answer-26", function (req, res) {
-  // Read the current submitted value
-  const answer = req.body["land-details-answer-26"];
+router.post("/sfi-26-testing/select-actions", function (req, res) {
+  const from = req.body.from;
 
-  // If nothing selected → show error
+  if (from === "check-answers") {
+    return res.redirect("/sfi-26-testing/check-your-answers");
+  }
+
+  return res.redirect("/sfi-26-testing/tasklist-5");
+});
+
+router.post("/sfi-26-testing/select-map", function (req, res) {
+  const from = req.body.from;
+
+  if (from === "check-answers") {
+    return res.redirect("/sfi-26-testing/check-your-answers");
+  }
+
+  return res.redirect("/sfi-26-testing/tasklist-6");
+});
+
+router.post("/sfi-26-testing/select-land", function (req, res) {
+  return res.redirect("/sfi-26-testing/select-map");
+});
+
+router.post("/sfi-26-testing/select-land-parcel-1", function (req, res) {
+  return res.redirect("/sfi-26-testing/select-map");
+});
+
+router.post("/sfi-26-testing/select-land-parcel-2", function (req, res) {
+  return res.redirect("/sfi-26-testing/select-map");
+});
+
+router.post("/sfi-26-testing/land-details-answer-26", function (req, res) {
+  const answer = req.body["land-details-answer-26"];
+  const from = req.body.from;
+
   if (!answer) {
     return res.render("/sfi-26-testing/check-land-details", { error: true });
   }
 
-  // Store it only once it's valid
   req.session.data["land-details-answer-26"] = answer;
+
+  if (from && from === "check-answers") {
+    return res.redirect("/sfi-26-testing/check-your-answers");
+  }
 
   if (answer === "yes") {
     return res.redirect("/sfi-26-testing/tasklist-2");
   }
 
-  // answer must be "no"
   return res.redirect("/sfi-26-testing/update-land-details");
 });
+
 
 
 // SFI PRIVATE BETA
@@ -66,19 +100,23 @@ router.post('/management-answer', function (req, res) {
 })
 
 router.post("/management-answer-sfi26", function (req, res) {
-  // Read the current submitted value
   const answer = req.body["management-answer"];
+  const from = req.body.from;
 
-  // If nothing selected → show error
   if (!answer) {
     return res.render("sfi-26-testing/management-control", {
       error: true,
     });
   }
 
-  // Store the answer once it's valid
   req.session.data["management-answer"] = answer;
 
+  // If coming from check answers, return there
+  if (from === "check-answers") {
+    return res.redirect("/sfi-26-testing/check-your-answers");
+  }
+
+  // Normal journey
   if (answer === "yes") {
     return res.redirect("/sfi-26-testing/hefer");
   }
