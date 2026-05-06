@@ -30,7 +30,7 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Select if you will get a SSSI consent if you must",
+        text: "Select if you will get a SSSI consent if you're required to",
         href: "#heferAnswer-1"
       }
     ]
@@ -65,11 +65,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">SSSI consent</h1>
-<p class="govuk-body">If you apply for actions on land that’s a site of special scientific interest (SSSI), you must get SSSI consent form Natural England.</p>
-<p class="govuk-body">You must get this consent before you do your selected actions on SSSI land.  Some actions can be done without SSSI consent. You can check which actions this applies to in the <a href="#">'Find Funding for land or farms tool’</a>.</p>
-<p class="govuk-body">Read the guidance on <a href="#" class="govuk-link">SSSI consent</a>.</p>
-<p class="govuk-body">If you are not applying for actions on SSSI land, or the actions can be done without SSSI consent, answer ‘yes’ to continue your application.</p>
+      <h1 class="govuk-heading-l">Sites of special scientific interest</h1>
+<p class="govuk-body">You can apply for SFI actions on land that’s a site of special scientific interest (SSSI) if it’s eligible for the action. You can check this for each action in the <a href="#">'Find Funding for land or farms'</a> tool.</p>
+<p class="govuk-body">Before you do SFI actions on SSSI land, you must get SSSI consent from Natural England. </p>
+<p class="govuk-body">Read the SFI26 scheme information on <a href="#" class="govuk-link">SSSI consent and how to get it</a>.</p>
+<p class="govuk-body">If you do not want to apply for SFI actions on SSSI land, select ‘yes’ to continue with your application.</p>
 
 <br>
 <form class="form" action="/sssi-answer-26" method="post">
@@ -77,12 +77,12 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h2 class="govuk-heading-m">
-If you require SSSI consent, you must get it before you do any of the actions on this land.  Will you do this?</h1>
+Will you get SSSI consent if you’re required to?</h1>
 
       {% if error %}
         <p class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span>
-         Select if you will get a SSSI consent if you must
+         Select if you will get a SSSI consent if you're required to
         </p>
       {% endif %}
 
