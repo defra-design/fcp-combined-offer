@@ -20,15 +20,17 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Reject Agreement Offer
+      <h1 class="govuk-heading-l">Why are you rejecting this agreement offer?
 <span class="govuk-caption-xl">JASMINE SMITH</span></h1>
-
-<div class="govuk-form-group">
-  <div id="more-detail-hint" class="govuk-hint">
-    Tell us why you do not want to accept this offer
+  <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="100">
+    <div id="with-hint-hint" class="govuk-hint">
+     Tell us why you do not want to accept this agreement offer using at least 10 characters
+    </div>
+    <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="withHint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+    <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+      You can enter up to 100 characters
+    </div>
   </div>
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-</div>
 
 <div class="govuk-button-group">
   <button type="submit" class="govuk-button" data-module="govuk-button">
