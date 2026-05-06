@@ -154,28 +154,65 @@
             Actions for Arable
           </label>
         </div>
+<div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
 
+  <input 
+    class="govuk-checkboxes__input" 
+    id="filter-buffer-strips"
+    type="checkbox"
+    data-filter="buffer-strips"
+  >
+
+  <label class="govuk-label govuk-checkboxes__label" for="filter-buffer-strips">
+    Actions for Buffer strips
+  </label>
+
+</div>
         <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
-            Actions for Boundaries
-          </label>
-        </div>
+
+  <input 
+    class="govuk-checkboxes__input" 
+    id="filter-boundary-features"
+    type="checkbox"
+    data-filter="boundary-features"
+  >
+
+  <label class="govuk-label govuk-checkboxes__label" for="filter-boundary-features">
+    Actions for Boundary features
+  </label>
+
+</div>
+
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          <input
+  class="govuk-checkboxes__input" 
+  id="filter-grassland"
+  type="checkbox"
+  data-filter="grassland"
+>
+          <label class="govuk-label govuk-checkboxes__label" for="filter-grassland">
             Actions for Grassland
           </label>
         </div>
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          <input
+  class="govuk-checkboxes__input" 
+  id="filter-heritage"
+  type="checkbox"
+  data-filter="heritage"
+>
+          <label class="govuk-label govuk-checkboxes__label" for="filter-heritage">
             Actions for Heritage
           </label>
         </div>
               <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          <input
+  class="govuk-checkboxes__input" 
+  id="filter-soil-health"
+  type="checkbox"
+  data-filter="soil-health"
+>
+          <label class="govuk-label govuk-checkboxes__label" for="filter-soil-health">
            Actions for Improving soil health
           </label>
         </div>
@@ -199,8 +236,13 @@
           </label>
         </div>
             <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-B" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-B">
+          <input
+  class="govuk-checkboxes__input" 
+  id="filter-nutrient-management"
+  type="checkbox"
+  data-filter="nutrient-management"
+>
+          <label class="govuk-label govuk-checkboxes__label" for="filter-nutrient-managment">
             Actions for Nutrient management
           </label>
         </div>
@@ -343,7 +385,7 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item" data-theme="arable"></div>
+<div class="action-item">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -367,10 +409,10 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item" data-theme="buffer-strips">
 
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox">
     <label class="govuk-label govuk-checkboxes__label" for="waste">
       <p class="govuk-body">
         BFS6 - Habitat strip next to watercourses –
@@ -391,7 +433,7 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item" data-theme="boundary-features">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -415,7 +457,7 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item" data-theme="boundary-features">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -439,15 +481,16 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item" data-theme="boundary-features">
 
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox">
+
     <label class="govuk-label govuk-checkboxes__label" for="waste">
-      <p class="govuk-body">
-        CHRW2 - Manage hedgerows –
-        <a href="https://www.gov.uk/find-funding-for-land-or-farms/chrw2-manage-hedgerows" target="_blank" class="govuk-link">view</a>
-      </p>
+      CHRW2 - Manage hedgerows –
+      <a href="https://www.gov.uk/find-funding-for-land-or-farms/chrw2-manage-hedgerows" target="_blank" class="govuk-link">
+        view
+      </a>
     </label>
   </div>
 
@@ -460,12 +503,13 @@
   </div>
 
 </div>
+
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="grassland">
 
-  <div class="govuk-checkboxes__item">
+  <div class="govuk-checkboxes__item" data-theme="grassland">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
     <label class="govuk-label govuk-checkboxes__label" for="waste">
       <p class="govuk-body">
@@ -487,7 +531,7 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="grassland">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -512,7 +556,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="grassland">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -537,7 +581,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="grassland">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -562,7 +606,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="nutrient-management">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -587,7 +631,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="soil-health">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -612,7 +656,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="grassland">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -662,7 +706,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="grassland">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -687,7 +731,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="grassland">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -712,7 +756,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="heritage">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -737,7 +781,7 @@
 
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item"data-theme="heritage">
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
