@@ -118,7 +118,7 @@
     </tr>
 
     <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Will you request an SFI HEFER?</th>
+          <th scope="row" class="govuk-table__header">Will you request an SFI HEFER if required?</th>
           <td class="govuk-table__cell">Yes</td>
              <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
     </td>
@@ -126,7 +126,7 @@
 
 
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Will you get consent to complete SFI actions on SSSI land?</th>
+    <th scope="row" class="govuk-table__header">Will you get consent to complete SFI actions on SSSI land if required?</th>
     <td class="govuk-table__cell">Yes</td>
         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="sssi">Change<span class="govuk-visually-hidden"> answer</span></a>
   </td>
@@ -135,21 +135,21 @@
  </table>
 <br>
 
-<h2 class="govuk-heading-m">Total funding for actions and supplements</h2>
+<h2 class="govuk-heading-m">Total funding for actions</h2>
 <div class="govuk-!-padding-bottom-2"></div>
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Number of actions, supplements and items applied for</th>
+      <th scope="row" class="govuk-table__header">Number of actions applied for</th>
       <td class="govuk-table__cell">4</td>
         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="/sfi-26-testing/select-actions?from=check-answers">Change<span class="govuk-visually-hidden"> answer</span></a>
     </td>
     </tr>
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Application value for actions and supplements</th>
+      <th scope="row" class="govuk-table__header">Application value for actions</th>
       <td class="govuk-table__cell">£41,747.58</td>
         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
 </td>
@@ -158,8 +158,14 @@
     </td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Indicative annual payment for actions and supplements</th>
+          <th scope="row" class="govuk-table__header">Indicative total agreement value for actions</th>
           <td class="govuk-table__cell">£13,915.86</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+  </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Indicative total annual payment for actions</th>
+          <td class="govuk-table__cell">£3,478.75</td>
             <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
     </td>
   </tr>
@@ -236,23 +242,46 @@
   </tbody>
 </table>
       
+<div>
+  <div>
+<form method="get" action="tasklist-8">
+  <button
+    type="button"
+    id="confirmButton"
+    class="govuk-button govuk-button--secondary">
+    Confirm
+  </button>
+  </div>
+<div>
+  <button
+    type="submit"
+    id="saveButton"
+    class="govuk-button govuk-button--primary govuk-button--disabled"
+    disabled
+    aria-disabled="true">
+    Save and continue
+  </button>
+</form>
+</div>
+</div>
 
-  <form class="form" action="check-your-answers-confirmed" method="post" style="text-align: left;">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Confirm
-    </button>
-  </form>
+  </div>
+</div>
 
-    <form class="form" action="Application-errors" method="post" style="text-align: left;">
-    <button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--primary" data-module="govuk-button">
-      Save and continue
-    </button>
-  </form>
+    <script>
+  // Find the buttons
+  const confirmButton = document.getElementById("confirmButton");
+  const saveButton = document.getElementById("saveButton");
 
-
-      </div>
-    </div>
+  // When Confirm is clicked
+  confirmButton.addEventListener("click", function () {
+    // Enable Save and continue
+    saveButton.disabled = false;
+    saveButton.removeAttribute("aria-disabled");
+  });
+</script>
 
 {% endblock %}
+
 
 
