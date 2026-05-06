@@ -30,7 +30,7 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Select if you will get a HEFER if you need to",
+        text: "Select if you will get a SFI HEFER if you’re required to",
         href: "#heferAnswer-1"
       }
     ]
@@ -66,22 +66,23 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">Land with historic or archaeological features</h1>
-<p class="govuk-body">You need a Historic Farm Environment Record (HEFER) before you can apply to do actions on land that has historic or archaeological features.</p>
-<p class="govuk-body">Read the guidance on <a href="#">land with historic or archaeological features</a> to find out what a HEFER is and how to request one.</p>
-<br>
-
+<p class="govuk-body">You can apply for SFI actions on land with historic or archaeological features if it’s eligible for the action. You can check this for each action in the <a href="#">‘Find funding for land or farms’</a> tool.</p>
+ <p class="govuk-body">Before you do SFI actions on land with historic or archaeological features, you must get an SFI Historic Environment Farm Environment Record (HEFER) from Historic England.</p>
+<p class="govuk-body">Read the SFI26 scheme information on <a href="#">SFI HEFERs and how to get one.</a></p>
+<p class="govuk-body">If you do not want to apply for SFI actions on land with historic or archaeological features, select ‘yes’ to continue with your application. </p>
+  
 <form class="form" action="/hefer-answer-26" method="post">
    <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <h2 class="govuk-heading-m">
-      Will you get a HEFER if you need to?        </h2>
+      Will you get a SFI HEFER if you’re required to?         </h2>
       </legend>
 
       {% if error %}
         <p class="govuk-error-message">
           <span class="govuk-visually-hidden">Error:</span>
-          Select if you will get a HEFER if you need to
+          Select if you will get a SFI HEFER if you’re required to
         </p>
       {% endif %}
 

@@ -129,16 +129,28 @@
       </summary>
       <div class="govuk-!-padding-top-4" data-module="govuk-checkboxes">
 
-        <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
-            Actions for Agroforestry
-          </label>
-        </div>
+<div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
 
+  <input
+    class="govuk-checkboxes__input"
+    id="filter-agroforestry"
+    type="checkbox"
+    data-filter="agroforestry"
+  >
+
+  <label class="govuk-label govuk-checkboxes__label" for="filter-agroforestry">
+    Actions for Agroforestry
+  </label>
+
+</div>
         <div class="govuk-checkboxes--small govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" id="filter-type-A" type="checkbox">
-          <label class="govuk-label govuk-checkboxes__label" for="filter-type-A">
+          <input
+  class="govuk-checkboxes__input" 
+  id="filter-arable"
+  type="checkbox"
+  data-filter="arable"
+>
+          <label class="govuk-label govuk-checkboxes__label" for="filter-arable">
             Actions for Arable
           </label>
         </div>
@@ -255,10 +267,12 @@
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
 <!-- Beginning of action -->
-<div class="action-item">
+
+
+<div class="action-item" data-theme="agroforestry">
 
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox">
     <label class="govuk-label govuk-checkboxes__label" for="waste">
       <p class="govuk-body">
         AGF1 - Maintain very low density in-field agroforestry on less sensitive land –
@@ -279,7 +293,8 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item" data-theme="agroforestry">
+
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -303,7 +318,8 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item" data-theme="arable">
+
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -327,7 +343,7 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item">
+<div class="action-item" data-theme="arable"></div>
 
   <div class="govuk-checkboxes__item">
     <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
@@ -777,39 +793,61 @@
 </div>
 
 <script>
-  const searchBox = document.getElementById('searchbox');
-  const actions = document.querySelectorAll('.action-item');
-  const selectedCount = document.getElementById('selected-count');
+  document.addEventListener("DOMContentLoaded", function () {
 
-  function updateSelectedCount() {
-    const checked = document.querySelectorAll(
-      '.action-item input[type="checkbox"]:checked'
-    );
-    selectedCount.textContent = checked.length;
-  }
+    const searchBox = document.getElementById('searchbox');
+    const actions = document.querySelectorAll('.action-item');
+    const selectedCount = document.getElementById('selected-count');
 
-  // Search filtering
-  searchBox.addEventListener('input', function () {
-    const query = searchBox.value.trim().toUpperCase();
-
-    actions.forEach(action => {
-      const text = action.textContent.toUpperCase();
-
-      if (text.includes(query)) {
-        action.style.display = '';
-      } else {
-        action.style.display = 'none';
-      }
-    });
-  });
-
-  // Listen for checkbox changes
-  actions.forEach(action => {
-    const checkbox = action.querySelector('input[type="checkbox"]');
-
-    if (checkbox) {
-      checkbox.addEventListener('change', updateSelectedCount);
+    function updateSelectedCount() {
+      const checked = document.querySelectorAll(
+        '.action-item input[type="checkbox"]:checked'
+      );
+      selectedCount.textContent = checked.length;
     }
+
+    // Search filtering
+    searchBox.addEventListener('input', function () {
+      const query = searchBox.value.trim().toUpperCase();
+
+      actions.forEach(action => {
+        const text = action.textContent.toUpperCase();
+        action.style.display = text.includes(query) ? '' : 'none';
+      });
+    });
+
+    // Count selected items
+    actions.forEach(action => {
+      const checkbox = action.querySelector('input[type="checkbox"]');
+      if (checkbox) checkbox.addEventListener('change', updateSelectedCount);
+    });
+
+    // ✅ FILTERING LOGIC (NOW INSIDE SCRIPT)
+    const filterCheckboxes = document.querySelectorAll('[data-filter]');
+
+    filterCheckboxes.forEach(cb => {
+      cb.addEventListener('change', function () {
+
+        const selectedFilters = Array.from(filterCheckboxes)
+          .filter(f => f.checked)
+          .map(f => f.dataset.filter);
+
+        actions.forEach(action => {
+          const theme = action.dataset.theme;
+
+          if (
+            selectedFilters.length === 0 || 
+            selectedFilters.includes(theme)
+          ) {
+            action.style.display = '';
+          } else {
+            action.style.display = 'none';
+          }
+        });
+
+      });
+    });
+
   });
 </script>
 
