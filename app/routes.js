@@ -7,6 +7,18 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // SFI 26 TESTING
 
+router.get('/sfi-26-testing/select-map', function (req, res) {
+
+  // Reset every time user FIRST lands on page
+  if (!req.query.fromLand) {
+    req.session.data['landSelected'] = false;
+  }
+
+  res.render('sfi-26-testing/select-map');
+
+});
+
+
 router.post("/sfi-26-testing/select-actions", function (req, res) {
   const from = req.body.from;
 
@@ -17,27 +29,43 @@ router.post("/sfi-26-testing/select-actions", function (req, res) {
   return res.redirect("/sfi-26-testing/tasklist-5");
 });
 
-router.post("/sfi-26-testing/select-map", function (req, res) {
-  const from = req.body.from;
 
-  if (from === "check-answers") {
-    return res.redirect("/sfi-26-testing/check-your-answers");
+router.post("/sfi-26-testing/select-map", function (req, res) {
+
+  const from = req.body.from;
+  const landSelected = req.session.data['landSelected'];
+
+  // ✅ If land selected → go forward
+  if (landSelected) {
+
+    if (from === "check-answers") {
+      return res.redirect("/sfi-26-testing/check-your-answers");
+    }
+
+    return res.redirect("/sfi-26-testing/tasklist-6");
   }
 
-  return res.redirect("/sfi-26-testing/tasklist-6");
+  // ✅ If NOT selected → go back a step
+  return res.redirect("/sfi-26-testing/tasklist-5");
+
 });
 
-router.post("/sfi-26-testing/select-land", function (req, res) {
-  return res.redirect("/sfi-26-testing/select-map");
+
+router.post('/sfi-26-testing/select-land', function (req, res) {
+  req.session.data['landSelected'] = true;
+  res.redirect('/sfi-26-testing/select-map?fromLand=true');
 });
 
-router.post("/sfi-26-testing/select-land-parcel-1", function (req, res) {
-  return res.redirect("/sfi-26-testing/select-map");
+router.post('/sfi-26-testing/select-land-parcel-1', function (req, res) {
+  req.session.data['landSelected'] = true;
+  res.redirect('/sfi-26-testing/select-map?fromLand=true');
 });
 
-router.post("/sfi-26-testing/select-land-parcel-2", function (req, res) {
-  return res.redirect("/sfi-26-testing/select-map");
+router.post('/sfi-26-testing/select-land-parcel-2', function (req, res) {
+  req.session.data['landSelected'] = true;
+  res.redirect('/sfi-26-testing/select-map?fromLand=true');
 });
+
 
 router.post("/sfi-26-testing/land-details-answer-26", function (req, res) {
   const answer = req.body["land-details-answer-26"];
