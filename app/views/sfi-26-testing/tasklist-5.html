@@ -107,7 +107,7 @@
     },
                {
             title: {
-              text: "Enter agreement name"
+              text: "Enter your agreement name"
             },
          href: "agreement-name",
             status: completedStatus  
@@ -140,10 +140,11 @@
         items: [
         {
                  title: {
-              text: "Select the land you want to do the actions on"
+              text: "Select the land you want to do your actions on"
             },
          href: "select-map",
-            status: incompleteStatus                    
+            status: (completedStatus if data['landSelected'] else incompleteStatus)
+                    
     },
               {
             title: {
