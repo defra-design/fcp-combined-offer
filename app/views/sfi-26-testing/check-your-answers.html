@@ -57,6 +57,27 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-full">
 
+<div
+  id="successBanner"
+  class="govuk-notification-banner govuk-notification-banner--success"
+  role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner"
+  hidden
+>
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-body">
+      Your application is validated, please continue to submit.
+    </p>
+  </div>
+</div>
+
+
     <h1 class="govuk-heading-l">Check your answers</h1>
     <a class="govuk-link" href="">Print<span class="govuk-visually-hidden"></span></a>
 
@@ -118,7 +139,7 @@
     </tr>
 
     <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Will you request an SFI HEFER?</th>
+          <th scope="row" class="govuk-table__header">Will you request an SFI HEFER if required?</th>
           <td class="govuk-table__cell">Yes</td>
              <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
     </td>
@@ -126,7 +147,7 @@
 
 
   <tr class="govuk-table__row">
-    <th scope="row" class="govuk-table__header">Will you get consent to complete SFI actions on SSSI land?</th>
+    <th scope="row" class="govuk-table__header">Will you get consent to complete SFI actions on SSSI land if required?</th>
     <td class="govuk-table__cell">Yes</td>
         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="sssi">Change<span class="govuk-visually-hidden"> answer</span></a>
   </td>
@@ -135,31 +156,30 @@
  </table>
 <br>
 
-<h2 class="govuk-heading-m">Total funding for actions and supplements</h2>
+<h2 class="govuk-heading-m">Total funding for actions</h2>
 <div class="govuk-!-padding-bottom-2"></div>
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
 
     <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Number of actions, supplements and items applied for</th>
+      <th scope="row" class="govuk-table__header">Number of actions applied for</th>
       <td class="govuk-table__cell">4</td>
-        <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="/sfi-26-testing/select-actions?from=check-answers">Change<span class="govuk-visually-hidden"> answer</span></a>
+        <td class="govuk-table__cell govuk-table__header--numeric"><span class="govuk-visually-hidden"> answer</span></a>
     </td>
-    </tr>
-
-    <tr class="govuk-table__row">
-      <th scope="row" class="govuk-table__header">Application value for actions and supplements</th>
-      <td class="govuk-table__cell">£41,747.58</td>
-        <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
-</td>
     </tr>
 
     </td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Indicative annual payment for actions and supplements</th>
+          <th scope="row" class="govuk-table__header">Indicative total agreement value for actions</th>
           <td class="govuk-table__cell">£13,915.86</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+  </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Indicative total annual payment for actions</th>
+          <td class="govuk-table__cell">£3,478.75</td>
             <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
     </td>
   </tr>
@@ -181,35 +201,28 @@
     </tr>
 
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">AGF1: Maintain very low density (20-50 t/ha) in-field agroforestry on less sensitive land</td>
-      <td class="govuk-table__cell">20,000ha</td>
-      <td class="govuk-table__cell">£4,960.00</td>
+      <td class="govuk-table__cell">AHW4: Skylark plots</td>
+      <td class="govuk-table__cell">22.9971 plots</td>
+      <td class="govuk-table__cell">£1,011.56</td>
       <td class="govuk-table__cell"></td>
     </tr>
 
         <tr class="govuk-table__row">
-      <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
-      <td class="govuk-table__cell">300m</td>
-      <td class="govuk-table__cell">£3,900.00</td>
+      <td class="govuk-table__cell">CHRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell">320.0404m</td>
+      <td class="govuk-table__cell">£166.49</td>
             <td class="govuk-table__cell"></td>
     </tr>
             <tr class="govuk-table__row">
-      <td class="govuk-table__cell">BFS6: 6m to 12m habitat strip next to watercourses</td>
+      <td class="govuk-table__cell">CIGL2: Winter bird food on improved grassland</td>
       <td class="govuk-table__cell">12.2309 ha</td>
       <td class="govuk-table__cell">£344.62</td>  
       <td class="govuk-table__cell"></td>
     </tr>
                <tr class="govuk-table__row">
-      <td class="govuk-table__cell">CAHL2: Winter bird food on arable and horticultural land</td>
+      <td class="govuk-table__cell">GRH12 - Manage rough grazing for birds</td>
       <td class="govuk-table__cell">12.2309 ha</td>
       <td class="govuk-table__cell">£10,432.96</td>
-            <td class="govuk-table__cell"></td>
-    </tr>
-
-                  <tr class="govuk-table__row">
-      <td class="govuk-table__cell">UPL1: Moderate livestock grazing on moorland</td>
-      <td class="govuk-table__cell">17.2309 ha</td>
-      <td class="govuk-table__cell">£4,332.75</td>
             <td class="govuk-table__cell"></td>
     </tr>
 
@@ -236,23 +249,54 @@
   </tbody>
 </table>
       
+<div>
+  <div>
+<form method="get" action="tasklist-8">
+  <button
+    type="button"
+    id="confirmButton"
+    class="govuk-button govuk-button--secondary">
+    Confirm
+  </button>
+  </div>
+<div>
+  <button
+    type="submit"
+    id="saveButton"
+    class="govuk-button govuk-button--primary govuk-button--disabled"
+    disabled
+    aria-disabled="true">
+    Save and continue
+  </button>
+</form>
+</div>
+</div>
 
-  <form class="form" action="check-your-answers-confirmed" method="post" style="text-align: left;">
-    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Confirm
-    </button>
-  </form>
+  </div>
+</div>
 
-    <form class="form" action="Application-errors" method="post" style="text-align: left;">
-    <button type="submit" disabled aria-disabled="true" class="govuk-button govuk-button--primary" data-module="govuk-button">
-      Save and continue
-    </button>
-  </form>
+<script>
+  const confirmButton = document.getElementById("confirmButton");
+  const saveButton = document.getElementById("saveButton");
+  const successBanner = document.getElementById("successBanner");
 
+  confirmButton.addEventListener("click", function () {
+    // Show the success banner
+    successBanner.hidden = false;
 
-      </div>
-    </div>
+    // Enable Save and continue
+    saveButton.disabled = false;
+    saveButton.removeAttribute("aria-disabled");
+
+    // Scroll to top so the user sees the banner
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
 
 {% endblock %}
+
 
 
