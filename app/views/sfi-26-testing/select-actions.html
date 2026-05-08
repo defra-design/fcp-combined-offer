@@ -373,7 +373,7 @@
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
 <!-- Beginning of action -->
-
+<div class="results-page" data-page="1">
 
 <div class="action-item" data-theme="agroforestry">
 
@@ -766,7 +766,9 @@
 
 </div>
 <!-- End of action -->
+</div>
 
+<div class="results-page" data-page="2" style="display:none;">
 
 <!-- Beginning of action -->
 <div class="action-item"data-theme="grassland">
@@ -860,6 +862,7 @@
       £55 per hectare per year
     </p>
     <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
   </div>
 
 </div>
@@ -867,22 +870,32 @@
 
 
 <nav class="moj-pagination" aria-label="Pagination navigation">
-
   <ul class="moj-pagination__list">
 
-    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
-
-    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
-
-    <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> page</span></a>
+    <!-- PREVIOUS (hidden by default) -->
+    <li class="moj-pagination__item moj-pagination__item--prev" id="prev-btn" style="display:none;">
+      <a class="moj-pagination__link" href="#" data-action="prev">
+        Previous
+      </a>
     </li>
+
+    <!-- PAGE NUMBERS -->
+    <li class="moj-pagination__item moj-pagination__item--active">
+      <a class="moj-pagination__link" href="#" data-page="1">1</a>
+    </li>
+
+    <li class="moj-pagination__item">
+      <a class="moj-pagination__link" href="#" data-page="2">2</a>
+    </li>
+
+    <!-- NEXT (visible by default) -->
+    <li class="moj-pagination__item moj-pagination__item--next" id="next-btn">
+      <a class="moj-pagination__link" href="#" data-action="next">
+        Next
+      </a>
+    </li>
+
   </ul>
-  <p class="moj-pagination__results">Showing <b>1</b> to <b>20</b> of <b>71</b> results</p>
 </nav>
 
 </div>
@@ -1000,6 +1013,30 @@ clearSearch.addEventListener('click', function () {
 
 });
 
+});
+
+const paginationLinks = document.querySelectorAll('.moj-pagination__link');
+const pages = document.querySelectorAll('.results-page');
+
+paginationLinks.forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const page = this.dataset.page;
+
+    // hide all pages
+    pages.forEach(p => p.style.display = 'none');
+
+    // show selected page
+    const selectedPage = document.querySelector(`[data-page="${page}"]`);
+    if (selectedPage) selectedPage.style.display = '';
+
+    // update active state
+    document.querySelectorAll('.moj-pagination__item')
+      .forEach(i => i.classList.remove('moj-pagination__item--active'));
+
+    this.parentElement.classList.add('moj-pagination__item--active');
+  });
 });
 </script>
 
