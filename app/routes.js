@@ -35,13 +35,13 @@ router.post("/sfi-26-testing/select-map", function (req, res) {
   const from = req.body.from;
   const landSelected = req.session.data['landSelected'];
 
-  // ✅ If land selected → go forward
+  // ✅ PRIORITY: if from check answers → always go back there
+  if (from === "check-answers") {
+    return res.redirect("/sfi-26-testing/check-your-answers");
+  }
+
+  // ✅ Normal journey logic
   if (landSelected) {
-
-    if (from === "check-answers") {
-      return res.redirect("/sfi-26-testing/check-your-answers");
-    }
-
     return res.redirect("/sfi-26-testing/tasklist-6");
   }
 
@@ -49,6 +49,7 @@ router.post("/sfi-26-testing/select-map", function (req, res) {
   return res.redirect("/sfi-26-testing/tasklist-5");
 
 });
+
 
 
 router.post('/sfi-26-testing/select-land', function (req, res) {
