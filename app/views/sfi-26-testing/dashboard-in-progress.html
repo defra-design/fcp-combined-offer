@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+<h1 class="govuk-heading-l">
+  Applications and agreements [PARA00330]
+</h1>
+
+<p class="govuk-body">JASMINE SMITH</p>
+
+<table class="govuk-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header">Agreement name</th>
+      <th class="govuk-table__header">Agreement number</th>
+      <th class="govuk-table__header">Type</th>
+      <th class="govuk-table__header">Submit date</th>
+      <th class="govuk-table__header">Status</th>
+      <th class="govuk-table__header"></th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">1247384</td>
+
+      <td class="govuk-table__cell">
+        Agreement number
+      </td>
+
+      <td class="govuk-table__cell">
+        SFI
+      </td>
+
+      <td class="govuk-table__cell">
+        <!-- empty like screenshot -->
+      </td>
+
+      <td class="govuk-table__cell">
+        In progress
+      </td>
+
+      <td class="govuk-table__cell">
+
+        <!-- buttons stacked -->
+        <div class="govuk-button-group">
+
+          <a href="#" id="continue-btn" class="govuk-button" style="background-color:#00703c;">
+  Continue application
+</a>
+
+          <a href="/sfi-26-testing/withdraw-application-final" class="govuk-button govuk-button--warning">
+  Withdraw application
+</a>
+
+        </div>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
+<hr class="govuk-section-break govuk-section-break--m">
+
+<p class="govuk-body">
+  <strong>[PARA00313 - leave blank]</strong>
+</p>
+
+</div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const continueBtn = document.getElementById('continue-btn');
+
+  // get stored page
+  const returnPage = localStorage.getItem('returnPage');
+
+  // if user has saved somewhere before
+  if (returnPage) {
+    continueBtn.href = returnPage;
+  } else {
+    // fallback (in case nothing saved yet)
+    continueBtn.href = '/sfi-26-testing/select-actions';
+  }
+
+});
+</script>
+
+{% endblock %}
