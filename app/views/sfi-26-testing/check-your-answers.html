@@ -57,6 +57,27 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-full">
 
+<div
+  id="successBanner"
+  class="govuk-notification-banner govuk-notification-banner--success"
+  role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner"
+  hidden
+>
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-body">
+      Your application is validated, please continue to submit.
+    </p>
+  </div>
+</div>
+
+
     <h1 class="govuk-heading-l">Check your answers</h1>
     <a class="govuk-link" href="">Print<span class="govuk-visually-hidden"></span></a>
 
@@ -254,16 +275,24 @@
   </div>
 </div>
 
-    <script>
-  // Find the buttons
+<script>
   const confirmButton = document.getElementById("confirmButton");
   const saveButton = document.getElementById("saveButton");
+  const successBanner = document.getElementById("successBanner");
 
-  // When Confirm is clicked
   confirmButton.addEventListener("click", function () {
+    // Show the success banner
+    successBanner.hidden = false;
+
     // Enable Save and continue
     saveButton.disabled = false;
     saveButton.removeAttribute("aria-disabled");
+
+    // Scroll to top so the user sees the banner
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
   });
 </script>
 
