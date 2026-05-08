@@ -45,7 +45,7 @@
   </li>
       <br>
     <li>
-    <a class="govuk-link" href="#sfi-26">– Apply for or manage an SFI26 agreement</a>
+    <a class="govuk-link" href="#sfi-26" data-focus-target="sfi-26-link">– Apply for or manage an SFI26 agreement</a>
   </li>
         <br>
       <li>
@@ -192,7 +192,7 @@
   <p class="govuk-body govuk-!-font-weight-bold" id="sfi-26">Sustainable Farming Incentive (SFI) 2026 offer</p>
   </div>
   <div class="govuk-grid-column-two-thirds">
-  <p class="govuk-body"><a href="dashboard" class="govuk-link">Apply for or manage an SFI26 agreement</a></p>
+  <p class="govuk-body"><a href="dashboard" class="govuk-link" id="sfi-26-link">Apply for or manage an SFI26 agreement</a></p>
   </div>
   </div>
 
@@ -274,5 +274,27 @@
   </ul>
 </div>
 </div>
+
+<script>
+  document.addEventListener("click", function (event) {
+    const trigger = event.target.closest("a[data-focus-target]")
+    if (!trigger) return
+
+    event.preventDefault()
+
+    const targetId = trigger.getAttribute("data-focus-target")
+    const targetLink = document.getElementById(targetId)
+    const section = document.querySelector(trigger.getAttribute("href"))
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" })
+    }
+
+    if (targetLink) {
+      // ensure focus happens after scroll
+      setTimeout(() => targetLink.focus(), 150)
+    }
+  })
+</script>
 
 {% endblock %}
