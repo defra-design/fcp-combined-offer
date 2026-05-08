@@ -70,16 +70,23 @@
     <div class="govuk-!-padding-bottom-2"></div>
 
   
-<form class="form" action="confirmation" method="post">
-  <div class="govuk-button-group">
+<div class="govuk-button-group">
+
+  <form action="confirmation" method="post">
     <button type="submit" class="govuk-button" data-module="govuk-button">
       I agree – submit my application
     </button>
   </form>
 
-  <button type="button" class="govuk-button govuk-button--warning" data-module="govuk-button">
-  Withdraw my application
-</button>
+  <form action="/sfi-26-testing/withdraw-application-final" method="get">
+    <button type="submit" class="govuk-button govuk-button--warning" data-module="govuk-button">
+      Withdraw my application
+    </button>
+  </form>
+
+</div>
+
+
 
   </div>
 
