@@ -373,7 +373,7 @@
     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
 
 <!-- Beginning of action -->
-
+<div class="results-page" data-page="1">
 
 <div class="action-item" data-theme="agroforestry">
 
@@ -766,7 +766,9 @@
 
 </div>
 <!-- End of action -->
+</div>
 
+<div class="results-page" data-page="2" style="display:none;">
 
 <!-- Beginning of action -->
 <div class="action-item"data-theme="grassland">
@@ -793,16 +795,22 @@
 <!-- End of action -->
 
 <!-- Beginning of action -->
-<div class="action-item"data-theme="grassland">
+<div class="action-item" data-theme="grassland">
 
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox">
+
     <label class="govuk-label govuk-checkboxes__label" for="waste">
       <p class="govuk-body">
-        GRH12 - Manage rough grazing for birds –
-        <a href="https://www.gov.uk/find-funding-for-land-or-farms/grh1-manage-rough-grazing-for-birds" target="_blank" class="govuk-link">read the guidance for this action</a>
-  <span class="action-code">
+        <span class="action-code">GRH12</span> - Manage rough grazing for birds –
+        <a href="https://www.gov.uk/find-funding-for-land-or-farms/grh1-manage-rough-grazing-for-birds"
+           target="_blank"
+           class="govuk-link">
+          read the guidance for this action
+        </a>
+      </p>
     </label>
+
   </div>
 
   <div class="govuk-!-padding-bottom-4">
@@ -860,6 +868,7 @@
       £55 per hectare per year
     </p>
     <hr class="govuk-section-break govuk-section-break--visible">
+    </div>
   </div>
 
 </div>
@@ -867,22 +876,32 @@
 
 
 <nav class="moj-pagination" aria-label="Pagination navigation">
-
   <ul class="moj-pagination__list">
 
-    <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
-
-    <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-
-    <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
-
-    <li class="moj-pagination__item  moj-pagination__item--next">
-      <a class="moj-pagination__link" href="#">Next<span class="govuk-visually-hidden"> page</span></a>
+    <!-- PREVIOUS -->
+    <li class="moj-pagination__item moj-pagination__item--prev" id="prev-btn" style="display:none;">
+      <a class="moj-pagination__link" href="#" data-action="prev">
+        Previous
+      </a>
     </li>
+
+    <!-- PAGE NUMBERS -->
+    <li class="moj-pagination__item moj-pagination__item--active">
+      <a class="moj-pagination__link" href="#" data-page="1">1</a>
+    </li>
+
+    <li class="moj-pagination__item">
+      <a class="moj-pagination__link" href="#" data-page="2">2</a>
+    </li>
+
+    <!-- NEXT -->
+    <li class="moj-pagination__item moj-pagination__item--next" id="next-btn">
+      <a class="moj-pagination__link" href="#" data-action="next">
+        Next
+      </a>
+    </li>
+
   </ul>
-  <p class="moj-pagination__results">Showing <b>1</b> to <b>20</b> of <b>71</b> results</p>
 </nav>
 
 </div>
@@ -964,16 +983,20 @@ searchButton.addEventListener('click', function () {
 
   const query = searchBox.value.trim().toUpperCase();
 
-  actions.forEach(action => {
-  const codeEl = action.querySelector('.action-code');
-  const code = codeEl ? codeEl.textContent.toUpperCase() : '';
+  // ✅ show ALL pages so results from page 2 can appear
+  const allPages = document.querySelectorAll('.results-page');
+  allPages.forEach(page => page.style.display = '');
 
-  if (query === '' || code.includes(query)) {
-    action.style.display = '';
-  } else {
-    action.style.display = 'none';
-  }
-});
+  actions.forEach(action => {
+    const codeEl = action.querySelector('.action-code');
+    const code = codeEl ? codeEl.textContent.toUpperCase() : '';
+
+    if (query === '' || code.includes(query)) {
+      action.style.display = '';
+    } else {
+      action.style.display = 'none';
+    }
+  });
 
 });
 
@@ -1001,9 +1024,63 @@ clearSearch.addEventListener('click', function () {
 });
 
 });
+
+const paginationLinks = document.querySelectorAll('.moj-pagination__link');
+const pages = document.querySelectorAll('.results-page');
+
+let currentPage = 1;
+const totalPages = document.querySelectorAll('.results-page').length;
+
+function showPage(page) {
+  currentPage = page;
+
+  // hide all pages
+  document.querySelectorAll('.results-page').forEach(p => {
+    p.style.display = 'none';
+  });
+
+  // show selected page
+  const activePage = document.querySelector(`.results-page[data-page="${page}"]`);
+  if (activePage) activePage.style.display = '';
+
+  // update active number styling
+  document.querySelectorAll('.moj-pagination__item').forEach(item => {
+    item.classList.remove('moj-pagination__item--active');
+  });
+
+  const activeLink = document.querySelector(`.moj-pagination__link[data-page="${page}"]`);
+  if (activeLink) {
+    activeLink.parentElement.classList.add('moj-pagination__item--active');
+  }
+
+  // ✅ SHOW / HIDE BUTTONS
+  document.getElementById('prev-btn').style.display = (page === 1) ? 'none' : '';
+  document.getElementById('next-btn').style.display = (page === totalPages) ? 'none' : '';
+}
+
+// handle ALL clicks
+document.querySelectorAll('.moj-pagination__link').forEach(link => {
+  link.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    // page numbers
+    if (this.dataset.page) {
+      showPage(Number(this.dataset.page));
+    }
+
+    // next
+    if (this.dataset.action === 'next' && currentPage < totalPages) {
+      showPage(currentPage + 1);
+    }
+
+    // previous
+    if (this.dataset.action === 'prev' && currentPage > 1) {
+      showPage(currentPage - 1);
+    }
+  });
+});
+``
 </script>
 
 
 {% endblock %}
-
-
