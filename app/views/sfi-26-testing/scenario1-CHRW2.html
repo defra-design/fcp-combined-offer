@@ -47,8 +47,8 @@
   </div>
 
 
-
 </div>
+
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <br>
   <div class="govuk-grid-row">
@@ -78,16 +78,16 @@
     </tr>
     <tr class="govuk-table__row">
      <td class="govuk-table__cell">Number of land parcels used for actions</td>
-      <td class="govuk-table__cell ">1</td>
+      <td class="govuk-table__cell ">0</td>
     </tr>
         <tr class="govuk-table__row">
     <td class="govuk-table__cell">Number of actions applied for</td>
-      <td class="govuk-table__cell ">1</td>
+      <td class="govuk-table__cell ">0</td>
     </tr>
   </tbody>
 </table>
 
-<table class="govuk-table">
+  <table class="govuk-table">
   <tbody class="govuk-table__body">
    
 
@@ -99,12 +99,14 @@
         <p class="govuk-body">Total area: 320.0404 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
-        <p> <span><i class="govuk-body">Applied</i></span></p>
-    </td>
+      <p><span id="applied-text" class="applied hidden"><i class="govuk-body">Applied</i></span></p>
     </td>
     </tr>
 
-
+<td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
+<p class="govuk-body"><span class="govuk-caption-m">Land use: PERMANENT GRASSLAND: 1.5760 ha, ARABLE CROPS: 1.1212 ha, TEMPORARY GRASSLAND: 0.1312 ha, NON-AGRICULTURAL: 0.2120 ha
+Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
+</td>
 
     <tr class="govuk-table__row" >
       <td class="govuk-table__cell table-space">
@@ -114,14 +116,10 @@
         <p class="govuk-body">Total area: 31.4241 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
-    <span id="applied-text" class="applied hidden">
-      <i class="govuk-body">Applied</i>
-    </span>
+        <p class="govuk-body"></p>
+    </td>
     </tr>
-<td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
-<p class="govuk-body"><span class="govuk-caption-m">Land use: PERMANENT GRASSLAND: 1.5760 ha, ARABLE CROPS: 1.1212 ha, TEMPORARY GRASSLAND: 0.1312 ha, NON-AGRICULTURAL: 0.2120 ha
-Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
-</td>
+
     <tr class="govuk-table__row" >
       <td class="govuk-table__cell table-space">
         <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3160</a>
@@ -274,33 +272,33 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
     <div class="govuk-pagination__prev govuk-pagination__next">
     <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">15</span> of <span class="govuk-!-font-weight-bold">15</span> parcels</p></div>
   <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
     </a>
   </div>
-
 </nav> 
     </div>
 
   <div class="govuk-grid-column-one-half">
     <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link">Hide map</a></p>
-  <map name="clickable">
+    
+    <map name="clickable">
         <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
         <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
                   </map>
-
 <img id="map-default"
      usemap="#clickable"
-     src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/sfi-private-beta/img/map_8.png"
+     src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_3.png"
      alt="Map of your land"
      style="width:465px;height:400px;">
 
 <img id="map-applied"
      class="hidden"
      usemap="#clickable"
-     src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/refs/heads/main/app/views/sfi-private-beta/img/map_9.png"
+     src="https://github.com/defra-design/fcp-combined-offer/blob/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_5.png?raw=true"
      alt="Map of your land after applying actions"
      style="width:465px;height:400px;">
 
-      <p class="govuk-body">Key:</p>
+       <p class="govuk-body">Key:</p>
        <div class="key-div govuk-!-margin-bottom-5">
        <div class="key-parent" id="key1"></div><span class="govuk-body-s">Error</span>
        <div class="key-parent" id="key2"></div><span class="govuk-body-s">Selected</span>
@@ -332,7 +330,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
   </td>
 
   <td class="govuk-table__cell available">
-    2
+    22.9971
   </td>
 
   <td class="govuk-table__cell">
@@ -445,7 +443,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
 
 
 <div class="govuk-!-margin-top-1">
-  <form class="form" action="/sfi-26-testing/select-land-parcel-2" method="post">
+  <form class="form" action="/sfi-26-testing/select-land-parcel-1" method="post">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Continue
     </button>
@@ -457,6 +455,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
 
   </div>
 </div>
+
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -503,7 +502,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 </script>
-
 
 {% endblock %}
 
