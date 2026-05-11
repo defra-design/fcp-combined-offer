@@ -1,0 +1,302 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+<div
+  id="successBanner"
+  class="govuk-notification-banner govuk-notification-banner--success"
+  role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner"
+  hidden
+>
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-body">
+      Your application is validated, please continue to submit.
+    </p>
+  </div>
+</div>
+
+
+    <h1 class="govuk-heading-l">Check your answers</h1>
+    <a class="govuk-link" href="">Print<span class="govuk-visually-hidden"></span></a>
+
+<br><br><br>
+
+<h2 class="govuk-heading-m">Your details</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Business</th>
+      <td class="govuk-table__cell govuk-!-width-one-half">JASMINE SMITH FARM<br>
+  Rainbow Farm<br>
+  High Street<br>
+  Rhydlewis<br>
+  Ellesmere<br>
+  PO30 1NY</td>
+        <td class="govuk-table__cell govuk-table__header--numeric"></td>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Single business identifier (SBI)</th>
+      <td class="govuk-table__cell">123456789</td>
+         <td class="govuk-table__cell govuk-table__header--numeric"></td>
+    </tr>
+
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Land details</th>
+      <td class="govuk-table__cell">Up to date</td>
+         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="/sfi-26-testing/check-land-details?from=check-answers">Change<span class="govuk-visually-hidden"> answer</span></a>
+         </tr> 
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Agreement name</th>
+      <td class="govuk-table__cell">SFI Agreement for Rainbow Farm</td>
+         <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="/sfi-26-testing/agreement-name?from=check-answers">Change<span class="govuk-visually-hidden"> answer</span></a>
+         </tr> 
+    </thead>   
+ </table>
+<br>
+
+<h2 class="govuk-heading-m">Eligibility</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    <th scope="col" class="govuk-table__header govuk-!-width-one-half">Will you have management control of the land in your SFI application?</th>
+    <td class="govuk-table__cell govuk-!-width-one-quarter">Yes</td>
+      <td class="govuk-table__cell govuk-table__header--numeric">
+    <a class="govuk-link" href="management-control?from=check-answers">
+  Change<span class="govuk-visually-hidden"> answer</span>
+</a>
+    </td>
+    </tr>
+
+    <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Will you request an SFI HEFER if required?</th>
+          <td class="govuk-table__cell">Yes</td>
+             <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+    </tr>
+
+
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Will you get consent to complete SFI actions on SSSI land if required?</th>
+    <td class="govuk-table__cell">Yes</td>
+        <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="sssi">Change<span class="govuk-visually-hidden"> answer</span></a>
+  </td>
+  </tr>
+  </thead>   
+ </table>
+<br>
+
+<h2 class="govuk-heading-m">Total funding for actions</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Number of actions applied for</th>
+      <td class="govuk-table__cell">4</td>
+        <td class="govuk-table__cell govuk-table__header--numeric"><span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+    </tr>
+
+    </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Indicative total agreement value for actions</th>
+          <td class="govuk-table__cell">£13,915.86</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+  </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Indicative total annual payment for actions</th>
+          <td class="govuk-table__cell">£3,478.75</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href=""><span class="govuk-visually-hidden"> answer</span></a>
+    </td>
+  </tr>
+  </thead>   
+ </table>
+<br>
+
+<h2 class="govuk-heading-m">Actions</h2>
+<div class="govuk-!-padding-bottom-2"></div>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Parcel based SFI actions</th>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="/sfi-26-testing/select-map?from=check-answers">Change<span class="govuk-visually-hidden"> answer</span></a></td></td>
+    </tr>
+
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AHW4: Skylark plots</td>
+      <td class="govuk-table__cell">22.9971 plots</td>
+      <td class="govuk-table__cell">£1,011.56</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">CHRW2: Manage hedgerows</td>
+      <td class="govuk-table__cell">320.0404m</td>
+      <td class="govuk-table__cell">£166.49</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+            <tr class="govuk-table__row">
+      <td class="govuk-table__cell">CIGL2: Winter bird food on improved grassland</td>
+      <td class="govuk-table__cell">12.2309 ha</td>
+      <td class="govuk-table__cell">£344.62</td>  
+      <td class="govuk-table__cell"></td>
+    </tr>
+               <tr class="govuk-table__row">
+      <td class="govuk-table__cell">GRH12 - Manage rough grazing for birds</td>
+      <td class="govuk-table__cell">12.2309 ha</td>
+      <td class="govuk-table__cell">£10,432.96</td>
+            <td class="govuk-table__cell"></td>
+    </tr>
+
+    </tr>
+        <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__cell">Agreement level SFI actions</td>
+      <td class="govuk-table__cell"></td>     
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="apply-agreement-level">Change<span class="govuk-visually-hidden"> answer</span></a></td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell">AHW2: Supplementary winter bird food</td>
+      <td class="govuk-table__cell">15 tonnes</td>
+      <td class="govuk-table__cell">£10,980.00</td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+
+        <tr class="govuk-table__row">
+       <th scope="col" class="govuk-table__cell">Indicative total for actions</td>
+      <td class="govuk-table__cell">£41,747.58</td>
+      <td class="govuk-table__cell"></td>
+      <td class="govuk-table__cell"></td>
+    </tr>
+  </tbody>
+</table>
+      
+<div>
+  <div>
+<form method="get" action="tasklist-8">
+  <button
+    type="button"
+    id="confirmButton"
+    class="govuk-button govuk-button--secondary">
+    Confirm
+  </button>
+  </div>
+<div>
+  <button
+    type="submit"
+    id="saveButton"
+    class="govuk-button govuk-button--primary govuk-button--disabled"
+    disabled
+    aria-disabled="true">
+    Save and continue
+  </button>
+</form>
+</div>
+</div>
+
+  </div>
+</div>
+
+<script>
+  const confirmButton = document.getElementById("confirmButton");
+  const saveButton = document.getElementById("saveButton");
+  const successBanner = document.getElementById("successBanner");
+
+  confirmButton.addEventListener("click", function () {
+    // Show the success banner
+    successBanner.hidden = false;
+
+    // Enable Save and continue
+    saveButton.disabled = false;
+    saveButton.removeAttribute("aria-disabled");
+
+    // Scroll to top so the user sees the banner
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
+{% endblock %}
+
+
+
