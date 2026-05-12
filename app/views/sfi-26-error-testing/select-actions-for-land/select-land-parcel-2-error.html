@@ -49,9 +49,8 @@
 
 </div>
 
-
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-  <br>
+
 
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -73,6 +72,7 @@
   </div>
 
 
+  <br>
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
           <h1 class="govuk-heading-l">Select land for your actions</h1>
@@ -86,7 +86,8 @@
 
 
 <hr class="section-break-large"></hr>
-      <table class="govuk-table">
+
+<table class="govuk-table">
 <p class="govuk-body">OS Map Sheet Reference S03</p>
 <hr class="govuk-section-break govuk-section-break--visible">
   <tbody class="govuk-table__body">
@@ -96,18 +97,19 @@
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">Total area in hectares</td>
-      <td class="govuk-table__cell ">65.0000</td>
+      <td class="govuk-table__cell">65.0000</td>
     </tr>
     <tr class="govuk-table__row">
      <td class="govuk-table__cell">Number of land parcels used for actions</td>
-      <td class="govuk-table__cell ">0</td>
+      <td class="govuk-table__cell">1</td>
     </tr>
         <tr class="govuk-table__row">
     <td class="govuk-table__cell">Number of actions applied for</td>
-      <td class="govuk-table__cell ">0</td>
+      <td class="govuk-table__cell">2</td>
     </tr>
   </tbody>
 </table>
+
 
 <table class="govuk-table">
   <tbody class="govuk-table__body">
@@ -119,28 +121,27 @@
       <p class="govuk-body">Total area: 10.0000 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
-    <p style="color: white;">Applied</p>
+    <p><i>Applied</i></p>
     </td>
   </tr>
-
-<td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
-<p class="govuk-body"><span class="govuk-caption-m">Land use: ARABLE CROPS: 10.0000 ha</span></p>
-</td>
-
-
-
 
   <tr class="govuk-table__row" >
     <td class="govuk-table__cell table-space">
       <p class="govuk-body"><a href="" class="govuk-link">SO3757 3159</a>
   </td>
     <td class="govuk-table__cell table-space">
-      <p class="govuk-body">Total area: 8.0000 ha</p>
+      <p class="govuk-body">Total area: 0.0022 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
       <p class="govuk-body"></p>
   </td>
   </tr>
+
+  <td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
+  <p class="govuk-body"><span class="govuk-caption-m">Land use: PERMANENT GRASSLAND: 0.0022 ha</span></p>
+  </td>
+
+
   <tr class="govuk-table__row" >
     <td class="govuk-table__cell table-space">
       <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3160</a>
@@ -188,7 +189,7 @@
   </tbody>
 </table>
   
-
+  
 
  <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
     <div class="govuk-pagination__prev govuk-pagination__next">
@@ -209,9 +210,10 @@
                   </map>
 <img id="map-default"
      usemap="#clickable"
-     src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/sfi-26-error-testing/img/map_7.png?raw=true"
+     src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/sfi-26-error-testing/img/map_10.png?raw=true"
      alt="Map of your land"
      style="width:465px;height:400px;">
+
 
        <p class="govuk-body">Key:</p>
        <div class="key-div govuk-!-margin-bottom-5">
@@ -231,11 +233,10 @@
       <td class="govuk-table__cell">Quantity</td>
     </tr>
     
-
 <tr class="govuk-table__row red-border">
       <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
       <p id="error" class="govuk-error-message" style="margin-bottom: 5px;">
-      <span class="govuk-visually-hidden">Error:</span>Reduce the number of plots, so there are no more than 2 plots per hectare</p>
+      <span class="govuk-visually-hidden">Error:</span> You can only do this action on a land parcel that’s more than 25 square metres, because an eligible pond for this action must be more than 25 square metres (up to 2 hectares)</p>
       </td>
     </tr>
   
@@ -246,56 +247,27 @@
         <label class="govuk-label govuk-checkboxes__label"></label></div>
       </td>
 
-      <td class="govuk-table__cell">AHW4 - Skylark plots</td>
+      <td class="govuk-table__cell">WBD1 - Manage pondss</td>
 
-      <td class="govuk-table__cell available"></td>
+      <td class="govuk-table__cell available">22.0000</td>
 
       <td class="govuk-table__cell">
         <div class="govuk-form-group">
           <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-10" type="text" value="22">
-          <div class="govuk-input__suffix" aria-hidden="true">plots</div>
+            <input class="govuk-input govuk-input--width-10" type="text" value="22.0000">
+          <div class="govuk-input__suffix" aria-hidden="true">metres</div>
       </div>
     </div>
 </td>
 
-
-<tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
-      <p id="error" class="govuk-error-message" style="margin-bottom: 5px;">
-      <span class="govuk-visually-hidden">Error:</span>Reduce the length entered into linear actions, so the total length is no more than this parcel's maximum available perimeter</p>
-      </td>
-    </tr>
-  
-    <tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6";>
-        <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" type="checkbox" checked>
-        <label class="govuk-label govuk-checkboxes__label"></label></div>
-      </td>
-
-  <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
-  <td class="govuk-table__cell available">1200.0000</td>
- <td class="govuk-table__cell">
-  <div class="govuk-form-group">
-    <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="1400.0000">
-      <div class="govuk-input__suffix" aria-hidden="true">metres</div>
-    </div>
-  </div>
-</td>
-</tr>
-
-
-  </tbody>
-</table>
+    
 
   </tbody>
 </table>
 
  <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
     <div class="govuk-pagination__prev govuk-pagination__next">
-    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">2</span> of <span class="govuk-!-font-weight-bold">2</span> actions</p></div>
+    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> of <span class="govuk-!-font-weight-bold">1</span> actions</p></div>
   <div class="govuk-pagination__next">
     <a class="govuk-link govuk-pagination__link" href="#" rel="next">
     </a>
@@ -303,7 +275,7 @@
 </nav> 
 
 <div class="govuk-!-margin-top-1">
-  <form class="form" action="/sfi-26-error-testing/select-actions-for-land/select-land-parcel-error-2" method="post">
+  <form class="form" action="/sfi-26-error-testing/select-actions-for-land/select-land-parcel-2" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Save
     </button>
@@ -312,7 +284,7 @@
 
 
 <div class="govuk-!-margin-top-1">
-  <form class="form" action="" method="post">
+  <form class="form" action="/sfi-26-testing/select-land-parcel-1" method="post">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Continue
     </button>
@@ -326,5 +298,37 @@
 </div>
 
 
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const rows = document.querySelectorAll(".govuk-table__body tr");
+
+  rows.forEach(row => {
+    const checkbox = row.querySelector(".select-action");
+    const available = row.querySelector(".available");
+    const input = row.querySelector(".quantity");
+
+    if (!checkbox || !available || !input) return;
+
+    checkbox.addEventListener("change", function () {
+      if (checkbox.checked) {
+        input.value = available.textContent.trim();
+      } else {
+        input.value = "";
+      }
+    });
+  });
+
+});
+</script>
+
 {% endblock %}
 
+
+
+<style>
+  .hidden {
+    display: none;
+  }
+</style>
