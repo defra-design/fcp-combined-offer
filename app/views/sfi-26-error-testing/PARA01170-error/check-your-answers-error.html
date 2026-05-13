@@ -1,0 +1,387 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#row-error">Select ‘Change’ in the ‘Actions’ section to remove or reduce actions so your indicative annual payment value is no more than £100,000</a>
+            </li>
+             <li>
+              <a href="#row-error">Resolve errors on your application</a>
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-6">Check your answers​</h1>
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">Print</a></p>
+    </p>
+  </div>
+
+
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-m" id="details">
+            Your details
+    </h2>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Business
+        </dt>
+        <dd class="govuk-summary-list__value">
+          JASMINE SMITH FARM<br>
+          Rainbow Farm<br>
+          High Street<br>
+          Rhydlewis<br>
+          Ellesmere<br>
+          PO30 1NY
+          </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Single Business Identifier (SBI)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123456789
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Land details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Up to date
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="check-land-details">Change<span class="govuk-visually-hidden"> land details</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Agreement name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Jasmine’s Farm SFI 2023
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="agreement-name">Change<span class="govuk-visually-hidden"> agreement name</span></a>
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m" id="eligibility">
+        Eligibility
+    </h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Management control of land
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="management-control">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Land with historic or archaeological features
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Sites of special scientific interest (SSSIs)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="sssi">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      </dl>
+        
+
+      <h2 class="govuk-heading-m" id="funding">
+        Total funding
+</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width: 390px;">
+      Number of actions applied for
+    </dt>
+    <dd class="govuk-summary-list__value">
+      7
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key" style="width: 390px;">
+      Indicative total agreement value for actions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £236,463.62
+    </dd>
+  </div>
+  
+<!-- ✅ ERROR ROW -->
+<dd
+  id="payment-error"
+  class="govuk-summary-list__value red-border red-border-padding govuk-!-width-full"
+  style="padding-bottom: 0;"
+  hidden
+>
+  <span class="govuk-error-message" style="width: 600px;">
+    <span class="govuk-visually-hidden">Error:</span>
+    Select ‘Change’ in the ‘Actions’ section to remove or reduce actions so your indicative annual payment value is no more than £100,000
+  </span>
+</dd>
+
+<!-- ✅ PAYMENT ROW (now continues the red line) -->
+<div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key red-border red-border-padding">
+    Indicative total annual payment for actions
+  </dt>
+  <dd class="govuk-summary-list__value">
+    £84,462.62
+  </dd>
+  <dd class="govuk-summary-list__actions">
+  </dd>
+</div>
+
+</dl>
+
+    
+      <h2 class="govuk-heading-m" id="parcel-based">
+        Actions
+      </h2>
+
+    <dl class="govuk-summary-list">
+
+      <!-- HT actions-->
+        <dd class="govuk-summary-list__value red-border red-border-padding" style="padding-bottom: 0;">
+        <span id="row-error" class="govuk-error-message" style="width: 940px;">
+  <span class="govuk-visually-hidden">Error:</span>
+  Reduce the area entered into limited area actions in this application, so the total is no more than 25% of the agricultural area of your farm.
+  <br>
+  Eligible area limit: 111.25ha. Area entered in this application: 44ha. Area already in existing agreements: 100ha
+</span>
+      </dd>
+      <div class="govuk-summary-list__row">
+  <dt class="govuk-summary-list__key red-border red-border-padding" style="white-space: nowrap;">Parcel based SFI actions</dt>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="select-map-error">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+
+    <!-- Error line -->
+
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          AHW4: Skylark plots
+        <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  22.9971 plots
+</dd>
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £1,011.56
+</dd>
+      </div>
+
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                CAHL3: Grassy field corners or blocks
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  32.9823 ha
+</dd>
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £2,011.56
+</dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                WBD3: In-field grass strips
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  4.3256 ha
+</dd>
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £3,309.84
+</dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                CIGL2 Winter bird food on improved grassland
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  6.7843 ha
+</dd>
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £3,493.91
+</dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                	AHW7 Enhanced overwinter stubble
+             <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  2.3421 ha
+</dd>
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £1,379.49
+</dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                	BND2 Maintain earth banks or stone-faced hedgebanks
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  294 metres
+</dd>
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £3,234
+</dd>
+            </div>
+      
+      
+
+      
+      
+      
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="white-space: nowrap;">
+                Agreement level SFI actions 
+              </dt>
+              <dd class="govuk-summary-list__value" >
+              </dd>
+              <dd class="govuk-summary-list__value" style="width: 180px;">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="agreement-level-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
+              </dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                AHW2: Supplementary winter bird food
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  15 tonnes
+</dd>
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £10,980.00
+</dd>
+      
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              
+      
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              
+      
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="white-space: nowrap;">
+                Indicative total for actions
+              </dt>
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £158,870.46
+</dd>
+      
+            </div>
+            </dl>
+
+  <form class="form" action="check-your-answers-application-error" method="post">
+      <button type="button" id="confirmButton" class="govuk-button govuk-button--secondary">
+        Confirm
+      </button>
+  </form>
+
+<form class="form" action="tasklist-11" method="post">
+  <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button" disabled>
+    Save and continue
+  </button>
+</form>
+
+  </div>
+  </div>
+
+
+
+{% endblock %}
