@@ -51,11 +51,12 @@
 
 
 <br>
+
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-full">
 
-  <span class="govuk-caption-l">Expanded Sustainable Farming Incentive</span>
-  <h1 class="govuk-heading-xl">Apply for funding</h1>
+      <span class="govuk-caption-l">Expanded Sustainable Farming Incentive</span>
+      <h1 class="govuk-heading-xl">Apply for funding</h1>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
@@ -95,25 +96,21 @@
               text: "Confirm your land details are up to date"
             },
             href: "check-land-details",
-            status: incompleteStatus
+            status: completedStatus
           },
           {
             title: {
               text: "Confirm you’re eligible to apply"
             },
-       status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+            href: "management-control",
+            status: completedStatus         
     },
                {
             title: {
               text: "Enter your agreement name"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+         href: "agreement-name",
+            status: completedStatus  
     }
         ]
       }) }}
@@ -127,10 +124,8 @@
             title: {
               text: "Select which actions you want to apply for"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+         href: "select-actions",
+            status: completedStatus            
     }
         ]
       }) }}
@@ -140,17 +135,24 @@
       {{ govukTaskList({
         idPrefix: "second-section",
         items: [
-          {
-            title: {
+        {
+                 title: {
               text: "Select the land you want to do your actions on"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+         href: "select-map",
+            status: completedStatus            
+    },
+        {
+                 title: {
+              text: "Apply for your agreement level actions"
+            },
+         href: "apply-agreement-level-resolved",
+            status: incompleteStatus            
     }
         ]
+        
       }) }}
+      
 
 
          <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
@@ -165,8 +167,8 @@
         status: {
         text: "Cannot start yet",
         classes: "govuk-task-list__status--cannot-start-yet"
-      }          
-    },
+      }                 
+      },
                  {
             title: {
               text: "Submit your application"
@@ -178,5 +180,5 @@
           }
         ]
       }) }}
-</div>
+
 {% endblock %}

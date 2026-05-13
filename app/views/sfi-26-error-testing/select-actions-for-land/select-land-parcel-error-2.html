@@ -100,11 +100,11 @@
     </tr>
     <tr class="govuk-table__row">
      <td class="govuk-table__cell">Number of land parcels used for actions</td>
-      <td class="govuk-table__cell ">0</td>
+      <td class="govuk-table__cell ">1</td>
     </tr>
         <tr class="govuk-table__row">
     <td class="govuk-table__cell">Number of actions applied for</td>
-      <td class="govuk-table__cell ">0</td>
+      <td class="govuk-table__cell ">1</td>
     </tr>
   </tbody>
 </table>
@@ -119,7 +119,7 @@
       <p class="govuk-body">Total area: 10.0000 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
-    <p style="color: white;">Applied</p>
+    <p><i>Applied</i></p>
     </td>
   </tr>
 
@@ -257,14 +257,14 @@
 <tr class="govuk-table__row red-border">
       <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
       <p id="error" class="govuk-error-message" style="margin-bottom: 5px;">
-      <span class="govuk-visually-hidden">Error:</span>The action is ineligible due to existing Agreements and/or Applications (CS, and SFI26)</p>
+      <span class="govuk-visually-hidden">Error:</span>The action is ineligible due to existing Agreements and/or Applications (CS, and SFI26)</p>
       </td>
     </tr>
   
     <tr class="govuk-table__row red-border">
       <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6";>
         <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" type="checkbox" checked>
+        <input id="chrw2Checkbox" class="govuk-checkboxes__input" type="checkbox" checked>
         <label class="govuk-label govuk-checkboxes__label"></label></div>
       </td>
 
@@ -297,7 +297,7 @@
 </nav> 
 
 <div class="govuk-!-margin-top-1">
-  <form class="form" action="/sfi-26-error-testing/select-actions-for-land/select-land-parcel-solved" method="post">
+  <form class="form" action="" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Save
     </button>
@@ -319,6 +319,15 @@
   </div>
 </div>
 
+<script>
+const chrw2Checkbox = document.getElementById('chrw2Checkbox');
+
+chrw2Checkbox.addEventListener('change', function () {
+  if (!this.checked) {
+    window.location.href = 'select-land-parcel-solved';
+  }
+});
+</script>
 
 {% endblock %}
 
