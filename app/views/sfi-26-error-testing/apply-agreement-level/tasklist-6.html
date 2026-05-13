@@ -103,16 +103,14 @@
               text: "Confirm you’re eligible to apply"
             },
             href: "management-control",
-            status: incompleteStatus         
+            status: completedStatus         
     },
                {
             title: {
               text: "Enter your agreement name"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+         href: "agreement-name",
+            status: completedStatus  
     }
         ]
       }) }}
@@ -126,30 +124,35 @@
             title: {
               text: "Select which actions you want to apply for"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+         href: "select-actions",
+            status: completedStatus            
     }
         ]
       }) }}
 
          <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Apply for your actions</h2>
 
-    {{ govukTaskList({
+      {{ govukTaskList({
         idPrefix: "second-section",
         items: [
-          {
-            title: {
+        {
+                 title: {
               text: "Select the land you want to do your actions on"
             },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }             
+         href: "select-map",
+            status: completedStatus            
+    },
+        {
+                 title: {
+              text: "Apply for your agreement level actions"
+            },
+         href: "apply-agreement-level",
+            status: incompleteStatus            
     }
         ]
+        
       }) }}
+      
 
 
          <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
@@ -164,8 +167,8 @@
         status: {
         text: "Cannot start yet",
         classes: "govuk-task-list__status--cannot-start-yet"
-      }          
-    },
+      }                 
+      },
                  {
             title: {
               text: "Submit your application"

@@ -116,38 +116,44 @@
       }) }}
 
       <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Select your actions</h2>
-      
+
+      {{ govukTaskList({
+        idPrefix: "second-section",
+        items: [
+          {
+            title: {
+              text: "Select which actions you want to apply for"
+            },
+         href: "select-actions",
+            status: completedStatus            
+    }
+        ]
+      }) }}
+
+         <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Apply for your actions</h2>
 
       {{ govukTaskList({
         idPrefix: "second-section",
         items: [
         {
                  title: {
-              text: "Select which actions you wish to apply for"
+              text: "Select the land you want to do your actions on"
             },
-         href: "select-actions",
+         href: "select-map",
+            status: completedStatus            
+    },
+        {
+                 title: {
+              text: "Apply for your agreement level actions"
+            },
+         href: "apply-agreement-level-resolved",
             status: incompleteStatus            
     }
         ]
+        
       }) }}
+      
 
-
-<h2 class="govuk-heading-m govuk-!-margin-top-5">3. Apply for your actions</h2>
-
-    {{ govukTaskList({
-        idPrefix: "second-section",
-        items: [
-          {
-            title: {
-              text: "Select the land you want to do your actions on"
-            },
-        status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }                
-    }
-        ]
-      }) }}
 
          <h2 class="govuk-heading-m govuk-!-margin-top-5">4. Review and submit your application</h2>
 
@@ -161,8 +167,8 @@
         status: {
         text: "Cannot start yet",
         classes: "govuk-task-list__status--cannot-start-yet"
-      }          
-    },
+      }                 
+      },
                  {
             title: {
               text: "Submit your application"
