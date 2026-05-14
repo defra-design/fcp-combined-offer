@@ -17,7 +17,7 @@
   <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
     text: "Back",
-    href: "javascript:history.back()"
+    href: "tasklist-6"
   }) }}
 </div>
 
@@ -160,7 +160,7 @@ form.addEventListener('submit', function (e) {
 
   if (!checkboxForSubmit.checked) {
     // UNCHECKED → go to 8
-    window.location.href = 'tasklist-8';
+    window.location.href = 'tasklist-6';
   } else {
     // CHECKED → go to 7
     window.location.href = 'apply-agreement-level-error-1';

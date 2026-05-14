@@ -17,7 +17,7 @@
   <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
     text: "Back",
-    href: "tasklist-6"
+    href: "javascript:history.back()"
   }) }}
 </div>
 
@@ -53,64 +53,35 @@
 
 <br>
 
-
 <div class="govuk-grid-row">
  <div class="govuk-grid-column-two-thirds">
-
-  <div class="govuk-error-summary" data-module="govuk-error-summary">
-  <div role="alert">
-    <h2 class="govuk-error-summary__title">
-      There is a problem
-    </h2>
-    <div class="govuk-error-summary__body">
-      <ul class="govuk-list govuk-error-summary__list">
-        <li>
-          <a href="">Apply for CAHL2 in this application to be able to apply for AHW2</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
 
       <h1 class="govuk-heading-l">Apply for your agreement level actions</h1>
       <p class="govuk-body">AHW2 (supplementary winter bird food) is an agreement level SFI supplemental action. This means it applies to your entire SFI agreement, not specific land parcels.</p>
       <p class="govuk-body">Select the action and enter the number of tonnes you want to apply for. You can only apply for a maximum of 1 tonne of AHW2 for every 2 hectares of CAHL2 you've entered in this application.</p>
 
-      
-
-
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Agreement level actions</caption>
   <tbody class="govuk-table__body">
   </thead>
-
-    <tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
-      <p id="error" class="govuk-error-message" style="margin-bottom: 5px;">
-      <span class="govuk-visually-hidden">Error:</span>Apply for CAHL2 in this application to be able to apply for AHW2</p>
-      </td>
-    </tr>
-  
-    <tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6";>
-        <div class="govuk-checkboxes__item">
-        <input id="ahw2-checkbox" class="govuk-checkboxes__input" type="checkbox" checked>
-        <label class="govuk-label govuk-checkboxes__label"></label></div>
-      </td>
-
-      <td class="govuk-table__cell">AHW2: Supplementary winter bird food</td>
-
-
-      <td class="govuk-table__cell">
+    <tr class="govuk-table__row">
+        </div></td>
+         <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><div class="govuk-checkboxes__item series-selector-items">
+          <input class="govuk-checkboxes__input" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label">
+          AHW2: Supplementary winter bird food</label>
+        </div></td>
+      <td class="govuk-table__cell"><div class="govuk-date-input__item">
         <div class="govuk-form-group">
-          <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-5" type="text" value="22">
-          <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
-      </div>
-    </div>
-</td>
-</table>
+<div class="govuk-form-group">
+  <div class="govuk-input__wrapper">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
+  </div>
+</div>
 
+</table>
 
 <form class="form" action="tasklist-6" method="post">
           <button type="submit" class="govuk-button" data-module="govuk-button">
@@ -126,16 +97,5 @@ function saveCurrentPage() {
   localStorage.setItem('returnPage', window.location.pathname);
 }
 </script>
-
-<script>
-  const checkbox = document.getElementById('ahw2-checkbox');
-
-  checkbox.addEventListener('change', function () {
-    if (!this.checked) {
-      window.location.href = 'apply-agreement-level-cleared';
-    }
-  });
-</script>
-
 
 {% endblock %}
