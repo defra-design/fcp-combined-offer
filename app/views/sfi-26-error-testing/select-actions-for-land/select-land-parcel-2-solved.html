@@ -79,11 +79,11 @@
     </tr>
     <tr class="govuk-table__row">
      <td class="govuk-table__cell">Number of land parcels used for actions</td>
-      <td class="govuk-table__cell">0</td>
+      <td class="govuk-table__cell">1</td>
     </tr>
         <tr class="govuk-table__row">
     <td class="govuk-table__cell">Number of actions applied for</td>
-      <td class="govuk-table__cell">0</td>
+      <td class="govuk-table__cell">2</td>
     </tr>
   </tbody>
 </table>
@@ -99,28 +99,27 @@
       <p class="govuk-body">Total area: 10.0000 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
-    <p style="color: white;">Applied</p>
+    <p><i>Applied</i></p>
     </td>
   </tr>
-
-<td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
-<p class="govuk-body"><span class="govuk-caption-m">Land use: ARABLE CROPS: 10.0000 ha</span></p>
-</td>
-
-
-
 
   <tr class="govuk-table__row" >
     <td class="govuk-table__cell table-space">
       <p class="govuk-body"><a href="" class="govuk-link">SO3757 3159</a>
   </td>
     <td class="govuk-table__cell table-space">
-      <p class="govuk-body">Total area: 8.0000 ha</p>
+      <p class="govuk-body">Total area: 0.0022 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
       <p class="govuk-body"></p>
   </td>
   </tr>
+
+  <td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
+  <p class="govuk-body"><span class="govuk-caption-m">Land use: PERMANENT GRASSLAND: 0.0022 ha</span></p>
+  </td>
+
+
   <tr class="govuk-table__row" >
     <td class="govuk-table__cell table-space">
       <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3160</a>
@@ -184,21 +183,15 @@
     <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link">Hide map</a></p>
     
     <map name="clickable">
-        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+        <area shape="rect" coords="100,280,190,320" href="">
         <area shape="rect" coords="150,220,240,280" href="">
                   </map>
 <img id="map-default"
      usemap="#clickable"
-     src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_3.png"
+     src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/sfi-26-error-testing/img/map_8.png?raw=true"
      alt="Map of your land"
      style="width:465px;height:400px;">
 
-<img id="map-applied"
-     class="hidden"
-     usemap="#clickable"
-     src="https://github.com/defra-design/fcp-combined-offer/blob/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_5.png?raw=true"
-     alt="Map of your land after applying actions"
-     style="width:465px;height:400px;">
 
        <p class="govuk-body">Key:</p>
        <div class="key-div govuk-!-margin-bottom-5">
@@ -220,7 +213,6 @@
     
 
 
-
 <tr class="govuk-table__row">
 <td class="govuk-table__cell">
   <div class="govuk-checkboxes__item">
@@ -229,72 +221,33 @@
     </label>
   </div>
 </td>
-  <td class="govuk-table__cell">AHW4 - Skylark plots</td>
-  <td class="govuk-table__cell available"></td>
- <td class="govuk-table__cell">
-  <div class="govuk-form-group">
-    <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10" type="text">
-      <div class="govuk-input__suffix" aria-hidden="true">plots</div>
-    </div>
-  </div>
-</td>
-</tr>
-
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">
-  <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox">
-    <label class="govuk-label govuk-checkboxes__label" for="action-1">
-    </label>
-  </div>
-</td>
-  <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
-  <td class="govuk-table__cell available">1200.0000</td>
+  <td class="govuk-table__cell">WBD1 - Manage ponds</td>
+  <td class="govuk-table__cell available">0.0022</td>
  <td class="govuk-table__cell">
   <div class="govuk-form-group">
     <div class="govuk-input__wrapper">
       <input class="govuk-input govuk-input--width-10 quantity" type="text">
-      <div class="govuk-input__suffix" aria-hidden="true">metres</div>
+      <div class="govuk-input__suffix" aria-hidden="true">hectares</div>
     </div>
   </div>
 </td>
 </tr>
-
-<tr class="govuk-table__row">
-<td class="govuk-table__cell">
-  <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox">
-    <label class="govuk-label govuk-checkboxes__label" for="action-1">
-    </label>
-  </div>
-</td>
-  <td class="govuk-table__cell">CAHL2 - Winter bird food on arable and horticultural land</td>
-  <td class="govuk-table__cell available">10.0000</td>
- <td class="govuk-table__cell">
-  <div class="govuk-form-group">
-    <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10 quantity" type="text">
-      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
-    </div>
-  </div>
-</td>
-</tr>
+    
 
   </tbody>
 </table>
 
  <nav class="govuk-pagination" role="navigation" aria-label="Pagination">
     <div class="govuk-pagination__prev govuk-pagination__next">
-    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> to <span class="govuk-!-font-weight-bold">3</span> of <span class="govuk-!-font-weight-bold">3</span> actions</p></div>
-  <div class="govuk-pagination__next"
+    <p class="govuk-body">Showing <span class="govuk-!-font-weight-bold">1</span> of <span class="govuk-!-font-weight-bold">1</span> actions</p></div>
+  <div class="govuk-pagination__next">
     <a class="govuk-link govuk-pagination__link" href="#" rel="next">
     </a>
   </div>
 </nav> 
 
 <div class="govuk-!-margin-top-1">
-  <form class="form" action="/sfi-26-error-testing/select-actions-for-land/select-land-parcel-error" method="post">
+  <form class="form" action="" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Save
     </button>
@@ -303,7 +256,7 @@
 
 
 <div class="govuk-!-margin-top-1">
-  <form class="form" action="" method="post">
+  <form class="form" action="tasklist-6" method="post">
     <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Continue
     </button>
