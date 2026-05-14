@@ -243,7 +243,7 @@
     <tr class="govuk-table__row red-border">
       <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6";>
         <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" type="checkbox" checked>
+        <input class="govuk-checkboxes__input select-action" type="checkbox" checked>
         <label class="govuk-label govuk-checkboxes__label"></label></div>
       </td>
 
@@ -254,8 +254,7 @@
       <td class="govuk-table__cell">
         <div class="govuk-form-group">
           <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-10" type="text" value="22.0000">
-          <div class="govuk-input__suffix" aria-hidden="true">metres</div>
+          <input class="govuk-input govuk-input--width-10 quantity" type="text" value="22.0000">          <div class="govuk-input__suffix" aria-hidden="true">metres</div>
       </div>
     </div>
 </td>
@@ -298,7 +297,6 @@
 </div>
 
 
-
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
@@ -316,6 +314,9 @@ document.addEventListener("DOMContentLoaded", function () {
         input.value = available.textContent.trim();
       } else {
         input.value = "";
+
+        // 👉 Redirect when unchecked
+        window.location.href = "/sfi-26-error-testing/select-actions-for-land/select-land-parcel-2";
       }
     });
   });
@@ -327,8 +328,3 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-<style>
-  .hidden {
-    display: none;
-  }
-</style>
