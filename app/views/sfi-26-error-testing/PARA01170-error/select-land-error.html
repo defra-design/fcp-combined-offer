@@ -7,6 +7,17 @@
 
 {% block beforeContent %}
 
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/sfi-26-error-testing/error-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+
+
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -94,7 +105,7 @@
         <p class="govuk-body"><a href="select-land-parcel1-error" class="govuk-link">SO3757 3158</a>
     </td>
     <td class="govuk-table__cell table-space">
-        <p class="govuk-body">Total area: 32.0404 ha</p>
+        <p class="govuk-body">Total area: 20.4873 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
         <p> <font color="white">Applied</font></p>
@@ -106,7 +117,7 @@
         <p class="govuk-body"><a href="select-land-parcel1-error" class="govuk-link">SO3757 3159</a>
     </td>
      <td class="govuk-table__cell table-space">
-        <p class="govuk-body">Total area: 31.4241 ha</p>
+        <p class="govuk-body">Total area: 5.4241 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
         <p class="govuk-body"></p>
@@ -141,7 +152,7 @@
         <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3162</a>
     </td>
      <td class="govuk-table__cell table-space">
-        <p class="govuk-body ">Total area: 42.4324 ha</p>
+        <p class="govuk-body ">Total area: 8.4324 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
         <p class="govuk-body"></p>

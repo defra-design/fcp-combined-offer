@@ -64,11 +64,10 @@
         </h2>
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
-          
-             <li>
-              <a href="#row-error">Reduce the area entered into limited area actions in this application, so the total is no more than 25% of the agricultural area of your farm.
-Eligible area limit: 111.25ha. Area entered in this application: 44.23ha. Area already in existing agreements: 70.46ha</a>
+            <li>
+              <a href="#funding">Select ‘Change’ in the ‘Actions’ section to remove or reduce actions so your indicative annual payment value is no more than £100,000</a>
             </li>
+          
             
           </ul>
         </div>
@@ -204,14 +203,18 @@ Eligible area limit: 111.25ha. Area entered in this application: 44.23ha. Area a
   </div>
   
 <!-- ✅ ERROR ROW -->
-<!-- ✅ ERROR ROW (empty, just for spacing/border if needed) -->
 <dd
-  class="govuk-summary-list__value govuk-!-width-full"
-  style="display: none;"
+  id="payment-error"
+  class="govuk-summary-list__value red-border red-border-padding govuk-!-width-full"
+  style="padding-bottom: 0; display: none;"
 >
+  <span class="govuk-error-message" style="width: 700px;">
+    <span class="govuk-visually-hidden">Error:</span>
+    Select ‘Change’ in the ‘Actions’ section to remove or reduce actions so your indicative annual payment value is no more than £100,000
+  </span>
 </dd>
 
-<!-- ✅ PAYMENT ROW -->
+<!-- ✅ PAYMENT ROW (now continues the red line) -->
 <div class="govuk-summary-list__row">
   <dt id="payment-row" class="govuk-summary-list__key">
     Indicative total annual payment for actions
@@ -219,7 +222,8 @@ Eligible area limit: 111.25ha. Area entered in this application: 44.23ha. Area a
   <dd class="govuk-summary-list__value">
     £101,462.62
   </dd>
-  <dd class="govuk-summary-list__actions"></dd>
+  <dd class="govuk-summary-list__actions">
+  </dd>
 </div>
 
 </dl>
@@ -388,19 +392,25 @@ Eligible area limit: 111.25ha. Area entered in this application: 44.23ha. Area a
   const confirmButton = document.getElementById("confirmButton");
   const errorSummary = document.getElementById("error-summary");
   const paymentError = document.getElementById("payment-error");
+  const paymentRow = document.getElementById("payment-row");
 
   confirmButton.addEventListener("click", function () {
 
-    // ✅ show error summary
+    // show error summary
     if (errorSummary) {
       errorSummary.style.display = "block";
       errorSummary.setAttribute("tabindex", "-1");
       errorSummary.focus();
     }
 
-    // ✅ show (empty) error row if still needed for spacing
+    // show payment error
     if (paymentError) {
       paymentError.style.display = "block";
+    }
+
+    // add red border to row
+    if (paymentRow) {
+      paymentRow.classList.add("red-border", "red-border-padding");
     }
 
     window.scrollTo({ top: 0, behavior: "smooth" });
