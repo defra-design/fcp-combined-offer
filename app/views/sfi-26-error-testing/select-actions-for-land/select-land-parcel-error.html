@@ -7,6 +7,16 @@
 
 {% block beforeContent %}
 
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/sfi-26-error-testing/error-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -296,7 +306,7 @@
         <label class="govuk-label govuk-checkboxes__label"></label></div>
       </td>
 
-  <td class="govuk-table__cell">CAHL2 - Winter bird food on arable and horticultural land </td>
+  <td class="govuk-table__cell">CIPM2 - Flower-rich grass margins, blocks or in-field strips</td>
   <td class="govuk-table__cell available">10.0000</td>
  <td class="govuk-table__cell">
   <div class="govuk-form-group">
