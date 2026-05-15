@@ -7,6 +7,16 @@
 
 {% block beforeContent %}
 
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/sfi-26-error-testing/error-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -96,7 +106,7 @@
         <p class="govuk-body"><a href="select-land-parcel-1" class="govuk-link">SO3757 3158</a>
     </td>
     <td class="govuk-table__cell table-space">
-        <p class="govuk-body">Total area: 32.0404 ha</p>
+        <p class="govuk-body">Total area: 20.4873 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
       <p><span id="applied-text" class="applied hidden"><i class="govuk-body">Applied</i></span></p>
@@ -104,8 +114,7 @@
     </tr>
 
 <td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
-<p class="govuk-body"><span class="govuk-caption-m">Land use: PERMANENT GRASSLAND: 1.5760 ha, ARABLE CROPS: 1.1212 ha, TEMPORARY GRASSLAND: 0.1312 ha, NON-AGRICULTURAL: 0.2120 ha
-Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
+<p class="govuk-body"><span class="govuk-caption-m">Land use: ARABLE CROPS: 20.4873 ha </span></p>
 </td>
 
     <tr class="govuk-table__row" >
@@ -113,7 +122,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
         <p class="govuk-body"><a href="select-land-parcel1-error" class="govuk-link">SO3757 3159</a>
     </td>
      <td class="govuk-table__cell table-space">
-        <p class="govuk-body">Total area: 31.4241 ha</p>
+        <p class="govuk-body">Total area: 5.4241 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
         <p class="govuk-body"></p>
@@ -137,7 +146,17 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
         <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3160</a>
     </td>
      <td class="govuk-table__cell table-space">
-        <p class="govuk-body">Total area: 1.4935 ha</p>
+        <p class="govuk-body">Total area: 10.3492 ha</p>
+    </td>
+    <td class="govuk-table__cell table-space">
+        <p class="govuk-body"></p>
+    </td>
+       <tr class="govuk-table__row" >
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body"><a href="#" class="govuk-link">SO3757 3160</a>
+    </td>
+     <td class="govuk-table__cell table-space">
+        <p class="govuk-body">Total area: 8.4324 ha</p>
     </td>
     <td class="govuk-table__cell table-space">
         <p class="govuk-body"></p>
@@ -199,61 +218,43 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
 
   
 
+<tr class="govuk-table__row">
+  <td class="govuk-table__cell">
+    <div class="govuk-checkboxes__item">
+      <input 
+        class="govuk-checkboxes__input select-action" 
+        id="action-2" 
+        type="checkbox"
+        checked
+      >
+      <label class="govuk-label govuk-checkboxes__label" for="action-2">
+      </label>
+    </div>
+  </td>
 
-<tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
-      <p id="error" class="govuk-error-message" style="margin-bottom: 5px;">
-      <span class="govuk-visually-hidden">Error:</span>Reduce the number of plots, so there are no more than 2 plots per hectare</p>
-      </td>
-    </tr>
-  
-    <tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6";>
-        <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" type="checkbox" checked>
-        <label class="govuk-label govuk-checkboxes__label"></label></div>
-      </td>
+  <td class="govuk-table__cell">
+    	AHW4 - Skylark plots
+  </td>
 
-      <td class="govuk-table__cell">AHW4 - Skylark plots</td>
+  <td class="govuk-table__cell available">
+    
+  </td>
 
-      <td class="govuk-table__cell available"></td>
-
-      <td class="govuk-table__cell">
-        <div class="govuk-form-group">
-          <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-10" type="text" value="22">
-          <div class="govuk-input__suffix" aria-hidden="true">plots</div>
+  <td class="govuk-table__cell">
+    <div class="govuk-form-group">
+      <div class="govuk-input__wrapper">
+        <input 
+          class="govuk-input govuk-input--width-10 quantity" 
+          type="text"
+          value="22"
+        >
+        <div class="govuk-input__suffix" aria-hidden="true">plots</div>
       </div>
     </div>
-</td>
+  </td>
+</tr>
 
 
-<tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="4">
-      <p id="error" class="govuk-error-message" style="margin-bottom: 5px;">
-      <span class="govuk-visually-hidden">Error:</span>Reduce the number of plots, so there are no more than 2 plots per hectare</p>
-      </td>
-    </tr>
-  
-    <tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6";>
-        <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" type="checkbox" checked>
-        <label class="govuk-label govuk-checkboxes__label"></label></div>
-      </td>
-
-      <td class="govuk-table__cell">AHW4 - Skylark plots</td>
-
-      <td class="govuk-table__cell available"></td>
-
-      <td class="govuk-table__cell">
-        <div class="govuk-form-group">
-          <div class="govuk-input__wrapper">
-            <input class="govuk-input govuk-input--width-10" type="text" value="22">
-          <div class="govuk-input__suffix" aria-hidden="true">plots</div>
-      </div>
-    </div>
-</td>
   
 <tr class="govuk-table__row">
   <td class="govuk-table__cell">
@@ -274,7 +275,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
   </td>
 
   <td class="govuk-table__cell available">
-    16.0309
+    8.0309
   </td>
 
   <td class="govuk-table__cell">
@@ -283,7 +284,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
         <input 
           class="govuk-input govuk-input--width-10 quantity" 
           type="text"
-          value="16.0309"
+          value="8.0309"
         >
         <div class="govuk-input__suffix" aria-hidden="true">ha</div>
       </div>
@@ -382,7 +383,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
   </td>
 
   <td class="govuk-table__cell available">
-    2.3421
+    2.0421
   </td>
 
   <td class="govuk-table__cell">
@@ -391,7 +392,7 @@ Layer Intersections: BIODIVERSITY, SSSI, LFA-MS</span></p>
         <input 
           class="govuk-input govuk-input--width-10 quantity" 
           type="text"
-          value="2.3421"
+          value="2.0421"
         >
         <div class="govuk-input__suffix" aria-hidden="true">ha</div>
       </div>
