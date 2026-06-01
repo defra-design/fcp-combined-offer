@@ -1,0 +1,102 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+    <br>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+<h1 class="govuk-heading-xl">Applications and agreements</h1>
+
+    <table class="govuk-table">
+    <table class="govuk-table">
+
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" style="width: 25%;">Agreement name</th>
+
+<th class="govuk-table__header" style="width: 15%;">Agreement number</th>
+
+<th class="govuk-table__header" style="width: 10%;">Type</th>
+
+<th class="govuk-table__header" style="width: 15%; white-space: nowrap;">
+  Submit date
+</th>
+
+<th class="govuk-table__header" style="width: 25%;">Status</th>
+
+<th class="govuk-table__header" style="width: 1%; white-space: nowrap;"></th>
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">1234567</td>
+      <td class="govuk-table__cell">SFI</td>
+      <td class="govuk-table__cell">Yes</td>
+      <td class="govuk-table__cell">14 May 2026</td>
+      <td class="govuk-table__cell">Application submitted</td>
+      <td class="govuk-table__cell" style="width: 1%; white-space: nowrap;">
+
+        <form class="form" action="application-documents" method="post">
+          <button type="submit" action="" class="govuk-button govuk-button--secondary" data-module="govuk-button" >Open agreement</button></form>
+
+
+      </td>
+    </tr>
+    </tr>
+ </tbody>
+</table>
+
+<div style="margin-top: 50px; text-align: right;">
+  <a href="apply-new-agreement"
+     role="button"
+     draggable="false"
+     class="govuk-button"
+     data-module="govuk-button">
+    Apply for a new agreement
+  </a>
+</div>
+
+
+
+</div>
+</div>
+
+</main>
+</div>
+
+{% endblock %}

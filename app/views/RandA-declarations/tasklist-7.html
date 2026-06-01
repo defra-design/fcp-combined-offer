@@ -1,0 +1,173 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+      
+      <h1 class="govuk-heading-xl">Rotational Actions Declaration</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+  </div>
+</div>
+
+
+<p class="govuk-body">The Rotational Actions Declaration must be submitted in each year of your agreement, after you have submitted your Annual Declaration, except in the final year. The declaration allows you to move rotational actions to land linked to your SBI.</p>
+<p class="govuk-body">In order to complete this declaration, you will need to tell us the area and location you want the action to move to for the subsequent 12 months of your agreement.</p>
+<p class="govuk-body">If you do not want to make any changes to the rotational actions on your agreement you can select “No, I do not want to make any changes to my rotational actions” at Section 1 ‘Confirm if you want to make a Rotational Actions Declaration’.</p>
+<p class="govuk-body">The changes you make in this declaration will be assessed by us and we will update your agreement document to reflect these changes.</p>
+<p class="govuk-body">You can rotate as many of your rotational ‘limited area’ actions as you want, but the total eligible area you enter into them must not be more than 25% of the total agricultural area of your farm. This 25% limit applies across all SFI agreements.</p>
+<p class="govuk-body">If you want to move your rotational actions to land that contains a scheduled monument, historic or archaeological feature, you must request an SFI Historic Environment Farm Environment Record (SFI HEFER).</p>
+<p class="govuk-body">If you want to move your rotational actions to land that contains a Site of Special Scientific Interest (SSSI), you must give notice to Natural England and get its consent before you complete the relevant SFI actions.</p>
+<p class="govuk-body">For more information on the Rotational Actions Declaration see – <a href="https://www.gov.uk/guidance/agreement-holders-information-for-sfi24-and-re-opened-sfi24.com" class="govuk-link">SFI scheme information</a></p>
+<p class="govuk-body">You have completed 2 out of 3 sections</p>
+
+      <h2 class="govuk-heading-m">1. Confirm if you want to make changes to your rotational actions</h2>
+
+    {% set completedStatus = {
+  tag: {
+    text: "Completed",
+    classes: "govuk-tag--blue"
+  }
+} %}
+
+{% set incompleteStatus = {
+  tag: {
+    text: "Incomplete",
+    classes: "govuk-tag--grey"
+  }
+} %}
+
+      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
+
+     {{ govukTaskList({
+  idPrefix: "first-section",
+  items: [
+    {
+      title: {
+        text: "Do you want to make any changes to your rotational actions?"
+      },
+      href: "check-land-details",
+      status: completedStatus
+    },
+    {
+      title: {
+        text: "Do you want to move rotational actions onto land not already in your SFI Agreement?"
+      },
+      href: "management-control",
+      status: completedStatus         
+    }
+  ]
+}) }}
+
+
+      <h2 class="govuk-heading-m govuk-!-margin-top-5">2. Confirm rotational actions</h2>
+
+{{ govukTaskList({
+  idPrefix: "second-section",
+  items: [
+    {
+      title: {
+        text: "Select land parcels to add"
+      },
+      href: "select-actions",
+      status: completedStatus
+    },
+        {
+      title: {
+        text: "Select and apply rotational actions to your land"
+      },
+      href: "select-actions",
+      status: completedStatus
+    },
+    {
+      title: {
+        text: "Confirm Supplementary winter bird food actions"
+      },
+      href: "review-actions",
+      status: completedStatus
+    }
+  ]
+}) }}
+
+    
+      
+
+
+         <h2 class="govuk-heading-m govuk-!-margin-top-5">3. Review and submit your Rotational Actions Declaration</h2>
+
+    {{ govukTaskList({
+  idPrefix: "second-section",
+  items: [
+    {
+      title: {
+        text: "Check your answers"
+      },
+      href: "check-your-answers",
+      status: completedStatus
+    },
+    {
+      title: {
+        text: "Submit your application"
+      },
+      href: "submit-rotational-declaration",
+      status: incompleteStatus
+    }
+  ]
+}) }}
+
+
+{% endblock %}
+
