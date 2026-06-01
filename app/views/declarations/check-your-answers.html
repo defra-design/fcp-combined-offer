@@ -74,6 +74,27 @@
       </div>
     </div>
 
+    <div id="success-banner"
+     class="govuk-notification-banner govuk-notification-banner--success"
+     role="alert"
+     aria-labelledby="govuk-notification-banner-title"
+     data-module="govuk-notification-banner"
+     style="display: none;">
+
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title"
+        id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Your application is validated, please continue to submit.
+    </p>
+  </div>
+
+</div>
 
     <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check your answers before submitting your Rotational Actions Declaration</h1>
     <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">Print</a></p>
@@ -265,8 +286,8 @@
       </button>
   </form>
 
-<form class="form" action="tasklist-11" method="post">
-  <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button" disabled>
+<form class="form" action="tasklist-8" method="post">
+  <button id="continueButton" type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button" disabled>
     Save and continue
   </button>
 </form>
@@ -274,6 +295,21 @@
   </div>
   </div>
 
+<script>
+  document.getElementById('confirmButton').addEventListener('click', function () {
 
+    // ✅ Enable Save and continue
+    document.getElementById('continueButton').disabled = false;
+
+    // ✅ Show success banner
+    document.getElementById('success-banner').style.display = 'block';
+
+    // ✅ Optional: scroll to banner
+    document.getElementById('success-banner').scrollIntoView({
+      behavior: 'smooth'
+    });
+
+  });
+</script>
 
 {% endblock %}

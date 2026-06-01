@@ -470,6 +470,15 @@ router.post('/management-answer-ht-p2', function (req, res) {
 
 })
 
+router.post('/rotational-confirmation', function (req, res) {
+  // set flag in session
+  req.session.data['rotationalDeclarationComplete'] = true
+
+  // redirect back to your task list page
+  res.redirect('/your-tasklist-7')
+})
+
+
 router.post('/hefer-answer-ht-p2', function (req, res) {
 
   // Make a variable and give it the value from 'how-many-balls'
