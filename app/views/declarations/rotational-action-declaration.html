@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Select if you want to make changes to the location of your rotational actions",
+        href: "rotational-declaration-answer"
+      }
+
+    ]
+  }) }}
+{% endif %} 
+
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+<form class="form" action="/rotational-declaration-routing" method="post">
+   <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+            <fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    Do you want to make any changes to the location of your rotational actions?
+  </legend>
+
+  {% if error %}
+    <p class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span>
+      Select if you want to make changes to the location of your rotational actions
+    </p>
+  {% endif %}
+
+  <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                        id="rotaionalDeclarationAnswer-yes"
+                        name="rotational-declaration-answer"
+                        type="radio"
+                        value="yes">
+                  <label class="govuk-label govuk-radios__label" for="rotationalDeclarationAnswer-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input"
+                        id="rotationalDeclarationAnswer-no"
+                        name="rotational-declaration-answer"
+                        type="radio"
+                        value="no">
+                  <label class="govuk-label govuk-radios__label" for="rotationalDeclarationAnswer-no">
+                    No
+                  </label>
+                </div>
+              </div>
+            </legend>
+            </fieldset>
+          </div>
+          <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+    </div>
+  </div>
+
+
+
+{% endblock %}
+
