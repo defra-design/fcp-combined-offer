@@ -5,6 +5,64 @@
 const govukPrototypeKit = require('govuk-prototype-kit')
 const router = govukPrototypeKit.requests.setupRouter()
 
+// DECLARATIONS
+
+// New land routing
+router.post('/new-land-routing', function (req, res) {
+
+  const answer = req.body['new-land-answer']
+
+  if (answer === 'yes') {
+    res.redirect('/declarations/tasklist-4')
+
+  } else if (answer === 'no') {
+    res.redirect('/declarations/tasklist-5')
+
+  } else {
+    // No answer selected → show error
+    res.render('/declarations/new-land', {
+      error: true
+    })
+  }
+
+})
+
+// Rotational declaration routing
+router.post('/rotational-declaration-routing', function (req, res) {
+
+  const answer = req.body['rotational-declaration-answer']
+
+  if (answer === 'yes') {
+    res.redirect('/declarations/tasklist-2')
+
+  } else if (answer === 'no') {
+    res.redirect('/declarations/tasklist-3')
+
+  } else {
+    // No answer selected → show error
+    res.render('/declarations/rotational-action-declaration', {
+      error: true
+    })
+  }
+
+})
+
+// Annual declaration routing
+router.post("/annual-declaration-routing", function (req, res) {
+  const answer = req.body["annual-declaration-answer"];
+
+  if (!answer) {
+    // No option selected → show error
+    res.render("/declarations/annual-declaration", {
+      error: true,
+    });
+  } else if (answer === "no") {
+    res.redirect("/declarations/negative-declaration");
+  } else if (answer === "yes") {
+    res.redirect("/declarations/confirm-declaration");
+  }
+});
+
 // SFI 26 TESTING
 
 router.get('/sfi-26-testing/select-map', function (req, res) {
