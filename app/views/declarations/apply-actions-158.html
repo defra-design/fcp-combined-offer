@@ -232,8 +232,8 @@
 <tr class="govuk-table__row">
 <td class="govuk-table__cell">
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox">
-    <label class="govuk-label govuk-checkboxes__label" for="action-1">
+    <input class="govuk-checkboxes__input select-action" id="action-2" type="checkbox">
+    <label class="govuk-label govuk-checkboxes__label" for="action-2">
     </label>
   </div>
 </td>
@@ -252,8 +252,8 @@
 <tr class="govuk-table__row">
 <td class="govuk-table__cell">
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox">
-    <label class="govuk-label govuk-checkboxes__label" for="action-1">
+    <input class="govuk-checkboxes__input select-action" id="action-3" type="checkbox">
+    <label class="govuk-label govuk-checkboxes__label" for="action-3">
     </label>
   </div>
 </td>
@@ -299,4 +299,33 @@
     </div>
 
   </div>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+
+  function updateCheckboxState(row) {
+    const checkbox = row.querySelector('.select-action');
+    const quantityInput = row.querySelector('.govuk-input');
+
+    if (!checkbox || !quantityInput) return;
+
+    checkbox.checked = quantityInput.value.trim() !== '';
+  }
+
+  // Run on page load
+  document.querySelectorAll('.govuk-table__row')
+    .forEach(updateCheckboxState);
+
+  // Update when typing
+  document.querySelectorAll('.govuk-input').forEach(function(input) {
+    input.addEventListener('input', function () {
+      updateCheckboxState(input.closest('.govuk-table__row'));
+    });
+  });
+
+});
+</script>
 {% endblock %}
+
+
