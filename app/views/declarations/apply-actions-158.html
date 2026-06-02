@@ -117,7 +117,7 @@
       <p class="govuk-body">Total area: 8.0000 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
-     <p style=><i>Applied</i></p>
+      <p style=><i>Applied</i></p>
   </td>
   </tr>
   <tr class="govuk-table__row" >
@@ -128,7 +128,6 @@
       <p class="govuk-body">Total area: 12.0000 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
-     <p style=><i>Applied</i></p>
   </td>
   </tr>
   <tr class="govuk-table__row" >
@@ -139,7 +138,6 @@
       <p class="govuk-body ">Total area: 16.0000 ha</p>
   </td>
   <td class="govuk-table__cell table-space">
-     <p style=><i>Applied</i></p>
   </td>
   </tr>
   <tr class="govuk-table__row" >
@@ -184,7 +182,7 @@
         <area shape="rect" coords="100,280,190,320" href="select-land-parcel">
         <area shape="rect" coords="150,220,240,280" href="">
                   </map>
-<img usemap="#clickable" src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/sfi-26-error-testing/img/map-1.png?raw=true" alt="Map of your land" style="width:465px;height:400px;"></a>
+<img usemap="#clickable" src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/declarations/img/map-2.png?raw=true" alt="Map of your land" style="width:465px;height:400px;"></a>
 
        <p class="govuk-body">Key:</p>
        <div class="key-div govuk-!-margin-bottom-5">
@@ -212,7 +210,7 @@
 <tr class="govuk-table__row">
 <td class="govuk-table__cell">
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox">
+    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox" checked>
     <label class="govuk-label govuk-checkboxes__label" for="action-1">
     </label>
   </div>
@@ -222,7 +220,7 @@
  <td class="govuk-table__cell">
   <div class="govuk-form-group">
     <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10" type="text" value="20">
+      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="20">
       <div class="govuk-input__suffix" aria-hidden="true">plots</div>
     </div>
   </div>
@@ -232,8 +230,8 @@
 <tr class="govuk-table__row">
 <td class="govuk-table__cell">
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input select-action" id="action-2" type="checkbox">
-    <label class="govuk-label govuk-checkboxes__label" for="action-2">
+    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox" checked>
+    <label class="govuk-label govuk-checkboxes__label" for="action-1">
     </label>
   </div>
 </td>
@@ -242,7 +240,7 @@
  <td class="govuk-table__cell">
   <div class="govuk-form-group">
     <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="1200">
+      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="1200.000">
       <div class="govuk-input__suffix" aria-hidden="true">metres</div>
     </div>
   </div>
@@ -252,8 +250,8 @@
 <tr class="govuk-table__row">
 <td class="govuk-table__cell">
   <div class="govuk-checkboxes__item">
-    <input class="govuk-checkboxes__input select-action" id="action-3" type="checkbox">
-    <label class="govuk-label govuk-checkboxes__label" for="action-3">
+    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox" checked>
+    <label class="govuk-label govuk-checkboxes__label" for="action-1">
     </label>
   </div>
 </td>
@@ -262,7 +260,7 @@
  <td class="govuk-table__cell">
   <div class="govuk-form-group">
     <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10 quantity" type="text">
+      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="10.0000">
       <div class="govuk-input__suffix" aria-hidden="true">ha</div>
     </div>
   </div>
@@ -299,33 +297,34 @@
     </div>
 
   </div>
-
-
 <script>
-document.addEventListener('DOMContentLoaded', function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    const checkboxes = document.querySelectorAll('.select-action');
 
-  function updateCheckboxState(row) {
-    const checkbox = row.querySelector('.select-action');
-    const quantityInput = row.querySelector('.govuk-input');
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        const row = checkbox.closest('tr');
+        const quantityInput = row.querySelector('.quantity');
+        const availableCell = row.querySelector('.available');
+        const actionName = row.children[1].innerText; 
 
-    if (!checkbox || !quantityInput) return;
+        if (!quantityInput) return;
 
-    checkbox.checked = quantityInput.value.trim() !== '';
-  }
+        if (!checkbox.checked) {
+          quantityInput.value = '';
+        } else {
 
-  // Run on page load
-  document.querySelectorAll('.govuk-table__row')
-    .forEach(updateCheckboxState);
+          if (actionName.includes('AHW4')) {
+            return;
+          }
 
-  // Update when typing
-  document.querySelectorAll('.govuk-input').forEach(function(input) {
-    input.addEventListener('input', function () {
-      updateCheckboxState(input.closest('.govuk-table__row'));
+          if (quantityInput.value === '' && availableCell) {
+            quantityInput.value = availableCell.innerText.trim();
+          }
+        }
+      });
     });
   });
-
-});
 </script>
+
 {% endblock %}
-
-
