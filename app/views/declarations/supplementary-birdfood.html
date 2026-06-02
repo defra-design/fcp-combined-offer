@@ -60,6 +60,19 @@
       <h1 class="govuk-heading-l">Confirm Supplementary winter bird food actions</h1>
       <p class="govuk-body">The action(s) listed below are listed on your agreement.</p>
       <p class="govuk-body">To update the amount(s) in your agreement enter the relevant quantity below. If you do not want to update the amount(s) in your agreement, click the ‘Update Rotational Declaration’ button without making changes.</p>
+<div id="error-summary" class="govuk-error-summary" data-module="govuk-error-summary" style="display:none;">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="#weight">Enter the amount in tonnes</a>
+      </li>
+    </ul>
+  </div>
+</div>
+
 
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">Your actions</caption>
@@ -75,16 +88,21 @@
         </div></td>
       <td class="govuk-table__cell"><div class="govuk-date-input__item">
         <div class="govuk-form-group">
-<div class="govuk-form-group">
+<div class="govuk-form-group" id="weight-group">
+  <span id="weight-error" class="govuk-error-message" style="display:none;">
+    <span class="govuk-visually-hidden">Error:</span>
+    Enter the amount in tonnes
+  </span>
+
   <div class="govuk-input__wrapper">
-    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text">
     <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
   </div>
 </div>
 
 </table>
 
-<form class="form" action="tasklist-7" method="post">
+<form class="form" id="form" action="tasklist-7" method="post">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
@@ -93,10 +111,35 @@
     </div>
   </div>
 
+{% block pageScripts %}
 <script>
-function saveCurrentPage() {
-  localStorage.setItem('returnPage', window.location.pathname);
-}
+document.getElementById("form").addEventListener("submit", function (e) {
+
+  const input = document.getElementById("weight");
+  const errorSummary = document.getElementById("error-summary");
+  const errorMessage = document.getElementById("weight-error");
+  const formGroup = document.getElementById("weight-group");
+
+  if (input.value.trim() === "") {
+    e.preventDefault();
+
+    // Show error summary
+    errorSummary.style.display = "block";
+
+    // Show inline error
+    errorMessage.style.display = "block";
+
+    // Add GOV error class
+    formGroup.classList.add("govuk-form-group--error");
+    input.classList.add("govuk-input--error");
+
+    // Focus input
+    input.focus();
+  }
+
+});
 </script>
+{% endblock %}
+
 
 {% endblock %}
