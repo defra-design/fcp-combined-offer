@@ -6,6 +6,15 @@
 
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
 
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
@@ -58,37 +67,8 @@
 
 
 
-<p class="govuk-body">CONTENT TBC</p>
 
-      <h2 class="govuk-heading-m">1. Confirm if you want to make changes to your rotational actions</h2>
-
-      {% set completedStatus = {
-        text: "Completed"
-      } %}
-
-      {% set incompleteStatus = {
-        tag: {
-          text: "Incomplete",
-          classes: "govuk-tag--blue"
-        }
-      } %}
-
-      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
-
-      {{ govukTaskList({
-        idPrefix: "first-section",
-        items: [
-          {
-            title: {
-              text: "Do you want to make any changes to your rotational actions?"
-            },
-            href: "rotational-action-declaration",
-            status: completedStatus
-      }          
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m">2. Confirm rotational actions</h2>
+      <h2 class="govuk-heading-m">1. Confirm rotational actions</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -110,22 +90,20 @@
             title: {
               text: "Select and apply rotational actions to your land"
             },
-            href: "apply-actions",
-            status: incompleteStatus 
+          href: "apply-actions",
+            status: completedStatus    
           },
           {
             title: {
-              text: "Confirm Supplementary winter bird food actions"
+              text: "Agreement level actions"
             },
-       status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+        href: "agreement-level-actions",
+          status: incompleteStatus
           }
         ]
       }) }}
 
-       <h2 class="govuk-heading-m">3. Review and submit your Rotational Actions Declaration</h2>
+       <h2 class="govuk-heading-m">2. Review and submit your rotational actions declaration</h2>
 
       {% set completedStatus = {
         text: "Completed"

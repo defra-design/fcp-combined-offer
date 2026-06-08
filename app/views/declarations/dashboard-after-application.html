@@ -7,6 +7,14 @@
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -41,44 +49,38 @@
 
 <h1 class="govuk-heading-l">Applications and agreements</h1>
 
-    <table class="govuk-table">
-    <table class="govuk-table">
-
+<table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header">Agreement name</th>
-      <th scope="col" class="govuk-table__header">Agreement number</th>
-      <th scope="col" class="govuk-table__header">Type</th>
-      <th scope="col" class="govuk-table__header">Submit date</th>
-      <th scope="col" class="govuk-table__header">Status</th>
-      <th scope="col" class="govuk-table__header"></th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Agreement name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Agreement number</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Type</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-eighth">Submit date</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Status</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"> </th>
     </tr>
   </thead>
-
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Smith Farm SFI26 agreement</td>
       <td class="govuk-table__cell">1234567</td>
       <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">Yes</td>
       <td class="govuk-table__cell">14 May 2026</td>
-      <td class="govuk-table__cell">Application submitted</td>
+      <td class="govuk-table__cell">Annual declaration available</td>  
       <td class="govuk-table__cell">
-
-        <form class="form" action="application-documents" method="post">
-          <button type="submit" action="" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="width: 100%;" >Application documents</button></form>
+        <p class="govuk-!-text-align-right" style="width: 100%;"><a href="#" class="govuk-link">Download agreement document</a></p>
       
         <form class="form" action="annual-declaration" method="post">
-          <button type="submit" action="" class="govuk-button govuk-button--primary" data-module="govuk-button" style="width: 100%;" >Annual declaration</button></form>
-
+          <button type="submit" action="" class="govuk-button govuk-button--primary" data-module="govuk-button" style="width: 100%;" >Submit annual declaration</button></form>
 
       </td>
     </tr>
-    </tr>
- </tbody>
+  </tbody>
 </table>
 
-
-
+<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+  Create a new application
+</button>
 </div>
 </div>
 

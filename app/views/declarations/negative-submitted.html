@@ -7,6 +7,14 @@
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -62,10 +70,9 @@
 </div>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
         <div class="govuk-panel govuk-panel--confirmation">
           <h1 class="govuk-panel__title">
             Reason submitted
@@ -79,14 +86,16 @@
         <p class="govuk-body">
           Thank you for telling us why you are unable to make your declaration at this time. We’ll review the information you’ve provided to us and contact you to confirm what will happen next.
         </p>
+     <form action="/declarations/dashboard-after-application" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Close
+  </button>
+</form>
       </div>
     </div>
-  </main>
-</div>
+  </div>
 
-<button type="submit" class="govuk-button" data-module="govuk-button">
-  Close
-</button>
+
 
 
 {% endblock %}

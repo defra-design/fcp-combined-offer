@@ -47,41 +47,59 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-full">
 
-<h1 class="govuk-heading-l">Applications and agreements</h1>
+<h1 class="govuk-heading-xl">Applications and agreements</h1>
 
-<table class="govuk-table">
+    <table class="govuk-table">
+    <table class="govuk-table">
+
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Agreement name</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Agreement number</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Type</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-eighth">Submit date</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Status</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"> </th>
+      <th class="govuk-table__header" style="width: 25%;">Agreement name</th>
+
+<th class="govuk-table__header" style="width: 15%;">Agreement number</th>
+
+<th class="govuk-table__header" style="width: 10%;">Type</th>
+
+<th class="govuk-table__header" style="width: 15%; white-space: nowrap;">
+  Submit date
+</th>
+
+<th class="govuk-table__header" style="width: 25%;">Status</th>
+
+<th class="govuk-table__header" style="width: 1%; white-space: nowrap;"></th>
     </tr>
   </thead>
+
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Smith Farm SFI26 agreement</td>
       <td class="govuk-table__cell">1234567</td>
       <td class="govuk-table__cell">SFI</td>
+      <td class="govuk-table__cell">Yes</td>
       <td class="govuk-table__cell">14 May 2026</td>
-      <td class="govuk-table__cell">Rotational action declaration available</td>  
-      <td class="govuk-table__cell">
-        <p class="govuk-!-text-align-right" style="width: 100%;"><a href="#" class="govuk-link">Download agreement document</a></p>
-        <p class="govuk-!-text-align-right" style="width: 100%;"><a href="#" class="govuk-link">Print annual document</a></p>
-      
-        <form class="form" action="rotational-action-declaration" method="post">
-          <button type="submit" action="" class="govuk-button govuk-button--primary" data-module="govuk-button" style="width: 100%;" >Rotational action declaration</button></form>
+      <td class="govuk-table__cell">Application submitted</td>
+      <td class="govuk-table__cell" style="width: 1%; white-space: nowrap;">
+
+        <form class="form" action="application-documents" method="post">
+          <button type="submit" action="" class="govuk-button govuk-button--secondary" data-module="govuk-button" >Open agreement</button></form>
+
 
       </td>
     </tr>
-  </tbody>
+    </tr>
+ </tbody>
 </table>
 
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Create a new application
-</button>
+<div style="margin-top: 50px; text-align: right;">
+  <a href="apply-new-agreement"
+     role="button"
+     draggable="false"
+     class="govuk-button"
+     data-module="govuk-button">
+    Apply for a new agreement
+  </a>
+</div>
+
+
 
 </div>
 </div>

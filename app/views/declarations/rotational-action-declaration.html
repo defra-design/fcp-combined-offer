@@ -7,6 +7,14 @@
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -72,6 +80,10 @@
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
     Do you want to make any changes to the location of your rotational actions?
   </legend>
+ 
+  <div id="rotationalDeclaration-hint" class="govuk-hint">
+      Find out more about rotational action declarations in the <a href="#" class="govuk-link">scheme information</a>.</p>
+    </div>
 
   {% if error %}
     <p class="govuk-error-message">
@@ -85,7 +97,7 @@
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input"
-                        id="rotaionalDeclarationAnswer-yes"
+                        id="rotationalDeclarationAnswer-yes"
                         name="rotational-declaration-answer"
                         type="radio"
                         value="yes">

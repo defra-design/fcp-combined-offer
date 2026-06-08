@@ -7,6 +7,14 @@
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -30,8 +38,8 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Select if you will get a SSSI consent if you must",
-        href: "annual-declaration-answer"
+        text: "Tick all of the confirmation boxes before you submit your declaration",
+        href: "#checkbox-error"
       }
     ]
   }) }}
@@ -65,28 +73,61 @@
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Can you make your annual declaration confirming that you are complying with all your agreement obligations?</h1>
+      <h1 class="govuk-heading-l">Submit your annual declaration</h1>
 
-<p class="govuk-body">By ticking this box below and submitting your annual declaration, you confirm that you’ve complied or expect to have complied, with the obligations under your agreement for the relevant agreement year.</p>
-<div class="govuk-form-group">
+<form action="/declarations/confirm-declaration" method="post">
+
+{% if error %}
+  <div class="govuk-form-group govuk-form-group--error">
+{% else %}
+  <div class="govuk-form-group">
+{% endif %}
+
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-    <p class="govuk-body">Tick to confirm:</p>
-      <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <p class="govuk-body">Tick to confirm:</p>
+    </legend>
+
+    {% if error %}
+      <p id="checkbox-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Tick all of the confirmation boxes before you submit your declaration
+      </p>
+    {% endif %}
+
+    <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label" for="organisation">
-          I understand that if I am unable to comply with my agreement after submitting, that I must notify RPA under change of circumstances provision. Failure to notify RPA of any change, or if I’m found not to have complied with my agreement will cause a breach and may be subject to payment reductions and possible investigation for fraud.
+        <input class="govuk-checkboxes__input" id="confirm-1" name="confirm[]" type="checkbox" value="yes">
+        <label class="govuk-label govuk-checkboxes__label" for="confirm-1">
+          I am meeting, or expect to meet, all terms in my agreement for this agreement year.
         </label>
       </div>
-    </legend>
-   </fieldset>
-</div> 
-  <form action="/declarations/positive-submitted" method="post">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Continue
-  </button>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="confirm-2" name="confirm[]" type="checkbox" value="yes">
+        <label class="govuk-label govuk-checkboxes__label" for="confirm-2">
+          I will report any changes that may stop me from meeting my agreement terms to the Rural Payments Agency.
+        </label>
+      </div>
+
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="confirm-3" name="confirm[]" type="checkbox" value="yes">
+        <label class="govuk-label govuk-checkboxes__label" for="confirm-3">
+          I understand that if I do not report a change, I may be subject to reduced payments and fraud investigations.
+        </label>
+      </div>
+
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-button-group">
+<button type="submit" class="govuk-button">Submit</button>
+<a class="govuk-link" href="annual-declaration">Cancel</a>
+</div>
 </form>
+
+
+
     </div>
   </div>
 
