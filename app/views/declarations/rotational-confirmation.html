@@ -7,6 +7,14 @@
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -54,20 +62,19 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-<h1 class="govuk-heading-xl">Rotational Actions Declaration</h1>
 
 <div class="govuk-panel govuk-panel--confirmation">
           <h1 class="govuk-panel__title">
-            Your Rotational Actions Declaration for Agreement 1800649 has been submitted
+            Rotational actions declaration submitted
           </h1>
+          <div class="govuk-panel__body">
+            Agreement number<br><strong>2000439</strong>
+          </div>
         </div>
         <div class="govuk-!-padding-bottom-3"></div>
         <h2 class="govuk-heading-m">What happens next</h2>
         <p class="govuk-body">
-          Thank you for submitting your SFI application.
-        </p>
-        <p class="govuk-body">
-          We will notify you when your SFI agreement offer is available for you to check in the Rural Payments service.
+          Thank you for submitting your rotational actions declaration. Your agreement has been updated and is available in the Rural Payments Service to check.
         </p>
         <form class="form" action="dashboard-after-rotational-declaration" method="post">
           <button type="submit" class="govuk-button" data-module="govuk-button">

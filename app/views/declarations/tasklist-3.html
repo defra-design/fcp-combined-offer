@@ -6,6 +6,15 @@
 
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
 
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
@@ -58,9 +67,8 @@
 
 
 
-<p class="govuk-body">CONTENT TBC</p>
 
-      <h2 class="govuk-heading-m">1. Confirm if you want to make changes to your rotational actions</h2>
+      <h2 class="govuk-heading-m">1. Confirm rotational actions</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -80,15 +88,22 @@
         items: [
           {
             title: {
-              text: "Do you want to make any changes to your rotational actions?"
+              text: "Select and apply rotational actions to your land"
             },
-            href: "rotational-action-declaration",
-            status: completedStatus
-      }          
+          href: "apply-actions",
+            status: completedStatus    
+          },
+          {
+            title: {
+              text: "Agreement level actions"
+            },
+     href: "agreement-level-actions",
+            status: completedStatus          
+          }
         ]
       }) }}
 
-       <h2 class="govuk-heading-m">2. Review and submit your Rotational Actions Declaration</h2>
+       <h2 class="govuk-heading-m">2. Review and submit your rotational actions declaration</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -110,8 +125,17 @@
             title: {
               text: "Check your answers"
             },
-       href: "check-answers",
-            status: incompleteStatus     
+      href: "check-your-answers",
+            status: incompleteStatus   
+          },
+          {
+            title: {
+              text: "Submit your declaration"
+            },
+       status: {
+        text: "Cannot start yet",
+        classes: "govuk-task-list__status--cannot-start-yet"
+      }          
           }
         ]
       }) }}
