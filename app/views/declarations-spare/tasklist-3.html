@@ -84,11 +84,11 @@
             },
             href: "rotational-action-declaration",
             status: completedStatus
-          }      
+      }          
         ]
       }) }}
 
-      <h2 class="govuk-heading-m">2. Confirm rotational actions</h2>
+       <h2 class="govuk-heading-m">2. Review and submit your Rotational Actions Declaration</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -103,47 +103,6 @@
 
       {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
 
- {{ govukTaskList({
-  idPrefix: "first-section",
-  items: [
-    {
-      title: {
-        text: "Select and apply rotational actions to your land"
-      },
-      href: "new-land",
-      status: completedStatus
-    },
-    {
-      title: {
-        text: "Confirm Supplementary winter bird food actions"
-      },
-      href: "supplementary-birdfood",
-      status: {
-        tag: {
-          text: "Not started",
-          classes: "govuk-tag--blue"
-        }
-      }
-    }
-  ]
-}) }}
-
-
-       <h2 class="govuk-heading-m">3. Review and submit your Rotational Actions Declaration</h2>
-
-      {% set completedStatus = {
-        text: "Completed"
-      } %}
-
-      {% set incompleteStatus = {
-        tag: {
-          text: "Completed",
-          classes: "govuk-tag--blue"
-        }
-      } %}
-
-      {# To switch between the completed and incomplete statues, use some inline logic within the component below, like this: "status: (completedStatus if ... else incompleteStatus)" #}
-
       {{ govukTaskList({
         idPrefix: "first-section",
         items: [
@@ -151,19 +110,8 @@
             title: {
               text: "Check your answers"
             },
-       status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }   
-          },
-          {
-            title: {
-              text: "Submit your declaration"
-            },
-       status: {
-        text: "Cannot start yet",
-        classes: "govuk-task-list__status--cannot-start-yet"
-      }          
+       href: "check-answers",
+            status: incompleteStatus     
           }
         ]
       }) }}

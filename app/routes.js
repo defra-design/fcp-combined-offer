@@ -7,6 +7,21 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // DECLARATIONS
 
+router.post("/declarations/confirm-declaration", function (req, res) {
+  const confirm = req.body["confirm"];
+
+  // If nothing checked OR fewer than 3 checked
+  if (!confirm || confirm.length < 3) {
+    return res.render("declarations/confirm-declaration", {
+      error: true,
+    });
+  }
+
+  // If all 3 are checked
+  res.redirect("/declarations/positive-submitted");
+});
+
+
 // New land routing
 router.post('/new-land-routing', function (req, res) {
 
@@ -33,10 +48,10 @@ router.post('/rotational-declaration-routing', function (req, res) {
   const answer = req.body['rotational-declaration-answer']
 
   if (answer === 'yes') {
-    res.redirect('/declarations/tasklist-2')
+    res.redirect('/declarations/tasklist-1')
 
   } else if (answer === 'no') {
-    res.redirect('/declarations/tasklist-3')
+    res.redirect('/declarations/submit-rotational-declaration')
 
   } else {
     // No answer selected → show error

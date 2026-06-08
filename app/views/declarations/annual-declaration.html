@@ -2,10 +2,19 @@
 
 {% block pageTitle %}
   SFI – {{ serviceName }} – GOV.UK Prototype Kit
+  
 {% endblock %}
 
 
 {% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
 
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
@@ -30,7 +39,7 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Select if you can confirm your annual declaration",
+        text: "Select if you are meeting all the terms in your agreement",
         href: "annual-declaration-answer"
       }
 
@@ -70,13 +79,13 @@
    <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
             <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    Can you make your annual declaration confirming that you are complying with all your agreement obligations?
+Are you meeting all the terms in your agreement?
   </legend>
 
   {% if error %}
     <p class="govuk-error-message">
       <span class="govuk-visually-hidden">Error:</span>
-      Select if you ca confirm your annual declaration
+      Select if you are meeting all the terms of your agreement
     </p>
   {% endif %}
 

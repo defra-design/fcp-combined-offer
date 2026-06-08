@@ -7,6 +7,14 @@
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -55,17 +63,17 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">Rotational Actions Declaration</h1>
-      <h2 class="govuk-heading-l">Submit your Rotational Actions Declaration</h2>
-      <p class="govuk-body">By selecting ‘I agree – submit my application’ you confirm that:</p>
+      <h2 class="govuk-heading-l">Submit your rotational actions declaration</h2>
+      <p class="govuk-body">By submitting your application, you confirm that:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>the information you have given in your Rotational Actions Declaration is correct</li>
-        <li>you will complete your rotational SFI actions on the area and location shown in your SFI Agreement document for the relevant agreement year</li>
-        <li>you will have management control of the land parcels in your SFI Agreement for the duration of your Agreement</li>
-        <li>if relevant, you will request an SFI Historic Environment Farm Environment Record (HEFER) before you complete your rotational SFI actions on land that contains historic or archaeological feature (including scheduled monuments)</li>
-        <li>if relevant, you will give Sites of Specific Scientific Interest (SSSI) notice to Natural England and get SSSI consent before you complete your rotational SFI actions on land that contains SSSI</li>
+        <li>the information you've given in your rotational actions declaration is correct</li>
+        <li>you will complete the rotational actions you've applied for</li>
+        <li>you will have management control of land for the duration of any actions applied to that land</li>
+        <li>actions will not duplicate or conflict with any conditional Inheritance Tax exemption undertakings</li>
+        <li>actions on land owned by a public body will not duplicate or conflict with that body’s statutory duties</li>
+        <li>there is no conflict with other payment scheme rules, or double funding</li>
       </ul>
-
+<p class="govuk-body"> It's your responsibility to make sure your land and landscape features are eligible for your chosen actions. If they are not, you may get a reduced annual payment.</p>
     
     <div class="govuk-!-padding-bottom-2"></div>
 
@@ -74,8 +82,9 @@
 
   <form action="rotational-confirmation" method="post">
     <button type="submit" class="govuk-button" data-module="govuk-button">
-      I agree – submit my application
+      I agree – submit my declaration
     </button>
+      <a class="govuk-link" href="javascript:history.back()">Cancel</a>
   </form>
 
  

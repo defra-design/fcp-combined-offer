@@ -6,6 +6,7 @@
 
 
 {% block beforeContent %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 
 {{ govukPhaseBanner({
   tag: {
@@ -14,7 +15,6 @@
   html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
 }) }}
 <br>
-
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -63,54 +63,35 @@
 
 <div class="govuk-grid-row">
  <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl">Rotational Actions Declaration</h1>
 
-      <h1 class="govuk-heading-l">Confirm Supplementary winter bird food actions</h1>
-      <p class="govuk-body">The action(s) listed below are listed on your agreement.</p>
-      <p class="govuk-body">To update the amount(s) in your agreement enter the relevant quantity below. If you do not want to update the amount(s) in your agreement, click the ‘Update Rotational Declaration’ button without making changes.</p>
-<div id="error-summary" class="govuk-error-summary" data-module="govuk-error-summary" style="display:none;">
-  <div role="alert">
-    <h2 class="govuk-error-summary__title">
-      There is a problem
-    </h2>
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#weight">Enter the amount in tonnes</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
+      <h1 class="govuk-heading-l">Confirm your agreement level actions</h1>
+      <p class="govuk-body">The action or actions listed below are listed on your agreement.</p>
+      <p class="govuk-body">To update the amount in your agreement enter the relevant quantity below. If you do not want to update the amount in your agreement, click the ‘Update rotational declaration’ button without making changes.</p>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Your actions</caption>
+  <caption class="govuk-table__caption govuk-table__caption--m">Agreement level actions</caption>
   <tbody class="govuk-table__body">
   </thead>
     <tr class="govuk-table__row">
         </div></td>
          <tr class="govuk-table__row">
       <td class="govuk-table__cell"><div class="govuk-checkboxes__item series-selector-items">
-          <input class="govuk-checkboxes__input" type="checkbox">
+          <input class="govuk-checkboxes__input" type="checkbox" checked>
           <label class="govuk-label govuk-checkboxes__label">
           AHW2: Supplementary winter bird food</label>
         </div></td>
       <td class="govuk-table__cell"><div class="govuk-date-input__item">
         <div class="govuk-form-group">
-<div class="govuk-form-group" id="weight-group">
-  <span id="weight-error" class="govuk-error-message" style="display:none;">
-    <span class="govuk-visually-hidden">Error:</span>
-    Enter the amount in tonnes
-  </span>
-
+<div class="govuk-form-group">
   <div class="govuk-input__wrapper">
-    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false" value="5">
     <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
   </div>
 </div>
 
 </table>
 
-<form class="form" id="form" action="tasklist-7" method="post">
+<form class="form" action="tasklist-3" method="post">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
@@ -119,35 +100,10 @@
     </div>
   </div>
 
-{% block pageScripts %}
 <script>
-document.getElementById("form").addEventListener("submit", function (e) {
-
-  const input = document.getElementById("weight");
-  const errorSummary = document.getElementById("error-summary");
-  const errorMessage = document.getElementById("weight-error");
-  const formGroup = document.getElementById("weight-group");
-
-  if (input.value.trim() === "") {
-    e.preventDefault();
-
-    // Show error summary
-    errorSummary.style.display = "block";
-
-    // Show inline error
-    errorMessage.style.display = "block";
-
-    // Add GOV error class
-    formGroup.classList.add("govuk-form-group--error");
-    input.classList.add("govuk-input--error");
-
-    // Focus input
-    input.focus();
-  }
-
-});
+function saveCurrentPage() {
+  localStorage.setItem('returnPage', window.location.pathname);
+}
 </script>
-{% endblock %}
-
 
 {% endblock %}

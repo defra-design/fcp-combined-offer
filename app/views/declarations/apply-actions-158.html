@@ -13,7 +13,7 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only. <a href="/sfi-26-error-testing/error-scenarios" class="govuk-link">Back to start page</a>'
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
 }) }}
 <br>
 
@@ -108,6 +108,11 @@
   <td class="govuk-table__cell table-space">
     <p style=><i>Applied</i></p>
     </td>
+      </tr>
+      <tr>
+    <td class="govuk-table__cell table-space" style="border-bottom-color: white;" colspan="4">
+    <p class="govuk-body"><span class="govuk-caption-m">Land use: ARABLE CROPS: 10.0000 ha</span></p>
+</td>
   </tr>
   <tr class="govuk-table__row" >
     <td class="govuk-table__cell table-space">
@@ -179,7 +184,7 @@
   <div class="govuk-grid-column-one-half">
     <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link">Hide map</a></p>
   <map name="clickable">
-        <area shape="rect" coords="100,280,190,320" href="select-land-parcel">
+        <area shape="rect" coords="100,280,190,320" href="">
         <area shape="rect" coords="150,220,240,280" href="">
                   </map>
 <img usemap="#clickable" src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/declarations/img/map-2.png?raw=true" alt="Map of your land" style="width:465px;height:400px;"></a>
@@ -235,13 +240,13 @@
     </label>
   </div>
 </td>
-  <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
-  <td class="govuk-table__cell available">1200.0000</td>
+  <td class="govuk-table__cell">CAHL2 - Winter bird food on arable and horticultural land</td>
+  <td class="govuk-table__cell available">10.0000</td>
  <td class="govuk-table__cell">
   <div class="govuk-form-group">
     <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="1200.000">
-      <div class="govuk-input__suffix" aria-hidden="true">metres</div>
+      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="10.0000">
+      <div class="govuk-input__suffix" aria-hidden="true">ha</div>
     </div>
   </div>
 </td>
@@ -255,12 +260,32 @@
     </label>
   </div>
 </td>
-  <td class="govuk-table__cell">CIPM2 - Flower-rich grass margins, blocks or in-field strips</td>
+  <td class="govuk-table__cell">CHRW2 - Manage hedgerows</td>
+  <td class="govuk-table__cell available">1200.0000</td>
+ <td class="govuk-table__cell">
+  <div class="govuk-form-group">
+    <div class="govuk-input__wrapper">
+      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="1200.000">
+      <div class="govuk-input__suffix" aria-hidden="true">m</div>
+    </div>
+  </div>
+</td>
+</tr>
+
+<tr class="govuk-table__row">
+<td class="govuk-table__cell">
+  <div class="govuk-checkboxes__item">
+    <input class="govuk-checkboxes__input select-action" id="action-1" type="checkbox">
+    <label class="govuk-label govuk-checkboxes__label" for="action-1">
+    </label>
+  </div>
+</td>
+  <td class="govuk-table__cell">CSAM2 - Multi-species winter cover crop</td>
   <td class="govuk-table__cell available">10.0000</td>
  <td class="govuk-table__cell">
   <div class="govuk-form-group">
     <div class="govuk-input__wrapper">
-      <input class="govuk-input govuk-input--width-10 quantity" type="text" value="10.0000">
+      <input class="govuk-input govuk-input--width-10 quantity" type="text">
       <div class="govuk-input__suffix" aria-hidden="true">ha</div>
     </div>
   </div>
@@ -280,7 +305,7 @@
 </nav> 
 
 <div class="govuk-!-margin-top-1">
-  <form class="form" action="/sfi-26-error-testing/select-actions-for-land/select-land-parcel-error" method="post">
+  <form class="form" action="/declarations/apply-actions-158-action-removed" method="post">
     <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
       Save
     </button>
@@ -288,7 +313,7 @@
 </div>
 
      
-       <form class="form" action="tasklist-6" method="post">
+       <form class="form" action="" method="post">
           <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
             Continue
           </button>

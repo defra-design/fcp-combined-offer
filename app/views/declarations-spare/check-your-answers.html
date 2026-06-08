@@ -1,0 +1,313 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  HT Customers Phase 2 – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Smith Farm Ltd</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">Single Business Identifier (SBI): 123456789</p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+
+        </div>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" id="error-summary" data-module="govuk-error-summary" style="display: none;">
+
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#funding">Select ‘Change’ in the ‘Actions’ section to remove or reduce actions so your indicative annual payment value is no more than £100,000</a>
+            </li>
+          
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div id="success-banner"
+     class="govuk-notification-banner govuk-notification-banner--success"
+     role="alert"
+     aria-labelledby="govuk-notification-banner-title"
+     data-module="govuk-notification-banner"
+     style="display: none;">
+
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title"
+        id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      Your application is validated, please continue to submit.
+    </p>
+  </div>
+
+</div>
+
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">Check your answers before submitting your Rotational Actions Declaration</h1>
+    <p class="govuk-body govuk-!-margin-bottom-6"><a href="#" class="govuk-link">Print</a></p>
+    </p>
+  </div>
+
+
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-m" id="details">
+            Details
+    </h2>
+    
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Business
+        </dt>
+        <dd class="govuk-summary-list__value">
+          JASMINE SMITH FARM<br>
+          Rainbow Farm<br>
+          High Street<br>
+          Rhydlewis<br>
+          Ellesmere<br>
+          PO30 1NY
+          </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Single Business Identifier (SBI)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          123456789
+        </dd>
+      </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-8" id="eligibility">
+        Confirm if you want to make changes to your rotational actions
+    </h2>
+
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 390px;">
+          Do you want to make any changes to your rotational actions?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="management-control">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+      
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you want to move rotational actions onto land not already in your SFI agreement?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="hefer">Change<span class="govuk-visually-hidden"> answer</span></a>
+        </dd>
+      </div>
+
+   
+      </dl>
+        
+
+
+
+    
+      <h2 class="govuk-heading-m" id="parcel-based">
+        Confirm Rotational Actions
+      </h2>
+
+<dl class="govuk-summary-list">
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Select and apply rotational actions to your land
+    </dt>
+
+    <dd class="govuk-summary-list__value"></dd>
+
+    <dd class="govuk-summary-list__value" style="width: 180px;"></dd>
+
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="select-land-error">
+        Change<span class="govuk-visually-hidden"> answer</span>
+      </a>
+    </dd>
+  </div>
+
+
+
+    <!-- Error line -->
+
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          TL7160 6945 - CAHL2 - Winter bird food on arable and horticultural land
+        <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  20.0000 ha
+</dd>
+
+      </div>
+
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                TL7160 6945 - PRF1 - Variable rate application of nutrients
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  15.0000 ha
+</dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                TL7160 9531 - PRF1 - Variable rate application of nutrients
+             
+<dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  £3,309.84
+</dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                TL7259 1723 - CAHL2 - Winter bird food on arable and horticultural land
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  6.7843 ha
+</dd>
+
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              
+            </div>
+      
+      
+
+      
+      
+      
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" style="white-space: nowrap;">
+                Confirm Supplementary winter bird food actions 
+              </dt>
+              <dd class="govuk-summary-list__value" >
+              </dd>
+              <dd class="govuk-summary-list__value" style="width: 180px;">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="agreement-level-actions">Change<span class="govuk-visually-hidden"> answer</span></a>
+              </dd>
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__value">
+                AHW2: Supplementary winter bird food
+              <dd class="govuk-summary-list__value" style="padding-left: 80px;">
+  15 tonnes
+</dd>
+      
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              
+      
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              
+      
+            </div>
+      
+            <div class="govuk-summary-list__row">
+              
+      
+            </div>
+            </dl>
+
+  <form class="form" action="check-your-answers-application-error" method="post">
+      <button type="button" id="confirmButton" class="govuk-button govuk-button--secondary">
+        Confirm
+      </button>
+  </form>
+
+<form class="form" action="tasklist-8" method="post">
+  <button id="continueButton" type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button" disabled>
+    Save and continue
+  </button>
+</form>
+
+  </div>
+  </div>
+
+<script>
+  document.getElementById('confirmButton').addEventListener('click', function () {
+
+    // ✅ Enable Save and continue
+    document.getElementById('continueButton').disabled = false;
+
+    // ✅ Show success banner
+    document.getElementById('success-banner').style.display = 'block';
+
+    // ✅ Optional: scroll to banner
+    document.getElementById('success-banner').scrollIntoView({
+      behavior: 'smooth'
+    });
+
+  });
+</script>
+
+{% endblock %}
