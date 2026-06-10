@@ -76,16 +76,17 @@
       <div class="govuk-form-group">
   <h1 class="govuk-label-wrapper">
     <label class="govuk-label govuk-label--l" for="more-detail">
-      Why are you unable  to make your annual declaration at this time?
+      Submit a change of circumstances
     </label>
   </h1>
-  <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
-</div>
+      <p class="govuk-body">If you are unable to make your annual declaration, follow the guidance for submitting a <a href="#" class="govuk-link">change of circumstances.</a></p>
+  </div>
 
-<form action="/declarations/negative-submitted" method="post">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Continue
-  </button>
+<div class="govuk-button-group">
+  <form action="dashboard-after-application" method="post">
+<button type="submit"class="govuk-button">Close</button>
+<a class="govuk-link" href="annual-declaration">Cancel</a>
+</div>
 </form>
     </div>
   </div>
