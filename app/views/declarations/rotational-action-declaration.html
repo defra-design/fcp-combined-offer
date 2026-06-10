@@ -74,7 +74,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form class="form" action="{% if data['from'] == 'check-answers' %}check-your-answers{% else %}tasklist-1{% endif %}" method="post">
+<form class="form"
+  action="/rotational-declaration-routing"
+  method="post">
+
    <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
             <fieldset class="govuk-fieldset">
   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
