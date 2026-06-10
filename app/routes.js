@@ -7,21 +7,6 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // DECLARATIONS
 
-router.post("/declarations/confirm-declaration", function (req, res) {
-  const confirm = req.body["confirm"];
-
-  // If nothing checked OR fewer than 3 checked
-  if (!confirm || confirm.length < 3) {
-    return res.render("declarations/confirm-declaration", {
-      error: true,
-    });
-  }
-
-  // If all 3 are checked
-  res.redirect("/declarations/positive-submitted");
-});
-
-
 // New land routing
 router.post('/new-land-routing', function (req, res) {
 
@@ -46,19 +31,27 @@ router.post('/new-land-routing', function (req, res) {
 router.post('/rotational-declaration-routing', function (req, res) {
 
   const answer = req.body['rotational-declaration-answer']
+  const from = req.body['from']
 
-  if (answer === 'yes') {
-    res.redirect('/declarations/tasklist-1')
-
-  } else if (answer === 'no') {
-    res.redirect('/declarations/submit-rotational-declaration')
-
-  } else {
-    // No answer selected → show error
-    res.render('/declarations/rotational-action-declaration', {
-      error: true
-    })
+  // No selected
+  if (answer === 'no') {
+    return res.redirect('/declarations/submit-rotational-declaration')
   }
+
+  // Coming from Check Your Answers
+  if (from === 'check-answers') {
+    return res.redirect('/declarations/check-your-answers')
+  }
+
+  // Yes selected in normal journey
+  if (answer === 'yes') {
+    return res.redirect('/declarations/tasklist-1')
+  }
+
+  // Nothing selected
+  res.render('/declarations/rotational-action-declaration', {
+    error: true
+  })
 
 })
 
@@ -77,6 +70,28 @@ router.post("/annual-declaration-routing", function (req, res) {
     res.redirect("/declarations/confirm-declaration");
   }
 });
+
+router.post("/declarations/confirm-declaration", function (req, res) {
+
+  const confirm = req.body.confirm
+
+  const checkedCount = Array.isArray(confirm)
+    ? confirm.length
+    : (confirm ? 1 : 0)
+
+  if (checkedCount < 3) {
+
+    res.render("declarations/confirm-declaration", {
+      error: true
+    })
+
+  } else {
+
+    res.redirect("/declarations/positive-submitted")
+
+  }
+
+})
 
 // SFI 26 TESTING
 
@@ -483,14 +498,6 @@ router.post('/management-answer-ht-p2', function (req, res) {
     res.redirect('/ht-phase-2/management-control-error')
   }
 
-})
-
-router.post('/rotational-confirmation', function (req, res) {
-  // set flag in session
-  req.session.data['rotationalDeclarationComplete'] = true
-
-  // redirect back to your task list page
-  res.redirect('/your-tasklist-7')
 })
 
 
