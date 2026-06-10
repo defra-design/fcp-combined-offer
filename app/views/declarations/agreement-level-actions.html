@@ -91,11 +91,16 @@
 
 </table>
 
-<form class="form" action="tasklist-3" method="post">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
-        </form>
+
+<form class="form" action="{% if data['from'] == 'check-answers' %}check-your-answers{% else %}tasklist-3{% endif %}" method="post">
+
+  <input type="hidden" name="from" value="{{ data['from'] or query.from }}">
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Save and continue
+  </button>
+</form>
+
 
     </div>
   </div>
