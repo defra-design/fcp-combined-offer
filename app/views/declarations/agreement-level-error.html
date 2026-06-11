@@ -56,7 +56,7 @@
 <div class="govuk-grid-row">
  <div class="govuk-grid-column-two-thirds">
 
-  <div id="errorSummary" class="govuk-error-summary" data-module="govuk-error-summary">
+ <div id="errorSummary" class="govuk-error-summary" data-module="govuk-error-summary" style="display: none;">
   <div role="alert">
     <h2 class="govuk-error-summary__title">
       There is a problem
@@ -78,6 +78,8 @@
       
 
 
+<form id="mainForm" class="form" action="" method="post">
+
 <table class="govuk-table">
   <caption class="govuk-table__caption govuk-table__caption--m">
     Agreement level actions
@@ -91,7 +93,8 @@
           style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"
           colspan="4">
 
-        <p id="error" class="govuk-error-message" style="margin-bottom: 5px;">
+        <p id="error" class="govuk-error-message"
+           style="margin-bottom: 5px; display: none;">
           <span class="govuk-visually-hidden">Error:</span>
           Reduce the quantity of AHW2 so it is no more than 1 tonne for every 2 hectares of CAHL2, or increase the hectarage entered into CAHL2
         </p>
@@ -101,9 +104,10 @@
 
     <!-- MAIN ROW -->
     <tr class="govuk-table__row red-border">
-      <td class="govuk-table__cell red-border-padding" style="border-bottom-color: #b1b4b6;">
+      <td class="govuk-table__cell red-border-padding"
+          style="border-bottom-color: #b1b4b6">
 
-        <div class="govuk-checkboxes__item" style="margin-left: -50px;">
+        <div class="govuk-checkboxes__item">
           <input id="ahw2Checkbox"
                  class="govuk-checkboxes__input"
                  type="checkbox">
@@ -135,58 +139,59 @@
   </tbody>
 </table>
 
-<!-- ✅ FORM COMES AFTER TABLE -->
-<form id="mainForm" class="form" action="" method="post">
-  <button type="submit" class="govuk-button" data-module="govuk-button">
-    Save and continue
-  </button>
+<button type="submit" class="govuk-button" data-module="govuk-button">
+  Save and continue
+</button>
+
 </form>
 
 <script>
-function saveCurrentPage() {
-  localStorage.setItem('returnPage', window.location.pathname);
-}
-</script>
-<script>
-const checkbox = document.getElementById('ahw2Checkbox');
-const input = document.getElementById('tonnesInput');
-const errorSummary = document.getElementById('errorSummary');
-const errorMessage = document.getElementById('error');
+document.addEventListener('DOMContentLoaded', function () {
 
-// rows with red borders
-const errorRows = document.querySelectorAll('.red-border');
+  const form = document.getElementById('mainForm');
+  const checkbox = document.getElementById('ahw2Checkbox');
+  const input = document.getElementById('tonnesInput');
+  const errorSummary = document.getElementById('errorSummary');
+  const errorMessage = document.getElementById('error');
+  const errorRows = document.querySelectorAll('.red-border');
 
-checkbox.addEventListener('change', function () {
-  if (!this.checked) {
-    // Clear input value
-    input.value = '';
+  // ✅ STEP 1: REMOVE red border + hide errors on load
+  errorRows.forEach(row => row.classList.remove('red-border'));
 
-    // Hide error summary and message
+  if (errorSummary) errorSummary.style.display = 'none';
+  if (errorMessage) errorMessage.style.display = 'none';
+
+  // ✅ STEP 2: on checkbox change (same pattern as working page)
+  checkbox.addEventListener('change', function () {
+
+    if (!this.checked) {
+      input.value = '';
+    }
+
     if (errorSummary) errorSummary.style.display = 'none';
     if (errorMessage) errorMessage.style.display = 'none';
 
-    // Remove red styling
-    errorRows.forEach(row => {
-      row.classList.remove('red-border');
-    });
-  }
-});
-</script>
+    errorRows.forEach(row => row.classList.remove('red-border'));
+  });
 
-<script>
-const form = document.getElementById('mainForm');
-const checkboxForSubmit = document.getElementById('ahw2Checkbox');
+  // ✅ STEP 3: on submit
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-form.addEventListener('submit', function (e) {
-  e.preventDefault(); // stop normal form submit
+    if (!checkbox.checked) {
 
-  if (!checkboxForSubmit.checked) {
-    // UNCHECKED → go to 8
-    window.location.href = 'tasklist-6';
-  } else {
-    // CHECKED → go to 7
-    window.location.href = 'apply-agreement-level-error-1';
-  }
+      if (errorSummary) errorSummary.style.display = 'block';
+      if (errorMessage) errorMessage.style.display = 'block';
+
+      // ✅ ADD red border back
+      errorRows.forEach(row => row.classList.add('red-border'));
+
+      return;
+    }
+
+    window.location.href = 'tasklist-3';
+  });
+
 });
 </script>
 
