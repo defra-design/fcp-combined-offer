@@ -73,23 +73,22 @@ router.post("/annual-declaration-routing", function (req, res) {
 
 router.post("/declarations/confirm-declaration", function (req, res) {
 
-  const confirm = req.body.confirm
+  const raw = req.body['confirm[]'] || req.body.confirm || []
+  const selected = Array.isArray(raw) ? raw : [raw]
 
-  const checkedCount = Array.isArray(confirm)
-    ? confirm.length
-    : (confirm ? 1 : 0)
+  const allChecked =
+    selected.includes("confirm-1") &&
+    selected.includes("confirm-2") &&
+    selected.includes("confirm-3")
 
-  if (checkedCount < 3) {
-
-    res.render("declarations/confirm-declaration", {
-      error: true
+  if (!allChecked) {
+    return res.render("declarations/confirm-declaration", {
+      error: true,
+      data: { confirm: selected }
     })
-
-  } else {
-
-    res.redirect("/declarations/positive-submitted")
-
   }
+
+  res.redirect("/declarations/positive-submitted")
 
 })
 
