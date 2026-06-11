@@ -83,41 +83,61 @@
   <div class="govuk-form-group">
 {% endif %}
 
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-      <p class="govuk-body">Tick to confirm:</p>
-    </legend>
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <p class="govuk-body">Tick to confirm:</p>
+  </legend>
 
-    {% if error %}
-      <p id="checkbox-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Tick all of the confirmation boxes before you submit your declaration
-      </p>
-    {% endif %}
+  {% if error %}
+    <p id="checkbox-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span>
+      Tick all of the confirmation boxes before you submit your declaration
+    </p>
+  {% endif %}
 
-    <div class="govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="confirm-1" name="confirm[]" type="checkbox" value="yes">
-        <label class="govuk-label govuk-checkboxes__label" for="confirm-1">
-          I am meeting, or expect to meet, all terms in my agreement for this agreement year.
-        </label>
-      </div>
+  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
 
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="confirm-2" name="confirm[]" type="checkbox" value="yes">
-        <label class="govuk-label govuk-checkboxes__label" for="confirm-2">
-          I will report any changes that may stop me from meeting my agreement terms to the Rural Payments Agency.
-        </label>
-      </div>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-1"
+             name="confirm"
+             type="checkbox"
+             value="confirm-1"
+             {% if data.confirm and data.confirm.indexOf("confirm-1") > -1 %}checked{% endif %}>
 
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="confirm-3" name="confirm[]" type="checkbox" value="yes">
-        <label class="govuk-label govuk-checkboxes__label" for="confirm-3">
-          I understand that if I do not report a change, I may be subject to reduced payments and fraud investigations.
-        </label>
-      </div>
-
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-1">
+        I am meeting, or expect to meet, all terms in my agreement for this agreement year.
+      </label>
     </div>
-  </fieldset>
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-2"
+             name="confirm"
+             type="checkbox"
+             value="confirm-2"
+             {% if data.confirm and data.confirm.indexOf("confirm-2") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-2">
+        I will report any changes that may stop me from meeting my agreement terms to the Rural Payments Agency.
+      </label>
+    </div>
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-3"
+             name="confirm"
+             type="checkbox"
+             value="confirm-3"
+             {% if data.confirm and data.confirm.indexOf("confirm-3") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-3">
+        I understand that if I do not report a change, I may be subject to reduced payments and fraud investigations.
+      </label>
+    </div>
+
+  </div>
+</fieldset>
 </div>
 
 <div class="govuk-button-group">
@@ -133,5 +153,5 @@
 
 
 
-{% endblock %}
+{% endblock %}azx
 
