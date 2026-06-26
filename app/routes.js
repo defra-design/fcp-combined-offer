@@ -35,7 +35,7 @@ router.post('/rotational-declaration-routing', function (req, res) {
 
   // No selected
   if (answer === 'no') {
-    return res.redirect('/declarations/submit-rotational-declaration-new')
+    return res.redirect('/declarations/submit-rotational-declaration-2')
   }
 
   // Coming from Check Your Answers
