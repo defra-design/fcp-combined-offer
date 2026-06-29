@@ -73,13 +73,13 @@ router.post("/annual-declaration-routing", function (req, res) {
 
 router.post("/declarations/confirm-declaration", function (req, res) {
 
-  const raw = req.body['confirm[]'] || req.body.confirm || []
+  const raw = req.body['confirm[Declaration]'] || req.body.confirm || []
   const selected = Array.isArray(raw) ? raw : [raw]
 
   const allChecked =
-    selected.includes("confirm-1") &&
-    selected.includes("confirm-2") &&
-    selected.includes("confirm-3")
+    selected.includes("confirmDeclaration-1") &&
+    selected.includes("confirmDeclaration-2") &&
+    selected.includes("confirmDeclaration-3")
 
   if (!allChecked) {
     return res.render("declarations/confirm-declaration", {
@@ -109,6 +109,34 @@ router.post("/declarations/submit-rotational-declaration-new", function (req, re
     return res.render("declarations/submit-rotational-declaration-new", {
       error: true,
       data: { confirm: selected }
+    })
+  }
+
+  res.redirect("/declarations/rotational-confirmation")
+
+})
+
+router.post("/declarations/submit-rotational-declaration-2", function (req, res) {
+
+  const raw =
+    req.body['rotationalConfirm[]'] ||
+    req.body.rotationalConfirm ||
+    []
+
+  const selected = Array.isArray(raw) ? raw : [raw]
+
+  const allChecked =
+    selected.includes("rotationalConfirm-1") &&
+    selected.includes("rotationalConfirm-2") &&
+    selected.includes("rotationalConfirm-3") &&
+    selected.includes("rotationalConfirm-4") &&
+    selected.includes("rotationalConfirm-5") &&
+    selected.includes("rotationalConfirm-6")
+
+  if (!allChecked) {
+    return res.render("declarations/submit-rotational-declaration-2", {
+      error: true,
+      data: { rotationalConfirm: selected }
     })
   }
 

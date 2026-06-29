@@ -75,7 +75,7 @@
 
       <h1 class="govuk-heading-l">Submit your rotational actions declaration</h1>
 
-<form action="/declarations/submit-rotational-declaration-new" method="post">
+<form action="/declarations/submit-rotational-declaration-2" method="post">
 
 {% if error %}
   <div class="govuk-form-group govuk-form-group--error">
@@ -99,78 +99,78 @@
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input"
-             id="confirm-1"
-             name="confirm"
+             id="rotationalConfirm-1"
+             name="rotationalConfirm"
              type="checkbox"
-             value="confirm-1"
-             {% if data.confirm and data.confirm.indexOf("confirm-1") > -1 %}checked{% endif %}>
+             value="rotationalConfirm-1"
+             {% if data.rotationalConfirm and data.rotationalConfirm.indexOf("rotationalConfirm-1") > -1 %}checked{% endif %}>
 
-      <label class="govuk-label govuk-checkboxes__label" for="confirm-1">
+      <label class="govuk-label govuk-checkboxes__label" for="rotationalConfirm-1">
         the information I have given in this declaration is correct.
       </label>
     </div>
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input"
-             id="confirm-2"
-             name="confirm"
+             id="rotationalConfirm-2"
+             name="rotationalConfirm"
              type="checkbox"
-             value="confirm-2"
-             {% if data.confirm and data.confirm.indexOf("confirm-2") > -1 %}checked{% endif %}>
+             value="rotationalConfirm-2"
+             {% if data.rotationalConfirm and data.rotationalConfirm.indexOf("rotationalConfirm-2") > -1 %}checked{% endif %}>
 
-      <label class="govuk-label govuk-checkboxes__label" for="confirm-2">
+      <label class="govuk-label govuk-checkboxes__label" for="rotationalConfirm-2">
         I will complete the rotational actions I have applied for.
       </label>
     </div>
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input"
-             id="confirm-3"
-             name="confirm"
+             id="rotationalConfirm-3"
+             name="rotationalConfirm"
              type="checkbox"
-             value="confirm-3"
-             {% if data.confirm and data.confirm.indexOf("confirm-3") > -1 %}checked{% endif %}>
+             value="rotationalConfirm-3"
+             {% if data.rotationalConfirm and data.rotationalConfirm.indexOf("rotationalConfirm-3") > -1 %}checked{% endif %}>
 
-      <label class="govuk-label govuk-checkboxes__label" for="confirm-3">
+      <label class="govuk-label govuk-checkboxes__label" for="rotationalConfirm-3">
         I will have management control of land for the duration of any actions applied to that land.
       </label>
     </div>
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input"
-             id="confirm-4"
-             name="confirm"
+             id="rotationalConfirm-4"
+             name="rotationalConfirm"
              type="checkbox"
-             value="confirm-4"
-             {% if data.confirm and data.confirm.indexOf("confirm-4") > -1 %}checked{% endif %}>
+             value="rotationalConfirm-4"
+             {% if data.rotationalConfirm and data.rotationalConfirm.indexOf("rotationalConfirm-4") > -1 %}checked{% endif %}>
 
-      <label class="govuk-label govuk-checkboxes__label" for="confirm-4">
+      <label class="govuk-label govuk-checkboxes__label" for="rotationalConfirm-4">
         actions I have applied for will not duplicate or conflict with any conditional Inheritance Tax exemption undertakings.
       </label>
     </div>
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input"
-             id="confirm-5"
-             name="confirm"
+             id="rotationalConfirm-5"
+             name="rotationalConfirm"
              type="checkbox"
-             value="confirm-5"
-             {% if data.confirm and data.confirm.indexOf("confirm-5") > -1 %}checked{% endif %}>
+             value="rotationalConfirm-5"
+             {% if data.rotationalConfirm and data.rotationalConfirm.indexOf("rotationalConfirm-5") > -1 %}checked{% endif %}>
 
-      <label class="govuk-label govuk-checkboxes__label" for="confirm-5">
+      <label class="govuk-label govuk-checkboxes__label" for="rotationalConfirm-5">
         actions on land owned by a public body will not duplicate or conflict with that body’s statutory duties.
       </label>
     </div>
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input"
-             id="confirm-6"
-             name="confirm"
+             id="rotationalConfirm-6"
+             name="rotationalConfirm"
              type="checkbox"
-             value="confirm-6"
-             {% if data.confirm and data.confirm.indexOf("confirm-6") > -1 %}checked{% endif %}>
+             value="rotationalConfirm-6"
+             {% if data.rotationalConfirm and data.rotationalConfirm.indexOf("rotationalConfirm-6") > -1 %}checked{% endif %}>
 
-      <label class="govuk-label govuk-checkboxes__label" for="confirm-6">
+      <label class="govuk-label govuk-checkboxes__label" for="rotationalConfirm-6">
         there is no conflict with other payment scheme rules, or double funding.
       </label>
     </div>
@@ -178,11 +178,17 @@
   </div>
 </fieldset>
 </div>
+
 <p class="govuk-body govuk-!-margin-bottom-6">
   It's your responsibility to make sure your land and landscape features are
   eligible for your chosen actions. If they are not, you may get a reduced
   annual payment.
 </p>
+
+  </div>
+</fieldset>
+</div>
+
 
 
 <div class="govuk-button-group">
