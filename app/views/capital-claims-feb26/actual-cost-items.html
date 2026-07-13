@@ -1,0 +1,175 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+        <div class="govuk-grid-column-two-thirds">
+          <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
+          <p class="govuk-hint sbi-number" style="margin-bottom: 8px;">
+            Single Business Identifier (SBI): 123456789<br>Claim number: 123456789
+          </p>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <form class="form" action="saved-application" method="post">
+            <button type="submit" class="govuk-button govuk-button--secondary" style="float:right; margin-bottom: 8px;"data-module="govuk-button">
+              Save and return later
+            </button>
+          </form>
+        </div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Actual cost items</h1>
+    <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+      If any of the numbers are incorrect, <a href="https://www.gov.uk/government/organisations/rural-payments-agency" target="_blank" class="govuk-link">contact the RPA</a> before you go any further.
+    </p>
+
+</div>
+
+
+<div class="govuk-grid-column-full">
+  <table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+
+        <th scope="col" class="govuk-table__header" style="width: 320px;" aria-sort="ascending">Item</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount approved</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount remaining</th>
+        <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount claimed for</th>
+        <th scope="col" class="govuk-table__header" style="width: 150px;" aria-sort="none">Make a claim</th>
+
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">LV2: Livestock handling facilities</td>
+          <td class="govuk-table__cell">£7,926.00</td>
+          <td class="govuk-table__cell">£7,926.00</td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"><a href="actual-cost-lv2" class="govuk-link">Claim for this item</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">FM1: Management of geodiversity features</td>
+          <td class="govuk-table__cell">£2,000.00</td>
+          <td class="govuk-table__cell">£2,000.00</td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">FM2: Major preparatory works for priority habitats (creation and restoration) and priority species</td>
+          <td class="govuk-table__cell">£5,508.00</td>
+          <td class="govuk-table__cell">£3,458.00</td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">HE1: Historic and archaeological feature protection</td>
+          <td class="govuk-table__cell">£1,567.00</td>
+          <td class="govuk-table__cell">£1,567.00</td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">RP8: Constructed wetlands for the treatment of pollution</td>
+          <td class="govuk-table__cell">£3,564.00</td>
+          <td class="govuk-table__cell">£2,782.00</td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">SB2: Scrub control difficult sites</td>
+          <td class="govuk-table__cell">£6,21.00</td>
+          <td class="govuk-table__cell">£6,214.00</td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">WN7: Restoration of large water bodies</td>
+          <td class="govuk-table__cell">£8,560.00</td>
+          <td class="govuk-table__cell">£8,560.00</td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"><a href="#" class="govuk-link">Claim for this item</a></td>
+        </tr>
+
+      
+      </tbody>
+    </table>
+
+    <!----Pagination-----> 
+    <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+      <p class="moj-pagination__results" style="float: right;">Showing <b>1</b> to <b>7</b> of <b>7</b> results</p>
+    </nav>
+
+    <!----Have you completed this section-->
+
+    <div class="govuk-form-group">
+      <label class="govuk-label govuk-label--m">
+        Have you finished creating your actual cost item claims?
+      </label>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
+            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+              Yes, I've added my claims
+            </label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
+            <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+              No, I’ll come back to it later
+            </label>
+          </div>
+        </div>
+    </div>
+
+    <form class="form" action="actual-cost-items-saved" method="post">
+    <button type="submit" class="govuk-button" data-module="govuk-button">
+      Save and continue
+    </button>
+  </form>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
