@@ -22,7 +22,7 @@
 
 {% block content %}
 
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
   <div class="govuk-grid-row" id="header">
     <div class="govuk-grid-column-two-thirds">
       <h3 class="govuk-heading-m" style="margin-bottom: 8px;">Holmeland Farm</h3>
@@ -38,18 +38,18 @@
       </form>
     </div>
   </div>
-  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds govuk-!-padding-bottom-6 govuk-!-padding-top-4">
+
     <h1 class="govuk-heading-l govuk-!-margin-bottom-2">Claim for items in CSHT agreements that start from 2025</h1>
     <!--- <span class="govuk-caption-l ">Holmeland Farm</span> ----> 
-
-        <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-0">If you feel that you have not received payment or that payment has been delayed, please contact the Rural Payments Agency (RPA).</p>
   
-      </div>
+  </div>
 
   <div class="govuk-grid-column-full">
+
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -58,10 +58,10 @@
           <th scope="col" class="govuk-table__header" style="width: 110px;">Submit date</th>
           <th scope="col" class="govuk-table__header" >Status</th>
           <th scope="col" class="govuk-table__header"></th>
-      </tr>
-    </thead>
+        </tr>
+      </thead>
 
-    <tbody class="govuk-table__body">
+      <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">1738201</td>
           <td class="govuk-table__cell">Holker Woodland Test, 1237477</td>
@@ -144,30 +144,40 @@
       </tbody>
     </table>
 
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
 
-        <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+        <p class="govuk-body govuk-!-margin-top-6 govuk-!-margin-bottom-0">If you feel that you have not received payment or that payment has been delayed, please contact the Rural Payments Agency (RPA).</p>
 
-        <ul class="moj-pagination__list">
-      
-          <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
-      
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
-      
-          <li class="moj-pagination__item moj-pagination__item--dots">…</li>
-      
-          <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
-      
-          <li class="moj-pagination__item">
-            <a class="govuk-link govuk-link--no-visited-state" href="" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span>
-              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
-            </svg>
-            </a>
-          </li>
+      </div>
+    </div>
 
-        </ul>
-        <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>40</b> results</p>
-      </nav>
+
+    <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+
+      <ul class="moj-pagination__list">
+    
+        <li class="moj-pagination__item moj-pagination__item--active" aria-label="Page 1 of 4" aria-current="page">1</li>
+    
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 2 of 4">2</a></li>
+    
+        <li class="moj-pagination__item moj-pagination__item--dots">…</li>
+    
+        <li class="moj-pagination__item"><a class="moj-pagination__link" href="#" aria-label="Page 4 of 4">4</a></li>
+    
+        <li class="moj-pagination__item">
+          <a class="govuk-link govuk-link--no-visited-state" href="" rel="next" style="font-weight: 700;">Next<span class="govuk-visually-hidden">page</span>
+            <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg>
+          </a>
+        </li>
+
+      </ul>
+    
+      <p class="moj-pagination__results">Showing <b>1</b> to <b>10</b> of <b>40</b> results</p>
+
+    </nav>
   </div>
 
   <div class="govuk-grid-column-two-thirds">
@@ -187,11 +197,11 @@
     </div>
     -->
 
-  <form class="form" action="claims-select-agreement" method="post">
-    <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-        Create a new claim
-    </button>
-  </form>
+    <form class="form" action="claims-select-agreement" method="post">
+      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+          Create a new claim
+      </button>
+    </form>
 
   </div>
 
