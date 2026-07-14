@@ -68,7 +68,7 @@
         <td class="govuk-table__cell">
           <div class="govuk-radios govuk-radios--small" data-module="govuk-radios" >
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" type="radio">
+              <input class="govuk-radios__input" type="radio" onclick="showWarning()">
               <label class="govuk-label govuk-radios__label">
               </label>
             </div>
@@ -86,7 +86,7 @@
 
           <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" type="radio">
+              <input class="govuk-radios__input" type="radio" onclick="hideWarning()">
               <label class="govuk-label govuk-radios__label">
               </label>
             </div>
@@ -102,6 +102,22 @@
 
       </tbody>
     </table>
+
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+        <div id="claim-warning" class="govuk-warning-text" style="display:none;">
+          <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+          <strong class="govuk-warning-text__text">
+            <span class="govuk-visually-hidden">Warning</span>
+            You may get a reduced payment if you create a new claim after your
+            'Claim by' date. This is in your agreement document.
+          </strong>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 
 
@@ -120,6 +136,17 @@
   </div>
 
 </div>
+
+
+<script>
+  function showWarning() {
+    document.getElementById('claim-warning').style.display = 'block';
+  }
+
+  function hideWarning() {
+    document.getElementById('claim-warning').style.display = 'none';
+  }
+</script>
 
 
 {% endblock %}

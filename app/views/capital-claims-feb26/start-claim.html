@@ -14,6 +14,14 @@
   },
   html: 'This is a prototype used for testing purposes only.'
 }) }}
+
+  {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+
+  <br>
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
@@ -44,20 +52,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Claim for a Countryside Stewardship Higher Tier capital item</h1>
+      <h1 class="govuk-heading-l">Claim for a CSHT Tier capital item</h1>
 
-      <p class="govuk-body govuk-!-margin-bottom-2">Before you start, you need to send the RPA:</p>
+      <p class="govuk-body govuk-!-margin-bottom-2">Each capital item claim you make must be at least £500, unless it is your final claim. Your final claim can be less than £500. The RPA may reject your claim if it does not meet these requirements. For this form you'll need:</p>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li>receipted invoices or receipts for the claim - the evidence you'll need will depend on which capital item you are claiming for (check the <a href="https://www.gov.uk/government/publications/countryside-stewardship-higher-tier-get-ready-to-apply/countryside-stewardship-higher-tier-new-capital-items" class="govuk-link govuk-link--no-visited-state">capital item on GOV.UK)</a>
-          </li>
-          <li>proof of your VAT status if you’re exempt from VAT</li>
-          <li>evidence to support your claim, for example photos of completed work, consents or detailed specifications</li>
+          <li>to check the <a href=https://www.gov.uk/capital-grant-finder class="govuk-link">capital grant finder</a> to see what evidence you need to send to the RPA depending on the capital item you are claiming for</li>
+          <li>details of any public funding you've received for the item you want to claim for</li>
+          <li>proof of your VAT status </li>
         </ul>
 
-        <p class="govuk-body govuk-!-margin-bottom-2">For this form, you'll need:</p>
+        <p class="govuk-body govuk-!-margin-bottom-2">For your VAT status, you'll need evidence from HMRC or your accountant which either confirms:</p>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
-          <li>receipted invoices or receipts</li>
-          <li>details of any public funding you've received for the item you want to claim for</li>
+          <li>you are not registered for VAT</li>
+          <li>you are registered for VAT but you cannot claim VAT from HMRC for capital items</li>
         </ul>
 
       <a href="tasklist-1" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
