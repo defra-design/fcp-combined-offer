@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -281,7 +286,7 @@
   <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">  
 
-  <form class="form" action="/capitals-standard-cost-complete" method="post">
+  <form class="form" action="saved-application.html" method="post">
       <div class="govuk-form-group">
         <label class="govuk-label govuk-label--m">
           Have you finished creating your standard cost item claims?  

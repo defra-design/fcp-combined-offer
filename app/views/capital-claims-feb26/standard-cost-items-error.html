@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+  <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -54,7 +59,7 @@
             <div class="govuk-error-summary__body">
               <ul class="govuk-list govuk-error-summary__list">
                 <li>
-                  <a href="#radio-error">Select if you've finished creating your standard cost item claims</a>
+                  <a href="#radio-error">Select 'Yes' if you've finished your claim for standard cost items.</a>
                 </li>
               </ul>
             </div>
@@ -285,7 +290,7 @@
           Have you finished creating your standard cost item claims?
         </label>
         <p id="radio-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Select if you've finished creating your standard cost item claims
+          <span class="govuk-visually-hidden">Error:</span> Select 'Yes' if you've finished your claim for standard cost items.
         </p>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">

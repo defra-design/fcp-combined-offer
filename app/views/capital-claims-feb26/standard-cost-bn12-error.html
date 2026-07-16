@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -54,7 +59,7 @@
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#row-error">You have claimed for the remaining amount, select this is your final claim</a>
+                <a href="#row-error">You have claimed for the full amount remaining on the parcel. Select the final claim box.</a>
               </li>
             </ul>
           </div>
@@ -166,7 +171,7 @@
       <tr class="govuk-table__row red-border">
         <td class="govuk-table__cell red-border-padding" style="border-bottom-color: white; padding-top: 10px; padding-bottom: 0;"; colspan="8">
         <p id="row-error" class="govuk-error-message" style="margin-bottom: 5px;">
-        <span class="govuk-visually-hidden">Error:</span>You have claimed for the remaining amount, select this is your final claim.</p>
+        <span class="govuk-visually-hidden">Error:</span>You have claimed for the full amount remaining on the parcel. Select the final claim box.</p>
         </td>
       </tr>
     
