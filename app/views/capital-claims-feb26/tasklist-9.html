@@ -15,9 +15,15 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+  <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   <div class="govuk-grid-row" id="header" style="padding-top:16px;">
@@ -43,7 +49,7 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Claim for a Countryside Stewardship Higher Tier capital item</h1>
+    <h1 class="govuk-heading-l">Claim for a CSHT capital item</h1>
   </div>
 </div>
 
@@ -67,21 +73,21 @@
       items: [
         {
           title: {
-            text: "Standard cost items"
+            text: "Select the standard cost items you are claiming for"
           },
           href: "standard-cost-items-saved",
           status: completedStatus
         },
         {
           title: {
-            text: "Actual cost items"
+            text: "Select the actual cost items you are claiming for"
           },
           href: "actual-cost-items-saved",
           status: completedStatus
         },
     {
       title: {
-        text: "Proof of cost"
+        text: "Evidence you may need to send"
       },
       href: "proof-cost",
       status: completedStatus
