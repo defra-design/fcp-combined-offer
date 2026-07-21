@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -47,9 +52,9 @@
 
       <h1 class="govuk-heading-l">Submit your claim</h1>
 
-      <p class="govuk-body">If you are the agreement holder, you can submit a capital item claim at any time of the year. This is so long as the work has been completed in line with your agreement, and you’ve paid for the work in full.</p>
+      <p class="govuk-body">If you are the agreement holder, or have permission to act on behalf of the agreement holder, you can submit a capital item claim at any time of the year. The capital works must have been completed in line with your agreement.</p>
 
-      <p class="govuk-body govuk-!-margin-bottom-6">Each individual claim must be at least £500, unless it is your final claim for that item. Final claims may be less than £500. The RPA may reject your claim if it doesn’t meet these requirements.</p>
+      <p class="govuk-body govuk-!-margin-bottom-6">Each capital item claim you make must be at least £500, unless it is your final claim. Your final claim may be less than £500. The RPA may reject your claim if it doesn’t meet these requirements. The RPA cannot pay your claim until they have received the required supporting evidence to support the claim.</p>
 
     <div class="govuk-button-group">
       <form class="form" action="submit-load" method="post">

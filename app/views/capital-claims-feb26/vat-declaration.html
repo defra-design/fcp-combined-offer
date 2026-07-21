@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -73,25 +78,31 @@
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <label class="govuk-label govuk-label--m" style="margin-bottom: 10px;">
-            Do you want to claim VAT for the capital items which are paid on the basis of actual costs?
+            Do you want to claim VAT for actual cost capital items?
           </label>
           <div id="vat-actual-hint" class="govuk-hint">
-            If you are not VAT registered and wish to claim VAT, you must send the RPA a letter from HMRC or your accountant which confirms your VAT status.
+            If you want to claim VAT for these items, you must send a letter to the RPA from HMRC or your accountant which either confirms you are not registered for VAT, or if you are registered, that you cannot claim VAT from HMRC for these items. 
           </div>
           <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="vat-actual-yes" name="vat-actual" type="radio" value="yes" aria-describedby="vat-actual-yes">
-              <label class="govuk-label govuk-radios__label" for="vat-actual-yes">
-                Yes
-              </label>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vat-actual-yes" name="vat-actual" type="radio" value="yes" aria-describedby="vat-actual-yes">
+                <label class="govuk-label govuk-radios__label" for="vat-actual-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vat-actual-no" name="vat-actual" type="radio" value="no" aria-describedby="vat-actual-no">
+                <label class="govuk-label govuk-radios__label" for="vat-actual-no">
+                  No
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="vat-actual-not-applicable" name="vat-actual" type="radio" value="not-applicable" aria-describedby="vat-actual-not-applicable">
+                <label class="govuk-label govuk-radios__label" for="vat-actual-not-applicable">
+                  Not Applicable
+                </label>
+              </div>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="vat-actual-no" name="vat-actual" type="radio" value="no" aria-describedby="vat-actual-no">
-              <label class="govuk-label govuk-radios__label" for="vat-actual-no">
-                No
-              </label>
-            </div>
-          </div>
         </fieldset>
       </div>
 
