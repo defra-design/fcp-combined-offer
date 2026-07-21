@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+  <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -52,7 +57,7 @@
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#declarations-error">Select if you agree to the terms of the declaration </a>
+                <a href="#declarations-error">Select ‘Yes’ if you agree to the terms of the declaration.</a>
               </li>
 
             </ul>
@@ -62,15 +67,15 @@
 
       <h1 class="govuk-heading-l">Declaration</h1>
 
-      <p class="govuk-body" style="margin-bottom: 0;">If you submit this claim, you declare that:</p>
+      <p class="govuk-body" style="margin-bottom: 0;">When you submit this claim, you declare that:</p>
       <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-6">
         <li>you have complied with and will continue to comply with the requirements in your CSHT agreement</li>
         <li>the details you have given in this form are correct and you accept full responsibility for them </li>
-        <li>you understand that under the terms of your CSHT agreement, payment may be withheld or recovered if you breach your agreement</li>
+        <li>you understand that if you breach your agreement, we may withhold or recover your payments, terminate, or amend your agreement, or exclude you from other schemes for up to 2 years</li>
       </ul>
 
       <p class="govuk-body govuk-!-margin-bottom-6">
-        You could be prosecuted, have a financial penalty, or be excluded from schemes for up to 2 years if you deliberately give wrong or incomplete information.
+        If you deliberately give wrong or incomplete information, you may be prosecuted, have your payments withheld or recovered, have your agreement terminated or amended, or be excluded from financial assistance schemes for up to 2 years.
       </p>
 
       <form class="form" action="/capitals-declarations" method="post">
@@ -83,7 +88,7 @@
             </legend>
 
             <div id="declarations-hint" class="govuk-hint">
-              You must select ‘Yes’ before you apply
+              You must select ‘Yes’ before you submit your claim
             </div>
 
             <p id="declarations-error" class="govuk-error-message">
