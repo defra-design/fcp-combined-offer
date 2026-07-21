@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -43,8 +48,8 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
+    <div class="govuk-grid-column-two-thirds">
+     <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Add or view invoice</span>
         LV2: Livestock handling facilities
       </h1>
@@ -60,9 +65,9 @@
         <th scope="col" class="govuk-table__header" style="width: 160px;">Receipt invoice reference</th>
         <th scope="col" class="govuk-table__header" style="width: 140px;">Total invoice amount (ex. VAT for approved works)</th>
         <th scope="col" class="govuk-table__header" style="width: 140px;">Total invoice VAT for approved works</th>
-        <th scope="col" class="govuk-table__header" style="width: 140px;">Agreed payment rate</th>
         <th scope="col" class="govuk-table__header" style="width: 140px;">Total claimed value  ex. VAT</th>
         <th scope="col" class="govuk-table__header" style="width: 140px;">Total VAT claimed</th>
+        <th scope="col" class="govuk-table__header" style="width: 140px;">Invoices</th>
       </tr>
     </thead>
 
@@ -75,20 +80,19 @@
       </tbody>
     </table>
 
-
-
-    <form class="form" action="actual-cost-add-invoice" method="post">
-      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-          Add invoice
-      </button>
-    </form>
+    <div class="govuk-button-group">
+      
+      <form class="form" action="actual-cost-add-invoice" method="post">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Add invoice </button>
+      </form>
 
       <form class="form" action="actual-cost-lv2-invoices-saved" method="post">
         <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-           Save and continue
-        </button>
+          Save and continue </button>
       </form>
 
+    </div>
 
 </div>
 </div>

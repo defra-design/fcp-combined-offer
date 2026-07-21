@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -106,8 +111,26 @@
           </td>
           <td class="govuk-table__cell"><a href="actual-cost-lv2-invoices" class="govuk-link">Add or view invoices</a></td>
         </tr>
+
+        <!---Total -->
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell" colspan="2" style="text-align: right;"><strong>Total claimed amount</strong></td>
+          <td class="govuk-table__cell">£0.00</td>
+          <td class="govuk-table__cell"></td>
+          <td class="govuk-table__cell"></td>
+        </tr>
+
+        
       </tbody>
     </table>
+
+    <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+      <p class="moj-pagination__results" style="float: right;">Showing <b>1</b> to <b>2</b> of <b>2</b> results</p>
+    </nav>
+
 
 
     

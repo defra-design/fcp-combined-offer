@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -44,11 +49,15 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Add a new invoice</h1>
+    <h1 class="govuk-heading-l">Add invoice details</h1>
 
-    <p class="govuk-body govuk-!-margin-bottom-6">Enter the details to support the item. You must enter information for the fields unless they are marked optional.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">Enter the details from your invoice to add it to your claim. You must enter information for the fields, unless they are marked optional.</p>
 
-    <p class="govuk-body govuk-!-margin-bottom-6">Once you have entered your details, click ‘Save and continue’.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">Once you have entered the information, click 'Save and continue'.</p>
+
+    <div class="govuk-inset-text">
+      You have <strong>£7,236.00</strong> (incl. VAT) grant remaining which you can still claim for.    
+    </div>
 
     <div class="govuk-form-group">
       <h2 class="govuk-label-wrapper">
@@ -88,7 +97,7 @@
 
     <div> 
       <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Agreed payment rate</h2>
-      <p class="govuk-body">100%</p>
+      <p class="govuk-body">80%</p>
     </div>
 
     <!-- 

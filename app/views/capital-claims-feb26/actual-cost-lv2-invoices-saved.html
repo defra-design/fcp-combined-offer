@@ -15,6 +15,11 @@
   html: 'This is a prototype used for testing purposes only.'
 }) }}
   {{ govukBackLink({
+    text: "Back to Business overview",
+    href: "business-overview"
+  }) }}
+    <br>
+  {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
@@ -59,14 +64,14 @@
       </div>
     </div>
 
+  </div>
 
-      <h1 class="govuk-heading-l">
+  <div class="govuk-grid-column-two-thirds">
+     <h1 class="govuk-heading-l">
         <span class="govuk-caption-l">Add or view invoice</span>
         LV2: Livestock handling facilities
       </h1>
       <h2 class="govuk-heading-m" style="margin-bottom: 30px;">Parcel number: SD3578 7755</h2>
-
-
   </div>
 
 
@@ -109,19 +114,23 @@
       </tbody>
     </table>
 
+      <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
+      <p class="moj-pagination__results" style="float: right;">Showing <b>1</b> to <b>1</b> of <b></b> results</p>
+    </nav>
 
-
-    <form class="form" action="actual-cost-add-invoice" method="post">
-      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-          Add invoice
-      </button>
-    </form>
+    <div class="govuk-button-group">
+      
+      <form class="form" action="actual-cost-add-invoice" method="post">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Add invoice </button>
+      </form>
 
       <form class="form" action="actual-cost-lv2-saved" method="post">
         <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-           Save and continue
-        </button>
+          Save and continue </button>
       </form>
+
+    </div>
 
 
 </div>
