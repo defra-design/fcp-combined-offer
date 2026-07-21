@@ -85,7 +85,7 @@
         <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Item amount</th>
         <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount remaining</th>
         <th scope="col" class="govuk-table__header" style="width: 130px;" aria-sort="none">Amount claimed for</th>
-        <th scope="col" class="govuk-table__header" style="width: 150px;" aria-sort="none">Make a claim</th>
+        <th scope="col" class="govuk-table__header" style="width: 150px;">Make a claim</th>
 
       </tr>
     </thead>
@@ -283,43 +283,47 @@
 
 
   <!----Have you completed this section-->    
-  <div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">  
-
-  <form class="form" action="saved-application.html" method="post">
+    <form class="form" action="/capitals-standard-cost-complete" method="post">
       <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m">
-          Have you finished creating your standard cost item claims?  
-        </label>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
-              Yes, I've added my claims
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
-                No, I’ll come back to it later
-              </label>
-            </div>
+       <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              Have you finished your claim for standard cost items?
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+            Select ‘Yes’ if you have finished your claim for standard cost items
           </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection">
+                    Yes, I've added my claims
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="haveYouCompletedThisSection-2" name="haveYouCompletedThisSection" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="haveYouCompletedThisSection-2">
+                    No, I’ll come back to it later
+                  </label>
+                </div>
+              </div>
+        </fieldset>
       </div>
-
+    
       <button type="submit" class="govuk-button" data-module="govuk-button">
         Save and continue
       </button>
-  </form>
+    </form>
+
+
+    </div>
+
+  </div>
 
   </div>
 
 </div>
 
-  
-    
-
-
+ 
 
 
 {% endblock %}
