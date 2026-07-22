@@ -22,6 +22,20 @@
 
 {% block content %}
 
+{% if error %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Select if you are meeting all the terms in your agreement",
+        href: "annual-declaration-answer"
+      }
+
+    ]
+  }) }}
+{% endif %} 
+
+
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" >
   <div class="govuk-grid-row" id="header">
     <div class="govuk-grid-column-two-thirds">
@@ -120,17 +134,17 @@
   </div>
 
 
+
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="claims-load" method="post">
-      <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-          Create a new claim
-      </button>
-    </form>
+      <div class="govuk-button-group">
+        <a href="/capital-claims-feb26/claims-load" role="button" class="govuk-button" data-module="govuk-button">
+  Create a new claim
+</a>
+  <a class="govuk-link" href="claims-table">Cancel</a>
+  </div>
 
-    <p class="govuk-body">
-      <a href="claims-table" class="govuk-link govuk-link--no-visited-state">Cancel</a>
-    </p>
+
 
   </div>
 
