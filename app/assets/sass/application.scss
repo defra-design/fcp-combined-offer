@@ -206,6 +206,24 @@ flex: 0 0 auto;
   padding: 15px;
   }
 
+.error-row-gap-top td:first-child {
+  background-image: linear-gradient(#d4351c, #d4351c);
+  background-repeat: no-repeat;
+  background-position: left 8px;
+  background-size: 5px calc(100% - 6px);
+  padding-left: 15px;
+  border-bottom: 0;
+}
+
+.error-row-gap-bottom td:first-child {
+  background-image: linear-gradient(#d4351c, #d4351c);
+  background-repeat: no-repeat;
+  background-position: left top;
+  background-size: 5px calc(100% - 6px);
+  padding-left: 15px;
+  border-top: 0;
+}
+
 
 @media only screen and (max-width: 600px) {
   .image-size {
