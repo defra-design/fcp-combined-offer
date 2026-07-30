@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+{% if error %}Error: {% endif %}Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -45,6 +45,28 @@
 {% endblock %}
 
 {% block content %}
+
+{% if error %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<!--- ERROR SUMMARY -->
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+				<h2 class="govuk-error-summary__title">
+					There is a problem
+				</h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+						<a href="#haveYouCompletedThisSection-error">Select 'Yes' if you've finished your claim actual cost items.</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
 
 <div class="govuk-grid-row">
 
@@ -136,19 +158,28 @@
       <nav class="moj-pagination govuk-!-margin-bottom-6" aria-label="Pagination navigation">
         <p class="moj-pagination__results" style="float: right;">Showing <b>1</b> to <b>7</b> of <b>7</b> results</p>
       </nav>
+      </div>
 
       <!----Have you completed this section-->
-
-      <div class="govuk-grid-row">
+      <form class="form" action="/capital-claims-feb26/actual-cost-items" method="post">
+        <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">  
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <div class="govuk-form-group{% if error %}govuk-form-group--error{% endif %}">
+              <fieldset class="govuk-fieldset" aria-describedby="contact-hint {% if error %}haveYouCompletedThisSection-error{% endif %}">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                     Have you finished claiming for your actual cost items?
                 </legend>
                 <div id="contact-hint" class="govuk-hint">
                   Select ‘Yes’ if you have finished claiming for actual cost items
                 </div>
+
+                {% if error %}
+	                <p id="haveYouCompletedThisSection-error" class="govuk-error-message">
+		                <span class="govuk-visually-hidden">Error:</span>
+		                Select 'Yes' if you've finished your claim for actual cost items
+	                </p>
+                {% endif %}
+
                 <div class="govuk-radios" data-module="govuk-radios">
                       <div class="govuk-radios__item">
                         <input class="govuk-radios__input" id="haveYouCompletedThisSection" name="haveYouCompletedThisSection" type="radio" value="yes">
@@ -168,11 +199,11 @@
           </div>
         </div>
 
-        <form class="form" action="actual-cost-items-saved" method="post">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-          Save and continue</button>
-        </form>
-    </div>
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Save and continue
+        </button>
+        
+      </form>
 
 </div>
 

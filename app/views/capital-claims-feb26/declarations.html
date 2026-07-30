@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
+  {% if error %}Error: {% endif %}Capital Claims – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -45,6 +45,28 @@
 {% endblock %}
 
 {% block content %}
+
+{% if error %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<!--- ERROR SUMMARY -->
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+				<h2 class="govuk-error-summary__title">
+					There is a problem
+				</h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+						<a href="#declarations-radio-error">Select ‘Yes’ if you agree to the terms of the declaration .</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
  
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -63,9 +85,9 @@
       </p>
 
       
-      <form class="form" action="/capitals-declarations" method="post">
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset">
+      <form class="form" action="/capital-claims-feb26/declarations" method="post">
+        <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint {% if error %}haveYouCompletedThisSection-error{% endif %}">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h2 class="govuk-fieldset__heading">
                 Do you agree to the terms of the declaration?
@@ -75,14 +97,21 @@
               You must select ‘Yes’ before you submit your claim
             </div>
 
+            {% if error %}
+              <p id="declarations-radio-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span>
+                Select ‘Yes’ if you agree to the terms of the declaration.
+              </p>
+            {% endif %}
+
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="declarations-yes" name="declarations" type="radio" value="yes">
+                <input class="govuk-radios__input" id="declarations-radio" name="declarations-radio" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="declarations-yes">Yes</label>
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="declarations-no" name="declarations" type="radio" value="no">
+                <input class="govuk-radios__input" id="declarations-radio-2" name="declarations-radio-2" type="radio" value="no">
                 <label class="govuk-label govuk-radios__label" for="declarations-no">No</label>
               </div>
             </div>

@@ -965,9 +965,6 @@ router.post('/actual-cost-add-invoice', function (req, res) {
 });
 
 
-
-
-
 // CAPITAL CLAIMS - Public funding ERROR
 router.post('/capitals-funding', function (req, res) {
 
@@ -1009,4 +1006,180 @@ router.post('/capitals-ur-declarations', function (req, res) {
     res.redirect('/capital-claims-ur/declarations-error')
   }
 
+})
+
+// CAPITAL CLAIMS FEB 26 ROUTES
+
+// CAPITAL CLAIMS FEB 26 - Start Claim
+router.post('/capital-claims-feb26/start-claim', function (req, res) {
+
+  req.session.data.startClaimCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Standard Cost Items
+router.get('/capital-claims-feb26/standard-cost-items', function (req, res) {
+
+  const showBN12SavedMessage = req.session.data.showBN12SavedMessage
+  const showED1SavedMessage = req.session.data.showED1SavedMessage
+
+  req.session.data.showBN12SavedMessage = false
+  req.session.data.showED1SavedMessage = false
+
+  res.render('capital-claims-feb26/standard-cost-items', {
+    showBN12SavedMessage,
+    showED1SavedMessage
+  })
+
+})
+
+// CAPITAL CLAIMS FEB 26 - Standard Cost Items Error
+router.post('/capital-claims-feb26/standard-cost-items', function (req, res) {
+
+  if (!req.body.haveYouCompletedThisSection) {
+    return res.render('capital-claims-feb26/standard-cost-items', {
+      error: true
+    })
+  }
+    req.session.data.standardCostItemsCompleted = true
+    res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Standard Cost Items Bn12 Warning
+router.post('/capital-claims-feb26/standard-cost-bn12-warning', function (req, res) {
+
+  req.session.data.showBN12SavedMessage = true
+  
+  res.redirect('/capital-claims-feb26/standard-cost-items?saved=BN12updated')
+})
+
+// CAPITAL CLAIMS FEB 26 - BN12 Saved Message on Standard Cost Page
+router.post('/capital-claims-feb26/standard-cost-bn12-updated', function (req, res) {
+
+  req.session.data.showBN12SavedMessage = true
+
+  res.redirect('/capital-claims-feb26/standard-cost-items?saved=BN12updated')
+
+})
+
+// CAPITAL CLAIMS FEB 26 - VED1 Saved Message on Standard Cost Page
+router.post('/capital-claims-feb26/standard-cost-ed1', function (req, res) {
+
+  req.session.data.showED1SavedMessage = true
+
+  res.redirect('/capital-claims-feb26/standard-cost-items?saved=ED1')
+
+})
+
+// CAPITAL CLAIMS FEB 26 - Actual Cost Items
+router.post('/capital-claims-feb26/actual-cost-items', function (req, res) {
+
+  if (!req.body.haveYouCompletedThisSection) {
+    return res.render('capital-claims-feb26/actual-cost-items', {
+      error: true
+    })
+  }
+    req.session.data.actualCostItemsCompleted = true
+    res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Actual Cost Items LV2 Saved
+router.post('/capital-claims-feb26/actual-cost-items-saved', function (req, res) {
+
+  if (!req.body.haveYouCompletedThisSection) {
+    return res.render('capital-claims-feb26/actual-cost-items-saved', {
+      error: true
+    })
+  }
+
+  req.session.data.actualCostItemsCompleted = true
+
+  console.log('Session data is now:', req.session.data)
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Actual Cost Items Error
+router.post('/capital-claims-feb26/actual-cost-items', function (req, res) {
+	if (!req.body.haveYouCompletedThisSection) {
+		return res.render('capital-claims-feb26/actual-cost-items', {
+			error: true
+		})
+	}
+	res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Proof Cost
+router.post('/capital-claims-feb26/proof-cost', function (req, res) {
+
+  req.session.data.proofCostCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - VAT Declaration
+router.post('/capital-claims-feb26/vat-declaration', function (req, res) {
+
+  req.session.data.vatDeclarationCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Public Funding
+router.post('/capital-claims-feb26/public-funding', function (req, res) {
+
+  req.session.data.publicFundingCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Final Claims
+router.post('/capital-claims-feb26/final-claims', function (req, res) {
+
+  req.session.data.finalClaimsCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Check Your Answers
+router.post('/capital-claims-feb26/check-your-answers', function (req, res) {
+
+  req.session.data.checkAnswersCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Check Your Answers Saved
+router.post('/capital-claims-feb26/check-your-answers-saved', function (req, res) {
+
+  req.session.data.checkAnswersCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Declarations
+router.post('/capital-claims-feb26/declarations', function (req, res) {
+
+  console.log('BEFORE declarations route:', req.session.data)
+
+  if (!req.body['declarations-radio']) {
+    return res.render('capital-claims-feb26/declarations', {
+      error: true
+    })
+  }
+
+  req.session.data.declarationsCompleted = true
+
+  console.log('AFTER declarations route:', req.session.data)
+
+  res.redirect('/capital-claims-feb26/tasklist')
+})
+
+// CAPITAL CLAIMS FEB 26 - Submit Claim
+router.post('/capital-claims-feb26/submit-claim', function (req, res) {
+
+  req.session.data.submitClaimCompleted = true
+
+  res.redirect('/capital-claims-feb26/tasklist')
 })
