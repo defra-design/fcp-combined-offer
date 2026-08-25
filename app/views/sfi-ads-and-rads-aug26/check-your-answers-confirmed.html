@@ -1,0 +1,202 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-full">
+
+  
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Success
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Your rotational declaration is validated, please click 'Continue' to submit.
+    </h3>
+  </div>
+</div>
+
+<h1 class="govuk-heading-xl">Check your answers</h1>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Do you want to make any changes to your rotational actions?
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="rotational-action-declaration">Change<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
+      </li>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Yes
+        </dd>
+        <dd class="govuk-summary-list__value">
+            
+        </dd>
+      </div>
+  </div>
+</div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Rotational actions
+    </h2>
+    <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="apply-actions">
+          Change<span class="govuk-visually-hidden"> rotational actions</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value govuk-!-width-full">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">SO3757 3158</h3>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-body govuk-!-margin-bottom-0">PRF1 - Variable rate application of nutrients</p>
+            </div>
+            <div class="govuk-grid-column-one-quarter govuk-!-text-align-right">
+              <p class="govuk-body govuk-!-margin-bottom-0">30.0000 ha</p>
+            </div>
+          </div>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value govuk-!-width-full">
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-2">SO3757 3170</h3>
+
+          <div class="govuk-grid-row govuk-!-margin-bottom-1">
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-body govuk-!-margin-bottom-0">CIPM3 - Companion crop on arable and horticultural land</p>
+            </div>
+            <div class="govuk-grid-column-one-quarter govuk-!-text-align-right">
+              <p class="govuk-body govuk-!-margin-bottom-0">8.0000 ha</p>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-body govuk-!-margin-bottom-0">CAHL2 - Winter bird food on arable and horticultural land</p>
+            </div>
+            <div class="govuk-grid-column-one-quarter govuk-!-text-align-right">
+              <p class="govuk-body govuk-!-margin-bottom-0">8.0000 ha</p>
+            </div>
+          </div>
+        </dd>
+      </div>
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+     Confirm your agreement level actions
+    </h2>
+        <ul class="govuk-summary-card__actions">
+      <li class="govuk-summary-card__action">
+        <a class="govuk-link" href="agreement-level-actions">Change<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
+      </li>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+               <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+              <p class="govuk-body govuk-!-margin-bottom-0">AHW2 - Supplementary winter bird food</p>
+            </div>
+            <div class="govuk-grid-column-one-quarter govuk-!-text-align-right">
+              <p class="govuk-body govuk-!-margin-bottom-0">4 tonnes</p>
+            </div>
+          </div>
+        </dd>
+      </div>
+      </div>
+      </div>
+    </dl>
+  </div>
+<form class="form" action="tasklist-4" method="post">
+  <button id="continueButton" type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+    Continue
+  </button>
+</form>
+
+</div>
+</div>
+ </div>  
+</div>
+
+
+
+{% endblock %}

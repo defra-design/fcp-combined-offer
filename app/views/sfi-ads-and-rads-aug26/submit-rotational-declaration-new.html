@@ -1,0 +1,202 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Tick all of the confirmation boxes before you submit your declaration",
+        href: "#checkbox-error"
+      }
+    ]
+  }) }}
+{% endif %} 
+
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Submit your rotational actions declaration</h1>
+
+<form action="/declarations/submit-rotational-declaration-new" method="post">
+
+{% if error %}
+  <div class="govuk-form-group govuk-form-group--error">
+{% else %}
+  <div class="govuk-form-group">
+{% endif %}
+
+<fieldset class="govuk-fieldset">
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+    <p class="govuk-body">Tick to confirm:</p>
+  </legend>
+
+  {% if error %}
+    <p id="checkbox-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span>
+      Tick all of the confirmation boxes before you submit your declaration
+    </p>
+  {% endif %}
+
+  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-1"
+             name="confirm"
+             type="checkbox"
+             value="confirm-1"
+             {% if data.confirm and data.confirm.indexOf("confirm-1") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-1">
+        the information I have given in this declaration is correct.
+      </label>
+    </div>
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-2"
+             name="confirm"
+             type="checkbox"
+             value="confirm-2"
+             {% if data.confirm and data.confirm.indexOf("confirm-2") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-2">
+        I will complete the rotational actions I have applied for.
+      </label>
+    </div>
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-3"
+             name="confirm"
+             type="checkbox"
+             value="confirm-3"
+             {% if data.confirm and data.confirm.indexOf("confirm-3") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-3">
+        I will have management control of land for the duration of any actions applied to that land.
+      </label>
+    </div>
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-4"
+             name="confirm"
+             type="checkbox"
+             value="confirm-4"
+             {% if data.confirm and data.confirm.indexOf("confirm-4") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-4">
+        actions I have applied for will not duplicate or conflict with any conditional Inheritance Tax exemption undertakings.
+      </label>
+    </div>
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-5"
+             name="confirm"
+             type="checkbox"
+             value="confirm-5"
+             {% if data.confirm and data.confirm.indexOf("confirm-5") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-5">
+        actions on land owned by a public body will not duplicate or conflict with that body’s statutory duties.
+      </label>
+    </div>
+
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input"
+             id="confirm-6"
+             name="confirm"
+             type="checkbox"
+             value="confirm-6"
+             {% if data.confirm and data.confirm.indexOf("confirm-6") > -1 %}checked{% endif %}>
+
+      <label class="govuk-label govuk-checkboxes__label" for="confirm-6">
+        there is no conflict with other payment scheme rules, or double funding.
+      </label>
+    </div>
+
+  </div>
+</fieldset>
+</div>
+<p class="govuk-body govuk-!-margin-bottom-6">
+  It's your responsibility to make sure your land and landscape features are
+  eligible for your chosen actions. If they are not, you may get a reduced
+  annual payment.
+</p>
+
+
+<div class="govuk-button-group">
+<button type="submit" class="govuk-button">Submit</button>
+<a class="govuk-link" href="annual-declaration">Cancel</a>
+</div>
+</form>
+
+
+
+    </div>
+  </div>
+
+
+
+{% endblock %}azx
+
