@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% if error %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 
@@ -11,16 +11,9 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+  html: 'This is a prototype used for testing purposes only.'
 }) }}
 <br>
-
-  <div class="govuk-!-margin-bottom-1">
-    {{ govukBackLink({
-      text: "Back to Business overview",
-      href: "business-overview"
-    }) }}
-  </div>
 
   <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
@@ -75,7 +68,7 @@
 
       <h1 class="govuk-heading-l">Submit your annual declaration</h1>
 
-<form action="/declarations/confirm-declaration" method="post">
+<form action="/sfi-ads-and-rads-aug26/confirm-declaration" method="post">
 
 {% if error %}
   <div class="govuk-form-group govuk-form-group--error">
@@ -106,7 +99,7 @@
              {% if data.confirm and data.confirm.indexOf("confirmDeclaration-1") > -1 %}checked{% endif %}>
 
       <label class="govuk-label govuk-checkboxes__label" for="confirmDeclaration-1">
-        I am meeting, or expect to meet, all terms in my agreement for this agreement year.
+        I am complying, or expect to comply with, the obligations in my agreement for the relevant agreement year.  
       </label>
     </div>
 
@@ -119,7 +112,7 @@
              {% if data.confirm and data.confirm.indexOf("confirmDeclaration-2") > -1 %}checked{% endif %}>
 
       <label class="govuk-label govuk-checkboxes__label" for="confirmDeclaration-2">
-        I will report any changes that may stop me from meeting my agreement terms to the Rural Payments Agency.
+        I will report any change of circumstances in writing to the Rural Payments Agency as soon as possible.
       </label>
     </div>
 
@@ -132,7 +125,7 @@
              {% if data.confirm and data.confirm.indexOf("confirmDeclaration-3") > -1 %}checked{% endif %}>
 
       <label class="govuk-label govuk-checkboxes__label" for="confirmDeclaration-3">
-        I understand that if I do not report a change, I may be subject to reduced payment and possible fraud investigations.
+        I understand that if I do not do this, I may be subject to reduced payments and possible fraud investigation.
       </label>
     </div>
 

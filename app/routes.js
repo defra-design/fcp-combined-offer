@@ -1183,3 +1183,34 @@ router.post('/capital-claims-feb26/submit-claim', function (req, res) {
 
   res.redirect('/capital-claims-feb26/tasklist')
 })
+
+// SFI ads and rads aug26 routing
+router.post('/sfi-ads-and-rads-aug26/annual-declaration', function (req, res) {
+	if (!req.body.annualDeclarationAnswer) {
+		return res.render('sfi-ads-and-rads-aug26/annual-declaration', {
+			error: true
+		})
+	}
+	res.redirect('/sfi-ads-and-rads-aug26/confirm-declaration')
+})
+
+router.post("/sfi-ads-and-rads-aug26/confirm-declaration", function (req, res) {
+
+  const raw = req.body['confirm[Declaration]'] || req.body.confirm || []
+  const selected = Array.isArray(raw) ? raw : [raw]
+
+  const allChecked =
+    selected.includes("confirmDeclaration-1") &&
+    selected.includes("confirmDeclaration-2") &&
+    selected.includes("confirmDeclaration-3")
+
+  if (!allChecked) {
+    return res.render("sfi-ads-and-rads-aug26/confirm-declaration", {
+      error: true,
+      data: { confirm: selected }
+    })
+  }
+
+  res.redirect("/sfi-ads-and-rads-aug26/positive-submitted")
+
+})

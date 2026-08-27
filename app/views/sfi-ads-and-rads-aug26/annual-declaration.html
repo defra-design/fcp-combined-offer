@@ -1,10 +1,9 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+  {% if error %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
   
 {% endblock %}
-
 
 {% block beforeContent %}
 
@@ -15,13 +14,6 @@
   html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
 }) }}
 <br>
-
-  <div class="govuk-!-margin-bottom-1">
-    {{ govukBackLink({
-      text: "Back to Business overview",
-      href: "business-overview"
-    }) }}
-  </div>
 
   <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
@@ -35,17 +27,26 @@
 {% block content %}
 
 {% if error %}
-  {{ govukErrorSummary({
-    titleText: "There is a problem",
-    errorList: [
-      {
-        text: "Select if you are meeting all the terms in your agreement",
-        href: "annual-declaration-answer"
-      }
-
-    ]
-  }) }}
-{% endif %} 
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<!--- ERROR SUMMARY -->
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+				<h2 class="govuk-error-summary__title">
+					There is a problem
+				</h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+						<a href="#annual-declaration-answer-error">Select if you are meeting all the terms in your agreement.</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
 
 
   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -72,56 +73,57 @@
 </div>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
+
+<form class="form" action="/sfi-ads-and-rads-aug26/annual-declaration" method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-<form class="form" action="/annual-declaration-routing" method="post">
-   <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
-            <fieldset class="govuk-fieldset">
-  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-Are you meeting all the terms in your agreement?
-  </legend>
+      <!-- Radio Buttons -->
+      <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint {% if error %}annualDeclarationAnswer-error{% endif %}">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            Are you complying with the obligations in your agreement for the relevant agreement year?
+          </legend>
 
-  {% if error %}
-    <p class="govuk-error-message">
-      <span class="govuk-visually-hidden">Error:</span>
-      Select if you are meeting all the terms of your agreement
-    </p>
-  {% endif %}
+          {% if error %}
+          <p id="annual-declaration-answer" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span>
+            Select if you are meeting all the terms in your agreement.
+            </p>
+          {% endif %}
 
-  <div class="govuk-radios" data-module="govuk-radios">
-
-              <div class="govuk-radios" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input"
-                        id="annualDeclarationAnswer-yes"
-                        name="annual-declaration-answer"
-                        type="radio"
-                        value="yes">
-                  <label class="govuk-label govuk-radios__label" for="annualDeclarationAnswer-yes">
-                    Yes
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input"
-                        id="annualDeclarationAnswer-no"
-                        name="annual-declaration-answer"
-                        type="radio"
-                        value="no">
-                  <label class="govuk-label govuk-radios__label" for="annualDeclarationAnswer-no">
-                    No
-                  </label>
-                </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                      id="annualDeclarationAnswer-yes"
+                      name="annualDeclarationAnswer"
+                      type="radio"
+                      value="yes">
+                <label class="govuk-label govuk-radios__label" for="annualDeclarationAnswer-yes">
+                  Yes
+                </label>
               </div>
-            </legend>
-            </fieldset>
-          </div>
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
-        </form>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                      id="annualDeclarationAnswer-no"
+                      name="annualDeclarationAnswer"
+                      type="radio"
+                      value="no">
+                <label class="govuk-label govuk-radios__label" for="annualDeclarationAnswer-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div> 
     </div>
   </div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+    </button>
+
+  </form>
 
 
 

@@ -15,13 +15,12 @@
 }) }}
 <br>
 
-<div class="govuk-!-margin-bottom-1">
+  <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
     text: "Back",
     href: "javascript:history.back()"
   }) }}
 </div>
-
 
 {% endblock %}
 
@@ -51,6 +50,20 @@
 
       <h1 class="govuk-heading-l">Applications and agreements</h1>
 
+      <!-- Important Banner -->
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Important
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            You must submit your annual declaration by 29 July 2026
+          </p>
+        </div>
+      </div>
+
       <!-- Table 1 -->
       <h2 class="govuk-heading-m">Agreement</h2>
 
@@ -76,6 +89,11 @@
           </tbody>
         </table>
       </div>
+
+       <form class="form" action="annual-declaration" method="post">
+          <button type="submit" action="" class="govuk-button govuk-button--primary" data-module="govuk-button">Submit annual declaration</button>
+        </form>
+
     </div>
   </div>
 
@@ -98,7 +116,7 @@
           <td class="govuk-table__cell">Annual declaration</td>
           <td class="govuk-table__cell">29 July 2026</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">
-             <a class="govuk-link" href="/sfi-ads-and-rads-aug26/print-annual-declaration">Download or print</a>
+             <a class="govuk-link" href="#">Download or print</a>
           </td>
         </tr>
 

@@ -522,3 +522,67 @@ body {
 .govuk-link:visited {
   color: #1d70b8;
 }
+
+/* Table formatting for sfi-ads-and-rads-aug26 */
+.agreement-container {
+  border: 1px solid #b1b4b6;
+  padding: 0;
+  margin-bottom: 30px;
+}
+
+.agreement-container .govuk-table {
+  margin-bottom: 0;
+}
+
+.agreement-container .govuk-table__head {
+  background: #f3f2f1;
+}
+
+.agreement-container .govuk-table__header {
+  padding: 20px;
+  font-weight: 700;
+  border-bottom: none;
+}
+
+.agreement-container .govuk-table__cell {
+  padding: 28px 20px;
+}
+
+.agreement-container .govuk-table__row:last-child td {
+  border-bottom: 0;
+}
+
+/* Sub-navigation for sfi-ads-and-rads-aug26 */
+.govuk-sub-navigation {
+margin-bottom: 30px;
+border-bottom: 1px solid #b1b4b6;
+}
+
+.govuk-sub-navigation__list {
+list-style: none;
+margin: 0;
+padding: 0;
+display: flex;
+border-bottom: 1px solid #b1b4b6;
+}
+
+.govuk-sub-navigation__item {
+margin-right: 30px;
+padding-bottom: 10px;
+}
+
+.govuk-sub-navigation__link {
+font-family: "GDS Transport", arial, sans-serif;
+font-size: 19px;
+color: #1d70b8;
+text-decoration: none;
+}
+
+.govuk-sub-navigation__link:hover {
+text-decoration: underline;
+}
+
+.govuk-sub-navigation__item--current {
+border-bottom: 4px solid #1d70b8;
+margin-bottom: -1px;
+}
