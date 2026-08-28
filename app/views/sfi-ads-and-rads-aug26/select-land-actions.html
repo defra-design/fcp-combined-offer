@@ -1,0 +1,199 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+{% if error %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+<br>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+{% if error %}
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Tick all of the confirmation boxes before you submit your declaration",
+        href: "#checkbox-error"
+      }
+    ]
+  }) }}
+{% endif %} 
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<br>
+
+<!-- Left hand side container --->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-l">Select actions for SO3757 3158</h1>
+
+    <h2 class="govuk-heading-m">Available actions for 2026 to 2027</h2>
+
+    <p class="govuk-body">You will only see rotational actions that are compatible with the land parcel you have selected.</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-0">To add actions to this land parcel:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>select the action</li>
+        <li>enter the quantity (such as hectarage or meterage) you want the action to apply to</li>
+      </ul>
+  </div>
+
+
+<!-- Right hand side container-->
+
+<div class="govuk-grid-column-one-half">
+
+    <h2 class="govuk-heading-m">Parcel details:</h2>
+
+    <p class="govuk-body govuk-!-margin-bottom-0"><strong>Total area:</strong></p>
+    <p>3.0404 ha</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-0"><strong>Land use:</strong></p>
+    <p class="govuk-body govuk-!-margin-bottom-0">Permanent grassland: 1.5760 ha</p>
+    <p class="govuk-body govuk-!-margin-bottom-0">Arable crops: 1.1212 ha</p>
+    <p class="govuk-body">Temporary grassland: 0.1312 ha</p>
+
+    <p class="govuk-body govuk-!-margin-bottom-0"><strong>Layer Intersections:</strong></p>
+    <p>Biodiversity, SSSI, LFA-MS</p>
+
+
+
+      <p class="govuk-body"><a href="select-land-parcel-1-list" class="govuk-link">Show land parcel on map</a></p>
+
+          <map name="clickable">
+          <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+          <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
+                  </map>
+      
+      <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-2/img/map_4.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+      <div class="key-div govuk-!-margin-bottom-5"></div>
+
+  </div>
+</div>
+
+<!-- Table with actions -->
+
+  <table class="govuk-table">
+  
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header"></th>
+          <th scope="col" class="govuk-table__header">Action</th>
+          <th scope="col" class="govuk-table__header">Available area or meterage</th>          
+          <th scope="col" class="govuk-table__header">Quantity</th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+          </div>
+          </th>
+          <td class="govuk-table__cell">AHW4 Skylark Plots</td>
+           </th>
+          <td class="govuk-table__cell">-</td>
+           </th>
+          <td class="govuk-table__cell">  <div class="govuk-form-group">
+          <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">plots</div>
+          </div>
+          </div></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+          </div>
+          </th>
+          <td class="govuk-table__cell">BFS6: 6m to 12m habitat strip next to watercourses</td>
+           </th>
+          <td class="govuk-table__cell">12.2309 ha</td>
+           </th>
+          <td class="govuk-table__cell">  <div class="govuk-form-group">
+          <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+          </div>
+          </div></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+          </div>
+          </th>
+          <td class="govuk-table__cell">CHRW2: Manage hedgerows </td>
+           </th>
+          <td class="govuk-table__cell">400 m</td>
+           </th>
+          <td class="govuk-table__cell">  <div class="govuk-form-group">
+          <div class="govuk-input__wrapper">
+          <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+          <div class="govuk-input__suffix" aria-hidden="true">ha</div>
+          </div>
+          </div></td>
+        </tr>
+
+      </tbody>
+  </table>
+
+<form class="form" action="select-land-parcel-1-applied" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">Save</button>
+</form>
+
+</main>
+
+
+
+{% endblock %}
