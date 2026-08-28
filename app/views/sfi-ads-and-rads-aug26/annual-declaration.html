@@ -26,10 +26,10 @@
 
 {% block content %}
 
+<!--- ERROR SUMMARY -->
 {% if error %}
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
-		<!--- ERROR SUMMARY -->
 		<div class="govuk-error-summary" data-module="govuk-error-summary">
 			<div role="alert">
 				<h2 class="govuk-error-summary__title">
@@ -38,7 +38,7 @@
 				<div class="govuk-error-summary__body">
 					<ul class="govuk-list govuk-error-summary__list">
 						<li>
-						<a href="#annual-declaration-answer-error">Select if you are meeting all the terms in your agreement.</a>
+						<a href="#annualDeclarationAnswer-error">Select if you are meeting all the terms in your agreement.</a>
 						</li>
 					</ul>
 				</div>
@@ -86,7 +86,7 @@
           </legend>
 
           {% if error %}
-          <p id="annual-declaration-answer" class="govuk-error-message">
+          <p id="annualDeclarationAnswer-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span>
             Select if you are meeting all the terms in your agreement.
             </p>
