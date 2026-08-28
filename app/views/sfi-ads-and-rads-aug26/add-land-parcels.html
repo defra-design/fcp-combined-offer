@@ -1,0 +1,370 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+<br>
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  <br>
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+          <h1 class="govuk-heading-l">Select additional land parcels for your rotational actions</h1>
+<p class="govuk-body">Your available land parcels for the selected OS map sheet reference. Select or un-select the additional land parcels for your rotational actions within your agreement from the list below or on the map.
+ </p>
+<p class="govuk-body">If you do not want to add any additional land parcels to your agreement, select the ‘Return to Task List’ button. Then select ‘No, I do not want to add land parcels that are not already included in my SFI Agreement’ under section 1 ‘Do you want to move rotational actions onto land not already in your SFI Agreement?’</p>
+
+<hr class="section-break-large"></hr>
+
+<table class="govuk-table">
+<p class="govuk-body">OS Map Sheet Reference S03</p>
+<hr class="govuk-section-break govuk-section-break--visible">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Number of available land parcels</td>
+      <td class="govuk-table__cell ">25</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Total area in hectares</td>
+      <td class="govuk-table__cell">145.0000</td>
+    </tr>
+    <tr class="govuk-table__row">
+     <td class="govuk-table__cell">Number of land parcels used for actions</td>
+      <td class="govuk-table__cell">6</td>
+    </tr>
+        <tr class="govuk-table__row">
+    <td class="govuk-table__cell">Number of actions applied for</td>
+      <td class="govuk-table__cell">32</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<style>
+  .table-space {
+    vertical-align: middle;
+  }
+
+  .table-space .govuk-body,
+  .table-space .govuk-checkboxes__item {
+    margin-bottom: 0;
+  }
+
+  .govuk-table__row + .govuk-table__row td {
+    padding-top: 16px;
+  }
+</style>
+
+<table class="govuk-table">
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input select-action" id="select-all" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="select-all">
+            Select all
+          </label>
+        </div>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-2" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-2">
+            SO3757 3151
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">19.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-3" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-3">
+            SO3757 3152
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">12.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-4" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-4">
+            SO3757 3156
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">5.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-5" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-5">
+            SO3757 3166
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">7.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-6" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-6">
+            SO3757 3167
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">9.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-7" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-7">
+            SO3757 3168
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">10.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-8" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-8">
+            SO3757 3159
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">12.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-9" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-9">
+            SO3757 3159
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">12.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-10" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-10">
+            SO3757 3159
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">12.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-11" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-11">
+            SO3757 3159
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">12.0000 ha</p>
+      </td>
+    </tr>
+
+    <tr class="govuk-table__row" style="white-space: nowrap;">
+      <td class="govuk-table__cell table-space">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input parcel-checkbox" id="action-12" type="checkbox">
+          <label class="govuk-label govuk-checkboxes__label" for="action-12">
+            SO3757 3159
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell table-space">
+        <p class="govuk-body">12.0000 ha</p>
+      </td>
+    </tr>
+
+  </tbody>
+</table>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var selectAll = document.getElementById('select-all');
+    var parcelCheckboxes = document.querySelectorAll('.parcel-checkbox');
+
+    if (!selectAll) return;
+
+    selectAll.addEventListener('change', function () {
+      parcelCheckboxes.forEach(function (checkbox) {
+        checkbox.checked = selectAll.checked;
+      });
+    });
+
+    parcelCheckboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        if (!checkbox.checked) {
+          selectAll.checked = false;
+          return;
+        }
+
+        if (Array.from(parcelCheckboxes).every(function (cb) { return cb.checked; })) {
+          selectAll.checked = true;
+        }
+      });
+    });
+  });
+</script>
+
+    
+    
+  </tbody>
+</table>
+
+
+
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
+
+
+
+      
+
+
+</div>
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link">Hide map</a></p>
+  <map name="clickable">
+        <area shape="rect" coords="100,280,190,320" href="apply-actions-158">
+        <area shape="rect" coords="150,220,240,280" href="">
+                  </map>
+<img usemap="#clickable" src="https://github.com/defra-design/fcp-combined-offer/blob/main/app/views/declarations/img/map-1.png?raw=true" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+       <p class="govuk-body">Key:</p>
+       <div class="key-div govuk-!-margin-bottom-5">
+       <div class="key-parent" id="key2" style="border: 4px solid #001EF5;"></div><span class="govuk-body-s">Selected</span>
+       <div class="key-parent" id="key4-1"></div><span class="govuk-body-s">Not Applied</span>
+       <div class="key-parent" id="key4"></div><span class="govuk-body-s">Applied</span>
+     </div>
+
+     <br>     <br>     <br>
+     
+       <form class="form" action="tasklist-6" method="post">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+
+    </div>
+
+  </div>
+{% endblock %}
