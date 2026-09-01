@@ -11,16 +11,9 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+  html: 'This is a prototype used for testing purposes only.'
 }) }}
 <br>
-
-  <div class="govuk-!-margin-bottom-1">
-    {{ govukBackLink({
-      text: "Back to Business overview",
-      href: "business-overview"
-    }) }}
-  </div>
 
   <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
@@ -75,7 +68,7 @@
 
       <h1 class="govuk-heading-l">Submit your rotational actions declaration</h1>
 
-<form action="/declarations/submit-rotational-declaration-new" method="post">
+<form action="/sfi-ads-and-rads-aug26/submit-rotational-declaration-new" method="post">
 
 {% if error %}
   <div class="govuk-form-group govuk-form-group--error">
@@ -106,7 +99,7 @@
              {% if data.confirm and data.confirm.indexOf("confirm-1") > -1 %}checked{% endif %}>
 
       <label class="govuk-label govuk-checkboxes__label" for="confirm-1">
-        the information I have given in this declaration is correct.
+        The information I have given in this declaration is correct.
       </label>
     </div>
 
@@ -145,9 +138,13 @@
              {% if data.confirm and data.confirm.indexOf("confirm-4") > -1 %}checked{% endif %}>
 
       <label class="govuk-label govuk-checkboxes__label" for="confirm-4">
-        actions I have applied for will not duplicate or conflict with any conditional Inheritance Tax exemption undertakings.
+        There is no double funding or conflict with other payment schemes
       </label>
     </div>
+
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+      <p class="govuk-body">Tick to confirm if the following statements are true or do not apply to you:</p>
+    </legend>
 
     <div class="govuk-checkboxes__item">
       <input class="govuk-checkboxes__input"
@@ -158,7 +155,7 @@
              {% if data.confirm and data.confirm.indexOf("confirm-5") > -1 %}checked{% endif %}>
 
       <label class="govuk-label govuk-checkboxes__label" for="confirm-5">
-        actions on land owned by a public body will not duplicate or conflict with that body’s statutory duties.
+        The actions I have applied for will not duplicate or conflict with any conditional Inheritance Tax exemptions.
       </label>
     </div>
 
@@ -171,7 +168,7 @@
              {% if data.confirm and data.confirm.indexOf("confirm-6") > -1 %}checked{% endif %}>
 
       <label class="govuk-label govuk-checkboxes__label" for="confirm-6">
-        there is no conflict with other payment scheme rules, or double funding.
+        Any actions on land owned by a public body will not duplicate or conflict with their statutory duties.
       </label>
     </div>
 
@@ -179,15 +176,13 @@
 </fieldset>
 </div>
 <p class="govuk-body govuk-!-margin-bottom-6">
-  It's your responsibility to make sure your land and landscape features are
-  eligible for your chosen actions. If they are not, you may get a reduced
-  annual payment.
+  It's your responsibility to make sure your land and landscape features are eligible for your chosen actions. If they are not, you may get a reduced annual payment.
 </p>
 
 
 <div class="govuk-button-group">
 <button type="submit" class="govuk-button">Submit</button>
-<a class="govuk-link" href="annual-declaration">Cancel</a>
+<a class="govuk-link" href="/sfi-ads-and-rads-aug26/submit-rotational-declaration-new">Cancel</a>
 </div>
 </form>
 

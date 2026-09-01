@@ -12,15 +12,9 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+  html: 'This is a prototype used for testing purposes only.'
 }) }}
 <br>
-  <div class="govuk-!-margin-bottom-1">
-    {{ govukBackLink({
-      text: "Back to Business overview",
-      href: "business-overview"
-    }) }}
-  </div>
 
   <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
@@ -64,12 +58,12 @@
 <div class="govuk-grid-row">
  <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">Confirm your agreement level actions</h1>
-      <p class="govuk-body">Any agreement level actions you have will be listed on this page.</p>
-      <p class="govuk-body">You can change the quantity of your agreement level actions. If you do not want to change the quantity, select 'Save and continue' without making any changes.</p>
+      <h1 class="govuk-heading-l">Review your agreement level actions</h1>
+      <p class="govuk-body">Any agreement level actions you have will be listed on this page. </p>
+      <p class="govuk-body">The quantity of your agreement level actions have been automatically updated in line with the quantities of your parcel level actions. You can change the quantity of your agreement level actions. If you do not want to change the quantity, select 'Save and continue' without making any changes. </p>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Agreement level actions</caption>
+  <caption class="govuk-table__caption govuk-table__caption--m">Your actions</caption>
   <tbody class="govuk-table__body">
   </thead>
     <tr class="govuk-table__row">
@@ -84,7 +78,7 @@
         <div class="govuk-form-group">
 <div class="govuk-form-group">
   <div class="govuk-input__wrapper">
-    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false" value="5">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false" value="8">
     <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
   </div>
 </div>
@@ -92,7 +86,7 @@
 </table>
 
 
-<form class="form" action="agreement-level-error1" method="post">
+<form class="form" action="tasklist-3" method="post">
 
   <input type="hidden" name="from" value="{{ data['from'] or query.from }}">
 

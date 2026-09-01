@@ -11,7 +11,7 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+  html: 'This is a prototype used for testing purposes only.'
 }) }}
 <br>
 
@@ -26,66 +26,139 @@
 
 {% block content %}
 
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
   
-  <!-- LEFT COLUMN (HEADING + SBI) -->
-  <div class="govuk-grid-column-two-thirds">
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
-    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
-      Single Business Identifier (SBI): 123456789
-    </p>
-    <br>
+  <div class="govuk-grid-row" id="header" style="padding-top:16px;">
+    
+    <!-- LEFT COLUMN (HEADING + SBI) -->
+    <div class="govuk-grid-column-two-thirds">
+      <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+      <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+        Single Business Identifier (SBI): 123456789
+      </p>
+      <br>
+    </div>
+
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+  <br>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Applications and agreements</h1>
+
+      <!-- Table 1 -->
+      <h2 class="govuk-heading-m">Agreement</h2>
+
+      <div class="agreement-container">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Agreement name</th>
+              <th scope="col" class="govuk-table__header">Agreement number</th>
+              <th scope="col" class="govuk-table__header">Type</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+              <th scope="col" class="govuk-table__header">Date of status change</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">J SMITH</td>
+              <td class="govuk-table__cell">1234567</td>
+              <td class="govuk-table__cell">SFI</td>
+              <td class="govuk-table__cell">Agreement live</td>
+              <td class="govuk-table__cell">29 July 2026</td>  
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- Table 2 -->
+  <h2 class="govuk-heading-m">Documents</h2>
+
+  <div class="agreement-container">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Document type</th>
+          <th scope="col" class="govuk-table__header">Date of issue</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Annual declaration</td>
+          <td class="govuk-table__cell">29 July 2026</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+             <a class="govuk-link" href="#">View, download or print</a>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Agreement document</td>
+          <td class="govuk-table__cell">29 July 2023</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <a class="govuk-link" href="#">View, download or print</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Table 3 -->
+  <h2 class="govuk-heading-m">Declarations</h2>
+
+  <nav class="govuk-sub-navigation" aria-label="Sub navigation">
+    <ul class="govuk-sub-navigation__list">
+      <li class="govuk-sub-navigation__item govuk-sub-navigation__item--current">
+        <a class="govuk-sub-navigation__link" href="#" data-tab="2025-2026" aria-current="page">2025 to 2026</a>
+      </li>
+      <li class="govuk-sub-navigation__item">
+        <a class="govuk-sub-navigation__link" href="#" data-tab="2024-2025">2024 to 2025</a>
+      </li>
+      <li class="govuk-sub-navigation__item">
+        <a class="govuk-sub-navigation__link" href="#" data-tab="2023-2024">2023 to 2024</a>
+      </li>
+    </ul>
+  </nav>
+
+   <div class="agreement-container">
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Declaration type</th>
+          <th scope="col" class="govuk-table__header govuk-table__header">Status
+          </th>
+        </tr>
+      </thead>
+
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Rotational action declaration</td>
+          <td class="govuk-table__cell govuk-table__cell">
+             <p class="govuk-body">Submitted 10 Aug 2026</p>
+          </td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Annual declaration</td>
+          <td class="govuk-table__cell govuk-table__cell">
+             <p class="govuk-body">Submitted 29 July 2026</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
 </div>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-
-<br>
-
-<div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
-
-<h1 class="govuk-heading-l">Applications and agreements</h1>
-
-<table class="govuk-table">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Agreement name</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Agreement number</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Type</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-eighth">Submit date</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-sixth">Status</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter"> </th>
-    </tr>
-  </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">Smith Farm SFI26 agreement</td>
-      <td class="govuk-table__cell">1234567</td>
-      <td class="govuk-table__cell">SFI</td>
-      <td class="govuk-table__cell">14 May 2026</td>
-      <td class="govuk-table__cell">Agreement live</td>  
-      <td class="govuk-table__cell">
-        <p class="govuk-!-text-align-right" style="width: 100%;"><a href="#" class="govuk-link">Download agreement document</a></p>
-        <p class="govuk-!-text-align-right" style="width: 100%;"><a href="#" class="govuk-link">Print annual declaration</a></p>
-        
-
-    
-      </td>
-    </tr>
-  </tbody>
-</table>
-
-<button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-  Create a new application
-</button>
-
-</div>
-</div>
 
 </main>
-</div>
 
 {% endblock %}
