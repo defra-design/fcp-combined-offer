@@ -12,16 +12,9 @@
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only. <a href="/declarations/declaration-scenarios" class="govuk-link">Back to start page</a>'
+  html: 'This is a prototype used for testing purposes only.'
 }) }}
 <br>
-
-  <div class="govuk-!-margin-bottom-1">
-    {{ govukBackLink({
-      text: "Back to Business overview",
-      href: "business-overview"
-    }) }}
-  </div>
 
   <div class="govuk-!-margin-bottom-1">
   {{ govukBackLink({
@@ -64,11 +57,12 @@
 <div class="govuk-grid-column-full">
 
   <h1 class="govuk-heading-xl">Rotational actions declaration</h1>
+  <p class="govuk-body">To find out more about rotational actions, go to the <a href="#">Countryside Stewardship Higher Tier guidance</a> and read section 3.1 of the CSHT applicant's guide.</p>
 
 
 
 
-      <h2 class="govuk-heading-m">1. Confirm rotational actions</h2>
+      <h2 class="govuk-heading-m">1. Review rotational actions</h2>
 
       {% set completedStatus = {
         text: "Completed"
@@ -88,14 +82,14 @@
         items: [
           {
             title: {
-              text: "Select and apply rotational actions to your land"
+              text: "Review your rotational actions"
             },
           href: "apply-actions",
             status: completedStatus    
           },
           {
             title: {
-              text: "Confirm your agreement level actions"
+              text: "Review your agreement level actions"
             },
         href: "agreement-level-actions",
           status: incompleteStatus

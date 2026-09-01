@@ -1214,3 +1214,28 @@ router.post("/sfi-ads-and-rads-aug26/confirm-declaration", function (req, res) {
   res.redirect("/sfi-ads-and-rads-aug26/positive-submitted")
 
 })
+
+
+router.post("/sfi-ads-and-rads-aug26/submit-rotational-declaration-new", function (req, res) {
+
+  const raw = req.body['confirm[]'] || req.body.confirm || []
+  const selected = Array.isArray(raw) ? raw : [raw]
+
+  const allChecked =
+    selected.includes("confirm-1") &&
+    selected.includes("confirm-2") &&
+    selected.includes("confirm-3") &&
+    selected.includes("confirm-4") &&
+    selected.includes("confirm-5") &&
+    selected.includes("confirm-6")
+
+  if (!allChecked) {
+    return res.render("sfi-ads-and-rads-aug26/submit-rotational-declaration-new", {
+      error: true,
+      data: { confirm: selected }
+    })
+  }
+
+  res.redirect("/sfi-ads-and-rads-aug26/rotational-confirmation")
+
+})
