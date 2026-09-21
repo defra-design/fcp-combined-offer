@@ -1340,3 +1340,27 @@ router.post('/sfi-ads-and-rads-aug26/additional-info', function (req, res) {
   res.redirect('/sfi-ads-and-rads-aug26/file-upload')
 
 })
+
+router.post('/sfi-ads-and-rads-aug26/file-upload', function (req, res) {
+
+  req.session.data.parcels = req.body.parcels
+
+  res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
+
+})
+
+router.post('/sfi-ads-and-rads-aug26/check-your-answers-COC', function (req, res) {
+
+  req.session.data.parcels = req.body.parcels
+
+  res.redirect('/sfi-ads-and-rads-aug26/reason-submitted')
+
+})
+
+router.post('/sfi-ads-and-rads-aug26/reason-submitted', function (req, res) {
+
+  req.session.data.parcels = req.body.parcels
+
+  res.redirect('/sfi-ads-and-rads-aug26/reason-submitted')
+
+})

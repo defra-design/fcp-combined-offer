@@ -1,0 +1,253 @@
+
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {% if error %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+<br>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<!--- ERROR SUMMARY -->
+{% if error %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+				<h2 class="govuk-error-summary__title">
+					There is a problem
+				</h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+						<a href="#passport-issued-error">Enter the date you stopped complying .</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<form class="form" action="/sfi-ads-and-rads-aug26/check-your-answers-COC" method="post">
+<h1 class="govuk-heading-l">Your submitted reasons</h1>
+<button
+  type="button"
+  class="govuk-button print-button"
+  onclick="window.print()">
+  🖨 Print this page 
+</button>
+
+<style>
+  .print-button {
+    background: transparent;
+    color: #0b0c0c;
+    border: 1px solid #0b0c0c;
+    color: #1d70b8 !important;
+    box-shadow: none;
+  }
+
+  .print-button:hover {
+    background: #f3f2f1;
+    color: #0b0c0c;
+  }
+
+  .print-button:focus {
+    background: #ffdd00;
+    color: #0b0c0c;
+  }
+</style>
+<div class="govuk-summary-card"> <style>
+  .govuk-summary-list__key {
+    width: 50%;
+  }
+
+  .govuk-summary-list__value {
+    width: 40%;
+  }
+
+  .govuk-summary-list__actions {
+    width: 10%;
+  }
+</style>
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Reasons for not complying
+    
+    </h2>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Are you complying with the obligations in your agreement for the relevant agreement year?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+       
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         Why are you not complying with the obligations?
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Something else
+        </dd>
+        
+      </div>
+
+     
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          When did you stop complying? 
+        </dt>
+        <dd class="govuk-summary-list__value">
+          12 January 2026
+        </dd>
+        
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Which actions in your agreement have been affected? (Optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          AHW4
+        </dd>
+       
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Which of your land parcels have been affected? (Optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          SO3757 3158
+        </dd>
+       
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Is there anything else you would like to tell us? (Optional)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Most of the agreement is still being upheld, it has just impacted a small amount of land and one action
+        </dd>
+       
+      </div>
+
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card evidence-card"> <style>
+  .evidence-card .govuk-summary-list__key {
+  width: 50%;
+}
+
+.evidence-card .govuk-summary-list__actions {
+  width: 40%;
+  text-align: left;
+}
+</style>
+
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Evidence uploaded
+    
+    </h2>
+  </div>
+
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          File one
+        </dt>
+       
+       <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload">receipt-1<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+        </dd>
+       
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+         File two
+        </dt>
+       
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload">receipt-2<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+        </dd>
+        
+      </div>
+
+
+    </dl>
+  </div>
+</div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Close
+    </button>
+
+  </form>
+
+
+
+{% endblock %}
+
+
+
