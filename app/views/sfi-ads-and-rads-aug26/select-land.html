@@ -1,0 +1,542 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+ <br>
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">Which of your land parcels have been affected? (Optional)
+</h1>
+</div>  
+  </div>
+  
+  <br>
+  <div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+
+<form class="form" action="/sfi-ads-and-rads-aug26/parcels-affected" method="post">
+
+  <div class="govuk-checkboxes__item govuk-!-margin-bottom-2">
+    <input
+      class="govuk-checkboxes__input"
+      id="select-all"
+      type="checkbox">
+
+    <label class="govuk-label govuk-checkboxes__label" for="select-all">
+      Select all
+    </label>
+  </div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+ <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="SX1010 1010">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="SX1010 2345">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="SX1010 3456">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="SX1010 4567">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+
+</div>
+
+  <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+
+  <input
+    class="govuk-checkboxes__input"
+    id="parcel1"
+    name="parcels"
+    type="checkbox"
+    value="TLZ7259 1358">
+
+  <label
+    class="govuk-label govuk-checkboxes__label"
+    for="parcel1"
+    style="
+      display:flex;
+      justify-content:space-between;
+      width:700px;
+      max-width:100%;
+    ">
+
+    <span>TLZ7259 1358</span>
+
+    <span>9.0000 ha</span>
+
+  </label>
+  
+
+</div>
+
+
+
+  <button
+  type="submit"
+  class="govuk-button govuk-!-margin-top-4"
+  data-module="govuk-button">
+  Continue
+</button>
+
+</form>
+
+
+</div>
+
+  <div class="govuk-grid-column-one-half">
+    <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link">Hide map</a></p>
+  <map name="clickable">
+        <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+        <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
+                  </map>
+<img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_2.png" alt="Map of your land" style="width:465px;height:400px;"></a>
+
+       <p class="govuk-body">Key:</p>
+       <div class="key-div govuk-!-margin-bottom-5">
+       <div class="key-parent" id="key2"></div><span class="govuk-body-s">Selected</span>
+       <div class="key-parent" id="key3"></div><span class="govuk-body-s">Not Applied</span>
+       <div class="key-parent" id="key4"></div><span class="govuk-body-s">Applied</span>
+     </div>
+
+     <br>     <br>     <br>
+     
+       <form class="form" action="select-land" method="post">
+          <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+
+    </div>
+
+  </div>
+
+
+  </form>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const selectAll = document.getElementById('select-all');
+  const actionCheckboxes = document.querySelectorAll(
+  'input[name="parcels"]'
+);
+  const selectedCount = document.getElementById('selected-count');
+
+  function updateSelectedCount() {
+    const actionCheckboxes = document.querySelectorAll(
+  'input[name="parcels"]'
+);
+
+    selectedCount.textContent = checked.length;
+
+    selectAll.checked =
+      checked.length === actionCheckboxes.length &&
+      actionCheckboxes.length > 0;
+  }
+
+  selectAll.addEventListener('change', function () {
+    actionCheckboxes.forEach(checkbox => {
+      checkbox.checked = selectAll.checked;
+    });
+
+    updateSelectedCount();
+  });
+
+  actionCheckboxes.forEach(checkbox => {
+    checkbox.addEventListener('change', updateSelectedCount);
+  });
+
+  updateSelectedCount();
+
+});
+</script>
+
+{% endblock %}

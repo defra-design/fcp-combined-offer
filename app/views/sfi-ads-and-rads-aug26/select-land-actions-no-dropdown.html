@@ -97,22 +97,18 @@
     <p>Biodiversity, SSSI, LFA-MS</p>
 
 
-    <details class="govuk-details">
-  <summary class="govuk-details__summary">
-    <span class="govuk-details__summary-text">
-      Show land parcel on map
-    </span>
-  </summary>
-  <div class="govuk-details__text">
 
+      <p class="govuk-body"><a href="select-land-parcel-1-list" class="govuk-link">Show land parcel on map</a></p>
+
+          <map name="clickable">
+          <area shape="rect" coords="100,280,190,320" href="select-land-parcel-1">
+          <area shape="rect" coords="150,220,240,280" href="select-land-parcel-2">
+                  </map>
       
-      <img src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-2/img/map_4.png" alt="Map of your land" style="width:349px;height:300px;"></a>
+      <img usemap="#clickable" src="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-iteration-1-2/img/map_4.png" alt="Map of your land" style="width:465px;height:400px;"></a>
 
       <div class="key-div govuk-!-margin-bottom-5"></div>
-  </div>
-</details>
 
-  <br><br><br>
   </div>
 </div>
 
@@ -200,3 +196,4 @@
 
 
 {% endblock %}
+

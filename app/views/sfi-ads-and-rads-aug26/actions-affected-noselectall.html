@@ -57,7 +57,7 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
   
-  <h1 class="govuk-heading-l">Which of your land parcels have been affected? (Optional)</h1>
+  <h1 class="govuk-heading-l">Which actions in your agreement have been affected? (Optional)</h1>
 
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
@@ -67,111 +67,68 @@
 
 <!-- Beginning of action -->
 
+<form class="form" action="/sfi-ads-and-rads-aug26/actions-affected" method="post">
+    <div id="contact-hint" class="govuk-hint">
+      Select all that apply
+    </div>
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
 
-<form class="form" action="/sfi-ads-and-rads-aug26/parcels-affected" method="post">
 
   <div class="govuk-checkboxes__item govuk-!-margin-bottom-2">
     <input
       class="govuk-checkboxes__input"
-      id="select-all"
-      type="checkbox">
+      id="agf1"
+      name="actions"
+      type="checkbox"
+      value="AGF1">
 
-    <label class="govuk-label govuk-checkboxes__label" for="select-all">
-      Select all
+    <label
+      class="govuk-label govuk-checkboxes__label"
+      for="agf1"
+      style="width: 66vw; max-width: 580px;">
+      <span class="action-code">AGF1</span>:
+      Maintain very low density in-field agroforestry on less sensitive land
     </label>
   </div>
 
- <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
+  <div class="govuk-checkboxes__item govuk-!-margin-bottom-2">
+    <input
+      class="govuk-checkboxes__input"
+      id="csam1"
+      name="actions"
+      type="checkbox"
+      value="CSAM1">
 
-  <input
-    class="govuk-checkboxes__input"
-    id="parcel1"
-    name="parcels"
-    type="checkbox"
-    value="TLZ7259 1358">
+    <label
+      class="govuk-label govuk-checkboxes__label"
+      for="csam1"
+      style="width: 66vw; max-width: 580px;">
+      <span class="action-code">CSAM1</span>:
+      Assess soil, produce a soil management plan and test soil organic matter
+    </label>
+  </div>
 
-  <label
-    class="govuk-label govuk-checkboxes__label"
-    for="parcel1"
-    style="
-      display:flex;
-      justify-content:space-between;
-      width:700px;
-      max-width:100%;
-    ">
+  <div class="govuk-checkboxes__item govuk-!-margin-bottom-5">
+    <input
+      class="govuk-checkboxes__input"
+      id="csam3"
+      name="actions"
+      type="checkbox"
+      value="CSAM3">
 
-    <span>TLZ7259 1358</span>
+    <label
+      class="govuk-label govuk-checkboxes__label"
+      for="csam3"
+      style="width: 66vw; max-width: 580px;">
+      <span class="action-code">CSAM3</span>:
+      Herbal leys
+    </label>
+  </div>
 
-    <span>9.0000 ha</span>
-
-  </label>
-
-</div>
-
-<div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
-
-  <input
-    class="govuk-checkboxes__input"
-    id="parcel1"
-    name="parcels"
-    type="checkbox"
-    value="TLZ7259 1358">
-
-  <label
-    class="govuk-label govuk-checkboxes__label"
-    for="parcel1"
-    style="
-      display:flex;
-      justify-content:space-between;
-      width:700px;
-      max-width:100%;
-    ">
-
-    <span>TLZ7259 1358</span>
-
-    <span>9.0000 ha</span>
-
-  </label>
-
-</div>
-
-  <div class="govuk-checkboxes__item govuk-!-margin-bottom-3">
-
-  <input
-    class="govuk-checkboxes__input"
-    id="parcel1"
-    name="parcels"
-    type="checkbox"
-    value="TLZ7259 1358">
-
-  <label
-    class="govuk-label govuk-checkboxes__label"
-    for="parcel1"
-    style="
-      display:flex;
-      justify-content:space-between;
-      width:700px;
-      max-width:100%;
-    ">
-
-    <span>TLZ7259 1358</span>
-
-    <span>9.0000 ha</span>
-
-  </label>
-
-  
-
-</div>
-
-
-
-  <button
-  type="submit"
-  class="govuk-button govuk-!-margin-top-4"
-  data-module="govuk-button">
-  Continue
-</button>
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+  </button>
 
 </form>
 
@@ -180,14 +137,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const selectAll = document.getElementById('select-all');
   const actionCheckboxes = document.querySelectorAll(
-  'input[name="parcels"]'
-);
+    'input[name="actions"]'
+  );
   const selectedCount = document.getElementById('selected-count');
 
   function updateSelectedCount() {
-    const actionCheckboxes = document.querySelectorAll(
-  'input[name="parcels"]'
-);
+    const checked = document.querySelectorAll(
+      'input[name="actions"\]:checked'
+    );
 
     selectedCount.textContent = checked.length;
 
