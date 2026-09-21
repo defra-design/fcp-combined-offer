@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hidden error summary. JS will show this if validation fails -->
+<div id="error-summary"
+     class="govuk-error-summary"
+     aria-labelledby="error-summary-title"
+     role="alert"
+     tabindex="-1"
+     data-module="govuk-error-summary"
+     style="display:none;">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li><a href="#agree">Please enter your agreement name</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">
+  Upload evidence (optional)
+</h1>
+
+<form class="form" action="/supload
+
+  <input
+    type="hidden"
+    name="from"
+    value="{{ data['from'] or query.from }}">
+
+  <div class="govuk-form-group">
+
+   
+
+    <div class="govuk-hint">
+      Upload evidence such as photographs, maps or other supporting documents.
+    </div>
+
+    <input
+      class="govuk-file-upload"
+      id="supporting-file"
+      name="supportingFile"
+      type="file">
+
+  </div>
+
+  <button
+    type="submit"
+    class="govuk-button"
+    data-module="govuk-button">
+    Save and continue
+  </button>
+
+</form>
+
+
+
+
+
+{% endblock %}

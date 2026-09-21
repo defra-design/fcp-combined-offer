@@ -92,6 +92,7 @@ router.post("/declarations/confirm-declaration", function (req, res) {
 
 })
 
+
 router.post("/declarations/submit-rotational-declaration-new", function (req, res) {
 
   const raw = req.body['confirm[]'] || req.body.confirm || []
@@ -1186,12 +1187,21 @@ router.post('/capital-claims-feb26/submit-claim', function (req, res) {
 
 // SFI ads and rads aug26 routing
 router.post('/sfi-ads-and-rads-aug26/annual-declaration', function (req, res) {
-	if (!req.body.annualDeclarationAnswer) {
-		return res.render('sfi-ads-and-rads-aug26/annual-declaration', {
-			error: true
-		})
-	}
-	res.redirect('/sfi-ads-and-rads-aug26/confirm-declaration')
+  const answer = req.body.annualDeclarationAnswer
+
+  if (!answer) {
+    return res.render('sfi-ads-and-rads-aug26/annual-declaration', {
+      error: true
+    })
+  }
+
+  if (answer === 'yes') {
+    return res.redirect('/sfi-ads-and-rads-aug26/confirm-declaration')
+  }
+
+  if (answer === 'no') {
+    return res.redirect('/sfi-ads-and-rads-aug26/negative-declaration-reason')
+  }
 })
 
 router.post("/sfi-ads-and-rads-aug26/confirm-declaration", function (req, res) {
@@ -1237,5 +1247,96 @@ router.post("/sfi-ads-and-rads-aug26/submit-rotational-declaration-new", functio
   }
 
   res.redirect("/sfi-ads-and-rads-aug26/rotational-confirmation")
+
+})
+
+router.post('/sfi-ads-and-rads-aug26/stop-complying', function (req, res) {
+
+  const day = req.body['passport-issued-day'];
+  const month = req.body['passport-issued-month'];
+  const year = req.body['passport-issued-year'];
+
+  if (!day && !month && !year) {
+    return res.render('sfi-ads-and-rads-aug26/stop-complying', {
+      error: true
+    });
+  }
+
+  res.redirect('/sfi-ads-and-rads-aug26/rotational-confirmation');
+});
+
+router.post('/sfi-ads-and-rads-aug26/negative-declaration-reason', function (req, res) {
+
+  const reason = req.body.negativeDeclarationReason
+
+  if (!reason) {
+    return res.render(
+      'sfi-ads-and-rads-aug26/negative-declaration-reason',
+      {
+        error: true
+      }
+    )
+  }
+
+  res.redirect('/sfi-ads-and-rads-aug26/stop-complying-date')
+})
+
+router.post('/sfi-ads-and-rads-aug26/stop-complying-date', function (req, res) {
+
+  const day = req.body['passport-issued-day']
+  const month = req.body['passport-issued-month']
+  const year = req.body['passport-issued-year']
+
+  if (!day && !month && !year) {
+    return res.render(
+      'sfi-ads-and-rads-aug26/stop-complying-date',
+      {
+        error: true
+      }
+    )
+  }
+
+  res.redirect('/sfi-ads-and-rads-aug26/actions-affected')
+
+})
+
+
+router.post('/sfi-ads-and-rads-aug26/actions-affected', function (req, res) {
+
+  const selectedActions = req.body.actions
+
+  // Nothing selected
+  if (!selectedActions) {
+    return res.render('sfi-ads-and-rads-aug26/actions-affected', {
+      error: true
+    })
+  }
+
+  // Save selected actions to session
+  req.session.data.actions = selectedActions
+
+  // Next page
+  res.redirect('/sfi-ads-and-rads-aug26/parcels-affected')
+
+})
+
+
+router.post('/sfi-ads-and-rads-aug26/parcels-affected', function (req, res) {
+
+  const selectedParcels = req.body.parcels
+
+  // Save if any were selected
+  req.session.data.parcels = selectedParcels
+
+  res.redirect('/sfi-ads-and-rads-aug26/additional-info')
+
+})
+
+
+router.post('/sfi-ads-and-rads-aug26/additional-info', function (req, res) {
+
+  req.session.data.parcels = req.body.parcels
+
+  res.redirect('/sfi-ads-and-rads-aug26/file-upload')
 
 })

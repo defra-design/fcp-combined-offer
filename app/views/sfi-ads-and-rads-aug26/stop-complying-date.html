@@ -1,0 +1,138 @@
+
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {% if error %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only.'
+}) }}
+<br>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<!--- ERROR SUMMARY -->
+{% if error %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+				<h2 class="govuk-error-summary__title">
+					There is a problem
+				</h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+						<a href="#passport-issued-error">Enter the date you stopped complying .</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+<form class="form" action="/sfi-ads-and-rads-aug26/stop-complying-date" method="post">
+<div class="govuk-form-group{% if error %} govuk-form-group--error{% endif %}">
+  <fieldset
+  class="govuk-fieldset"
+  role="group"
+  aria-describedby="passport-issued-hint {% if error %}passport-issued-error{% endif %}">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        When did you stop complying? 
+      </h1>
+    </legend>
+    <div id="passport-issued-hint" class="govuk-hint">
+      For example, 27 03 2024. If you do not know the specific day, enter the year, or the year and the month.
+    </div>
+{% if error %}
+<p id="passport-issued-error" class="govuk-error-message">
+  <span class="govuk-visually-hidden">Error:</span>
+  Enter the date you stopped complying
+</p>
+{% endif %}
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+    </button>
+
+  </form>
+
+
+
+{% endblock %}
+
+
+

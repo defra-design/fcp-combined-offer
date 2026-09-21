@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  SFI – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  <div class="govuk-!-margin-bottom-1">
+    {{ govukBackLink({
+      text: "Back to Business overview",
+      href: "business-overview"
+    }) }}
+  </div>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Hidden error summary. JS will show this if validation fails -->
+<div id="error-summary"
+     class="govuk-error-summary"
+     aria-labelledby="error-summary-title"
+     role="alert"
+     tabindex="-1"
+     data-module="govuk-error-summary"
+     style="display:none;">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li><a href="#agree">Please enter your agreement name</a></li>
+    </ul>
+  </div>
+</div>
+
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<br>
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+
+
+<h1 class="govuk-heading-l">Is there anything else you would like to tell us? (Optional)</h1>
+
+    <form class="form" action="additional-info" method="post" id="agreementForm" novalidate>
+      <input type="hidden" name="from" value="{{ data['from'] or query.from }}">
+
+
+      <div id="agreement-form-group" class="govuk-form-group">
+  <label class="govuk-label" for="agree">
+    This could be additional information about the change, or how you tried to prevent or resolve the situation if it was possible to do so.
+  </label>
+
+  <p id="error-message" class="govuk-error-message" style="display:none;">
+    <span class="govuk-visually-hidden">Error:</span>
+    Please enter your agreement name
+  </p>
+
+  <br>
+
+  <textarea
+    class="govuk-textarea govuk-!-width-full"
+    id="agree"
+    name="agreementName"
+    rows="5"
+    spellcheck="false"
+    aria-describedby="agreement-help"></textarea>
+
+  
+</div>
+      <br>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
+    </form>
+
+  </div>
+</div>
+
+
+
+
+
+{% endblock %}
