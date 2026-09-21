@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {% if error %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
+  
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/sfi-ads-and-rads-aug26/scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+
+<br>
+
+  <div class="govuk-!-margin-bottom-1">
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<!--- ERROR SUMMARY -->
+{% if error %}
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-two-thirds">
+		<div class="govuk-error-summary" data-module="govuk-error-summary">
+			<div role="alert">
+				<h2 class="govuk-error-summary__title">
+					There is a problem
+				</h2>
+				<div class="govuk-error-summary__body">
+					<ul class="govuk-list govuk-error-summary__list">
+						<li>
+						<a href="#annualDeclarationAnswer-error">Select if you are meeting all the terms in your agreement.</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endif %}
+
+
+  <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row" id="header" style="padding-top:16px;">
+  
+  <!-- LEFT COLUMN (HEADING + SBI) -->
+  <div class="govuk-grid-column-two-thirds">
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-1">Smith Farm Ltd</h3>
+    <p class="govuk-hint sbi-number govuk-!-margin-bottom-0">
+      Single Business Identifier (SBI): 123456789
+    </p>
+  </div>
+
+  <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
+  <div class="govuk-grid-column-one-third govuk-!-text-align-right">
+    <a href="/sfi-26-testing/saved-application"
+    class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
+    role="button"
+    data-module="govuk-button">
+    Save and return later
+  </a>
+  </div>
+
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+<form class="form" action="/sfi-ads-and-rads-aug26/annual-declaration-2" method="post">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <!-- Radio Buttons -->
+      <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint {% if error %}annualDeclarationAnswer-error{% endif %}">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            Are you complying with the obligations in your agreement for the relevant agreement year?
+          </legend>
+
+          {% if error %}
+          <p id="annualDeclaration2Answer-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span>
+            Select if you are meeting all the terms in your agreement.
+            </p>
+          {% endif %}
+
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                      id="annualDeclaration2Answer-yes"
+                      name="annualDeclaration2Answer"
+                      type="radio"
+                      value="yes">
+                <label class="govuk-label govuk-radios__label" for="annualDeclaration2Answer-yes">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input"
+                      id="annualDeclaration2Answer-no"
+                      name="annualDeclaration2Answer"
+                      type="radio"
+                      value="no">
+                <label class="govuk-label govuk-radios__label" for="annualDeclaration2Answer-no">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div> 
+    </div>
+  </div>
+
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Continue
+    </button>
+
+  </form>
+
+
+
+{% endblock %}
+
