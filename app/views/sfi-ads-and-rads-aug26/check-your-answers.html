@@ -52,111 +52,361 @@
 
 <br>
 <div class="govuk-grid-row">
-<div class="govuk-grid-column-full">
+  <div class="govuk-grid-column-full">
 
-<h1 class="govuk-heading-xl">Check your answers</h1>
+    <!-- SAVED BANNER -->
+    {% if data.saved == "true" %}
 
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      Do you want to make any changes to your rotational actions?
-    </h2>
-    <ul class="govuk-summary-card__actions">
-      <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="rotational-action-declaration?from=check-answers">Change<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
-      </li>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">
-          Yes
-        </dd>
-        <dd class="govuk-summary-list__value">
-            
-        </dd>
+      <div class="govuk-notification-banner govuk-notification-banner--success"
+          role="alert"
+          data-module="govuk-notification-banner">
+
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title">
+            Success
+          </h2>
+        </div>
+
+        <div class="govuk-notification-banner__content">
+          <p class="govuk-notification-banner__heading">
+            Your changes have been saved
+          </p>
+        </div>
+
       </div>
-  </div>
-</div>
 
-<div class="agreement-container">
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Rotational actions</th>
-          <th scope="col" class="govuk-table__header">2025 to 2026</th>
-          <th scope="col" class="govuk-table__header">2026  to 2027</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="govuk-link" href="rotational-action-declaration?from=check-answers">Change<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
-          </th>
-        </tr>
-      </thead>
-
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">CAHL2 - Winter bird food on arable and horticultural land</td>
-          <td class="govuk-table__cell">TL7160 6945</td>
-          <td class="govuk-table__cell">TL7160 9531</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-             <a class="govuk-link" href="/sfi-ads-and-rads-aug26/print-annual-declaration"></a>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">CIPM3 - Companion crop on arable and horticultural land</td>
-          <td class="govuk-table__cell">29 July 2023</td>
-          <td class="govuk-table__cell">29 July 2023</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            <a class="govuk-link" href="#"></a>
-          </td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">PRF1 - Variable rate application of nutrients</td>
-          <td class="govuk-table__cell">29 July 2023</td>
-          <td class="govuk-table__cell">29 July 2023</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            <a class="govuk-link" href="#"></a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-  <div class="agreement-container">
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Confirm your agreement level actions</th>
-          <th scope="col" class="govuk-table__header">2025 to 2026</th>
-          <th scope="col" class="govuk-table__header">2026  to 2027</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric"><a class="govuk-link" href="rotational-action-declaration?from=check-answers">Change<span class="govuk-visually-hidden"> (University of Gloucestershire)</span></a>
-          </th>
-        </tr>
-      </thead>
-
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">AHW2 - Supplementary winter bird food</td>
-          <td class="govuk-table__cell">8 tonnes</td>
-          <td class="govuk-table__cell">4 tonnes</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-             <a class="govuk-link" href="/sfi-ads-and-rads-aug26/print-annual-declaration"></a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+    {% endif %}
 
 
-<form class="form" action="check-your-answers-confirmed" method="post">
-  <button id="continueButton" type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
-    Confirm
-  </button>
-</form>
+    <h1 class="govuk-heading-xl">Check your answers</h1>
 
-</div>
-</div>
- </div>  
+    <p class="govuk-body">This page shows what your rotational actions will be for the next agreement year. You can make changes before selecting 'Confirm' and you can check the details of this year's rotational actions in your <a class="govuk-link" href="#">agreement document (opens in new tab).</a></p>
+
+    <br>
+
+      <!-- Changes to rotational actions -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Do you want to make any changes to your rotational actions?
+          </h2>
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               Yes
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+
+      </div>
+  
+
+      <h2 class="govuk-heading-m">Rotational actions</h1>
+
+
+      <!-- AGF1 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            AGF1: Maintain very low density (20-50 t/ha) in-field agroforestry on less sensitive land
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                2.000 ha on parcel  TL7160 6924
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                9.000 ha on parcel  HP5894 6945 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                8.000 ha on parcel  JG8592 6776 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+
+      </div>
+
+      <!-- BFS6 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            BFS6: 6m to 12m habitat strip next to watercourses
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                2.000 ha on parcel  TL7160 6924
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                9.000 ha on parcel  HP5894 6945 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                8.000 ha on parcel  JG8592 6776 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <!-- CAHL2 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            CAHL2 - Winter bird food on arable and horticultural land
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                2.000 ha on parcel  TL7160 6924
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                9.000 ha on parcel  HP5894 6945 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                8.000 ha on parcel  JG8592 6776 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+      </div>
+
+      <!-- CHRW2 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            CHRW2: Manage hedgerows 
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                12.000 ha on parcel  TL7160 6945 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                2.000 ha on parcel  TL7160 6924
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                9.000 ha on parcel  HP5894 6945 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                8.000 ha on parcel  JG8592 6776 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+        
+      </div>
+
+      <!-- UPL1 -->
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            UPL1: Moderate livestock grazing on moorland
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                12.000 ha on parcel  TL7160 6945 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                2.000 ha on parcel  TL7160 6924
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                9.000 ha on parcel  HP5894 6945 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                8.000 ha on parcel  JG8592 6776 
+              </dt>
+              <dd class="govuk-summary-list__value">
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+        
+      </div>
+
+    <h2 class="govuk-heading-m">Agreement level actions</h1>
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Review your agreement level actions
+          </h2>
+        </div>
+
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+               AHW2: Supplementary winter bird food 
+              </dt>
+              <dd class="govuk-summary-list__value">
+                8 tonnes
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </dd>
+            </div>
+
+          </dl>
+        </div>
+
+      </div>
+
+
+    <form class="form" action="check-your-answers" method="post">
+      <button id="continueButton" type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
+        Confirm
+      </button>
+    </form>
+
+  </div> 
 </div>
 
 

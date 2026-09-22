@@ -1239,3 +1239,8 @@ router.post("/sfi-ads-and-rads-aug26/submit-rotational-declaration-new", functio
   res.redirect("/sfi-ads-and-rads-aug26/rotational-confirmation")
 
 })
+
+// SFI ADS AND RADS - Check your answers saved
+router.post('/check-your-answers', function (req, res) {
+  res.redirect('/check-your-answers?saved=true')
+})
