@@ -1382,3 +1382,8 @@ router.post('/sfi-ads-and-rads-aug26/reason-submitted', function (req, res) {
   res.redirect('/sfi-ads-and-rads-aug26/reason-submitted')
 
 })
+
+// SFI ADS AND RADS - Check your answers saved
+router.post('/check-your-answers', function (req, res) {
+  res.redirect('/check-your-answers?saved=true')
+})
