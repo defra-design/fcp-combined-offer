@@ -1204,6 +1204,24 @@ router.post('/sfi-ads-and-rads-aug26/annual-declaration', function (req, res) {
   }
 })
 
+router.post("/sfi-ads-and-rads-aug26/annual-declaration-2", function (req, res) {
+  const answer = req.body.annualDeclaration2Answer;
+
+  if (!answer) {
+    return res.render("sfi-ads-and-rads-aug26/annual-declaration-2", {
+      error: true,
+    });
+  }
+
+  if (answer === "yes") {
+    return res.redirect("/sfi-ads-and-rads-aug26/confirm-declaration");
+  }
+
+  if (answer === "no") {
+    return res.redirect("/sfi-ads-and-rads-aug26/negative-declaration");
+  }
+});
+
 router.post("/sfi-ads-and-rads-aug26/confirm-declaration", function (req, res) {
 
   const raw = req.body['confirm[Declaration]'] || req.body.confirm || []
