@@ -586,3 +586,18 @@ text-decoration: underline;
 border-bottom: 4px solid #1d70b8;
 margin-bottom: -1px;
 }
+
+
+.parcels-layout {
+  display: flex;
+  align-items: flex-start;
+}
+
+.sticky-map {
+  position: sticky;
+  top: 20px;
+}
+
+.govuk-grid-column-one-half:last-child {
+  min-height: 1700px;
+}
