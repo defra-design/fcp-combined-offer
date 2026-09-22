@@ -1382,3 +1382,8 @@ router.post('/sfi-ads-and-rads-aug26/reason-submitted', function (req, res) {
   res.redirect('/sfi-ads-and-rads-aug26/reason-submitted')
 
 })
+
+router.post('/check-your-answers', function (req, res) {
+  req.session.data.saved = "true"
+  res.redirect('/check-your-answers')
+})
