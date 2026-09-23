@@ -16,11 +16,11 @@
 <br>
 
   <div class="govuk-!-margin-bottom-1">
-    {{ govukBackLink({
-      text: "Back to Business overview",
-      href: "business-overview"
-    }) }}
-  </div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:history.back()"
+  }) }}
+</div>
 
 {% endblock %}
 
@@ -48,114 +48,83 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      <h1 class="govuk-heading-l">Applications and agreements</h1>
+    
 
-      <!-- Table 1 -->
-      <h2 class="govuk-heading-m">Agreement</h2>
+     
 
-      <div class="agreement-container">
-        <table class="govuk-table">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header">Agreement name</th>
-              <th scope="col" class="govuk-table__header">Agreement number</th>
-              <th scope="col" class="govuk-table__header">Type</th>
-              <th scope="col" class="govuk-table__header">Status</th>
-              <th scope="col" class="govuk-table__header">Date of status change</th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell">J SMITH</td>
-              <td class="govuk-table__cell">1234567</td>
-              <td class="govuk-table__cell">SFI</td>
-              <td class="govuk-table__cell">Agreement live</td>
-              <td class="govuk-table__cell">29 July 2026</td>  
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
+      
+<div class="govuk-!-margin-bottom-6">
 
-  <!-- Table 2 -->
-  <h2 class="govuk-heading-m">Documents</h2>
+  <h1 class="govuk-heading-l govuk-!-margin-bottom-3">
+    J SMITH
+  </h1>
 
-  <div class="agreement-container">
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Document type</th>
-          <th scope="col" class="govuk-table__header">Date of issue</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action
-          </th>
-        </tr>
-      </thead>
+  <p class="govuk-body-l govuk-!-margin-bottom-4" style="color: #484949;">
+  SFI26
+</p>
 
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Annual declaration</td>
-          <td class="govuk-table__cell">29 July 2026</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-             <a class="govuk-link" href="#">View, download or print</a>
-          </td>
-        </tr>
+  <p class="govuk-body govuk-!-margin-bottom-4">
+    Agreement number: <strong>12345</strong>
+  </p>
 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Agreement document</td>
-          <td class="govuk-table__cell">29 July 2023</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric">
-            <a class="govuk-link" href="#">View, download or print</a>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
+  <p class="govuk-body govuk-!-margin-bottom-8">
+ <a href="#" class="govuk-link">Agreement document</a>
+</p>
 
-  <!-- Table 3 -->
-  <h2 class="govuk-heading-m">Declarations</h2>
+  
 
-  <nav class="govuk-sub-navigation" aria-label="Sub navigation">
-    <ul class="govuk-sub-navigation__list">
-      <li class="govuk-sub-navigation__item govuk-sub-navigation__item--current">
-        <a class="govuk-sub-navigation__link" href="#" data-tab="2025-2026" aria-current="page">2025 to 2026</a>
-      </li>
-      <li class="govuk-sub-navigation__item">
-        <a class="govuk-sub-navigation__link" href="#" data-tab="2024-2025">2024 to 2025</a>
-      </li>
-      <li class="govuk-sub-navigation__item">
-        <a class="govuk-sub-navigation__link" href="#" data-tab="2023-2024">2023 to 2024</a>
-      </li>
-    </ul>
-  </nav>
+</div>
 
-   <div class="agreement-container">
-    <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Declaration type</th>
-          <th scope="col" class="govuk-table__header govuk-table__header">Status
-          </th>
-        </tr>
-      </thead>
+<table class="govuk-table">
+  <caption class="govuk-table__caption govuk-table__caption--m">Actions and documents</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-half">Action</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Document</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Rotational action declaration submitted</td>
+      <td class="govuk-table__cell">12 October 2026</td>
+     <td class="govuk-table__cell"><a href="/sfi-ads-and-rads-aug26/agreement-details" class="govuk-link">Agreement document 2026</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Annual declaration submitted</td>
+      <td class="govuk-table__cell">03 October 2026</td>
+     <td class="govuk-table__cell"><a href="/sfi-ads-and-rads-aug26/agreement-details" class="govuk-link">Annual declaration 2025</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Rotational action declaration submitted</td>
+      <td class="govuk-table__cell">03 August 2025</td>
+     <td class="govuk-table__cell"><a href="/sfi-ads-and-rads-aug26/agreement-details" class="govuk-link">Agreement document 2025</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Annual declaration submitted</td>
+      <td class="govuk-table__cell">29 July 2025</td>
+      <td class="govuk-table__cell"><a href="/sfi-ads-and-rads-aug26/agreement-details" class="govuk-link">Annual declaration 2025</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Rotational action declaration submitted</td>
+      <td class="govuk-table__cell">29 July 2024</td>
+      <td class="govuk-table__cell"><a href="/sfi-ads-and-rads-aug26/agreement-details" class="govuk-link">Agreement document 2024</a></td>
+      
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Annual declaration submitted</td>
+      <td class="govuk-table__cell">29 July 2024</td>
+      <td class="govuk-table__cell"><a href="/sfi-ads-and-rads-aug26/agreement-details" class="govuk-link">Annual declaration 2024</a></td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Application submitted</td>
+      <td class="govuk-table__cell">29 July 2023</td>
+      <td class="govuk-table__cell">No document available</td>
+    </tr>
+  </tbody>
+</table>
 
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Rotational action declaration</td>
-          <td class="govuk-table__cell govuk-table__cell">
-             <p class="govuk-body">Submitted 10 Aug 2026</p>
-          </td>
-        </tr>
 
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Annual declaration</td>
-          <td class="govuk-table__cell govuk-table__cell">
-             <p class="govuk-body">Submitted 29 July 2026</p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
 
 </div>
 
