@@ -7,6 +7,15 @@
 
 {% block beforeContent %}
 
+{{ govukPhaseBanner({
+  tag: {
+    text: "Prototype"
+  },
+  html: 'This is a prototype used for testing purposes only. <a href="/sfi-ads-and-rads-aug26/scenarios" class="govuk-link">Back to start page</a>'
+}) }}
+
+<br>
+
   <div class="govuk-!-margin-bottom-1">
     {{ govukBackLink({
       text: "Back to Business overview",
@@ -20,6 +29,7 @@
     href: "javascript:history.back()"
   }) }}
 </div>
+
 
 {% endblock %}
 

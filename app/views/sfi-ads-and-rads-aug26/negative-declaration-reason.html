@@ -1,18 +1,17 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  {% if error %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
-  
+  {% if error or otherError %}Error: {% endif %}SFI – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 {% block beforeContent %}
 
 {{ govukPhaseBanner({
   tag: {
     text: "Prototype"
   },
-  html: 'This is a prototype used for testing purposes only.'
+  html: 'This is a prototype used for testing purposes only. <a href="/sfi-ads-and-rads-aug26/scenarios" class="govuk-link">Back to start page</a>'
 }) }}
+
 <br>
 
   <div class="govuk-!-margin-bottom-1">
@@ -66,7 +65,7 @@
 				<div class="govuk-error-summary__body">
 					<ul class="govuk-list govuk-error-summary__list">
 						<li>
-						<a href="#negativeDeclarationReason-error">Select if you are meeting all the terms in your agreement.</a>
+						<a href="#negativeDeclarationReason-error">Select why you are not complying with the obligations in your agreement.</a>
 						</li>
 					</ul>
 				</div>
@@ -76,6 +75,32 @@
 </div>
 {% endif %}
 
+<!--- SECOND ERROR SUMMARY -->
+
+{% if otherError %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div
+      class="govuk-error-summary"
+      data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+                Enter the reason you are not complying
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
 
 <form class="form" action="/sfi-ads-and-rads-aug26/negative-declaration-reason" method="post">
   <div class="govuk-grid-row">
@@ -91,81 +116,94 @@
           {% if error %}
           <p id="annualDeclarationAnswer-error" class="govuk-error-message">
             <span class="govuk-visually-hidden">Error:</span>
-            Select if you are meeting all the terms in your agreement.
+            Select why you are not complying with the obligations in your agreement.
             </p>
           {% endif %}
 
            <div class="govuk-radios" data-module="govuk-radios">
 
-  <div class="govuk-radios__item">
-    <input
-      class="govuk-radios__input"
-      id="sale-of-land"
-      name="negativeDeclarationReason"
+            <div class="govuk-radios__item">
+   <input
+       class="govuk-radios__input"
+     id="sale-of-land"
+     name="negativeDeclarationReason"
       type="radio"
-      value="sale-of-land">
+      value="sale-of-land"
+{% if selectedReason == "sale-of-land" %}checked{% endif %}>
     <label class="govuk-label govuk-radios__label" for="sale-of-land">
       Sale of land
-    </label>
-  </div>
+ </label>
+ </div>
 
-  <div class="govuk-radios__item">
-    <input
-      class="govuk-radios__input"
-      id="extreme-weather"
-      name="negativeDeclarationReason"
-      type="radio"
-      value="extreme-weather">
+<div class="govuk-radios__item">
+
+<input
+  class="govuk-radios__input"
+  id="extreme-weather"
+  name="negativeDeclarationReason"
+  type="radio"
+  value="extreme-weather"
+  {% if selectedReason == "extreme-weather" %} checked{% endif %}>
     <label class="govuk-label govuk-radios__label" for="extreme-weather">
       Extreme weather
     </label>
   </div>
 
   <div class="govuk-radios__item">
-    <input
-      class="govuk-radios__input"
-      id="change-of-land-use"
-      name="negativeDeclarationReason"
-      type="radio"
-      value="change-of-land-use">
+  <input
+  class="govuk-radios__input"
+  id="change-of-land-use"
+  name="negativeDeclarationReason"
+  type="radio"
+  value="change-of-land-use"
+  {% if selectedReason == "change-of-land-use" %}checked{% endif %}>
     <label class="govuk-label govuk-radios__label" for="change-of-land-use">
       Change of land use
     </label>
   </div>
 
 <div class="govuk-radios__item">
-  <input
-    class="govuk-radios__input"
-    id="other"
-    name="negativeDeclarationReason"
-    type="radio"
-    value="other"
-    data-aria-controls="conditional-other">
+<input
+  class="govuk-radios__input"
+  id="other"
+  name="negativeDeclarationReason"
+  type="radio"
+  value="other"
+  data-aria-controls="conditional-other"
+  {% if selectedReason =="other" %}checked{% endif %}>
 
   <label class="govuk-label govuk-radios__label" for="other">
     Other
   </label>
 </div>
-
 <div
-  class="govuk-radios__conditional govuk-radios__conditional--hidden"
+  class="govuk-radios__conditional {% if selectedReason != 'other' %}govuk-radios__conditional--hidden{% endif %} {% if otherError %}govuk-form-group--error{% endif %}"
   id="conditional-other">
+<div class="govuk-form-group">
 
-  <div class="govuk-form-group">
     <label class="govuk-label" for="otherReason">
       Tell us why you are not complying
     </label>
 
-    <text
-      class="govuk-textarea"
+    {% if otherError %}
+      <p
+        id="otherReason-error"
+        class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span>
+        Enter the reason you are not complying
+      </p>
+    {% endif %}
+
+    <input
+      class="govuk-input {% if otherError %}govuk-textarea--error{% endif %}"
       id="otherReason"
       name="otherReason"
-      rows="5"></textarea>
+      rows="5"
+      {% if otherError %}aria-describedby="otherReason-error"{% endif %}>{{ otherReason or data.otherReason }}</input>
+
   </div>
-
 </div>
 
-</div>
           </fieldset>
         </div> 
     </div>
@@ -177,7 +215,31 @@
 
   </form>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const radios = document.querySelectorAll('input[name="negativeDeclarationReason"]')
+  const errorMessage = document.querySelector('.govuk-error-message')
+  const errorSummary = document.querySelector('.govuk-error-summary')
+  const formGroup = document.querySelector('.govuk-form-group--error')
 
+  radios.forEach(radio => {
+    radio.addEventListener('change', function () {
+      if (errorMessage) {
+        errorMessage.style.display = 'none'
+      }
+
+      if (errorSummary) {
+        errorSummary.style.display = 'none'
+      }
+
+      if (formGroup) {
+        formGroup.classList.remove('govuk-form-group--error')
+      }
+    })
+  })
+})
+</script>
 
 {% endblock %}
+
 
