@@ -1407,3 +1407,26 @@ router.post('/check-your-answers', function (req, res) {
   res.redirect('/check-your-answers')
 })
 
+router.post('/sfi-ads-and-rads-aug26/changes-to-actions', function (req, res) {
+
+  const actions = req.body.actions
+
+  if (!actions) {
+
+    res.render('sfi-ads-and-rads-aug26/changes-to-actions', {
+      error: true
+    })
+
+  } else if (actions === 'no') {
+
+    res.redirect('/sfi-ads-and-rads-aug26/submit-rotational-declaration-new')
+
+  } else if (actions === 'yes') {
+
+    res.redirect('/sfi-ads-and-rads-aug26/tasklist-1')
+
+  }
+
+})
+
+

@@ -63,7 +63,14 @@
       <p class="govuk-body">The quantity of your agreement level actions have been automatically updated in line with the quantities of your parcel level actions. You can change the quantity of your agreement level actions. If you do not want to change the quantity, select 'Save and continue' without making any changes. </p>
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption govuk-table__caption--m">Your actions</caption>
+  <div class="govuk-warning-text govuk-!-margin-bottom-3">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    You can apply for a maximum of [4] tonnes
+  </strong>
+</div>
+
   <tbody class="govuk-table__body">
   </thead>
     <tr class="govuk-table__row">
@@ -78,7 +85,7 @@
         <div class="govuk-form-group">
 <div class="govuk-form-group">
   <div class="govuk-input__wrapper">
-    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false" value="8">
+    <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false" value="5">
     <div class="govuk-input__suffix" aria-hidden="true">tonnes</div>
   </div>
 </div>
@@ -86,7 +93,7 @@
 </table>
 
 
-<form class="form" action="tasklist-3" method="post">
+<form class="form" action="agreement-level-error" method="post">
 
   <input type="hidden" name="from" value="{{ data['from'] or query.from }}">
 

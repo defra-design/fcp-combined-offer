@@ -41,7 +41,7 @@
 				<div class="govuk-error-summary__body">
 					<ul class="govuk-list govuk-error-summary__list">
 						<li>
-						<a href="#passport-issued-error">Enter the date you stopped complying .</a>
+						<a href="#passport-issued-error">Enter the date you stopped complying. If you can't remember the exact date, enter at least the year</a>
 						</li>
 					</ul>
 				</div>
@@ -91,10 +91,14 @@
 For example, 27 03 2024. If you do not know the specific day, enter the year, or the year and the month.
 </div>
 {% if error %}
-<p id="passport-issued-error" class="govuk-error-message">
-  <span class="govuk-visually-hidden">Error:</span>
-  Enter the date you stopped complying
-</p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span>
+      Enter the date you stopped complying. If you can't remember the exact date, enter at least the year
+    </p>
+  </div>
+</div>
 {% endif %}
     <div class="govuk-date-input" id="passport-issued">
       <div class="govuk-date-input__item">
