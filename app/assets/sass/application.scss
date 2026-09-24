@@ -619,3 +619,9 @@ margin-bottom: -1px;
 .date-hint-width {
 max-width: 66%;
 }
+
+
+  .govuk-form-group--error.govuk-radios__conditional,
+  .govuk-radios__conditional .govuk-form-group--error {
+    border-left-color: #d4351c;
+  }

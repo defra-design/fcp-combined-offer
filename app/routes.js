@@ -1283,21 +1283,46 @@ router.post('/sfi-ads-and-rads-aug26/stop-complying', function (req, res) {
   res.redirect('/sfi-ads-and-rads-aug26/rotational-confirmation');
 });
 
+// NEGATIVE DECLARATIONS ERROR 
+
+// NEGATIVE DECLARATIONS ERROR
 router.post('/sfi-ads-and-rads-aug26/negative-declaration-reason', function (req, res) {
-
   const reason = req.body.negativeDeclarationReason
+  const otherReason = req.body.otherReason
 
+  // No radio selected
   if (!reason) {
     return res.render(
       'sfi-ads-and-rads-aug26/negative-declaration-reason',
       {
-        error: true
+        error: true,
+        selectedReason: reason,
+        otherReason: otherReason
+      }
+    )
+  }
+
+  // "Other" selected but no text entered
+  if (reason === 'other' && !otherReason?.trim()) {
+    return res.render(
+      'sfi-ads-and-rads-aug26/negative-declaration-reason',
+      {
+        otherError: true,
+        selectedReason: reason,
+        otherReason: otherReason
       }
     )
   }
 
   res.redirect('/sfi-ads-and-rads-aug26/stop-complying-date')
 })
+
+
+
+  // STOP COMPLYING DATE
+
+
+
 
 router.post('/sfi-ads-and-rads-aug26/stop-complying-date', function (req, res) {
 
@@ -1387,3 +1412,4 @@ router.post('/check-your-answers', function (req, res) {
   req.session.data.saved = "true"
   res.redirect('/check-your-answers')
 })
+
