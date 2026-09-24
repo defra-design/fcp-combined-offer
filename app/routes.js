@@ -1326,21 +1326,15 @@ router.post('/sfi-ads-and-rads-aug26/negative-declaration-reason', function (req
 
 router.post('/sfi-ads-and-rads-aug26/stop-complying-date', function (req, res) {
 
-  const day = req.body['passport-issued-day']
-  const month = req.body['passport-issued-month']
   const year = req.body['passport-issued-year']
 
-  if (!day && !month && !year) {
-    return res.render(
-      'sfi-ads-and-rads-aug26/stop-complying-date',
-      {
-        error: true
-      }
-    )
+  if (!year) {
+    return res.render('sfi-ads-and-rads-aug26/stop-complying-date', {
+      error: true
+    })
   }
 
   res.redirect('/sfi-ads-and-rads-aug26/actions-affected')
-
 })
 
 
