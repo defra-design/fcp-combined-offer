@@ -843,7 +843,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const parcelMaps = {
     "SO3757 3158": "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-14.png",
-    "SO3757 3159": "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-16.png"
+    "SO3757 3159": "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-17.png"
   };
 
   document.querySelectorAll('input[name="parcels"]').forEach(checkbox => {
@@ -854,11 +854,18 @@ document.addEventListener("DOMContentLoaded", function () {
       return;
     }
 
-    if (this.checked) {
-      mapImage.src = parcelMaps[this.value];
-    } else {
-      mapImage.src = defaultMap;
-    }
+    const parcel1 = document.querySelector('input[value="SO3757 3158"]');
+const parcel2 = document.querySelector('input[value="SO3757 3159"]');
+
+if (parcel1.checked && parcel2.checked) {
+  mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-16.png";
+} else if (parcel1.checked) {
+  mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-14.png";
+} else if (parcel2.checked) {
+  mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-17.png";
+} else {
+  mapImage.src = defaultMap;
+}
 
   });
 
@@ -870,18 +877,12 @@ document.addEventListener("DOMContentLoaded", function () {
 <script>
 document.addEventListener("DOMContentLoaded", function () {
 
-  const mapImage = document.getElementById("parcel-map");
-
   document.getElementById("parcel-area-1").addEventListener("click", function () {
 
     const checkbox = document.querySelector('input[value="SO3757 3158"]');
 
     checkbox.checked = !checkbox.checked;
     checkbox.dispatchEvent(new Event('change'));
-
-    mapImage.src = checkbox.checked
-      ? "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-14.png"
-      : "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-11.png";
 
   });
 
@@ -891,10 +892,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     checkbox.checked = !checkbox.checked;
     checkbox.dispatchEvent(new Event('change'));
-
-    mapImage.src = checkbox.checked
-      ? "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-16.png"
-      : "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-11.png";
 
   });
 
