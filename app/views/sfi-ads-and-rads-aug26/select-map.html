@@ -80,19 +80,38 @@
     
     <p class="govuk-body"><a href="select-land-list" class="govuk-link">Hide map</a></p>
   
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1010 880">
-      <image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/d5bf2d21ba9eace32fe5e632290540c479743fdc/app/views/e2e-mvp/img/map_1.png" alt="Map of your land" width="1010" height="880"></image>
+<svg version="1.1"
+     xmlns="http://www.w3.org/2000/svg"
+     xmlns:xlink="http://www.w3.org/1999/xlink"
+     viewBox="0 0 1010 880">
 
-      <a xlink:href="select-land-actions">
-        <rect class="parcel-hotspot" x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect></a>
+  <image
+    id="os-map-image"
+    xlink:href="/public/images/os-map.png"
+    width="1010"
+    height="880">
+  </image>
 
-    </svg>
+  <a xlink:href="apply-actions">
+    <rect
+      class="parcel-hotspot"
+      x="246"
+      y="597"
+      width="143"
+      height="141"
+      fill="#fff"
+      opacity="0">
+    </rect>
+  </a>
+
+</svg>
 
     <!-- Map key -->
+     <br><br>
     <p class="govuk-body">Key:</p>
        <div class="key-div govuk-!-margin-bottom-5">
-       <div class="key-parent" id="key8"></div><span class="govuk-body-s">Not applied</span>
-       <div class="key-parent" id="key2" ></div><span class="govuk-body-s">Applied</span>
+       <div class="key-parent" id="key8"></div><span class="govuk-body-s">Grid reference</span>
+       <div class="key-parent" id="key2" ></div><span class="govuk-body-s">Selected</span>
      </div>
      
  
@@ -106,22 +125,46 @@
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <input class="govuk-radios__input" id="SO3" name="land" type="radio" value="SO3">
         <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-          England
+          SO3
           <div id="account-number-hint" class="govuk-hint">
-         12 land parcels on 166.0000 hectares
+          9 land parcels on 89.0000 hectares          
       </div> 
         </label>
       </div>
 
+          <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="SX2" name="land" type="radio" value="SX2">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          SX2
+          <div id="account-number-hint" class="govuk-hint">
+        12 land parcels on 166.0000 hectares
+      </div> 
+        </label>
+      </div>
 
-      <form class="form" action="/sfi-ads-and-rads-aug26/apply-actions" method="post">
-        <input type="hidden" name="from" value="{{ data['from'] or query.from }}">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Save and continue
-          </button>
-        </form>
+<div style="display: flex; gap: 10px; align-items: flex-start;">
+
+
+  <form class="form" action="apply-actions" method="post">
+    <button type="submit"
+      class="govuk-button"
+      data-module="govuk-button">
+      Continue
+    </button>
+  </form>
+
+  <form class="form" action="/sfi-ads-and-rads-aug26/tasklist-2" method="post">
+    <button type="submit"
+      class="govuk-button govuk-button--secondary"
+      data-module="govuk-button">
+      Save and close
+    </button>
+  </form>
+
+</div>
 
 
     </div>      
@@ -130,6 +173,29 @@
 </div>
 
 
-  
+<script>
+document.addEventListener('DOMContentLoaded', function () {
 
+  const sx2 = document.getElementById('SX2');
+  const so3 = document.getElementById('SO3');
+  const mapImage = document.getElementById('os-map-image');
+
+  function updateMap() {
+    if (so3.checked) {
+      mapImage.setAttribute('href', '/public/images/os-map-3.png');
+    } else if (sx2.checked) {
+      mapImage.setAttribute('href', '/public/images/os-map-2.png');
+    } else {
+      mapImage.setAttribute('href', '/public/images/os-map.png');
+    }
+  }
+
+  so3.addEventListener('change', updateMap);
+  sx2.addEventListener('change', updateMap);
+
+  // Set the correct image on page load
+  updateMap();
+
+});
+</script>
 {% endblock %}
