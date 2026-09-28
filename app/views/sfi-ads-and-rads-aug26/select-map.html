@@ -76,7 +76,7 @@
 
     <h1 class="govuk-heading-l">Select land for your rotational actions</h1>
 
-    <p class='govuk-body'>Select a grid reference to will view land parcels and add actions to them.</p>
+    <p class='govuk-body'>Select a grid reference to will view land parcels and add or remove rotational actions from them.</p>
     
     <p class="govuk-body"><a href="select-land-list" class="govuk-link">Hide map</a></p>
   
@@ -95,15 +95,38 @@
        <div class="key-parent" id="key2" ></div><span class="govuk-body-s">Applied</span>
      </div>
      
-         <form class="form" action="/sfi-ads-and-rads-aug26/apply-actions" method="post">
+ 
+
+
+
+        <div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+    </legend>
+
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          England
+          <div id="account-number-hint" class="govuk-hint">
+         12 land parcels on 166.0000 hectares
+      </div> 
+        </label>
+      </div>
+
+
+      <form class="form" action="/sfi-ads-and-rads-aug26/apply-actions" method="post">
         <input type="hidden" name="from" value="{{ data['from'] or query.from }}">
           <button type="submit" class="govuk-button" data-module="govuk-button">
             Save and continue
           </button>
         </form>
 
-    </div>
+
+    </div>      
   </div>
+
 </div>
 
 
