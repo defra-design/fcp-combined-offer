@@ -760,7 +760,7 @@
 <!-- Map column -->
   <div class="govuk-grid-column-one-half">
     <div class="sticky-map">
-    <p class="govuk-body" style="text-align: center;"><a href="#" class="govuk-link">Hide map</a></p>
+    
   <map name="clickable">
         <area
   id="parcel-area-1"
@@ -857,7 +857,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const parcel1 = document.querySelector('input[value="SO3757 3158"]');
 const parcel2 = document.querySelector('input[value="SO3757 3159"]');
 
-if (parcel1.checked && parcel2.checked) {
+const selectAll = document.getElementById("select-all");
+
+if (selectAll.checked) {
+  mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-18.png";
+} else if (parcel1.checked && parcel2.checked) {
   mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-16.png";
 } else if (parcel1.checked) {
   mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-14.png";
@@ -870,6 +874,25 @@ if (parcel1.checked && parcel2.checked) {
   });
 
 });
+
+});
+</script>
+
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const selectAll = document.getElementById("select-all");
+  const mapImage = document.getElementById("parcel-map");
+
+  selectAll.addEventListener("change", function () {
+
+    if (this.checked) {
+      mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-18.png";
+    } else {
+      mapImage.src = "https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-11.png";
+    }
+
+  });
 
 });
 </script>
