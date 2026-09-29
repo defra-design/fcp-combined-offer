@@ -56,31 +56,86 @@
 
     <h1 class="govuk-heading-l">Review your rotational actions</h1>
 
-    <p class=='govuk-body'>Select the parcel you want to review your rotational actions on. If a parcel has no rotational actions applied, you may add or move actions to it.</p>
-    
-    <p class="govuk-body"><a href="select-land-list" class="govuk-link">Hide map</a></p>
-  
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1010 880">
-      <image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/60b3964fe985a4e6f7e5294384441fe8125e0aa1/app/views/sfi-ads-and-rads-aug26/img/map-10.png" alt="Map of your land" width="1010" height="880"></image>
+    <p class="govuk-body">
+      Select the parcel you want to review your rotational actions on. If a parcel has no rotational actions applied, you may add or move actions to it.
+    </p>
 
-      <a xlink:href="select-land-actions">
-        <rect class="parcel-hotspot" x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect></a>
+    <details class="govuk-details govuk-!-margin-bottom-6" data-module="govuk-details" open>
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+  Hide map
+</span>
+      </summary>
 
-    </svg>
+      <div class="govuk-details__text">
 
-    <!-- Map key -->
-    <p class="govuk-body">Key:</p>
-       <div class="key-div govuk-!-margin-bottom-5">
-       <div class="key-parent" id="key6"></div><span class="govuk-body-s">Not applied</span>
-       <div class="key-parent" id="key7" "></div><span class="govuk-body-s">Applied</span>
-     </div>
-     
+        <svg version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 1010 880">
+
+          <image
+            xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/60b3964fe985a4e6f7e5294384441fe8125e0aa1/app/views/sfi-ads-and-rads-aug26/img/map-10.png"
+            width="1010"
+            height="880">
+          </image>
+
+          <a xlink:href="select-land-actions">
+            <rect class="parcel-hotspot"
+              x="246"
+              y="597"
+              fill="#fff"
+              opacity="0"
+              width="143"
+              height="141">
+            </rect>
+          </a>
+
+        </svg>
+
+        <p class="govuk-body">Key:</p>
+
+        <div class="key-div govuk-!-margin-bottom-5">
+          <div class="key-parent" id="key6"></div>
+          <span class="govuk-body-s">Not applied</span>
+
+          <div class="key-parent" id="key7"></div>
+          <span class="govuk-body-s">Applied</span>
+        </div>
+
+      </div>
+    </details>
+
   </div>
 </div>
 
+<style>
+.govuk-details__summary::-webkit-details-marker {
+  display: none;
+}
+
+.govuk-details__summary::before {
+  content: none !important;
+  display: none !important;
+}
+
+.govuk-details__text {
+  border-left: none !important;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.govuk-details__summary {
+  padding-left: 0;
+}
+
+.govuk-details__summary-text {
+  margin-left: 0;
+}
+</style>
 
   <!-- LIST SECTION -->
-  <p class="govuk-body" style="text-align: left;"><a href="#" class="govuk-link">Hide list</a></p>
+  <p class="govuk-body" style="text-align: left;"><a href="" class="govuk-link">Hide list</a></p>
 
    <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -186,5 +241,35 @@
             Save and continue
           </button>
         </form>
-      
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const details = document.querySelector(".govuk-details");
+  const text = details.querySelector(".govuk-details__summary-text");
+
+  function updateText() {
+    text.textContent = details.open ? "Hide map" : "Show map";
+  }
+
+  details.addEventListener("toggle", updateText);
+  updateText();
+});
+</script>
+
+
 {% endblock %}
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const details = document.querySelector(".govuk-details");
+  const text = details.querySelector(".govuk-details__summary-text");
+
+  function updateText() {
+    text.textContent = details.open ? "Hide map" : "Show map";
+  }
+
+  details.addEventListener("toggle", updateText);
+  updateText();
+});
+</script>
