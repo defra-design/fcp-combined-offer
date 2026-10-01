@@ -61,7 +61,7 @@
             There is a problem
           </h2>
           <ul class="govuk-list govuk-error-summary__list">
-            <li>No land selected for actions</li>
+            <li><a href="#land-error">Select a grid reference to view land parcels and add actions to them.</a></li>
           </ul>
         </div>
       </div>
@@ -76,10 +76,13 @@
 
     <h1 class="govuk-heading-l">Select land for your rotational actions</h1>
 
-    <p class='govuk-body'>Select a grid reference to will view land parcels and add or remove rotational actions from them.</p>
+    <p class='govuk-body'>Select a grid reference to view land parcels and add or remove rotational actions from them.</p>
     
-    <p class="govuk-body"><a href="select-land-list" class="govuk-link">Hide map</a></p>
-  
+    <details class="govuk-details" data-module="govuk-details" data-show-text="Show map" data-hide-text="Hide map" open>
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">Hide map</span>
+      </summary>
+      <div class="govuk-details__text">
 <svg version="1.1"
      xmlns="http://www.w3.org/2000/svg"
      xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -113,20 +116,53 @@
        <div class="key-parent" id="key8"></div><span class="govuk-body-s">Grid reference</span>
        <div class="key-parent" id="key2" ></div><span class="govuk-body-s">Selected</span>
      </div>
-     
+      </div>
+    </details>
+
+<style>
+.govuk-details__summary::-webkit-details-marker {
+  display: none;
+}
+
+.govuk-details__summary::before {
+  content: none !important;
+  display: none !important;
+}
+
+.govuk-details__text {
+  border-left: none !important;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.govuk-details__summary {
+  padding-left: 0;
+}
+
+.govuk-details__summary-text {
+  margin-left: 0;
+}
+</style>
  
 
 
 
-        <div class="govuk-form-group">
-  <fieldset class="govuk-fieldset">
-    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-    </legend>
+<form id="select-map-form" class="form" action="/sfi-ads-and-rads-aug26/select-map" method="post">
+<div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+  <fieldset class="govuk-fieldset" {% if error %}aria-describedby="land-error"{% endif %}>
+    <legend class="govuk-fieldset__legend govuk-visually-hidden">Select a grid reference</legend>
+
+    {% if error %}
+      <p id="land-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span>
+        Select a grid reference to view land parcels and add actions to them.
+      </p>
+    {% endif %}
 
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="SO3" name="land" type="radio" value="SO3">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+        <input class="govuk-radios__input" id="SO3" name="land" type="radio" value="SO3" {% if data.land == 'SO3' %}checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="SO3">
           SO3
           <div id="account-number-hint" class="govuk-hint">
           9 land parcels on 89.0000 hectares          
@@ -134,27 +170,27 @@
         </label>
       </div>
 
-          <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="SX2" name="land" type="radio" value="SX2">
-        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+        <input class="govuk-radios__input" id="SX2" name="land" type="radio" value="SX2" {% if data.land == 'SX2' %}checked{% endif %}>
+        <label class="govuk-label govuk-radios__label" for="SX2">
           SX2
           <div id="account-number-hint" class="govuk-hint">
         12 land parcels on 166.0000 hectares
       </div> 
         </label>
       </div>
+    </div>
+  </fieldset>
+  </div>
+</form>
 
 <div style="display: flex; gap: 10px; align-items: flex-start;">
 
-
-  <form class="form" action="apply-actions" method="post">
-    <button type="submit"
+    <button type="submit" form="select-map-form"
       class="govuk-button"
       data-module="govuk-button">
       Continue
     </button>
-  </form>
 
   <form class="form" action="/sfi-ads-and-rads-aug26/tasklist-2" method="post">
     <button type="submit"
@@ -167,14 +203,22 @@
 </div>
 
 
-    </div>      
-  </div>
-
-</div>
-
-
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  document.querySelectorAll('.govuk-details').forEach(function (details) {
+    const text = details.querySelector('.govuk-details__summary-text');
+    const showText = details.dataset.showText || 'Show';
+    const hideText = details.dataset.hideText || 'Hide';
+
+    function update() {
+      text.textContent = details.open ? hideText : showText;
+      details.classList.toggle('govuk-!-margin-bottom-0', details.open);
+      details.classList.toggle('govuk-!-margin-bottom-4', !details.open);
+    }
+
+    details.addEventListener('toggle', update);
+    update();
+  });
 
   const sx2 = document.getElementById('SX2');
   const so3 = document.getElementById('SO3');
