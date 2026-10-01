@@ -1186,13 +1186,39 @@ router.post('/capital-claims-feb26/submit-claim', function (req, res) {
 })
 
 // SFI ads and rads aug26 routing
+function normalizeOptionalSelections(value) {
+  return (Array.isArray(value) ? value : [value])
+    .filter(Boolean)
+    .flatMap(selection => String(selection).split(','))
+    .map(selection => selection.trim())
+    .filter(selection => selection && selection !== '_unchecked')
+}
+
+router.get('/sfi-ads-and-rads-aug26/check-your-answers-COC', function (req, res) {
+  req.session.data.actions = normalizeOptionalSelections(req.session.data.actions)
+  req.session.data.parcels = normalizeOptionalSelections(req.session.data.parcels)
+
+  if (req.session.data.agreementName === '_unchecked') {
+    req.session.data.agreementName = ''
+  }
+
+  res.render('sfi-ads-and-rads-aug26/check-your-answers-COC', {
+    data: req.session.data
+  })
+})
+
 router.post('/sfi-ads-and-rads-aug26/annual-declaration', function (req, res) {
   const answer = req.body.annualDeclarationAnswer
+  req.session.data.annualDeclarationAnswer = answer
 
   if (!answer) {
     return res.render('sfi-ads-and-rads-aug26/annual-declaration', {
       error: true
     })
+  }
+
+  if (req.query.returnToCya === 'true') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
   }
 
   if (answer === 'yes') {
@@ -1283,50 +1309,20 @@ router.post('/sfi-ads-and-rads-aug26/stop-complying', function (req, res) {
   res.redirect('/sfi-ads-and-rads-aug26/rotational-confirmation');
 });
 
-// NEGATIVE DECLARATIONS ERROR 
-
-// NEGATIVE DECLARATIONS ERROR
-router.post('/sfi-ads-and-rads-aug26/negative-declaration-reason', function (req, res) {
-  const reason = req.body.negativeDeclarationReason
-  const otherReason = req.body.otherReason
-
-  // No radio selected
-  if (!reason) {
-    return res.render(
-      'sfi-ads-and-rads-aug26/negative-declaration-reason',
-      {
-        error: true,
-        selectedReason: reason,
-        otherReason: otherReason
-      }
-    )
-  }
-
-  // "Other" selected but no text entered
-  if (reason === 'other' && !otherReason?.trim()) {
-    return res.render(
-      'sfi-ads-and-rads-aug26/negative-declaration-reason',
-      {
-        otherError: true,
-        selectedReason: reason,
-        otherReason: otherReason
-      }
-    )
-  }
-
-  res.redirect('/sfi-ads-and-rads-aug26/stop-complying-date')
-})
-
-
-
   // STOP COMPLYING DATE
 
 
 
 
 router.post('/sfi-ads-and-rads-aug26/stop-complying-date', function (req, res) {
-
+  const day = req.body['passport-issued-day']
+  const month = req.body['passport-issued-month']
   const year = req.body['passport-issued-year']
+  const monthNames = ['', 'January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+
+  req.session.data['passport-issued-day'] = day
+  req.session.data['passport-issued-month'] = month
+  req.session.data['passport-issued-year'] = year
 
   if (!year) {
     return res.render('sfi-ads-and-rads-aug26/stop-complying-date', {
@@ -1334,23 +1330,34 @@ router.post('/sfi-ads-and-rads-aug26/stop-complying-date', function (req, res) {
     })
   }
 
+  const dateParts = []
+  if (day) dateParts.push(day)
+  if (month) dateParts.push(monthNames[Number(month)] || month)
+  dateParts.push(year)
+  req.session.data.stopComplyingDate = dateParts.join(' ')
+
+  if (req.query.returnToCya === 'true') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
+  }
+
   res.redirect('/sfi-ads-and-rads-aug26/actions-affected')
 })
 
 
 router.post('/sfi-ads-and-rads-aug26/actions-affected', function (req, res) {
-
-  const selectedActions = req.body.actions
+  const actions = normalizeOptionalSelections(req.body.actions)
+  req.session.data.actions = actions
 
   // Nothing selected
-  if (!selectedActions) {
+  if (!actions.length && req.query.returnToCya !== 'true') {
     return res.render('sfi-ads-and-rads-aug26/actions-affected', {
       error: true
     })
   }
 
-  // Save selected actions to session
-  req.session.data.actions = selectedActions
+  if (req.query.returnToCya === 'true') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
+  }
 
   // Next page
   res.redirect('/sfi-ads-and-rads-aug26/parcels-affected')
@@ -1359,11 +1366,11 @@ router.post('/sfi-ads-and-rads-aug26/actions-affected', function (req, res) {
 
 
 router.post('/sfi-ads-and-rads-aug26/parcels-affected', function (req, res) {
+  req.session.data.parcels = normalizeOptionalSelections(req.body.parcels)
 
-  const selectedParcels = req.body.parcels
-
-  // Save if any were selected
-  req.session.data.parcels = selectedParcels
+  if (req.query.returnToCya === 'true') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
+  }
 
   res.redirect('/sfi-ads-and-rads-aug26/additional-info')
 
@@ -1371,33 +1378,31 @@ router.post('/sfi-ads-and-rads-aug26/parcels-affected', function (req, res) {
 
 
 router.post('/sfi-ads-and-rads-aug26/additional-info', function (req, res) {
+  const additionalInfo = req.body.agreementName
+  req.session.data.agreementName =
+    additionalInfo && additionalInfo.trim() !== '_unchecked'
+      ? additionalInfo.trim()
+      : ''
 
-  req.session.data.parcels = req.body.parcels
+  if (req.query.returnToCya === 'true') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
+  }
 
   res.redirect('/sfi-ads-and-rads-aug26/file-upload')
 
 })
 
 router.post('/sfi-ads-and-rads-aug26/file-upload', function (req, res) {
-
-  req.session.data.parcels = req.body.parcels
-
   res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
 
 })
 
 router.post('/sfi-ads-and-rads-aug26/check-your-answers-COC', function (req, res) {
-
-  req.session.data.parcels = req.body.parcels
-
   res.redirect('/sfi-ads-and-rads-aug26/reason-submitted')
 
 })
 
 router.post('/sfi-ads-and-rads-aug26/reason-submitted', function (req, res) {
-
-  req.session.data.parcels = req.body.parcels
-
   res.redirect('/sfi-ads-and-rads-aug26/reason-submitted')
 
 })
@@ -1427,6 +1432,43 @@ router.post('/sfi-ads-and-rads-aug26/changes-to-actions', function (req, res) {
 
   }
 
+})
+
+
+router.post('/sfi-ads-and-rads-aug26/negative-declaration-reason', function (req, res) {
+  const reason = req.body.negativeDeclarationReason
+  const otherReason = req.body.otherReason
+
+  req.session.data.negativeDeclarationReason = reason
+  req.session.data.otherReason = otherReason
+
+  if (!reason) {
+    return res.render(
+      'sfi-ads-and-rads-aug26/negative-declaration-reason',
+      {
+        error: true,
+        selectedReason: reason,
+        otherReason: otherReason
+      }
+    )
+  }
+
+  if (reason === 'other' && !otherReason?.trim()) {
+    return res.render(
+      'sfi-ads-and-rads-aug26/negative-declaration-reason',
+      {
+        otherError: true,
+        selectedReason: reason,
+        otherReason: otherReason
+      }
+    )
+  }
+
+  if (req.query.returnToCya === 'true') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
+  }
+
+  res.redirect('/sfi-ads-and-rads-aug26/stop-complying-date')
 })
 
 

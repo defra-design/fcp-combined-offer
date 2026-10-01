@@ -87,7 +87,7 @@
 
 <h1 class="govuk-heading-l">Is there anything else you would like to tell us? (Optional)</h1>
 
-    <form class="form" action="additional-info" method="post" id="agreementForm" novalidate>
+    <form class="form" method="post" id="agreementForm" novalidate>
       <input type="hidden" name="from" value="{{ data['from'] or query.from }}">
 
 
@@ -109,7 +109,7 @@
     name="agreementName"
     rows="5"
     spellcheck="false"
-    aria-describedby="agreement-help"></textarea>
+    aria-describedby="agreement-help">{{ data.agreementName }}</textarea>
 
   
 </div>
