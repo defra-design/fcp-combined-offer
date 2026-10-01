@@ -107,10 +107,10 @@
           Are you complying with the obligations in your agreement for the relevant agreement year?
         </dt>
         <dd class="govuk-summary-list__value">
-          No
+          {% if data.annualDeclarationAnswer == "yes" %}Yes{% else %}No{% endif %}
         </dd>
        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/annual-declaration?">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/annual-declaration?returnToCya=true">Change<span class="govuk-visually-hidden"> answer</span></a>
         </dd>
       </div>
 
@@ -119,10 +119,25 @@
          Why are you not complying with the obligations?
         </dt>
         <dd class="govuk-summary-list__value">
-          Other - Personal injury
-        </dd>
+
+{% if data.negativeDeclarationReason == "sale-of-land" %}
+  Sale of land
+
+{% elseif data.negativeDeclarationReason == "extreme-weather" %}
+  Extreme weather
+
+{% elseif data.negativeDeclarationReason == "change-of-land-use" %}
+  Change of land use
+
+{% elseif data.negativeDeclarationReason == "other" %}
+  Other{% if data.otherReason %} - {{ data.otherReason }}{% endif %}
+
+{% endif %}
+
+</dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/negative-declaration-reason">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+          <a class="govuk-link"
+   href="/sfi-ads-and-rads-aug26/negative-declaration-reason?returnToCya=true">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
         </dd>
       </div>
 
@@ -132,10 +147,10 @@
           When did you stop complying? 
         </dt>
         <dd class="govuk-summary-list__value">
-          12 January 2026
+          {{ data.stopComplyingDate or 'Not provided' }}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/stop-complying-date">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/stop-complying-date?returnToCya=true">Change<span class="govuk-visually-hidden"> answer</span></a>
         </dd>
       </div>
 
@@ -144,10 +159,10 @@
           Which actions in your agreement have been affected? (Optional)
         </dt>
         <dd class="govuk-summary-list__value">
-          AGF1, CAHL2
+          {% if data.actions | length %}{{ data.actions | join(', ') }}{% else %}None selected{% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/actions-affected">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/actions-affected?returnToCya=true">Change<span class="govuk-visually-hidden"> answer</span></a>
         </dd>
       </div>
 
@@ -156,10 +171,10 @@
           Which of your land parcels have been affected? (Optional)
         </dt>
         <dd class="govuk-summary-list__value">
-          SO3757 3158, SO3757 3159
+          {% if data.parcels | length %}{{ data.parcels | join(', ') }}{% else %}None selected{% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/parcels-affected">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/parcels-affected?returnToCya=true">Change<span class="govuk-visually-hidden"> answer</span></a>
         </dd>
       </div>
 
@@ -168,10 +183,10 @@
           Is there anything else you would like to tell us? (Optional)
         </dt>
         <dd class="govuk-summary-list__value">
-          Most of the agreement is still being upheld, it has just impacted a small amount of land and one action
+          {% if data.agreementName and data.agreementName != '_unchecked' %}{{ data.agreementName }}{% else %}No additional information provided{% endif %}
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/additional-info">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/additional-info?returnToCya=true">Change<span class="govuk-visually-hidden"> answer</span></a>
         </dd>
       </div>
 

@@ -68,7 +68,7 @@
 <div class="govuk-grid-column-two-thirds">
   
 
-  <form class="form" action="/sfi-ads-and-rads-aug26/actions-affected" method="post">
+  <form class="form" method="post" data-saved-actions="{{ data.actions }}">
 <h1 class="govuk-heading-l">Which actions in your agreement have been affected? (Optional)</h1>
 
   <div class="govuk-checkboxes__item govuk-!-margin-bottom-2">
@@ -341,13 +341,20 @@ document.addEventListener("DOMContentLoaded", function () {
     'input[name="actions"]'
   );
   const selectedCount = document.getElementById('selected-count');
+  const savedActions = document.querySelector('form[data-saved-actions]').dataset.savedActions.split(',').filter(Boolean);
+
+  actionCheckboxes.forEach(checkbox => {
+    checkbox.checked = savedActions.includes(checkbox.value);
+  });
 
   function updateSelectedCount() {
     const checked = document.querySelectorAll(
-      'input[name="actions"\]:checked'
+      'input[name="actions"]:checked'
     );
 
-    selectedCount.textContent = checked.length;
+    if (selectedCount) {
+      selectedCount.textContent = checked.length;
+    }
 
     selectAll.checked =
       checked.length === actionCheckboxes.length &&

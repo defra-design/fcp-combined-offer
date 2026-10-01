@@ -75,7 +75,7 @@
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 
-<form class="form" action="/sfi-ads-and-rads-aug26/annual-declaration" method="post">
+<form class="form" method="post">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
@@ -99,7 +99,8 @@
                       id="annualDeclarationAnswer-yes"
                       name="annualDeclarationAnswer"
                       type="radio"
-                      value="yes">
+                      value="yes"
+                      {% if data.annualDeclarationAnswer == 'yes' %}checked{% endif %}>
                 <label class="govuk-label govuk-radios__label" for="annualDeclarationAnswer-yes">
                   Yes
                 </label>
@@ -109,7 +110,8 @@
                       id="annualDeclarationAnswer-no"
                       name="annualDeclarationAnswer"
                       type="radio"
-                      value="no">
+                      value="no"
+                      {% if data.annualDeclarationAnswer == 'no' %}checked{% endif %}>
                 <label class="govuk-label govuk-radios__label" for="annualDeclarationAnswer-no">
                   No
                 </label>

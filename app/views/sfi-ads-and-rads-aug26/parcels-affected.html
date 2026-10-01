@@ -72,7 +72,7 @@
     <!-- Checkbox column -->
 <div class="govuk-grid-column-one-half">
 
-<form class="form" action="/sfi-ads-and-rads-aug26/parcels-affected" method="post">
+<form class="form" method="post" data-saved-parcels="{{ data.parcels }}">
 
   <div class="govuk-checkboxes__item govuk-!-margin-bottom-2">
     <input
@@ -804,13 +804,18 @@ document.addEventListener("DOMContentLoaded", function () {
   'input[name="parcels"]'
 );
   const selectedCount = document.getElementById('selected-count');
+  const savedParcels = document.querySelector('form[data-saved-parcels]').dataset.savedParcels.split(',').filter(Boolean);
+
+  actionCheckboxes.forEach(checkbox => {
+    checkbox.checked = savedParcels.includes(checkbox.value);
+  });
 
   function updateSelectedCount() {
-    const actionCheckboxes = document.querySelectorAll(
-  'input[name="parcels"]'
-);
+    const checked = document.querySelectorAll('input[name="parcels"]:checked');
 
-    selectedCount.textContent = checked.length;
+    if (selectedCount) {
+      selectedCount.textContent = checked.length;
+    }
 
     selectAll.checked =
       checked.length === actionCheckboxes.length &&
