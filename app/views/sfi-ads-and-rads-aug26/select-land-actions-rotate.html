@@ -140,7 +140,7 @@
   <td class="govuk-table__cell">
     <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
-        <input class="govuk-input govuk-input--width-5" id="cipm3-quantity" name="cipm3-quantity" type="text" value="20.0000" spellcheck="false">
+        <input class="govuk-input govuk-input--width-5" id="cipm3-quantity" name="cipm3-quantity" type="text" value="{{ '10.0000' if data.from == 'check-answers' else '20.0000' }}" spellcheck="false">
         <div class="govuk-input__suffix" aria-hidden="true">ha</div>
       </div>
     </div>
@@ -150,7 +150,7 @@
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="cahl2" name="cahl2" type="checkbox" checked>
+      <input class="govuk-checkboxes__input" id="cahl2" name="cahl2" type="checkbox" {% if data.from == 'check-answers' %}unchecked{% else %}checked{% endif %}>
       <label class="govuk-label govuk-checkboxes__label" for="cahl2"></label>
     </div>
   </th>
@@ -159,7 +159,7 @@
   <td class="govuk-table__cell">
     <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
-        <input class="govuk-input govuk-input--width-5" id="cahl2-quantity" name="cahl2-quantity" type="text" value="10.0000" spellcheck="false">
+        <input class="govuk-input govuk-input--width-5" id="cahl2-quantity" name="cahl2-quantity" type="text" value="{{ '' if data.from == 'check-answers' else '10.0000' }}" spellcheck="false">
         <div class="govuk-input__suffix" aria-hidden="true">ha</div>
       </div>
     </div>
@@ -168,7 +168,7 @@
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="prf1" name="prf1" type="checkbox"> 
+          <input class="govuk-checkboxes__input" id="prf1" name="prf1" type="checkbox" {% if data.from == 'check-answers' %}checked{% endif %}> 
           <label class="govuk-label govuk-checkboxes__label" for="waste">
           </label>
           </div>
@@ -179,7 +179,7 @@
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
           <div class="govuk-input__wrapper">
-          <input class="govuk-input govuk-input--width-5" id="prf1-quantity" name="prf1-quantity" type="text" spellcheck="false">
+          <input class="govuk-input govuk-input--width-5" id="prf1-quantity" name="prf1-quantity" type="text" value="{{ '20.0000' if data.from == 'check-answers' else '' }}" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">ha</div>
           </div>
           </div></td>
@@ -188,7 +188,8 @@
       </tbody>
   </table>
 
-<form class="form" action="apply-actions" method="post">
+<form class="form" action="{{ 'check-your-answers' if data.from == 'check-answers' else 'apply-actions' }}" method="post">
+  <input type="hidden" name="sfiAug26Parcel3159Applied" value="true">
   <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
 </form>
 
@@ -199,7 +200,7 @@ document.getElementById('cipm3').addEventListener('change', function () {
   const quantity = document.getElementById('cipm3-quantity');
 
   if (this.checked) {
-    quantity.value = '20.0000';
+    quantity.value = '{{ "10.0000" if data.from == "check-answers" else "20.0000" }}';
   } else {
     quantity.value = '';
   }
@@ -219,7 +220,7 @@ document.getElementById('prf1').addEventListener('change', function () {
   const quantity = document.getElementById('prf1-quantity');
 
   if (this.checked) {
-    quantity.value = '30.0000';
+    quantity.value = '{{ "20.0000" if data.from == "check-answers" else "30.0000" }}';
   } else {
     quantity.value = '';
   }

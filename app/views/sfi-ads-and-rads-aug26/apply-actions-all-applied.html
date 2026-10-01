@@ -56,27 +56,68 @@
 
     <h1 class="govuk-heading-l">Review your rotational actions</h1>
 
-    <p class=='govuk-body'>Select the parcel you want to review your rotational actions on. If a parcel has no rotational actions applied, you may add or move actions to it.</p>
-    
-    <p class="govuk-body"><a href="select-land-list" class="govuk-link">Hide map</a></p>
-  
-    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1010 880">
-      <image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-11.png" alt="Map of your land" width="1010" height="880"></image>
+    <p class="govuk-body">
+      Select the parcel you want to review your rotational actions on. If a parcel has no rotational actions applied, you may add or move actions to it.
+    </p>
 
-      <a xlink:href="select-land-actions">
-        <rect class="parcel-hotspot" x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect></a>
+    <details class="govuk-details" data-module="govuk-details" data-show-text="Show map" data-hide-text="Hide map" open>
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+  Hide map
+</span>
+      </summary>
 
-    </svg>
+      <div class="govuk-details__text">
 
-    <!-- Map key -->
-    <p class="govuk-body">Key:</p>
-       <div class="key-div govuk-!-margin-bottom-2">
-       <div class="key-parent" id="key6"></div><span class="govuk-body-s">Not applied</span>
-       <div class="key-parent" id="key7" "></div><span class="govuk-body-s">Applied</span>
-     </div>
-     
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1010 880">
+          <image xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/map-11.png" alt="Map of your land" width="1010" height="880"></image>
+
+          <a xlink:href="select-land-actions">
+            <rect class="parcel-hotspot" x="246" y="597" fill="#fff" opacity="0" width="143" height="141"></rect></a>
+
+        </svg>
+
+        <p class="govuk-body">Key:</p>
+        <div class="key-div govuk-!-margin-bottom-2">
+          <div class="key-parent" id="key6"></div><span class="govuk-body-s">Not applied</span>
+          <div class="key-parent" id="key7" "></div><span class="govuk-body-s">Applied</span>
+        </div>
+
+      </div>
+    </details>
+
   </div>
 </div>
+
+<style>
+.govuk-details__summary::-webkit-details-marker {
+  display: none;
+}
+
+.govuk-details__summary::before {
+  content: none !important;
+  display: none !important;
+}
+
+.govuk-details__text {
+  border-left: none !important;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+.govuk-details__summary {
+  padding-left: 0;
+}
+
+.govuk-details__summary-text {
+  margin-left: 0;
+}
+
+/* empty caption above used to reserve space without text; set gap explicitly instead */
+details[data-hide-text="Hide list"] > .govuk-details__text {
+  padding-top: 10px;
+}
+</style>
 
 
   <!-- LIST SECTION -->
@@ -84,8 +125,16 @@
 
    <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+
+      <details class="govuk-details" data-module="govuk-details" data-show-text="Show list" data-hide-text="Hide list" open>
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+Hide list
+</span>
+        </summary>
+        <div class="govuk-details__text">
+
       <table class="govuk-table govuk-table--small-text-until-tablet">
-        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Parcel Reference</th>
@@ -181,10 +230,34 @@
         </tbody>
       </table>
 
+        </div>
+      </details>
+
 <form class="form" action="select-map" method="post">
           <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
             Save and continue
           </button>
         </form>
-      
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll(".govuk-details").forEach(function (details) {
+    const text = details.querySelector(".govuk-details__summary-text");
+    const showText = details.dataset.showText || "Show";
+    const hideText = details.dataset.hideText || "Hide";
+
+    function update() {
+      text.textContent = details.open ? hideText : showText;
+      // open: 15px gap above content (spacing-3), closed: 20px gap between summaries (spacing-4)
+      details.classList.toggle("govuk-!-margin-bottom-3", details.open);
+      details.classList.toggle("govuk-!-margin-bottom-4", !details.open);
+    }
+
+    details.addEventListener("toggle", update);
+    update();
+  });
+});
+</script>
+
 {% endblock %}

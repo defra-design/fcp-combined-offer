@@ -2,6 +2,9 @@ module.exports = {
 
   // Insert values here
 
+  // Scenario testing - which screen "Smith Farm SFI26" links to from applications-and-agreements
+  "sfi26NextScreen": "dashboard-new",
+
   // Type
   "type-1": "Parcel level",
   "type-2": "Agreement level",

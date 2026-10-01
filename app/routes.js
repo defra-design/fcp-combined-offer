@@ -147,6 +147,20 @@ router.post("/declarations/submit-rotational-declaration-2", function (req, res)
 
 // SFI 26 TESTING
 
+router.post('/sfi-ads-and-rads-aug26/select-map', function (req, res) {
+  const land = req.body.land
+
+  if (!land) {
+    return res.status(400).render('sfi-ads-and-rads-aug26/select-map', {
+      error: true,
+      data: { land }
+    })
+  }
+
+  req.session.data.land = land
+  return res.redirect('/sfi-ads-and-rads-aug26/apply-actions')
+})
+
 router.get('/sfi-26-testing/select-map', function (req, res) {
 
   // Reset every time user FIRST lands on page
@@ -1415,12 +1429,17 @@ router.post('/check-your-answers', function (req, res) {
 router.post('/sfi-ads-and-rads-aug26/changes-to-actions', function (req, res) {
 
   const actions = req.body.actions
+  const from = req.body.from
 
   if (!actions) {
 
     res.render('sfi-ads-and-rads-aug26/changes-to-actions', {
       error: true
     })
+
+  } else if (from === 'check-answers') {
+
+    res.redirect('/sfi-ads-and-rads-aug26/check-your-answers')
 
   } else if (actions === 'no') {
 

@@ -60,7 +60,7 @@
       Select the parcel you want to review your rotational actions on. If a parcel has no rotational actions applied, you may add or move actions to it.
     </p>
 
-    <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details" open>
+    <details class="govuk-details" data-module="govuk-details" data-show-text="Show map" data-hide-text="Hide map" open>
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">
   Hide map
@@ -106,7 +106,7 @@
 
         <p class="govuk-body">Key:</p>
 
-        <div class="key-div govuk-!-margin-bottom-0">
+        <div class="key-div govuk-!-margin-bottom-5">
           <div class="key-parent" id="key6"></div>
           <span class="govuk-body-s">Not applied</span>
 
@@ -143,15 +143,29 @@
 .govuk-details__summary-text {
   margin-left: 0;
 }
+
+/* empty caption above used to reserve space without text; set gap explicitly instead */
+details[data-hide-text="Hide list"] > .govuk-details__text {
+  padding-top: 10px;
+}
 </style>
+
 
   <!-- LIST SECTION -->
 
 
    <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+
+      <details class="govuk-details" data-module="govuk-details" data-show-text="Show list" data-hide-text="Hide list" open>
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+Hide list
+</span>
+        </summary>
+        <div class="govuk-details__text">
+
       <table class="govuk-table govuk-table--small-text-until-tablet">
-        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Parcel Reference</th>
@@ -163,49 +177,49 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" class="govuk-table__cell"><a class="govuk-link" href="/sfi-ads-and-rads-aug26/select-land-actions">SO3757 3158</a></td>
             <td class="govuk-table__cell">16.0000 ha</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--yellow">Not applied</strong>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--{{ 'green' if data.sfiAug26Parcel3158Applied == 'true' else 'yellow' }}">{{ 'Applied' if data.sfiAug26Parcel3158Applied == 'true' else 'Not applied' }}</strong>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" class="govuk-table__cell"><a class="govuk-link" href="/sfi-ads-and-rads-aug26/select-land-actions-rotate">SO3757 3159</a></td>
             <td class="govuk-table__cell">30.0000 ha</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Applied</strong>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--{{ 'green' if data.sfiAug26Parcel3159Applied == 'true' else 'yellow' }}">{{ 'Applied' if data.sfiAug26Parcel3159Applied == 'true' else 'Not applied' }}</strong>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" class="govuk-table__cell"><a class="govuk-link" href="#">SO3757 3160</a></td>
             <td class="govuk-table__cell">10.0000 ha</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Applied</strong>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--yellow">Not applied</strong>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" class="govuk-table__cell"><a class="govuk-link" href="#">SO3757 3161</a></td>
             <td class="govuk-table__cell">10.0000 ha</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Applied</strong>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--yellow">Not applied</strong>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" class="govuk-table__cell"><a class="govuk-link" href="#">SO3757 3162</a></td>
             <td class="govuk-table__cell">10.0000 ha</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Applied</strong>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--yellow">Not applied</strong>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" class="govuk-table__cell"><a class="govuk-link" href="#">SO3757 3163</a></td>
             <td class="govuk-table__cell">10.0000 ha</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Applied</strong>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--yellow">Not applied</strong>
             </td>
           </tr>
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell" class="govuk-table__cell"><a class="govuk-link" href="#">SO3757 3164</a></td>
             <td class="govuk-table__cell">10.0000 ha</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--green">Applied</strong>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><strong class="govuk-tag govuk-tag--yellow">Not applied</strong>
             </td>
           </tr>
 
@@ -247,7 +261,10 @@
         </tbody>
       </table>
 
-<form class="form" action="tasklist-2" method="post">
+        </div>
+      </details>
+
+<form class="form" action="select-map" method="post">
           <button type="submit" class="govuk-button govuk-button--primary" data-module="govuk-button">
             Save and continue
           </button>
@@ -256,31 +273,25 @@
 
 <script>
 document.addEventListener("DOMContentLoaded", function () {
-  const details = document.querySelector(".govuk-details");
-  const text = details.querySelector(".govuk-details__summary-text");
+  document.querySelectorAll(".govuk-details").forEach(function (details) {
+    const text = details.querySelector(".govuk-details__summary-text");
+    const showText = details.dataset.showText || "Show";
+    const hideText = details.dataset.hideText || "Hide";
 
-  function updateText() {
-    text.textContent = details.open ? "Hide map" : "Show map";
-  }
+    function update() {
+      text.textContent = details.open ? hideText : showText;
+      // open: 15px gap above content (spacing-3), closed: 20px gap between summaries (spacing-4)
+      details.classList.toggle("govuk-!-margin-bottom-0", details.open);
+      details.classList.toggle("govuk-!-margin-bottom-4", !details.open);
+    }
 
-  details.addEventListener("toggle", updateText);
-  updateText();
+    details.addEventListener("toggle", update);
+    update();
+  });
 });
 </script>
 
 
 {% endblock %}
 
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-  const details = document.querySelector(".govuk-details");
-  const text = details.querySelector(".govuk-details__summary-text");
 
-  function updateText() {
-    text.textContent = details.open ? "Hide map" : "Show map";
-  }
-
-  details.addEventListener("toggle", updateText);
-  updateText();
-});
-</script>
