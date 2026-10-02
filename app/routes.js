@@ -147,14 +147,22 @@ router.post("/declarations/submit-rotational-declaration-2", function (req, res)
 
 // SFI 26 TESTING
 
+router.get('/sfi-ads-and-rads-aug26/select-map', function (req, res) {
+  const error = req.session.data.selectMapError
+  delete req.session.data.selectMapError
+
+  res.render('sfi-ads-and-rads-aug26/select-map', {
+    error,
+    data: req.session.data
+  })
+})
+
 router.post('/sfi-ads-and-rads-aug26/select-map', function (req, res) {
   const land = req.body.land
 
   if (!land) {
-    return res.status(400).render('sfi-ads-and-rads-aug26/select-map', {
-      error: true,
-      data: { land }
-    })
+    req.session.data.selectMapError = true
+    return res.redirect('/sfi-ads-and-rads-aug26/select-map')
   }
 
   req.session.data.land = land
