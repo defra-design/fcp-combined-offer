@@ -204,6 +204,12 @@
 
 
 <script>
+window.addEventListener('pageshow', function (event) {
+  if (event.persisted) {
+    window.location.reload()
+  }
+})
+
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.govuk-details').forEach(function (details) {
     const text = details.querySelector('.govuk-details__summary-text');
