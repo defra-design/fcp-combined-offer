@@ -89,28 +89,43 @@
   Upload evidence (optional)
 </h1>
 
-<form class="form" action="/sfi-ads-and-rads-aug26/file-upload" method="post">
+<form class="form" action="/sfi-ads-and-rads-aug26/file-upload" method="post" enctype="multipart/form-data">
 
   <input
     type="hidden"
     name="from"
     value="{{ data['from'] or query.from }}">
 
-  <div class="govuk-form-group">
+  {% if replaceFileId %}
+    <input type="hidden" id="replace-file-id" name="replaceFileId" value="{{ replaceFileId }}">
+  {% endif %}
 
-   
+  <p class="govuk-hint govuk-!-margin-bottom-4">
+    Upload scanned copies or photos of receipts or other relevant documents. Do not include any medical evidence. Each file must be smaller than 100MB.
+  </p>
 
-    <div class="govuk-hint">
-      Upload scanned copies or photos of receipts or other relevant documents. Do not include any medical evidence. Each file must be smaller than 100MB.
+  <section id="uploaded-files" class="uploaded-files" aria-labelledby="uploaded-files-heading" {% if not uploadedFiles or uploadedFiles.length == 0 %}hidden{% endif %}>
+    <h2 id="uploaded-files-heading" class="govuk-heading-m">Files added</h2>
+    <div id="uploaded-files-list" class="uploaded-files-list" aria-live="polite">
+      {% for file in uploadedFiles %}
+        <div class="uploaded-file" data-file-id="{{ file.id }}">
+          <p class="uploaded-file__status"><span class="uploaded-file__check" aria-hidden="true"></span><span>{{ file.name }} uploaded successfully</span></p>
+          <button type="submit" class="govuk-button govuk-button--secondary uploaded-file__delete" name="delete" value="{{ file.id }}">Delete<span class="govuk-visually-hidden"> {{ file.name }}</span></button>
+        </div>
+      {% endfor %}
     </div>
+  </section>
 
-    <input
-      class="govuk-file-upload"
-      id="supporting-file"
-      name="supportingFile"
-      type="file">
-
+  <div class="govuk-form-group">
+    <label class="govuk-label govuk-label--m" for="supporting-files">Upload a file</label>
+    <div id="file-drop-zone" class="file-drop-zone">
+      <input class="govuk-file-upload file-drop-zone__input" id="supporting-files" name="supportingFiles" type="file" multiple aria-describedby="file-drop-hint">
+      <span id="file-drop-hint" class="govuk-body file-drop-zone__hint">Drag and drop files here or</span>
+      <label class="govuk-button govuk-button--secondary file-drop-zone__button" for="supporting-files">Upload files</label>
+    </div>
   </div>
+
+  <button type="submit" name="upload" value="true" class="govuk-button govuk-button--secondary upload-fallback-button">Upload files</button>
 
   <button
     type="submit"
@@ -121,9 +136,223 @@
 
 </form>
 
+<style>
+  .uploaded-files {
+    margin-bottom: 36px;
+  }
 
+  .uploaded-files[hidden] {
+    display: none;
+  }
 
+  .uploaded-file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid #b1b4b6;
+  }
 
+  .uploaded-file:first-child {
+    border-top: 1px solid #b1b4b6;
+  }
 
+  .uploaded-file__status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+    color: #00703c;
+    font-weight: 700;
+  }
+
+  .uploaded-file__check {
+    flex: 0 0 16px;
+    width: 16px;
+    height: 9px;
+    margin: -4px 0 0 2px;
+    transform: rotate(-45deg);
+    border-left: 4px solid #00703c;
+    border-bottom: 4px solid #00703c;
+  }
+
+  .uploaded-file__delete {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  .file-drop-zone {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 174px;
+    padding: 16px;
+    outline: 3px dashed #0b0c0c;
+    outline-offset: -3px;
+  }
+
+  .file-drop-zone__input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
+
+  .file-drop-zone__hint {
+    margin: 0;
+  }
+
+  .file-drop-zone__button {
+    flex: 0 0 auto;
+    margin: 0;
+  }
+
+  .file-drop-zone:focus-within {
+    outline: 3px solid #ffdd00;
+    outline-offset: 2px;
+  }
+
+  .file-drop-zone.is-dragging {
+    background: #f3f2f1;
+    outline-color: #505a5f;
+  }
+
+  .js-enhanced .upload-fallback-button {
+    display: none;
+  }
+
+  @media (max-width: 40.0625em) {
+    .file-drop-zone {
+      min-height: 140px;
+      flex-wrap: wrap;
+    }
+
+    .uploaded-file {
+      align-items: flex-start;
+    }
+  }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const input = document.getElementById('supporting-files');
+  const dropZone = document.getElementById('file-drop-zone');
+  const filesSection = document.getElementById('uploaded-files');
+  const filesList = document.getElementById('uploaded-files-list');
+  const replaceFileId = document.getElementById('replace-file-id');
+  const status = document.createElement('p');
+  status.className = 'govuk-visually-hidden';
+  status.setAttribute('aria-live', 'polite');
+  dropZone.appendChild(status);
+  document.documentElement.classList.add('js-enhanced');
+  filesList.querySelectorAll('.uploaded-file__delete').forEach(function (button) {
+    button.type = 'button';
+  });
+
+  function addUploadedFile(file) {
+    filesSection.hidden = false;
+    const row = document.createElement('div');
+    row.className = 'uploaded-file';
+    row.dataset.fileId = file.id;
+
+    const message = document.createElement('p');
+    message.className = 'uploaded-file__status';
+    const check = document.createElement('span');
+    check.className = 'uploaded-file__check';
+    check.setAttribute('aria-hidden', 'true');
+    const text = document.createElement('span');
+    text.textContent = file.name + ' uploaded successfully';
+    message.append(check, text);
+
+    const remove = document.createElement('button');
+    remove.type = 'button';
+    remove.className = 'govuk-button govuk-button--secondary uploaded-file__delete';
+    remove.textContent = 'Delete';
+    remove.setAttribute('aria-label', 'Delete ' + file.name);
+
+    row.append(message, remove);
+    filesList.appendChild(row);
+    remove.focus();
+  }
+
+  async function uploadFiles(files) {
+    for (const file of files) {
+      status.textContent = 'Uploading ' + file.name;
+      const payload = new FormData();
+      payload.append('documents', file);
+      if (replaceFileId) payload.append('replaceFileId', replaceFileId.value);
+      try {
+        const response = await fetch('/sfi-ads-and-rads-aug26/file-upload/upload', {
+          method: 'POST',
+          body: payload,
+          credentials: 'same-origin'
+        });
+        const result = await response.json();
+        if (!response.ok) {
+          throw new Error(result.error || 'The file could not be uploaded. Try again.');
+        }
+        if (replaceFileId) {
+          const oldFile = filesList.querySelector('[data-file-id="' + CSS.escape(replaceFileId.value) + '"]');
+          if (oldFile) oldFile.remove();
+        }
+        addUploadedFile(result.file);
+        status.textContent = result.file.name + ' uploaded successfully';
+      } catch (error) {
+        status.textContent = error.message;
+      }
+    }
+    input.value = '';
+  }
+
+  input.addEventListener('change', function () {
+    if (input.files.length) uploadFiles(Array.from(input.files));
+  });
+
+  ['dragenter', 'dragover'].forEach(function (eventName) {
+    dropZone.addEventListener(eventName, function (event) {
+      event.preventDefault();
+      dropZone.classList.add('is-dragging');
+    });
+  });
+
+  ['dragleave', 'drop'].forEach(function (eventName) {
+    dropZone.addEventListener(eventName, function (event) {
+      event.preventDefault();
+      dropZone.classList.remove('is-dragging');
+    });
+  });
+
+  dropZone.addEventListener('drop', function (event) {
+    if (event.dataTransfer.files.length) uploadFiles(Array.from(event.dataTransfer.files));
+  });
+
+  filesList.addEventListener('click', async function (event) {
+    const button = event.target.closest('.uploaded-file__delete');
+    if (!button) return;
+    const row = button.closest('.uploaded-file');
+    button.disabled = true;
+    try {
+      const response = await fetch('/sfi-ads-and-rads-aug26/file-upload/delete', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams({ id: row.dataset.fileId }),
+        credentials: 'same-origin'
+      });
+      if (!response.ok) throw new Error('The file could not be deleted. Try again.');
+      row.remove();
+      if (!filesList.children.length) filesSection.hidden = true;
+      status.textContent = 'File deleted';
+    } catch (error) {
+      button.disabled = false;
+      status.textContent = error.message;
+    }
+  });
+
+});
+</script>
 
 {% endblock %}

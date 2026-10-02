@@ -3,7 +3,13 @@
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
 const govukPrototypeKit = require('govuk-prototype-kit')
+const multer = require('multer')
+const { randomUUID } = require('crypto')
 const router = govukPrototypeKit.requests.setupRouter()
+const evidenceUpload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: 100 * 1024 * 1024, files: 10 }
+})
 
 // DECLARATIONS
 
@@ -1414,7 +1420,80 @@ router.post('/sfi-ads-and-rads-aug26/additional-info', function (req, res) {
 
 })
 
-router.post('/sfi-ads-and-rads-aug26/file-upload', function (req, res) {
+router.get('/sfi-ads-and-rads-aug26/file-upload', function (req, res) {
+  res.render('sfi-ads-and-rads-aug26/file-upload', {
+    uploadedFiles: req.session.data.evidenceFiles || [],
+    replaceFileId: req.query.replace || ''
+  })
+})
+
+router.get('/sfi-ads-and-rads-aug26/file-upload/remove/:fileId', function (req, res) {
+  const uploadedFiles = req.session.data.evidenceFiles || []
+  req.session.data.evidenceFiles = uploadedFiles.filter(file => file.id !== req.params.fileId)
+  res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
+})
+
+router.post('/sfi-ads-and-rads-aug26/file-upload/upload', function (req, res, next) {
+  evidenceUpload.single('documents')(req, res, function (error) {
+    if (error) {
+      const message = error.code === 'LIMIT_FILE_SIZE'
+        ? 'The selected file must be smaller than 100MB.'
+        : 'The selected file could not be uploaded. Try again.'
+      return res.status(400).json({ error: message })
+    }
+    next()
+  })
+}, function (req, res) {
+  if (!req.file) {
+    return res.status(400).json({ error: 'Select a file to upload.' })
+  }
+
+  const uploadedFiles = req.session.data.evidenceFiles || []
+  const replacedFileId = req.body.replaceFileId
+
+  if (replacedFileId) {
+    const replacedIndex = uploadedFiles.findIndex(file => file.id === replacedFileId)
+    if (replacedIndex !== -1) {
+      uploadedFiles.splice(replacedIndex, 1)
+    }
+  }
+
+  const file = { id: randomUUID(), name: req.file.originalname }
+  uploadedFiles.push(file)
+  req.session.data.evidenceFiles = uploadedFiles
+
+  res.json({ file })
+})
+
+router.post('/sfi-ads-and-rads-aug26/file-upload/delete', function (req, res) {
+  const uploadedFiles = req.session.data.evidenceFiles || []
+  req.session.data.evidenceFiles = uploadedFiles.filter(file => file.id !== req.body.id)
+  res.json({ success: true })
+})
+
+router.post('/sfi-ads-and-rads-aug26/file-upload', evidenceUpload.array('supportingFiles', 10), function (req, res) {
+  const uploadedFiles = req.session.data.evidenceFiles || []
+  const replaceFileId = req.body.replaceFileId
+
+  if (req.body.delete) {
+    req.session.data.evidenceFiles = uploadedFiles.filter(file => file.id !== req.body.delete)
+    return res.render('sfi-ads-and-rads-aug26/file-upload', {
+      uploadedFiles: req.session.data.evidenceFiles
+    })
+  }
+
+  if (req.files && req.files.length) {
+    if (replaceFileId) {
+      const replacedIndex = uploadedFiles.findIndex(file => file.id === replaceFileId)
+      if (replacedIndex !== -1) {
+        uploadedFiles.splice(replacedIndex, 1)
+      }
+    }
+    req.files.forEach(file => uploadedFiles.push({ id: randomUUID(), name: file.originalname }))
+    req.session.data.evidenceFiles = uploadedFiles
+    return res.render('sfi-ads-and-rads-aug26/file-upload', { uploadedFiles })
+  }
+
   res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
 
 })

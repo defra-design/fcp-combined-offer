@@ -194,20 +194,52 @@
   </div>
 </div>
 
-<div class="govuk-summary-card evidence-card"> <style>
-  .evidence-card .govuk-summary-list__key {
-    width: 60%;
-  }
+{% if data.evidenceFiles and data.evidenceFiles.length %}
+<div class="govuk-summary-card evidence-card">
+  <style>
+    .evidence-card .govuk-summary-list__row {
+      display: grid;
+      grid-template-columns: 50% minmax(0, 1fr) auto;
+      align-items: center;
+      column-gap: 0;
+    }
 
-  .evidence-card .govuk-summary-list__value {
-    width: 40%;
-  }
+    .evidence-card .govuk-summary-list__key,
+    .evidence-card .govuk-summary-list__value,
+    .evidence-card .govuk-summary-list__actions {
+      width: auto;
+      min-width: 0;
+      margin: 0;
+    }
 
- 
-  .evidence-card .govuk-summary-list__actions {
-    width: 10%;
-  }
-</style>
+    .evidence-card .govuk-summary-list__actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 40.0625em) {
+      .evidence-card .govuk-summary-list__row {
+        grid-template-columns: minmax(0, 1fr) auto;
+        row-gap: 4px;
+      }
+
+      .evidence-card .govuk-summary-list__key {
+        grid-column: 1 / -1;
+      }
+
+      .evidence-card .govuk-summary-list__value {
+        grid-column: 1;
+      }
+
+      .evidence-card .govuk-summary-list__actions {
+        grid-column: 2;
+        justify-content: flex-end;
+      }
+    }
+  </style>
 
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
@@ -219,40 +251,22 @@
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          File one
-        </dt>
-        <dd class="govuk-summary-list__value">
-          receipt-1
-        </dd>
-       <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload">Remove<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload">Replace<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-        </dd>
-      </div>
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-         File two
-        </dt>
-        <dd class="govuk-summary-list__value">
-          receipt-2
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload">Remove<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload">Replace<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
-        </dd>
-      </div>
-
+      {% for file in data.evidenceFiles %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Evidence file</dt>
+          <dd class="govuk-summary-list__value">{{ file.name }}</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload/remove/{{ file.id }}">Remove<span class="govuk-visually-hidden"> {{ file.name }}</span></a>
+            <span aria-hidden="true">|</span>
+            <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload?replace={{ file.id }}">Replace<span class="govuk-visually-hidden"> {{ file.name }}</span></a>
+          </dd>
+        </div>
+      {% endfor %}
 
     </dl>
   </div>
 </div>
+{% endif %}
 
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Continue
