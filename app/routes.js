@@ -1376,13 +1376,6 @@ router.post('/sfi-ads-and-rads-aug26/actions-affected', function (req, res) {
   const actions = normalizeOptionalSelections(req.body.actions)
   req.session.data.actions = actions
 
-  // Nothing selected
-  if (!actions.length && req.query.returnToCya !== 'true') {
-    return res.render('sfi-ads-and-rads-aug26/actions-affected', {
-      error: true
-    })
-  }
-
   if (req.query.returnToCya === 'true') {
     return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers-COC')
   }
