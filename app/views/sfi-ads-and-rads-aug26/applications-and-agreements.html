@@ -48,6 +48,24 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
+      
+      <!-- Important Banner -->
+      <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      {% if data.sfi26NextScreen == 'dashboard-submit-rotational' %}
+        You must submit your rotational action declaration for <a class="govuk-notification-banner__link" href="/sfi-ads-and-rads-aug26/{{ data.sfi26NextScreen or 'dashboard-new' }}">J Smith SFI26</a> by 10 August 2026.
+      {% else %}
+      You must submit your annual declaration for <a class="govuk-notification-banner__link" href="/sfi-ads-and-rads-aug26/{{ data.sfi26NextScreen or 'dashboard-new' }}">J Smith SFI26</a> by 29 July 2026.
+      {% endif %}
+    </p>
+  </div>
+</div>
 
 <div class="govuk-!-margin-bottom-6">
 
@@ -78,7 +96,7 @@
       <td class="govuk-table__cell">5795634</td>
       <td class="govuk-table__cell">SFI26</td>
       <td class="govuk-table__cell">15 June 2026</td>
-      <td class="govuk-table__cell">Live</td>
+      <td class="govuk-table__cell">{% if data.sfi26NextScreen == 'dashboard-submit-rotational' %}Rotational declaration available{% else %}Annual declaration available{% endif %}</td>
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell"><a href="" class="govuk-link">J Smith CSHT</a></td>
