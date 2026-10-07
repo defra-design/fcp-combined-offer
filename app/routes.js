@@ -1235,6 +1235,19 @@ router.get('/sfi-ads-and-rads-aug26/check-your-answers-COC', function (req, res)
   })
 })
 
+router.get('/sfi-ads-and-rads-aug26/check-your-answers-print', function (req, res) {
+  req.session.data.actions = normalizeOptionalSelections(req.session.data.actions)
+  req.session.data.parcels = normalizeOptionalSelections(req.session.data.parcels)
+
+  if (req.session.data.agreementName === '_unchecked') {
+    req.session.data.agreementName = ''
+  }
+
+  res.render('sfi-ads-and-rads-aug26/check-your-answers-print', {
+    data: req.session.data
+  })
+})
+
 router.post('/sfi-ads-and-rads-aug26/annual-declaration', function (req, res) {
   const answer = req.body.annualDeclarationAnswer
   req.session.data.annualDeclarationAnswer = answer
