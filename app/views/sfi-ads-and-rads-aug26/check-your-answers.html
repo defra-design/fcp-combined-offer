@@ -38,7 +38,7 @@
 
   <!-- RIGHT COLUMN (SECONDARY BUTTON) -->
   <div class="govuk-grid-column-one-third govuk-!-text-align-right">
-    <a href="/sfi-26-testing/saved-application"
+    <a href="/sfi-ads-and-rads-aug26/check-your-answers-b"
     class="govuk-button govuk-button--secondary govuk-!-margin-top-2"
     role="button"
     data-module="govuk-button">
@@ -85,7 +85,7 @@
           <h1 class="govuk-heading-xl">Check your answers</h1>
         </div>
         <div class="govuk-grid-column-one-third" style="text-align:right;">
-          <a class="govuk-body gov-uklink" href="/sfi-ads-and-rads-aug26/check-your-answers-b">Print</a>
+          <a class="govuk-body gov-uklink" href="#" onclick="window.print(); return false;">Print</a>
         </div>
     </div>
 
@@ -107,6 +107,12 @@
 
       .govuk-summary-list__actions {
         width: 10%;
+      }
+
+      @media print {
+        a[href]::after {
+          content: none !important;
+        }
       }
     </style>
 
@@ -139,90 +145,57 @@
       </div>
   
 
-      <h2 class="govuk-heading-m">Rotational actions</h1>
+      <h2 class="govuk-heading-m">Rotational actions</h2>
 
+{# Defaults are shown until a parcel has been saved on its select actions page #}
+{% set cyaParcels = [
+  { ref: 'SO3757 3158', num: '3158', page: 'select-land-actions', defaults: { Cahl2: '8.0000', Cipm3: '8.0000', Prf1: '' } },
+  { ref: 'SO3757 3159', num: '3159', page: 'select-land-actions-rotate', defaults: { Cahl2: '', Cipm3: '20.0000', Prf1: '10.0000' } }
+] %}
+{% set cyaActions = [
+  { key: 'Cahl2', code: 'CAHL2', name: 'CAHL2 - Winter bird food on arable and horticultural land' },
+  { key: 'Cipm3', code: 'CIPM3', name: 'CIPM3 - Companion crop on arable and horticultural lands' },
+  { key: 'Prf1', code: 'PRF1', name: 'PRF1 - Variable rate application of nutrients' }
+] %}
+
+{% for action in cyaActions %}
+  {% set rows = [] %}
+  {% for parcel in cyaParcels %}
+    {% set prefix = 'sfiAug26Parcel' + parcel.num + action.key %}
+    {% if data[prefix + 'Selected'] is defined %}
+      {% if data[prefix + 'Selected'] == 'true' %}{% set pushed = rows.push({ parcel: parcel, quantity: data[prefix + 'Quantity'] }) %}{% endif %}
+    {% elif parcel.defaults[action.key] %}
+      {% set pushed = rows.push({ parcel: parcel, quantity: parcel.defaults[action.key] }) %}
+    {% endif %}
+  {% endfor %}
+
+  {% if rows | length %}
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
     <h2 class="govuk-summary-card__title">
-      CAHL2 - Winter bird food on arable and horticultural land
+      {{ action.name }}
     </h2>
   </div>
   <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
+      {% for row in rows %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Parcel SO3757 3158	
+          Parcel {{ row.parcel.ref }}
         </dt>
         <dd class="govuk-summary-list__value">
-          8.0000 ha 
+          {% if row.quantity %}{{ row.quantity }} ha{% else %}No quantity entered{% endif %}
         </dd>
-      <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="select-land-actions?from=check-answers">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="/sfi-ads-and-rads-aug26/{{ row.parcel.page }}?from=check-answers">Change<span class="govuk-visually-hidden"> {{ action.code }} on parcel {{ row.parcel.ref }}</span></a>
         </dd>
       </div>
+      {% endfor %}
     </dl>
   </div>
 </div>
-
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      CIPM3 - Companion crop on arable and horticultural lands
-    </h2>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Parcel SO3757 3158	
-        </dt>
-        <dd class="govuk-summary-list__value">
-          8.0000 ha 
-        </dd>
-      <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="select-land-actions?from=check-answers">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
-        </dd>
-      </div>
-         <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Parcel SO3757 3159	
-        </dt>
-        <dd class="govuk-summary-list__value">
-          10.0000 ha 
-        </dd>
-      <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="select-land-actions-rotate?from=check-answers">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
-
-
-
-
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">
-      PRF1 - Variable rate application of nutrients
-    </h2>
-  </div>
-  <div class="govuk-summary-card__content">
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Parcel SO3757 3159	
-        </dt>
-        <dd class="govuk-summary-list__value">
-          30.0000 ha 
-        </dd>
-      <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="select-land-actions-rotate?from=check-answers">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
-        </dd>
-      </div>
-    </dl>
-  </div>
-</div>
+  {% endif %}
+{% endfor %}
 
 
     <h2 class="govuk-heading-m">Agreement level actions</h1>

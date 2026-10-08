@@ -115,6 +115,8 @@
 
 <!-- Table with actions -->
 
+<form class="form" action="/sfi-ads-and-rads-aug26/select-land-actions-rotate" method="post">
+  <input type="hidden" name="from" value="{{ data.from }}">
   <table class="govuk-table">
   
       <thead class="govuk-table__head">
@@ -131,7 +133,7 @@
         <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="cipm3" name="cipm3" type="checkbox" checked>
+      <input class="govuk-checkboxes__input" id="cipm3" name="sfiAug26Parcel3159Cipm3Selected" value="true" type="checkbox" {% if data.sfiAug26Parcel3159Cipm3Selected is defined %}{{ 'checked' if data.sfiAug26Parcel3159Cipm3Selected == 'true' }}{% else %}checked{% endif %}>
       <label class="govuk-label govuk-checkboxes__label" for="cipm3"></label>
     </div>
   </th>
@@ -140,7 +142,7 @@
   <td class="govuk-table__cell">
     <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
-        <input class="govuk-input govuk-input--width-5" id="cipm3-quantity" name="cipm3-quantity" type="text" value="{{ '10.0000' if data.from == 'check-answers' else '20.0000' }}" spellcheck="false">
+        <input class="govuk-input govuk-input--width-5" id="cipm3-quantity" name="sfiAug26Parcel3159Cipm3Quantity" type="text" value="{{ data.sfiAug26Parcel3159Cipm3Quantity if data.sfiAug26Parcel3159Cipm3Quantity is defined else ('10.0000' if data.from == 'check-answers' else '20.0000') }}" spellcheck="false">
         <div class="govuk-input__suffix" aria-hidden="true">ha</div>
       </div>
     </div>
@@ -150,7 +152,7 @@
 <tr class="govuk-table__row">
   <th scope="row" class="govuk-table__header">
     <div class="govuk-checkboxes__item">
-      <input class="govuk-checkboxes__input" id="cahl2" name="cahl2" type="checkbox" {% if data.from == 'check-answers' %}unchecked{% else %}checked{% endif %}>
+      <input class="govuk-checkboxes__input" id="cahl2" name="sfiAug26Parcel3159Cahl2Selected" value="true" type="checkbox" {% if data.sfiAug26Parcel3159Cahl2Selected is defined %}{{ 'checked' if data.sfiAug26Parcel3159Cahl2Selected == 'true' }}{% elif data.from != 'check-answers' %}checked{% endif %}>
       <label class="govuk-label govuk-checkboxes__label" for="cahl2"></label>
     </div>
   </th>
@@ -159,7 +161,7 @@
   <td class="govuk-table__cell">
     <div class="govuk-form-group">
       <div class="govuk-input__wrapper">
-        <input class="govuk-input govuk-input--width-5" id="cahl2-quantity" name="cahl2-quantity" type="text" value="{{ '' if data.from == 'check-answers' else '10.0000' }}" spellcheck="false">
+        <input class="govuk-input govuk-input--width-5" id="cahl2-quantity" name="sfiAug26Parcel3159Cahl2Quantity" type="text" value="{{ data.sfiAug26Parcel3159Cahl2Quantity if data.sfiAug26Parcel3159Cahl2Quantity is defined else ('' if data.from == 'check-answers' else '10.0000') }}" spellcheck="false">
         <div class="govuk-input__suffix" aria-hidden="true">ha</div>
       </div>
     </div>
@@ -168,7 +170,7 @@
 
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header"><div class="govuk-checkboxes__item">
-          <input class="govuk-checkboxes__input" id="prf1" name="prf1" type="checkbox" {% if data.from == 'check-answers' %}checked{% endif %}> 
+          <input class="govuk-checkboxes__input" id="prf1" name="sfiAug26Parcel3159Prf1Selected" value="true" type="checkbox" {% if data.sfiAug26Parcel3159Prf1Selected == 'true' or (data.sfiAug26Parcel3159Prf1Selected is not defined and data.from == 'check-answers') %}checked{% endif %}>
           <label class="govuk-label govuk-checkboxes__label" for="waste">
           </label>
           </div>
@@ -179,7 +181,7 @@
            </th>
           <td class="govuk-table__cell">  <div class="govuk-form-group">
           <div class="govuk-input__wrapper">
-          <input class="govuk-input govuk-input--width-5" id="prf1-quantity" name="prf1-quantity" type="text" value="{{ '20.0000' if data.from == 'check-answers' else '' }}" spellcheck="false">
+          <input class="govuk-input govuk-input--width-5" id="prf1-quantity" name="sfiAug26Parcel3159Prf1Quantity" type="text" value="{{ data.sfiAug26Parcel3159Prf1Quantity if data.sfiAug26Parcel3159Prf1Quantity is defined else ('30.0000' if data.from == 'check-answers' else '') }}" spellcheck="false">
           <div class="govuk-input__suffix" aria-hidden="true">ha</div>
           </div>
           </div></td>
@@ -188,7 +190,6 @@
       </tbody>
   </table>
 
-<form class="form" action="{{ 'check-your-answers' if data.from == 'check-answers' else 'apply-actions' }}" method="post">
   <input type="hidden" name="sfiAug26Parcel3159Applied" value="true">
   <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
 </form>
@@ -220,10 +221,27 @@ document.getElementById('prf1').addEventListener('change', function () {
   const quantity = document.getElementById('prf1-quantity');
 
   if (this.checked) {
-    quantity.value = '{{ "20.0000" if data.from == "check-answers" else "30.0000" }}';
+    quantity.value = '30.0000';
   } else {
     quantity.value = '';
   }
+});
+
+const parcel3159Form = document.querySelector('form[action="/sfi-ads-and-rads-aug26/select-land-actions-rotate"]');
+let parcel3159FormChanged = false;
+function autosaveParcel3159() {
+  const formData = new URLSearchParams(new FormData(parcel3159Form));
+  formData.set('autosave', 'true');
+  navigator.sendBeacon(parcel3159Form.action, formData);
+}
+
+parcel3159Form.addEventListener('change', function () {
+  parcel3159FormChanged = true;
+  autosaveParcel3159();
+});
+
+window.addEventListener('pagehide', function () {
+  if (parcel3159FormChanged) autosaveParcel3159();
 });
 </script>
 
