@@ -175,6 +175,65 @@ router.post('/sfi-ads-and-rads-aug26/select-map', function (req, res) {
   return res.redirect('/sfi-ads-and-rads-aug26/apply-actions')
 })
 
+function saveParcelActions(req, parcelNumber, actionNames) {
+  const data = req.session.data
+  let hasSelectedAction = false
+
+  actionNames.forEach(actionName => {
+    const selectedKey = `sfiAug26Parcel${parcelNumber}${actionName}Selected`
+    const quantityKey = `sfiAug26Parcel${parcelNumber}${actionName}Quantity`
+    // The kit appends '_unchecked' to every checkbox on submit, so ticked boxes arrive as ['true', '_unchecked']
+    const selected = [].concat(req.body[selectedKey]).includes('true')
+
+    data[selectedKey] = selected ? 'true' : 'false'
+    data[quantityKey] = req.body[quantityKey] || ''
+    hasSelectedAction = hasSelectedAction || selected
+  })
+
+  const appliedKey = `sfiAug26Parcel${parcelNumber}Applied`
+  data[appliedKey] = req.body[appliedKey] === 'true' || hasSelectedAction ? 'true' : 'false'
+}
+
+router.get('/sfi-ads-and-rads-aug26/select-land-actions', function (req, res) {
+  res.render('sfi-ads-and-rads-aug26/select-land-actions', {
+    data: { ...req.session.data, from: req.query.from || '' }
+  })
+})
+
+router.post('/sfi-ads-and-rads-aug26/select-land-actions', function (req, res) {
+  saveParcelActions(req, '3158', ['Cipm3', 'Cahl2', 'Prf1'])
+
+  if (req.xhr || req.body.autosave === 'true') {
+    return res.sendStatus(204)
+  }
+
+  if (req.body.from === 'check-answers') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers')
+  }
+
+  return res.redirect('/sfi-ads-and-rads-aug26/apply-actions')
+})
+
+router.get('/sfi-ads-and-rads-aug26/select-land-actions-rotate', function (req, res) {
+  res.render('sfi-ads-and-rads-aug26/select-land-actions-rotate', {
+    data: { ...req.session.data, from: req.query.from || '' }
+  })
+})
+
+router.post('/sfi-ads-and-rads-aug26/select-land-actions-rotate', function (req, res) {
+  saveParcelActions(req, '3159', ['Cipm3', 'Cahl2', 'Prf1'])
+
+  if (req.xhr || req.body.autosave === 'true') {
+    return res.sendStatus(204)
+  }
+
+  if (req.body.from === 'check-answers') {
+    return res.redirect('/sfi-ads-and-rads-aug26/check-your-answers')
+  }
+
+  return res.redirect('/sfi-ads-and-rads-aug26/apply-actions')
+})
+
 router.get('/sfi-26-testing/select-map', function (req, res) {
 
   // Reset every time user FIRST lands on page

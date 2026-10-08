@@ -57,24 +57,32 @@
 	</div>
 </div>
 
-{% set parcelActions = [
-	{ name: "BFS6: 6m to 12m habitat strip next to watercourses", area: "12.0000 ha" },
-	{ name: "CAHL2 - Winter bird food on arable and horticultural land", area: "16.0000 ha" },
-	{ name: "UPL1: Moderate livestock grazing on moorland", area: "22.0000 ha" },
-	{ name: "AGF1: Maintain very low density (20-50 t/ha) in-field agroforestry on less sensitive land", area: "14.0000 ha" },
-	{ name: "CHRW2: Manage hedgerows", area: "0.0000 ha" }
+{% set parcels = [
+	{
+		ref: "SO3757 3158",
+		actions: [
+			{ name: "CAHL2 - Winter bird food on arable and horticultural land", area: "8.0000 ha" },
+			{ name: "CIPM3 - Companion crop on arable and horticultural lands", area: "8.0000 ha" }
+		]
+	},
+	{
+		ref: "SO3757 3159",
+		actions: [
+			{ name: "PRF1 - Variable rate application of nutrients", area: "10.0000 ha" }
+		]
+	}
 ] %}
-{% for parcel in ["TL7160 6945", "TL7160 9529", "TL7160 9529"] %}
+{% for parcel in parcels %}
 <div class="govuk-summary-card parcel-card">
 	<div class="govuk-summary-card__title-wrapper">
-		<h2 class="govuk-summary-card__title">Rotated actions for parcel {{ parcel }}</h2>
+		<h2 class="govuk-summary-card__title">Rotated actions for parcel {{ parcel.ref }}</h2>
 		<ul class="govuk-summary-card__actions">
-			<li class="govuk-summary-card__action"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> actions for parcel {{ parcel }}</span></a></li>
+			<li class="govuk-summary-card__action"><a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> actions for parcel {{ parcel.ref }}</span></a></li>
 		</ul>
 	</div>
 	<div class="govuk-summary-card__content">
 		<dl class="govuk-summary-list govuk-!-margin-bottom-0">
-			{% for action in parcelActions %}
+			{% for action in parcel.actions %}
 			<div class="govuk-summary-list__row">
 				<dt class="govuk-summary-list__key">{{ action.name }}</dt>
 				<dd class="govuk-summary-list__value">{{ action.area }}</dd>
