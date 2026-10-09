@@ -69,13 +69,22 @@
 
       <div class="govuk-details__text">
 
+        {% set parcelMap = 'map-19.png' %}
+        {% if data.sfiAug26Parcel3158Applied == 'true' and data.sfiAug26Parcel3159Applied == 'true' %}
+          {% set parcelMap = 'map-20.png' %}
+        {% elif data.sfiAug26Parcel3158Applied == 'true' %}
+          {% set parcelMap = 'map-22.png' %}
+        {% elif data.sfiAug26Parcel3159Applied == 'true' %}
+          {% set parcelMap = 'map-21.png' %}
+        {% endif %}
+
         <svg version="1.1"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           viewBox="0 0 1010 880">
 
           <image
-            xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/60b3964fe985a4e6f7e5294384441fe8125e0aa1/app/views/sfi-ads-and-rads-aug26/img/map-10.png"
+            xlink:href="https://raw.githubusercontent.com/defra-design/fcp-combined-offer/main/app/views/sfi-ads-and-rads-aug26/img/{{ parcelMap }}"
             width="1010"
             height="880">
           </image>

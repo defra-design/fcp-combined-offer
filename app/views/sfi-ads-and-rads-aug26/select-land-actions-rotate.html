@@ -190,7 +190,7 @@
       </tbody>
   </table>
 
-  <input type="hidden" name="sfiAug26Parcel3159Applied" value="true">
+  <input type="hidden" name="sfiAug26Parcel3159Applied" value="{{ 'true' if data.sfiAug26Parcel3159Applied == 'true' else 'false' }}">
   <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
 </form>
 
@@ -228,8 +228,21 @@ document.getElementById('prf1').addEventListener('change', function () {
 });
 
 const parcel3159Form = document.querySelector('form[action="/sfi-ads-and-rads-aug26/select-land-actions-rotate"]');
+function parcel3159ActionValues() {
+  return JSON.stringify(Array.from(parcel3159Form.elements)
+    .filter(input => /(?:Selected|Quantity)$/.test(input.name))
+    .map(input => [input.name, input.type === 'checkbox' ? input.checked : input.value]));
+}
+const parcel3159InitialActions = parcel3159ActionValues();
+function updateParcel3159Applied() {
+  if (parcel3159ActionValues() !== parcel3159InitialActions) {
+    parcel3159Form.elements.sfiAug26Parcel3159Applied.value = 'true';
+  }
+}
+parcel3159Form.addEventListener('submit', updateParcel3159Applied);
 let parcel3159FormChanged = false;
 function autosaveParcel3159() {
+  updateParcel3159Applied();
   const formData = new URLSearchParams(new FormData(parcel3159Form));
   formData.set('autosave', 'true');
   navigator.sendBeacon(parcel3159Form.action, formData);

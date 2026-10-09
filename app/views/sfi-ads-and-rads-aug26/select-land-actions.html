@@ -192,7 +192,7 @@
       </tbody>
   </table>
 
-  <input type="hidden" name="sfiAug26Parcel3158Applied" value="true">
+  <input type="hidden" name="sfiAug26Parcel3158Applied" value="{{ 'true' if data.sfiAug26Parcel3158Applied == 'true' else 'false' }}">
   <button type="submit" class="govuk-button" data-module="govuk-button">Save and continue</button>
 </form>
 
@@ -230,8 +230,21 @@ document.getElementById('prf1').addEventListener('change', function () {
 });
 
 const parcel3158Form = document.querySelector('form[action="/sfi-ads-and-rads-aug26/select-land-actions"]');
+function parcel3158ActionValues() {
+  return JSON.stringify(Array.from(parcel3158Form.elements)
+    .filter(input => /(?:Selected|Quantity)$/.test(input.name))
+    .map(input => [input.name, input.type === 'checkbox' ? input.checked : input.value]));
+}
+const parcel3158InitialActions = parcel3158ActionValues();
+function updateParcel3158Applied() {
+  if (parcel3158ActionValues() !== parcel3158InitialActions) {
+    parcel3158Form.elements.sfiAug26Parcel3158Applied.value = 'true';
+  }
+}
+parcel3158Form.addEventListener('submit', updateParcel3158Applied);
 let parcel3158FormChanged = false;
 function autosaveParcel3158() {
+  updateParcel3158Applied();
   const formData = new URLSearchParams(new FormData(parcel3158Form));
   formData.set('autosave', 'true');
   navigator.sendBeacon(parcel3158Form.action, formData);
