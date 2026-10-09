@@ -177,7 +177,6 @@ router.post('/sfi-ads-and-rads-aug26/select-map', function (req, res) {
 
 function saveParcelActions(req, parcelNumber, actionNames) {
   const data = req.session.data
-  let hasSelectedAction = false
 
   actionNames.forEach(actionName => {
     const selectedKey = `sfiAug26Parcel${parcelNumber}${actionName}Selected`
@@ -187,11 +186,10 @@ function saveParcelActions(req, parcelNumber, actionNames) {
 
     data[selectedKey] = selected ? 'true' : 'false'
     data[quantityKey] = req.body[quantityKey] || ''
-    hasSelectedAction = hasSelectedAction || selected
   })
 
   const appliedKey = `sfiAug26Parcel${parcelNumber}Applied`
-  data[appliedKey] = req.body[appliedKey] === 'true' || hasSelectedAction ? 'true' : 'false'
+  data[appliedKey] = req.body[appliedKey] === 'true' ? 'true' : 'false'
 }
 
 router.get('/sfi-ads-and-rads-aug26/select-land-actions', function (req, res) {
