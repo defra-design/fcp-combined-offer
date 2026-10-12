@@ -540,9 +540,7 @@ body {
   width: 14rem;
 }
 
-.govuk-link:visited {
-  color: #1d70b8;
-}
+
 
 /* Table formatting for sfi-ads-and-rads-aug26 */
 .agreement-container {
@@ -632,3 +630,11 @@ max-width: 66%;
   .govuk-radios__conditional .govuk-form-group--error {
     border-left-color: #d4351c;
   }
+
+  .govuk-link:visited {
+  color: #1d70b8;
+}
+
+a:visited {
+  color: #1d70b8;
+}
