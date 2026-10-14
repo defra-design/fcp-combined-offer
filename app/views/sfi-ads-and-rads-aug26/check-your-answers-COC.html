@@ -194,7 +194,6 @@
   </div>
 </div>
 
-{% if data.evidenceFiles and data.evidenceFiles.length %}
 <div class="govuk-summary-card evidence-card">
   <style>
     .evidence-card .govuk-summary-list__row {
@@ -261,12 +260,19 @@
             <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload?replace={{ file.id }}">Replace<span class="govuk-visually-hidden"> {{ file.name }}</span></a>
           </dd>
         </div>
+      {% else %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">Evidence file</dt>
+          <dd class="govuk-summary-list__value">No files added</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="/sfi-ads-and-rads-aug26/file-upload">Add<span class="govuk-visually-hidden"> evidence</span></a>
+          </dd>
+        </div>
       {% endfor %}
 
     </dl>
   </div>
 </div>
-{% endif %}
 
   <button type="submit" class="govuk-button" data-module="govuk-button">
     Continue
