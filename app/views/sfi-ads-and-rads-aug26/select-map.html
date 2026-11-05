@@ -184,21 +184,21 @@
   </div>
 </form>
 
-<div style="display: flex; gap: 10px; align-items: flex-start;">
+<div class="govuk-button-group">
+  <button type="submit" form="select-map-form"
+    class="govuk-button"
+    data-module="govuk-button">
+    Continue
+  </button>
 
-    <button type="submit" form="select-map-form"
-      class="govuk-button"
-      data-module="govuk-button">
-      Continue
-    </button>
+  <button type="submit" form="save-form"
+    class="govuk-button govuk-button--secondary"
+    data-module="govuk-button">
+    Save changes
+  </button>
+</div>
 
-  <form class="form" action="/sfi-ads-and-rads-aug26/tasklist-2" method="post">
-    <button type="submit"
-      class="govuk-button govuk-button--secondary"
-      data-module="govuk-button">
-      Save changes
-    </button>
-  </form>
+<form id="save-form" class="form" action="/sfi-ads-and-rads-aug26/tasklist-2" method="post"></form>
 
 </div>
 
